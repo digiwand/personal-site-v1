@@ -1,21 +1,22 @@
 import Layout from 'components/layout';
+
+import HomeSection from 'components/sections/home/Home';
+import AboutSection from 'components/sections/about/About';
+import ContactSection from 'components/sections/contact/Contact';
+
 import styles from 'styles/index.module.scss';
+
+/**
+ * @todo 
+ * - move anchor ids into constant
+ */
 
 export default function Home() {
   return (
     <Layout home>
-      {/* @todo: breakout into section components */}
-      <section id="home" className={styles.section}>
-        <div >
-          Hello.
-        </div>
-      </section>
-      <section id="about" className={styles.section} style={{ background: 'lightpink' }}>
-        This is the about section. 
-      </section>
-      <section id="contact" className={styles.section} style={{ background: 'lightblue' }}>
-        This is the contact section. 
-      </section>
+      <HomeSection />
+      <AboutSection />
+      <ContactSection />
 
       {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -34,5 +35,5 @@ export default function Home() {
         </ul>
       </section> */}
     </Layout>
-  )
+  );
 }
