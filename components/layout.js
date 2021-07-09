@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Header from 'components/header';
+import Nav from 'components/nav/Nav';
 import styles from 'components/layout.module.scss';
 
 export const siteTitle = 'Ariella Vu';
@@ -26,7 +26,7 @@ export default function Layout({ children, home }) {
         {children}
       </main>
 
-      <Header home />
+      <Nav home />
     </div>
   )
 }
