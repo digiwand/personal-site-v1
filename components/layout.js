@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Header from '../components/header';
-import styles from './layout.module.scss';
+import Header from 'components/header';
+import styles from 'components/layout.module.scss';
 
 export const siteTitle = 'Ariella Vu';
 

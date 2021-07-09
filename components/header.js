@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './header.module.scss';
+import styles from 'components/header.module.scss';
 
 export default function Header({ children, home }) {
   /**
