@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+// Todo: move these into separate modules
+
+.NavTab {
+  min-width: 120rem;
+  padding: 20px;
+}
