@@ -1,9 +1,7 @@
 // @todo add mixin prefixes
 .section {
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
