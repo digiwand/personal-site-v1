@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Nav from 'components/nav/Nav';
+import ThemeSelector from 'components/side-frame/theme-selector/ThemeSelector';
 
 const siteTitle = 'Ariella Vu';
 
@@ -27,6 +28,7 @@ export default function Layout({ children, ...props }) {
       </main>
 
       <Nav />
+      <ThemeSelector />
     </div>
   )
 }
