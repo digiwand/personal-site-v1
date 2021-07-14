@@ -4,7 +4,6 @@ import HomeSection from 'components/sections/home/Home';
 import AboutSection from 'components/sections/about/About';
 import ContactSection from 'components/sections/contact/Contact';
 
-import styles from 'styles/index.module.scss';
 
 /**
  * @todo 

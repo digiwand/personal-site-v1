@@ -8,7 +8,14 @@ export default function Nav({ children, home }) {
   console.log('Is home?', home);
 
   return (
-    <header className={styles.Nav}>
+    <header className={styles.Nav} 
+      sx={{
+        top: '0',
+        right: '0',
+        mt: 4,
+        mr: 4,
+      }}
+    >
 
       {/* @todo extract this into NavTabs component */}
       <Link href="#home" scroll={false}>

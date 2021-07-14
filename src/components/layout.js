@@ -1,13 +1,13 @@
 import Head from 'next/head'
+
 import Nav from 'components/nav/Nav';
-import styles from 'components/layout.module.scss';
 
-export const siteTitle = 'Ariella Vu';
+const siteTitle = 'Ariella Vu';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, ...props }) {
   
   return (
-    <div className={styles.container}>
+    <div>
       {/* Note: We can add Head to any React component */}
       <Head>
         <title>{siteTitle}</title>
@@ -22,11 +22,11 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <main className={styles.main}>
+      <main sx={{ px: 6 }}>
         {children}
       </main>
 
-      <Nav home />
+      <Nav />
     </div>
   )
 }
