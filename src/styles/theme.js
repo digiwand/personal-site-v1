@@ -2,8 +2,8 @@
  * Theme object to be passed to the ThemeProvider component of the theme-ui npm package.
  * This can be used in other libraries and applications for increased interoperability.
  * 
- * Notice that we specify 1px font-size on styles.root (<html> element) so that we can utilize
- * 1px based rem units.
+ * See styles.root for styles applied to the <html> and <body> elements. Notice that we specify 
+ * 1px font-size on styles.root (<html> element) so that we can utilize 1px based rem units.
  * 
  * @see {@link https://www.theme-ui.com/theme-spec}
  */ 
@@ -27,8 +27,8 @@ export default {
   ],
   fontWeights: {
     body: 400,
-    heading: 700,
     bold: 700,
+    heading: 700,
   },
   lineHeights: {
     body: 1.5,
@@ -38,6 +38,20 @@ export default {
     body: 'normal',
     caps: '0.2em',
   },
+  text: {
+    body: {
+      fontFamily: 'body',
+      fontWeight: 'body',
+      lineHeight: 'body',
+      color: 'text',
+    },
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+      color: 'primary',
+    },
+  },
 
   // Colors
 
@@ -46,22 +60,22 @@ export default {
     primary: '#07c',
     modes: {
       dark: {
-        background: '#999',
-        text: '#eee',
-        primary: '#0cf',
+        background: '#222',
+        text: '#e6e6e6',
+        primary: '#BB86FC',
         secondary: '#CAFFD0',
-        accent: '#0cf',
+        accent: '#2e2e2e',
         highlight: '#0cf',
-        muted: '#0cf',
+        muted: '#2e2e2e',
       },
       light: {
-        background: '#fff',
-        text: '#000',
-        primary: '#2B3D41',
-        secondary: '#CAFFD0',
-        accent: '#CAFFD0',
-        highlight: '#C9E4E7',
-        muted: '#0cf',
+        background: '#DFECEB',
+        text: '#002629',
+        primary: '#4A5859',
+        secondary: '#E9E9E9',
+        accent: '#FAE6C6',
+        highlight: '#FAE6C6',
+        muted: 'grey',
       }
     }
   },
@@ -70,60 +84,36 @@ export default {
 
   styles: {
     root: {
-      /** @todo figure out why background color isn't working */
-      // backgroundColor: 'background',
       fontSize: '1px', /* for using REM units */
-      fontFamily: 'body',
-      fontWeight: 'body',
-
-      color: 'text',
       body: {
+        variant: 'text.body',
         fontSize: 1,
-        lineHeight: 'body',
       },
     },
+
     h1: {
       variant: 'text.heading',
-      fontSize: 6,
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
-      // color: 'primary',
+      fontSize: [5,6,6],
     },
     h2: {
       variant: 'text.heading',
-      fontSize: 5,
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
+      fontSize: [3,4,5],
     },
     h3: {
       variant: 'text.heading',
-      fontSize: 4,
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
+      fontSize: [2,3,4],
     },
     h4: {
       variant: 'text.heading',
       fontSize: 3,
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
     },
     h5: {
       variant: 'text.heading',
       fontSize: 2,
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
     },
     h6: {
       variant: 'text.heading',
       fontSize: 1,
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
     },
   },
 };
