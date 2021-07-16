@@ -1,8 +1,15 @@
-import styles from 'components/sections/Section.module.scss';
-
 export default function Section({ children, ...props }) {
   return (
-    <section id={props.id} className={`${styles.section} ${props.className}`}>
+    <section id={props.id} {...props}
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        minHeight: '100vh',
+        p: 0,
+      }}
+    >
       {children}
     </section>
   );

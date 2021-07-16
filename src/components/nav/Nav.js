@@ -8,8 +8,11 @@ export default function Nav({ children, home }) {
   console.log('Is home?', home);
 
   return (
-    <header className={styles.Nav} 
+    <header 
       sx={{
+        position: 'fixed',
+        display: 'flex',
+        textAlign: 'center',
         top: '0',
         right: '0',
         mt: 4,

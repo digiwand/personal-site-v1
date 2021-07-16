@@ -1,4 +1,3 @@
-import styles from 'components/sections/home/Home.module.scss';
 import { Themed } from 'theme-ui'
 
 import Section from 'components/sections/Section';

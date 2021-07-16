@@ -1,5 +1,4 @@
 import { IconButton, useColorMode, useThemeUI } from 'theme-ui';
-import styles from './ThemeSelector.module.scss';
 
 import IconBrightness4 from 'components/svg/material-icons/brightness4';
 import IconBrightnessHigh from 'components/svg/material-icons/brightnessHigh';
@@ -26,8 +25,10 @@ export default function ThemeSelector ({ props }) {
   );
 
   return (
-    <div className={styles.themeSelector} 
-      sx={{
+    <div sx={{
+        position: 'fixed',
+        display: 'flex',
+        flexDirection: 'column',
         bottom: '0',
         right: '0',
         mr: 4,
