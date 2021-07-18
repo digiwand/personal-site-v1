@@ -6,7 +6,7 @@ import ThemeSelector from 'components/side-frame/theme-selector/ThemeSelector';
 const siteTitle = 'Ariella Vu';
 
 export default function Layout({ children, ...props }) {
-  
+
   return (
     <div>
       {/* Note: We can add Head to any React component */}
@@ -14,7 +14,7 @@ export default function Layout({ children, ...props }) {
         <title>{siteTitle}</title>
 
         <link rel="icon" href="/demofavicon.ico" />
-        
+
         <meta
           name="description"
           content="Ariella Vu's personal website and resume"
@@ -23,7 +23,7 @@ export default function Layout({ children, ...props }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <main sx={{ px: 6 }}>
+      <main sx={{ px: [4, 5, 7] }}>
         {children}
       </main>
 
