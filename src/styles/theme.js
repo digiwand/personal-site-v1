@@ -72,21 +72,10 @@ export default {
     highlight: 'hsl(260, 20%, 40%)',
     muted: 'hsla(230, 20%, 0%, 20%)',
 
+    // to add
+    drawer: '#777',
+
     modes: {
-      dark: {
-        background: '#222739',
-        text: '#F0F5F9',
-        primary: '#997dff',
-        primaryLight: '#ceadff',
-        primaryDark: '#6550cb',
-        secondary: '#ffbff4',
-        secondaryLight: '#fff2ff',
-        secondaryDark: '#cb8ec1',
-        secondaryText: '#fff',
-        accent: '#6699CC',
-        highlight: 'hsl(260, 20%, 40%)',
-        muted: 'hsla(230, 20%, 0%, 20%)',
-      },
       light: {
         background: '#fcf3ff',
         text: '#212121',
@@ -167,8 +156,8 @@ export default {
       boxShadow: '0px 0px 10px transparent',
 
       svg: {
-        height: ['12px', '24px', '24px'],
-        width: ['12px', '24px', '24px'],
+        height: ['18px', '24px', '24px'],
+        width: ['18px', '24px', '24px'],
 
         path: {
           transition: 'fill 0.3s',
