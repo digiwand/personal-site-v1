@@ -5,7 +5,7 @@ import ThemeSelector from 'components/side-frame/theme-selector/ThemeSelector';
 
 const siteTitle = 'Ariella Vu';
 
-export default function Layout({ children, ...props }) {
+export default function Layout({ children }) {
 
   return (
     <div>
@@ -27,8 +27,8 @@ export default function Layout({ children, ...props }) {
         {children}
       </main>
 
-      <Nav />
       <ThemeSelector />
+      <Nav />
     </div>
   )
 }

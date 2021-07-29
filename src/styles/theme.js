@@ -72,8 +72,8 @@ export default {
     highlight: 'hsl(260, 20%, 40%)',
     muted: 'hsla(230, 20%, 0%, 20%)',
 
-    // to add
-    drawer: '#777',
+    // to update
+    drawer: '#222743',
 
     modes: {
       light: {
