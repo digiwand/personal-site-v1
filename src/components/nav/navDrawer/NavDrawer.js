@@ -86,6 +86,7 @@ export default class NavDrawer extends React.Component {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
+            alignItems: 'center',
             flex: '1 0 auto',
           }}
         >
