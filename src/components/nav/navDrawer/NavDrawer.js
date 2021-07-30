@@ -5,7 +5,6 @@ const headerAndFooterWidth = '60px';
 
 /**
  * @todo:
- * - destroy element on mobile so menu is closed when it is ressurrected
  * - add blur background
  * - show active section in nav
  * - replace close/open buttons

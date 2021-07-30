@@ -1,5 +1,6 @@
 import React from 'react';
 
+import OutsideClickHandler from 'components/common/OutsideClickHandler';
 import MenuButton from 'components/nav/menuButton/MenuButton';
 import NavTabs from 'components/nav/navTabs/NavTabs';
 import NavDrawer from 'components/nav/navDrawer/NavDrawer';
@@ -14,6 +15,7 @@ export default class Nav extends React.Component {
  
     this.handleCloseDrawer = this.handleCloseDrawer.bind(this);
     this.handleOpenDrawer = this.handleOpenDrawer.bind(this);
+    this.handleOutsideDrawerClick = this.handleOutsideDrawerClick.bind(this);
   }
 
   handleCloseDrawer() {
@@ -22,6 +24,12 @@ export default class Nav extends React.Component {
 
   handleOpenDrawer() {
     this.setState({ isOpenDrawer: true });
+  }
+
+  handleOutsideDrawerClick() {
+    if (this.state.isOpenDrawer) {
+      this.handleCloseDrawer();
+    }
   }
 
   render() {
@@ -47,6 +55,7 @@ export default class Nav extends React.Component {
         is-open={String(this.state.isOpenDrawer)}
       >
         {/* {blurBackground} */}
+
         <header sx={{
             display: 'flex',
             textAlign: 'center',
@@ -60,10 +69,11 @@ export default class Nav extends React.Component {
   
         <MenuButton onClick={this.handleOpenDrawer} />
   
-        <NavDrawer 
-          isOpen={this.state.isOpenDrawer} 
-          handleCloseMenu={this.handleCloseDrawer} 
-        />
+        <OutsideClickHandler onOutsideClick={this.handleOutsideDrawerClick}>
+          <NavDrawer  
+            isOpen={this.state.isOpenDrawer} 
+            handleCloseMenu={this.handleCloseDrawer} />
+        </OutsideClickHandler>
       </div>
     )
   }
