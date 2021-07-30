@@ -34,16 +34,20 @@ export default class Nav extends React.Component {
 
   render() {
 
-    // const blurBackground = (
-    //   <div css={{
-    //     /** @todo update logic as this is not supported in firefox */
-    //       backdropFilter: 'blur(4px) opacity(0.7)',
-    //       transition: 'filter 0.3s',
-    //       pointerEvents: 'none',
-    //       userSelect: 'none',
-    //     }}
-    //   />
-    // )
+    const blurBackground = (
+      <div css={{
+          /** @todo update logic as this is not supported in firefox */
+          backdropFilter: 'blur(2px) opacity(0.95) brightness(0.85)',
+          height: '100vh',
+          width: '100vw',
+          position: 'fixed',
+          left: '0',
+          transition: 'backdropFilter 0.3s',
+          pointerEvents: 'none',
+          userSelect: 'none',
+        }}
+      />
+    )
 
     return (
       <div 
@@ -54,7 +58,7 @@ export default class Nav extends React.Component {
         }}
         is-open={String(this.state.isOpenDrawer)}
       >
-        {/* {blurBackground} */}
+        {this.state.isOpenDrawer && blurBackground}
 
         <header sx={{
             display: 'flex',

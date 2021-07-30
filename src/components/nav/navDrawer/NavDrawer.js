@@ -5,7 +5,6 @@ const headerAndFooterWidth = '60px';
 
 /**
  * @todo:
- * - add blur background
  * - show active section in nav
  * - replace close/open buttons
  * - resume button
