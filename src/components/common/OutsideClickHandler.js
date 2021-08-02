@@ -1,11 +1,15 @@
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 
+const propTypes = {
+  onOutsideClick: PropTypes.func,
+};
+
 /**
  * Used to detect clicks outside the "children" element(s) in its DOM tree. This will not work for
  * children rendered in a React Portal because they will lie outside of the DOM heirachy.
  */
-export default class OutsideClickHandler extends React.Component {
+class OutsideClickHandler extends React.Component {
   wrapperRef = createRef();
 
   componentDidMount() {
@@ -32,6 +36,6 @@ export default class OutsideClickHandler extends React.Component {
   }
 }
 
-OutsideClickHandler.propTypes = {
-  name: PropTypes.function
-};
+OutsideClickHandler.propTypes = propTypes;
+
+export default OutsideClickHandler;
