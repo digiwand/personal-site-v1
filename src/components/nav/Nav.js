@@ -83,7 +83,7 @@ function Nav({ sectionTrackingPixelRefs }) {
 
   const blurBackground = (
     <div css={{
-        /** @todo update logic as this is not supported in firefox */
+        /** @todo update logic as this is not supported in firefox. also, consider animating*/
         backdropFilter: 'blur(2px) opacity(0.95) brightness(0.85)',
         height: '100vh',
         width: '100vw',
@@ -93,6 +93,7 @@ function Nav({ sectionTrackingPixelRefs }) {
         pointerEvents: 'none',
         userSelect: 'none',
       }}
+      sx={{ display: ['block', 'none', 'none'] }}
     />
   )
 
