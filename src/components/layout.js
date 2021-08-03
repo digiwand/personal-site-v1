@@ -29,7 +29,12 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <main sx={{ px: [4, 5, 7] }}>
+      <main sx={{ 
+          maxWidth: 'container',
+          mx: 'auto',
+          px: [4, 6, 6]
+        }}
+      >
         {children}
       </main>
 

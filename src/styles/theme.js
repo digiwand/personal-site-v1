@@ -15,6 +15,9 @@ export default {
   breakpoints: [
     '40em', '@media (min-width: 56em) and (orientation: landscape)', '64em',
   ],
+  sizes: {
+    container: '1420rem',
+  },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 
   // Fonts
