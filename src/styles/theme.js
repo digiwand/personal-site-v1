@@ -108,6 +108,7 @@ export default {
   styles: {
     root: {
       fontSize: '1px', /* for using REM units */
+      scrollBehavior: 'smooth',
       transition: 'background 500ms',
 
       body: {
