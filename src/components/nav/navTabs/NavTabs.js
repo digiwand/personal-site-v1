@@ -1,4 +1,4 @@
-import NavTab from 'components/nav/navTabs/navTab/NavTab';
+import NavTab from 'components/nav/navTabs/NavTab';
 import PropTypes from 'prop-types';
 
 const propTypes = {

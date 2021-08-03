@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import NavDrawerItem from 'components/nav/navDrawer/navDrawerItem/NavDrawerItem';
+import NavDrawerItem from 'components/nav/navDrawer/NavDrawerItem';
 
 const headerAndFooterWidth = '60px';
 

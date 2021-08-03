@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
-import MenuButton from 'components/nav/menuButton/MenuButton';
+import MenuButton from 'components/nav/navDrawer/NavMenuButton';
 import NavTabs from 'components/nav/navTabs/NavTabs';
 import NavDrawer from 'components/nav/navDrawer/NavDrawer';
 
