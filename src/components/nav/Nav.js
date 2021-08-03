@@ -1,17 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
 import MenuButton from 'components/nav/menuButton/MenuButton';
 import NavTabs from 'components/nav/navTabs/NavTabs';
 import NavDrawer from 'components/nav/navDrawer/NavDrawer';
 
-function Nav() {
+const propTypes = {
+  sectionTrackingPixelRefs: PropTypes.array,
+};
+
+function Nav({ sectionTrackingPixelRefs }) {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [activeSectionId, setActiveSectionId] = useState('home');
 
   useEffect(() => {
-    createSectionInterestionObservers();
-  });
+    const observer = new IntersectionObserver(handleSectionIntersection);
+
+    createSectionInterestionObservers(observer);
+
+    return () => { 
+      unobserveSectionIntersectionObservers(observer); 
+    }
+  }, [handleSectionIntersection]);
 
   // -- Handlers ----------------------------------------------------------------------------------
 
@@ -35,13 +46,14 @@ function Nav() {
    * Using the IntersectionObserver "threshold" option of 0.8 or 0.6 causes 4 callbacks
    * instead of 1. Instead of using "threshold" we will observe a tracking pixel on the 
    * section element.
+   * @param {IntersectionObserverEntry} observer
    */
-  function createSectionInterestionObservers() {
-    const observer = new IntersectionObserver(handleSectionIntersection);
-    const trackingPixelSelector = 'section[id] > .trackingPixel';
+  function createSectionInterestionObservers(observer) {
 
-    document.querySelectorAll(trackingPixelSelector).forEach((section) => {
-      observer.observe(section);
+    sectionTrackingPixelRefs.forEach((sectionRef) => {
+      if (sectionRef.current) { 
+        observer.observe(sectionRef.current) 
+      }
     });
   }
 
@@ -55,6 +67,15 @@ function Nav() {
         window.history.pushState(null, null, `#${sectionId}`);
         setActiveSectionId(sectionId);
       }
+    });
+  }
+  
+  /** 
+  * @param {IntersectionObserverEntry} observer
+  */
+  function unobserveSectionIntersectionObservers(observer) {
+    sectionTrackingPixelRefs.forEach((sectionRef) => {
+      if (sectionRef.current) { observer.unobserve(sectionRef.current) }
     });
   }
 
@@ -93,20 +114,22 @@ function Nav() {
           mr: 4,
         }}
       >
-        <NavTabs activeSectionId />
+        <NavTabs activeSectionId={activeSectionId} />
         {/** @todo add Resume button */}
       </header>
 
       <MenuButton onClick={handleOpenDrawer} />
 
       <OutsideClickHandler onOutsideClick={handleOutsideDrawerClick}>
-        <NavDrawer  
-          activeSectionId
+        <NavDrawer
+          activeSectionId={activeSectionId}
           isOpen={isOpenDrawer} 
           handleCloseMenu={handleCloseDrawer} />
       </OutsideClickHandler>
     </div>
   );
 }
+
+Nav.propTypes = propTypes;
 
 export default Nav;

@@ -1,10 +1,11 @@
+import React from 'react';
 import { Themed } from 'theme-ui'
 
 import Section from 'components/sections/Section';
 
-export default function HomeSection() {
+const HomeSection = React.forwardRef((props, ref) => {
   return (
-    <Section id="home">
+    <Section id="home" {...props} ref={ref}>
       <Themed.h1>Hello.</Themed.h1>
       <Themed.h2>Welcome.</Themed.h2>
       <Themed.h3>This is a work in progress.</Themed.h3>
@@ -22,4 +23,6 @@ export default function HomeSection() {
       </Themed.p>
     </Section>
   );
-}
+});
+
+export default HomeSection;

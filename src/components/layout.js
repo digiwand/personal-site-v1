@@ -3,9 +3,15 @@ import Head from 'next/head'
 import Nav from 'components/nav/Nav';
 import ThemeSelector from 'components/side-frame/theme-selector/ThemeSelector';
 
+import PROP_TYPE from 'constants/prop-types';
+
 const siteTitle = 'Ariella Vu';
 
-export default function Layout({ children }) {
+const propTypes = {
+  sectionTrackingPixelRefs: PROP_TYPE.REF,
+};
+
+function Layout({ children, sectionTrackingPixelRefs }) {
 
   return (
     <div>
@@ -28,7 +34,11 @@ export default function Layout({ children }) {
       </main>
 
       <ThemeSelector />
-      <Nav />
+      <Nav sectionTrackingPixelRefs={sectionTrackingPixelRefs}/>
     </div>
   )
 }
+
+Layout.propTypes = propTypes;
+
+export default Layout;
