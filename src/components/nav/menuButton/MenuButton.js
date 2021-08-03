@@ -24,7 +24,7 @@ export default function HamburgerMenu(props) {
         mt: 3,
         mr: 3,
         opacity: [1, 0, 0],
-        pointerEvent: ['initial', 'none', 'none']
+        pointerEvents: ['initial', 'none', 'none']
       }} 
       onClick={props.onClick}
       aria-label="Open menu drawer"
