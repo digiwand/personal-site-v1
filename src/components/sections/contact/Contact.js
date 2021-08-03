@@ -1,4 +1,6 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
+
 import Section from 'components/sections/Section';
 
 const ContactSection = React.forwardRef((props, ref) => {
@@ -7,9 +9,11 @@ const ContactSection = React.forwardRef((props, ref) => {
       ref={ref}
       sx={{ backgroundColor: 'lightblue' }}
     >
-      <div>
-        This is the contact section
-      </div>
+      <Fade bottom>
+        <div>
+          This is the contact section
+        </div>
+      </Fade>
     </Section>
   );
 });

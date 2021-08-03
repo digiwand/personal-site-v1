@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 
 import Section from 'components/sections/Section';
 
@@ -8,9 +9,11 @@ const AboutSection = React.forwardRef((props, ref) => {
       ref={ref}
       sx={{backgroundColor: 'lightpink' }}
     >
-      <div>
-        This is the about section
-      </div>
+      <Fade bottom>
+        <div>
+          This is the about section
+        </div>
+      </Fade>
     </Section>
   );
 });
