@@ -90,11 +90,14 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
           justifyContent: 'center',
           alignItems: 'center',
           flex: '1 0 auto',
+          '[is-active="true"]': {
+            fontWeight: 700,
+          },
         }}
       >
-        <NavDrawerItem href="#home" displayName="Home" />
-        <NavDrawerItem href="#about" displayName="About" />
-        <NavDrawerItem href="#contact" displayName="Contact" />
+        <NavDrawerItem href="#home" displayName="Home" isActive={activeSectionId === 'home'} />
+        <NavDrawerItem href="#about" displayName="About" isActive={activeSectionId === 'about'} />
+        <NavDrawerItem href="#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
         
         {/** @todo add resume button */}
       </nav>
