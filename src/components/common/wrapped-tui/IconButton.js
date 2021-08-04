@@ -1,12 +1,11 @@
-import { lighten } from '@theme-ui/color'
+// import { lighten } from '@theme-ui/color'
 import { IconButton } from 'theme-ui';
-import styles from 'components/common/IconButtonWrapped.module.scss';
 
 /**
  * @fixme Use if we want to get fancy or delete
  * Wrap theme-ui IconButton to support opacity with color modes
  */
-export default function IconButtonWrapped({ children, ...props }) {
+export default function IconButton({ children, ...props }) {
   return (
     <IconButton className={styles.IconButton}
       sx={{
