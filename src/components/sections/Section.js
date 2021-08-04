@@ -29,7 +29,6 @@ const Section = React.forwardRef((props, ref) => {
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        alignItems: 'flex-start',
         minHeight: '100vh',
         p: 0,
       }}
