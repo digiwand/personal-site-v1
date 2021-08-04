@@ -11,7 +11,6 @@ function NavTabs({ children, ...props }) {
   return (
     <nav sx={{
         transition: 'transform 0.3s',
-        mt: 3,
         transform: ['translateY(-120px)', 'translateY(0)', 'translateY(0)'],
         '[is-active="true"]': {
           fontWeight: 700,

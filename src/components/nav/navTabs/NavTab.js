@@ -17,9 +17,16 @@ function NavTab({ children, ...props }) {
   return (
     <Link href={href} scroll={false}>
       <a sx={{
-          minWidth: '120rem',
-          p: 3,
+          display: 'inline-block',
+          minWidth: '90rem',
+          letterSpacing: '1.6rem',
+          py: 3,
           ml: 3,
+          transition: 'font-weight 0.1s',
+
+          '&:hover': {
+            fontWeight: '700',
+          },
         }}
         is-active={String(isActive)}
       >
