@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'theme-ui';
 
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
 import MenuButton from 'components/nav/navDrawer/NavMenuButton';
@@ -10,6 +11,9 @@ const propTypes = {
   sectionTrackingPixelRefs: PropTypes.array,
 };
 
+/**
+ * @todo: move <header> element
+ */
 function Nav({ sectionTrackingPixelRefs }) {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [activeSectionId, setActiveSectionId] = useState('home');
@@ -111,12 +115,22 @@ function Nav({ sectionTrackingPixelRefs }) {
       <header sx={{
           display: 'flex',
           textAlign: 'center',
-          mt: 4,
+          alignItems: 'center',
+          mt: 5,
           mr: 4,
         }}
       >
         <NavTabs activeSectionId={activeSectionId} />
-        {/** @todo add Resume button */}
+        <Button
+          sx={{
+            ml: 4,
+            height: '40px',
+            fontSize: '13px',
+            fontWeight: '500',
+          }}
+        >
+          RESUME
+        </Button>
       </header>
 
       <MenuButton onClick={handleOpenDrawer} />
