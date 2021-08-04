@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import PropTypes from 'prop-types';
 import Head from 'next/head'
 
 import Nav from 'components/nav/Nav';
@@ -8,10 +10,22 @@ import PROP_TYPE from 'constants/prop-types';
 const siteTitle = 'Ariella Vu';
 
 const propTypes = {
-  sectionTrackingPixelRefs: PROP_TYPE.REF,
+  sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF),
 };
 
 function Layout({ children, sectionTrackingPixelRefs }) {
+  const pageTopTrackingPixelRef = useRef();
+
+  const pageTopTrackingPixel = (
+    <div sx={{ 
+        position: 'absolute',
+        height: '1px', 
+        width: '1px', 
+        top: '80px',
+      }}
+      ref={pageTopTrackingPixelRef}
+    />
+  );
 
   return (
     <div>
@@ -30,16 +44,21 @@ function Layout({ children, sectionTrackingPixelRefs }) {
       </Head>
 
       <main sx={{ 
+          position: 'relative',
           maxWidth: 'container',
           mx: 'auto',
           px: [4, 6, 6]
         }}
       >
+        {pageTopTrackingPixel}
         {children}
       </main>
 
       <ThemeSelector />
-      <Nav sectionTrackingPixelRefs={sectionTrackingPixelRefs}/>
+      <Nav 
+        sectionTrackingPixelRefs={sectionTrackingPixelRefs}
+        pageTopTrackingPixelRef={pageTopTrackingPixelRef}
+      />
     </div>
   )
 }

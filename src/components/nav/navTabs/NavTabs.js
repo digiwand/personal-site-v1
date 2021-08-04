@@ -9,9 +9,7 @@ function NavTabs({ children, ...props }) {
   const { activeSectionId } = props;
 
   return (
-    <nav sx={{
-        transition: 'transform 0.3s',
-        transform: ['translateY(-120px)', 'translateY(0)', 'translateY(0)'],
+    <nav className="NavTabs" sx={{
         '[is-active="true"]': {
           fontWeight: 700,
         },

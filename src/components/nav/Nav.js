@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'theme-ui';
 
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
 import MenuButton from 'components/nav/navDrawer/NavMenuButton';
-import NavTabs from 'components/nav/navTabs/NavTabs';
 import NavDrawer from 'components/nav/navDrawer/NavDrawer';
+import NavHeader from 'components/nav/navHeader/NavHeader';
+import PROP_TYPE from 'constants/prop-types';
 
 const propTypes = {
   sectionTrackingPixelRefs: PropTypes.array,
+  pageTopTrackingPixelRef: PROP_TYPE.REF,
 };
 
-/**
- * @todo: move <header> element
- */
-function Nav({ sectionTrackingPixelRefs }) {
+function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [activeSectionId, setActiveSectionId] = useState('home');
 
@@ -50,10 +48,9 @@ function Nav({ sectionTrackingPixelRefs }) {
    * Using the IntersectionObserver "threshold" option of 0.8 or 0.6 causes 4 callbacks
    * instead of 1. Instead of using "threshold" we will observe a tracking pixel on the 
    * section element.
-   * @param {IntersectionObserverEntry} observer
+   * @param {IntersectionObserver} observer
    */
   function createSectionInterestionObservers(observer) {
-
     sectionTrackingPixelRefs.forEach((sectionRef) => {
       if (sectionRef.current) { 
         observer.observe(sectionRef.current) 
@@ -74,9 +71,7 @@ function Nav({ sectionTrackingPixelRefs }) {
     });
   }
   
-  /** 
-  * @param {IntersectionObserverEntry} observer
-  */
+  /** @param {IntersectionObserver} observer */
   function unobserveSectionIntersectionObservers(observer) {
     sectionTrackingPixelRefs.forEach((sectionRef) => {
       if (sectionRef.current) { observer.unobserve(sectionRef.current) }
@@ -85,6 +80,7 @@ function Nav({ sectionTrackingPixelRefs }) {
 
   // -- Renders -----------------------------------------------------------------------------------
 
+  // move blurred background into its own function component
   const blurBackground = (
     <div css={{
         /** @todo update logic as this is not supported in firefox. also, consider animating*/
@@ -102,36 +98,20 @@ function Nav({ sectionTrackingPixelRefs }) {
   )
 
   return (
-    <div 
-      sx={{
+    <div sx={{
         position: 'fixed',
         top: '0',
         right: '0',
       }}
       is-open={String(isOpenDrawer)}
     >
-      {isOpenDrawer && blurBackground}
 
-      <header sx={{
-          display: 'flex',
-          textAlign: 'center',
-          alignItems: 'center',
-          mt: 5,
-          mr: 4,
-        }}
-      >
-        <NavTabs activeSectionId={activeSectionId} />
-        <Button
-          sx={{
-            ml: 4,
-            height: '40px',
-            fontSize: '13px',
-            fontWeight: '500',
-          }}
-        >
-          RESUME
-        </Button>
-      </header>
+      <NavHeader
+        activeSectionId={activeSectionId}
+        pageTopTrackingPixelRef={pageTopTrackingPixelRef}
+      />
+
+      {isOpenDrawer && blurBackground}
 
       <MenuButton onClick={handleOpenDrawer} />
 
