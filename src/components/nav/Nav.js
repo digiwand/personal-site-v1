@@ -89,6 +89,7 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
         width: '100vw',
         position: 'fixed',
         left: '0',
+        top: '0',
         transition: 'backdropFilter 0.3s',
         pointerEvents: 'none',
         userSelect: 'none',
