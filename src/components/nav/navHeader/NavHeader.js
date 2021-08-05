@@ -6,6 +6,8 @@ import NavTabs from 'components/nav/navTabs/NavTabs';
 
 import PROP_TYPE from 'constants/prop-types';
 
+const sxBorderMargin = 4;
+
 const propTypes = {
   activeSectionId: PropTypes.string.isRequired,
   pageTopTrackingPixelRef: PROP_TYPE.REF,
@@ -53,7 +55,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         alignItems: 'flex-end',
         height: '110px',
         width: '100vw',
-        pr: 4,
+        pr: sxBorderMargin,
         transition: 'transform 0.25s, background 0.25s, box-shadow 0.25s',
         // remove when I add personal logo / signature
         justifyContent: 'flex-end',
@@ -66,10 +68,30 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           background: `${theme.colors.primary}`,
           transform: ['translateY(-110px)', 'translateY(-70px)', 'translateY(-70px)'],
           boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0.30)',
+
+          '.NavHeader_profileLogo' : {
+            fontSize: "23px",
+            transform: 'translateX(0)',
+          },
+
+          '.NavTab_displayName': {
+            letterSpacing: '1rem',
+          }
         },
       })}
       has-scrolled={hasScrolled.toString()}
     >
+      {/** @todo replace w/ SVG */}
+      <span className="NavHeader_profileLogo" sx={{
+        fontFamily: '"MarckScript", Ariel',
+        fontSize: "28px",
+        flex: '1 0 auto',
+        ml: sxBorderMargin,
+        transform: 'translateX(50px)',
+        transition: 'font-size 0.2s, transform 0.2s',
+      }}>
+        Ariella Vu
+      </span>
       <NavTabs activeSectionId={activeSectionId} />
       <Button
         sx={{

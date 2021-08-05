@@ -16,14 +16,17 @@ function NavTab({ children, ...props }) {
 
   return (
     <Link href={href} scroll={false}>
-      <a sx={{
+      <a className="NavTab_displayName" 
+        sx={{
           display: 'inline-flex',
           alignItems: 'center',
+          justifyContent: 'center',
           height: '40px',
-          minWidth: '90rem',
+          minWidth: '80rem',
           letterSpacing: '1.6rem',
+          fontSize: "14rem",
           ml: 3,
-          transition: 'font-weight 0.1s',
+          transition: 'font-weight 0.2s',
 
           '&:hover, &:is-active': {
             fontWeight: '700',
