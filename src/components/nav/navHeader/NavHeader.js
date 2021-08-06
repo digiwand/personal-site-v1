@@ -62,10 +62,10 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0)',
         transform: ['translateY(-110px)', 'translateY(0)', 'translateY(0)'],
 
-
         '&[has-scrolled="true"]': {
           // todo. replace color
-          background: `${theme.colors.primary}`,
+          // background: `${theme.colors.primary}`,
+          background: '#F0F5F9',
           transform: ['translateY(-110px)', 'translateY(-70px)', 'translateY(-70px)'],
           boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0.30)',
 

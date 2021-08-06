@@ -19,6 +19,7 @@ function NavDrawerItem({ children, ...props }) {
       <a sx={{
           mt: 3,
           mb: 3,
+          color: 'white',
         }}
         is-active={String(isActive)}
       >

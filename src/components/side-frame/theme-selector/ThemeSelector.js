@@ -7,8 +7,8 @@ import IconBrightness4 from 'components/svg/material-icons/brightness4';
 import IconBrightnessHigh from 'components/svg/material-icons/brightnessHigh';
 
 export default function ThemeSelector({ props }) {
-  const { theme: { rawColors } } = useThemeUI();
   const [colorMode, setColorMode] = useColorMode();
+  const { theme: { rawColors } } = useThemeUI();
 
   const buttons = Object.entries(rawColors?.modes).map(([mode, values]) =>
     <IconButton
