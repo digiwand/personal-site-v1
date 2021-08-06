@@ -41,13 +41,16 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+
+        {/* @todo TEMP install as vector */}
+        <script src="https://cdn.rawgit.com/progers/pathseg/master/pathseg.js"></script>
+
       </Head>
 
       <main sx={{ 
           position: 'relative',
           maxWidth: 'container',
           mx: 'auto',
-          px: [4, 6, 6]
         }}
       >
         {pageTopTrackingPixel}

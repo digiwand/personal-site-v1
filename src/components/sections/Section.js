@@ -30,7 +30,7 @@ const Section = React.forwardRef((props, ref) => {
         justifyContent: 'center',
         flexDirection: 'column',
         minHeight: '100vh',
-        p: 0,
+        px: [4, 6, 6]
       }}
     >
       <SectionTrackingPixel sectionId={props.id} ref={ref} />
