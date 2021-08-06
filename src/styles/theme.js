@@ -28,7 +28,7 @@ export default {
     monospace: 'Menlo, monospace',
   },
   fontSizes: [
-    '12rem', '14rem', '16rem', '20rem', '24rem', '32rem', '48rem', '64rem'
+    '12rem', '14rem', '16rem', '20rem', '24rem', '28rem', '32rem', '48rem', '64rem'
   ],
   fontWeights: {
     body: 400,
@@ -64,7 +64,9 @@ export default {
   colors: {
     background: '#222739',
     text: '#F0F5F9',
-    primary: '#997dff',
+    textContrast1: '#ddd',
+    textContrast2: '#aaaebc',
+    primary: '#546CBB',
     primaryLight: '#ceadff',
     primaryDark: '#6550cb',
     secondary: '#ffbff4',
@@ -76,13 +78,15 @@ export default {
     muted: 'hsla(230, 20%, 0%, 20%)',
 
     // to update
-    drawer: '#222743',
+    drawer: '#001011',
 
     modes: {
       light: {
-        background: '#fcf3ff',
-        text: '#212121',
-        primary: '#c792e0',
+        background: '#fff',
+        text: '#001011',
+        textContrast1: '#bebebe',
+        textContrast2: '#ddd',
+        primary: '#001011',
         primaryLight: '#fbc3ff',
         primaryDark: '#9563ae',
         primaryText: '#4e1a57',
@@ -126,15 +130,15 @@ export default {
     },
     h2: {
       variant: 'text.heading',
-      fontSize: [3, 4, 5],
+      fontSize: [4, 5, 5],
     },
     h3: {
-      variant: 'text.heading',
-      fontSize: [2, 3, 4],
+      variant: 'text.body',
+      fontSize: [4, 5, 5],
     },
     h4: {
       variant: 'text.heading',
-      fontSize: 3,
+      fontSize: [2, 3, 4],
     },
     h5: {
       variant: 'text.heading',
@@ -144,11 +148,17 @@ export default {
       variant: 'text.heading',
       fontSize: 1,
     },
+    p: {
+      fontSize: 2,
+    }
   },
 
   // Variants
 
   buttons: {
+    borderRadius: '4px',
+
+    // IconButton Component
     icon: {
       height: '46px',
       width: '46px',
