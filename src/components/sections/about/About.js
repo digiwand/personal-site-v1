@@ -14,7 +14,7 @@ const AboutSection = React.forwardRef((props, ref) => {
         <Themed.h3>
           About
         </Themed.h3>
-        <Fade bottom delay={3400}>
+        <Fade bottom delay={420}>
           <Themed.p sx={{ maxWidth: '560rem' }}>
             <br />
             Hello! I'm Ariella Vu.
