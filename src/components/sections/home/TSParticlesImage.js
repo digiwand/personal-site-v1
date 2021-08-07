@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Particles from 'react-tsparticles';
 import { useColorMode, useThemeUI } from 'theme-ui';
 
@@ -144,9 +144,12 @@ function TSParticlesImage() {
             particles: {
               color: {
                 value: [
-                  `${rawColors.primary}`,
-                  `${rawColors.primaryLight}`,
-                  `${rawColors.primaryDark}`
+                  // '#546CBB',
+                  // '#ceadff',
+                  // '#6550cb',
+                  `${rawColors.primary || '#546CBB'}`,
+                  `${rawColors.primaryLight || '#ceadff'}`,
+                  `${rawColors.primaryDark || '#6550cb'}`,
                 ],
               },
               destroy: {
@@ -278,13 +281,8 @@ function TSParticlesImage() {
                 warp: false
               },
               number: {
-                density: {
-                  enable: false,
-                  area: 2000,
-                  factor: 1000
-                },
                 limit: 0,
-                value: 200
+                value: 220
               },
               opacity: {
                 random: {

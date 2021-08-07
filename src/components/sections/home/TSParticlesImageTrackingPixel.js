@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  setHasScrolled: PropTypes.func,
+  setHasScrolled: PropTypes.func.isRequired,
 }
 
 function TSParticlesImageTrackingPixel({ setHasScrolled }) {
@@ -53,5 +53,7 @@ function TSParticlesImageTrackingPixel({ setHasScrolled }) {
     />
   )
 }
+
+TSParticlesImageTrackingPixel.propTypes = propTypes;
 
 export default TSParticlesImageTrackingPixel;
