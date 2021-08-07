@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import Particles from "react-tsparticles";
+import Particles from 'react-tsparticles';
 import { useColorMode, useThemeUI } from 'theme-ui';
 
 import TSParticlesImageTrackingPixel from 'components/sections/home/TSParticlesImageTrackingPixel';
 
 /**
  * WIP
- * - @todo. ensure vector script is loaded first 
  * - Use personal SVG
  * - scale based on device width
  * - calculate position based on viewpoint
@@ -60,8 +59,8 @@ function TSParticlesImage() {
             // height: '628px',
             // width: '477px',
           }}
-          // init={this.particlesInit}
-          // loaded={this.particlesLoaded}
+          // init={particlesInit}
+          // loaded={particlesLoaded}
           options={{
             autoPlay: true,
             // background: {
@@ -97,7 +96,7 @@ function TSParticlesImage() {
                 attract: {
                   distance: 200,
                   duration: 0.4,
-                  easing: "ease-out-quad",
+                  easing: 'ease-out-quad',
                   factor: 1,
                   maxSpeed: 50,
                   speed: 1
@@ -151,7 +150,7 @@ function TSParticlesImage() {
                 ],
               },
               destroy: {
-                mode: "none",
+                mode: 'none',
                 split: {
                   count: 1,
                   factor: {
@@ -194,9 +193,9 @@ function TSParticlesImage() {
                 }
               },
               links: {
-                // blink: false,
+                blink: false,
                 color: {
-                  value: "random"
+                  value: 'random',
                 },
                 consent: false,
                 distance: 40,
@@ -206,7 +205,7 @@ function TSParticlesImage() {
                 shadow: {
                   blur: 5,
                   color: {
-                    value: "#00ff00"
+                    value: '#00ff00'
                   },
                   enable: false
                 },
@@ -233,7 +232,7 @@ function TSParticlesImage() {
                 },
                 decay: 0,
                 distance: {},
-                direction: "none",
+                direction: 'none',
                 drift: 0,
                 enable: true,
                 gravity: {
@@ -254,11 +253,11 @@ function TSParticlesImage() {
                   enable: false
                 },
                 outModes: {
-                  default: "bounce",
-                  bottom: "bounce",
-                  left: "bounce",
-                  right: "bounce",
-                  top: "bounce"
+                  default: 'bounce',
+                  bottom: 'bounce',
+                  left: 'bounce',
+                  right: 'bounce',
+                  top: 'bounce'
                 },
                 random: false,
                 size: false,
@@ -272,7 +271,7 @@ function TSParticlesImage() {
                   enable: false,
                   length: 10,
                   fillColor: {
-                    value: "#000000"
+                    value: '#000000'
                   }
                 },
                 vibrate: false,
@@ -301,9 +300,9 @@ function TSParticlesImage() {
                   enable: true,
                   speed: 2,
                   sync: false,
-                  destroy: "none",
+                  destroy: 'none',
                   minimumValue: 0.05,
-                  startValue: "random"
+                  startValue: 'random'
                 }
               },
               reduceDuplicates: false,
@@ -330,13 +329,13 @@ function TSParticlesImage() {
                   speed: 0,
                   sync: false
                 },
-                direction: "clockwise",
+                direction: 'clockwise',
                 path: false
               },
               shadow: {
                 blur: 0,
                 color: {
-                  value: "#000000"
+                  value: '#000000'
                 },
                 enable: false,
                 offset: {
@@ -346,7 +345,7 @@ function TSParticlesImage() {
               },
               shape: {
                 options: {},
-                type: "circle"
+                type: 'circle'
               },
               size: {
                 random: {
@@ -359,9 +358,9 @@ function TSParticlesImage() {
                   enable: false,
                   speed: 40,
                   sync: false,
-                  destroy: "none",
+                  destroy: 'none',
                   minimumValue: 0.1,
-                  startValue: "random"
+                  startValue: 'random'
                 }
               },
               stroke: {
@@ -378,7 +377,7 @@ function TSParticlesImage() {
                   speed: 0,
                   sync: false
                 },
-                direction: "clockwise",
+                direction: 'clockwise',
                 enable: false
               },
               twinkle: {
@@ -423,7 +422,7 @@ function TSParticlesImage() {
                 enable: true,
                 stroke: {
                   color: {
-                    value: colorMode === 'light' ? "#222" : "rgba(255,255,255,0.2)",
+                    value: colorMode === 'light' ? '#222' : 'rgba(255,255,255,0.2)',
                   },
                   width: 0.5,
                   opacity: 0.2
@@ -431,16 +430,16 @@ function TSParticlesImage() {
               },
               enable: true,
               inline: {
-                arrangement: "equidistant"
+                arrangement: 'equidistant'
               },
               move: {
                 radius: 10,
-                type: "path"
+                type: 'path'
               },
               // @todo maybe this can be dynamic based on screen size
               scale: .75, 
-              type: "inline",
-              url: "/svgs/deer.svg",
+              type: 'inline',
+              url: '/svgs/deer.svg',
               position: {
                 x: 45,
                 y: 20
