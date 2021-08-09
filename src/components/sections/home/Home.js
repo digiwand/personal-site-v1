@@ -1,16 +1,17 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Themed } from 'theme-ui';
+import ProfileSVG from 'components/svg/profile';
 
 import Section from 'components/sections/Section';
-import TSParticlesImage from 'components/sections/home/TSParticlesImage';
+// import TSParticlesImage from 'components/sections/home/TSParticlesImage';
 
 const HomeSection = React.forwardRef((props, ref) => {
 
   return (
     <Section id="home" {...props} ref={ref}>
 
-      <TSParticlesImage />
+      {/* <TSParticlesImage /> */}
 
       <Fade bottom>
         <Themed.h3>Hello, I'm</Themed.h3>
@@ -24,8 +25,21 @@ const HomeSection = React.forwardRef((props, ref) => {
         </span>
       </Fade>
       <Fade bottom delay={2100}>
-        <Themed.h3>I'm a software engineer.</Themed.h3>
+        <Themed.p sx={{ maxWidth: '480px' }}>
+          I'm a web developer specializing in React and Ember JavaScript Frameworks. Currently exploring new opportunities.
+        </Themed.p>
       </Fade>
+
+      {/* <ProfileSVG sx={(theme) => ({ 
+        position: 'absolute',
+        right: '8vh',
+        bottom: '40px',
+
+        'g' : {
+          fill: `${theme.colors.text}`
+        },
+       })}
+      /> */}
     </Section>
   );
 });
