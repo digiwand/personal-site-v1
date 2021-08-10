@@ -18,6 +18,8 @@
   "devDependencies": {
     "@theme-ui/color": "^0.10.0",
     "date-fns": "^2.21.3",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.0.1",
     "gray-matter": "^4.0.3",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",

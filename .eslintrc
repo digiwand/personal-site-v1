@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "eslint:recommended", 
+    "next"
+  ],
+  "rules": {
+    "indent": ["error", 2]
+  }
+}
