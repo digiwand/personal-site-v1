@@ -3,7 +3,7 @@ import SOCIAL from 'constants/social';
 
 const socialKeys = ['stackoverflow', 'github', 'linkedin'];
 
-function SocialIcons() {
+function NavSocialIcons() {
   function openSocialInNewTab(url) {
     window.open(url, '_blank', 'noopener,noreferrer');
   }
@@ -24,16 +24,17 @@ function SocialIcons() {
   });
 
   return (
-    <div sx={{
-      height: '40px',
-      display: 'flex',
-      alignItems: 'center',
-      pl: 2,
-    }}
+    <div
+      sx={{
+        height: '40px',
+        display: 'flex',
+        alignItems: 'center',
+        pl: 2,
+      }}
     >
       {socialIconButtons}
     </div>
   );
 }
 
-export default SocialIcons;
+export default NavSocialIcons;

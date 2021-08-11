@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import NavTabs from 'components/nav/navTabs/NavTabs';
-import SocialIcons from 'components/social-icons/SocialIcons';
+import NavSocialIcons from 'components/nav/SocialIcons';
 
 import PROP_TYPE from 'constants/prop-types';
 
@@ -94,7 +94,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
       </span>
       <NavTabs activeSectionId={activeSectionId} />
 
-      <SocialIcons />
+      <NavSocialIcons />
 
     </header>
   );
