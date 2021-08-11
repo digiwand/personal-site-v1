@@ -6,26 +6,25 @@ import { IconButton, useColorMode, useThemeUI } from 'theme-ui';
 import IconBrightness4 from 'components/svg/material-icons/brightness4';
 import IconBrightnessHigh from 'components/svg/material-icons/brightnessHigh';
 
-export default function ThemeSelector({ props }) {
+export default function ThemeSelector() {
   const [colorMode, setColorMode] = useColorMode();
   const { theme: { rawColors } } = useThemeUI();
 
-  const buttons = Object.entries(rawColors?.modes).map(([mode, values]) =>
+  const buttons = Object.entries(rawColors?.modes).map(([mode]) => (
     <IconButton
-      sx={(theme) => ({
+      sx={{
         variant: 'buttons.icon.secondary',
         mt: 3,
-      })}
+      }}
       key={mode}
       isSelected={colorMode === mode}
-      onClick={(e) => setColorMode(mode)}
+      onClick={() => setColorMode(mode)}
     >
       {mode === 'light'
         ? <IconBrightnessHigh />
-        : <IconBrightness4 />
-      }
+        : <IconBrightness4 />}
     </IconButton>
-  );
+  ));
 
   return (
     <div sx={{
@@ -41,4 +40,4 @@ export default function ThemeSelector({ props }) {
       {buttons}
     </div>
   );
-};
+}

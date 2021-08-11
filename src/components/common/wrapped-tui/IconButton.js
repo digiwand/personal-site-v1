@@ -5,9 +5,9 @@ import { IconButton } from 'theme-ui';
  * @fixme Use if we want to get fancy or delete
  * Wrap theme-ui IconButton to support opacity with color modes
  */
-export default function IconButton({ children, ...props }) {
+function WrappedIconButton({ children }) {
   return (
-    <IconButton className={styles.IconButton}
+    <IconButton
       sx={{
         variant: 'buttons.icon.secondary',
         // '&:hover': {
@@ -16,9 +16,10 @@ export default function IconButton({ children, ...props }) {
         // },
         mt: 3,
       }}
-      {...props}
     >
       {children}
     </IconButton>
   );
-};
+}
+
+export default WrappedIconButton;

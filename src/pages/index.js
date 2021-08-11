@@ -6,7 +6,7 @@ import AboutSection from 'components/sections/about/About';
 import ContactSection from 'components/sections/contact/Contact';
 
 /**
- * @todo 
+ * @todo
  * - move anchor ids into constant
  */
 function Home() {

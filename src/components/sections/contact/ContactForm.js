@@ -8,7 +8,7 @@ import {
 } from 'theme-ui';
 
 /**
- * @todo  
+ * @todo
  * - style inputs
  * - add server-side email client (SendGrid?)
  * - update submit button to send email
@@ -18,7 +18,8 @@ import {
  */
 function ContactForm() {
   return (
-    <Box as="form" 
+    <Box
+      as="form"
       sx={{
         transition: 'width 0.3s',
         flex: '1 0 auto',
@@ -29,20 +30,21 @@ function ContactForm() {
     >
       <Fade bottom>
         <Label htmlFor="contact-form-name">Full Name</Label>
-        <Input 
-          name="contact-form-name" 
-          id="contact-form-name" 
+        <Input
+          name="contact-form-name"
+          id="contact-form-name"
           placeholder="New Friend"
-          mb={3} 
+          mb={3}
           required
         />
       </Fade>
 
       <Fade bottom delay={200}>
         <Label htmlFor="contact-form-email">Email</Label>
-        <Input type="email" 
-          name="contact-form-email" 
-          id="contact-form-email" 
+        <Input
+          type="email"
+          name="contact-form-email"
+          id="contact-form-email"
           placeholder="beawesome@newfriends.com"
           mb={3}
           required
@@ -51,20 +53,21 @@ function ContactForm() {
 
       <Fade bottom delay={400}>
         <Label htmlFor="contact-form-message">Message</Label>
-        <Textarea id="contact-form-message" 
+        <Textarea
+          id="contact-form-message"
           placeholder="123-45-678"
-          name="contact-form-message" 
-          rows={6} 
+          name="contact-form-message"
+          rows={6}
           mb={3}
           required
-        />        
+        />
       </Fade>
 
       <Fade bottom delay={1000}>
         <Button>Send</Button>
       </Fade>
     </Box>
-  )
+  );
 }
 
 export default ContactForm;

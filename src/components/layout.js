@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import PropTypes from 'prop-types';
-import Head from 'next/head'
+import Head from 'next/head';
 
 import Nav from 'components/nav/Nav';
 import ThemeSelector from 'components/side-frame/theme-selector/ThemeSelector';
@@ -10,17 +10,18 @@ import PROP_TYPE from 'constants/prop-types';
 const siteTitle = 'Ariella Vu';
 
 const propTypes = {
-  sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF),
+  sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF).isRequired,
 };
 
 function Layout({ children, sectionTrackingPixelRefs }) {
   const pageTopTrackingPixelRef = useRef();
 
   const pageTopTrackingPixel = (
-    <div sx={{ 
+    <div
+      sx={{
         position: 'absolute',
-        height: '1px', 
-        width: '1px', 
+        height: '1px',
+        width: '1px',
         top: '80px',
       }}
       ref={pageTopTrackingPixelRef}
@@ -42,26 +43,26 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
 
-        <script src="/polyfills/pathseg.js"></script>
+        <script src="/polyfills/pathseg.js" />
       </Head>
 
-      <main sx={{ 
-          position: 'relative',
-          maxWidth: 'container',
-          mx: 'auto',
-        }}
+      <main sx={{
+        position: 'relative',
+        maxWidth: 'container',
+        mx: 'auto',
+      }}
       >
         {pageTopTrackingPixel}
         {children}
       </main>
 
       <ThemeSelector />
-      <Nav 
+      <Nav
         sectionTrackingPixelRefs={sectionTrackingPixelRefs}
         pageTopTrackingPixelRef={pageTopTrackingPixelRef}
       />
     </div>
-  )
+  );
 }
 
 Layout.propTypes = propTypes;

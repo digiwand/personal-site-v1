@@ -12,22 +12,24 @@ const defaultProps = {
 };
 
 function NavDrawerItem({ children, ...props }) {
-  const {  displayName, href, isActive } = props;
+  const { displayName, href, isActive } = props;
 
   return (
-    <Link href={href} scroll={false}>
-      <a sx={{
+    <Link href={href} scroll={false} passHref>
+      <a
+        sx={{
           mt: 3,
           mb: 3,
           color: 'white',
         }}
+        href={href}
         is-active={String(isActive)}
       >
         {displayName}
       </a>
     </Link>
   );
-};
+}
 
 NavDrawerItem.propTypes = propTypes;
 NavDrawerItem.defaultProps = defaultProps;

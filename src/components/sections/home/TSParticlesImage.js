@@ -1,3 +1,4 @@
+/* eslint max-len: ["error", { "code": 120, "ignoreComments": true }] */
 import { useState } from 'react';
 import Particles from 'react-tsparticles';
 import { useColorMode, useThemeUI } from 'theme-ui';
