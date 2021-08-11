@@ -12,7 +12,8 @@
   "rules": {
     "max-len": ["error", { "code": 130 }],
       // allow jsx syntax in js files (for next.js project)
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-pascal-case": "off"
   },
   "settings": {
     "import/resolver": {
