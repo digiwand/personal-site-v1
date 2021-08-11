@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'theme-ui';
 
 import NavTabs from 'components/nav/navTabs/NavTabs';
 
@@ -8,49 +7,45 @@ import PROP_TYPE from 'constants/prop-types';
 
 const sxBorderMargin = 4;
 
+const defaultProps = {
+  pageTopTrackingPixelRef: null,
+};
+
 const propTypes = {
   activeSectionId: PropTypes.string.isRequired,
   pageTopTrackingPixelRef: PROP_TYPE.REF,
-}
+};
 
 function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
   const [hasScrolled, setHasScrolled] = useState(false);
 
+  const handlePageTopObserver = useCallback(
+    (entries) => {
+      setHasScrolled(!(entries[0].intersectionRatio > 0));
+    },
+    [setHasScrolled],
+  );
+
   useEffect(() => {
     const observer = new IntersectionObserver(handlePageTopObserver);
+    const pageTopurrentRef = pageTopTrackingPixelRef.current;
 
-    createPageTopInterestionObserver(observer);
-
-    return () => { 
-      unobservePageTopInterestionObserver(observer); 
+    if (pageTopurrentRef) {
+      observer.observe(pageTopurrentRef);
     }
-  }, [handlePageTopObserver]);
 
-  // -- Intersection Observer Logic ---------------------------------------------------------------
-  
-  /** @param {IntersectionObserver} observer */
-   function createPageTopInterestionObserver(observer) {
-    if (!pageTopTrackingPixelRef.current) { return; }
-    
-    observer.observe(pageTopTrackingPixelRef.current) 
-  }
-
-  /** @param {IntersectionObserverEntry} entries */
-  function handlePageTopObserver(entries) {
-    setHasScrolled(!(entries[0].intersectionRatio > 0))
-  }
-  
-  /** @param {IntersectionObserver} observer */
-  function unobservePageTopInterestionObserver(observer) {
-    if (!pageTopTrackingPixelRef.current) { return; }
-    
-    observer.unobserve(pageTopTrackingPixelRef.current) 
-  }
+    return () => {
+      if (pageTopurrentRef) {
+        observer.unobserve(pageTopurrentRef);
+      }
+    };
+  }, [hasScrolled, pageTopTrackingPixelRef, handlePageTopObserver]);
 
   // -- Renders -----------------------------------------------------------------------------------
 
   return (
-    <header sx={(theme) => ({
+    <header
+      sx={() => ({
         display: 'flex',
         alignItems: 'flex-end',
         height: '110px',
@@ -69,44 +64,40 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           transform: ['translateY(-110px)', 'translateY(-70px)', 'translateY(-70px)'],
           boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0.30)',
 
-          '.NavHeader_profileLogo' : {
-            fontSize: "23px",
+          '.NavHeader_profileLogo': {
+            fontSize: '23px',
             transform: 'translateX(0)',
           },
 
           '.NavTab_displayName': {
             letterSpacing: '1rem',
-          }
+          },
         },
       })}
       has-scrolled={hasScrolled.toString()}
     >
       {/** @todo replace w/ SVG */}
-      <span className="NavHeader_profileLogo" sx={{
-        fontFamily: '"MarckScript", Ariel',
-        fontSize: "28px",
-        flex: '1 0 auto',
-        ml: sxBorderMargin,
-        transform: 'translateX(50px)',
-        transition: 'font-size 0.2s, transform 0.2s',
-      }}>
+      <span
+        className="NavHeader_profileLogo"
+        sx={{
+          fontFamily: '"MarckScript", Ariel',
+          fontSize: '28px',
+          lineHeight: '34px',
+          flex: '1 0 auto',
+          ml: sxBorderMargin,
+          transform: 'translateX(50px)',
+          transition: 'font-size 0.2s, transform 0.2s',
+        }}
+      >
         Ariella Vu
       </span>
       <NavTabs activeSectionId={activeSectionId} />
-      <Button
-        sx={{
-          ml: 4,
-          height: '40px',
-          fontSize: '13px',
-          fontWeight: '500',
-        }}
-      >
-        RESUME
-      </Button>
+
     </header>
   );
 }
 
+NavHeader.defaultProps = defaultProps;
 NavHeader.propTypes = propTypes;
 
 export default NavHeader;
