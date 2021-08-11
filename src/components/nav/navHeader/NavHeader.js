@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import NavTabs from 'components/nav/navTabs/NavTabs';
@@ -8,39 +8,33 @@ import PROP_TYPE from 'constants/prop-types';
 
 const sxBorderMargin = 4;
 
-const defaultProps = {
-  pageTopTrackingPixelRef: null,
-};
-
 const propTypes = {
   activeSectionId: PropTypes.string.isRequired,
-  pageTopTrackingPixelRef: PROP_TYPE.REF,
+  pageTopTrackingPixelRef: PROP_TYPE.REF.isRequired,
 };
 
 function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
   const [hasScrolled, setHasScrolled] = useState(false);
+  const pageTopObserverRef = useRef();
 
-  const handlePageTopObserver = useCallback(
-    (entries) => {
-      setHasScrolled(!(entries[0].intersectionRatio > 0));
-    },
-    [],
-  );
+  const handlePageTopObserver = ([entry]) => {
+    setHasScrolled(!(entry.intersectionRatio > 0));
+  };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(handlePageTopObserver);
-    const pageTopCurrentRef = pageTopTrackingPixelRef.current;
+    if (pageTopObserverRef.current) { pageTopObserverRef.current.disconnect(); }
 
-    if (pageTopCurrentRef) {
-      observer.observe(pageTopCurrentRef);
+    pageTopObserverRef.current = new IntersectionObserver(handlePageTopObserver);
+
+    const { current: currentObserver } = pageTopObserverRef;
+    const currentRef = pageTopTrackingPixelRef.current;
+
+    if (currentRef) {
+      currentObserver.observe(currentRef);
     }
 
-    return () => {
-      if (pageTopCurrentRef) {
-        observer.unobserve(pageTopCurrentRef);
-      }
-    };
-  }, [hasScrolled, pageTopTrackingPixelRef, handlePageTopObserver]);
+    return () => { currentObserver.disconnect(); };
+  }, [pageTopTrackingPixelRef]);
 
   // -- Renders -----------------------------------------------------------------------------------
 
@@ -100,7 +94,6 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
   );
 }
 
-NavHeader.defaultProps = defaultProps;
 NavHeader.propTypes = propTypes;
 
 export default NavHeader;

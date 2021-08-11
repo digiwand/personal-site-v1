@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
@@ -15,48 +15,39 @@ const propTypes = {
 function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [activeSectionId, setActiveSectionId] = useState('home');
+  const sectionIntersectionObserverRef = useRef();
 
-  const handleSectionIntersection = useCallback(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio <= 0) { return; }
+  const handleSectionIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio <= 0) { return; }
 
-        const sectionId = entry.target.getAttribute('section-id');
-        if (sectionId !== activeSectionId) {
-          window.history.pushState(null, null, `#${sectionId}`);
-          setActiveSectionId(sectionId);
-        }
-      });
-    },
-    [activeSectionId],
-  );
+      const sectionId = entry.target.getAttribute('section-id');
+      if (sectionId !== activeSectionId) {
+        window.history.pushState(null, null, `#${sectionId}`);
+        setActiveSectionId(sectionId);
+      }
+    });
+  };
 
+  /**
+   * Using the IntersectionObserver "threshold" option of 0.8 or 0.6 causes 4 callbacks
+   * instead of 1. Instead of using "threshold" we will observe a tracking pixel on the
+   * section element.
+   */
   useEffect(() => {
-    const observer = new IntersectionObserver(handleSectionIntersection);
+    if (sectionIntersectionObserverRef.current) { sectionIntersectionObserverRef.current.disconnect(); }
 
-    /**
-     * Using the IntersectionObserver "threshold" option of 0.8 or 0.6 causes 4 callbacks
-     * instead of 1. Instead of using "threshold" we will observe a tracking pixel on the
-     * section element.
-     */
-    function createSectionInterestionObservers() {
-      sectionTrackingPixelRefs.forEach((sectionRef) => {
-        if (sectionRef.current) {
-          observer.observe(sectionRef.current);
-        }
-      });
-    }
+    sectionIntersectionObserverRef.current = new IntersectionObserver(handleSectionIntersection);
 
-    function unobserveSectionIntersectionObservers() {
-      sectionTrackingPixelRefs.forEach((sectionRef) => {
-        if (sectionRef.current) { observer.unobserve(sectionRef.current); }
-      });
-    }
+    const { current: currentObserver } = sectionIntersectionObserverRef;
 
-    createSectionInterestionObservers();
-    return () => {
-      unobserveSectionIntersectionObservers(observer);
-    };
+    sectionTrackingPixelRefs.forEach((sectionRef) => {
+      if (sectionRef.current) {
+        currentObserver.observe(sectionRef.current);
+      }
+    });
+
+    return () => { currentObserver.disconnect(); };
   });
 
   // -- Handlers ----------------------------------------------------------------------------------
