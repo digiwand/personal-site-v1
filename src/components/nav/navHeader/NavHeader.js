@@ -24,7 +24,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
     (entries) => {
       setHasScrolled(!(entries[0].intersectionRatio > 0));
     },
-    [setHasScrolled],
+    [],
   );
 
   useEffect(() => {
