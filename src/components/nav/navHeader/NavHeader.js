@@ -29,15 +29,15 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(handlePageTopObserver);
-    const pageTopurrentRef = pageTopTrackingPixelRef.current;
+    const pageTopCurrentRef = pageTopTrackingPixelRef.current;
 
-    if (pageTopurrentRef) {
-      observer.observe(pageTopurrentRef);
+    if (pageTopCurrentRef) {
+      observer.observe(pageTopCurrentRef);
     }
 
     return () => {
-      if (pageTopurrentRef) {
-        observer.unobserve(pageTopurrentRef);
+      if (pageTopCurrentRef) {
+        observer.unobserve(pageTopCurrentRef);
       }
     };
   }, [hasScrolled, pageTopTrackingPixelRef, handlePageTopObserver]);
