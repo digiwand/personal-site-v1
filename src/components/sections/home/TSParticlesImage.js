@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Particles from 'react-tsparticles';
 import { useColorMode, useThemeUI } from 'theme-ui';
 
@@ -13,18 +13,19 @@ import TSParticlesImageTrackingPixel from 'components/sections/home/TSParticlesI
  * - clean config
  */
 function TSParticlesImage() {
-  const [colorMode, setColorMode] = useColorMode();
+  const [colorMode] = useColorMode();
   const { theme: { rawColors } } = useThemeUI();
 
   const [hasScrolled, setHasScrolled] = useState(false);
 
   return (
-    /** 
+    /**
      * This outer div is needed so that IntersectionObserver can view TSParticlesImageTrackingPixel
      * It appears IntersectionObserver does not like when the element's opacity is 0.
      */
     <div>
-      <div sx={{
+      <div
+        sx={{
           position: 'absolute',
           height: '100vh',
           width: '100vw',
@@ -42,7 +43,8 @@ function TSParticlesImage() {
         }}
         has-scrolled={hasScrolled.toString()}
       >
-        <Particles id="tsparticles"
+        <Particles
+          id="tsparticles"
           sx={{
             // currently redundant css w/ parent div
             position: 'fixed',
@@ -69,8 +71,8 @@ function TSParticlesImage() {
             //   },
             // },
             // fullScreen: {
-              // enable: true,
-              // zIndex: 1
+            // enable: true,
+            // zIndex: 1
             // },
             detectRetina: false,
             fpsLimit: 30,
@@ -89,7 +91,10 @@ function TSParticlesImage() {
                   mode: 'grab',
                   // mode: ['grab', 'connect'],
                 },
-                // @todo - further inspect. This seems to allow resize to work well minus when using Rectangle app
+                /**
+                 * @todo - further inspect. This seems to allow resize to work well
+                 * minus when using Rectangle app
+                 */
                 resize: false,
               },
               modes: {
@@ -99,47 +104,47 @@ function TSParticlesImage() {
                   easing: 'ease-out-quad',
                   factor: 1,
                   maxSpeed: 50,
-                  speed: 1
+                  speed: 1,
                 },
                 bounce: {
-                  distance: 200
+                  distance: 200,
                 },
                 bubble: {
                   distance: 40,
                   duration: 2,
                   mix: false,
                   opacity: 8,
-                  size: 6
+                  size: 6,
                 },
                 connect: {
                   distance: 80,
                   links: {
-                    opacity: 0.5
+                    opacity: 0.5,
                   },
-                  radius: 60
+                  radius: 60,
                 },
                 grab: {
                   distance: 400,
                   links: {
                     blink: false,
                     consent: false,
-                    opacity: 1
-                  }
+                    opacity: 1,
+                  },
                 },
                 push: {
                   default: true,
                   groups: [],
-                  quantity: 4
+                  quantity: 4,
                 },
-              }
+              },
             },
             motion: {
               /** If set to true, reduces animations for users with prefer-reduced-motion enabled */
               disable: true,
               reduce: {
                 factor: 4,
-                value: true
-              }
+                value: true,
+              },
             },
             particles: {
               color: {
@@ -159,41 +164,41 @@ function TSParticlesImage() {
                   factor: {
                     random: {
                       enable: false,
-                      minimumValue: 0
+                      minimumValue: 0,
                     },
-                    value: 3
+                    value: 3,
                   },
                   rate: {
                     random: {
                       enable: false,
-                      minimumValue: 0
+                      minimumValue: 0,
                     },
                     value: {
                       min: 4,
-                      max: 9
-                    }
+                      max: 9,
+                    },
                   },
-                  sizeOffset: true
-                }
+                  sizeOffset: true,
+                },
               },
               life: {
                 count: 0,
                 delay: {
                   random: {
                     enable: false,
-                    minimumValue: 0
+                    minimumValue: 0,
                   },
                   value: 0,
-                  sync: false
+                  sync: false,
                 },
                 duration: {
                   random: {
                     enable: false,
-                    minimumValue: 0.0001
+                    minimumValue: 0.0001,
                   },
                   value: 0,
-                  sync: false
-                }
+                  sync: false,
+                },
               },
               links: {
                 blink: false,
@@ -208,9 +213,9 @@ function TSParticlesImage() {
                 shadow: {
                   blur: 5,
                   color: {
-                    value: '#00ff00'
+                    value: '#00ff00',
                   },
-                  enable: false
+                  enable: false,
                 },
                 // triangles: {
                 //   enable: false,
@@ -218,20 +223,20 @@ function TSParticlesImage() {
                 // },
                 width: 1,
                 // @todo what does this do?
-                warp: false
+                warp: false,
               },
               move: {
                 angle: {
                   offset: 0,
-                  value: 90
+                  value: 90,
                 },
                 attract: {
                   distance: 200,
                   enable: false,
                   rotate: {
                     x: 600,
-                    y: 1200
-                  }
+                    y: 1200,
+                  },
                 },
                 decay: 0,
                 distance: {},
@@ -242,56 +247,56 @@ function TSParticlesImage() {
                   acceleration: 9.81,
                   enable: false,
                   inverse: false,
-                  maxSpeed: 50
+                  maxSpeed: 50,
                 },
                 path: {
                   clamp: true,
                   delay: {
                     random: {
                       enable: false,
-                      minimumValue: 0
+                      minimumValue: 0,
                     },
-                    value: 0
+                    value: 0,
                   },
-                  enable: false
+                  enable: false,
                 },
                 outModes: {
                   default: 'bounce',
                   bottom: 'bounce',
                   left: 'bounce',
                   right: 'bounce',
-                  top: 'bounce'
+                  top: 'bounce',
                 },
                 random: false,
                 size: false,
                 speed: 1,
                 spin: {
                   acceleration: 0,
-                  enable: false
+                  enable: false,
                 },
                 straight: false,
                 trail: {
                   enable: false,
                   length: 10,
                   fillColor: {
-                    value: '#000000'
-                  }
+                    value: '#000000',
+                  },
                 },
                 vibrate: false,
-                warp: false
+                warp: false,
               },
               number: {
                 limit: 0,
-                value: 220
+                value: 220,
               },
               opacity: {
                 random: {
                   enable: false,
-                  minimumValue: 0.1
+                  minimumValue: 0.1,
                 },
                 value: {
                   min: 0.05,
-                  max: 0.4
+                  max: 0.4,
                 },
                 animation: {
                   count: 0,
@@ -300,55 +305,55 @@ function TSParticlesImage() {
                   sync: false,
                   destroy: 'none',
                   minimumValue: 0.05,
-                  startValue: 'random'
-                }
+                  startValue: 'random',
+                },
               },
               reduceDuplicates: false,
               repulse: {
                 random: {
                   enable: false,
-                  minimumValue: 0
+                  minimumValue: 0,
                 },
                 value: 0,
                 enabled: false,
                 distance: 1,
                 duration: 1,
                 factor: 1,
-                speed: 1
+                speed: 1,
               },
               rotate: {
                 random: {
                   enable: false,
-                  minimumValue: 0
+                  minimumValue: 0,
                 },
                 value: 0,
                 animation: {
                   enable: false,
                   speed: 0,
-                  sync: false
+                  sync: false,
                 },
                 direction: 'clockwise',
-                path: false
+                path: false,
               },
               shadow: {
                 blur: 0,
                 color: {
-                  value: '#000000'
+                  value: '#000000',
                 },
                 enable: false,
                 offset: {
                   x: 0,
-                  y: 0
-                }
+                  y: 0,
+                },
               },
               shape: {
                 options: {},
-                type: 'circle'
+                type: 'circle',
               },
               size: {
                 random: {
                   enable: true,
-                  minimumValue: 1
+                  minimumValue: 1,
                 },
                 value: 1,
                 animation: {
@@ -358,53 +363,53 @@ function TSParticlesImage() {
                   sync: false,
                   destroy: 'none',
                   minimumValue: 0.1,
-                  startValue: 'random'
-                }
+                  startValue: 'random',
+                },
               },
               stroke: {
-                width: 0
+                width: 0,
               },
               tilt: {
                 random: {
                   enable: false,
-                  minimumValue: 0
+                  minimumValue: 0,
                 },
                 value: 0,
                 animation: {
                   enable: false,
                   speed: 0,
-                  sync: false
+                  sync: false,
                 },
                 direction: 'clockwise',
-                enable: false
+                enable: false,
               },
               twinkle: {
                 lines: {
                   enable: false,
                   frequency: 0.05,
-                  opacity: 1
+                  opacity: 1,
                 },
                 particles: {
                   enable: false,
                   frequency: 0.05,
-                  opacity: 1
-                }
+                  opacity: 1,
+                },
               },
               wobble: {
                 distance: 5,
                 enable: false,
-                speed: 50
+                speed: 50,
               },
               zIndex: {
                 random: {
                   enable: false,
-                  minimumValue: 0
+                  minimumValue: 0,
                 },
                 value: 0,
                 opacityRate: 1,
                 sizeRate: 1,
-                velocityRate: 1
-              }
+                velocityRate: 1,
+              },
             },
             pauseOnBlur: false,
             pauseOnOutsideViewport: false,
@@ -423,33 +428,33 @@ function TSParticlesImage() {
                     value: colorMode === 'light' ? '#222' : 'rgba(255,255,255,0.2)',
                   },
                   width: 0.5,
-                  opacity: 0.2
-                }
+                  opacity: 0.2,
+                },
               },
               enable: true,
               inline: {
-                arrangement: 'equidistant'
+                arrangement: 'equidistant',
               },
               move: {
                 radius: 10,
-                type: 'path'
+                type: 'path',
               },
               // @todo maybe this can be dynamic based on screen size
-              scale: .75, 
+              scale: 0.75,
               type: 'inline',
               url: '/svgs/deer.svg',
               position: {
                 x: 45,
-                y: 20
+                y: 20,
               },
-            }
+            },
           }}
         />
 
       </div>
-        <TSParticlesImageTrackingPixel setHasScrolled={setHasScrolled} />
+      <TSParticlesImageTrackingPixel setHasScrolled={setHasScrolled} />
     </div>
-  )
+  );
 }
 
 export default TSParticlesImage;
