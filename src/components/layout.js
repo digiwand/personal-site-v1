@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
+import Script from 'next/script';
 
 import Nav from 'components/nav/Nav';
 import ThemeSelector from 'components/side-frame/theme-selector/ThemeSelector';
@@ -30,6 +31,9 @@ function Layout({ children, sectionTrackingPixelRefs }) {
 
   return (
     <div>
+      {/* Note: next/script cannot be placed in next/head */}
+      <Script src="/polyfills/pathseg.js" strategy="beforeInteractive" />
+
       {/* Note: We can add Head to any React component */}
       <Head>
         <title>{siteTitle}</title>
@@ -42,8 +46,6 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-
-        <script src="/polyfills/pathseg.js" />
       </Head>
 
       <main sx={{
