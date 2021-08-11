@@ -1,39 +1,37 @@
-import React, { createRef } from 'react';
+import React, { createRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  onOutsideClick: PropTypes.func,
+  onOutsideClick: PropTypes.func.isRequired,
 };
 
 /**
  * Used to detect clicks outside the "children" element(s) in its DOM tree. This will not work for
  * children rendered in a React Portal because they will lie outside of the DOM heirachy.
  */
-class OutsideClickHandler extends React.Component {
-  wrapperRef = createRef();
+function OutsideClickHandler({ children, onOutsideClick }) {
+  const wrapperRef = createRef();
 
-  componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside);
-  }
-
-  handleClickOutside = (event) => {
+  const handleClickOutside = (event) => {
     if (
-      this.wrapperRef.current &&
-      !this.wrapperRef.current.contains(event.target)
+      wrapperRef.current
+      && !wrapperRef.current.contains(event.target)
     ) {
-      this.props.onOutsideClick();
+      onOutsideClick();
     }
   };
 
-  render() {
-    const { children } = this.props;
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
 
-    return <div ref={this.wrapperRef}>{children}</div>;
-  }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  });
+
+  return (
+    <div ref={wrapperRef}>{children}</div>
+  );
 }
 
 OutsideClickHandler.propTypes = propTypes;
