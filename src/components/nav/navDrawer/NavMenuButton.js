@@ -1,17 +1,17 @@
-import { IconButton } from 'theme-ui';
+import { Button } from 'theme-ui';
 
-export default function HamburgerMenu(props) {
-
+export default function HamburgerMenu({ onClick }) {
   const menuLine = {
-    background: 'white',
     margin: '2px 0',
     width: '15px',
     height: '1px',
   };
 
   return (
-    <button sx={{
+    <Button
+      sx={{
         position: 'absolute',
+        background: 'transparent',
         top: '0',
         right: '0',
         display: 'flex',
@@ -24,26 +24,30 @@ export default function HamburgerMenu(props) {
         mt: 3,
         mr: 3,
         opacity: [1, 0, 0],
-        pointerEvents: ['initial', 'none', 'none']
-      }} 
-      onClick={props.onClick}
+        pointerEvents: ['initial', 'none', 'none'],
+      }}
+      onClick={onClick}
       aria-label="Open menu drawer"
     >
-      <div sx={{
-          ...menuLine
-        }}
+      <div sx={(theme) => ({
+        background: `${theme.colors.text}`,
+        ...menuLine,
+      })}
       />
-      <div sx={{
-          ...menuLine
-        }}
+      <div sx={(theme) => ({
+        background: `${theme.colors.text}`,
+        ...menuLine,
+      })}
       />
-      <div sx={{
-          ...menuLine
-        }}
+      <div sx={(theme) => ({
+        background: `${theme.colors.text}`,
+        ...menuLine,
+      })}
       />
-    </button>
+    </Button>
     // <IconButton aria-label="Open menu drawer">
-    //<svg class="MuiSvgIcon-root jss178" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+    // <svg class="MuiSvgIcon-root jss178" focusable="false" viewBox="0 0 24 24"
+    // aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
     // </IconButton>
-  )
+  );
 }
