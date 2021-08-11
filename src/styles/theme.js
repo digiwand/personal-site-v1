@@ -1,15 +1,13 @@
-import { lighten } from "@theme-ui/color";
-
 /**
  * Theme object to be passed to the ThemeProvider component of the theme-ui npm package.
  * This can be used in other libraries and applications for increased interoperability.
- * 
- * See styles.root for styles applied to the <html> and <body> elements. Notice that we specify 
+ *
+ * See styles.root for styles applied to the <html> and <body> elements. Notice that we specify
  * 1px font-size on styles.root (<html> element) so that we can utilize 1px based rem units.
- * 
+ *
  * @see {@link https://www.theme-ui.com/theme-spec}
  */
-export default {
+const theme = {
   // Layout and Spacing
 
   breakpoints: [
@@ -28,7 +26,7 @@ export default {
     monospace: 'Menlo, monospace',
   },
   fontSizes: [
-    '12rem', '14rem', '16rem', '20rem', '24rem', '28rem', '32rem', '48rem', '64rem'
+    '12rem', '14rem', '16rem', '20rem', '24rem', '28rem', '32rem', '48rem', '64rem',
   ],
   fontWeights: {
     body: 400,
@@ -86,10 +84,14 @@ export default {
         text: '#001011',
         textContrast1: '#bebebe',
         textContrast2: '#ddd',
-        primary: '#001011',
-        primaryLight: '#fbc3ff',
-        primaryDark: '#9563ae',
-        primaryText: '#4e1a57',
+        primary: '#2C363F',
+        primaryLight: '#9BA3AA',
+        primaryDark: '#484B4E',
+        primaryText: '#4e5b67',
+        // lilacs
+        // primaryLight: '#fbc3ff',
+        // primaryDark: '#9563ae',
+        // primaryText: '#4e1a57',
         secondary: '#76ddff',
         secondaryLight: '#acffff',
         secondaryDark: '#3babcc',
@@ -107,7 +109,7 @@ export default {
       //   highlight: '#FAE6C6',
       //   muted: 'grey',
       // },
-    }
+    },
   },
 
   // Styles
@@ -150,7 +152,7 @@ export default {
     },
     p: {
       fontSize: 2,
-    }
+    },
   },
 
   // Variants
@@ -160,8 +162,9 @@ export default {
 
     // IconButton Component
     icon: {
-      height: '46px',
-      width: '46px',
+      padding: 1,
+      // height: '46px',
+      // width: '46px',
       borderRadius: '46px',
       transition: 'background-color 150ms, box-shadow 150ms',
       boxShadow: '0px 0px 10px transparent',
@@ -172,12 +175,12 @@ export default {
 
         path: {
           transition: 'fill 0.3s',
-        }
+        },
       },
 
       primary: {
         '&:hover': {
-          boxShadow: (theme) => `0px 0px 10px ${theme.colors.primary}`,
+          boxShadow: (t) => `0px 0px 10px ${t.colors.primary}`,
 
           'svg > path': {
             fill: 'primaryDark',
@@ -191,7 +194,7 @@ export default {
 
       secondary: {
         '&:hover': {
-          boxShadow: (theme) => `0px 0px 10px ${theme.colors.secondary}`,
+          boxShadow: (t) => `0px 0px 10px ${t.colors.secondary}`,
 
           'svg > path': {
             fill: 'secondaryDark',
@@ -200,6 +203,16 @@ export default {
 
         'svg > path': {
           fill: 'secondary',
+        },
+      },
+
+      small: {
+        svg: {
+          height: '18px',
+          width: '18px',
+        },
+        'svg > path': {
+          fill: 'text',
         },
       },
     },
@@ -216,7 +229,7 @@ export default {
 
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
     },
@@ -226,9 +239,11 @@ export default {
 
       '&:focus': {
         borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
     },
   },
 };
+
+export default theme;

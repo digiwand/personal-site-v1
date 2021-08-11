@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import NavTabs from 'components/nav/navTabs/NavTabs';
+import SocialIcons from 'components/social-icons/SocialIcons';
 
 import PROP_TYPE from 'constants/prop-types';
 
@@ -92,6 +93,8 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         Ariella Vu
       </span>
       <NavTabs activeSectionId={activeSectionId} />
+
+      <SocialIcons />
 
     </header>
   );
