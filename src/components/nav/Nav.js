@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
@@ -8,23 +8,56 @@ import NavHeader from 'components/nav/navHeader/NavHeader';
 import PROP_TYPE from 'constants/prop-types';
 
 const propTypes = {
-  sectionTrackingPixelRefs: PropTypes.array,
-  pageTopTrackingPixelRef: PROP_TYPE.REF,
+  sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF).isRequired,
+  pageTopTrackingPixelRef: PROP_TYPE.REF.isRequired,
 };
 
 function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [activeSectionId, setActiveSectionId] = useState('home');
 
+  const handleSectionIntersection = useCallback(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio <= 0) { return; }
+
+        const sectionId = entry.target.getAttribute('section-id');
+        if (sectionId !== activeSectionId) {
+          window.history.pushState(null, null, `#${sectionId}`);
+          setActiveSectionId(sectionId);
+        }
+      });
+    },
+    [activeSectionId],
+  );
+
   useEffect(() => {
     const observer = new IntersectionObserver(handleSectionIntersection);
 
-    createSectionInterestionObservers(observer);
-
-    return () => { 
-      unobserveSectionIntersectionObservers(observer); 
+    /**
+     * Using the IntersectionObserver "threshold" option of 0.8 or 0.6 causes 4 callbacks
+     * instead of 1. Instead of using "threshold" we will observe a tracking pixel on the
+     * section element.
+     */
+    function createSectionInterestionObservers() {
+      sectionTrackingPixelRefs.forEach((sectionRef) => {
+        if (sectionRef.current) {
+          observer.observe(sectionRef.current);
+        }
+      });
     }
-  }, [handleSectionIntersection]);
+
+    function unobserveSectionIntersectionObservers() {
+      sectionTrackingPixelRefs.forEach((sectionRef) => {
+        if (sectionRef.current) { observer.unobserve(sectionRef.current); }
+      });
+    }
+
+    createSectionInterestionObservers();
+    return () => {
+      unobserveSectionIntersectionObservers(observer);
+    };
+  });
 
   // -- Handlers ----------------------------------------------------------------------------------
 
@@ -36,54 +69,19 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
     setIsOpenDrawer(true);
   }
 
-  function handleOutsideDrawerClick(e) {
+  function handleOutsideDrawerClick() {
     if (isOpenDrawer) {
       handleCloseDrawer();
     }
-  }
-
-  // -- Intersection Observer Logic ---------------------------------------------------------------
-  
-  /**
-   * Using the IntersectionObserver "threshold" option of 0.8 or 0.6 causes 4 callbacks
-   * instead of 1. Instead of using "threshold" we will observe a tracking pixel on the 
-   * section element.
-   * @param {IntersectionObserver} observer
-   */
-  function createSectionInterestionObservers(observer) {
-    sectionTrackingPixelRefs.forEach((sectionRef) => {
-      if (sectionRef.current) { 
-        observer.observe(sectionRef.current) 
-      }
-    });
-  }
-
-  /** @param {IntersectionObserverEntry} entries */
-  function handleSectionIntersection(entries) {
-    entries.forEach(entry => {
-      if (entry.intersectionRatio <= 0) { return; }
-
-      const sectionId = entry.target.getAttribute('section-id');
-      if (sectionId !== activeSectionId) {
-        window.history.pushState(null, null, `#${sectionId}`);
-        setActiveSectionId(sectionId);
-      }
-    });
-  }
-  
-  /** @param {IntersectionObserver} observer */
-  function unobserveSectionIntersectionObservers(observer) {
-    sectionTrackingPixelRefs.forEach((sectionRef) => {
-      if (sectionRef.current) { observer.unobserve(sectionRef.current) }
-    });
   }
 
   // -- Renders -----------------------------------------------------------------------------------
 
   // move blurred background into its own function component
   const blurBackground = (
-    <div css={{
-        /** @todo update logic as this is not supported in firefox. also, consider animating*/
+    <div
+      css={{
+        /** @todo update logic as this is not supported in firefox. also, consider animating */
         backdropFilter: 'blur(2px) opacity(0.95) brightness(0.85)',
         height: '100vh',
         width: '100vw',
@@ -96,10 +94,11 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
       }}
       sx={{ display: ['block', 'none', 'none'] }}
     />
-  )
+  );
 
   return (
-    <div sx={{
+    <div
+      sx={{
         position: 'fixed',
         top: '0',
         right: '0',
@@ -119,8 +118,9 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
       <OutsideClickHandler onOutsideClick={handleOutsideDrawerClick}>
         <NavDrawer
           activeSectionId={activeSectionId}
-          isOpen={isOpenDrawer} 
-          handleCloseMenu={handleCloseDrawer} />
+          isOpen={isOpenDrawer}
+          handleCloseMenu={handleCloseDrawer}
+        />
       </OutsideClickHandler>
     </div>
   );
