@@ -4,10 +4,6 @@ import SOCIAL from 'constants/social';
 const socialKeys = ['stackoverflow', 'github', 'linkedin'];
 
 function NavSocialIcons() {
-  function openSocialInNewTab(url) {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  }
-
   const socialIconButtons = socialKeys.map((key) => {
     const socialConfig = SOCIAL[key];
     return (
@@ -16,9 +12,10 @@ function NavSocialIcons() {
           variant: 'buttons.icon.small',
         }}
         key={key}
-        onClick={() => { openSocialInNewTab(socialConfig.url); }}
       >
-        {socialConfig.iconSVG}
+        <a href={socialConfig.url} target="_blank" rel="noopener noreferrer">
+          {socialConfig.iconSVG}
+        </a>
       </IconButton>
     );
   });
