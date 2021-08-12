@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { IconButton } from 'theme-ui';
 
@@ -43,7 +42,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
           height: '30px',
 
           '> path': {
-            fill: `${theme.colors.drawerText}`,
+            fill: `${theme.colors.frameText}`,
           },
         })}
       >
@@ -80,7 +79,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         height: '100vh',
         width: '280px',
         transition: 'transform 0.3s',
-        background: `${theme.colors.drawer}`,
+        background: `${theme.colors.frame}`,
         top: '0',
         right: '0',
         transform: ['translateX(0)', 'translateX(280px)', 'translateX(280px)'],

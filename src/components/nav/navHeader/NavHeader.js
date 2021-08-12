@@ -40,7 +40,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
 
   return (
     <header
-      sx={() => ({
+      sx={(theme) => ({
         display: 'flex',
         alignItems: 'flex-end',
         height: '110px',
@@ -53,9 +53,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         transform: ['translateY(-110px)', 'translateY(0)', 'translateY(0)'],
 
         '&[has-scrolled="true"]': {
-          // todo. replace color
-          // background: `${theme.colors.primary}`,
-          background: '#F0F5F9',
+          background: `${theme.colors.frame}`,
           transform: ['translateY(-110px)', 'translateY(-70px)', 'translateY(-70px)'],
           boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0.30)',
 
@@ -74,7 +72,8 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
       {/** @todo replace w/ SVG */}
       <span
         className="NavHeader_profileLogo"
-        sx={{
+        sx={(theme) => ({
+          color: `${theme.colors.frameText}`,
           fontFamily: '"MarckScript", Ariel',
           fontSize: '28px',
           lineHeight: '34px',
@@ -82,7 +81,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           ml: sxBorderMargin,
           transform: 'translateX(50px)',
           transition: 'font-size 0.2s, transform 0.2s',
-        }}
+        })}
       >
         Ariella Vu
       </span>

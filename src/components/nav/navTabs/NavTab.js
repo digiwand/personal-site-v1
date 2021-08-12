@@ -12,26 +12,29 @@ const defaultProps = {
 };
 
 function NavTab({ children, ...props }) {
-  const {  displayName, href, isActive } = props;
+  const { displayName, href, isActive } = props;
 
   return (
-    <Link href={href} scroll={false}>
-      <a className="NavTab_displayName" 
-        sx={{
+    <Link href={href} scroll={false} passHref>
+      <a
+        className="NavTab_displayName"
+        sx={(theme) => ({
           display: 'inline-flex',
           alignItems: 'center',
           justifyContent: 'center',
           height: '40px',
           minWidth: '80rem',
           letterSpacing: '1.6rem',
-          fontSize: "14rem",
+          fontSize: '14rem',
+          color: `${theme.colors.frameText}`,
           ml: 3,
           transition: 'font-weight 0.2s',
 
           '&:hover, &:is-active': {
             fontWeight: '700',
           },
-        }}
+        })}
+        href={href}
         is-active={String(isActive)}
       >
         {displayName}
