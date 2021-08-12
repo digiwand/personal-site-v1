@@ -19,9 +19,10 @@ const SectionTrackingPixel = ({ sectionId, forwardedRef }) => (
   />
 );
 
-const Section = ({ id, children }, ref) => (
+const Section = ({ id, children, className }, ref) => (
   <section
     id={id}
+    className={className}
     sx={{
       position: 'relative',
       display: 'flex',
