@@ -76,7 +76,8 @@ const theme = {
     muted: 'hsla(230, 20%, 0%, 20%)',
 
     // to update
-    drawer: '#001011',
+    frame: '#fafafb',
+    frameText: '#233143',
 
     modes: {
       light: {
@@ -99,6 +100,10 @@ const theme = {
         accent: '#4e1a57',
         highlight: '#D1FFC0',
         muted: 'grey',
+
+        // to update
+        frame: '#fafafb',
+        frameText: '#233143',
       },
       // mint: {
       //   background: '#DFECEB',
@@ -182,12 +187,12 @@ const theme = {
         '&:hover': {
           boxShadow: (t) => `0px 0px 10px ${t.colors.primary}`,
 
-          'svg > path': {
+          path: {
             fill: 'primaryDark',
           },
         },
 
-        'svg > path': {
+        path: {
           fill: 'primary',
         },
       },
@@ -196,12 +201,12 @@ const theme = {
         '&:hover': {
           boxShadow: (t) => `0px 0px 10px ${t.colors.secondary}`,
 
-          'svg > path': {
+          path: {
             fill: 'secondaryDark',
           },
         },
 
-        'svg > path': {
+        path: {
           fill: 'secondary',
         },
       },
@@ -211,7 +216,7 @@ const theme = {
           height: '18px',
           width: '18px',
         },
-        'svg > path': {
+        path: {
           fill: 'text',
         },
       },

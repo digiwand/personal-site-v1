@@ -5,6 +5,7 @@ import Script from 'next/script';
 
 import Nav from 'components/nav/Nav';
 import ThemeSelector from 'components/side-frame/theme-selector/ThemeSelector';
+import Footer from 'components/footer/Footer';
 
 import PROP_TYPE from 'constants/prop-types';
 
@@ -58,6 +59,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         {children}
       </main>
 
+      <Footer />
       <ThemeSelector />
       <Nav
         sectionTrackingPixelRefs={sectionTrackingPixelRefs}

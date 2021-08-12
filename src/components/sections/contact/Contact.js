@@ -2,7 +2,6 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 import {
   Flex,
-  Label,
 } from 'theme-ui';
 
 import Section from 'components/sections/Section';
@@ -21,9 +20,7 @@ const ContactSection = (props, ref) => (
     ref={ref}
     sx={{
       // backgroundImage: 'url("/assets/images/b÷g-flight.jpg")',
-      display: 'flex',
-      width: '100%',
-      justifyContent: 'center',
+      minHeight: 'calc(100vh - 260px)',
     }}
   >
     <Flex sx={{
@@ -34,10 +31,13 @@ const ContactSection = (props, ref) => (
       <div sx={{
         height: '100%',
         minWidth: '245px',
+        flex: '1 0 25%',
       }}
       >
         <Fade bottom>
-          <Label sx={{ justifyContent: 'center' }}>Let&apos;s Connect!</Label>
+          <div sx={{ justifyContent: 'center' }}>
+            Email me here or directly at ariellavu@gmail.com
+          </div>
         </Fade>
       </div>
 

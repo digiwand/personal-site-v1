@@ -22,7 +22,7 @@ function ContactForm() {
       as="form"
       sx={{
         transition: 'width 0.3s',
-        flex: '1 0 auto',
+        flex: '4 0 auto',
         width: ['100%', '100%', 'auto'],
         maxWidth: '680px',
       }}
