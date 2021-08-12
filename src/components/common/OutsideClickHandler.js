@@ -1,4 +1,4 @@
-import React, { createRef, useEffect } from 'react';
+import { createRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {

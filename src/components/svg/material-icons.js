@@ -1,7 +1,7 @@
-import IconBrightness4  from "./material-icons/brightness4";
-import IconBrightnessHigh from "./material-icons/brightnessHigh";
+import IconBrightness4 from './material-icons/brightness4';
+import IconBrightnessHigh from './material-icons/brightnessHigh';
 
-export { 
-  IconBrightness4, 
+export {
+  IconBrightness4,
   IconBrightnessHigh,
 };
