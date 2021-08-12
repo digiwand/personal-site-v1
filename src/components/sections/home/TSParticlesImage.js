@@ -40,6 +40,7 @@ function TSParticlesImage() {
           // width: '636px',
           '&[has-scrolled="true"]': {
             opacity: '0',
+            zIndex: '-1',
           },
         }}
         has-scrolled={hasScrolled.toString()}
