@@ -1,7 +1,26 @@
 import Fade from 'react-reveal/Fade';
-import { Themed } from 'theme-ui';
+import FooterSocialIconButtons from 'components/footer/SocialIconButtons';
 
-import FooterSocialIcons from 'components/footer/SocialIcons';
+const SOCIAL_KEYS = {
+  CODE: [
+    'stackoverflow',
+    'github',
+    'jsfiddle',
+    'replit',
+    'codepen',
+  ],
+  CONNECT: [
+    'linkedin',
+    'nomadlist',
+    'twitter',
+    'instagram',
+    'facebook',
+  ],
+  CONTACT: [
+    'email',
+    'discord',
+  ],
+};
 
 function Footer() {
   return (
@@ -19,68 +38,57 @@ function Footer() {
       <div
         sx={{
           display: 'flex',
+          flexWrap: 'wrap',
           flex: '1 0 auto',
           justifyContent: 'center',
+          mx: ['auto', 0, 0],
           flexDirection: ['column', 'row', 'row'],
         }}
       >
         <div
-          sx={{
-            flex: '1 0 25%',
-          }}
+          sx={(theme) => ({
+            flex: '1 0 130rem',
+            fontFamily: '"MarckScript", Ariel',
+            whiteSpace: 'nowrap',
+            color: `${theme.colors.frameText}`,
+          })}
         >
-          <Fade bottom>
-            <span
-              sx={(theme) => ({
-                color: `${theme.colors.frameText}`,
-                fontFamily: '"MarckScript", Ariel',
-                fontSize: '28rem',
-                display: 'block',
-                whiteSpace: 'nowrap',
-              })}
-            >
+          <Fade>
+            <div css={{ fontSize: '28rem' }}>
               Ariella Vu
-            </span>
-            <span
-              sx={(theme) => ({
-                color: `${theme.colors.frameText}`,
-                fontFamily: '"MarckScript", Ariel',
-                fontSize: '14rem',
-                display: 'block',
-                whiteSpace: 'nowrap',
-              })}
-            >
+            </div>
+            <div css={{ fontSize: '14rem' }}>
               ariellavu@gmail.com
-            </span>
-            {/* resume button here */}
+            </div>
           </Fade>
+          {/* resume button here */}
         </div>
+
+        <FooterSocialIconButtons label="Contact" socialKeys={SOCIAL_KEYS.CONTACT} />
 
         <div
           sx={{
-            flex: '4 0 auto',
-            pl: [0, 4, 4],
+            flex: '0 0 auto',
+            pl: [0, 0, 4],
           }}
         >
-          <Fade bottom>
-            <Themed.h5>
-              Let&apos;s Connect!
-            </Themed.h5>
-            <FooterSocialIcons />
-          </Fade>
+          <FooterSocialIconButtons label="Code" socialKeys={SOCIAL_KEYS.CODE} />
+          <FooterSocialIconButtons label="Connect" socialKeys={SOCIAL_KEYS.CONNECT} />
         </div>
 
+        <span
+          sx={{
+            fontSize: '12rem',
+            textAlign: ['center', 'center', 'left'],
+            whiteSpace: 'nowrap',
+            flexBasis: '100%',
+            pt: [3, 2, 0],
+          }}
+        >
+          © 2021 Ariella Vu. All Rights Reserved.
+        </span>
       </div>
 
-      <span
-        sx={{
-          fontSize: '12rem',
-          alignSelf: 'end',
-          whiteSpace: 'nowrap',
-        }}
-      >
-        © 2021 Ariella Vu. All Rights Reserved.
-      </span>
     </footer>
   );
 }

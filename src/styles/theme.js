@@ -144,15 +144,15 @@ const theme = {
       fontSize: [4, 5, 5],
     },
     h4: {
-      variant: 'text.heading',
+      variant: 'text.body',
       fontSize: [2, 3, 4],
     },
     h5: {
-      variant: 'text.heading',
+      variant: 'text.body',
       fontSize: 2,
     },
     h6: {
-      variant: 'text.heading',
+      variant: 'text.body',
       fontSize: 1,
     },
     p: {
@@ -175,8 +175,8 @@ const theme = {
       boxShadow: '0px 0px 10px transparent',
 
       svg: {
-        height: ['18px', '24px', '24px'],
-        width: ['18px', '24px', '24px'],
+        height: '32px',
+        width: '32px',
 
         path: {
           transition: 'fill 0.3s',

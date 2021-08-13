@@ -1,4 +1,5 @@
 import {
+  IconCodePen,
   IconDiscord,
   IconFacebook,
   IconGitHub,
@@ -7,11 +8,16 @@ import {
   IconLinkedIn,
   IconMailOutline,
   IconNomadlist,
+  IconReplit,
   IconStackOverflow,
   IconTwitter,
 } from 'components/svg/socials';
 
 const SOCIAL = {
+  codepen: {
+    iconSVG: <IconCodePen />,
+    url: 'https://codepen.io/ariellav',
+  },
   discord: {
     iconSVG: <IconDiscord />,
     url: 'https://discord.com/users/a13u#7391',
@@ -43,6 +49,10 @@ const SOCIAL = {
   nomadlist: {
     iconSVG: <IconNomadlist />,
     url: 'https://nomadlist.com/@ariella',
+  },
+  replit: {
+    iconSVG: <IconReplit />,
+    url: 'https://replit.com/@ariellanvu',
   },
   stackoverflow: {
     iconSVG: <IconStackOverflow />,

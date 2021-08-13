@@ -1,13 +1,24 @@
 import { IconButton } from 'theme-ui';
+import PropTypes from 'prop-types';
+
 import SOCIAL from 'constants/social';
 
-function FooterSocialIcons() {
-  const socialIconButtons = Object.keys(SOCIAL).map((key) => {
+const propTypes = {
+  socialKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
+  className: PropTypes.string,
+};
+
+const defaultProps = {
+  className: '',
+};
+
+function SocialIconButtons({ className, socialKeys }) {
+  const socialIconButtons = socialKeys.map((key) => {
     const socialConfig = SOCIAL[key];
     return (
       <IconButton
+        className={className}
         sx={(theme) => ({
-          variant: 'buttons.icon.small',
           path: {
             fill: `${theme.colors.frameText}`,
           },
@@ -22,14 +33,13 @@ function FooterSocialIcons() {
   });
 
   return (
-    <div
-      sx={{
-        height: '40px',
-      }}
-    >
+    <>
       {socialIconButtons}
-    </div>
+    </>
   );
 }
 
-export default FooterSocialIcons;
+SocialIconButtons.propTypes = propTypes;
+SocialIconButtons.defaultProps = defaultProps;
+
+export default SocialIconButtons;
