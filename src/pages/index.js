@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import Layout from 'components/layout';
 import HomeSection from 'components/sections/home/Home';
 import AboutSection from 'components/sections/about/About';
+import TechSection from 'components/sections/tech/Tech';
 import ContactSection from 'components/sections/contact/Contact';
 
 /**
@@ -11,13 +12,14 @@ import ContactSection from 'components/sections/contact/Contact';
  */
 function Home() {
   // @todo cleanup. Create ref for each section. Make dynamic based on # of sections
-  const sectionTrackingPixelRefs = [useRef(), useRef(), useRef()];
+  const sectionTrackingPixelRefs = [useRef(), useRef(), useRef(), useRef()];
 
   return (
     <Layout sectionTrackingPixelRefs={sectionTrackingPixelRefs}>
       <HomeSection ref={sectionTrackingPixelRefs[0]} />
       <AboutSection ref={sectionTrackingPixelRefs[1]} />
-      <ContactSection ref={sectionTrackingPixelRefs[2]} />
+      <TechSection ref={sectionTrackingPixelRefs[2]} />
+      <ContactSection ref={sectionTrackingPixelRefs[3]} />
 
       {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
