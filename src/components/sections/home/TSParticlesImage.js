@@ -444,7 +444,7 @@ function TSParticlesImage() {
               // @todo maybe this can be dynamic based on screen size
               scale: 0.75,
               type: 'inline',
-              url: '/svgs/deer.svg',
+              url: '/svg/deer.svg',
               position: {
                 x: 45,
                 y: 20,
