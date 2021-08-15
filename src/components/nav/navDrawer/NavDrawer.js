@@ -105,6 +105,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
       >
         <NavDrawerItem href="#home" displayName="Home" isActive={activeSectionId === 'home'} />
         <NavDrawerItem href="#about" displayName="About" isActive={activeSectionId === 'about'} />
+        <NavDrawerItem href="#tech" displayName="Tech" isActive={activeSectionId === 'tech'} />
         <NavDrawerItem href="#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
 
         {/** @todo add resume button */}
