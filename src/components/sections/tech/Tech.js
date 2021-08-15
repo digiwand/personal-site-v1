@@ -5,7 +5,13 @@ import {
   Grid,
   Text,
 } from 'theme-ui';
+
 import Section from 'components/sections/Section';
+import {
+  SVGGit,
+  SVGNextJS,
+  SVGNodeJS,
+} from 'components/svg/tech';
 
 const TechSection = (props, ref) => (
   <Section
@@ -25,7 +31,7 @@ const TechSection = (props, ref) => (
           pb: 5,
         }}
       >
-        <Image alt="HTML5" src="svg/tech/nextjs.svg" variant="tech" />
+        <SVGNextJS sx={{ variant: 'images.tech' }} />
         <Image alt="HTML5" src="svg/tech/reactjs.svg" variant="tech" />
         <Image alt="HTML5" src="svg/tech/emberjs.svg" variant="tech" />
         <Image alt="HTML5" src="svg/tech/html5.svg" variant="tech" />
@@ -33,8 +39,8 @@ const TechSection = (props, ref) => (
         <Image alt="HTML5" src="svg/tech/chai.svg" variant="tech" />
         <Image alt="HTML5" src="svg/tech/mocha.svg" variant="tech" />
         <Image alt="HTML5" src="svg/tech/amp.svg" variant="tech" />
-        <Image alt="HTML5" src="svg/tech/nodejs.svg" variant="tech" />
-        <Image alt="HTML5" src="svg/tech/git.svg" variant="tech" />
+        <SVGNodeJS sx={{ variant: 'images.tech' }} />
+        <SVGGit sx={{ variant: 'images.tech' }} />
       </Grid>
 
       <Text variant="sectionHeading">

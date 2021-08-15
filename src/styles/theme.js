@@ -86,6 +86,12 @@ const theme = {
     frame: '#fafafb',
     frameText: '#233143',
 
+    // SVGs
+    svgGitLogo: '#fff',
+    svgGitText: '#fff',
+    svgNextJs: '#fff',
+    svgNodeJs: '#fff',
+
     modes: {
       light: {
         background: '#fff',
@@ -111,6 +117,12 @@ const theme = {
         // to update
         frame: '#fafafb',
         frameText: '#233143',
+
+        // SVGs
+        svgGitLogo: '#2F2707',
+        svgGitText: '#DE4C36',
+        svgNextJs: '#000',
+        svgNodeJs: '#333',
       },
       // mint: {
       //   background: '#DFECEB',
