@@ -2,6 +2,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 import {
   Flex,
+  Text,
 } from 'theme-ui';
 
 import Section from 'components/sections/Section';
@@ -23,6 +24,13 @@ const ContactSection = (props, ref) => (
       minHeight: 'calc(100vh - 260px)',
     }}
   >
+
+    <Fade bottom>
+      <Text variant="sectionHeading">
+        Contact
+      </Text>
+    </Fade>
+
     <Flex sx={{
       flexDirection: ['column', 'column', 'row'],
       alignItems: ['center', 'center', 'initial'],
