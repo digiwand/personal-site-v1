@@ -78,7 +78,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           fontSize: '28px',
           lineHeight: '34px',
           flex: '1 0 auto',
-          ml: sxBorderMargin,
+          pl: sxBorderMargin,
           transform: 'translateX(50px)',
           transition: 'font-size 0.2s, transform 0.2s',
         })}
