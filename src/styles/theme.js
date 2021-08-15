@@ -54,6 +54,13 @@ const theme = {
       lineHeight: 'heading',
       color: 'primary',
     },
+    sectionHeading: {
+      display: 'block',
+      textAlign: 'center',
+      fontFamily: '"MarckScript", Ariel',
+      fontSize: 6,
+      py: 5,
+    },
   },
 
   // Colors
@@ -247,6 +254,12 @@ const theme = {
         boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
         outline: 'none',
       },
+    },
+  },
+
+  images: {
+    tech: {
+      height: 48,
     },
   },
 };
