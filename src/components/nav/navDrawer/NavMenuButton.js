@@ -23,8 +23,8 @@ export default function HamburgerMenu({ onClick }) {
         transform: 'opacity .3s',
         mt: 3,
         mr: 3,
-        opacity: [1, 0, 0],
-        pointerEvents: ['initial', 'none', 'none'],
+        opacity: [1, 1, 0],
+        pointerEvents: ['initial', 'initial', 'none'],
       }}
       onClick={onClick}
       aria-label="Open menu drawer"

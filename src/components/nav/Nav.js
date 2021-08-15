@@ -83,7 +83,7 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
         pointerEvents: 'none',
         userSelect: 'none',
       }}
-      sx={{ display: ['block', 'none', 'none'] }}
+      sx={{ display: ['block', 'block', 'none'] }}
     />
   );
 

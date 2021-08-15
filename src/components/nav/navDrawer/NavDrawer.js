@@ -73,7 +73,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
     <aside
       sx={(theme) => ({
         position: 'fixed',
-        display: ['flex', 'none', 'none'],
+        display: ['flex', 'flex', 'none'],
         flexDirection: 'column',
         overflow: 'auto',
         height: '100vh',
@@ -82,7 +82,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         background: `${theme.colors.frame}`,
         top: '0',
         right: '0',
-        transform: ['translateX(0)', 'translateX(280px)', 'translateX(280px)'],
+        transform: ['translateX(0)', 'translateX(0)', 'translateX(280px)'],
 
         '&[is-open="false"]': {
           transform: 'translateX(280px)',
