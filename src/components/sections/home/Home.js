@@ -4,13 +4,20 @@ import { Themed } from 'theme-ui';
 // import ProfileSVG from 'components/svg/profile';
 
 import Section from 'components/sections/Section';
-// import TSParticlesImage from 'components/sections/home/TSParticlesImage';
+import TSParticlesImage from 'components/sections/home/TSParticlesImage';
 
 function HomeSection(props, ref) {
   return (
-    <Section id="home" ref={ref}>
+    <Section
+      id="home"
+      ref={ref}
+      sx={{
+        minHeight: '100vh',
+      }}
+    >
+      <div sx={{ position: 'absolute' }} />
 
-      {/* <TSParticlesImage /> */}
+      <TSParticlesImage />
 
       <Fade bottom>
         <Themed.h3>Hello, I&apos;m</Themed.h3>
@@ -27,8 +34,9 @@ function HomeSection(props, ref) {
         </span>
       </Fade>
       <Fade bottom delay={2100}>
-        <Themed.p sx={{ maxWidth: '480px' }}>
-          I&apos;m a web developer specializing in React and Ember JavaScript Frameworks. Currently exploring new opportunities.
+        <Themed.p sx={{ maxWidth: '520px' }}>
+          I&apos;m a web developer specializing in React and Ember JavaScript Frameworks. I&apos;m passionate about clean code,
+          delightful user experiences, and efficiency. Currently exploring new opportunities.
         </Themed.p>
       </Fade>
 

@@ -8,7 +8,9 @@ const AboutSection = (props, ref) => (
   <Section
     id="about"
     ref={ref}
-    sx={{ }}
+    sx={{
+      minHeight: '100vh',
+    }}
   >
     <Fade bottom>
       <Themed.h3>

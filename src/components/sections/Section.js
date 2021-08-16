@@ -12,7 +12,7 @@ const SectionTrackingPixel = ({ sectionId, forwardedRef }) => (
       position: 'absolute',
       height: '1px',
       width: '1px',
-      top: '25vh',
+      top: '20vh',
     }}
     section-id={sectionId}
     ref={forwardedRef}
@@ -28,8 +28,9 @@ const Section = ({ id, children, className }, ref) => (
       display: 'flex',
       justifyContent: 'center',
       flexDirection: 'column',
-      minHeight: '100vh',
       px: [4, 6, 6],
+      py: [4, 5, 5],
+      minHeight: '80vh',
     }}
   >
     <SectionTrackingPixel sectionId={id} forwardedRef={ref} />
