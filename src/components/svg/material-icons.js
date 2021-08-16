@@ -1,7 +1,7 @@
-import IconBrightness4 from './material-icons/brightness4';
-import IconBrightnessHigh from './material-icons/brightnessHigh';
+import IconNightStay from './material-icons/nightsStay';
+import IconWbSunny from './material-icons/wbSunny';
 
 export {
-  IconBrightness4,
-  IconBrightnessHigh,
+  IconNightStay,
+  IconWbSunny,
 };

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import NavTabs from 'components/nav/navTabs/NavTabs';
 import NavSocialIcons from 'components/nav/SocialIcons';
+import ThemeSelector from 'components/nav/ThemeSelector';
 
 import PROP_TYPE from 'constants/prop-types';
 
@@ -89,6 +90,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
 
       <NavSocialIcons />
 
+      <ThemeSelector />
     </header>
   );
 }

@@ -4,7 +4,7 @@ import { Themed } from 'theme-ui';
 // import ProfileSVG from 'components/svg/profile';
 
 import Section from 'components/sections/Section';
-import TSParticlesImage from 'components/sections/home/TSParticlesImage';
+// import TSParticlesImage from 'components/sections/home/TSParticlesImage';
 
 function HomeSection(props, ref) {
   return (
@@ -17,7 +17,7 @@ function HomeSection(props, ref) {
     >
       <div sx={{ position: 'absolute' }} />
 
-      <TSParticlesImage />
+      {/* <TSParticlesImage /> */}
 
       <Fade bottom>
         <Themed.h3>Hello, I&apos;m</Themed.h3>

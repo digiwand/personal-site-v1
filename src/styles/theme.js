@@ -202,8 +202,7 @@ const theme = {
       padding: 1,
       // height: '46px',
       // width: '46px',
-      borderRadius: '46px',
-      transition: 'background-color 150ms, box-shadow 150ms',
+      transition: 'background-color 150ms, box-shadow 150ms, border 150ms',
       boxShadow: '0px 0px 10px transparent',
 
       svg: {
@@ -216,30 +215,18 @@ const theme = {
       },
 
       primary: {
+        border: '1px solid',
+        borderColor: 'text',
         '&:hover': {
-          boxShadow: (t) => `0px 0px 10px ${t.colors.primary}`,
+          border: '2px solid',
 
           path: {
-            fill: 'primaryDark',
+            fill: 'text',
           },
         },
 
         path: {
-          fill: 'primary',
-        },
-      },
-
-      secondary: {
-        '&:hover': {
-          boxShadow: (t) => `0px 0px 10px ${t.colors.secondary}`,
-
-          path: {
-            fill: 'secondaryDark',
-          },
-        },
-
-        path: {
-          fill: 'secondary',
+          fill: 'text',
         },
       },
 
