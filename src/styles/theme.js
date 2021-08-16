@@ -86,11 +86,18 @@ const theme = {
     frame: '#fafafb',
     frameText: '#233143',
 
-    // SVGs
+    // SVG - Tech
     svgGitLogo: '#fff',
     svgGitText: '#fff',
     svgNextJs: '#fff',
     svgNodeJs: '#fff',
+
+    // SVG - Work
+    svgCopperColon: '#fff',
+    svgCopperText: '#fff',
+    // optional official replacement color: #d3d4e1
+    svgPriceSpiderLogo: '#fff',
+    svgPriceSpiderText: '#fff',
 
     modes: {
       light: {
@@ -118,11 +125,17 @@ const theme = {
         frame: '#fafafb',
         frameText: '#233143',
 
-        // SVGs
+        // SVG - Tech
         svgGitLogo: '#2F2707',
         svgGitText: '#DE4C36',
         svgNextJs: '#000',
         svgNodeJs: '#333',
+
+        // SVG - Work
+        svgCopperColon: '#FF3465',
+        svgCopperText: '#3C3F40',
+        svgPriceSpiderLogo: '#0047ff',
+        svgPriceSpiderText: '#1b0c75',
       },
       // mint: {
       //   background: '#DFECEB',
