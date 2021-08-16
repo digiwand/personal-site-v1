@@ -230,27 +230,14 @@ function TSParticlesImage() {
               move: {
                 angle: {
                   offset: 0,
-                  value: 90,
-                },
-                attract: {
-                  distance: 200,
-                  enable: false,
-                  rotate: {
-                    x: 600,
-                    y: 1200,
-                  },
+                  value: 1,
+                  // value: 90,
                 },
                 decay: 0,
                 distance: {},
                 direction: 'none',
                 drift: 0,
                 enable: true,
-                gravity: {
-                  acceleration: 9.81,
-                  enable: false,
-                  inverse: false,
-                  maxSpeed: 50,
-                },
                 path: {
                   clamp: true,
                   delay: {
@@ -281,7 +268,7 @@ function TSParticlesImage() {
                   enable: false,
                   length: 10,
                   fillColor: {
-                    value: '#000000',
+                    value: '#000',
                   },
                 },
                 vibrate: false,
@@ -289,7 +276,7 @@ function TSParticlesImage() {
               },
               number: {
                 limit: 0,
-                value: 220,
+                value: 180,
               },
               opacity: {
                 random: {
@@ -336,17 +323,6 @@ function TSParticlesImage() {
                 },
                 direction: 'clockwise',
                 path: false,
-              },
-              shadow: {
-                blur: 0,
-                color: {
-                  value: '#000000',
-                },
-                enable: false,
-                offset: {
-                  x: 0,
-                  y: 0,
-                },
               },
               shape: {
                 options: {},
