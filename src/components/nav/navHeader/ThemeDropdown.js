@@ -3,10 +3,10 @@ import {
   useColorMode,
 } from 'theme-ui';
 
-import ThemeDropdownList from 'components/nav/ThemeDropdownList';
+import ThemeDropdownList from 'components/nav/navHeader/ThemeDropdownList';
 import THEMEUI_COLOR_MODE_CONFIG from 'constants/theme-ui';
 
-function ThemeSelector() {
+function NavHeaderThemeDropdown() {
   const [colorMode, setColorMode] = useColorMode();
   const colorModeKeys = Object.keys(THEMEUI_COLOR_MODE_CONFIG);
 
@@ -24,11 +24,11 @@ function ThemeSelector() {
 
       '&:hover ol': {
         visibility: 'visible',
-        '.ThemeDropdownList_listItem': {
+        '.NavHeader-ThemeDropdownList_listItem': {
           transform: 'scale(1)',
         },
       },
-      '&:not(:hover) ol .ThemeDropdownList_listItem': {
+      '&:not(:hover) ol .NavHeader-ThemeDropdownList_listItem': {
         transitionDelay: '150ms',
       },
     }}
@@ -47,4 +47,4 @@ function ThemeSelector() {
   );
 }
 
-export default ThemeSelector;
+export default NavHeaderThemeDropdown;

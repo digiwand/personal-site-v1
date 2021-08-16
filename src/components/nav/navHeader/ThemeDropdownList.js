@@ -1,7 +1,7 @@
 import { useColorMode } from 'theme-ui';
 import THEMEUI_COLOR_MODE_CONFIG from 'constants/theme-ui';
 
-function ThemeDropdownList() {
+function NavHeaderThemeDropdownList() {
   const [colorMode, setColorMode] = useColorMode();
   const colorModeKeys = Object.keys(THEMEUI_COLOR_MODE_CONFIG);
 
@@ -9,9 +9,9 @@ function ThemeDropdownList() {
     setColorMode(color);
   }
 
-  const ThemeDropdownListItems = colorModeKeys.map((colorModeKey, index) => (
+  const listItems = colorModeKeys.map((colorModeKey, index) => (
     <li
-      className="ThemeDropdownList_listItem"
+      className="NavHeader-ThemeDropdownList_listItem"
       key={colorModeKey}
       sx={{
         mt: 1,
@@ -72,9 +72,9 @@ function ThemeDropdownList() {
         visibility: 'hidden',
       }}
     >
-      {ThemeDropdownListItems}
+      {listItems}
     </ol>
   );
 }
 
-export default ThemeDropdownList;
+export default NavHeaderThemeDropdownList;
