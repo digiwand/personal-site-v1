@@ -1,25 +1,8 @@
-import { IconButton } from 'theme-ui';
-import SOCIAL from 'constants/social';
+import SocialIconButtons from 'components/social-icons/SocialIconButtons';
 
 const socialKeys = ['stackoverflow', 'github', 'linkedin'];
 
 function NavSocialIcons() {
-  const socialIconButtons = socialKeys.map((key) => {
-    const socialConfig = SOCIAL[key];
-    return (
-      <IconButton
-        sx={{
-          variant: 'buttons.icon.small',
-        }}
-        key={key}
-      >
-        <a href={socialConfig.url} target="_blank" rel="noopener noreferrer">
-          {socialConfig.iconSVG}
-        </a>
-      </IconButton>
-    );
-  });
-
   return (
     <div
       sx={{
@@ -29,7 +12,12 @@ function NavSocialIcons() {
         pl: 2,
       }}
     >
-      {socialIconButtons}
+      <SocialIconButtons
+        sx={{
+          variant: 'buttons.icon.small',
+        }}
+        socialKeys={socialKeys}
+      />
     </div>
   );
 }
