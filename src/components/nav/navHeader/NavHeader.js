@@ -63,7 +63,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
             transform: 'translateX(0)',
           },
 
-          '.NavTab_displayName': {
+          '.NavTab': {
             letterSpacing: '1rem',
           },
         },

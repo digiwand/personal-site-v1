@@ -17,8 +17,9 @@ function NavTab({ children, ...props }) {
   return (
     <Link href={href} scroll={false} passHref>
       <a
-        className="NavTab_displayName"
+        className="NavTab"
         sx={(theme) => ({
+          position: 'relative',
           display: 'inline-flex',
           alignItems: 'center',
           justifyContent: 'center',
