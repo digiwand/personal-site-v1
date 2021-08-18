@@ -12,7 +12,7 @@ const SectionTrackingPixel = ({ sectionId, forwardedRef }) => (
       position: 'absolute',
       height: '1px',
       width: '1px',
-      top: '20vh',
+      top: sectionId === 'contact' ? '80vh' : '20vh',
     }}
     section-id={sectionId}
     ref={forwardedRef}
