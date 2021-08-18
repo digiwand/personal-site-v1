@@ -31,7 +31,12 @@ function Layout({ children, sectionTrackingPixelRefs }) {
   );
 
   return (
-    <div>
+    <div
+      sx={{
+        variant: 'scrollbar',
+        height: '100vh',
+      }}
+    >
       {/* Note: next/script cannot be placed in next/head */}
       <Script src="/polyfills/pathseg.js" strategy="beforeInteractive" />
 
@@ -57,8 +62,6 @@ function Layout({ children, sectionTrackingPixelRefs }) {
 
       <main sx={{
         position: 'relative',
-        maxWidth: 'container',
-        mx: 'auto',
       }}
       >
         {pageTopTrackingPixel}
