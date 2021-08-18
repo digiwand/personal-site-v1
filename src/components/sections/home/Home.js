@@ -6,6 +6,27 @@ import { Themed } from 'theme-ui';
 import Section from 'components/sections/Section';
 // import TSParticlesImage from 'components/sections/home/TSParticlesImage';
 
+function HomeSectionBackground() {
+  return (
+    <div sx={{
+      position: 'absolute',
+      height: '100%',
+      width: '100%',
+      padding: ['10rem', '10rem', '45rem'],
+      left: 0,
+      top: 0,
+    }}
+    >
+      <div sx={{
+        height: '100%',
+        width: '100%',
+        background: (t) => `${t.colors.background2}`,
+      }}
+      />
+    </div>
+  );
+}
+
 function HomeSection(props, ref) {
   return (
     <Section
@@ -13,9 +34,10 @@ function HomeSection(props, ref) {
       ref={ref}
       sx={{
         minHeight: '100vh',
+        textAlign: 'center',
       }}
     >
-      <div sx={{ position: 'absolute' }} />
+      <HomeSectionBackground />
 
       {/* <TSParticlesImage /> */}
 
@@ -33,8 +55,12 @@ function HomeSection(props, ref) {
           Ariella Vu.
         </span>
       </Fade>
-      <Fade bottom delay={2100}>
-        <Themed.p sx={{ maxWidth: '520px' }}>
+      <Fade bottom delay={1900}>
+        <Themed.p sx={{
+          maxWidth: '540px',
+          margin: '23px auto',
+        }}
+        >
           I&apos;m a web developer specializing in React and Ember JavaScript Frameworks. I&apos;m passionate about clean code,
           delightful user experiences, and efficiency. Currently exploring new opportunities.
         </Themed.p>

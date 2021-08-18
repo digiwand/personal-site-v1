@@ -17,6 +17,9 @@ const TechSection = (props, ref) => (
   <Section
     id="tech"
     ref={ref}
+    sx={{
+      background: (t) => `${t.colors.background2}`,
+    }}
   >
     <Fade bottom>
       <Text variant="sectionHeading">

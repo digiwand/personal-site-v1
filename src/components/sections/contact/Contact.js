@@ -22,6 +22,7 @@ const ContactSection = (props, ref) => (
     sx={{
       // backgroundImage: 'url("/assets/images/b÷g-flight.jpg")',
       minHeight: 'calc(100vh - 260px)',
+      background: (t) => `${t.colors.background2}`,
     }}
   >
 
