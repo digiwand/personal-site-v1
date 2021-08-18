@@ -29,11 +29,10 @@ function ContactForm() {
       onSubmit={(e) => e.preventDefault()}
     >
       <Fade bottom>
-        <Label htmlFor="contact-form-name">Full Name</Label>
+        <Label htmlFor="contact-form-name">Name</Label>
         <Input
           name="contact-form-name"
           id="contact-form-name"
-          placeholder="New Friend"
           mb={3}
           required
         />
@@ -45,7 +44,6 @@ function ContactForm() {
           type="email"
           name="contact-form-email"
           id="contact-form-email"
-          placeholder="beawesome@newfriends.com"
           mb={3}
           required
         />
@@ -55,7 +53,6 @@ function ContactForm() {
         <Label htmlFor="contact-form-message">Message</Label>
         <Textarea
           id="contact-form-message"
-          placeholder="123-45-678"
           name="contact-form-message"
           rows={6}
           mb={3}
