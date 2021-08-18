@@ -7,7 +7,9 @@ import ThemeSelector from 'components/nav/navHeader/ThemeDropdown';
 
 import PROP_TYPE from 'constants/prop-types';
 
-const sxBorderMargin = 4;
+const paddingFrame = 45;
+const paddingInsideFrame = 28;
+const scrollBarWidth = '6px';
 
 const propTypes = {
   activeSectionId: PropTypes.string.isRequired,
@@ -45,11 +47,9 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         display: 'flex',
         alignItems: 'flex-end',
         height: '110px',
-        width: '100vw',
-        pr: sxBorderMargin,
-        transition: 'transform 0.25s, background 0.25s, box-shadow 0.25s',
-        // remove when I add personal logo / signature
-        justifyContent: 'flex-end',
+        width: `calc(100% - ${scrollBarWidth})`,
+        px: `${paddingFrame + paddingInsideFrame}px`,
+        transition: 'transform 0.4s, background 0.25s, box-shadow 0.25s',
         boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0)',
         transform: ['translateY(-110px)', 'translateY(-110px)', 'translateY(0)'],
 
@@ -60,7 +60,11 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
 
           '.NavHeader_profileLogo': {
             fontSize: '23px',
-            transform: 'translateX(0)',
+            transform: `translateX(-${paddingInsideFrame + (paddingFrame / 2)}px)`,
+          },
+
+          '.NavHeader_rightSide': {
+            transform: `translateX(${paddingInsideFrame + (paddingFrame / 2)}px)`,
           },
 
           '.NavTab': {
@@ -78,19 +82,25 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           fontFamily: '"MarckScript", Ariel',
           fontSize: '28px',
           lineHeight: '34px',
-          flex: '1 0 auto',
-          pl: sxBorderMargin,
-          transform: 'translateX(50px)',
-          transition: 'font-size 0.2s, transform 0.2s',
+          transition: 'font-size 0.4s, transform 0.4s',
         })}
       >
         Ariella Vu
       </span>
-      <NavTabs activeSectionId={activeSectionId} />
-
-      <NavSocialIcons />
-
-      <ThemeSelector />
+      <div
+        className="NavHeader_rightSide"
+        sx={{
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'flex-end',
+          flex: '1 0 auto',
+          transition: 'transform 0.4s',
+        }}
+      >
+        <NavTabs activeSectionId={activeSectionId} />
+        <NavSocialIcons />
+        <ThemeSelector />
+      </div>
     </header>
   );
 }

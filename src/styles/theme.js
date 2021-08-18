@@ -68,6 +68,8 @@ const theme = {
   initialColorModeName: 'dark',
   colors: {
     background: '#222739',
+    background2: '#EFF9F0',
+
     text: '#F0F5F9',
     textContrast1: '#ddd',
     textContrast2: '#aaaebc',
@@ -102,6 +104,7 @@ const theme = {
     modes: {
       light: {
         background: '#fff',
+        background2: '#F5F5F5',
         text: '#001011',
         textContrast1: '#bebebe',
         textContrast2: '#ddd',
@@ -109,10 +112,6 @@ const theme = {
         primaryLight: '#9BA3AA',
         primaryDark: '#484B4E',
         primaryText: '#4e5b67',
-        // lilacs
-        // primaryLight: '#fbc3ff',
-        // primaryDark: '#9563ae',
-        // primaryText: '#4e1a57',
         secondary: '#76ddff',
         secondaryLight: '#acffff',
         secondaryDark: '#3babcc',
@@ -137,15 +136,38 @@ const theme = {
         svgPriceSpiderLogo: '#0047ff',
         svgPriceSpiderText: '#1b0c75',
       },
-      // mint: {
-      //   background: '#DFECEB',
-      //   text: '#002629',
-      //   primary: '#4A5859',
-      //   secondary: '#E9E9E9',
-      //   accent: '#FAE6C6',
-      //   highlight: '#FAE6C6',
-      //   muted: 'grey',
-      // },
+      mint: {
+        background: '#DFECEB',
+        background2: '#EFF9F0',
+
+        text: '#002629',
+        textContrast1: '#bebebe',
+        textContrast2: '#ddd',
+        primary: '#4A5859',
+        primaryLight: '#9BA3AA',
+        primaryDark: '#484B4E',
+        primaryText: '#4e5b67',
+        secondary: '#E9E9E9',
+        secondaryLight: '#acffff',
+        secondaryDark: '#3babcc',
+        secondaryText: '#a3ef9f',
+
+        // to update
+        frame: '#fafafb',
+        frameText: '#233143',
+
+        // SVG - Tech
+        svgGitLogo: '#2F2707',
+        svgGitText: '#DE4C36',
+        svgNextJs: '#000',
+        svgNodeJs: '#333',
+
+        // SVG - Work
+        svgCopperColon: '#FF3465',
+        svgCopperText: '#3C3F40',
+        svgPriceSpiderLogo: '#0047ff',
+        svgPriceSpiderText: '#1b0c75',
+      },
     },
   },
 
@@ -156,6 +178,7 @@ const theme = {
       fontSize: '1px', /* for using REM units */
       scrollBehavior: 'smooth',
       transition: 'background 500ms',
+      overflow: 'initial',
 
       body: {
         variant: 'text.body',
@@ -192,7 +215,7 @@ const theme = {
     },
   },
 
-  // Variants
+  // Variants - Overrides default theme-ui variants
 
   buttons: {
     borderRadius: '4px',
@@ -202,8 +225,12 @@ const theme = {
       padding: 1,
       // height: '46px',
       // width: '46px',
-      transition: 'background-color 150ms, box-shadow 150ms, border 150ms',
+      transition: 'background-color 150ms, box-shadow 150ms, border 150ms, transform 150ms',
       boxShadow: '0px 0px 10px transparent',
+
+      '&:hover': {
+        transform: 'rotate(10deg)',
+      },
 
       svg: {
         height: '32px',
@@ -219,6 +246,7 @@ const theme = {
         borderColor: 'text',
         '&:hover': {
           border: '2px solid',
+          transform: 'none',
 
           path: {
             fill: 'text',
