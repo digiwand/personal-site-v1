@@ -79,7 +79,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         className="NavHeader_profileLogo"
         sx={(theme) => ({
           color: `${theme.colors.frameText}`,
-          fontFamily: '"MarckScript", Ariel',
+          fontFamily: 'profile',
           fontSize: '28px',
           lineHeight: '34px',
           transition: 'font-size 0.4s, transform 0.4s',

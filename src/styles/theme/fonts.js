@@ -1,11 +1,12 @@
 const fonts = {
   fonts: {
-    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: '"Avenir Next", sans-serif',
+    body: 'OpenSans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    heading: 'BarlowCondensed, "Avenir Next", sans-serif',
+    profile: 'MarckScript, Ariel',
     monospace: 'Menlo, monospace',
   },
   fontSizes: [
-    '12rem', '14rem', '16rem', '20rem', '24rem', '28rem', '32rem', '48rem', '64rem',
+    '12rem', '14rem', '16rem', '20rem', '22rem', '24rem', '28rem', '32rem', '64rem',
   ],
   fontWeights: {
     body: 400,
@@ -37,7 +38,7 @@ const fonts = {
       display: 'block',
       textAlign: 'center',
       fontFamily: '"MarckScript", Ariel',
-      fontSize: 6,
+      fontSize: 4,
       py: 5,
     },
   },

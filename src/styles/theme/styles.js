@@ -17,22 +17,26 @@ const styles = {
   },
   h2: {
     variant: 'text.heading',
+    fontWeight: '700',
     fontSize: [4, 5, 5],
+    letterSpacing: '3rem',
   },
   h3: {
-    variant: 'text.body',
-    fontSize: [4, 5, 5],
+    variant: 'text.heading',
+    fontWeight: '700',
+    fontSize: [3, 4, 4],
+    letterSpacing: '4rem',
   },
   h4: {
-    variant: 'text.body',
+    variant: 'text.heading',
     fontSize: [2, 3, 4],
   },
   h5: {
-    variant: 'text.body',
+    variant: 'text.heading',
     fontSize: 2,
   },
   h6: {
-    variant: 'text.body',
+    variant: 'text.heading',
     fontSize: 1,
   },
   p: {

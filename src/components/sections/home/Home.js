@@ -42,13 +42,13 @@ function HomeSection(props, ref) {
       {/* <TSParticlesImage /> */}
 
       <Fade bottom>
-        <Themed.h3>Hello, I&apos;m</Themed.h3>
+        <Themed.h2>Hello, I&apos;m</Themed.h2>
       </Fade>
       <Fade bottom delay={600}>
         <span
           className="NavHeader_profileLogo"
           sx={{
-            fontFamily: '"MarckScript", Ariel',
+            fontFamily: 'profile',
             fontSize: '58px',
           }}
         >
