@@ -43,7 +43,7 @@ const fonts = {
       fontWeight: '700',
       fontSize: [3, 4, 4],
       letterSpacing: '4rem',
-      py: 5,
+      pb: 5,
 
       '&:after': {
         content: '""',

@@ -14,7 +14,7 @@ const AboutSection = (props, ref) => (
   >
     <Fade bottom>
       <Themed.h3>
-        About
+        ABOUT
       </Themed.h3>
     </Fade>
     <Fade bottom delay={420}>

@@ -49,7 +49,9 @@ function HomeSection(props, ref) {
           className="NavHeader_profileLogo"
           sx={{
             fontFamily: 'profile',
-            fontSize: '58px',
+            fontSize: 8,
+            pt: 3,
+            display: 'inline-block',
           }}
         >
           Ariella Vu.

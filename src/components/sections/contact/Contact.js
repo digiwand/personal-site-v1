@@ -28,7 +28,7 @@ const ContactSection = (props, ref) => (
 
     <Fade bottom>
       <Text variant="sectionHeading">
-        Contact
+        CONTACT
       </Text>
     </Fade>
 

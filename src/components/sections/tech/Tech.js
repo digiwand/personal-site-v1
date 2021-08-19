@@ -19,11 +19,12 @@ const TechSection = (props, ref) => (
     ref={ref}
     sx={{
       background: (t) => `${t.colors.background2}`,
+      pb: [2, 6, 6],
     }}
   >
     <Fade bottom>
       <Text variant="sectionHeading">
-        Recent Technologies
+        RECENT TECHNOLOGIES
       </Text>
 
       <Grid
@@ -47,7 +48,7 @@ const TechSection = (props, ref) => (
       </Grid>
 
       <Text variant="sectionHeading">
-        Recent Tools
+        RECENT TOOLS
       </Text>
 
       <Grid
