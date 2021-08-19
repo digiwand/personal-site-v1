@@ -94,6 +94,7 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
         top: '0',
         right: '0',
         width: '100%',
+        zIndex: 10,
       }}
       is-open={String(isOpenDrawer)}
     >

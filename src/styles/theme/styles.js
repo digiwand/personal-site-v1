@@ -41,6 +41,7 @@ const styles = {
   },
   p: {
     fontSize: 2,
+    letterSpacing: '2rem',
   },
 };
 
