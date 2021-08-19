@@ -11,16 +11,16 @@ const WorkSection = (props, ref) => (
     id="work"
     ref={ref}
   >
-    {/* <Fade bottom> */}
-    <Text variant="sectionHeading">
-      WORK
-    </Text>
+    <Fade bottom>
+      <Text variant="sectionHeading">
+        WORK
+      </Text>
 
-    <JobSectionCopper />
+      <JobSectionCopper />
 
-    <JobSectionPriceSpider />
+      <JobSectionPriceSpider />
 
-    {/* </Fade> */}
+    </Fade>
   </Section>
 );
 
