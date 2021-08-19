@@ -34,6 +34,10 @@ function NavTab({ children, ...props }) {
           '&:hover, &:is-active': {
             fontWeight: '700',
           },
+
+          '&:first-child': {
+            ml: 0,
+          },
         })}
         href={href}
         is-active={String(isActive)}

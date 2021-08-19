@@ -12,6 +12,7 @@ function NavTabs({ children, ...props }) {
     <nav
       className="NavTabs"
       sx={{
+        position: 'relative',
         '[is-active="true"]': {
           fontWeight: 700,
         },
