@@ -29,7 +29,7 @@ const Section = ({ id, children, className }, ref) => (
       justifyContent: 'center',
       flexDirection: 'column',
       px: [4, 6, 6],
-      py: [4, 5, 5],
+      py: [4, 6, 6],
       minHeight: '80vh',
     }}
   >
