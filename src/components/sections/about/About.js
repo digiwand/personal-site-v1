@@ -23,11 +23,11 @@ const AboutSection = (props, ref) => (
         Hello! I&apos;m Ariella Vu.
         <br />
         <br />
-        I&apos;ve been a professional software engineer for over 6 years now. I started my education and career as a full-stack
+        I&apos;ve been a professional software engineer for over 6 years. I started my career as a full-stack
         programmer. Now I specialize in building websites using JavaScript Frameworks (React, Ember, and Angular 1.x).
         <br />
         <br />
-        I&apos;m a native of California. For over the last 3 years, I&apos;ve worked as a digital nomad. I&apos;ve considered
+        I&apos;m a native of California. Over the last 3 years, I&apos;ve worked as a digital nomad. I&apos;ve considered
         myself a nomad since I left my &quot;home&quot; at 14 years old. Fortunately, I&apos;ve now explored over 30 countries.
         Overcoming changes and challenges is wired in me.
         <br />
