@@ -35,7 +35,7 @@ function NavTab({ children, ...props }) {
             fontWeight: '700',
           },
 
-          '&:first-child': {
+          '&:first-of-type': {
             ml: 0,
           },
         })}
