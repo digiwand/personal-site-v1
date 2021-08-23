@@ -1,26 +1,41 @@
+const formTransition = '0.3s';
+const inputHeight = '42';
+const inputBorder = '2';
+const inputPadding = '10rem';
+
 const forms = {
-  label: {
-    fontSize: 1,
-    fontWeight: 'bold',
-  },
   input: {
-    transition: 'box-shadow 0.3s',
-    borderColor: 'gray',
+    fontFamily: 'body',
+    fontSize: '20rem',
+    fontWeight: '300',
+    borderRadius: '0',
+    border: '0',
+    padding: inputPadding,
+    height: `${inputHeight}rem`,
+    transition: `border-color ${formTransition}`,
+    background: (t) => `${t.colors.inputBackground}`,
+    borderBottom: `${inputBorder}rem solid transparent`,
 
     '&:focus': {
-      borderColor: 'primary',
-      boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
       outline: 'none',
+      borderColor: (t) => `${t.colors.primary}`,
     },
   },
+
   textarea: {
-    transition: 'box-shadow 0.3s',
-    borderColor: 'gray',
+    fontFamily: 'body',
+    fontSize: '20rem',
+    fontWeight: '300',
+    borderRadius: '0',
+    border: '0',
+    padding: inputPadding,
+    transition: `border-color ${formTransition}`,
+    background: (t) => `${t.colors.inputBackground}`,
+    borderBottom: `${inputBorder}rem solid transparent`,
 
     '&:focus': {
-      borderColor: 'primary',
-      boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
       outline: 'none',
+      borderColor: (t) => `${t.colors.primary}`,
     },
   },
 };

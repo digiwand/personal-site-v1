@@ -5,13 +5,13 @@ const iconButtons = {
   transition: 'background-color 150ms, box-shadow 150ms, border 150ms, transform 150ms',
   boxShadow: '0px 0px 10px transparent',
 
-  '&:hover': {
+  '&:hover > a': {
     transform: 'rotate(10deg)',
   },
 
   svg: {
-    height: '32px',
-    width: '32px',
+    height: '30rem',
+    width: '30rem',
 
     path: {
       transition: 'fill 0.3s',
@@ -21,6 +21,7 @@ const iconButtons = {
   primary: {
     border: '1px solid',
     borderColor: 'text',
+
     '&:hover': {
       border: '2px solid',
       transform: 'none',

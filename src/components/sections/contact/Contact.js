@@ -6,52 +6,103 @@ import {
 } from 'theme-ui';
 
 import Section from 'components/sections/Section';
-import ContactForm from 'components/sections/contact/ContactForm';
+import ContactLeftSide from 'components/sections/contact/ContactLeftSide';
+import ContactRightSide from 'components/sections/contact/ContactRightSide';
 
-/**
- * @todo
- * - spice up
- * - add background
- * - separate left section
- * - possibly add a plant?
- */
+function ContactDivider() {
+  return (
+    <div
+      sx={{
+        flex: '0 0 1rem',
+        mx: 4,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        py: [5, 5, 0],
+        width: ['82%', '82%', 'auto'],
+
+        '&:after': {
+          content: '""',
+          zIndex: 1,
+          background: (t) => `${t.colors.primary}`,
+          width: ['100%', '100%', '1rem'],
+          height: ['1rem', '1rem', '100%'],
+        },
+      }}
+    />
+  );
+}
+
+function ContactSectionBackground() {
+  return (
+    <div sx={{
+      position: 'absolute',
+      height: '100%',
+      width: '100%',
+      left: 0,
+      opacity: '0.2',
+      background: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg")'
+      + ' no-repeat fixed',
+      backgroundSize: 'cover',
+    }}
+    />
+  );
+}
+
+function ContactBoxBackground() {
+  return (
+    <div sx={{
+      position: 'absolute',
+      left: '0',
+      top: '0',
+      height: '100%',
+      width: '100%',
+      background: '#F4F4F4',
+      opacity: '0.68',
+      zIndex: '0',
+    }}
+    />
+  );
+}
+
 const ContactSection = (props, ref) => (
   <Section
     id="contact"
     ref={ref}
     sx={{
-      // backgroundImage: 'url("/assets/images/b÷g-flight.jpg")',
       minHeight: 'calc(100vh - 260px)',
-      background: (t) => `${t.colors.background2}`,
     }}
   >
+    <ContactSectionBackground />
 
-    <Fade bottom>
-      <Text variant="sectionHeading">
-        CONTACT
-      </Text>
-    </Fade>
-
-    <Flex sx={{
-      flexDirection: ['column', 'column', 'row'],
-      alignItems: ['center', 'center', 'initial'],
+    <div sx={{
+      position: 'relative',
+      border: '1px solid #333',
+      py: 5,
+      px: [4, 5, 4],
     }}
     >
-      <div sx={{
-        height: '100%',
-        minWidth: '245px',
-        flex: '1 0 25%',
+      <ContactBoxBackground />
+
+      <Fade>
+        <Text variant="sectionHeading">
+          CONTACT
+        </Text>
+      </Fade>
+
+      <Flex sx={{
+        flexDirection: ['column', 'column', 'row'],
+        alignItems: ['center', 'center', 'initial'],
       }}
       >
-        <Fade bottom>
-          <div sx={{ justifyContent: 'center' }}>
-            Email me here or directly at ariellavu@gmail.com
-          </div>
-        </Fade>
-      </div>
 
-      <ContactForm />
-    </Flex>
+        <ContactLeftSide />
+        <ContactDivider />
+        <ContactRightSide />
+
+      </Flex>
+
+    </div>
   </Section>
 );
 

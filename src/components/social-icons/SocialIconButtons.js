@@ -1,11 +1,12 @@
 import { IconButton } from 'theme-ui';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
 
 import SOCIAL from 'constants/social';
 
 const propTypes = {
-  socialKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
   className: PropTypes.string,
+  socialKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 const defaultProps = {
@@ -13,22 +14,24 @@ const defaultProps = {
 };
 
 function SocialIconButtons({ className, socialKeys }) {
-  const socialIconButtons = socialKeys.map((key) => {
+  const socialIconButtons = socialKeys.map((key, index) => {
     const socialConfig = SOCIAL[key];
     return (
-      <IconButton
-        className={className}
-        sx={(theme) => ({
-          path: {
-            fill: `${theme.colors.frameText}`,
-          },
-        })}
-        key={key}
-      >
-        <a href={socialConfig.url} target="_blank" rel="noopener noreferrer">
-          {socialConfig.iconSVG}
-        </a>
-      </IconButton>
+      <Fade cascade key={key} delay={(index + 1) * 255}>
+        <IconButton
+          className={className}
+          sx={(theme) => ({
+            path: {
+              fill: `${theme.colors.frameText}`,
+            },
+          })}
+          key={key}
+        >
+          <a href={socialConfig.url} target="_blank" rel="noopener noreferrer">
+            {socialConfig.iconSVG}
+          </a>
+        </IconButton>
+      </Fade>
     );
   });
 

@@ -2,10 +2,8 @@ import Fade from 'react-reveal/Fade';
 import {
   Box,
   Button,
-  Label,
-  Input,
-  Textarea,
 } from 'theme-ui';
+import { ContactFormInput, ContactFormTextArea } from 'components/sections/contact/FormInputs';
 
 /**
  * @todo
@@ -20,48 +18,34 @@ function ContactForm() {
   return (
     <Box
       as="form"
-      sx={{
-        transition: 'width 0.3s',
-        flex: '4 0 auto',
-        width: ['100%', '100%', 'auto'],
-        maxWidth: '680px',
-      }}
       onSubmit={(e) => e.preventDefault()}
     >
       <Fade bottom>
-        <Label htmlFor="contact-form-name">Name</Label>
-        <Input
+        <ContactFormInput
           name="contact-form-name"
-          id="contact-form-name"
-          mb={3}
-          required
+          label="Name"
+          type="name"
         />
       </Fade>
 
       <Fade bottom delay={200}>
-        <Label htmlFor="contact-form-email">Email</Label>
-        <Input
-          type="email"
+        <ContactFormInput
           name="contact-form-email"
-          id="contact-form-email"
-          mb={3}
-          required
+          label="Email"
+          type="email"
         />
       </Fade>
 
       <Fade bottom delay={400}>
-        <Label htmlFor="contact-form-message">Message</Label>
-        <Textarea
-          id="contact-form-message"
+        <ContactFormTextArea
           name="contact-form-message"
-          rows={6}
-          mb={3}
-          required
+          label="Message"
+          type="message"
         />
       </Fade>
 
       <Fade bottom delay={1000}>
-        <Button>Send</Button>
+        <Button sx={{ float: 'right' }}>Send</Button>
       </Fade>
     </Box>
   );

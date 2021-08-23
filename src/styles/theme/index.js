@@ -17,7 +17,7 @@ import scrollbar from './variants/custom/scrollbar';
  * @see {@link https://www.theme-ui.com/theme-spec}
  */
 const theme = {
-  initialColorModeName: 'dark',
+  initialColorModeName: 'light',
 
   breakpoints: [
     '40em', '@media (min-width: 56em) and (orientation: landscape)', '64em',
