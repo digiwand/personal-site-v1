@@ -19,7 +19,7 @@ const TechSection = (props, ref) => (
     ref={ref}
     sx={{
       background: (t) => `${t.colors.background2}`,
-      pb: [2, 6, 6],
+      py: [5, 6, 6],
     }}
   >
     <Fade bottom>
