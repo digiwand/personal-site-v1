@@ -3,7 +3,7 @@ import { Themed } from 'theme-ui';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   descriptionSide: PropTypes.string,
   companyLogo: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
@@ -13,6 +13,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  className: '',
   descriptionSide: 'left',
 };
 
