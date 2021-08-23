@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Script from 'next/script';
-import { InitializeColorMode } from 'theme-ui';
+import { InitializeColorMode, useThemeUI } from 'theme-ui';
 
 import Nav from 'components/nav/Nav';
 import Footer from 'components/footer/Footer';
@@ -17,6 +17,7 @@ const propTypes = {
 
 function Layout({ children, sectionTrackingPixelRefs }) {
   const pageTopTrackingPixelRef = useRef();
+  const { theme } = useThemeUI();
 
   const pageTopTrackingPixel = (
     <div
@@ -52,6 +53,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="theme-color" content={theme.colors.primary} />
       </Head>
 
       {/*
