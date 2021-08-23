@@ -4,6 +4,7 @@ const styles = {
     scrollBehavior: 'smooth',
     transition: 'background 500ms',
     overflow: 'initial',
+    minWidth: '320px',
 
     body: {
       variant: 'text.body',
