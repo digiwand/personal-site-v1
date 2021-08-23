@@ -18,8 +18,9 @@ function CopperImgs() {
       position: 'relative',
       flex: '1 0 auto',
       minHeight: '420rem',
+      width: ['100%', '100%', 'auto'],
       alignSelf: 'center',
-      m: [3, null, null],
+      my: [5, null, null],
     }}
     >
       <Image

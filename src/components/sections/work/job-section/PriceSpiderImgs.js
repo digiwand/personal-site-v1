@@ -19,7 +19,8 @@ function PriceSpiderImgs() {
       flex: '1 0 auto',
       minHeight: '420rem',
       alignSelf: 'center',
-      m: [3, null, null],
+      width: ['100%', '100%', 'auto'],
+      py: [5, null, null],
     }}
     >
 

@@ -29,7 +29,7 @@ function JobSection({ children, ...props }) {
 
   const flexDirection = descriptionSide === 'left'
     ? ['column', 'column', 'row']
-    : ['column-reverse', 'column-reverse', 'row-reverse'];
+    : ['column', 'column', 'row-reverse'];
 
   return (
     <div

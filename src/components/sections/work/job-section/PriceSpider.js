@@ -11,9 +11,6 @@ function JobSectionPriceSpider() {
       date="February 2015 - June 2016"
       descriptionSide="left"
       img={<PriceSpiderImgs />}
-      sx={{
-        mb: [0, 0, 6],
-      }}
     >
       I started the Angular 1.x reporting platform here from scratch along-side a fellow server developer and
       engineer manager. Using PostgresSQL, I architected the user, roles, and permissions schemas. Then I
