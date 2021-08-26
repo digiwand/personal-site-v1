@@ -93,11 +93,7 @@ function TSParticlesImage() {
                   mode: 'grab',
                   // mode: ['grab', 'connect'],
                 },
-                /**
-                 * @todo - further inspect. This seems to allow resize to work well
-                 * minus when using Rectangle app
-                 */
-                resize: false,
+                resize: true,
               },
               modes: {
                 attract: {
@@ -389,8 +385,8 @@ function TSParticlesImage() {
                 velocityRate: 1,
               },
             },
-            pauseOnBlur: false,
-            pauseOnOutsideViewport: false,
+            pauseOnBlur: true,
+            pauseOnOutsideViewport: true,
             responsive: [
               // { maxWidth: 200 },
               // { maxWidth: 400 },

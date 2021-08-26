@@ -4,7 +4,7 @@ import { Themed } from 'theme-ui';
 // import ProfileSVG from 'components/svg/profile';
 
 import Section from 'components/sections/Section';
-// import TSParticlesImage from 'components/sections/home/TSParticlesImage';
+import TSParticlesBGMask from 'components/sections/home/TSParticlesBGMask';
 
 function HomeSectionBackground() {
   return (
@@ -12,17 +12,31 @@ function HomeSectionBackground() {
       position: 'absolute',
       height: '100%',
       width: '100%',
-      padding: ['10rem', '10rem', '45rem'],
       left: 0,
       top: 0,
+      borderWidth: [
+        '10rem',
+        '10rem',
+        '45rem',
+      ],
+      borderStyle: 'solid',
+      borderTopColor: '#fff',
+      borderLeftColor: '#fff',
+      borderRightColor: '#cbcbcb',
+      borderBottomColor: '#cbcbcb',
     }}
     >
       <div sx={{
+        position: 'relative',
         height: '100%',
         width: '100%',
-        background: (t) => `${t.colors.background2}`,
+        overflow: 'hidden',
+        opacity: 0.8,
       }}
-      />
+      >
+        <TSParticlesBGMask />
+      </div>
+
     </div>
   );
 }
@@ -39,45 +53,56 @@ function HomeSection(props, ref) {
     >
       <HomeSectionBackground />
 
-      {/* <TSParticlesImage /> */}
-
-      <Fade bottom>
-        <Themed.h2>Hello, I&apos;m</Themed.h2>
-      </Fade>
-      <Fade bottom delay={600}>
-        <span
-          className="NavHeader_profileLogo"
-          sx={{
-            fontFamily: 'profile',
-            fontSize: 8,
-            pt: 3,
-            display: 'inline-block',
-          }}
-        >
-          Ariella Vu.
-        </span>
-      </Fade>
-      <Fade bottom delay={1900}>
-        <Themed.p sx={{
-          maxWidth: '540px',
-          margin: '23px auto',
-        }}
-        >
-          I&apos;m a web developer specializing in React and Ember JavaScript Frameworks. I&apos;m passionate about clean code,
-          delightful user experiences, and efficiency. Currently exploring new opportunities.
-        </Themed.p>
-      </Fade>
-
       {/* <ProfileSVG sx={(theme) => ({
-          position: 'absolute',
-          right: '8vh',
-          bottom: '40px',
+        position: 'absolute',
+        right: '8vh',
+        bottom: '45rem',
 
-          'g' : {
-            fill: `${theme.colors.text}`
-          },
-        })}
-        /> */}
+        g: {
+          fill: '#ababab',
+        },
+      })}
+      /> */}
+
+      <div sx={{
+        background: 'rgba(255, 255, 255, 0.9)',
+        border: '1px solid #ababab',
+        display: 'inline-flex',
+        flexDirection: 'column',
+        px: [3, 4, 5],
+        py: 5,
+        margin: '0 auto',
+        zIndex: '1',
+      }}
+      >
+        <Fade bottom>
+          <Themed.h2>Hello, I&apos;m</Themed.h2>
+        </Fade>
+        <Fade bottom delay={600}>
+          <span
+            className="NavHeader_profileLogo"
+            sx={{
+              fontFamily: 'profile',
+              fontSize: [8, 9, 9],
+              pt: [4, 3, 4],
+              pb: [3, null, null],
+              display: 'inline-block',
+            }}
+          >
+            Ariella Vu.
+          </span>
+        </Fade>
+        <Fade bottom delay={1900}>
+          <Themed.p sx={{
+            maxWidth: '540px',
+            margin: '23px auto',
+          }}
+          >
+            I&apos;m a web developer specializing in React and Ember JavaScript Frameworks and I&apos;m passionate about clean
+            code, delightful user experiences, and efficiency. Currently exploring new opportunities.
+          </Themed.p>
+        </Fade>
+      </div>
     </Section>
   );
 }

@@ -7,7 +7,7 @@ const fonts = {
     monospace: 'Menlo, monospace',
   },
   fontSizes: [
-    '12rem', '14rem', '16rem', '20rem', '22rem', '24rem', '28rem', '32rem', '58rem',
+    '12rem', '14rem', '16rem', '20rem', '22rem', '24rem', '28rem', '32rem', '46rem', '58rem',
   ],
   fontWeights: {
     body: 400,
