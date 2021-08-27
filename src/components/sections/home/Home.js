@@ -8,7 +8,7 @@ import TSParticlesBGMask from 'components/sections/home/TSParticlesBGMask';
 
 function HomeSectionBackground() {
   return (
-    <div sx={{
+    <div sx={(t) => ({
       position: 'absolute',
       height: '100%',
       width: '100%',
@@ -22,9 +22,9 @@ function HomeSectionBackground() {
       borderStyle: 'solid',
       borderTopColor: '#fff',
       borderLeftColor: '#fff',
-      borderRightColor: '#cbcbcb',
+      borderRightColor: `${t.colors.background2}`,
       borderBottomColor: '#cbcbcb',
-    }}
+    })}
     >
       <div sx={{
         position: 'relative',

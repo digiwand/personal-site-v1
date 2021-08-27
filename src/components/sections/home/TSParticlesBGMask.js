@@ -1,5 +1,4 @@
-/* eslint max-len: ["error", { "code": 120, "ignoreComments": true }] */
-import { useState } from 'react';
+// import { useState } from 'react';
 import Particles from 'react-tsparticles';
 import { useColorMode, useThemeUI } from 'theme-ui';
 
@@ -14,8 +13,8 @@ import { useColorMode, useThemeUI } from 'theme-ui';
  * @see {@link https://particles.js.org/samples/index.html#background}
  */
 function TSParticlesBGMask() {
-  const [colorMode] = useColorMode();
-  const { theme: { rawColors } } = useThemeUI();
+  // const [colorMode] = useColorMode();
+  // const { theme: { rawColors } } = useThemeUI();
 
   return (
     <Particles
@@ -33,7 +32,7 @@ function TSParticlesBGMask() {
             value: '#333',
           },
           // image: 'radial-gradient(#ababab, #eee)',
-          image: 'url("images/bg/leaves-1.jpg")',
+          image: 'url("images/bg/leaves-2.jpg")',
           position: '50% 50%',
           repeat: 'no-repeat',
           size: 'cover',

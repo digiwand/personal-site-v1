@@ -1,6 +1,22 @@
+const PALETTE = {
+  BOLD: {
+    darkForest: 'rgb(28,47,53)',
+    darkClay: 'rgb(175,131,109)',
+    clay: 'rgb(193,175,159)',
+    offWhite: 'rgb(227,225,219)',
+    white: 'rgb(254, 253, 255)',
+    black: 'rgb(28, 28, 28)',
+    grayGradient: 'linear-gradient(rgba(133, 133, 133, 1), rgba(255, 255, 255,1 ))',
+  },
+};
+
 const colors = {
-  background: '#fff',
-  background2: '#F5F5F5',
+  background: PALETTE.BOLD.offWhite,
+  background2: PALETTE.BOLD.darkForest,
+  background3: PALETTE.BOLD.grayGradient,
+
+  background2Header: PALETTE.BOLD.darkClay,
+  background2Text: PALETTE.BOLD.offWhite,
 
   inputBackground: '#fff',
 
