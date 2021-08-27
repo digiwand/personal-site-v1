@@ -11,7 +11,7 @@ import {
   IconReplit,
   IconStackOverflow,
   IconTwitter,
-} from 'components/svg/socials';
+} from 'components/svg/social';
 
 const SOCIAL = {
   codepen: {
