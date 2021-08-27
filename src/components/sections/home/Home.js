@@ -16,16 +16,6 @@ function HomeSectionBackground() {
       width: '100%',
       left: 0,
       top: 0,
-      borderWidth: [
-        '10rem',
-        '10rem',
-        '45rem',
-      ],
-      borderStyle: 'solid',
-      borderTopColor: '#fff',
-      borderLeftColor: '#fff',
-      borderRightColor: `${t.colors.backgroundAbout}`,
-      borderBottomColor: '#cbcbcb',
     })}
     >
       <div sx={{
