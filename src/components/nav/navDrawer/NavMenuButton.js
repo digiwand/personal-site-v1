@@ -21,8 +21,8 @@ export default function HamburgerMenu({ onClick }) {
         justifyContent: 'center',
         alignItems: 'center',
         transform: 'opacity .3s',
-        mt: 3,
-        mr: 3,
+        mt: 4,
+        mr: 4,
         opacity: [1, 1, 0],
         pointerEvents: ['initial', 'initial', 'none'],
       }}

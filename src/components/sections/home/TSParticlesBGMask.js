@@ -126,7 +126,7 @@ function TSParticlesBGMask() {
             density: {
               enable: true,
             },
-            value: 80,
+            value: 40,
           },
           opacity: {
             animation: {

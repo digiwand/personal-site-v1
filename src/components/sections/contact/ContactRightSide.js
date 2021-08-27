@@ -25,8 +25,7 @@ function ContactRightSide() {
         <br />
 
         <Fade>
-
-          <Themed.h6>
+          <Themed.h6 sx={{ pb: 4 }}>
             Email me here or directly at ariellavu@gmail.com
           </Themed.h6>
         </Fade>

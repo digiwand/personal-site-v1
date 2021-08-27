@@ -18,7 +18,7 @@ function NavTab({ children, ...props }) {
     <Link href={href} scroll={false} passHref>
       <a
         className="NavTab"
-        sx={(theme) => ({
+        sx={{
           position: 'relative',
           display: 'inline-flex',
           alignItems: 'center',
@@ -27,9 +27,8 @@ function NavTab({ children, ...props }) {
           minWidth: '80rem',
           letterSpacing: '1.6rem',
           fontSize: '14rem',
-          color: `${theme.colors.frameText}`,
           ml: 3,
-          transition: 'font-weight 0.2s',
+          transition: 'font-weight 0.2s, color 0.2s',
 
           '&:hover, &:is-active': {
             fontWeight: '700',
@@ -38,7 +37,7 @@ function NavTab({ children, ...props }) {
           '&:first-of-type': {
             ml: 0,
           },
-        })}
+        }}
         href={href}
         is-active={String(isActive)}
       >

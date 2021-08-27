@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { IconButton } from 'theme-ui';
+import { Divider, IconButton, Themed } from 'theme-ui';
 
 import NavDrawerItem from 'components/nav/navDrawer/NavDrawerItem';
 import NavSocialIcons from 'components/nav/SocialIcons';
@@ -92,27 +92,37 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
     >
       {drawerHeader}
 
-      <nav sx={{
+      <div sx={{
         display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center',
+        flexDirection: 'column',
         flex: '1 0 auto',
-        '[is-active="true"]': {
-          fontWeight: 700,
-        },
       }}
       >
-        <NavDrawerItem href="#home" displayName="Home" isActive={activeSectionId === 'home'} />
-        <NavDrawerItem href="#about" displayName="About" isActive={activeSectionId === 'about'} />
-        <NavDrawerItem href="#tech" displayName="Tech" isActive={activeSectionId === 'tech'} />
-        <NavDrawerItem href="#work" displayName="Work" isActive={activeSectionId === 'work'} />
-        <NavDrawerItem href="#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
 
-        {/** @todo add resume button */}
-      </nav>
+        <nav sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          '[is-active="true"]': {
+            fontWeight: 700,
+          },
+        }}
+        >
+          <NavDrawerItem href="#home" displayName="Home" isActive={activeSectionId === 'home'} />
+          <NavDrawerItem href="#about" displayName="About" isActive={activeSectionId === 'about'} />
+          <NavDrawerItem href="#work" displayName="Work" isActive={activeSectionId === 'work'} />
+          <NavDrawerItem href="#tech" displayName="Tech" isActive={activeSectionId === 'tech'} />
+          <NavDrawerItem href="#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
+        </nav>
 
-      <NavSocialIcons />
+        <Divider />
+        <Themed.h6>Social</Themed.h6>
+        <NavSocialIcons />
+
+        <Divider />
+        <Themed.h6>Themes</Themed.h6>
+
+      </div>
 
       {drawerFooter}
     </aside>

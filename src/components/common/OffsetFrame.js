@@ -13,7 +13,7 @@ function OffsetFrame({ children, ...props }) {
         }}
       >
         <div sx={{
-          border: (t) => `2rem solid ${t.colors.background2Header}`,
+          border: (t) => `2rem solid ${t.colors.backgroundAboutHeader}`,
           position: 'absolute',
           height: '100%',
           width: '100%',

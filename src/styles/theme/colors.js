@@ -1,39 +1,42 @@
 const PALETTE = {
   BOLD: {
+    black: 'rgb(28, 28, 28)',
+    clay: 'rgb(193,175,159)',
     darkForest: 'rgb(28,47,53)',
     darkClay: 'rgb(175,131,109)',
-    clay: 'rgb(193,175,159)',
-    offWhite: 'rgb(227,225,219)',
-    white: 'rgb(254, 253, 255)',
-    black: 'rgb(28, 28, 28)',
+    forest: 'rgb(81, 115, 105)',
+    grey: 'rgb(166, 166, 166)',
     grayGradient: 'linear-gradient(rgba(133, 133, 133, 1), rgba(255, 255, 255,1 ))',
+    offWhite: 'rgb(237,237,236)',
+    white: 'rgb(254, 253, 255)',
   },
 };
 
 const colors = {
   background: PALETTE.BOLD.offWhite,
-  background2: PALETTE.BOLD.darkForest,
-  background3: PALETTE.BOLD.grayGradient,
 
-  background2Header: PALETTE.BOLD.darkClay,
-  background2Text: PALETTE.BOLD.offWhite,
+  backgroundAbout: PALETTE.BOLD.darkForest,
+  backgroundAboutHeader: PALETTE.BOLD.forest,
+  backgroundAboutText: PALETTE.BOLD.offWhite,
 
-  inputBackground: '#fff',
+  backgroundWork: PALETTE.BOLD.white,
+  backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
 
-  text: '#001011',
-  textContrast1: '#bebebe',
-  textContrast2: '#ddd',
-  primary: '#2C363F',
-  primaryLight: '#9BA3AA',
-  primaryDark: '#484B4E',
-  primaryText: '#4e5b67',
-  secondary: '#76ddff',
-  secondaryLight: '#acffff',
-  secondaryDark: '#3babcc',
-  secondaryText: '#a3ef9f',
-  accent: '#4e1a57',
-  highlight: '#D1FFC0',
-  muted: 'grey',
+  backgroundTech: PALETTE.BOLD.grey,
+  backgroundTechHeader: PALETTE.BOLD.offWhite,
+  backgroundTechTools: PALETTE.BOLD.darkForest,
+  backgroundTechToolsHeader: 'rgb(237,237,236)',
+
+  backgroundFooter: PALETTE.BOLD.black,
+  backgroundFooterText: PALETTE.BOLD.grey,
+
+  inputBackground: 'rgba(219,220,217, 0.7)',
+
+  accent: PALETTE.BOLD.darkClay,
+  // backgroundTech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
+
+  text: PALETTE.BOLD.forest,
+  primary: PALETTE.BOLD.forest,
 
   // to update
   frame: '#fafafb',
@@ -54,25 +57,17 @@ const colors = {
   modes: {
     dark: {
       background: '#222739',
-      background2: '#EFF9F0',
+      backgroundAbout: '#EFF9F0',
 
       inputBackground: '#333',
 
       // need to refactor bottom
 
       text: '#F0F5F9',
-      textContrast1: '#ddd',
-      textContrast2: '#aaaebc',
+
       primary: '#546CBB',
-      primaryLight: '#ceadff',
-      primaryDark: '#6550cb',
-      secondary: '#ffbff4',
-      secondaryLight: '#fff2ff',
-      secondaryDark: '#cb8ec1',
-      secondaryText: '#fff',
+
       accent: '#6699CC',
-      highlight: 'hsl(260, 20%, 40%)',
-      muted: 'hsla(230, 20%, 0%, 20%)',
 
       // to update
       frame: '#fafafb',
@@ -94,21 +89,13 @@ const colors = {
 
     mint: {
       background: '#DFECEB',
-      background2: '#EFF9F0',
+      backgroundAbout: '#EFF9F0',
 
       inputBackground: 'pink',
 
       text: '#002629',
-      textContrast1: '#bebebe',
-      textContrast2: '#ddd',
+
       primary: '#4A5859',
-      primaryLight: '#9BA3AA',
-      primaryDark: '#484B4E',
-      primaryText: '#4e5b67',
-      secondary: '#E9E9E9',
-      secondaryLight: '#acffff',
-      secondaryDark: '#3babcc',
-      secondaryText: '#a3ef9f',
 
       // to update
       frame: '#fafafb',

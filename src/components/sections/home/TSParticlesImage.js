@@ -151,8 +151,6 @@ function TSParticlesImage() {
                   // '#ceadff',
                   // '#6550cb',
                   `${rawColors.primary || '#546CBB'}`,
-                  `${rawColors.primaryLight || '#ceadff'}`,
-                  `${rawColors.primaryDark || '#6550cb'}`,
                 ],
               },
               destroy: {

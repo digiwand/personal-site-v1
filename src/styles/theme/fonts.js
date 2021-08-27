@@ -40,20 +40,10 @@ const fonts = {
       display: 'block',
       textAlign: 'center',
       variant: 'text.heading',
-      fontWeight: '700',
+      fontWeight: '400',
       fontSize: [3, 4, 4],
-      letterSpacing: '4rem',
+      letterSpacing: '12rem',
       pb: 5,
-
-      '&:after': {
-        content: '""',
-        display: 'block',
-        width: '90px',
-        height: '3px',
-        mx: 'auto',
-        mt: 4,
-        background: (t) => `${t.colors.primary}`,
-      },
     },
   },
 };

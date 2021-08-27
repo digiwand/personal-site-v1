@@ -13,7 +13,7 @@ function JobSectionPriceSpider() {
       img={<PriceSpiderImgs />}
     >
       I started the Angular 1.x reporting platform here from scratch along-side a fellow server developer and
-      engineer manager. Using PostgresSQL, I architected the user, roles, and permissions schemas. Then I
+      engineer manager. Using PostgresSQL, I architected the user, roles, and permissions schemas. Then, I
       implemented dynamic roles and permissions and enforced them through middleware on our Express.js routes.
       We used highscharts and highmaps to display the impressions and clicks made on our Where-To-Buy (WTB) solutions.
       <br />

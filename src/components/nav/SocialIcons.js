@@ -13,6 +13,7 @@ function NavSocialIcons() {
       }}
     >
       <SocialIconButtons
+        className="NavHeader_SocialIconButton"
         sx={{
           variant: 'buttons.icon.small',
         }}

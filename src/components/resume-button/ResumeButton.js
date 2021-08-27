@@ -1,8 +1,8 @@
 import { Button } from 'theme-ui';
 
-function ResumeButton() {
+function ResumeButton({ className }) {
   return (
-    <Button>
+    <Button className={className}>
       RÉSUMÉ
     </Button>
   );

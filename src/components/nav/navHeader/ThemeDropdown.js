@@ -18,20 +18,22 @@ function NavHeaderThemeDropdown() {
   }
 
   return (
-    <div sx={{
-      position: 'relative',
-      ml: 3,
+    <div
+      className="NavHeader_ThemeDropdown"
+      sx={{
+        position: 'relative',
+        ml: 3,
 
-      '&:hover ol': {
-        visibility: 'visible',
-        '.NavHeader-ThemeDropdownList_listItem': {
-          transform: 'scale(1)',
+        '&:hover ol': {
+          visibility: 'visible',
+          '.NavHeader-ThemeDropdownList_listItem': {
+            transform: 'scale(1)',
+          },
         },
-      },
-      '&:not(:hover) ol .NavHeader-ThemeDropdownList_listItem': {
-        transitionDelay: '150ms',
-      },
-    }}
+        '&:not(:hover) ol .NavHeader-ThemeDropdownList_listItem': {
+          transitionDelay: '150ms',
+        },
+      }}
     >
       <IconButton
         sx={{

@@ -38,13 +38,13 @@ function NavHeaderThemeDropdownList() {
           textTransform: 'capitalize',
 
           '&:hover': {
-            border: (t) => `1px solid ${t.colors.secondary}`,
+            border: (t) => `1px solid ${t.colors.accent}`,
           },
           '&:focus': {
-            border: (t) => `1px solid ${t.colors.secondary}`,
+            border: (t) => `1px solid ${t.colors.accent}`,
           },
           '&:focusWithin': {
-            border: (t) => `1px solid ${t.colors.secondary}`,
+            border: (t) => `1px solid ${t.colors.accent}`,
           },
 
           '> svg': {

@@ -1,6 +1,8 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Themed } from 'theme-ui';
+
+import ResumeButton from 'components/resume-button/ResumeButton';
 // import ProfileSVG from 'components/svg/profile';
 
 import Section from 'components/sections/Section';
@@ -22,7 +24,7 @@ function HomeSectionBackground() {
       borderStyle: 'solid',
       borderTopColor: '#fff',
       borderLeftColor: '#fff',
-      borderRightColor: `${t.colors.background2}`,
+      borderRightColor: `${t.colors.backgroundAbout}`,
       borderBottomColor: '#cbcbcb',
     })}
     >
@@ -66,7 +68,6 @@ function HomeSection(props, ref) {
 
       <div sx={{
         background: 'rgba(255, 255, 255, 0.9)',
-        border: '1px solid #ababab',
         display: 'inline-flex',
         flexDirection: 'column',
         px: [3, 4, 5],
@@ -101,6 +102,9 @@ function HomeSection(props, ref) {
             I&apos;m a web developer specializing in React and Ember JavaScript Frameworks and I&apos;m passionate about clean
             code, delightful user experiences, and efficiency. Currently exploring new opportunities.
           </Themed.p>
+        </Fade>
+        <Fade bottom delay={2200}>
+          <ResumeButton sx={{ mt: 3 }} />
         </Fade>
       </div>
     </Section>

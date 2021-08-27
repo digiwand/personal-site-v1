@@ -44,10 +44,12 @@ function JobSection({ children, ...props }) {
       <div sx={{
         flex: '0 0 45%',
         position: 'relative',
-        border: '1px double #ccc',
-        background: (t) => `${t.colors.background2}`,
+        background: (t) => `${t.colors.backgroundWorkJobBox}`,
+        boxShadow: 'rgba(133, 133, 133, 0) 2px 5px 15px 0px',
         p: 5,
         mb: [1, 1, 0],
+        alignSelf: 'center',
+        maxWidth: [null, '580rem', '510rem'],
       }}
       >
         {companyLogo}

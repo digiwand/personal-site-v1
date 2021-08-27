@@ -19,8 +19,8 @@ function Home() {
     <Layout sectionTrackingPixelRefs={sectionTrackingPixelRefs}>
       <HomeSection ref={sectionTrackingPixelRefs[0]} />
       <AboutSection ref={sectionTrackingPixelRefs[1]} />
-      <TechSection ref={sectionTrackingPixelRefs[2]} />
-      <WorkSection ref={sectionTrackingPixelRefs[3]} />
+      <WorkSection ref={sectionTrackingPixelRefs[2]} />
+      <TechSection ref={sectionTrackingPixelRefs[3]} />
       <ContactSection ref={sectionTrackingPixelRefs[4]} />
 
       {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

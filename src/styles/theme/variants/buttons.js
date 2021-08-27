@@ -5,13 +5,13 @@ const buttons = {
 
   primary: {
     borderRadius: 0,
-    height: '48rem',
+    height: '42rem',
     letterSpacing: '3rem',
     fontFamily: 'heading',
     fontSize: 2,
     fontWeight: '300',
-    color: (t) => t.colors.primary,
     background: 'rgba(255,255,255,0)',
+    color: (t) => t.colors.primary,
     border: (t) => `1px solid ${t.colors.primary}`,
     transition: 'background .1s ease-in-out, color .1s ease-in-out, transform .03s ease-in-out',
 

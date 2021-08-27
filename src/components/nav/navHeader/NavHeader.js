@@ -69,6 +69,21 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
 
           '.NavTab': {
             letterSpacing: '1rem',
+            color: `${theme.colors.frameText}`,
+          },
+
+          '.NavHeader_SocialIconButton path': {
+            fill: `${theme.colors.frameText}`,
+          },
+
+          '.NavHeader_ThemeDropdown': {
+            button: {
+              borderColor: `${theme.colors.frameText}`,
+            },
+
+            path: {
+              fill: `${theme.colors.frameText}`,
+            },
           },
         },
       })}

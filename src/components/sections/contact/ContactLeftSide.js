@@ -1,6 +1,7 @@
 import Fade from 'react-reveal/Fade';
-import { Themed } from 'theme-ui';
+import { Themed, Image } from 'theme-ui';
 import ContactSocialIconButtons from 'components/sections/contact/SocialIconButtons';
+import SVGPlantInPot from 'components/svg/plant-in-pot';
 
 function ContactLeftSide() {
   return (
@@ -24,8 +25,10 @@ function ContactLeftSide() {
           Working remotely since 2018
         </Themed.h6>
       </Fade>
-
       <ContactSocialIconButtons />
+      <br />
+      <br />
+      <SVGPlantInPot width="80%" sx={{ mx: 'auto' }} />
     </div>
   );
 }

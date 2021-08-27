@@ -14,59 +14,87 @@ import {
 } from 'components/svg/tech';
 
 const TechSection = (props, ref) => (
-  <Section
-    id="tech"
-    ref={ref}
-    sx={{
-      background: (t) => `${t.colors.background2}`,
-      py: [5, 6, 6],
-    }}
-  >
-    <Fade bottom>
-      <Text variant="sectionHeading">
-        RECENT TECHNOLOGIES
-      </Text>
+  <div>
+    <Section
+      id="tech"
+      ref={ref}
+      sx={{
+        background: (t) => `${t.colors.backgroundTech}`,
+        minHeight: '0',
+        py: [5, 6, 6],
+        zIndex: 1,
+      }}
+    >
+      <Fade bottom>
+        <Text
+          variant="sectionHeading"
+          sx={{
+            color: (t) => `${t.colors.backgroundTechHeader}`,
+            pb: 6,
+          }}
+        >
+          RECENT TECHNOLOGIES
+        </Text>
 
-      <Grid
-        gap={5}
-        columns={[2, null, 5]}
-        sx={{
-          justifyItems: 'center',
-          pb: 5,
-        }}
-      >
-        <SVGNextJS sx={{ variant: 'images.tech' }} />
-        <Image alt="HTML5" src="svg/tech/reactjs.svg" variant="tech" />
-        <Image alt="HTML5" src="svg/tech/emberjs.svg" variant="tech" />
-        <Image alt="HTML5" src="svg/tech/html5.svg" variant="tech" />
-        <Image alt="HTML5" src="svg/tech/sass.svg" variant="tech" />
-        <Image alt="HTML5" src="svg/tech/chai.svg" variant="tech" />
-        <Image alt="HTML5" src="svg/tech/mocha.svg" variant="tech" />
-        <Image alt="HTML5" src="svg/tech/amp.svg" variant="tech" />
-        <SVGNodeJS sx={{ variant: 'images.tech' }} />
-        <SVGGit sx={{ variant: 'images.tech' }} />
-      </Grid>
+        <Grid
+          gap={5}
+          columns={[2, null, 5]}
+          sx={{
+            justifyItems: 'center',
+            pb: 4,
+          }}
+        >
+          <SVGNextJS sx={{ variant: 'images.tech' }} />
+          <Image alt="HTML5" src="svg/tech/reactjs.svg" variant="tech" />
+          <Image alt="HTML5" src="svg/tech/emberjs.svg" variant="tech" />
+          <Image alt="HTML5" src="svg/tech/html5.svg" variant="tech" />
+          <Image alt="HTML5" src="svg/tech/sass.svg" variant="tech" />
+          <Image alt="HTML5" src="svg/tech/chai.svg" variant="tech" />
+          <Image alt="HTML5" src="svg/tech/mocha.svg" variant="tech" />
+          <Image alt="HTML5" src="svg/tech/amp.svg" variant="tech" />
+          <SVGNodeJS sx={{ variant: 'images.tech' }} />
+          <SVGGit sx={{ variant: 'images.tech' }} />
+        </Grid>
+      </Fade>
+    </Section>
+    <Section
+      sx={{
+        background: (t) => `${t.colors.backgroundTechTools}`,
+        minHeight: '0',
+        py: [5, 6, 6],
+        zIndex: 1,
+      }}
+    >
 
-      <Text variant="sectionHeading">
-        RECENT TOOLS
-      </Text>
+      <Fade bottom>
+        <Text
+          variant="sectionHeading"
+          sx={{
+            color: (t) => `${t.colors.backgroundTechToolsHeader}`,
+            pb: 6,
+          }}
+        >
+          RECENT TOOLS
+        </Text>
 
-      <Grid
-        gap={5}
-        columns={[2, null, 6]}
-        sx={{
-          justifyItems: 'center',
-        }}
-      >
-        <Image alt="HTML5" src="svg/tech/vscode.svg" variant="tech" />
-        <Image alt="HTML5" src="svg/tech/iterm2.svg" variant="tech" />
-        <Image alt="HTML5" src="svg/tech/chromedevtools.svg" variant="tech" />
-        <Image alt="HTML5" src="images/tech/dash@2x.png" variant="tech" />
-        <Image alt="HTML5" src="images/tech/alfred@2x.png" variant="tech" />
-        <Image alt="HTML5" src="svg/tech/macos.svg" variant="tech" />
-      </Grid>
-    </Fade>
-  </Section>
+        <Grid
+          gap={5}
+          columns={[2, null, 6]}
+          sx={{
+            justifyItems: 'center',
+            pb: 4,
+          }}
+        >
+          <Image alt="HTML5" src="svg/tech/vscode.svg" variant="tech" />
+          <Image alt="HTML5" src="svg/tech/iterm2.svg" variant="tech" />
+          <Image alt="HTML5" src="svg/tech/chromedevtools.svg" variant="tech" />
+          <Image alt="HTML5" src="images/tech/dash@2x.png" variant="tech" />
+          <Image alt="HTML5" src="images/tech/alfred@2x.png" variant="tech" />
+          <Image alt="HTML5" src="svg/tech/macos.svg" variant="tech" />
+        </Grid>
+      </Fade>
+    </Section>
+  </div>
 );
 
 export default React.forwardRef(TechSection);

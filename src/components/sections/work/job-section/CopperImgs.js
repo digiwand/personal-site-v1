@@ -32,6 +32,7 @@ function CopperImgs() {
           m: 'auto',
           bottom: '0',
           right: '0',
+          maxWidth: '650rem',
           width: ['75%', '60%', '53%'],
           left: ['auto', 'auto', '25%'],
           top: ['auto', 'auto', '25%'],
@@ -50,6 +51,7 @@ function CopperImgs() {
           bottom: '0',
           left: '0',
           right: '0',
+          maxWidth: '650rem',
           width: ['75%', '60%', '53%'],
 
           ...hoverSX,
@@ -64,6 +66,7 @@ function CopperImgs() {
           m: 'auto',
           top: '0',
           left: '0',
+          maxWidth: '650rem',
           width: ['75%', '60%', '53%'],
           bottom: ['auto', 'auto', '25%'],
           right: ['auto', 'auto', '25%'],

@@ -77,7 +77,6 @@ const ContactSection = (props, ref) => (
 
     <div sx={{
       position: 'relative',
-      border: '1px solid #333',
       py: 5,
       px: [4, 5, 4],
     }}

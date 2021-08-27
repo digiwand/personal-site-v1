@@ -28,6 +28,8 @@ function PriceSpiderImgs() {
         position: 'relative',
         flex: '1 1 auto',
         textAlign: 'right',
+        maxWidth: '1000rem',
+        mx: 'auto',
       }}
       >
         <Image

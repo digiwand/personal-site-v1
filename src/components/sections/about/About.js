@@ -10,7 +10,8 @@ const AboutSection = (props, ref) => (
     id="about"
     ref={ref}
     sx={{
-      background: (t) => `${t.colors.background2}`,
+      minHeight: '80vh',
+      background: (t) => `${t.colors.backgroundAbout}`,
     }}
   >
     <Flex sx={{
@@ -19,24 +20,23 @@ const AboutSection = (props, ref) => (
     >
       <div sx={{
         flex: '1 1 auto',
-        pr: [null, null, 6],
-        pb: [6, null, null],
+        pr: [0, 0, 6],
+        pb: [6, 6, 0],
       }}
       >
         <Fade bottom>
-          <Themed.h3 sx={{ color: (t) => `${t.colors.background2Header}` }}>
+          <Themed.h3 sx={{ pb: 1, color: (t) => `${t.colors.backgroundAboutHeader}` }}>
             ABOUT
           </Themed.h3>
         </Fade>
         <Fade bottom delay={420}>
           <Themed.p sx={{
-            maxWidth: '560rem',
-            color: (t) => `${t.colors.background2Text}`,
+            maxWidth: ['initial', 'initial', '520rem'],
+            color: (t) => `${t.colors.backgroundAboutText}`,
           }}
           >
-            <br />
-            Hello! I&apos;m Ariella Vu.
-            <br />
+            {/* <br />
+            Hello! I&apos;m Ariella Vu. */}
             <br />
             I started my career as a full-stack programmer over 6 years ago. Now I specialize in building websites using
             JavaScript Frameworks (React, Ember, and Angular 1.x).
@@ -47,7 +47,8 @@ const AboutSection = (props, ref) => (
             countries. Overcoming changes and challenges is wired in me.
             <br />
             <br />
-            Some of my strengths include problem-solving, adapting, writing clean-code, being detail-oriented, and teamwork.
+            {/* Some of my strengths include problem-solving, adapting, writing clean-code, being detail-oriented, and
+            teamwork. */}
             Besides programming and traveling, my passions include yoga, hiking, indoor rock climbing, building new homebases
             around the world, and personal development.
           </Themed.p>
