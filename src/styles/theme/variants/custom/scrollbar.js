@@ -1,5 +1,6 @@
 const scrollbar = {
   overflow: 'auto',
+  scrollBehavior: 'smooth',
 
   '&::-webkit-scrollbar-track': {
     borderRadius: '3px',
