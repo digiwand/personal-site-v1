@@ -19,6 +19,7 @@ function OffsetFrame({ children, ...props }) {
           width: '100%',
           bottom: '20px',
           left: '20px',
+          zIndex: '-1',
         }}
         />
         {children}
