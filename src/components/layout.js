@@ -45,7 +45,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
       <Head>
         <title>{siteTitle}</title>
 
-        <link rel="icon" href="/demofavicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
 
         <meta
           name="description"
