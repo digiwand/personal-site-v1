@@ -10,13 +10,13 @@ import TSParticlesBGMask from 'components/sections/home/TSParticlesBGMask';
 
 function HomeSectionBackground() {
   return (
-    <div sx={(t) => ({
+    <div sx={{
       position: 'absolute',
       height: '100%',
       width: '100%',
       left: 0,
       top: 0,
-    })}
+    }}
     >
       <div sx={{
         position: 'relative',

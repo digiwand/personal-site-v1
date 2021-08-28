@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import Layout from 'components/layout';
+import Layout from 'components/Layout';
 import HomeSection from 'components/sections/home/Home';
 import AboutSection from 'components/sections/about/About';
 import TechSection from 'components/sections/tech/Tech';
