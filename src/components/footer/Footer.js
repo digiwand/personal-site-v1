@@ -4,26 +4,40 @@ function Footer() {
   return (
     <footer
       sx={(theme) => ({
-        backgroundColor: `${theme.colors.frame}`,
-        color: `${theme.colors.frameText}`,
+        backgroundColor: `${theme.colors.backgroundFooter}`,
+        color: `${theme.colors.backgroundFooterText}`,
         display: 'flex',
-        justifyContent: 'flex-end',
+        flexDirection: ['column-reverse', 'row', 'row'],
+        justifyContent: 'space-between',
         py: 2,
         minHeight: '40px',
         px: [4, 6, 6],
+        fontSize: '12rem',
+        whiteSpace: 'nowrap',
+        textAlign: 'center',
       })}
     >
-      <Fade right>
+      <Fade bottom>
         <span
           sx={{
-            flexBasis: '100%',
-            fontSize: '12rem',
-            whiteSpace: 'nowrap',
-            pt: [3, 2, 0],
-            textAlign: ['center', 'center', 'right'],
+            display: ['block', 'block', 'inline-block'],
+            py: [3, 2, 0],
           }}
         >
-          © 2021 Ariella Vu. All Rights Reserved.
+          © 2021 Ariella Vu
+        </span>
+      </Fade>
+      <Fade bottom>
+        <span
+          sx={{
+            display: ['block', 'block', 'inline-block'],
+            pt: [3, 2, 0],
+          }}
+        >
+          Designed & Built by Ariella Vu &nbsp; -- &nbsp;
+          <a href="https://github.com/ariellanvu/personal-site-v1" target="_blank" rel="noopener noreferrer">
+            Open Source on Github
+          </a>
         </span>
       </Fade>
     </footer>
