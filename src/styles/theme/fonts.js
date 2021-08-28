@@ -34,7 +34,6 @@ const fonts = {
       fontFamily: 'heading',
       fontWeight: 'heading',
       lineHeight: 'heading',
-      color: 'primary',
     },
     sectionHeading: {
       display: 'block',

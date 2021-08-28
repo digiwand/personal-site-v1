@@ -24,7 +24,7 @@ function ContactDivider() {
         '&:after': {
           content: '""',
           zIndex: 1,
-          background: (t) => `${t.colors.primary}`,
+          background: (t) => `${t.colors.backgroundContactDivider}`,
           width: ['100%', '100%', '1rem'],
           height: ['1rem', '1rem', '100%'],
         },
@@ -84,7 +84,12 @@ const ContactSection = (props, ref) => (
       <ContactBoxBackground />
 
       <Fade>
-        <Text variant="sectionHeading">
+        <Text
+          variant="sectionHeading"
+          sx={{
+            color: (t) => `${t.colors.backgroundContactHeader}`,
+          }}
+        >
           CONTACT
         </Text>
       </Fade>

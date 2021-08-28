@@ -12,15 +12,21 @@ function ContactSocialIconButtons() {
     <div
       sx={{
         display: 'flex',
-        maxWidth: ['none', '350px', '350px'],
+        maxWidth: '350rem',
+        width: '80%',
         flex: '1 0 auto',
         pt: 5,
-        justifyContent: ['space-between', 'initial', 'initial'],
+        pb: 3,
+        justifyContent: ['space-between', 'space-between', 'initial'],
+        alignSelf: ['center', 'center', 'initial'],
       }}
     >
       <SocialIconButtons
         sx={{
-          mr: [0, 4, 4],
+          mr: [0, 0, 4],
+          path: {
+            fill: (t) => `${t.colors.backgroundContactSubHeader}`,
+          },
         }}
         showUsername
         socialKeys={SOCIAL_KEYS}

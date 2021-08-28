@@ -14,10 +14,11 @@ function ContactRightSide() {
         maxWidth: '680rem',
         width: '100%',
         mx: 'auto',
+        textAlign: ['center', 'center', 'left'],
       }}
       >
         <Fade>
-          <Themed.h3>
+          <Themed.h3 sx={{ color: (t) => `${t.colors.backgroundContactSubHeader}` }}>
             Send me a message
           </Themed.h3>
         </Fade>
@@ -25,7 +26,11 @@ function ContactRightSide() {
         <br />
 
         <Fade>
-          <Themed.h6 sx={{ pb: 4 }}>
+          <Themed.h6 sx={{
+            pb: 4,
+            color: (t) => `${t.colors.backgroundContactText}`,
+          }}
+          >
             Email me here or directly at ariellavu@gmail.com
           </Themed.h6>
         </Fade>

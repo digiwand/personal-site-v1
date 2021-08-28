@@ -1,11 +1,12 @@
 const PALETTE = {
   BOLD: {
-    black: 'rgb(28, 28, 28)',
+    black: 'rgb(0, 0, 0)',
     clay: 'rgb(193,175,159)',
     darkForest: 'rgb(28,47,53)',
     darkClay: 'rgb(175,131,109)',
     forest: 'rgb(81, 115, 105)',
     grey: 'rgb(166, 166, 166)',
+    darkGrey: 'rgb(92, 92, 92)',
     grayGradient: 'linear-gradient(rgba(133, 133, 133, 1), rgba(255, 255, 255,1 ))',
     offWhite: 'rgb(237,237,236)',
     white: 'rgb(254, 253, 255)',
@@ -27,6 +28,12 @@ const colors = {
   backgroundTechTools: PALETTE.BOLD.darkForest,
   backgroundTechToolsHeader: 'rgb(237,237,236)',
 
+  backgroundContactHeader: PALETTE.BOLD.darkForest,
+  backgroundContactSubHeader: PALETTE.BOLD.darkGrey,
+  backgroundContactText: PALETTE.BOLD.darkGrey,
+  backgroundContactDivider: 'rgba(92, 92, 92, 0.5)',
+  backgroundContactPlant: PALETTE.BOLD.black,
+
   backgroundFooter: PALETTE.BOLD.black,
   backgroundFooterText: PALETTE.BOLD.grey,
 
@@ -39,8 +46,8 @@ const colors = {
   primary: PALETTE.BOLD.forest,
 
   // to update
-  frame: '#fafafb',
-  frameText: '#233143',
+  frame: PALETTE.BOLD.offWhite,
+  frameText: PALETTE.BOLD.darkForest,
 
   // SVG - Tech
   svgGitLogo: '#2F2707',
