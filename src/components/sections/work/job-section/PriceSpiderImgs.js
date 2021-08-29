@@ -1,13 +1,21 @@
 import { Image } from 'theme-ui';
 
-const hoverSX = {
-  transition: '0.25s',
+const imgStyles = {
+  position: 'absolute',
+  m: 'auto',
   opacity: '0.85',
+  objectFit: 'cover',
+  objectPosition: 'top',
+  aspectRatio: '5/4',
+  maxWidth: '650rem',
+  width: ['75%', '60%', '53%'],
+  transform: 'perspective(750px)',
+  transition: '0.25s',
 
   '&:hover': {
     opacity: '1',
     zIndex: '3',
-    transform: 'perspective(500px) translateZ(20px)',
+    transform: 'perspective(750px) translateZ(20px)',
     boxShadow: 'rgba(0, 0, 0, 0.15) 3px 5px 15px 0px',
   },
 };
@@ -18,59 +26,51 @@ function PriceSpiderImgs() {
       position: 'relative',
       flex: '1 0 auto',
       minHeight: '420rem',
-      alignSelf: 'center',
       width: ['100%', '100%', 'auto'],
-      py: [5, null, null],
+      alignSelf: 'center',
+      my: [5, null, null],
     }}
     >
+      <Image
+        alt="PriceSpider Mars Where-to-buy"
+        src="images/work/pricespider-wtb-mars.png"
+        sx={{
+          zIndex: '2',
+          top: '0',
+          left: '0',
+          bottom: ['auto', 'auto', '25%'],
+          right: ['auto', 'auto', '25%'],
 
-      <div sx={{
-        position: 'relative',
-        flex: '1 1 auto',
-        textAlign: 'right',
-        maxWidth: '1000rem',
-        mx: 'auto',
-      }}
-      >
-        <Image
-          alt="PriceSpider Mars Where-to-buy"
-          src="images/work/pricespider-wtb-mars.png"
-          sx={{
-            position: 'relative',
-            maxWidth: '320rem',
-            border: '3px double #F3E5D2',
-            width: ['50%', '50%', '70%'],
+          ...imgStyles,
+        }}
+      />
+      <Image
+        alt="PriceSpider Iams Where-to-buy"
+        src="images/work/pricespider-wtb-iams.png"
+        sx={{
+          zIndex: '1',
+          top: '0',
+          bottom: '0',
+          left: '0',
+          right: '0',
 
-            ...hoverSX,
-          }}
-        />
-        <Image
-          alt="PriceSpider Iams Where-to-buy"
-          src="images/work/pricespider-wtb-iams.png"
-          sx={{
-            position: 'absolute',
-            top: '62rem',
-            width: ['64%', '60%', '56%'],
-            left: ['0', '-10px', '-30px'],
+          ...imgStyles,
+        }}
+      />
+      <Image
+        alt="PriceSpider Hoover & Dell Ads"
+        src="images/work/pricespider-ads.png"
+        sx={{
+          zIndex: '0',
+          bottom: '0',
+          right: '0',
+          left: ['auto', 'auto', '25%'],
+          top: ['auto', 'auto', '25%'],
 
-            ...hoverSX,
-          }}
-        />
-        <Image
-          alt="PriceSpider Hoover & Dell Ads"
-          src="images/work/pricespider-ads.png"
-          sx={{
-            position: 'absolute',
-            width: '70%',
-            right: ['24px', '-10px', '-68px'],
-            bottom: ['-3px', '-46px', '-46px'],
-
-            ...hoverSX,
-          }}
-        />
-      </div>
+          ...imgStyles,
+        }}
+      />
     </div>
-
   );
 }
 
