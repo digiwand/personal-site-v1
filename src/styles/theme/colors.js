@@ -14,7 +14,8 @@ const PALETTE = {
 };
 
 const colors = {
-  background: PALETTE.BOLD.offWhite,
+  background: PALETTE.BOLD.darkForest,
+  backgroundHome: PALETTE.BOLD.offWhite,
 
   backgroundAbout: PALETTE.BOLD.darkForest,
   backgroundAboutHeader: PALETTE.BOLD.forest,

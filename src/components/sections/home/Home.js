@@ -41,6 +41,7 @@ function HomeSection(props, ref) {
       sx={{
         minHeight: '100vh',
         textAlign: 'center',
+        background: (t) => `${t.colors.backgroundHome}`,
       }}
     >
       <HomeSectionBackground />
