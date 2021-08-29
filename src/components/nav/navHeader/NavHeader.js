@@ -59,6 +59,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0.30)',
 
           '.NavHeader_profileLogo': {
+            color: `${theme.colors.frameText}`,
             fontSize: '23px',
             transform: `translateX(-${paddingInsideFrame + (paddingFrame / 2)}px)`,
           },
@@ -92,13 +93,12 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
       {/** @todo replace w/ SVG */}
       <span
         className="NavHeader_profileLogo"
-        sx={(theme) => ({
-          color: `${theme.colors.frameText}`,
+        sx={{
           fontFamily: 'profile',
           fontSize: '28px',
           lineHeight: '34px',
           transition: 'font-size 0.4s, transform 0.4s',
-        })}
+        }}
       >
         Ariella Vu
       </span>

@@ -28,7 +28,8 @@ function NavTab({ children, ...props }) {
           letterSpacing: '1.6rem',
           fontSize: '14rem',
           ml: 3,
-          transition: 'font-weight 0.2s, color 0.2s',
+          borderBottom: '3rem solid transparent',
+          transition: 'font-weight 0.2s, color 0.2s, border-bottom 0.2s',
 
           '&:hover, &:is-active': {
             fontWeight: '700',

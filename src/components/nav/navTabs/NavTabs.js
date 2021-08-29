@@ -13,8 +13,10 @@ function NavTabs({ children, ...props }) {
       className="NavTabs"
       sx={{
         position: 'relative',
+
         '[is-active="true"]': {
           fontWeight: 700,
+          borderBottom: (t) => `2rem solid ${t.colors.text}`,
         },
       }}
     >
