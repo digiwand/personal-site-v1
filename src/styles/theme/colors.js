@@ -45,6 +45,8 @@ const colors = {
 
   text: PALETTE.BOLD.forest,
   primary: PALETTE.BOLD.forest,
+  button: PALETTE.BOLD.forest,
+  buttonHoverText: PALETTE.BOLD.white,
 
   // to update
   frame: PALETTE.BOLD.offWhite,

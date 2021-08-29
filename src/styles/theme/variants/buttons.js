@@ -11,14 +11,14 @@ const buttons = {
     fontSize: 2,
     fontWeight: '300',
     background: 'rgba(255,255,255,0)',
-    color: (t) => t.colors.primary,
-    border: (t) => `1px solid ${t.colors.primary}`,
+    color: (t) => t.colors.button,
+    border: (t) => `1px solid ${t.colors.button}`,
     transition: 'background .1s ease-in-out, color .1s ease-in-out, transform .03s ease-in-out',
 
     '&:hover': {
-      color: (t) => `${t.colors.background}`,
-      background: (t) => `${t.colors.primary}`,
-      border: (t) => `1px solid ${t.colors.primary}`,
+      color: (t) => `${t.colors.buttonHoverText}`,
+      background: (t) => `${t.colors.button}`,
+      border: (t) => `1px solid ${t.colors.button}`,
     },
 
     '&:active': {
