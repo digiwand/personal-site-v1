@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import Particles from 'react-tsparticles';
-import { useColorMode, useThemeUI } from 'theme-ui';
+// import { useColorMode, useThemeUI } from 'theme-ui';
 
 /**
  * WIP

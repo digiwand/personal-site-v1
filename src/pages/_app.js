@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import { useState } from 'react';
 import { ThemeProvider } from 'theme-ui';
 import theme from 'styles/theme/index';
