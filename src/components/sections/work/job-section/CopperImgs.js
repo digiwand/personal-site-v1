@@ -56,7 +56,7 @@ function CopperImgs() {
       />
       <Image
         alt="Copper AMP Email Gif"
-        src="gifs/copper-amp-email.gif"
+        src="images/work/copper-amp-email.png"
         sx={{
           zIndex: '2',
           top: '0',
