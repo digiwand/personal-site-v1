@@ -1,7 +1,7 @@
 import { useColorMode } from 'theme-ui';
 import THEMEUI_COLOR_MODE_CONFIG from 'constants/theme-ui';
 
-function NavHeaderThemeDropdownList() {
+function ThemeDropdownList() {
   const [colorMode, setColorMode] = useColorMode();
   const colorModeKeys = Object.keys(THEMEUI_COLOR_MODE_CONFIG);
 
@@ -77,4 +77,4 @@ function NavHeaderThemeDropdownList() {
   );
 }
 
-export default NavHeaderThemeDropdownList;
+export default ThemeDropdownList;

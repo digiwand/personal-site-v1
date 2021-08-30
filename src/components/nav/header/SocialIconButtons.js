@@ -1,8 +1,8 @@
 import SocialIconButtons from 'components/social-icons/SocialIconButtons';
 
-const socialKeys = ['stackoverflow', 'github', 'linkedin'];
+const socialKeys = ['stackoverflow', 'github', 'jsfiddle', 'linkedin'];
 
-function NavSocialIcons() {
+function NavSocialIconButtons() {
   return (
     <div
       sx={{
@@ -23,4 +23,4 @@ function NavSocialIcons() {
   );
 }
 
-export default NavSocialIcons;
+export default NavSocialIconButtons;

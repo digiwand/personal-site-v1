@@ -4,8 +4,7 @@ const scrollbar = {
 
   '&::-webkit-scrollbar-track': {
     borderRadius: '3px',
-    boxShadow: 'inset 0 0 6px rgba(33,33,33,0.1)',
-    backgroundColor: ' transparent',
+    backgroundColor: (t) => t.colors.backgroundHome,
   },
 
   '&::-webkit-scrollbar': {

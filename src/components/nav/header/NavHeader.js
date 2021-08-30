@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import NavTabs from 'components/nav/navTabs/NavTabs';
-import NavSocialIcons from 'components/nav/SocialIcons';
-import ThemeSelector from 'components/nav/navHeader/ThemeDropdown';
+import NavTabs from 'components/nav/header/Tabs';
+import NavSocialIcons from 'components/nav/header/SocialIconButtons';
+import ThemeSelector from 'components/nav/theme-selector/Dropdown';
 
 import PROP_TYPE from 'constants/prop-types';
 
@@ -103,8 +103,8 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         className="NavHeader_profileLogo"
         sx={{
           fontFamily: 'profile',
-          fontSize: '28px',
-          lineHeight: '34px',
+          fontSize: '28rem',
+          lineHeight: '34rem',
           transition: 'font-size 0.4s, transform 0.4s',
         }}
       >
