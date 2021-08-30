@@ -5,6 +5,8 @@ import NavDrawerItem from 'components/nav/drawer/DrawerItem';
 import NavDrawerSocialIconButtons from 'components/nav/drawer/SocialIconButtons';
 import ThemeNavDrawerItem from 'components/nav/drawer/ThemeDrawerItem';
 
+import { SECTION_DISPLAY_NAME } from 'constants/section';
+
 const headerAndFooterWidth = '60rem';
 const tabletWidth = '320rem';
 
@@ -91,6 +93,18 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
     </div>
   );
 
+  const drawerItems = Object.keys(SECTION_DISPLAY_NAME).map((key) => {
+    const displayName = SECTION_DISPLAY_NAME[key];
+    return (
+      <NavDrawerItem
+        key={`NavDrawerItem-${key}`}
+        href={`/#${key}`}
+        displayName={displayName}
+        isActive={activeSectionId === key}
+      />
+    );
+  });
+
   return (
     <aside
       sx={(t) => ({
@@ -146,11 +160,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
             },
           }}
           >
-            <NavDrawerItem href="#home" displayName="Home" isActive={activeSectionId === 'home'} />
-            <NavDrawerItem href="#about" displayName="About" isActive={activeSectionId === 'about'} />
-            <NavDrawerItem href="#work" displayName="Work" isActive={activeSectionId === 'work'} />
-            <NavDrawerItem href="#tech" displayName="Tech" isActive={activeSectionId === 'tech'} />
-            <NavDrawerItem href="#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
+            {drawerItems}
           </nav>
 
           <ThemeNavDrawerItem />

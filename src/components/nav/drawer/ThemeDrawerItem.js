@@ -1,4 +1,4 @@
-import { Themed, useColorMode } from 'theme-ui';
+import { useColorMode } from 'theme-ui';
 import THEMEUI_COLOR_MODE_CONFIG from 'constants/theme-ui';
 
 function ThemeNavDrawerItem() {
