@@ -20,7 +20,6 @@ function SocialIconButtons({ className, socialKeys }) {
       <Fade cascade key={key} delay={(index + 1) * 255}>
         <IconButton
           className={className}
-          key={key}
         >
           <a href={socialConfig.url} target="_blank" rel="noopener noreferrer">
             {socialConfig.iconSVG}
