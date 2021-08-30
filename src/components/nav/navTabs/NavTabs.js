@@ -20,11 +20,11 @@ function NavTabs({ children, ...props }) {
         },
       }}
     >
-      <NavTab href="#home" displayName="Home" isActive={activeSectionId === 'home'} />
-      <NavTab href="#about" displayName="About" isActive={activeSectionId === 'about'} />
-      <NavTab href="#work" displayName="Work" isActive={activeSectionId === 'work'} />
-      <NavTab href="#tech" displayName="Tech" isActive={activeSectionId === 'tech'} />
-      <NavTab href="#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
+      <NavTab href="/#home" displayName="Home" isActive={activeSectionId === 'home'} />
+      <NavTab href="/#about" displayName="About" isActive={activeSectionId === 'about'} />
+      <NavTab href="/#work" displayName="Work" isActive={activeSectionId === 'work'} />
+      <NavTab href="/#tech" displayName="Tech" isActive={activeSectionId === 'tech'} />
+      <NavTab href="/#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
     </nav>
   );
 }

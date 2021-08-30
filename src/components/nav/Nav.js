@@ -8,8 +8,13 @@ import NavHeader from 'components/nav/navHeader/NavHeader';
 import PROP_TYPE from 'constants/prop-types';
 
 const propTypes = {
-  sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF).isRequired,
-  pageTopTrackingPixelRef: PROP_TYPE.REF.isRequired,
+  sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF),
+  pageTopTrackingPixelRef: PROP_TYPE.REF,
+};
+
+const defaultProps = {
+  sectionTrackingPixelRefs: [],
+  pageTopTrackingPixelRef: null,
 };
 
 function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
@@ -37,17 +42,25 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
   useEffect(() => {
     if (sectionIntersectionObserverRef.current) { sectionIntersectionObserverRef.current.disconnect(); }
 
-    sectionIntersectionObserverRef.current = new IntersectionObserver(handleSectionIntersection);
+    let currentObserver;
 
-    const { current: currentObserver } = sectionIntersectionObserverRef;
+    if (sectionTrackingPixelRefs && sectionTrackingPixelRefs.length > 0) {
+      sectionIntersectionObserverRef.current = new IntersectionObserver(handleSectionIntersection);
 
-    sectionTrackingPixelRefs.forEach((sectionRef) => {
-      if (sectionRef.current) {
-        currentObserver.observe(sectionRef.current);
+      currentObserver = sectionIntersectionObserverRef.current;
+
+      sectionTrackingPixelRefs.forEach((sectionRef) => {
+        if (sectionRef.current) {
+          currentObserver.observe(sectionRef.current);
+        }
+      });
+    }
+
+    return () => {
+      if (currentObserver) {
+        currentObserver.disconnect();
       }
-    });
-
-    return () => { currentObserver.disconnect(); };
+    };
   });
 
   // -- Handlers ----------------------------------------------------------------------------------
@@ -120,5 +133,6 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
 }
 
 Nav.propTypes = propTypes;
+Nav.defaultProps = defaultProps;
 
 export default Nav;

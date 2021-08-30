@@ -12,7 +12,11 @@ import PROP_TYPE from 'constants/prop-types';
 const siteTitle = 'Ariella Vu';
 
 const propTypes = {
-  sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF).isRequired,
+  sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF),
+};
+
+const defaultProps = {
+  sectionTrackingPixelRefs: null,
 };
 
 function Layout({ children, sectionTrackingPixelRefs }) {
@@ -80,5 +84,6 @@ function Layout({ children, sectionTrackingPixelRefs }) {
 }
 
 Layout.propTypes = propTypes;
+Layout.defaultProps = defaultProps;
 
 export default Layout;

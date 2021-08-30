@@ -108,11 +108,11 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
           },
         }}
         >
-          <NavDrawerItem href="#home" displayName="Home" isActive={activeSectionId === 'home'} />
-          <NavDrawerItem href="#about" displayName="About" isActive={activeSectionId === 'about'} />
-          <NavDrawerItem href="#work" displayName="Work" isActive={activeSectionId === 'work'} />
-          <NavDrawerItem href="#tech" displayName="Tech" isActive={activeSectionId === 'tech'} />
-          <NavDrawerItem href="#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
+          <NavDrawerItem href="/#home" displayName="Home" isActive={activeSectionId === 'home'} />
+          <NavDrawerItem href="/#about" displayName="About" isActive={activeSectionId === 'about'} />
+          <NavDrawerItem href="/#work" displayName="Work" isActive={activeSectionId === 'work'} />
+          <NavDrawerItem href="/#tech" displayName="Tech" isActive={activeSectionId === 'tech'} />
+          <NavDrawerItem href="/#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
         </nav>
 
         <Divider />
