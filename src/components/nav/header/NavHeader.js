@@ -13,7 +13,11 @@ const scrollBarWidth = '6px';
 
 const propTypes = {
   activeSectionId: PropTypes.string.isRequired,
-  pageTopTrackingPixelRef: PROP_TYPE.REF.isRequired,
+  pageTopTrackingPixelRef: PROP_TYPE.REF,
+};
+
+const defaultProps = {
+  pageTopTrackingPixelRef: null,
 };
 
 function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
@@ -27,16 +31,20 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
   useEffect(() => {
     if (pageTopObserverRef.current) { pageTopObserverRef.current.disconnect(); }
 
-    pageTopObserverRef.current = new IntersectionObserver(handlePageTopObserver);
+    let currentObserver;
 
-    const { current: currentObserver } = pageTopObserverRef;
-    const currentRef = pageTopTrackingPixelRef.current;
+    if (pageTopTrackingPixelRef) {
+      pageTopObserverRef.current = new IntersectionObserver(handlePageTopObserver);
+      currentObserver = pageTopObserverRef.current;
 
-    if (currentRef) {
-      currentObserver.observe(currentRef);
+      const currentRef = pageTopTrackingPixelRef.current;
+
+      if (currentRef) {
+        currentObserver.observe(currentRef);
+      }
     }
 
-    return () => { currentObserver.disconnect(); };
+    return () => { if (currentObserver) { currentObserver.disconnect(); } };
   }, [pageTopTrackingPixelRef]);
 
   // -- Renders -----------------------------------------------------------------------------------
@@ -121,5 +129,6 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
 }
 
 NavHeader.propTypes = propTypes;
+NavHeader.defaultProps = defaultProps;
 
 export default NavHeader;
