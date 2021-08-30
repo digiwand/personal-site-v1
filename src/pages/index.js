@@ -1,12 +1,11 @@
 import { useRef } from 'react';
 
-// eslint-disable-next-line import/no-unresolved
-import Layout from 'components/Layout';
-import HomeSection from 'components/sections/home/Home';
-import AboutSection from 'components/sections/about/About';
-import TechSection from 'components/sections/tech/Tech';
-import WorkSection from 'components/sections/work/Work';
-import ContactSection from 'components/sections/contact/Contact';
+import Layout from '../components/Layout';
+import HomeSection from '../components/sections/home/Home';
+import AboutSection from '../components/sections/about/About';
+import TechSection from '../components/sections/tech/Tech';
+import WorkSection from '../components/sections/work/Work';
+import ContactSection from '../components/sections/contact/Contact';
 
 /**
  * @todo
