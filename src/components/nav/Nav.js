@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
 import MenuButton from 'components/nav/MenuButton';
-import NavDrawer from 'components/nav/drawer/NavDrawer';
+import NavDrawer from 'components/nav/drawer/Drawer';
 import BlurredBackground from 'components/nav/BlurredBackground';
 import NavHeader from 'components/nav/header/NavHeader';
 import PROP_TYPE from 'constants/prop-types';

@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { IconButton } from 'theme-ui';
 
-import NavDrawerItem from 'components/nav/drawer/NavDrawerItem';
+import NavDrawerItem from 'components/nav/drawer/DrawerItem';
 import NavDrawerSocialIconButtons from 'components/nav/drawer/SocialIconButtons';
+import ThemeNavDrawerItem from 'components/nav/drawer/ThemeDrawerItem';
 
 const headerAndFooterWidth = '60rem';
 const tabletWidth = '320rem';
@@ -10,9 +11,10 @@ const tabletWidth = '320rem';
 function DrawerFooter() {
   return (
     <div sx={{
-      height: headerAndFooterWidth,
-      borderTop: (t) => `1rem solid ${t.colors.frameBorder}`,
       display: 'flex',
+      height: headerAndFooterWidth,
+      flex: `0 0 ${headerAndFooterWidth}`,
+      borderTop: (t) => `1rem solid ${t.colors.frameBorder}`,
     }}
     >
       <NavDrawerSocialIconButtons />
@@ -69,6 +71,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
       alignItems: 'center',
       justifyContent: 'space-between',
       height: headerAndFooterWidth,
+      flex: `0 0 ${headerAndFooterWidth}`,
     }}
     >
       <span
@@ -93,12 +96,12 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
       sx={(t) => ({
         position: 'fixed',
         flexDirection: 'column',
-        overflow: 'auto',
         height: '100vh',
         top: '0',
         right: '0',
         boxShadow: '0 0 0 0 transparent',
         background: `${t.colors.frame}`,
+        overflow: 'hidden',
 
         display: ['flex', 'flex', 'none'],
         transform: ['translateX(100%)', `translateX(${tabletWidth})`],
@@ -115,27 +118,43 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
       {drawerHeader}
 
       <div sx={{
+        flex: '1 1 auto',
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        flex: '1 0 auto',
+        minHeight: 'min-content',
+        height: '100%',
+        variant: 'scrollbar',
       }}
       >
-
-        <nav sx={{
+        <div sx={{
           display: 'flex',
           flexDirection: 'column',
-          '[is-active="true"]': {
-            fontWeight: 700,
-          },
+          flex: '1 1 auto',
+          height: '100%',
+          minHeight: 'min-content',
         }}
         >
-          <NavDrawerItem href="#home" displayName="Home" isActive={activeSectionId === 'home'} />
-          <NavDrawerItem href="#about" displayName="About" isActive={activeSectionId === 'about'} />
-          <NavDrawerItem href="#work" displayName="Work" isActive={activeSectionId === 'work'} />
-          <NavDrawerItem href="#tech" displayName="Tech" isActive={activeSectionId === 'tech'} />
-          <NavDrawerItem href="#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
-        </nav>
+          <nav sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            pb: 5,
+            mt: 'auto',
+
+            '[is-active="true"]': {
+              fontWeight: 700,
+            },
+          }}
+          >
+            <NavDrawerItem href="#home" displayName="Home" isActive={activeSectionId === 'home'} />
+            <NavDrawerItem href="#about" displayName="About" isActive={activeSectionId === 'about'} />
+            <NavDrawerItem href="#work" displayName="Work" isActive={activeSectionId === 'work'} />
+            <NavDrawerItem href="#tech" displayName="Tech" isActive={activeSectionId === 'tech'} />
+            <NavDrawerItem href="#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
+          </nav>
+
+          <ThemeNavDrawerItem />
+        </div>
       </div>
 
       <DrawerFooter />

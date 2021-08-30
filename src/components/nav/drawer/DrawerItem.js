@@ -23,6 +23,7 @@ function NavDrawerItem({ children, ...props }) {
           letterSpacing: '2rem',
           textAlign: 'center',
           color: t.colors.frameText,
+          height: '68rem',
           transition: 'color 0.2s, background 0.2s',
 
           '&:hover': {

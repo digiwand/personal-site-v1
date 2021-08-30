@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import NavTabs from 'components/nav/header/Tabs';
 import NavSocialIcons from 'components/nav/header/SocialIconButtons';
-import ThemeSelector from 'components/nav/theme-dropdown/ThemeDropdown';
+import ThemeSelector from 'components/nav/theme-selector/Dropdown';
 
 import PROP_TYPE from 'constants/prop-types';
 
