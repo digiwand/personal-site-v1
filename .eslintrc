@@ -4,8 +4,8 @@
     "es2021": true
   },
   "extends": [
-    "eslint:recommended", 
     "airbnb",
+    "eslint:recommended", 
     "next",
     "next/core-web-vitals"
   ],

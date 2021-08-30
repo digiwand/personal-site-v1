@@ -19,6 +19,7 @@
     "theme-ui": "^0.10.0"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^11.1.0",
     "@theme-ui/color": "^0.10.0",
     "date-fns": "^2.21.3",
     "eslint": "^7.32.0",
