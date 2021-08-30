@@ -44,7 +44,7 @@ function JobSection({ children, ...props }) {
       <div sx={{
         flex: '0 0 45%',
         position: 'relative',
-        background: (t) => `${t.colors.backgroundWorkJobBox}`,
+        background: (t) => t.colors.backgroundWorkJobBox,
         boxShadow: 'rgba(133, 133, 133, 0) 2px 5px 15px 0px',
         p: 5,
         mb: [1, 1, 0],
@@ -55,10 +55,10 @@ function JobSection({ children, ...props }) {
         {companyLogo}
 
         <div sx={{
-          mt: 5,
-          mb: 3,
-          height: '2px',
-          background: '#333',
+          mt: 4,
+          mb: 5,
+          height: '1rem',
+          background: (t) => t.colors.text,
           width: '90px',
         }}
         />
