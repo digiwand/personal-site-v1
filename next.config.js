@@ -2,12 +2,13 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  eslint: {
+    dirs: ['components'], // Only run ESLint on the 'components' directories during production builds (next build)
+  },
   webpack: (config, {
-    buildId, dev, /* , dev, isServer, defaultLoaders, webpack, */
+    buildId, /* , dev, isServer, defaultLoaders, webpack, */
   }) => {
     console.log('Building: ', buildId);
-
-    if (!dev) { return config; }
 
     config.module.rules.push({
       test: /\.m?js/,
