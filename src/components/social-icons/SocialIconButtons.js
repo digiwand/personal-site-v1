@@ -17,15 +17,16 @@ function SocialIconButtons({ className, socialKeys }) {
   const socialIconButtons = socialKeys.map((key, index) => {
     const socialConfig = SOCIAL[key];
     return (
-      <Fade cascade key={key} delay={(index + 1) * 255}>
-        <IconButton
-          className={className}
-        >
+      <IconButton
+        className={className}
+        key={className + key}
+      >
+        <Fade delay={(index + 1) * 255}>
           <a href={socialConfig.url} target="_blank" rel="noopener noreferrer">
             {socialConfig.iconSVG}
           </a>
-        </IconButton>
-      </Fade>
+        </Fade>
+      </IconButton>
     );
   });
 

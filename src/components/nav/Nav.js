@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
 import MenuButton from 'components/nav/navDrawer/NavMenuButton';
 import NavDrawer from 'components/nav/navDrawer/NavDrawer';
+import BlurredBackground from 'components/nav/BlurredBackground';
 import NavHeader from 'components/nav/navHeader/NavHeader';
 import PROP_TYPE from 'constants/prop-types';
 
@@ -68,25 +69,6 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
 
   // -- Renders -----------------------------------------------------------------------------------
 
-  // move blurred background into its own function component
-  const blurBackground = (
-    <div
-      css={{
-        /** @todo update logic as this is not supported in firefox. also, consider animating */
-        backdropFilter: 'blur(2px) opacity(0.95) brightness(0.85)',
-        height: '100vh',
-        width: '100vw',
-        position: 'fixed',
-        left: '0',
-        top: '0',
-        transition: 'backdropFilter 0.3s',
-        pointerEvents: 'none',
-        userSelect: 'none',
-      }}
-      sx={{ display: ['block', 'block', 'none'] }}
-    />
-  );
-
   return (
     <div
       sx={{
@@ -104,7 +86,7 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
         pageTopTrackingPixelRef={pageTopTrackingPixelRef}
       />
 
-      {isOpenDrawer && blurBackground}
+      {isOpenDrawer && <BlurredBackground />}
 
       <MenuButton onClick={handleOpenDrawer} />
 

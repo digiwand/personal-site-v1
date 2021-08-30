@@ -1,10 +1,24 @@
 import PropTypes from 'prop-types';
-import { Divider, IconButton, Themed } from 'theme-ui';
+import { IconButton } from 'theme-ui';
 
 import NavDrawerItem from 'components/nav/navDrawer/NavDrawerItem';
-import NavSocialIcons from 'components/nav/SocialIcons';
+import NavDrawerSocialIconButtons from 'components/nav/navDrawer/SocialIconButtons';
 
-const headerAndFooterWidth = '60px';
+const headerAndFooterWidth = '60rem';
+const tabletWidth = '320rem';
+
+function DrawerFooter() {
+  return (
+    <div sx={{
+      height: headerAndFooterWidth,
+      borderTop: (t) => `1rem solid ${t.colors.frameBorder}`,
+      display: 'flex',
+    }}
+    >
+      <NavDrawerSocialIconButtons />
+    </div>
+  );
+}
 
 const propTypes = {
   activeSectionId: PropTypes.string.isRequired,
@@ -12,12 +26,6 @@ const propTypes = {
   isOpen: PropTypes.bool.isRequired,
 };
 
-/**
- * @todo:
- * - show active section in nav
- * - replace close/open buttons
- * - resume button
- */
 function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
   function closeMenu() {
     handleCloseMenu();
@@ -30,21 +38,25 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
       sx={{
         height: headerAndFooterWidth,
         width: headerAndFooterWidth,
-        float: 'right',
+
+        ':hover .NavDrawer_closeSVG > path': {
+          fill: (t) => t.colors.frameHoverText,
+        },
       }}
       onClick={closeMenu}
     >
-      {/* @todo: update open/close menu icon */}
       <svg
+        alt="Close Menu"
+        className="NavDrawer_closeSVG"
         viewBox="0 0 24 24"
-        title="Close Menu"
-        sx={(theme) => ({
+        sx={{
           height: '30px',
 
           '> path': {
-            fill: `${theme.colors.frameText}`,
+            transition: 'fill 0.15s',
+            fill: (t) => t.colors.frameText,
           },
-        })}
+        }}
       >
         <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
       </svg>
@@ -53,39 +65,49 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
 
   const drawerHeader = (
     <div sx={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
       height: headerAndFooterWidth,
     }}
     >
+      <span
+        sx={{
+          fontFamily: 'profile',
+          fontSize: 3,
+          lineHeight: '60rem',
+          pl: 4,
+          // Adjust for unevent font center
+          pt: '7rem',
+          color: (t) => t.colors.frameText,
+        }}
+      >
+        Ariella Vu
+      </span>
       {closeButton}
-    </div>
-  );
-
-  const drawerFooter = (
-    <div sx={{
-      height: headerAndFooterWidth,
-    }}
-    >
-      {/** @todo add shortcut buttons. contact? theme selector? */}
     </div>
   );
 
   return (
     <aside
-      sx={(theme) => ({
+      sx={(t) => ({
         position: 'fixed',
-        display: ['flex', 'flex', 'none'],
         flexDirection: 'column',
         overflow: 'auto',
         height: '100vh',
-        width: '280px',
-        transition: 'transform 0.3s',
-        background: `${theme.colors.frame}`,
         top: '0',
         right: '0',
-        transform: ['translateX(0)', 'translateX(0)', 'translateX(280px)'],
+        boxShadow: '0 0 0 0 transparent',
+        background: `${t.colors.frame}`,
 
-        '&[is-open="false"]': {
-          transform: 'translateX(280px)',
+        display: ['flex', 'flex', 'none'],
+        transform: ['translateX(100%)', `translateX(${tabletWidth})`],
+        width: ['100%', tabletWidth],
+        transition: 'box-shadow 0.3s, transform 0.4s ease-in, width 0.3s',
+
+        '&[is-open="true"]': {
+          transform: ['translateX(0)', 'translateX(0)', `translateX(${tabletWidth})`],
+          boxShadow: `-5px 0px 10px 1px ${t.colors.frameBorder}`,
         },
       })}
       is-open={String(isOpen)}
@@ -114,17 +136,9 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
           <NavDrawerItem href="#tech" displayName="Tech" isActive={activeSectionId === 'tech'} />
           <NavDrawerItem href="#contact" displayName="Contact" isActive={activeSectionId === 'contact'} />
         </nav>
-
-        <Divider />
-        <Themed.h6>Social</Themed.h6>
-        <NavSocialIcons />
-
-        <Divider />
-        <Themed.h6>Themes</Themed.h6>
-
       </div>
 
-      {drawerFooter}
+      <DrawerFooter />
     </aside>
   );
 }

@@ -2,9 +2,10 @@ import { Button } from 'theme-ui';
 
 export default function HamburgerMenu({ onClick }) {
   const menuLine = {
-    margin: '2px 0',
-    width: '15px',
-    height: '1px',
+    margin: '2rem 0',
+    width: '15rem',
+    height: '1rem',
+    transition: 'background 0.2s',
   };
 
   return (
@@ -15,8 +16,8 @@ export default function HamburgerMenu({ onClick }) {
         top: '0',
         right: '0',
         display: 'flex',
-        height: '50px',
-        width: '50px',
+        height: '50rem',
+        width: '50rem',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
@@ -25,6 +26,10 @@ export default function HamburgerMenu({ onClick }) {
         mr: 4,
         opacity: [1, 1, 0],
         pointerEvents: ['initial', 'initial', 'none'],
+
+        '&:hover > div': {
+          background: (t) => t.colors.backgroundHome,
+        },
       }}
       onClick={onClick}
       aria-label="Open menu drawer"
@@ -45,9 +50,5 @@ export default function HamburgerMenu({ onClick }) {
       })}
       />
     </Button>
-    // <IconButton aria-label="Open menu drawer">
-    // <svg class="MuiSvgIcon-root jss178" focusable="false" viewBox="0 0 24 24"
-    // aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
-    // </IconButton>
   );
 }

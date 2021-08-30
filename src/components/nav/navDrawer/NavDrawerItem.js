@@ -17,10 +17,22 @@ function NavDrawerItem({ children, ...props }) {
   return (
     <Link href={href} scroll={false} passHref>
       <a
-        sx={(theme) => ({
-          mt: 3,
-          mb: 3,
-          color: `${theme.colors.frameText}`,
+        sx={(t) => ({
+          py: 3,
+          fontSize: 5,
+          letterSpacing: '2rem',
+          textAlign: 'center',
+          color: t.colors.frameText,
+          transition: 'color 0.2s, background 0.2s',
+
+          '&:hover': {
+            color: t.colors.frameHoverText,
+            background: t.colors.frameBorder,
+          },
+          '&[is-active="true"]': {
+            color: t.colors.frameHoverText,
+            background: t.colors.frameBorder,
+          },
         })}
         href={href}
         is-active={String(isActive)}

@@ -95,8 +95,8 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         className="NavHeader_profileLogo"
         sx={{
           fontFamily: 'profile',
-          fontSize: '28px',
-          lineHeight: '34px',
+          fontSize: '28rem',
+          lineHeight: '34rem',
           transition: 'font-size 0.4s, transform 0.4s',
         }}
       >

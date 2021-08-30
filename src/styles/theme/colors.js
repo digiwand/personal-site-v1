@@ -51,6 +51,9 @@ const colors = {
   // to update
   frame: PALETTE.BOLD.offWhite,
   frameText: PALETTE.BOLD.darkForest,
+  frameActiveText: PALETTE.BOLD.white,
+  frameHoverText: PALETTE.BOLD.forest,
+  frameBorder: 'rgba(0, 0, 0, 0.1)',
 
   // SVG - Tech
   svgGitLogo: '#2F2707',
