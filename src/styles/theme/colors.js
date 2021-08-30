@@ -13,6 +13,37 @@ const PALETTE = {
   },
 };
 
+const SVG = {
+  DEFAULT: {
+    // - Tech
+    svgGitLogo: '#2F2707',
+    svgGitText: '#DE4C36',
+    svgNextJs: '#000',
+    svgNodeJs: '#333',
+
+    // Work
+    svgCopperColon: '#FF3465',
+    svgCopperText: '#3C3F40',
+    svgPriceSpiderLogo: '#0047ff',
+    svgPriceSpiderText: '#1b0c75',
+  },
+
+  LIGHT: {
+    // - Tech
+    svgGitLogo: '#fff',
+    svgGitText: '#fff',
+    svgNextJs: '#fff',
+    svgNodeJs: '#fff',
+
+    // Work
+    svgCopperColon: '#fff',
+    svgCopperText: '#fff',
+    svgPriceSpiderLogo: '#fff',
+    svgPriceSpiderText: '#fff',
+    // optional official replacement color: #d3d4e1
+  },
+};
+
 const colors = {
   background: PALETTE.BOLD.darkForest,
   backgroundHome: PALETTE.BOLD.offWhite,
@@ -55,49 +86,12 @@ const colors = {
   frameHoverText: PALETTE.BOLD.forest,
   frameBorder: 'rgba(0, 0, 0, 0.1)',
 
-  // SVG - Tech
-  svgGitLogo: '#2F2707',
-  svgGitText: '#DE4C36',
-  svgNextJs: '#000',
-  svgNodeJs: '#333',
-
-  // SVG - Work
-  svgCopperColon: '#FF3465',
-  svgCopperText: '#3C3F40',
-  svgPriceSpiderLogo: '#0047ff',
-  svgPriceSpiderText: '#1b0c75',
+  ...SVG.DEFAULT,
 
   modes: {
     dark: {
-      background: '#222739',
-      backgroundAbout: '#EFF9F0',
 
-      inputBackground: '#333',
-
-      // need to refactor bottom
-
-      text: '#F0F5F9',
-
-      primary: '#546CBB',
-
-      accent: '#6699CC',
-
-      // to update
-      frame: '#fafafb',
-      frameText: '#233143',
-
-      // SVG - Tech
-      svgGitLogo: '#fff',
-      svgGitText: '#fff',
-      svgNextJs: '#fff',
-      svgNodeJs: '#fff',
-
-      // SVG - Work
-      svgCopperColon: '#fff',
-      svgCopperText: '#fff',
-      // optional official replacement color: #d3d4e1
-      svgPriceSpiderLogo: '#fff',
-      svgPriceSpiderText: '#fff',
+      ...SVG.LIGHT,
     },
 
     mint: {
@@ -113,18 +107,6 @@ const colors = {
       // to update
       frame: '#fafafb',
       frameText: '#233143',
-
-      // SVG - Tech
-      svgGitLogo: '#2F2707',
-      svgGitText: '#DE4C36',
-      svgNextJs: '#000',
-      svgNodeJs: '#333',
-
-      // SVG - Work
-      svgCopperColon: '#FF3465',
-      svgCopperText: '#3C3F40',
-      svgPriceSpiderLogo: '#0047ff',
-      svgPriceSpiderText: '#1b0c75',
     },
   },
 };
