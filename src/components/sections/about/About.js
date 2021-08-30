@@ -5,9 +5,11 @@ import { Flex, Image, Themed } from 'theme-ui';
 import OffsetFrame from 'components/common/OffsetFrame';
 import Section from 'components/sections/Section';
 
+import { SECTION_ID } from 'constants/section';
+
 const AboutSection = (props, ref) => (
   <Section
-    id="about"
+    id={SECTION_ID.ABOUT}
     ref={ref}
     sx={{
       minHeight: '80vh',

@@ -9,6 +9,8 @@ import Section from 'components/sections/Section';
 import ContactLeftSide from 'components/sections/contact/ContactLeftSide';
 import ContactRightSide from 'components/sections/contact/ContactRightSide';
 
+import { SECTION_ID } from 'constants/section';
+
 function ContactDivider() {
   return (
     <div
@@ -67,7 +69,7 @@ function ContactBoxBackground() {
 
 const ContactSection = (props, ref) => (
   <Section
-    id="contact"
+    id={SECTION_ID.CONTACT}
     ref={ref}
     sx={{
       minHeight: 'calc(100vh - 260px)',

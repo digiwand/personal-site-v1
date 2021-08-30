@@ -8,6 +8,8 @@ import ResumeButton from 'components/resume-button/ResumeButton';
 import Section from 'components/sections/Section';
 import TSParticlesBGMask from 'components/sections/home/TSParticlesBGMask';
 
+import { SECTION_ID } from 'constants/section';
+
 function HomeSectionBackground() {
   return (
     <div sx={{
@@ -36,7 +38,7 @@ function HomeSectionBackground() {
 function HomeSection(props, ref) {
   return (
     <Section
-      id="home"
+      id={SECTION_ID.HOME}
       ref={ref}
       sx={{
         minHeight: '100vh',

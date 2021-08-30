@@ -13,11 +13,13 @@ import {
   SVGNodeJS,
 } from 'components/svg/tech';
 
+import { SECTION_ID } from 'constants/section';
+
 function TechSection(props, ref) {
   return (
     <div>
       <Section
-        id="tech"
+        id={SECTION_ID.TECH}
         ref={ref}
         sx={{
           background: (t) => `${t.colors.backgroundTech}`,
