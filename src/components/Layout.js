@@ -4,8 +4,8 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { InitializeColorMode, useThemeUI } from 'theme-ui';
 
-import Nav from 'components/nav/Nav';
 import Footer from 'components/footer/Footer';
+import Nav from 'components/nav/Nav';
 
 import PROP_TYPE from 'constants/prop-types';
 
