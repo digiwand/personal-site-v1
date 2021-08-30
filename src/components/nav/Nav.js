@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
-import MenuButton from 'components/nav/navDrawer/NavMenuButton';
-import NavDrawer from 'components/nav/navDrawer/NavDrawer';
+import MenuButton from 'components/nav/drawer/MenuButton';
+import NavDrawer from 'components/nav/drawer/NavDrawer';
 import BlurredBackground from 'components/nav/BlurredBackground';
-import NavHeader from 'components/nav/navHeader/NavHeader';
+import NavHeader from 'components/nav/header/NavHeader';
 import PROP_TYPE from 'constants/prop-types';
 
 const propTypes = {

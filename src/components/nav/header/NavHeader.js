@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import NavTabs from 'components/nav/navTabs/NavTabs';
-import NavSocialIcons from 'components/nav/SocialIcons';
-import ThemeSelector from 'components/nav/navHeader/ThemeDropdown';
+import NavTabs from 'components/nav/header/Tabs';
+import NavSocialIcons from 'components/nav/header/SocialIconButtons';
+import ThemeSelector from 'components/nav/theme-dropdown/ThemeDropdown';
 
 import PROP_TYPE from 'constants/prop-types';
 

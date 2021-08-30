@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { IconButton } from 'theme-ui';
 
-import NavDrawerItem from 'components/nav/navDrawer/NavDrawerItem';
-import NavDrawerSocialIconButtons from 'components/nav/navDrawer/SocialIconButtons';
+import NavDrawerItem from 'components/nav/drawer/NavDrawerItem';
+import NavDrawerSocialIconButtons from 'components/nav/drawer/SocialIconButtons';
 
 const headerAndFooterWidth = '60rem';
 const tabletWidth = '320rem';

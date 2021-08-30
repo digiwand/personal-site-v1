@@ -3,7 +3,7 @@ import {
   useColorMode,
 } from 'theme-ui';
 
-import ThemeDropdownList from 'components/nav/navHeader/ThemeDropdownList';
+import ThemeDropdownList from 'components/nav/theme-dropdown/ThemeDropdownList';
 import THEMEUI_COLOR_MODE_CONFIG from 'constants/theme-ui';
 
 function NavHeaderThemeDropdown() {
