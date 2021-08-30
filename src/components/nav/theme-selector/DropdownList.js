@@ -22,15 +22,14 @@ function ThemeDropdownList() {
     >
       <button
         type="button"
-        sx={{
+        sx={(t) => ({
           display: 'flex',
           alignItems: 'center',
           whiteSpace: 'nowrap',
           borderRadius: '8rem',
           px: 3,
           py: 2,
-          background: (t) => t.colors.background,
-          border: (t) => `1px solid ${t.colors.text}`,
+          border: `1px solid ${t.colors.text}`,
           minWidth: '90rem',
           minHeight: '40rem',
           textAlign: 'left',
@@ -38,21 +37,28 @@ function ThemeDropdownList() {
           textTransform: 'capitalize',
 
           '&:hover': {
-            border: (t) => `1px solid ${t.colors.accent}`,
+            color: t.colors.text,
+            background: t.colors.background,
           },
           '&:focus': {
-            border: (t) => `1px solid ${t.colors.accent}`,
+            color: t.colors.text,
+            background: t.colors.background,
           },
           '&:focusWithin': {
-            border: (t) => `1px solid ${t.colors.accent}`,
+            color: t.colors.text,
+            background: t.colors.background,
           },
 
           '> svg': {
             width: '24rem',
             height: '24rem',
             mr: 2,
+
+            '> path': {
+              fill: t.colors.text,
+            }
           },
-        }}
+        })}
         is-selected={String(colorMode === colorModeKey)}
         onClick={() => selectColor(colorModeKey)}
       >
