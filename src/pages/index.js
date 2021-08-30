@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 
+// eslint-disable-next-line import/no-unresolved
 import Layout from 'components/Layout';
 import HomeSection from 'components/sections/home/Home';
 import AboutSection from 'components/sections/about/About';
