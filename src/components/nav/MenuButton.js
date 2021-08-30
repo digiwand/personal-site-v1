@@ -1,13 +1,13 @@
 import { Button } from 'theme-ui';
 
-export default function HamburgerMenu({ onClick }) {
-  const menuLine = {
-    margin: '2rem 0',
-    width: '15rem',
-    height: '1rem',
-    transition: 'background 0.2s',
-  };
+const menuLine = {
+  margin: '2rem 0',
+  width: '15rem',
+  height: '1rem',
+  transition: 'background 0.2s',
+};
 
+function NavMenuButton({ onClick }) {
   return (
     <Button
       sx={{
@@ -52,3 +52,5 @@ export default function HamburgerMenu({ onClick }) {
     </Button>
   );
 }
+
+export default NavMenuButton;
