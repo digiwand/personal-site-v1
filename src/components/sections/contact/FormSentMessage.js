@@ -3,7 +3,7 @@ import { Themed } from 'theme-ui';
 function FormSentMessage({ isVisible, email }) {
   return (
     <div
-      is-visible={isVisible}
+      is-visible={String(isVisible)}
       sx={{
         position: 'absolute',
         height: '100%',

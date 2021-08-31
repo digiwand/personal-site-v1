@@ -108,7 +108,7 @@ function ContactForm() {
         </div>
       </form>
 
-      <FormSentMessage isVisible={String(hasSent)} />
+      <FormSentMessage isVisible={hasSent} />
       <FormErrorMessage isVisible={hasError} />
     </div>
   );
