@@ -19,13 +19,16 @@ const labelFocusSx = {
   fontWeight: '500',
 };
 
-export function ContactFormInput({ name, label, type }) {
+export function ContactFormInput({
+  name, label, type, onChange,
+}) {
   return (
     <div sx={{ position: 'relative', paddingTop: paddingForLabel, pb: 2 }}>
       <Input
         type={type}
         name={name}
         id={name}
+        onChange={onChange}
         mb={3}
         required
         placeholder=" "
@@ -54,13 +57,16 @@ export function ContactFormInput({ name, label, type }) {
   );
 }
 
-export function ContactFormTextArea({ name, label, type }) {
+export function ContactFormTextArea({
+  name, label, type, onChange,
+}) {
   return (
     <div sx={{ position: 'relative', paddingTop: paddingForLabel, pb: 2 }}>
       <Textarea
         type={type}
         name={name}
         id={name}
+        onChange={onChange}
         mb={3}
         rows={5}
         required
