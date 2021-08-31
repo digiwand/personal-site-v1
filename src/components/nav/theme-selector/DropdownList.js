@@ -56,7 +56,7 @@ function ThemeDropdownList() {
 
             '> path': {
               fill: t.colors.text,
-            }
+            },
           },
         })}
         is-selected={String(colorMode === colorModeKey)}
