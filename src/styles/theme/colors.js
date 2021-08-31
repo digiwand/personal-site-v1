@@ -91,11 +91,11 @@ const colors = {
   contactBg: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg")'
   + ' no-repeat fixed',
   contactBgBox: 'rgba(244,244,244, 0.68)',
-  backgroundContactHeader: PALETTE.BOLD.forest400,
-  backgroundContactSubHeader: PALETTE.BOLD.grey200,
-  backgroundContactText: PALETTE.BOLD.grey200,
-  backgroundContactDivider: 'rgba(92, 92, 92, 0.5)',
-  backgroundContactPlant: PALETTE.BOLD.black,
+  contactHeader: PALETTE.BOLD.forest400,
+  contactSubHeader: PALETTE.BOLD.grey200,
+  contactText: PALETTE.BOLD.grey200,
+  contactDivider: 'rgba(92, 92, 92, 0.5)',
+  contactPlant: PALETTE.BOLD.black,
 
   backgroundFooter: PALETTE.BOLD.white200,
   backgroundFooterText: PALETTE.BOLD.forest400,
@@ -148,11 +148,11 @@ const colors = {
       contactBg: 'linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url("images/bg/leaves-4.jpg")'
       + ' no-repeat fixed',
       contactBgBox: 'rgba(0,0,0,0.83)',
-      backgroundContactHeader: PALETTE.BOLD.forest200,
-      backgroundContactSubHeader: PALETTE.BOLD.forest300,
-      backgroundContactText: PALETTE.BOLD.grey400,
-      backgroundContactDivider: 'rgba(92, 92, 92, 0.5)',
-      backgroundContactPlant: PALETTE.BOLD.white300,
+      contactHeader: PALETTE.BOLD.forest200,
+      contactSubHeader: PALETTE.BOLD.forest300,
+      contactText: PALETTE.BOLD.grey400,
+      contactDivider: 'rgba(92, 92, 92, 0.5)',
+      contactPlant: PALETTE.BOLD.white300,
 
       backgroundFooter: PALETTE.BOLD.black,
       backgroundFooterText: PALETTE.BOLD.grey200,

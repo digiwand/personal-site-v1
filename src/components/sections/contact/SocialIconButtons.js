@@ -25,7 +25,7 @@ function ContactSocialIconButtons() {
         sx={{
           mr: [0, 0, 4],
           path: {
-            fill: (t) => `${t.colors.backgroundContactSubHeader}`,
+            fill: (t) => `${t.colors.contactSubHeader}`,
           },
         }}
         showUsername

@@ -26,7 +26,7 @@ function ContactDivider() {
         '&:after': {
           content: '""',
           zIndex: 1,
-          background: (t) => t.colors.backgroundContactDivider,
+          background: (t) => t.colors.contactDivider,
           width: ['100%', '100%', '1rem'],
           height: ['1rem', '1rem', '100%'],
         },
@@ -88,7 +88,7 @@ const ContactSection = (props, ref) => (
         <Text
           variant="sectionHeading"
           sx={{
-            color: (t) => `${t.colors.backgroundContactHeader}`,
+            color: (t) => `${t.colors.contactHeader}`,
           }}
         >
           CONTACT
