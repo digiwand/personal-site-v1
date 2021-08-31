@@ -81,12 +81,12 @@ const colors = {
   backgroundWorkHeader: PALETTE.BOLD.forest400,
   // backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
 
-  backgroundTech: PALETTE.BOLD.white300,
-  backgroundTechHeader: PALETTE.BOLD.forest400,
-  backgroundTechTools: PALETTE.BOLD.white300,
-  backgroundTechToolsHeader: PALETTE.BOLD.forest400,
-  // backgroundTechTools: PALETTE.BOLD.forest300,
-  // backgroundTechToolsHeader: 'rgb(237,237,236)',
+  techBg: PALETTE.BOLD.white300,
+  techHeader: PALETTE.BOLD.forest400,
+  techToolsBg: PALETTE.BOLD.white300,
+  techToolsHeader: PALETTE.BOLD.forest400,
+  // techToolsBg: PALETTE.BOLD.forest300,
+  // techToolsHeader: 'rgb(237,237,236)',
 
   contactBg: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg")'
   + ' no-repeat fixed',
@@ -107,7 +107,7 @@ const colors = {
   inputBackground: 'rgba(219,220,217, 0.7)',
 
   accent: PALETTE.BOLD.darkClay,
-  // backgroundTech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
+  // tech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
 
   text: PALETTE.BOLD.forest200,
   primary: PALETTE.BOLD.forest200,
@@ -140,10 +140,10 @@ const colors = {
       backgroundWork: PALETTE.BOLD.black,
       backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
 
-      backgroundTech: PALETTE.BOLD.grey500,
-      backgroundTechHeader: PALETTE.BOLD.forest200,
-      backgroundTechTools: PALETTE.BOLD.black,
-      backgroundTechToolsHeader: PALETTE.BOLD.forest200,
+      techBg: PALETTE.BOLD.grey500,
+      techHeader: PALETTE.BOLD.forest200,
+      techToolsBg: PALETTE.BOLD.black,
+      techToolsHeader: PALETTE.BOLD.forest200,
 
       contactBg: 'linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url("images/bg/leaves-4.jpg")'
       + ' no-repeat fixed',

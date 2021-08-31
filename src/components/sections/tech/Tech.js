@@ -22,7 +22,7 @@ function TechSection(props, ref) {
         id={SECTION_ID.TECH}
         ref={ref}
         sx={{
-          background: (t) => `${t.colors.backgroundTech}`,
+          background: (t) => `${t.colors.techBg}`,
           minHeight: '0',
           py: [5, 6, 6],
           zIndex: 1,
@@ -33,7 +33,7 @@ function TechSection(props, ref) {
           <Text
             variant="sectionHeading"
             sx={{
-              color: (t) => `${t.colors.backgroundTechHeader}`,
+              color: (t) => `${t.colors.techHeader}`,
               pb: 6,
             }}
           >
@@ -66,7 +66,7 @@ function TechSection(props, ref) {
 
       <Section
         sx={{
-          background: (t) => `${t.colors.backgroundTechTools}`,
+          background: (t) => `${t.colors.techToolsBg}`,
           minHeight: '0',
           py: [5, 6, 6],
           zIndex: 1,
@@ -76,7 +76,7 @@ function TechSection(props, ref) {
           <Text
             variant="sectionHeading"
             sx={{
-              color: (t) => `${t.colors.backgroundTechToolsHeader}`,
+              color: (t) => `${t.colors.techToolsHeader}`,
               pb: 6,
             }}
           >
