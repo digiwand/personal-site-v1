@@ -73,9 +73,9 @@ const colors = {
   + ' no-repeat fixed 0 30%',
   homeBgBox: 'rgba(255, 255, 255, 0.9)',
 
-  backgroundAbout: PALETTE.BOLD.white300,
-  backgroundAboutHeader: PALETTE.BOLD.navy200,
-  backgroundAboutText: PALETTE.BOLD.navy500,
+  aboutBg: PALETTE.BOLD.white300,
+  aboutHeader: PALETTE.BOLD.navy200,
+  aboutText: PALETTE.BOLD.navy500,
 
   backgroundWork: PALETTE.BOLD.white300,
   backgroundWorkHeader: PALETTE.BOLD.forest400,
@@ -133,9 +133,9 @@ const colors = {
       homeBgImage: 'black',
       homeBgBox: 'rgba(133, 133, 133, 0.1)',
 
-      backgroundAbout: PALETTE.BOLD.grey500,
-      backgroundAboutHeader: PALETTE.BOLD.forest200,
-      backgroundAboutText: PALETTE.BOLD.grey200,
+      aboutBg: PALETTE.BOLD.grey500,
+      aboutHeader: PALETTE.BOLD.forest200,
+      aboutText: PALETTE.BOLD.grey200,
 
       backgroundWork: PALETTE.BOLD.black,
       backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
@@ -178,7 +178,7 @@ const colors = {
 
     mint: {
       background: '#DFECEB',
-      backgroundAbout: '#EFF9F0',
+      aboutBg: '#EFF9F0',
 
       inputBackground: 'pink',
 
