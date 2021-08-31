@@ -82,54 +82,59 @@ function ContactForm() {
   );
 
   return (
-    <Box
-      as="form"
-        /** @see {@https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion} */
-      autoComplete="new-password"
-      onSubmit={(e) => handleSend(e)}
-      isSubmitted={hasSent}
-      sx={{ position: 'relative' }}
+    <div sx={{
+      position: 'relative',
+    }}
     >
-      <Fade bottom>
-        <ContactFormInput
-          name="contact-form-name"
-          label="Name"
-          type="name"
-          value={name}
-          onChange={(e) => { setName(e.target.value); }}
-        />
-      </Fade>
-
-      <Fade bottom delay={200}>
-        <ContactFormInput
-          name="contact-form-email"
-          label="Email"
-          type="email"
-          value={email}
-          onChange={(e) => { setEmail(e.target.value); }}
-        />
-      </Fade>
-
-      <Fade bottom delay={400}>
-        <ContactFormTextArea
-          name="contact-form-message"
-          label="Message"
-          type="message"
-          onChange={(e) => { setMessage(e.target.value); }}
-        />
-      </Fade>
-
-      <div sx={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-      }}
+      <Box
+        as="form"
+        /** @see {@https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion} */
+        autoComplete="new-password"
+        onSubmit={(e) => handleSend(e)}
+        isSubmitted={hasSent}
       >
-        <Fade bottom delay={800}>
-          <Button>Send</Button>
+        <Fade bottom>
+          <ContactFormInput
+            name="contact-form-name"
+            label="Name"
+            type="name"
+            value={name}
+            onChange={(e) => { setName(e.target.value); }}
+          />
         </Fade>
-      </div>
+
+        <Fade bottom delay={200}>
+          <ContactFormInput
+            name="contact-form-email"
+            label="Email"
+            type="email"
+            value={email}
+            onChange={(e) => { setEmail(e.target.value); }}
+          />
+        </Fade>
+
+        <Fade bottom delay={400}>
+          <ContactFormTextArea
+            name="contact-form-message"
+            label="Message"
+            type="message"
+            onChange={(e) => { setMessage(e.target.value); }}
+          />
+        </Fade>
+
+        <div sx={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+        }}
+        >
+          <Fade bottom delay={800}>
+            <Button>Send</Button>
+          </Fade>
+        </div>
+      </Box>
+
       {errorMessage}
-    </Box>
+    </div>
   );
 }
 
