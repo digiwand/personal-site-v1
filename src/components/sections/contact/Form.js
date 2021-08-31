@@ -1,12 +1,10 @@
 import emailjs from 'emailjs-com';
 import { useState } from 'react';
 import Fade from 'react-reveal/Fade';
-import {
-  Box,
-  Button,
-} from 'theme-ui';
+import { Button } from 'theme-ui';
 
 import { ContactFormInput, ContactFormTextArea } from 'components/sections/contact/FormInputs';
+import FormSentMessage from 'components/sections/contact/FormSentMessage';
 import SOCIAL from 'constants/social';
 
 const serviceID = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID;
@@ -23,6 +21,7 @@ function ContactForm() {
 
   const handleSend = (e) => {
     e.preventDefault();
+    if (hasSent) { return; }
 
     const body = {
       sender_name: name,
@@ -86,12 +85,20 @@ function ContactForm() {
       position: 'relative',
     }}
     >
-      <Box
+      <form
         as="form"
         /** @see {@https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion} */
         autoComplete="new-password"
         onSubmit={(e) => handleSend(e)}
-        isSubmitted={hasSent}
+        has-sent={String(hasSent)}
+        sx={{
+          transition: 'opacity 0.3s',
+
+          '&[has-sent="true"]': {
+            opacity: 0,
+            pointerEvents: 'none',
+          },
+        }}
       >
         <Fade bottom>
           <ContactFormInput
@@ -131,8 +138,9 @@ function ContactForm() {
             <Button>Send</Button>
           </Fade>
         </div>
-      </Box>
+      </form>
 
+      <FormSentMessage isVisible={String(hasSent)} />
       {errorMessage}
     </div>
   );
