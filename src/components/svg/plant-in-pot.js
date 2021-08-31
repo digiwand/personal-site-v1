@@ -3,7 +3,6 @@ export default function SVGPlantInPot({ className }) {
     <svg
       className={className}
       alt="Plant In Pot"
-      version="1.0"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1280.000000 1167.000000"
       preserveAspectRatio="xMidYMid meet"
@@ -11,7 +10,7 @@ export default function SVGPlantInPot({ className }) {
       <metadata>
         Created by potrace 1.15, written by Peter Selinger 2001-2017
       </metadata>
-      <g transform="translate(0.000000,1167.000000) scale(0.100000,-0.100000)" stroke="none">
+      <g transform="translate(0.000000,1167.000000) scale(0.100000,-0.100000)">
         <path d="M6106 11662 c-2 -4 2 -36 10 -72 7 -36 14 -74 14 -86 0 -11 11 -35
 25 -54 19 -26 25 -46 25 -85 0 -27 4 -66 10 -84 6 -23 6 -39 0 -47 -7 -8 -6
 -21 4 -40 8 -16 21 -65 29 -109 8 -44 24 -123 36 -175 21 -102 41 -313 41

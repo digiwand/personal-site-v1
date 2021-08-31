@@ -6,8 +6,8 @@ import SOCIAL from 'constants/social';
 function ContactRightSide() {
   return (
     <div sx={{
-      transition: 'width 0.3s',
       flex: '3 0 auto',
+      transition: 'width 0.3s',
       width: ['100%', '100%', 'auto'],
     }}
     >
@@ -19,7 +19,7 @@ function ContactRightSide() {
       }}
       >
         <Fade>
-          <Themed.h3 sx={{ color: (t) => `${t.colors.contactSubHeader}` }}>
+          <Themed.h3 sx={{ color: (t) => t.colors.contactSubHeader }}>
             Send me a message
           </Themed.h3>
         </Fade>
