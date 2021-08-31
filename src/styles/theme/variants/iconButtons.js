@@ -2,10 +2,10 @@ const iconButtons = {
   padding: 1,
   // height: '46px',
   // width: '46px',
-  transition: 'background-color 150ms, box-shadow 150ms, border 150ms, transform 150ms',
+  transition: 'background-color 150ms, box-shadow 150ms, border 150ms',
   boxShadow: '0px 0px 10px transparent',
 
-  '&:hover > a': {
+  '&:hover a > svg': {
     transform: 'rotate(10deg)',
   },
 
@@ -14,7 +14,7 @@ const iconButtons = {
     width: '30rem',
 
     path: {
-      transition: 'fill 0.3s',
+      transition: 'fill 0.3s, transform 0.15s',
     },
   },
 
