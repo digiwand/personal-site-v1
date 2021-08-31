@@ -1,6 +1,16 @@
-// import { useState } from 'react';
+// import { useEffect } from 'react';
 import Particles from 'react-tsparticles';
-// import { useColorMode, useThemeUI } from 'theme-ui';
+import { useColorMode } from 'theme-ui';
+
+const MODE_BG_RGB = {
+  default: { r: 204, g: 204, b: 204 },
+  dark: { r: 0, g: 0, b: 0 },
+};
+
+const MODE_BG = {
+  default: 'url("images/bg/leaves-2.jpg")',
+  dark: 'radial-gradient(#ababab, #eee)',
+};
 
 /**
  * WIP
@@ -13,8 +23,13 @@ import Particles from 'react-tsparticles';
  * @see {@link https://particles.js.org/samples/index.html#background}
  */
 function TSParticlesBGMask() {
-  // const [colorMode] = useColorMode();
+  const [colorMode] = useColorMode();
   // const { theme: { rawColors } } = useThemeUI();
+
+  // useEffect(() => {
+  //   console.log('should rerender w/', colorMode);
+  //   debugger;
+  // }, [colorMode]);
 
   return (
     <Particles
@@ -32,7 +47,7 @@ function TSParticlesBGMask() {
             value: '#333',
           },
           // image: 'radial-gradient(#ababab, #eee)',
-          image: 'url("images/bg/leaves-2.jpg")',
+          image: MODE_BG[colorMode] || MODE_BG.default,
           position: '50% 50%',
           repeat: 'no-repeat',
           size: 'cover',
@@ -40,11 +55,7 @@ function TSParticlesBGMask() {
         backgroundMask: {
           cover: {
             color: {
-              value: {
-                r: 240,
-                g: 240,
-                b: 240,
-              },
+              value: { ...(MODE_BG_RGB[colorMode] ? MODE_BG_RGB[colorMode] : MODE_BG_RGB.default) },
             },
           },
           enable: true,

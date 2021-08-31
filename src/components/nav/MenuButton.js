@@ -28,7 +28,7 @@ function NavMenuButton({ onClick }) {
         pointerEvents: ['initial', 'initial', 'none'],
 
         '&:hover > div': {
-          background: (t) => t.colors.backgroundHome,
+          background: (t) => t.colors.homeBg,
         },
       }}
       onClick={onClick}

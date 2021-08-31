@@ -18,7 +18,7 @@ function ContactRightSide() {
       }}
       >
         <Fade>
-          <Themed.h3 sx={{ color: (t) => `${t.colors.backgroundContactSubHeader}` }}>
+          <Themed.h3 sx={{ color: (t) => `${t.colors.contactSubHeader}` }}>
             Send me a message
           </Themed.h3>
         </Fade>
@@ -28,7 +28,7 @@ function ContactRightSide() {
         <Fade>
           <Themed.h6 sx={{
             pb: 4,
-            color: (t) => `${t.colors.backgroundContactText}`,
+            color: (t) => `${t.colors.contactText}`,
           }}
           >
             Email me here or directly at ariellavu@gmail.com
