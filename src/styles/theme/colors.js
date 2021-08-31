@@ -68,10 +68,10 @@ const SVG = {
 
 const colors = {
   background: PALETTE.BOLD.forest400,
-  backgroundHome: PALETTE.BOLD.white300,
-  backgroundHomeImage: 'linear-gradient( rgba(243, 243, 243, 0.4), rgba(243, 243, 243, 0) ), url("images/bg/leaves-2.jpg")'
+  homeBg: PALETTE.BOLD.white300,
+  homeBgImage: 'linear-gradient( rgba(243, 243, 243, 0.4), rgba(243, 243, 243, 0) ), url("images/bg/leaves-2.jpg")'
   + ' no-repeat fixed 0 30%',
-  backgroundHomeBox: 'rgba(255, 255, 255, 0.9)',
+  homeBgBox: 'rgba(255, 255, 255, 0.9)',
 
   backgroundAbout: PALETTE.BOLD.white300,
   backgroundAboutHeader: PALETTE.BOLD.navy200,
@@ -129,9 +129,9 @@ const colors = {
       text: PALETTE.BOLD.forest200,
       heading: PALETTE.BOLD.forest200,
 
-      backgroundHome: 'black',
-      backgroundHomeImage: 'black',
-      backgroundHomeBox: 'rgba(133, 133, 133, 0.1)',
+      homeBg: 'black',
+      homeBgImage: 'black',
+      homeBgBox: 'rgba(133, 133, 133, 0.1)',
 
       backgroundAbout: PALETTE.BOLD.grey500,
       backgroundAboutHeader: PALETTE.BOLD.forest200,

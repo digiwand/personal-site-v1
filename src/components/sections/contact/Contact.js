@@ -71,7 +71,7 @@ const ContactSection = (props, ref) => (
     ref={ref}
     sx={{
       minHeight: 'calc(100vh - 260px)',
-      background: (t) => `${t.colors.backgroundHome}`,
+      background: (t) => `${t.colors.homeBg}`,
     }}
   >
     <ContactSectionBackground />

@@ -4,7 +4,7 @@ const scrollbar = {
 
   '&::-webkit-scrollbar-track': {
     borderRadius: '3px',
-    backgroundColor: (t) => t.colors.backgroundHome,
+    backgroundColor: (t) => t.colors.homeBg,
   },
 
   '&::-webkit-scrollbar': {
