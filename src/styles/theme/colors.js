@@ -97,8 +97,8 @@ const colors = {
   contactDivider: 'rgba(92, 92, 92, 0.5)',
   contactPlant: PALETTE.BOLD.black,
 
-  backgroundFooter: PALETTE.BOLD.white200,
-  backgroundFooterText: PALETTE.BOLD.forest400,
+  footerBg: PALETTE.BOLD.white200,
+  footerText: PALETTE.BOLD.forest400,
 
   heading: PALETTE.BOLD.forest400,
 
@@ -154,8 +154,8 @@ const colors = {
       contactDivider: 'rgba(92, 92, 92, 0.5)',
       contactPlant: PALETTE.BOLD.white300,
 
-      backgroundFooter: PALETTE.BOLD.black,
-      backgroundFooterText: PALETTE.BOLD.grey200,
+      footerBg: PALETTE.BOLD.black,
+      footerText: PALETTE.BOLD.grey200,
 
       scrollTrack: PALETTE.BOLD.white200,
       inputBackground: 'rgba(0,0,0, 0.8)',
