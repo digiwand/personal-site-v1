@@ -105,6 +105,7 @@ const colors = {
   scrollTrack: PALETTE.BOLD.white200,
 
   inputBackground: 'rgba(219,220,217, 0.7)',
+  inputAutofill: 'rgba(219,220,217, 0.9)',
 
   accent: PALETTE.BOLD.darkClay,
   // tech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
@@ -159,6 +160,7 @@ const colors = {
 
       scrollTrack: PALETTE.BOLD.white200,
       inputBackground: 'rgba(0,0,0, 0.8)',
+      inputAutofill: 'rgba(33,33,33, 0.8)',
 
       accent: PALETTE.BOLD.darkClay,
 

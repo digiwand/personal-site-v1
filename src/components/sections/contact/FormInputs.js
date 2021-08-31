@@ -27,9 +27,11 @@ export function ContactFormInput({
       <Input
         type={type}
         name={name}
+        autoComplete={type}
         id={name}
         onChange={onChange}
         mb={3}
+        autofillBackgroundColor="inputAutofill"
         required
         placeholder=" "
         sx={{
