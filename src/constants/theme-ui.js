@@ -10,10 +10,10 @@ const THEMEUI_COLOR_MODE_CONFIG = {
     icon: <IconWbSunny />,
     displayName: 'light',
   },
-  mint: {
-    icon: <IconNightStay />,
-    displayName: 'dark',
-  },
+  // mint: {
+  //   icon: <IconNightStay />,
+  //   displayName: 'dark',
+  // },
 };
 
 export default THEMEUI_COLOR_MODE_CONFIG;

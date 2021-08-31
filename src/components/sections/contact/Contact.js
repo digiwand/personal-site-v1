@@ -26,7 +26,7 @@ function ContactDivider() {
         '&:after': {
           content: '""',
           zIndex: 1,
-          background: (t) => `${t.colors.backgroundContactDivider}`,
+          background: (t) => t.colors.contactDivider,
           width: ['100%', '100%', '1rem'],
           height: ['1rem', '1rem', '100%'],
         },
@@ -43,8 +43,7 @@ function ContactSectionBackground() {
       width: '100%',
       left: 0,
       opacity: '0.2',
-      background: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg")'
-      + ' no-repeat fixed',
+      background: (t) => t.colors.contactBg,
       backgroundSize: 'cover',
     }}
     />
@@ -59,8 +58,7 @@ function ContactBoxBackground() {
       top: '0',
       height: '100%',
       width: '100%',
-      background: '#F4F4F4',
-      opacity: '0.68',
+      background: (t) => t.colors.contactBgBox,
       zIndex: '0',
     }}
     />
@@ -73,7 +71,7 @@ const ContactSection = (props, ref) => (
     ref={ref}
     sx={{
       minHeight: 'calc(100vh - 260px)',
-      background: (t) => `${t.colors.backgroundHome}`,
+      background: (t) => `${t.colors.homeBg}`,
     }}
   >
     <ContactSectionBackground />
@@ -90,7 +88,7 @@ const ContactSection = (props, ref) => (
         <Text
           variant="sectionHeading"
           sx={{
-            color: (t) => `${t.colors.backgroundContactHeader}`,
+            color: (t) => `${t.colors.contactHeader}`,
           }}
         >
           CONTACT

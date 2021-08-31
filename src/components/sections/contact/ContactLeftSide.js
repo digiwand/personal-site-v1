@@ -16,7 +16,7 @@ function ContactLeftSide() {
     }}
     >
       <Fade>
-        <Themed.h3 sx={{ color: (t) => `${t.colors.backgroundContactSubHeader}` }}>
+        <Themed.h3 sx={{ color: (t) => `${t.colors.contactSubHeader}` }}>
           Let&apos;s connect!
         </Themed.h3>
       </Fade>
@@ -24,7 +24,7 @@ function ContactLeftSide() {
       <br />
 
       <Fade>
-        <Themed.h6 sx={{ color: (t) => `${t.colors.backgroundContactText}` }}>
+        <Themed.h6 sx={{ color: (t) => `${t.colors.contactText}` }}>
           Working remotely since 2018
         </Themed.h6>
       </Fade>
@@ -38,7 +38,7 @@ function ContactLeftSide() {
           width: ['50%'],
           maxWidth: '336rem',
           alignSelf: 'center',
-          path: { fill: (t) => `${t.colors.backgroundContactPlant}` },
+          path: { fill: (t) => `${t.colors.contactPlant}` },
         }}
       />
     </div>

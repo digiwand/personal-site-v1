@@ -28,6 +28,10 @@ function NavDrawerSocialIcons() {
             top: '0',
             background: t.colors.frameBorder,
           },
+
+          '& path': {
+            fill: t.colors.frameText,
+          },
         })}
         socialKeys={socialKeys}
       />

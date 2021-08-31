@@ -34,7 +34,7 @@ function ThemeNavDrawerItem() {
           color: t.colors.frameHoverText,
           background: t.colors.frameBorder,
 
-          '& > svg > path': {
+          '> svg > path': {
             fill: t.colors.frameHoverText,
           },
         },
@@ -42,6 +42,11 @@ function ThemeNavDrawerItem() {
         '> svg': {
           height: '28rem',
           width: '28rem',
+
+          '> path': {
+            transition: 'fill 0.3s',
+            fill: t.colors.frameText,
+          },
         },
       })}
     >

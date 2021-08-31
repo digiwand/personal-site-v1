@@ -4,8 +4,8 @@ function Footer() {
   return (
     <footer
       sx={(theme) => ({
-        backgroundColor: `${theme.colors.backgroundFooter}`,
-        color: `${theme.colors.backgroundFooterText}`,
+        backgroundColor: `${theme.colors.footerBg}`,
+        color: `${theme.colors.footerText}`,
         display: 'flex',
         flexDirection: ['column-reverse', 'row', 'row'],
         justifyContent: 'space-between',
@@ -34,7 +34,7 @@ function Footer() {
             pt: [3, 2, 0],
           }}
         >
-          Designed & Built by Ariella Vu &nbsp; -- &nbsp;
+          Made by Ariella Vu &nbsp; -- &nbsp;
           <a href="https://github.com/ariellanvu/personal-site-v1" target="_blank" rel="noopener noreferrer">
             Open Source on Github
           </a>
