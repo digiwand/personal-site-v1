@@ -35,6 +35,14 @@ const fonts = {
       fontWeight: 'heading',
       lineHeight: 'heading',
     },
+    link: {
+      transition: 'font-weight 0.3s, color 0.3s',
+
+      ':hover': {
+        color: (t) => t.colors.linkHover,
+        fontWeight: 700,
+      },
+    },
     sectionHeading: {
       display: 'block',
       textAlign: 'center',

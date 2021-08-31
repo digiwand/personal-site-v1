@@ -68,6 +68,10 @@ const SVG = {
 
 const colors = {
   background: PALETTE.BOLD.forest400,
+
+  error: '#B00020',
+  linkHover: PALETTE.BOLD.green200,
+
   homeBg: PALETTE.BOLD.white300,
   homeBgImage: 'linear-gradient( rgba(243, 243, 243, 0.4), rgba(243, 243, 243, 0) ), url("images/bg/leaves-2.jpg")'
   + ' no-repeat fixed 0 30%',

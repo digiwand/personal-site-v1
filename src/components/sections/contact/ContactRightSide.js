@@ -1,6 +1,7 @@
 import Fade from 'react-reveal/Fade';
 import { Themed } from 'theme-ui';
 import ContactForm from 'components/sections/contact/Form';
+import SOCIAL from 'constants/social';
 
 function ContactRightSide() {
   return (
@@ -32,6 +33,15 @@ function ContactRightSide() {
           }}
           >
             Email me here or directly at ariellavu@gmail.com
+            {' '}
+            <a
+              href={SOCIAL.email.url}
+              sx={{
+                variant: 'text.link',
+              }}
+            >
+              ariellavu@gmail.com
+            </a>
           </Themed.h6>
         </Fade>
 

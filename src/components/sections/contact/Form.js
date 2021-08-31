@@ -1,3 +1,4 @@
+import emailjs from 'emailjs-com';
 import { useState } from 'react';
 import Fade from 'react-reveal/Fade';
 import {
@@ -5,93 +6,130 @@ import {
   Button,
 } from 'theme-ui';
 import { ContactFormInput, ContactFormTextArea } from 'components/sections/contact/FormInputs';
+import SOCIAL from 'constants/social';
 
-/**
- * @todo
- * - style inputs
- * - add server-side email client (SendGrid?)
- * - update submit button to send email
- * - throttle requests
- * - verify inputs
- * - disable "Send" button if inputs are not all entered
- */
+const serviceID = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID;
+const templateID = process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID;
+const userID = process.env.NEXT_PUBLIC_EMAIL_JS_USER_ID;
+
 function ContactForm() {
+  const [error, setError] = useState(false);
+  const [hasSent, setHasSent] = useState(false);
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [hasSent, setHasSent] = useState(false);
 
   const handleSend = (e) => {
     e.preventDefault();
 
-    // console.log('sending');
-
-    const data = {
-      name,
-      email,
+    const body = {
+      sender_name: name,
+      sender_email: email,
       message,
     };
 
-    fetch('/api/send-email', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      // console.log('Response received');
+    emailjs.send(serviceID, templateID, body, userID).then((res) => {
+      if (res.status !== 200) { /** todo: add error tracking */ return handleSendError(); }
 
-      if (res.status === 200) {
-        // console.log('Response succeeded!');
-        setHasSent(true);
-        setName('');
-        setEmail('');
-        setMessage('');
-      }
-    });
+      return handleSendSuccess();
+    }, (err) => handleSendError(err));
   };
 
-  return (
-    <Box
-      as="form"
-      onSubmit={(e) => handleSend(e)}
-      isSubmitted={hasSent}
-      sx={{
+  function handleSendSuccess() {
+    setError(false);
+    setHasSent(true);
+    setName('');
+    setEmail('');
+    setMessage('');
+  }
 
+  function handleSendError() {
+    setError(true);
+  }
+
+  const errorMessage = (
+    <div
+      has-error={String(error)}
+      sx={{
+        color: (t) => t.colors.error,
+        position: 'absolute',
+        opacity: 0,
+        top: '100%',
+        right: '0',
+        pt: [3, 3, 4],
+        left: ['0', '0', 'initial'],
+        whiteSpace: ['initial', 'initial', 'nowrap'],
+        transition: 'opacity 0.3s',
+
+        '&[has-error="true"]': {
+          opacity: 1,
+        },
       }}
     >
-      <Fade bottom>
-        <ContactFormInput
-          name="contact-form-name"
-          label="Name"
-          type="name"
-          onChange={(e) => { setName(e.target.value); }}
-        />
-      </Fade>
+      Sorry. An error has occured. Please retry or email me directly at
+      {' '}
+      <a
+        href={SOCIAL.email.url}
+        sx={{
+          variant: 'text.link',
+        }}
+      >
+        ariellavu@gmail.com
+      </a>
+    </div>
+  );
 
-      <Fade bottom delay={200}>
-        <ContactFormInput
-          name="contact-form-email"
-          label="Email"
-          type="email"
-          onChange={(e) => { setEmail(e.target.value); }}
-        />
-      </Fade>
+  return (
+    <div sx={{
+      position: 'relative',
+    }}
+    >
+      <Box
+        as="form"
+        onSubmit={(e) => handleSend(e)}
+        isSubmitted={hasSent}
+      >
+        <Fade bottom>
+          <ContactFormInput
+            name="contact-form-name"
+            label="Name"
+            type="name"
+            onChange={(e) => { setName(e.target.value); }}
+          />
+        </Fade>
 
-      <Fade bottom delay={400}>
-        <ContactFormTextArea
-          name="contact-form-message"
-          label="Message"
-          type="message"
-          onChange={(e) => { setMessage(e.target.value); }}
-        />
-      </Fade>
+        <Fade bottom delay={200}>
+          <ContactFormInput
+            name="contact-form-email"
+            label="Email"
+            type="email"
+            onChange={(e) => { setEmail(e.target.value); }}
+          />
+        </Fade>
 
-      <Fade bottom delay={1000}>
-        <Button sx={{ float: 'right' }}>Send</Button>
-      </Fade>
-    </Box>
+        <Fade bottom delay={400}>
+          <ContactFormTextArea
+            name="contact-form-message"
+            label="Message"
+            type="message"
+            onChange={(e) => { setMessage(e.target.value); }}
+          />
+        </Fade>
+
+        <div sx={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+        }}
+        >
+          <Fade bottom delay={800}>
+            <Button>Send</Button>
+          </Fade>
+        </div>
+      </Box>
+
+      {errorMessage}
+    </div>
   );
 }
 
