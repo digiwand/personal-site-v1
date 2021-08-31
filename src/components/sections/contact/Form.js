@@ -5,14 +5,14 @@ import { Button } from 'theme-ui';
 
 import { ContactFormInput, ContactFormTextArea } from 'components/sections/contact/FormInputs';
 import FormSentMessage from 'components/sections/contact/FormSentMessage';
-import SOCIAL from 'constants/social';
+import FormErrorMessage from 'components/sections/contact/FormError';
 
 const serviceID = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID;
 const templateID = process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID;
 const userID = process.env.NEXT_PUBLIC_EMAIL_JS_USER_ID;
 
 function ContactForm() {
-  const [error, setError] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const [hasSent, setHasSent] = useState(false);
 
   const [name, setName] = useState('');
@@ -37,7 +37,7 @@ function ContactForm() {
   };
 
   function handleSendSuccess() {
-    setError(false);
+    setHasError(false);
     setHasSent(true);
     setName('');
     setEmail('');
@@ -45,40 +45,8 @@ function ContactForm() {
   }
 
   function handleSendError() {
-    setError(true);
+    setHasError(true);
   }
-
-  const errorMessage = (
-    <div
-      has-error={String(error)}
-      sx={{
-        color: (t) => t.colors.error,
-        position: 'absolute',
-        opacity: 0,
-        top: '100%',
-        right: '0',
-        pt: [3, 3, 4],
-        left: ['0', '0', 'initial'],
-        whiteSpace: ['initial', 'initial', 'nowrap'],
-        transition: 'opacity 0.3s',
-
-        '&[has-error="true"]': {
-          opacity: 1,
-        },
-      }}
-    >
-      Sorry. An error has occured. Please retry or email me directly at
-      {' '}
-      <a
-        href={SOCIAL.email.url}
-        sx={{
-          variant: 'text.link',
-        }}
-      >
-        ariellavu@gmail.com
-      </a>
-    </div>
-  );
 
   return (
     <div sx={{
@@ -141,7 +109,7 @@ function ContactForm() {
       </form>
 
       <FormSentMessage isVisible={String(hasSent)} />
-      {errorMessage}
+      <FormErrorMessage isVisible={hasError} />
     </div>
   );
 }
