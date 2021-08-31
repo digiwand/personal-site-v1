@@ -5,6 +5,7 @@ import {
   Box,
   Button,
 } from 'theme-ui';
+
 import { ContactFormInput, ContactFormTextArea } from 'components/sections/contact/FormInputs';
 import SOCIAL from 'constants/social';
 
@@ -87,6 +88,8 @@ function ContactForm() {
     >
       <Box
         as="form"
+        /** @see {@https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion} */
+        autoComplete="new-password"
         onSubmit={(e) => handleSend(e)}
         isSubmitted={hasSent}
       >
@@ -95,6 +98,7 @@ function ContactForm() {
             name="contact-form-name"
             label="Name"
             type="name"
+            value={name}
             onChange={(e) => { setName(e.target.value); }}
           />
         </Fade>
@@ -104,6 +108,7 @@ function ContactForm() {
             name="contact-form-email"
             label="Email"
             type="email"
+            value={email}
             onChange={(e) => { setEmail(e.target.value); }}
           />
         </Fade>
