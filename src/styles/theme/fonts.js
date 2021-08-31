@@ -42,6 +42,7 @@ const fonts = {
       fontWeight: '400',
       fontSize: [3, 4, 4],
       letterSpacing: '12rem',
+      color: (t) => t.colors.heading,
       pb: 5,
     },
   },

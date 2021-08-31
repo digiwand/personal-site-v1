@@ -6,34 +6,34 @@ import ResumeButton from 'components/resume-button/ResumeButton';
 // import ProfileSVG from 'components/svg/profile';
 
 import Section from 'components/sections/Section';
-import TSParticlesBGMask from 'components/sections/home/TSParticlesBGMask';
+// import TSParticlesBGMask from 'components/sections/home/TSParticlesBGMask';
 
 import { SECTION_ID } from 'constants/section';
 
-function HomeSectionBackground() {
-  return (
-    <div sx={{
-      position: 'absolute',
-      height: '100%',
-      width: '100%',
-      left: 0,
-      top: 0,
-    }}
-    >
-      <div sx={{
-        position: 'relative',
-        height: '100%',
-        width: '100%',
-        overflow: 'hidden',
-        opacity: 0.8,
-      }}
-      >
-        <TSParticlesBGMask />
-      </div>
+// function HomeSectionBackground() {
+//   return (
+//     <div sx={{
+//       position: 'absolute',
+//       height: '100%',
+//       width: '100%',
+//       left: 0,
+//       top: 0,
+//     }}
+//     >
+//       <div sx={{
+//         position: 'relative',
+//         height: '100%',
+//         width: '100%',
+//         overflow: 'hidden',
+//         opacity: 0.8,
+//       }}
+//       >
+//         <TSParticlesBGMask />
+//       </div>
 
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
 function HomeSection(props, ref) {
   return (
@@ -43,10 +43,12 @@ function HomeSection(props, ref) {
       sx={{
         minHeight: '100vh',
         textAlign: 'center',
-        background: (t) => `${t.colors.backgroundHome}`,
+        // background: (t) => `${t.colors.backgroundHome}`,
+        background: (t) => `${t.colors.backgroundHomeImage}`,
+        backgroundSize: 'cover',
       }}
     >
-      <HomeSectionBackground />
+      {/* <HomeSectionBackground /> */}
 
       {/* <ProfileSVG sx={(theme) => ({
         position: 'absolute',
@@ -60,7 +62,7 @@ function HomeSection(props, ref) {
       /> */}
 
       <div sx={{
-        background: 'rgba(255, 255, 255, 0.9)',
+        background: (t) => `${t.colors.backgroundHomeBox}`,
         display: 'inline-flex',
         flexDirection: 'column',
         px: [3, 4, 5],
