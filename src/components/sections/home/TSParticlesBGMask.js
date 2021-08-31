@@ -31,7 +31,6 @@ function TSParticlesBGMask() {
   //   debugger;
   // }, [colorMode]);
 
-  debugger;
   return (
     <Particles
       id="tsparticles"
