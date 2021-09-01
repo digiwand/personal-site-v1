@@ -30,7 +30,7 @@ function FormSentMessage({ isVisible, email }) {
       <div>
         <br />
         <br />
-        Thank you! I should get back to you as soon as I can if you are exdivecting a response
+        Thank you! I should get back to you as soon as I can if you are expecting a response
         {email && ` to ${email}`}
         .
         <br />
