@@ -14,7 +14,7 @@ function FormSentMessage({ isVisible, email }) {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        p: 3,
+        p: 4,
         opacity: 0,
         pointerEvents: 'none',
         transition: 'opacity 0.3s',

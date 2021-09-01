@@ -32,7 +32,7 @@ function ContactRightSide() {
             color: (t) => `${t.colors.contactText}`,
           }}
           >
-            Email me here or directly at ariellavu@gmail.com
+            Email me here or directly at
             {' '}
             <a
               href={SOCIAL.email.url}
