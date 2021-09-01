@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import Script from 'next/script';
 import { InitializeColorMode, useThemeUI } from 'theme-ui';
 
 import Footer from 'components/footer/Footer';
@@ -43,7 +42,6 @@ function Layout({ children, sectionTrackingPixelRefs }) {
       }}
     >
       {/* Note: next/script cannot be placed in next/head */}
-      <Script src="/polyfills/pathseg.js" strategy="beforeInteractive" />
 
       {/* Note: We can add Head to any React component */}
       <Head>
