@@ -29,7 +29,7 @@ const PALETTE = {
     grey50: 'rgb(235,236,238)',
     grey100: 'rgb(184, 184, 184)',
     grey200: 'rgb(166, 166, 166)',
-    grey300: 'rbg(128, 128, 128)',
+    grey300: 'rgb(128, 128, 128)',
     grey400: 'rgb(92, 92, 92)',
     grey500: 'rgb(14, 14, 14)',
   },
@@ -68,6 +68,10 @@ const SVG = {
 
 const colors = {
   background: PALETTE.BOLD.forest400,
+
+  error: '#B00020',
+  linkHover: PALETTE.BOLD.green200,
+
   homeBg: PALETTE.BOLD.white300,
   homeBgImage: 'linear-gradient( rgba(243, 243, 243, 0.4), rgba(243, 243, 243, 0) ), url("images/bg/leaves-2.jpg")'
   + ' no-repeat fixed 0 30%',
@@ -92,8 +96,8 @@ const colors = {
   + ' no-repeat fixed',
   contactBgBox: 'rgba(244,244,244, 0.68)',
   contactHeader: PALETTE.BOLD.forest400,
-  contactSubHeader: PALETTE.BOLD.grey200,
-  contactText: PALETTE.BOLD.grey200,
+  contactSubHeader: PALETTE.BOLD.forest200,
+  contactText: PALETTE.BOLD.grey300,
   contactDivider: 'rgba(92, 92, 92, 0.5)',
   contactPlant: PALETTE.BOLD.black,
 
@@ -105,6 +109,7 @@ const colors = {
   scrollTrack: PALETTE.BOLD.white200,
 
   inputBackground: 'rgba(219,220,217, 0.7)',
+  inputAutofill: 'rgba(219,220,217, 0.9)',
 
   accent: PALETTE.BOLD.darkClay,
   // tech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
@@ -159,6 +164,7 @@ const colors = {
 
       scrollTrack: PALETTE.BOLD.white200,
       inputBackground: 'rgba(0,0,0, 0.8)',
+      inputAutofill: 'rgba(33,33,33, 0.8)',
 
       accent: PALETTE.BOLD.darkClay,
 

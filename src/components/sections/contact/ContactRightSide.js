@@ -1,12 +1,13 @@
 import Fade from 'react-reveal/Fade';
 import { Themed } from 'theme-ui';
 import ContactForm from 'components/sections/contact/Form';
+import SOCIAL from 'constants/social';
 
 function ContactRightSide() {
   return (
     <div sx={{
-      transition: 'width 0.3s',
       flex: '3 0 auto',
+      transition: 'width 0.3s',
       width: ['100%', '100%', 'auto'],
     }}
     >
@@ -18,7 +19,7 @@ function ContactRightSide() {
       }}
       >
         <Fade>
-          <Themed.h3 sx={{ color: (t) => `${t.colors.contactSubHeader}` }}>
+          <Themed.h3 sx={{ color: (t) => t.colors.contactSubHeader }}>
             Send me a message
           </Themed.h3>
         </Fade>
@@ -31,7 +32,16 @@ function ContactRightSide() {
             color: (t) => `${t.colors.contactText}`,
           }}
           >
-            Email me here or directly at ariellavu@gmail.com
+            Email me here or directly at
+            {' '}
+            <a
+              href={SOCIAL.email.url}
+              sx={{
+                variant: 'text.link',
+              }}
+            >
+              ariellavu@gmail.com
+            </a>
           </Themed.h6>
         </Fade>
 

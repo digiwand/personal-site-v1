@@ -19,16 +19,27 @@ const labelFocusSx = {
   fontWeight: '500',
 };
 
-export function ContactFormInput({ name, label, type }) {
+/**
+ * React has an outstanding bug which prevents controlled inputs from filling with autofill, so we need to disable it.
+ * @see {@link https://github.com/facebook/react/issues/15739}
+ * @see {@link @see {@https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion}}
+ */
+export function ContactFormInput({
+  name, label, type, value, onChange,
+}) {
   return (
     <div sx={{ position: 'relative', paddingTop: paddingForLabel, pb: 2 }}>
       <Input
         type={type}
         name={name}
+        value={value}
         id={name}
+        onChange={onChange}
         mb={3}
-        required
+        autofillBackgroundColor="inputAutofill"
+        autoComplete="off"
         placeholder=" "
+        required
         sx={{
           '&:focus ~ label': labelFocusSx,
           '&:not(:placeholder-shown) ~ label': labelFocusSx,
@@ -36,7 +47,7 @@ export function ContactFormInput({ name, label, type }) {
       />
 
       <label
-        htmlFor="contact-form-name"
+        htmlFor={name}
         sx={{
           position: 'absolute',
           top: 0,
@@ -54,13 +65,16 @@ export function ContactFormInput({ name, label, type }) {
   );
 }
 
-export function ContactFormTextArea({ name, label, type }) {
+export function ContactFormTextArea({
+  name, label, type, onChange,
+}) {
   return (
     <div sx={{ position: 'relative', paddingTop: paddingForLabel, pb: 2 }}>
       <Textarea
         type={type}
         name={name}
         id={name}
+        onChange={onChange}
         mb={3}
         rows={5}
         required
