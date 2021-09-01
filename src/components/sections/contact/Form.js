@@ -53,7 +53,6 @@ function ContactForm() {
   function handleSendSuccess() {
     setHasSent(true);
     setName('');
-    setEmail('');
     setMessage('');
   }
 
@@ -135,7 +134,7 @@ function ContactForm() {
         </div>
       </form>
 
-      <FormSentMessage isVisible={hasSent} />
+      <FormSentMessage isVisible={hasSent} email={email} />
       <FormErrorMessage isVisible={hasError} />
     </div>
   );
