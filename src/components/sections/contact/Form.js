@@ -61,16 +61,42 @@ function ContactForm() {
   }
 
   const reCaptcha = (
-    <ReCAPTCHA
-      ref={recaptchaRef}
-      size="invisible"
-      sitekey={reCaptchaV2Key}
-      sx={{
-        '.grecaptcha-badge': {
-          visibility: 'hidden',
-        },
-      }}
-    />
+    <div sx={{
+      fontSize: 0,
+      textAlign: 'right',
+      height: 'fit-content',
+      alignSelf: 'flex-end',
+      pr: [0, 4, 4],
+      color: (t) => t.colors.contactDivider,
+    }}
+    >
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        size="invisible"
+        sitekey={reCaptchaV2Key}
+        sx={{
+          '.grecaptcha-badge': {
+            visibility: 'hidden',
+          },
+        }}
+      />
+      This site is protected by reCAPTCHA and the
+      <br />
+      {' '}
+      Google
+      {' '}
+      <a href="https://policies.google.com/privacy" sx={{ variant: 'text.link' }}>
+        Privacy Policy
+      </a>
+      {' '}
+      and
+      {' '}
+      <a href="https://policies.google.com/terms" sx={{ variant: 'text.link' }}>
+        Terms of Service
+      </a>
+      {' '}
+      apply.
+    </div>
   );
 
   return (
