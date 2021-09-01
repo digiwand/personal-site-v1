@@ -41,8 +41,6 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         height: '100vh',
       }}
     >
-      {/* Note: next/script cannot be placed in next/head */}
-
       {/* Note: We can add Head to any React component */}
       <Head>
         <title>{siteTitle}</title>
