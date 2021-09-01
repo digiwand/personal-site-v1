@@ -27,10 +27,10 @@ function FormSentMessage({ isVisible, email }) {
       }}
     >
       <Themed.h3>Email sent!</Themed.h3>
-      <p>
+      <div>
         <br />
         <br />
-        Thank you! I should get back to you as soon as I can if you are expecting a response
+        Thank you! I should get back to you as soon as I can if you are exdivecting a response
         {email && ` to ${email}`}
         .
         <br />
@@ -42,7 +42,7 @@ function FormSentMessage({ isVisible, email }) {
         <Themed.h4 sx={{ textAlign: 'center', pt: 2 }}>
           Ariella
         </Themed.h4>
-      </p>
+      </div>
     </div>
   );
 }
