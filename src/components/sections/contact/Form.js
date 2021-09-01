@@ -1,6 +1,7 @@
 import emailjs from 'emailjs-com';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Fade from 'react-reveal/Fade';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { Button } from 'theme-ui';
 
 import { ContactFormInput, ContactFormTextArea } from 'components/sections/contact/FormInputs';
@@ -11,6 +12,9 @@ const serviceID = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID;
 const templateID = process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID;
 const userID = process.env.NEXT_PUBLIC_EMAIL_JS_USER_ID;
 
+/** EmailJS does not support reCAPTCHA v3. Only reCAPTCHA v2. */
+const reCaptchaV2Key = process.env.NEXT_PUBLIC_G_RECAPTCHA_V2_KEY;
+
 function ContactForm() {
   const [hasError, setHasError] = useState(false);
   const [hasSent, setHasSent] = useState(false);
@@ -19,25 +23,34 @@ function ContactForm() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSend = (e) => {
+  const recaptchaRef = useRef();
+
+  const handleSend = async (e) => {
     e.preventDefault();
+    setHasError(false);
+
     if (hasSent) { return; }
 
-    const body = {
-      sender_name: name,
-      sender_email: email,
-      message,
-    };
+    try {
+      const token = await recaptchaRef.current.executeAsync();
 
-    emailjs.send(serviceID, templateID, body, userID).then((res) => {
-      if (res.status !== 200) { /** todo: add error tracking */ return handleSendError(); }
+      const body = {
+        sender_name: name,
+        sender_email: email,
+        message,
+        'g-recaptcha-response': token,
+      };
 
-      return handleSendSuccess();
-    }, (err) => handleSendError(err));
+      const emailJRes = await emailjs.send(serviceID, templateID, body, userID);
+      if (emailJRes.status !== 200) { throw new Error('EmailJS is failing to send the email.'); }
+
+      handleSendSuccess();
+    } catch (err) {
+      handleSendError(err);
+    }
   };
 
   function handleSendSuccess() {
-    setHasError(false);
     setHasSent(true);
     setName('');
     setEmail('');
@@ -47,6 +60,19 @@ function ContactForm() {
   function handleSendError() {
     setHasError(true);
   }
+
+  const reCaptcha = (
+    <ReCAPTCHA
+      ref={recaptchaRef}
+      size="invisible"
+      sitekey={reCaptchaV2Key}
+      sx={{
+        '.grecaptcha-badge': {
+          visibility: 'hidden',
+        },
+      }}
+    />
+  );
 
   return (
     <div sx={{
@@ -102,6 +128,7 @@ function ContactForm() {
           justifyContent: 'flex-end',
         }}
         >
+          {reCaptcha}
           <Fade bottom delay={800}>
             <Button>Send</Button>
           </Fade>
