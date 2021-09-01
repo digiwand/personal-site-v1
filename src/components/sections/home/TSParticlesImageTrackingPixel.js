@@ -1,47 +1,50 @@
-import { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+/**
+ * Save for potential scroll down effect
+ */
+// import { useEffect, useRef } from 'react';
+// import PropTypes from 'prop-types';
 
-const propTypes = {
-  setHasScrolled: PropTypes.func.isRequired,
-};
+// const propTypes = {
+//   setHasScrolled: PropTypes.func.isRequired,
+// };
 
-function TSParticlesImageTrackingPixel({ setHasScrolled }) {
-  const scrolledDownRef = useRef();
-  const scrolledDownObserverRef = useRef();
+// function TSParticlesImageTrackingPixel({ setHasScrolled }) {
+//   const scrolledDownRef = useRef();
+//   const scrolledDownObserverRef = useRef();
 
-  const handleScrolledDownObserver = ([entry]) => {
-    setHasScrolled(!(entry.intersectionRatio > 0));
-  };
+//   const handleScrolledDownObserver = ([entry]) => {
+//     setHasScrolled(!(entry.intersectionRatio > 0));
+//   };
 
-  useEffect(() => {
-    if (scrolledDownObserverRef.current) { scrolledDownObserverRef.current.disconnect(); }
+//   useEffect(() => {
+//     if (scrolledDownObserverRef.current) { scrolledDownObserverRef.current.disconnect(); }
 
-    scrolledDownObserverRef.current = new IntersectionObserver(handleScrolledDownObserver);
+//     scrolledDownObserverRef.current = new IntersectionObserver(handleScrolledDownObserver);
 
-    const { current: currentObserver } = scrolledDownObserverRef;
-    const currentRef = scrolledDownRef.current;
+//     const { current: currentObserver } = scrolledDownObserverRef;
+//     const currentRef = scrolledDownRef.current;
 
-    if (currentRef) {
-      currentObserver.observe(currentRef);
-    }
-    return () => { currentObserver.disconnect(); };
-  });
+//     if (currentRef) {
+//       currentObserver.observe(currentRef);
+//     }
+//     return () => { currentObserver.disconnect(); };
+//   });
 
-  // -- Renders -----------------------------------------------------------------------------------
+//   // -- Renders -----------------------------------------------------------------------------------
 
-  return (
-    <div
-      sx={{
-        position: 'absolute',
-        height: '1px',
-        width: '1px',
-        bottom: '10px',
-      }}
-      ref={scrolledDownRef}
-    />
-  );
-}
+//   return (
+//     <div
+//       sx={{
+//         position: 'absolute',
+//         height: '1px',
+//         width: '1px',
+//         bottom: '10px',
+//       }}
+//       ref={scrolledDownRef}
+//     />
+//   );
+// }
 
-TSParticlesImageTrackingPixel.propTypes = propTypes;
+// TSParticlesImageTrackingPixel.propTypes = propTypes;
 
-export default TSParticlesImageTrackingPixel;
+// export default TSParticlesImageTrackingPixel;

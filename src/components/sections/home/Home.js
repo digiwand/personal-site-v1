@@ -3,37 +3,10 @@ import Fade from 'react-reveal/Fade';
 import { Themed } from 'theme-ui';
 
 import ResumeButton from 'components/resume-button/ResumeButton';
+import Section from 'components/sections/Section';
 // import ProfileSVG from 'components/svg/profile';
 
-import Section from 'components/sections/Section';
-// import TSParticlesBGMask from 'components/sections/home/TSParticlesBGMask';
-
 import { SECTION_ID } from 'constants/section';
-
-// function HomeSectionBackground() {
-//   return (
-//     <div sx={{
-//       position: 'absolute',
-//       height: '100%',
-//       width: '100%',
-//       left: 0,
-//       top: 0,
-//     }}
-//     >
-//       <div sx={{
-//         position: 'relative',
-//         height: '100%',
-//         width: '100%',
-//         overflow: 'hidden',
-//         opacity: 0.8,
-//       }}
-//       >
-//         <TSParticlesBGMask />
-//       </div>
-
-//     </div>
-//   );
-// }
 
 function HomeSection(props, ref) {
   return (
@@ -43,12 +16,10 @@ function HomeSection(props, ref) {
       sx={{
         minHeight: '100vh',
         textAlign: 'center',
-        // background: (t) => `${t.colors.homeBg}`,
         background: (t) => `${t.colors.homeBgImage}`,
         backgroundSize: 'cover',
       }}
     >
-      {/* <HomeSectionBackground /> */}
 
       {/* <ProfileSVG sx={(theme) => ({
         position: 'absolute',
