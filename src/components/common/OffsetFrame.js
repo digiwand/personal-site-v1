@@ -9,17 +9,17 @@ function OffsetFrame({ children, ...props }) {
         className={className}
         sx={{
           position: 'relative',
-          display: 'inline-block',
         }}
       >
         <div sx={{
           background: (t) => t.colors.aboutFrame,
           position: 'absolute',
-          height: '100%',
-          width: '100%',
-          bottom: '20px',
-          left: '20px',
+          height: ['calc(100% + 20rem)', 'calc(100% + 20rem)', '100%'],
+          width: ['calc(100% + 20rem)', 'calc(100% + 20rem)', '100%'],
+          bottom: ['-10rem', '-10rem', '20rem'],
+          left: ['-10rem', '-10rem', '20rem'],
           zIndex: '-1',
+          boxShadow: 'rgba(40, 40, 40, 1) 2px 2px 13px 0px',
         }}
         />
         {children}
