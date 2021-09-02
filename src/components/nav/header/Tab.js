@@ -16,6 +16,23 @@ function NavTab({ children, ...props }) {
     className, displayName, href, isActive,
   } = props;
 
+  const hoverText = (
+    <span
+      className="NavTab_hoverText"
+      sx={{
+        position: 'absolute',
+        transition: 'width 0.3s',
+        top: '0',
+        left: '0',
+        width: '0',
+        overflow: 'hidden',
+        color: (t) => t.colors.text,
+      }}
+    >
+      {displayName}
+    </span>
+  );
+
   return (
     <Link href={href} scroll={false} passHref>
       <a
@@ -33,6 +50,11 @@ function NavTab({ children, ...props }) {
 
           '&:hover': {
             fontWeight: '700',
+
+            '.NavTab_hoverText': {
+              width: '100%',
+              transition: 'all 0.3s ease-in-out',
+            },
           },
           '&:is-active': {
             fontWeight: '700',
@@ -41,11 +63,15 @@ function NavTab({ children, ...props }) {
           '&:first-of-type': {
             ml: 0,
           },
+
         }}
         href={href}
         is-active={String(isActive)}
       >
-        {displayName}
+        <span sx={{ position: 'relative' }}>
+          {displayName}
+          {hoverText}
+        </span>
       </a>
     </Link>
   );
