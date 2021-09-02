@@ -17,13 +17,13 @@ const AboutSection = (props, ref) => (
     }}
   >
     <Flex sx={{
-      flexDirection: ['column', 'column', 'row'],
+      flexDirection: ['column-reverse', 'column-reverse', 'row'],
     }}
     >
       <div sx={{
         flex: '1 1 auto',
         pr: [0, 0, 6],
-        pb: [6, 6, 0],
+        pt: [6, 6, 0],
       }}
       >
         <Fade bottom>
