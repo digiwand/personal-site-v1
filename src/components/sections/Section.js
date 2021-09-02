@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SECTION_ID_TOP_PLACEMENT = {
-  default: '20vh',
+  default: '30vh',
   contact: '80vh',
   work: '50vh',
 };
