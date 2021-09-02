@@ -29,7 +29,7 @@ function ThemeDropdownList() {
           borderRadius: '8rem',
           px: 3,
           py: 2,
-          border: `1px solid ${t.colors.text}`,
+          border: `1rem solid ${t.colors.text}`,
           minWidth: '90rem',
           minHeight: '40rem',
           textAlign: 'left',
@@ -38,15 +38,12 @@ function ThemeDropdownList() {
 
           '&:hover': {
             color: t.colors.text,
-            background: t.colors.background,
           },
           '&:focus': {
             color: t.colors.text,
-            background: t.colors.background,
           },
           '&:focusWithin': {
             color: t.colors.text,
-            background: t.colors.background,
           },
 
           '> svg': {
