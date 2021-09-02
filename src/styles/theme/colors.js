@@ -11,15 +11,14 @@ const PALETTE = {
     forest50: 'rgb(235, 245, 238)',
     forest100: 'rgb(158, 180, 172)',
     forest200: '#4D846A',
-    // forest200: 'rgb(81, 115, 105)',
     forest300: 'rgb(55, 81, 79)',
     forest400: 'rgb(28,47,53)',
-    forest500: 'rgb(25,43,48)',
 
     green100: 'rgb(104, 155, 110)',
     green200: 'rgb(86, 141, 89)',
     green300: 'rgb(31, 106, 60)',
-    green400: 'rgb(33, 80, 53)',
+    green400: '#165030',
+    green500: 'rgb(38,58,43)',
 
     navy200: 'rgb(84, 100, 140)',
     navy300: 'rgb(73,85,119)',
@@ -80,6 +79,7 @@ const colors = {
   aboutBg: PALETTE.BOLD.white300,
   aboutHeader: PALETTE.BOLD.navy200,
   aboutText: PALETTE.BOLD.navy500,
+  aboutFrame: PALETTE.BOLD.green400,
 
   backgroundWork: PALETTE.BOLD.white300,
   backgroundWorkHeader: PALETTE.BOLD.forest400,
