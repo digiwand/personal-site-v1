@@ -16,6 +16,10 @@ function NavSocialIconButtons() {
         className="NavHeader_SocialIconButton"
         sx={{
           variant: 'buttons.icon.small',
+
+          '&:hover svg path': {
+            fill: (t) => t.colors.text,
+          },
         }}
         socialKeys={socialKeys}
       />

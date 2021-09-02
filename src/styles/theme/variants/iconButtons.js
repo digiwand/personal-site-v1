@@ -5,10 +5,6 @@ const iconButtons = {
   transition: 'background-color 150ms, box-shadow 150ms, border 150ms',
   boxShadow: '0px 0px 10px transparent',
 
-  '&:hover a > svg': {
-    transform: 'rotate(10deg)',
-  },
-
   svg: {
     height: '30rem',
     width: '30rem',
