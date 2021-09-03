@@ -52,11 +52,39 @@ const SVG = {
   },
 };
 
+// tech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
+
 const colors = {
+
+  // -- Default ----------------------------------------------------------------------------------
+
   background: PALETTE.BOLD.forest400,
 
   error: '#B00020',
   linkHover: PALETTE.BOLD.green200,
+
+  heading: PALETTE.BOLD.navy200,
+
+  scrollTrack: PALETTE.BOLD.white200,
+
+  // to update
+  frame: PALETTE.BOLD.white200,
+  frameText: PALETTE.BOLD.forest400,
+  frameActiveText: PALETTE.BOLD.white300,
+  frameHoverText: PALETTE.BOLD.forest200,
+  frameBorder: 'rgba(0, 0, 0, 0.1)',
+
+  footerBg: PALETTE.BOLD.white200,
+  footerText: PALETTE.BOLD.forest400,
+
+  text: PALETTE.BOLD.forest200,
+  primary: PALETTE.BOLD.forest200,
+  button: PALETTE.BOLD.forest200,
+  buttonHoverText: PALETTE.BOLD.white300,
+
+  ...SVG.DEFAULT,
+
+  // -- Sections ----------------------------------------------------------------------------------
 
   homeBg: PALETTE.BOLD.white300,
   homeBgImage: 'linear-gradient( rgba(243, 243, 243, 0.4), rgba(243, 243, 243, 0) ), url("images/bg/leaves-2.jpg")'
@@ -67,17 +95,15 @@ const colors = {
   aboutHeader: PALETTE.BOLD.navy200,
   aboutText: PALETTE.BOLD.navy500,
   aboutFrame: PALETTE.BOLD.green400,
+  // aboutFrame: PALETTE.BOLD.green400,
 
   backgroundWork: PALETTE.BOLD.white300,
   backgroundWorkHeader: PALETTE.BOLD.navy200,
   // backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
 
-  techBg: PALETTE.BOLD.white300,
-  techHeader: PALETTE.BOLD.navy200,
-  techToolsBg: PALETTE.BOLD.white300,
-  techToolsHeader: PALETTE.BOLD.navy200,
-  // techToolsBg: PALETTE.BOLD.forest300,
-  // techToolsHeader: 'rgb(237,237,236)',
+  techBg: PALETTE.BOLD.forest100,
+  techHeader: PALETTE.BOLD.white,
+  carouselItemBg: 'rgba(158, 180, 172,0.9)',
 
   contactBg: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg")'
   + ' no-repeat fixed',
@@ -88,32 +114,8 @@ const colors = {
   contactDivider: 'rgba(92, 92, 92, 0.5)',
   contactPlant: PALETTE.BOLD.grey300,
 
-  footerBg: PALETTE.BOLD.white200,
-  footerText: PALETTE.BOLD.forest400,
-
-  heading: PALETTE.BOLD.navy200,
-
-  scrollTrack: PALETTE.BOLD.white200,
-
   inputBackground: 'rgba(219,220,217, 0.7)',
   inputAutofill: 'rgba(219,220,217, 0.9)',
-
-  accent: PALETTE.BOLD.darkClay,
-  // tech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
-
-  text: PALETTE.BOLD.forest200,
-  primary: PALETTE.BOLD.forest200,
-  button: PALETTE.BOLD.forest200,
-  buttonHoverText: PALETTE.BOLD.white300,
-
-  // to update
-  frame: PALETTE.BOLD.white200,
-  frameText: PALETTE.BOLD.forest400,
-  frameActiveText: PALETTE.BOLD.white300,
-  frameHoverText: PALETTE.BOLD.forest200,
-  frameBorder: 'rgba(0, 0, 0, 0.1)',
-
-  ...SVG.DEFAULT,
 
   modes: {
     dark: {
@@ -121,37 +123,13 @@ const colors = {
       text: PALETTE.BOLD.forest200,
       heading: PALETTE.BOLD.forest200,
 
-      homeBg: 'black',
-      homeBgImage: 'black',
-      homeBgBox: 'rgba(133, 133, 133, 0.1)',
-
-      aboutBg: PALETTE.BOLD.grey500,
-      aboutHeader: PALETTE.BOLD.forest200,
-      aboutText: PALETTE.BOLD.grey200,
-
-      backgroundWork: PALETTE.BOLD.black,
-      backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
-
-      techBg: PALETTE.BOLD.grey500,
-      techHeader: PALETTE.BOLD.forest200,
-      techToolsBg: PALETTE.BOLD.black,
-      techToolsHeader: PALETTE.BOLD.forest200,
-
-      contactBg: 'linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url("images/bg/leaves-4.jpg")'
-      + ' no-repeat fixed',
-      contactBgBox: 'rgba(0,0,0,0.83)',
-      contactHeader: PALETTE.BOLD.forest200,
-      contactSubHeader: PALETTE.BOLD.forest300,
-      contactText: PALETTE.BOLD.grey400,
-      contactDivider: 'rgba(92, 92, 92, 0.5)',
-      contactPlant: PALETTE.BOLD.white300,
+      inputBackground: 'rgba(0,0,0, 0.8)',
+      inputAutofill: 'rgba(33,33,33, 0.8)',
 
       footerBg: PALETTE.BOLD.black,
       footerText: PALETTE.BOLD.grey200,
 
       scrollTrack: PALETTE.BOLD.white200,
-      inputBackground: 'rgba(0,0,0, 0.8)',
-      inputAutofill: 'rgba(33,33,33, 0.8)',
 
       accent: PALETTE.BOLD.darkClay,
 
@@ -167,6 +145,32 @@ const colors = {
       frameBorder: 'rgba(83, 83, 83, 0.1)',
 
       ...SVG.LIGHT,
+
+      // -- Sections ----------------------------------------------------------------------------------
+
+      homeBg: 'black',
+      homeBgImage: 'black',
+      homeBgBox: 'rgba(133, 133, 133, 0.1)',
+
+      aboutBg: PALETTE.BOLD.grey500,
+      aboutHeader: PALETTE.BOLD.forest200,
+      aboutText: PALETTE.BOLD.grey200,
+
+      backgroundWork: PALETTE.BOLD.grey500,
+      backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
+
+      techBg: PALETTE.BOLD.black,
+      techHeader: PALETTE.BOLD.forest200,
+      carouselItemBg: 'rgba(0, 0, 0, 0.9)',
+
+      contactBg: 'linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url("images/bg/leaves-4.jpg")'
+      + ' no-repeat fixed',
+      contactBgBox: 'rgba(0,0,0,0.83)',
+      contactHeader: PALETTE.BOLD.forest200,
+      contactSubHeader: PALETTE.BOLD.forest300,
+      contactText: PALETTE.BOLD.grey400,
+      contactDivider: 'rgba(92, 92, 92, 0.5)',
+      contactPlant: PALETTE.BOLD.white300,
     },
 
     mint: {
