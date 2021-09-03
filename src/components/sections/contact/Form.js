@@ -153,8 +153,8 @@ function ContactForm() {
           justifyContent: 'flex-end',
         }}
         >
-          {reCaptcha}
-          <Fade bottom delay={800}>
+          <Fade delay={800}>
+            {reCaptcha}
             <Button>Send</Button>
           </Fade>
         </div>

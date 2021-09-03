@@ -97,9 +97,9 @@ const colors = {
   contactBgBox: 'rgba(244,244,244, 0.68)',
   contactHeader: PALETTE.BOLD.forest400,
   contactSubHeader: PALETTE.BOLD.forest200,
-  contactText: PALETTE.BOLD.grey300,
+  contactText: PALETTE.BOLD.grey400,
   contactDivider: 'rgba(92, 92, 92, 0.5)',
-  contactPlant: PALETTE.BOLD.black,
+  contactPlant: PALETTE.BOLD.grey300,
 
   footerBg: PALETTE.BOLD.white200,
   footerText: PALETTE.BOLD.forest400,
