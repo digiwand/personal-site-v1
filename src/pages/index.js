@@ -7,6 +7,10 @@ import TechSection from 'components/sections/tech/Tech';
 import WorkSection from 'components/sections/work/Work';
 import ContactSection from 'components/sections/contact/Contact';
 
+/**
+ * If the order of the sections change, be sure to update the order in
+ * {@link src/constants/section.js}
+ */
 function Home() {
   const sectionTrackingPixelRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
 
@@ -14,8 +18,8 @@ function Home() {
     <Layout sectionTrackingPixelRefs={sectionTrackingPixelRefs}>
       <HomeSection ref={sectionTrackingPixelRefs[0]} />
       <AboutSection ref={sectionTrackingPixelRefs[1]} />
-      <WorkSection ref={sectionTrackingPixelRefs[2]} />
       <TechSection ref={sectionTrackingPixelRefs[3]} />
+      <WorkSection ref={sectionTrackingPixelRefs[2]} />
       <ContactSection ref={sectionTrackingPixelRefs[4]} />
     </Layout>
   );
