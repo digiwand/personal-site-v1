@@ -59,16 +59,15 @@ const colors = {
 
   // -- General -----------------------------------------------------------------------------------
 
-  scrollTrack: PALETTE.BOLD.white200,
-
   text: PALETTE.BOLD.forest200,
-  primary: PALETTE.BOLD.forest200,
 
   error: '#B00020',
   /** @todo: add link color */
   linkHover: PALETTE.BOLD.green200,
 
   heading: PALETTE.BOLD.navy200,
+
+  scrollTrack: PALETTE.BOLD.white200,
 
   ...SVG.DEFAULT,
 
@@ -127,8 +126,6 @@ const colors = {
       text: PALETTE.BOLD.forest200,
       heading: PALETTE.BOLD.forest200,
 
-      primary: PALETTE.BOLD.forest200,
-
       ...SVG.LIGHT,
 
       // -- Components ----------------------------------------------------------------------------
@@ -182,8 +179,6 @@ const colors = {
       inputBg: 'pink',
 
       text: '#002629',
-
-      primary: '#4A5859',
 
       // to update
       frame: '#fafafb',

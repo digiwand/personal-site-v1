@@ -18,7 +18,7 @@ const forms = {
 
     '&:focus': {
       outline: 'none',
-      borderColor: (t) => `${t.colors.primary}`,
+      borderColor: (t) => `${t.colors.text}`,
     },
   },
 
@@ -35,7 +35,7 @@ const forms = {
 
     '&:focus': {
       outline: 'none',
-      borderColor: (t) => `${t.colors.primary}`,
+      borderColor: (t) => `${t.colors.text}`,
     },
   },
 };
