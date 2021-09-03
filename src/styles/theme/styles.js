@@ -3,7 +3,6 @@ const styles = {
     fontSize: '1px', /* for using REM units */
     scrollBehavior: 'smooth',
     transition: 'background 500ms',
-    overflow: 'initial',
     minWidth: '320px',
 
     body: {

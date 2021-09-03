@@ -39,6 +39,11 @@ function Layout({ children, sectionTrackingPixelRefs }) {
       sx={{
         variant: 'scrollbar',
         height: '100vh',
+
+        // Fix issue where scrollbar click does not work
+        position: 'absolute',
+        top: '0',
+        left: '0',
       }}
     >
       <Head>
