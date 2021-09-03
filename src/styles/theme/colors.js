@@ -95,17 +95,15 @@ const colors = {
   aboutHeader: PALETTE.BOLD.navy200,
   aboutText: PALETTE.BOLD.navy500,
   aboutFrame: PALETTE.BOLD.green400,
+  // aboutFrame: PALETTE.BOLD.green400,
 
   backgroundWork: PALETTE.BOLD.white300,
   backgroundWorkHeader: PALETTE.BOLD.navy200,
   // backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
 
-  techBg: PALETTE.BOLD.white300,
-  techHeader: PALETTE.BOLD.navy200,
-  techToolsBg: PALETTE.BOLD.white300,
-  techToolsHeader: PALETTE.BOLD.navy200,
-  // techToolsBg: PALETTE.BOLD.forest300,
-  // techToolsHeader: 'rgb(237,237,236)',
+  techBg: PALETTE.BOLD.forest100,
+  techHeader: PALETTE.BOLD.white,
+  carouselItemBg: 'rgba(158, 180, 172,0.9)',
 
   contactBg: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg")'
   + ' no-repeat fixed',
@@ -158,13 +156,12 @@ const colors = {
       aboutHeader: PALETTE.BOLD.forest200,
       aboutText: PALETTE.BOLD.grey200,
 
-      backgroundWork: PALETTE.BOLD.black,
+      backgroundWork: PALETTE.BOLD.grey500,
       backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
 
-      techBg: PALETTE.BOLD.grey500,
+      techBg: PALETTE.BOLD.black,
       techHeader: PALETTE.BOLD.forest200,
-      techToolsBg: PALETTE.BOLD.black,
-      techToolsHeader: PALETTE.BOLD.forest200,
+      carouselItemBg: 'rgba(0, 0, 0, 0.9)',
 
       contactBg: 'linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url("images/bg/leaves-4.jpg")'
       + ' no-repeat fixed',

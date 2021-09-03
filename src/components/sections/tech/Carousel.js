@@ -81,7 +81,7 @@ function Carousel() {
                 height: `${imgHeight}rem`,
                 left: `${imgPadding}rem`,
                 top: `${imgPadding}rem`,
-                background: 'rgba(240, 240, 240,0.9)',
+                background: (t) => t.colors.carouselItemBg,
                 transition: 'transform 1s',
                 transform: [
                   `rotateY(${rotationDeg * index}deg) translateZ(${mobileRadius}rem)`,
