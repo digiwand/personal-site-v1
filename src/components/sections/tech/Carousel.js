@@ -1,15 +1,7 @@
 import { keyframes } from '@emotion/react';
 import TECH from 'constants/tech';
 
-const rotateX360 = keyframes`
-  from {
-    transform: rotateX(0deg);
-  }
-  to {
-    transform: rotateX(-360deg);
-  }
-`;
-const rotateY360 = keyframes`
+const rotate360 = keyframes`
   from {
     transform: rotateY(0deg);
   }
@@ -67,11 +59,7 @@ function Carousel() {
         width: '100%',
         height: '100%',
         transformStyle: 'preserve-3d',
-        animation: [
-          `${rotateX360} 60s infinite forwards linear`,
-          `${rotateY360} 60s infinite forwards linear`,
-          `${rotateY360} 60s infinite forwards linear`,
-        ],
+        animation: `${rotate360} 60s infinite forwards linear`,
       }}
       >
         {TECH_KEYS.map((key, index) => {
@@ -91,11 +79,7 @@ function Carousel() {
                 top: `${imgPadding}rem`,
                 background: 'rgba(240, 240, 240,0.9)',
                 transition: 'transform 1s',
-                transform: [
-                  `rotateX(${rotationDeg * index}deg) translateZ(${radius}rem)`,
-                  `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
-                  `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
-                ],
+                transform: `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
               }}
             >
               {techConfig.imgElem}

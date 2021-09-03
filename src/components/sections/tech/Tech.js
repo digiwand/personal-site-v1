@@ -24,7 +24,6 @@ function TechSection(props, ref) {
           variant="sectionHeading"
           sx={{
             color: (t) => `${t.colors.techHeader}`,
-            pb: 6,
           }}
         >
           RECENT TECHNOLOGIES
@@ -37,7 +36,8 @@ function TechSection(props, ref) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            height: ['1100rem', 'auto', 'auto'],
+            pt: 5,
+            pb: 5,
           }}
         >
           <TechCarousel />
