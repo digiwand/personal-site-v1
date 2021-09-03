@@ -10,7 +10,7 @@ const rotate360 = keyframes`
   }
 `;
 
-const imgWidth = 180;
+const imgWidth = 220;
 const imgHeight = 120;
 const imgPadding = 0;
 
@@ -43,6 +43,10 @@ const rotationDeg = (360 / numOfPanels);
  */
 const radius = Math.round((panelWidth / 2) / Math.tan(Math.PI / numOfPanels));
 
+const mobileImgWidth = 160;
+const mobilePanelWidth = mobileImgWidth + 2 * imgPadding;
+const mobileRadius = Math.round((mobilePanelWidth / 2) / Math.tan(Math.PI / numOfPanels));
+
 function Carousel() {
   return (
     <div
@@ -73,13 +77,17 @@ function Carousel() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: `${imgWidth}rem`,
+                width: [`${mobileImgWidth}rem`, `${mobileImgWidth}rem`, `${imgWidth}rem`],
                 height: `${imgHeight}rem`,
                 left: `${imgPadding}rem`,
                 top: `${imgPadding}rem`,
                 background: 'rgba(240, 240, 240,0.9)',
                 transition: 'transform 1s',
-                transform: `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
+                transform: [
+                  `rotateY(${rotationDeg * index}deg) translateZ(${mobileRadius}rem)`,
+                  `rotateY(${rotationDeg * index}deg) translateZ(${mobileRadius}rem)`,
+                  `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
+                ],
               }}
             >
               {techConfig.imgElem}
