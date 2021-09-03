@@ -25,6 +25,7 @@ const AboutSection = (props, ref) => (
         flex: '1 1 auto',
         pr: [0, 0, 6],
         pt: [6, 6, 0],
+        pb: [6, 0, 0],
       }}
       >
         <Fade bottom>
@@ -63,9 +64,16 @@ const AboutSection = (props, ref) => (
         display: 'flex',
         justifyContent: 'center',
         alignSelf: 'center',
+        pb: [3, 0, 0],
       }}
       >
-        <OffsetFrame sx={{ maxWidth: '390rem', width: ['80%', '100%', '100%'], display: ['flex', 'flex', 'inline-block'] }}>
+        <OffsetFrame sx={{
+          maxWidth: '390rem',
+          width: ['80%', '100%', '100%'],
+          display: ['flex', 'flex', 'inline-block'],
+          mx: ['auto', 'initial', 'initial'],
+        }}
+        >
           <Image
             alt="Profile Picture"
             src="/images/profile.jpg"
