@@ -52,11 +52,39 @@ const SVG = {
   },
 };
 
+// tech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
+
 const colors = {
+
+  // -- Default ----------------------------------------------------------------------------------
+
   background: PALETTE.BOLD.forest400,
 
   error: '#B00020',
   linkHover: PALETTE.BOLD.green200,
+
+  heading: PALETTE.BOLD.navy200,
+
+  scrollTrack: PALETTE.BOLD.white200,
+
+  // to update
+  frame: PALETTE.BOLD.white200,
+  frameText: PALETTE.BOLD.forest400,
+  frameActiveText: PALETTE.BOLD.white300,
+  frameHoverText: PALETTE.BOLD.forest200,
+  frameBorder: 'rgba(0, 0, 0, 0.1)',
+
+  footerBg: PALETTE.BOLD.white200,
+  footerText: PALETTE.BOLD.forest400,
+
+  text: PALETTE.BOLD.forest200,
+  primary: PALETTE.BOLD.forest200,
+  button: PALETTE.BOLD.forest200,
+  buttonHoverText: PALETTE.BOLD.white300,
+
+  ...SVG.DEFAULT,
+
+  // -- Sections ----------------------------------------------------------------------------------
 
   homeBg: PALETTE.BOLD.white300,
   homeBgImage: 'linear-gradient( rgba(243, 243, 243, 0.4), rgba(243, 243, 243, 0) ), url("images/bg/leaves-2.jpg")'
@@ -88,38 +116,39 @@ const colors = {
   contactDivider: 'rgba(92, 92, 92, 0.5)',
   contactPlant: PALETTE.BOLD.grey300,
 
-  footerBg: PALETTE.BOLD.white200,
-  footerText: PALETTE.BOLD.forest400,
-
-  heading: PALETTE.BOLD.navy200,
-
-  scrollTrack: PALETTE.BOLD.white200,
-
   inputBackground: 'rgba(219,220,217, 0.7)',
   inputAutofill: 'rgba(219,220,217, 0.9)',
-
-  accent: PALETTE.BOLD.darkClay,
-  // tech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
-
-  text: PALETTE.BOLD.forest200,
-  primary: PALETTE.BOLD.forest200,
-  button: PALETTE.BOLD.forest200,
-  buttonHoverText: PALETTE.BOLD.white300,
-
-  // to update
-  frame: PALETTE.BOLD.white200,
-  frameText: PALETTE.BOLD.forest400,
-  frameActiveText: PALETTE.BOLD.white300,
-  frameHoverText: PALETTE.BOLD.forest200,
-  frameBorder: 'rgba(0, 0, 0, 0.1)',
-
-  ...SVG.DEFAULT,
 
   modes: {
     dark: {
       background: PALETTE.BOLD.forest400,
       text: PALETTE.BOLD.forest200,
       heading: PALETTE.BOLD.forest200,
+
+      inputBackground: 'rgba(0,0,0, 0.8)',
+      inputAutofill: 'rgba(33,33,33, 0.8)',
+
+      footerBg: PALETTE.BOLD.black,
+      footerText: PALETTE.BOLD.grey200,
+
+      scrollTrack: PALETTE.BOLD.white200,
+
+      accent: PALETTE.BOLD.darkClay,
+
+      primary: PALETTE.BOLD.forest200,
+      button: PALETTE.BOLD.forest200,
+      buttonHoverText: PALETTE.BOLD.white,
+
+      // to update
+      frame: PALETTE.BOLD.grey500,
+      frameText: PALETTE.BOLD.white200,
+      frameActiveText: PALETTE.BOLD.white,
+      frameHoverText: PALETTE.BOLD.forest200,
+      frameBorder: 'rgba(83, 83, 83, 0.1)',
+
+      ...SVG.LIGHT,
+
+      // -- Sections ----------------------------------------------------------------------------------
 
       homeBg: 'black',
       homeBgImage: 'black',
@@ -145,28 +174,6 @@ const colors = {
       contactText: PALETTE.BOLD.grey400,
       contactDivider: 'rgba(92, 92, 92, 0.5)',
       contactPlant: PALETTE.BOLD.white300,
-
-      footerBg: PALETTE.BOLD.black,
-      footerText: PALETTE.BOLD.grey200,
-
-      scrollTrack: PALETTE.BOLD.white200,
-      inputBackground: 'rgba(0,0,0, 0.8)',
-      inputAutofill: 'rgba(33,33,33, 0.8)',
-
-      accent: PALETTE.BOLD.darkClay,
-
-      primary: PALETTE.BOLD.forest200,
-      button: PALETTE.BOLD.forest200,
-      buttonHoverText: PALETTE.BOLD.white,
-
-      // to update
-      frame: PALETTE.BOLD.grey500,
-      frameText: PALETTE.BOLD.white200,
-      frameActiveText: PALETTE.BOLD.white,
-      frameHoverText: PALETTE.BOLD.forest200,
-      frameBorder: 'rgba(83, 83, 83, 0.1)',
-
-      ...SVG.LIGHT,
     },
 
     mint: {
