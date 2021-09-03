@@ -41,7 +41,6 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         height: '100vh',
       }}
     >
-      {/* Note: We can add Head to any React component */}
       <Head>
         <title>{siteTitle}</title>
 
