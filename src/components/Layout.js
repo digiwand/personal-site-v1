@@ -20,7 +20,7 @@ const defaultProps = {
 
 function Layout({ children, sectionTrackingPixelRefs }) {
   const pageTopTrackingPixelRef = useRef();
-  const { theme } = useThemeUI();
+  const { theme: { rawColors } } = useThemeUI();
 
   const pageTopTrackingPixel = (
     <div
@@ -53,7 +53,9 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="theme-color" content={theme.colors.primary} />
+
+        {/* Updates toolbar color for various browsers including Safari and Android Chrome */}
+        <meta name="theme-color" content={rawColors.text} />
       </Head>
 
       {/*
