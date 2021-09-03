@@ -40,7 +40,11 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         variant: 'scrollbar',
         height: '100vh',
 
-        // Fix issue where scrollbar click does not work
+        /**
+         * Fixes issue where scrollbar was not clickable or draggable. This element has a height of '100vh'
+         * which is believed to fit inside it's parent container without the need of a scrollbar. To fix this,
+         * we use position: 'absolute'.
+         */
         position: 'absolute',
         top: '0',
         left: '0',
@@ -68,10 +72,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         */}
       <InitializeColorMode />
 
-      <main sx={{
-        position: 'relative',
-      }}
-      >
+      <main sx={{ position: 'relative' }}>
         {pageTopTrackingPixel}
         {children}
       </main>
