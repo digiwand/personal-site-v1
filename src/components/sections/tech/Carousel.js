@@ -41,10 +41,11 @@ function Carousel() {
         position: 'relative',
         width: `${panelWidth}rem`,
         height: `${panelHeight}rem`,
+        transition: 'transform 1s',
       }}
     >
       <div sx={{
-        position: 'absolule',
+        position: 'absolute',
         width: '100%',
         height: '100%',
         transformStyle: 'preserve-3d',
@@ -66,7 +67,12 @@ function Carousel() {
                 left: `${imgPadding}rem`,
                 top: `${imgPadding}rem`,
                 background: 'rgba(240, 240, 240,0.9)',
-                transform: `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
+                transition: 'transform 1s',
+                transform: [
+                  `rotateX(${rotationDeg * index}deg) translateZ(${radius}rem)`,
+                  `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
+                  `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
+                ],
               }}
             >
               {techConfig.imgElem}

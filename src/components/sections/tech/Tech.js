@@ -37,6 +37,7 @@ function TechSection(props, ref) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            height: ['1100rem', 'auto', 'auto'],
           }}
         >
           <TechCarousel />
