@@ -44,7 +44,7 @@ function JobSection({ children, ...props }) {
       <div sx={{
         flex: '0 0 45%',
         position: 'relative',
-        background: (t) => t.colors.backgroundWorkJobBox,
+        background: (t) => t.colors.workBgJobBox,
         boxShadow: 'rgba(133, 133, 133, 0) 2px 5px 15px 0px',
         p: 5,
         mb: [1, 1, 0],

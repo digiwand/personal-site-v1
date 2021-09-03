@@ -11,7 +11,7 @@ const WorkSection = (props, ref) => (
     id="work"
     ref={ref}
     sx={{
-      background: (t) => `${t.colors.backgroundWork}`,
+      background: (t) => `${t.colors.workBg}`,
       backgroundSize: 'cover',
     }}
   >

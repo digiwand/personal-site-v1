@@ -95,11 +95,9 @@ const colors = {
   aboutHeader: PALETTE.BOLD.navy200,
   aboutText: PALETTE.BOLD.navy500,
   aboutFrame: PALETTE.BOLD.green400,
-  // aboutFrame: PALETTE.BOLD.green400,
 
-  backgroundWork: PALETTE.BOLD.white300,
-  backgroundWorkHeader: PALETTE.BOLD.navy200,
-  // backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
+  workBg: PALETTE.BOLD.white300,
+  workBgJobBox: 'rgba(254, 253, 255, 0.3)',
 
   techBg: PALETTE.BOLD.forest100,
   techHeader: PALETTE.BOLD.white,
@@ -113,8 +111,7 @@ const colors = {
   contactText: PALETTE.BOLD.grey400,
   contactDivider: 'rgba(92, 92, 92, 0.5)',
   contactPlant: PALETTE.BOLD.grey300,
-
-  inputBackground: 'rgba(219,220,217, 0.7)',
+  inputBg: 'rgba(219,220,217, 0.7)',
   inputAutofill: 'rgba(219,220,217, 0.9)',
 
   modes: {
@@ -123,7 +120,7 @@ const colors = {
       text: PALETTE.BOLD.forest200,
       heading: PALETTE.BOLD.forest200,
 
-      inputBackground: 'rgba(0,0,0, 0.8)',
+      inputBg: 'rgba(0,0,0, 0.8)',
       inputAutofill: 'rgba(33,33,33, 0.8)',
 
       footerBg: PALETTE.BOLD.black,
@@ -156,8 +153,8 @@ const colors = {
       aboutHeader: PALETTE.BOLD.forest200,
       aboutText: PALETTE.BOLD.grey200,
 
-      backgroundWork: PALETTE.BOLD.grey500,
-      backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
+      workBg: PALETTE.BOLD.grey500,
+      workBgJobBox: 'rgba(254, 253, 255, 0.3)',
 
       techBg: PALETTE.BOLD.black,
       techHeader: PALETTE.BOLD.forest200,
@@ -177,7 +174,7 @@ const colors = {
       background: '#DFECEB',
       aboutBg: '#EFF9F0',
 
-      inputBackground: 'pink',
+      inputBg: 'pink',
 
       text: '#002629',
 

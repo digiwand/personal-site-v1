@@ -18,7 +18,7 @@ function FormSentMessage({ isVisible, email }) {
         opacity: 0,
         pointerEvents: 'none',
         transition: 'opacity 0.3s',
-        background: (t) => t.colors.inputBackground,
+        background: (t) => t.colors.inputBg,
 
         '&[is-visible="true"]': {
           opacity: 1,

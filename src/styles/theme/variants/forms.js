@@ -13,7 +13,7 @@ const forms = {
     padding: inputPadding,
     height: `${inputHeight}rem`,
     transition: `border-color ${formTransition}`,
-    background: (t) => `${t.colors.inputBackground}`,
+    background: (t) => `${t.colors.inputBg}`,
     borderBottom: `${inputBorder}rem solid transparent`,
 
     '&:focus': {
@@ -30,7 +30,7 @@ const forms = {
     border: '0',
     padding: inputPadding,
     transition: `border-color ${formTransition}`,
-    background: (t) => `${t.colors.inputBackground}`,
+    background: (t) => `${t.colors.inputBg}`,
     borderBottom: `${inputBorder}rem solid transparent`,
 
     '&:focus': {
