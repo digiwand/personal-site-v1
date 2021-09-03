@@ -12,14 +12,14 @@ const scrollbar = {
   },
 
   '::-webkit-scrollbar-thumb': {
-    backgroundColor: 'text',
+    backgroundColor: (t) => t.colors.scrollThumb,
     borderRadius: '3px',
   },
   '::-webkit-scrollbar-thumb:hover': {
-    backgroundColor: 'primary',
+    backgroundColor: (t) => t.colors.scrollThumbHover,
   },
   '::-webkit-scrollbar-thumb:active': {
-    backgroundColor: 'primary',
+    backgroundColor: (t) => t.colors.scrollThumbHover,
   },
 };
 

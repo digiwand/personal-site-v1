@@ -68,6 +68,8 @@ const colors = {
   heading: PALETTE.BOLD.navy200,
 
   scrollTrack: PALETTE.BOLD.white200,
+  scrollThumb: PALETTE.BOLD.forest200,
+  scrollThumbHover: PALETTE.BOLD.forest300,
 
   ...SVG.DEFAULT,
 
