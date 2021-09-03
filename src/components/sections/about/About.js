@@ -14,16 +14,18 @@ const AboutSection = (props, ref) => (
     sx={{
       minHeight: '80vh',
       background: (t) => `${t.colors.aboutBg}`,
+      pt: [6, 6, 0],
     }}
   >
     <Flex sx={{
-      flexDirection: ['column', 'column', 'row'],
+      flexDirection: ['column-reverse', 'column-reverse', 'row'],
     }}
     >
       <div sx={{
         flex: '1 1 auto',
         pr: [0, 0, 6],
-        pb: [6, 6, 0],
+        pt: [6, 6, 0],
+        pb: [6, 0, 0],
       }}
       >
         <Fade bottom>
@@ -61,19 +63,24 @@ const AboutSection = (props, ref) => (
         flex: '1 1 auto',
         display: 'flex',
         justifyContent: 'center',
-        alignSelf: 'baseline',
+        alignSelf: 'center',
+        pb: [3, 0, 0],
       }}
       >
-        <OffsetFrame sx={{ maxWidth: '390rem' }}>
+        <OffsetFrame sx={{
+          maxWidth: '390rem',
+          width: ['80%', '100%', '100%'],
+          display: ['flex', 'flex', 'inline-block'],
+          mx: ['auto', 'initial', 'initial'],
+        }}
+        >
           <Image
             alt="Profile Picture"
             src="/images/profile.jpg"
             variant="framed"
             width="390"
             height="461.33"
-            sx={{
-              maxWidth: ['80%', '100%', '100%'],
-            }}
+            sx={{ zIndex: 1 }}
           />
         </OffsetFrame>
       </div>

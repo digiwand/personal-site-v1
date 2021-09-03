@@ -12,7 +12,7 @@ function NavMenuButton({ onClick }) {
     <Button
       sx={{
         position: 'absolute',
-        background: 'transparent',
+        background: (t) => t.colors.homeBg,
         top: '0',
         right: '0',
         display: 'flex',

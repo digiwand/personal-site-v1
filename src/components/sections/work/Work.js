@@ -17,13 +17,11 @@ const WorkSection = (props, ref) => (
   >
     <Fade>
       <Text variant="sectionHeading">
-        WORK
+        — WORK EXPERIENCE —
       </Text>
 
       <JobSectionCopper />
-
       <JobSectionPriceSpider />
-
     </Fade>
   </Section>
 );

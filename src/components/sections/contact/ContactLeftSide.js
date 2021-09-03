@@ -8,11 +8,12 @@ function ContactLeftSide() {
     <div sx={{
       display: 'flex',
       flexDirection: 'column',
-      height: '100%',
       flex: '1 0 25%',
       maxWidth: '680rem',
+      minWidth: '160rem',
       width: ['100%', '100%', '25%'],
       textAlign: ['center', 'center', 'left'],
+      pb: [0, 0, '60rem'],
     }}
     >
       <Fade>
@@ -32,15 +33,17 @@ function ContactLeftSide() {
 
       <br />
       <br />
-
-      <SVGPlantInPot
-        sx={{
-          width: ['50%'],
-          maxWidth: '336rem',
-          alignSelf: 'center',
-          path: { fill: (t) => t.colors.contactPlant },
-        }}
-      />
+      <Fade delay={800}>
+        <SVGPlantInPot
+          sx={{
+            width: ['50%'],
+            maxWidth: '336rem',
+            minWidth: '160rem',
+            alignSelf: 'center',
+            path: { fill: (t) => t.colors.contactPlant },
+          }}
+        />
+      </Fade>
     </div>
   );
 }

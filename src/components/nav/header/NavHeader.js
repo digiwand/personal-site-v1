@@ -81,8 +81,13 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
             color: `${theme.colors.frameText}`,
           },
 
-          '.NavHeader_SocialIconButton path': {
-            fill: `${theme.colors.frameText}`,
+          '.NavHeader_SocialIconButton': {
+            path: {
+              fill: `${theme.colors.frameText}`,
+            },
+            '&:hover path': {
+              fill: `${theme.colors.text}`,
+            },
           },
 
           '.NavHeader_ThemeDropdown': {

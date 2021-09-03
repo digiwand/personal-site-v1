@@ -11,15 +11,14 @@ const PALETTE = {
     forest50: 'rgb(235, 245, 238)',
     forest100: 'rgb(158, 180, 172)',
     forest200: '#4D846A',
-    // forest200: 'rgb(81, 115, 105)',
     forest300: 'rgb(55, 81, 79)',
     forest400: 'rgb(28,47,53)',
-    forest500: 'rgb(25,43,48)',
 
     green100: 'rgb(104, 155, 110)',
     green200: 'rgb(86, 141, 89)',
     green300: 'rgb(31, 106, 60)',
-    green400: 'rgb(33, 80, 53)',
+    green400: '#165030',
+    green500: 'rgb(38,58,43)',
 
     navy200: 'rgb(84, 100, 140)',
     navy300: 'rgb(73,85,119)',
@@ -42,12 +41,6 @@ const SVG = {
     svgGitText: '#DE4C36',
     svgNextJs: '#000',
     svgNodeJs: '#333',
-
-    // Work
-    svgCopperColon: '#FF3465',
-    svgCopperText: '#3C3F40',
-    svgPriceSpiderLogo: '#0047ff',
-    svgPriceSpiderText: '#1b0c75',
   },
 
   LIGHT: {
@@ -56,13 +49,6 @@ const SVG = {
     svgGitText: '#ddd',
     svgNextJs: '#ddd',
     svgNodeJs: '#ddd',
-
-    // Work
-    svgCopperColon: '#ddd',
-    svgCopperText: '#ddd',
-    svgPriceSpiderLogo: '#ddd',
-    svgPriceSpiderText: '#ddd',
-    // optional official replacement color: #d3d4e1
   },
 };
 
@@ -80,31 +66,32 @@ const colors = {
   aboutBg: PALETTE.BOLD.white300,
   aboutHeader: PALETTE.BOLD.navy200,
   aboutText: PALETTE.BOLD.navy500,
+  aboutFrame: PALETTE.BOLD.green400,
 
   backgroundWork: PALETTE.BOLD.white300,
-  backgroundWorkHeader: PALETTE.BOLD.forest400,
+  backgroundWorkHeader: PALETTE.BOLD.navy200,
   // backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
 
   techBg: PALETTE.BOLD.white300,
-  techHeader: PALETTE.BOLD.forest400,
+  techHeader: PALETTE.BOLD.navy200,
   techToolsBg: PALETTE.BOLD.white300,
-  techToolsHeader: PALETTE.BOLD.forest400,
+  techToolsHeader: PALETTE.BOLD.navy200,
   // techToolsBg: PALETTE.BOLD.forest300,
   // techToolsHeader: 'rgb(237,237,236)',
 
   contactBg: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg")'
   + ' no-repeat fixed',
   contactBgBox: 'rgba(244,244,244, 0.68)',
-  contactHeader: PALETTE.BOLD.forest400,
+  contactHeader: PALETTE.BOLD.navy200,
   contactSubHeader: PALETTE.BOLD.forest200,
-  contactText: PALETTE.BOLD.grey300,
+  contactText: PALETTE.BOLD.grey400,
   contactDivider: 'rgba(92, 92, 92, 0.5)',
-  contactPlant: PALETTE.BOLD.black,
+  contactPlant: PALETTE.BOLD.grey300,
 
   footerBg: PALETTE.BOLD.white200,
   footerText: PALETTE.BOLD.forest400,
 
-  heading: PALETTE.BOLD.forest400,
+  heading: PALETTE.BOLD.navy200,
 
   scrollTrack: PALETTE.BOLD.white200,
 

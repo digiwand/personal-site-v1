@@ -1,5 +1,7 @@
 import Fade from 'react-reveal';
 
+const frameDistance = 26;
+
 function OffsetFrame({ children, ...props }) {
   const { className } = props;
 
@@ -9,17 +11,17 @@ function OffsetFrame({ children, ...props }) {
         className={className}
         sx={{
           position: 'relative',
-          display: 'inline-block',
         }}
       >
         <div sx={{
-          border: (t) => `2rem solid ${t.colors.aboutHeader}`,
+          background: (t) => t.colors.aboutFrame,
           position: 'absolute',
-          height: '100%',
-          width: '100%',
-          bottom: '20px',
-          left: '20px',
+          height: [`calc(100% + ${frameDistance}rem)`, `calc(100% + ${frameDistance}rem)`, '100%'],
+          width: [`calc(100% + ${frameDistance}rem)`, `calc(100% + ${frameDistance}rem)`, '100%'],
+          bottom: [`-${frameDistance / 2}rem`, `-${frameDistance / 2}rem`, '20rem'],
+          left: [`-${frameDistance / 2}rem`, `-${frameDistance / 2}rem`, '20rem'],
           zIndex: '-1',
+          boxShadow: 'rgba(40, 40, 40, 1) 2px 2px 13px 0px',
         }}
         />
         {children}
