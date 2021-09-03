@@ -55,19 +55,28 @@ const SVG = {
 // tech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
 
 const colors = {
-
-  // -- Default ----------------------------------------------------------------------------------
-
   background: PALETTE.BOLD.forest400,
 
+  // -- General -----------------------------------------------------------------------------------
+
+  scrollTrack: PALETTE.BOLD.white200,
+
+  text: PALETTE.BOLD.forest200,
+  primary: PALETTE.BOLD.forest200,
+
   error: '#B00020',
+  /** @todo: add link color */
   linkHover: PALETTE.BOLD.green200,
 
   heading: PALETTE.BOLD.navy200,
 
-  scrollTrack: PALETTE.BOLD.white200,
+  ...SVG.DEFAULT,
 
-  // to update
+  // -- Components --------------------------------------------------------------------------------
+
+  button: PALETTE.BOLD.forest200,
+  buttonHoverText: PALETTE.BOLD.white300,
+
   frame: PALETTE.BOLD.white200,
   frameText: PALETTE.BOLD.forest400,
   frameActiveText: PALETTE.BOLD.white300,
@@ -76,13 +85,6 @@ const colors = {
 
   footerBg: PALETTE.BOLD.white200,
   footerText: PALETTE.BOLD.forest400,
-
-  text: PALETTE.BOLD.forest200,
-  primary: PALETTE.BOLD.forest200,
-  button: PALETTE.BOLD.forest200,
-  buttonHoverText: PALETTE.BOLD.white300,
-
-  ...SVG.DEFAULT,
 
   // -- Sections ----------------------------------------------------------------------------------
 
@@ -103,34 +105,34 @@ const colors = {
   techHeader: PALETTE.BOLD.white,
   carouselItemBg: 'rgba(158, 180, 172,0.9)',
 
-  contactBg: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg")'
-  + ' no-repeat fixed',
+  contactBg: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg") no-repeat fixed',
   contactBgBox: 'rgba(244,244,244, 0.68)',
   contactHeader: PALETTE.BOLD.navy200,
   contactSubHeader: PALETTE.BOLD.forest200,
   contactText: PALETTE.BOLD.grey400,
   contactDivider: 'rgba(92, 92, 92, 0.5)',
   contactPlant: PALETTE.BOLD.grey300,
+
   inputBg: 'rgba(219,220,217, 0.7)',
   inputAutofill: 'rgba(219,220,217, 0.9)',
 
   modes: {
     dark: {
       background: PALETTE.BOLD.forest400,
-      text: PALETTE.BOLD.forest200,
-      heading: PALETTE.BOLD.forest200,
 
-      inputBg: 'rgba(0,0,0, 0.8)',
-      inputAutofill: 'rgba(33,33,33, 0.8)',
-
-      footerBg: PALETTE.BOLD.black,
-      footerText: PALETTE.BOLD.grey200,
+      // -- General -------------------------------------------------------------------------------
 
       scrollTrack: PALETTE.BOLD.white200,
 
-      accent: PALETTE.BOLD.darkClay,
+      text: PALETTE.BOLD.forest200,
+      heading: PALETTE.BOLD.forest200,
 
       primary: PALETTE.BOLD.forest200,
+
+      ...SVG.LIGHT,
+
+      // -- Components ----------------------------------------------------------------------------
+
       button: PALETTE.BOLD.forest200,
       buttonHoverText: PALETTE.BOLD.white,
 
@@ -141,9 +143,10 @@ const colors = {
       frameHoverText: PALETTE.BOLD.forest200,
       frameBorder: 'rgba(83, 83, 83, 0.1)',
 
-      ...SVG.LIGHT,
+      footerBg: PALETTE.BOLD.black,
+      footerText: PALETTE.BOLD.grey200,
 
-      // -- Sections ----------------------------------------------------------------------------------
+      // -- Sections ------------------------------------------------------------------------------
 
       homeBg: 'black',
       homeBgImage: 'black',
@@ -160,14 +163,16 @@ const colors = {
       techHeader: PALETTE.BOLD.forest200,
       carouselItemBg: 'rgba(0, 0, 0, 0.9)',
 
-      contactBg: 'linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url("images/bg/leaves-4.jpg")'
-      + ' no-repeat fixed',
+      contactBg: 'linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url("images/bg/leaves-4.jpg") no-repeat fixed',
       contactBgBox: 'rgba(0,0,0,0.83)',
       contactHeader: PALETTE.BOLD.forest200,
       contactSubHeader: PALETTE.BOLD.forest300,
       contactText: PALETTE.BOLD.grey400,
       contactDivider: 'rgba(92, 92, 92, 0.5)',
       contactPlant: PALETTE.BOLD.white300,
+
+      inputBg: 'rgba(0,0,0, 0.8)',
+      inputAutofill: 'rgba(33,33,33, 0.8)',
     },
 
     mint: {
