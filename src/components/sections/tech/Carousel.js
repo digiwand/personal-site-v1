@@ -70,7 +70,7 @@ function Carousel() {
           const techConfig = TECH[key];
 
           return (
-            <div
+            <a
               key={techConfig.displayName}
               sx={{
                 position: 'absolute',
@@ -89,9 +89,12 @@ function Carousel() {
                   `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
                 ],
               }}
+              href={techConfig.href}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               {techConfig.imgElem}
-            </div>
+            </a>
           );
         })}
       </div>
