@@ -39,6 +39,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
       sx={{
         variant: 'scrollbar',
         height: '100vh',
+        width: '100%',
 
         /**
          * Fixes issue where scrollbar was not clickable or draggable. This element has a height of '100vh'
