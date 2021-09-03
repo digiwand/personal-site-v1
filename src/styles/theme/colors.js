@@ -41,12 +41,6 @@ const SVG = {
     svgGitText: '#DE4C36',
     svgNextJs: '#000',
     svgNodeJs: '#333',
-
-    // Work
-    svgCopperColon: '#FF3465',
-    svgCopperText: '#3C3F40',
-    svgPriceSpiderLogo: '#0047ff',
-    svgPriceSpiderText: '#1b0c75',
   },
 
   LIGHT: {
@@ -55,13 +49,6 @@ const SVG = {
     svgGitText: '#ddd',
     svgNextJs: '#ddd',
     svgNodeJs: '#ddd',
-
-    // Work
-    svgCopperColon: '#ddd',
-    svgCopperText: '#ddd',
-    svgPriceSpiderLogo: '#ddd',
-    svgPriceSpiderText: '#ddd',
-    // optional official replacement color: #d3d4e1
   },
 };
 

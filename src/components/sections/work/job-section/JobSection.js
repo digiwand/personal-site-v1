@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const propTypes = {
   className: PropTypes.string,
   descriptionSide: PropTypes.string,
-  companyLogo: PropTypes.element.isRequired,
+  companyName: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
@@ -21,7 +21,7 @@ function JobSection({ children, ...props }) {
   const {
     className,
     descriptionSide,
-    companyLogo,
+    companyName,
     title,
     subtitle,
     date,
@@ -52,7 +52,7 @@ function JobSection({ children, ...props }) {
         maxWidth: [null, '580rem', '510rem'],
       }}
       >
-        {companyLogo}
+        <Themed.h2>{companyName}</Themed.h2>
 
         <div sx={{
           mt: 4,

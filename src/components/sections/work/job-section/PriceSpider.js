@@ -1,11 +1,10 @@
 import JobSection from 'components/sections/work/job-section/JobSection';
 import PriceSpiderImgs from 'components/sections/work/job-section/PriceSpiderImgs';
-import SVGPriceSpider from 'components/svg/work/pricespider';
 
 function JobSectionPriceSpider() {
   return (
     <JobSection
-      companyLogo={<SVGPriceSpider sx={{ height: ['32rem', '32rem', '32rem'] }} />}
+      companyName="PriceSpider"
       title="Software Engineer"
       subtitle="(Full-Stack)"
       date="February 2015 - June 2016"
