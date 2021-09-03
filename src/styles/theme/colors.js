@@ -69,20 +69,20 @@ const colors = {
   aboutFrame: PALETTE.BOLD.green400,
 
   backgroundWork: PALETTE.BOLD.white300,
-  backgroundWorkHeader: PALETTE.BOLD.forest400,
+  backgroundWorkHeader: PALETTE.BOLD.navy200,
   // backgroundWorkJobBox: 'rgba(254, 253, 255, 0.3)',
 
   techBg: PALETTE.BOLD.white300,
-  techHeader: PALETTE.BOLD.forest400,
+  techHeader: PALETTE.BOLD.navy200,
   techToolsBg: PALETTE.BOLD.white300,
-  techToolsHeader: PALETTE.BOLD.forest400,
+  techToolsHeader: PALETTE.BOLD.navy200,
   // techToolsBg: PALETTE.BOLD.forest300,
   // techToolsHeader: 'rgb(237,237,236)',
 
   contactBg: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg")'
   + ' no-repeat fixed',
   contactBgBox: 'rgba(244,244,244, 0.68)',
-  contactHeader: PALETTE.BOLD.forest400,
+  contactHeader: PALETTE.BOLD.navy200,
   contactSubHeader: PALETTE.BOLD.forest200,
   contactText: PALETTE.BOLD.grey400,
   contactDivider: 'rgba(92, 92, 92, 0.5)',
@@ -91,7 +91,7 @@ const colors = {
   footerBg: PALETTE.BOLD.white200,
   footerText: PALETTE.BOLD.forest400,
 
-  heading: PALETTE.BOLD.forest400,
+  heading: PALETTE.BOLD.navy200,
 
   scrollTrack: PALETTE.BOLD.white200,
 
