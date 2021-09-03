@@ -120,11 +120,19 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         display: ['flex', 'flex', 'none'],
         transform: ['translateX(100%)', `translateX(${tabletWidth})`],
         width: ['100%', tabletWidth],
-        transition: 'box-shadow 0.3s, transform 0.4s ease-in, width 0.3s',
+        transition: [
+          'box-shadow 0.3s, transform .4s ease-in, width 0.3s',
+          'box-shadow 0.3s, transform 0.3s ease-in, width 0.3s',
+        ],
 
         '&[is-open="true"]': {
           transform: ['translateX(0)', 'translateX(0)', `translateX(${tabletWidth})`],
           boxShadow: `-5px 0px 10px 1px ${t.colors.frameBorder}`,
+
+          '.NavDrawer_nav': {
+            opacity: 1,
+            transform: 'translateX(0)',
+          },
         },
       })}
       is-open={String(isOpen)}
@@ -139,6 +147,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         minHeight: 'min-content',
         height: '100%',
         variant: 'scrollbar',
+        overflowX: 'hidden',
       }}
       >
         <div sx={{
@@ -149,16 +158,20 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
           minHeight: 'min-content',
         }}
         >
-          <nav sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            pb: 5,
-            mt: 'auto',
+          <nav
+            className="NavDrawer_nav"
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              pb: 5,
+              mt: 'auto',
 
-            '[is-active="true"]': {
-              fontWeight: 700,
-            },
-          }}
+              opacity: 0,
+              transform: 'translateX(100px)',
+              transitionTimingFunction: 'ease, cubic-bezier(.1,1.3,.3,1)',
+              transition: 'opacity 1s, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1)',
+              transitionDelay: ['.4s', '.3s'],
+            }}
           >
             {drawerItems}
           </nav>
