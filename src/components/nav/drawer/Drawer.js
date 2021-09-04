@@ -10,14 +10,29 @@ import { SECTION_DISPLAY_NAME } from 'constants/section';
 const headerAndFooterWidth = '60rem';
 const tabletWidth = '320rem';
 
+const sxFadeInInitialize = {
+  opacity: 0,
+  transform: 'translateX(100px)',
+  transitionTimingFunction: 'ease, cubic-bezier(.1,1.3,.3,1)',
+  transition: 'opacity 1s, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1)',
+  transitionDelay: ['.4s', '.3s'],
+};
+
+const sxFadeInAnimate = {
+  opacity: 1,
+  transform: 'translateX(0)',
+};
+
 function DrawerFooter() {
   return (
-    <div sx={{
-      display: 'flex',
-      height: headerAndFooterWidth,
-      flex: `0 0 ${headerAndFooterWidth}`,
-      borderTop: (t) => `1rem solid ${t.colors.frameBorder}`,
-    }}
+    <div
+      className="NavDrawer_footer"
+      sx={{
+        display: 'flex',
+        height: headerAndFooterWidth,
+        flex: `0 0 ${headerAndFooterWidth}`,
+        borderTop: (t) => `1rem solid ${t.colors.frameBorder}`,
+      }}
     >
       <NavDrawerSocialIconButtons />
     </div>
@@ -39,9 +54,12 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
 
   const closeButton = (
     <IconButton
+      className="NavDrawer_iconButton"
       sx={{
         height: headerAndFooterWidth,
         width: headerAndFooterWidth,
+
+        ...sxFadeInInitialize,
 
         ':hover .NavDrawer_closeSVG > path': {
           fill: (t) => t.colors.frameHoverText,
@@ -77,6 +95,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
     }}
     >
       <span
+        className="NavDrawer_profileIcon"
         sx={{
           fontFamily: 'profile',
           fontSize: 3,
@@ -85,6 +104,8 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
           // Adjust for unevent font center
           pt: '7rem',
           color: (t) => t.colors.frameText,
+          ...sxFadeInInitialize,
+          transform: 'translateX(50px)',
         }}
       >
         Ariella Vu
@@ -129,9 +150,39 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
           transform: ['translateX(0)', 'translateX(0)', `translateX(${tabletWidth})`],
           boxShadow: `-5px 0px 10px 1px ${t.colors.frameBorder}`,
 
+          '.NavDrawer_profileIcon': {
+            ...sxFadeInAnimate,
+            transitionDelay: ['.8s', '.6s'],
+          },
+          '.NavDrawer_iconButton': {
+            ...sxFadeInAnimate,
+          },
           '.NavDrawer_nav': {
-            opacity: 1,
-            transform: 'translateX(0)',
+            ...sxFadeInAnimate,
+          },
+          '.NavDrawer-ThemeDrawerItem_text': {
+            ...sxFadeInAnimate,
+          },
+          '.NavDrawer_footer': {
+
+            button: {
+              '&:nth-of-type(1) > a > svg': {
+                transitionDelay: ['1.6s', '1.7s'],
+              },
+              '&:nth-of-type(2) > a > svg': {
+                transitionDelay: ['1.3s', '1.3s'],
+              },
+              '&:nth-of-type(3) > a > svg': {
+                transitionDelay: ['1s', '.9s'],
+              },
+              '&:nth-of-type(4) > a > svg': {
+                transitionDelay: ['.7s', '.5s'],
+              },
+
+              '> a > svg': {
+                opacity: 1,
+              },
+            },
           },
         },
       })}
@@ -166,11 +217,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
               pb: 5,
               mt: 'auto',
 
-              opacity: 0,
-              transform: 'translateX(100px)',
-              transitionTimingFunction: 'ease, cubic-bezier(.1,1.3,.3,1)',
-              transition: 'opacity 1s, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1)',
-              transitionDelay: ['.4s', '.3s'],
+              ...sxFadeInInitialize,
             }}
           >
             {drawerItems}

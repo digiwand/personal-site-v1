@@ -28,11 +28,12 @@ function NavDrawerItem({ children, ...props }) {
 
           '&:hover': {
             color: t.colors.frameHoverText,
-            background: t.colors.frameBorder,
+            // background: t.colors.frameBorder,
           },
           '&[is-active="true"]': {
             color: t.colors.frameHoverText,
-            background: t.colors.frameBorder,
+            // background: t.colors.frameBorder,
+            fontWeight: 700,
           },
         })}
         href={href}
