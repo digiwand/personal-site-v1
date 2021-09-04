@@ -14,7 +14,7 @@ const AboutSection = (props, ref) => (
     sx={{
       minHeight: '80vh',
       background: (t) => `${t.colors.aboutBg}`,
-      pt: [6, 6, 0],
+      pt: 6,
     }}
   >
     <Flex sx={{
@@ -24,12 +24,12 @@ const AboutSection = (props, ref) => (
       <div sx={{
         flex: '1 1 auto',
         pr: [0, 0, 6],
-        pt: [6, 6, 0],
+        pt: [6, 6, 3],
         pb: [6, 0, 0],
       }}
       >
         <Fade bottom>
-          <Themed.h3 sx={{ pb: 1, color: (t) => `${t.colors.aboutHeader}` }}>
+          <Themed.h3 sx={{ pb: 4, color: (t) => `${t.colors.aboutHeader}` }}>
             ABOUT
           </Themed.h3>
         </Fade>
