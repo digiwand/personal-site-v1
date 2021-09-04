@@ -28,18 +28,44 @@ function NavDrawerItem({ children, ...props }) {
 
           '&:hover': {
             color: t.colors.frameHoverText,
-            // background: t.colors.frameBorder,
+
+            '> span::before': {
+              transform: 'translatex(0)',
+              opacity: '1',
+            },
           },
           '&[is-active="true"]': {
             color: t.colors.frameHoverText,
             // background: t.colors.frameBorder,
             fontWeight: 700,
           },
+
         })}
         href={href}
         is-active={String(isActive)}
       >
-        {displayName}
+        <span sx={{
+          position: 'relative',
+          width: '190rem',
+          textAlign: 'right',
+          display: 'inline-block',
+
+          '&::before': {
+            content: '""',
+            height: '2rem',
+            width: '200rem',
+            position: 'absolute',
+            bottom: '-2rem',
+            left: '0',
+            opacity: '0',
+            background: (t) => t.colors.text,
+            transform: 'translatex(80rem)',
+            transition: 'transform 0.4s ease-in-out, opacity 0.4s linear',
+          },
+        }}
+        >
+          {displayName}
+        </span>
       </a>
     </Link>
   );
