@@ -47,13 +47,14 @@ function NavDrawerItem({ children, ...props }) {
         <span sx={{
           position: 'relative',
           width: '190rem',
-          textAlign: 'right',
+          pr: [0, 2],
+          textAlign: ['center', 'right'],
           display: 'inline-block',
 
           '&::before': {
             content: '""',
             height: '2rem',
-            width: '200rem',
+            width: '190rem',
             position: 'absolute',
             bottom: '-2rem',
             left: '0',

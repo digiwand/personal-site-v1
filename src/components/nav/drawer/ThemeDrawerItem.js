@@ -25,22 +25,27 @@ function ThemeNavDrawerItem() {
       type="button"
       onClick={() => selectNextColor()}
       sx={(t) => ({
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         mb: 'auto',
         py: 3,
         fontSize: 5,
         letterSpacing: '2rem',
         fontFamily: 'body',
         color: t.colors.frameText,
-        borderTop: `1rem solid ${t.colors.frameBorder}`,
-        borderBottom: `1rem solid ${t.colors.frameBorder}`,
         transition: 'color 0.2s, background 0.2s',
 
         '&:hover': {
           color: t.colors.frameHoverText,
-          background: t.colors.frameBorder,
 
           '> div > svg > path': {
             fill: t.colors.frameHoverText,
+          },
+
+          '.NavDrawer-ThemeDrawerItem_text::before': {
+            transform: 'translateX(-10rem)',
+            opacity: '1',
           },
         },
 
@@ -58,16 +63,29 @@ function ThemeNavDrawerItem() {
       <div
         className="NavDrawer-ThemeDrawerItem_text"
         sx={{
+          position: 'relative',
           display: 'flex',
-          alignItems: 'center',
           justifyContent: 'center',
           ...sxFadeInInitialize,
+
+          '&::before': {
+            content: '""',
+            height: '2rem',
+            width: '220rem',
+            position: 'absolute',
+            bottom: '-10rem',
+            left: '0',
+            opacity: '0',
+            background: (t) => t.colors.text,
+            transform: 'translatex(80rem)',
+            transition: 'transform 0.3s ease-in-out, opacity 0.4s linear',
+          },
         }}
       >
-        <span sx={{ pr: 4 }}>
+        {THEMEUI_COLOR_MODE_CONFIG[colorMode].icon}
+        <span sx={{ pl: 4 }}>
           Change Theme
         </span>
-        {THEMEUI_COLOR_MODE_CONFIG[colorMode].icon}
       </div>
     </button>
   );
