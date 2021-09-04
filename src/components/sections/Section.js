@@ -3,7 +3,7 @@ import React from 'react';
 const SECTION_ID_TOP_PLACEMENT = {
   default: '30vh',
   contact: '80vh',
-  work: '50vh',
+  work: '70vh',
 };
 
 /**
