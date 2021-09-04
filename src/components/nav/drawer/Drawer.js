@@ -12,7 +12,7 @@ const tabletWidth = '320rem';
 
 const sxFadeInInitialize = {
   opacity: 0,
-  transform: 'translateX(100px)',
+  transform: ['translateX(420rem)', 'translateX(280rem)'],
   transitionTimingFunction: 'ease, cubic-bezier(.1,1.3,.3,1)',
   transition: 'opacity 1s, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1)',
   transitionDelay: ['.4s', '.3s'],
@@ -146,6 +146,10 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
           'box-shadow 0.3s, transform 0.3s ease-in, width 0.3s',
         ],
 
+        '.NavDrawer_nav a': {
+          ...sxFadeInInitialize,
+          transitionDelay: '0.4s',
+        },
         '&[is-open="true"]': {
           transform: ['translateX(0)', 'translateX(0)', `translateX(${tabletWidth})`],
           boxShadow: `-5px 0px 10px 1px ${t.colors.frameBorder}`,
@@ -157,31 +161,43 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
           '.NavDrawer_iconButton': {
             ...sxFadeInAnimate,
           },
-          '.NavDrawer_nav': {
+          '.NavDrawer_nav a': {
             ...sxFadeInAnimate,
+
+            '&:nth-of-type(1)': {
+              transitionDelay: '0.4s',
+            },
+            '&:nth-of-type(2)': {
+              transitionDelay: '0.6s',
+            },
+            '&:nth-of-type(3)': {
+              transitionDelay: '0.8s',
+            },
+            '&:nth-of-type(4)': {
+              transitionDelay: '1s',
+            },
+            '&:nth-of-type(5)': {
+              transitionDelay: '1.2s',
+            },
           },
           '.NavDrawer-ThemeDrawerItem_text': {
             ...sxFadeInAnimate,
           },
-          '.NavDrawer_footer': {
-
-            button: {
-              '&:nth-of-type(1) > a > svg': {
-                transitionDelay: ['1.6s', '1.7s'],
-              },
-              '&:nth-of-type(2) > a > svg': {
-                transitionDelay: ['1.3s', '1.3s'],
-              },
-              '&:nth-of-type(3) > a > svg': {
-                transitionDelay: ['1s', '.9s'],
-              },
-              '&:nth-of-type(4) > a > svg': {
-                transitionDelay: ['.7s', '.5s'],
-              },
-
-              '> a > svg': {
-                opacity: 1,
-              },
+          '.NavDrawer_footer button': {
+            '> a > svg': {
+              opacity: 1,
+            },
+            '&:nth-of-type(1) > a > svg': {
+              transitionDelay: ['1.6s', '1.7s'],
+            },
+            '&:nth-of-type(2) > a > svg': {
+              transitionDelay: ['1.3s', '1.3s'],
+            },
+            '&:nth-of-type(3) > a > svg': {
+              transitionDelay: ['1s', '.9s'],
+            },
+            '&:nth-of-type(4) > a > svg': {
+              transitionDelay: ['.7s', '.5s'],
             },
           },
         },
@@ -216,8 +232,6 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
               flexDirection: 'column',
               pb: 5,
               mt: 'auto',
-
-              ...sxFadeInInitialize,
             }}
           >
             {drawerItems}

@@ -34,9 +34,9 @@ function NavDrawerItem({ children, ...props }) {
               opacity: '1',
             },
           },
+
           '&[is-active="true"]': {
             color: t.colors.frameHoverText,
-            // background: t.colors.frameBorder,
             fontWeight: 700,
           },
 
