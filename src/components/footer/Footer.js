@@ -12,9 +12,10 @@ function Footer() {
         py: 2,
         minHeight: '40px',
         px: [4, 6, 6],
-        fontSize: '12rem',
+        fontSize: '14rem',
         whiteSpace: 'nowrap',
         textAlign: 'center',
+        fontFamily: 'heading',
       })}
     >
       <Fade bottom>

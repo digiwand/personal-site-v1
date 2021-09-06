@@ -43,7 +43,7 @@ function HomeSection(props, ref) {
       }}
       >
         <Fade bottom>
-          <Themed.h2>Hello, I&apos;m</Themed.h2>
+          <Themed.h2 sx={{ fontFamily: 'Arial', letterSpacing: '2.4rem' }}>Hello, I&apos;m</Themed.h2>
         </Fade>
         <Fade bottom delay={600}>
           <span

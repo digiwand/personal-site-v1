@@ -28,12 +28,12 @@ const AboutSection = (props, ref) => (
         pb: [6, 0, 0],
       }}
       >
-        <Fade bottom>
+        <Fade>
           <Themed.h3 sx={{ pb: 4, color: (t) => `${t.colors.aboutHeader}` }}>
             ABOUT
           </Themed.h3>
         </Fade>
-        <Fade bottom delay={420}>
+        <Fade delay={420}>
           <Themed.p sx={{
             maxWidth: ['initial', 'initial', '520rem'],
             color: (t) => `${t.colors.aboutText}`,

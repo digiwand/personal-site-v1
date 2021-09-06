@@ -1,9 +1,10 @@
 import React from 'react';
 
 const SECTION_ID_TOP_PLACEMENT = {
-  default: '30vh',
-  contact: '80vh',
-  work: '70vh',
+  default: '10%',
+  contact: '80%',
+  work: '50%',
+  tech: '90%',
 };
 
 /**

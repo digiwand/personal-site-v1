@@ -1,12 +1,3 @@
-// TEMP. Only used for Personal Logo Signature. Replace with SVG
-@font-face {
-  font-family: "MarckScript";
-  src: url("/fonts/MarckScript-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "OpenSans";
-  src: url("/fonts/OpenSans-Regular.ttf") format("truetype");
-}
 @font-face {
   font-family: "BarlowCondensed";
   src: url("/fonts/BarlowCondensed-Regular.ttf") format("truetype");
@@ -15,4 +6,57 @@
   font-family: "BarlowCondensed";
   font-weight: 300;
   src: url("/fonts/BarlowCondensed-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "MarckScript";
+  src: url("/fonts/MarckScript-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("/fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 100;
+  src: url("/fonts/poppins/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 200;
+  src: url("/fonts/poppins/Poppins-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 300;
+  src: url("/fonts/poppins/Poppins-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  src: url("/fonts/poppins/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  src: url("/fonts/poppins/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: url("/fonts/poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  src: url("/fonts/poppins/Poppins-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 800;
+  src: url("/fonts/poppins/Poppins-ExtraBold.ttf") format("truetype");
 }
