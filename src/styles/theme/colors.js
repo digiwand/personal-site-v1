@@ -102,9 +102,9 @@ const colors = {
   workBg: PALETTE.BOLD.white300,
   workBgJobBox: 'rgba(254, 253, 255, 0.3)',
 
-  techBg: PALETTE.BOLD.forest100,
+  techBg: PALETTE.BOLD.white300,
   techHeader: PALETTE.BOLD.white,
-  carouselItemBg: 'rgba(158, 180, 172,0.9)',
+  carouselItemBg: 'rgba(239, 240, 241,0.8)',
 
   contactBg: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg") no-repeat fixed',
   contactBgBox: 'rgba(244,244,244, 0.68)',
