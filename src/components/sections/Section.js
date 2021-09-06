@@ -38,7 +38,7 @@ const Section = ({ id, children, className }, ref) => (
       justifyContent: 'center',
       flexDirection: 'column',
       px: [4, 6, 6],
-      py: [4, 6, 6],
+      py: [5, 6, 6],
     }}
   >
     <SectionTrackingPixel sectionId={id} forwardedRef={ref} />

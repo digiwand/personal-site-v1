@@ -3,9 +3,9 @@ import { Image } from 'theme-ui';
 const imgStyles = {
   position: 'absolute',
   m: 'auto',
-  opacity: '0.85',
+  opacity: '0.95',
   maxWidth: '650rem',
-  width: ['75%', '60%', '53%'],
+  width: ['75%', '50%', '43%'],
   transform: 'perspective(750px)',
   transition: '0.25s',
 
@@ -22,10 +22,10 @@ function CopperImgs() {
     <div sx={{
       position: 'relative',
       flex: '1 0 auto',
-      minHeight: '420rem',
+      minHeight: '350rem',
       width: ['100%', '100%', 'auto'],
       alignSelf: 'center',
-      my: [5, null, null],
+      my: 5,
     }}
     >
       <Image
@@ -35,8 +35,7 @@ function CopperImgs() {
           zIndex: '0',
           bottom: '0',
           right: '0',
-          left: ['auto', 'auto', '25%'],
-          top: ['auto', 'auto', '25%'],
+          top: '20%',
 
           ...imgStyles,
         }}
@@ -59,10 +58,10 @@ function CopperImgs() {
         src="images/work/copper-amp-email.png"
         sx={{
           zIndex: '2',
-          top: '0',
+          top: 0,
+          bottom: '20%',
           left: '0',
-          bottom: ['auto', 'auto', '25%'],
-          right: ['auto', 'auto', '25%'],
+          right: ['auto', 'auto', 'none'],
 
           ...imgStyles,
         }}

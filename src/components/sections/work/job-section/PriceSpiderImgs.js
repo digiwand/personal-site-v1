@@ -3,12 +3,12 @@ import { Image } from 'theme-ui';
 const imgStyles = {
   position: 'absolute',
   m: 'auto',
-  opacity: '0.85',
+  opacity: '0.95',
   objectFit: 'cover',
   objectPosition: 'top',
   aspectRatio: '5/4',
   maxWidth: '650rem',
-  width: ['75%', '60%', '53%'],
+  width: ['75%', '50%', '43%'],
   transform: 'perspective(750px)',
   transition: '0.25s',
 
@@ -25,10 +25,10 @@ function PriceSpiderImgs() {
     <div sx={{
       position: 'relative',
       flex: '1 0 auto',
-      minHeight: '420rem',
+      minHeight: '350rem',
       width: ['100%', '100%', 'auto'],
       alignSelf: 'center',
-      my: [5, null, null],
+      my: 5,
     }}
     >
       <Image
@@ -36,10 +36,10 @@ function PriceSpiderImgs() {
         src="images/work/pricespider-wtb-mars.png"
         sx={{
           zIndex: '2',
-          top: '0',
+          top: 0,
+          bottom: '20%',
           left: '0',
-          bottom: ['auto', 'auto', '25%'],
-          right: ['auto', 'auto', '25%'],
+          right: ['auto', 'auto', 'none'],
 
           ...imgStyles,
         }}
@@ -64,8 +64,7 @@ function PriceSpiderImgs() {
           zIndex: '0',
           bottom: '0',
           right: '0',
-          left: ['auto', 'auto', '25%'],
-          top: ['auto', 'auto', '25%'],
+          top: '20%',
 
           ...imgStyles,
         }}
