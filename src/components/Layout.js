@@ -18,6 +18,37 @@ const defaultProps = {
   sectionTrackingPixelRefs: null,
 };
 
+function LinkPreloadFonts() {
+  return (
+    <>
+      <link
+        rel="preload"
+        href="/fonts/BarlowCondensed-Regular.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/BarlowCondensed-Thin.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/MarckScript-Regular.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/OpenSans-Regular.ttf"
+        as="font"
+        crossOrigin=""
+      />
+    </>
+  );
+}
+
 function Layout({ children, sectionTrackingPixelRefs }) {
   const pageTopTrackingPixelRef = useRef();
   const { theme: { rawColors } } = useThemeUI();
@@ -55,6 +86,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         <title>{siteTitle}</title>
 
         <link rel="icon" href="/favicon.ico" />
+        <LinkPreloadFonts />
 
         <meta
           name="description"
