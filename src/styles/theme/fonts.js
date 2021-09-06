@@ -1,7 +1,7 @@
 const fonts = {
   fonts: {
     // body: 'OpenSans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    body: 'BarlowCondensed, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'Courier, serif',
     heading: 'BarlowCondensed, "Avenir Next", sans-serif',
     profile: 'MarckScript, Ariel',
     monospace: 'Menlo, monospace',
@@ -19,7 +19,7 @@ const fonts = {
     heading: 1.125,
   },
   letterSpacings: {
-    body: '2rem',
+    body: '1rem',
     caps: '0.2em',
   },
 

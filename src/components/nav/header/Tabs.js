@@ -55,6 +55,9 @@ function NavTabs({ children, ...props }) {
         displayName={displayName}
         isActive={activeSectionId === key}
         sx={{
+          fontFamily: 'heading',
+          fontWeight: '500',
+          letterSpacing: '3rem',
           width: `${NAVTAB_WIDTH}rem`,
           ml: `${NAVTAB_MARGIN_LEFT}rem`,
         }}
