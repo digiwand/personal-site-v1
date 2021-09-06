@@ -2,8 +2,10 @@ const fonts = {
   fonts: {
     // body: 'OpenSans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     body: 'Courier, serif',
+    // heading: 'Arial, "Avenir Next", sans-serif',
     heading: 'BarlowCondensed, "Avenir Next", sans-serif',
-    profile: 'MarckScript, Ariel',
+    heading2: 'Arial, "Avenir Next", sans-serif',
+    profile: 'MarckScript, Arial',
     monospace: 'Menlo, monospace',
   },
   fontSizes: [
@@ -34,6 +36,7 @@ const fonts = {
       fontFamily: 'heading',
       fontWeight: 'heading',
       lineHeight: 'heading',
+      display: 'inline-block',
     },
     link: {
       transition: 'font-weight 0.3s, color 0.3s',
@@ -44,14 +47,29 @@ const fonts = {
       },
     },
     sectionHeading: {
+      variant: 'text.heading',
+      letterSpacing: '12rem',
+      // heading: '3rem',
       display: 'block',
       textAlign: 'center',
-      variant: 'text.heading',
       fontWeight: '400',
       fontSize: [3, 4, 4],
-      letterSpacing: '12rem',
       color: (t) => t.colors.heading,
       pb: 5,
+    },
+    sideHeading: {
+      variant: 'text.heading',
+      letterSpacing: '3rem',
+      fontWeight: '400',
+      fontSize: [3, 4, 2],
+      color: (t) => t.colors.heading,
+      textAlign: ['center', 'center', 'initial'],
+
+      '&:before': {
+        content: '"— "',
+        paddingRight: 2,
+        display: ['none', 'none', 'inline-block'],
+      },
     },
   },
 };
