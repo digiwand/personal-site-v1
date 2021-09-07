@@ -101,6 +101,9 @@ const colors = {
 
   workBg: PALETTE.BOLD.white300,
   workBgJobBox: 'rgba(254, 253, 255, 0.3)',
+  workHeader: PALETTE.BOLD.grey300,
+  workSubHeader: PALETTE.BOLD.grey400,
+  workText: PALETTE.BOLD.grey500,
 
   techBg: PALETTE.BOLD.forest100,
   techHeader: PALETTE.BOLD.white,

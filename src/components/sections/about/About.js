@@ -80,7 +80,10 @@ const AboutSection = (props, ref) => (
             variant="framed"
             width="390"
             height="461.33"
-            sx={{ zIndex: 1 }}
+            sx={{
+              zIndex: 1,
+              boxShadow: 'rgba(120, 120, 120, 0.8) 1px 1px 13px 0px',
+            }}
           />
         </OffsetFrame>
       </div>

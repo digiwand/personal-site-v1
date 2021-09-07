@@ -13,14 +13,18 @@ function EducationSection() {
         fontFamily: 'heading2',
         display: 'block',
         pb: 2,
+        color: (t) => t.colors.workHeader,
       }}
       >
         B.A.Sc. Computer Science
       </Themed.h2>
-      <Themed.h4>
+      <Themed.h4 sx={{
+        color: (t) => t.colors.workSubHeader,
+      }}
+      >
         University of California Davis
       </Themed.h4>
-      <Themed.h5 sx={{ pl: 2, pb: 4 }}>
+      <Themed.h5 sx={{ pl: 2, pb: 4, color: (t) => t.colors.workSubHeader }}>
         /
         {' '}
         September 2010 - September 2014
