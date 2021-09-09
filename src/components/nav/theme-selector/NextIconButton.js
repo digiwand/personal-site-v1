@@ -19,7 +19,7 @@ function ThemeNextIconButton() {
     <IconButton
       onClick={() => selectNextColor()}
       sx={{
-        variant: 'buttons.icon.primary',
+        variant: 'buttons.icon.secondary',
       }}
     >
       {THEMEUI_COLOR_MODE_CONFIG[colorMode].icon}

@@ -155,7 +155,7 @@ function ContactForm() {
         >
           <Fade delay={800}>
             {reCaptcha}
-            <Button>Send</Button>
+            <Button><span>Send</span></Button>
           </Fade>
         </div>
       </form>

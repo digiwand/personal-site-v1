@@ -13,7 +13,7 @@ function TechSection(props, ref) {
       id={SECTION_ID.TECH}
       ref={ref}
       sx={{
-        background: (t) => `${t.colors.techBg}`,
+        background: (t) => t.colors.glassBg,
         minHeight: '0',
         py: [5, 6, 6],
         zIndex: 1,

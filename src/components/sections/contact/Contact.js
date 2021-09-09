@@ -35,54 +35,23 @@ function ContactDivider() {
   );
 }
 
-function ContactSectionBackground() {
-  return (
-    <div sx={{
-      position: 'absolute',
-      height: '100%',
-      width: '100%',
-      left: 0,
-      opacity: '0.2',
-      background: (t) => t.colors.contactBg,
-      backgroundSize: 'cover',
-    }}
-    />
-  );
-}
-
-function ContactBoxBackground() {
-  return (
-    <div sx={{
-      position: 'absolute',
-      left: '0',
-      top: '0',
-      height: '100%',
-      width: '100%',
-      background: (t) => t.colors.contactBgBox,
-      zIndex: '0',
-    }}
-    />
-  );
-}
-
 const ContactSection = (props, ref) => (
   <Section
     id={SECTION_ID.CONTACT}
     ref={ref}
     sx={{
       minHeight: 'calc(100vh - 260px)',
-      background: (t) => `${t.colors.homeBg}`,
     }}
   >
-    <ContactSectionBackground />
 
-    <div sx={{
-      position: 'relative',
-      py: 5,
-      px: [4, 5, 4],
-    }}
+    <div
+      sx={{
+        variant: 'glass',
+        position: 'relative',
+        py: 5,
+        px: [4, 5, 4],
+      }}
     >
-      <ContactBoxBackground />
 
       <Fade>
         <Text

@@ -1,6 +1,4 @@
 const iconButtons = {
-  padding: 1,
-  transition: 'background-color 150ms, box-shadow 150ms, border 150ms',
   boxShadow: '0px 0px 10px transparent',
 
   svg: {
@@ -12,21 +10,47 @@ const iconButtons = {
     },
   },
 
-  primary: {
-    border: '1px solid',
-    borderColor: 'text',
+  secondary: {
+    position: 'relative',
+    background: (t) => t.colors.glassBg,
+    border: (t) => t.colors.glassBorder,
 
+    '&:active': {
+      boxShadow: (t) => `inset 0 3px 5px rgb(18 21 26 / 9%), ${t.colors.buttonBoxShadow}`,
+    },
+    '&:focus': {
+      boxShadow: (t) => `inset 0 3px 5px rgb(18 21 26 / 9%), ${t.colors.buttonBoxShadow}`,
+    },
     '&:hover': {
-      border: '2px solid',
-      transform: 'none',
-
+      '&:before': {
+        opacity: 1,
+      },
       path: {
-        fill: 'text',
+        fill: (t) => t.colors.buttonHoverText,
       },
     },
 
+    '&:before': {
+      position: 'absolute',
+      content: '""',
+      opacity: '0',
+      top: '0',
+      left: '0',
+      width: '100%',
+      height: '100%',
+      borderRadius: '4rem',
+      zIndex: '2',
+      transition: 'opacity 0.15s ease-out',
+      backgroundImage: (t) => t.colors.buttonSecondaryHover,
+      border: (t) => t.colors.buttonSecondaryHoverBorder,
+    },
+
+    '> svg': {
+      zIndex: 3,
+    },
+
     path: {
-      fill: 'text',
+      fill: (t) => t.colors.buttonText,
     },
   },
 

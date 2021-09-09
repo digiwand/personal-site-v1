@@ -30,7 +30,7 @@ function ThemeNavDrawerItem() {
         justifyContent: 'center',
         mb: 'auto',
         py: 3,
-        fontSize: 5,
+        fontSize: 6,
         letterSpacing: '2rem',
         fontFamily: 'body',
         color: t.colors.frameText,

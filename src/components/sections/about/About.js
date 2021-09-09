@@ -13,7 +13,6 @@ const AboutSection = (props, ref) => (
     ref={ref}
     sx={{
       minHeight: '80vh',
-      background: (t) => `${t.colors.aboutBg}`,
       pt: 6,
     }}
   >
@@ -36,7 +35,7 @@ const AboutSection = (props, ref) => (
         <Fade delay={420}>
           <Themed.p sx={{
             maxWidth: ['initial', 'initial', '520rem'],
-            color: (t) => `${t.colors.aboutText}`,
+            // color: (t) => `${t.colors.aboutText}`,
           }}
           >
             {/* <br />
@@ -81,6 +80,7 @@ const AboutSection = (props, ref) => (
             width="390"
             height="461.33"
             sx={{
+              variant: 'glass',
               zIndex: 1,
               boxShadow: 'rgba(120, 120, 120, 0.8) 1px 1px 13px 0px',
             }}

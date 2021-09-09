@@ -71,6 +71,9 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         variant: 'scrollbar',
         height: '100vh',
         width: '100%',
+        background: (t) => t.colors.backgroundMain,
+        // unfortunately, background flickers if we use 'local' here
+        backgroundAttachment: 'fixed',
 
         /**
          * Fixes issue where scrollbar was not clickable or draggable. This element has a height of '100vh'

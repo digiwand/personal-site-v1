@@ -19,7 +19,7 @@ function NavDrawerItem({ children, ...props }) {
       <a
         sx={(t) => ({
           py: 3,
-          fontSize: 5,
+          fontSize: 6,
           letterSpacing: '2rem',
           textAlign: 'center',
           color: t.colors.frameText,

@@ -32,6 +32,10 @@ const PALETTE = {
     grey400: 'rgb(92, 92, 92)',
     grey500: 'rgb(14, 14, 14)',
   },
+
+  SUNRISE: {
+
+  },
 };
 
 const SVG = {
@@ -55,76 +59,93 @@ const SVG = {
 // tech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
 
 const colors = {
-  background: PALETTE.BOLD.forest400,
+
+  // -- Defaults -----------------------------------------------------------------------------------
+
+  background: '#764ba2',
 
   // -- General -----------------------------------------------------------------------------------
 
-  text: PALETTE.BOLD.forest200,
+  backgroundMain: 'linear-gradient(127deg, rgba(101, 85, 154,1), rgba(101, 85, 154,0) 55%),' // purple
+  + 'linear-gradient(217deg, rgba(117, 197, 202,.8), rgba(117, 197, 202,0) 75%),' // teal
+  // + 'linear-gradient(336deg, rgba(249, 198, 250,.8), rgba(249, 198, 250,0) 55%),' // pink
+  + 'linear-gradient(15deg, rgba(255, 217, 114,0.8), rgba(255, 217, 114,0) 45%),' // orange
+  + 'linear-gradient(100deg, rgba(150, 132, 190,1), rgba(150, 132, 190,0) 55%)', // light purple
+
+  glassBg: 'linear-gradient(70deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.30))',
+  glassBgThick: 'linear-gradient(70deg, rgba(245, 245, 245, 0.55), rgba(245, 245, 245, 0.73))',
+  glassBorder: '1px solid rgba( 255, 255, 255, 0.18 )',
+
+  text: 'rgba(255, 255, 255, .75)',
 
   error: '#B00020',
   /** @todo: add link color */
-  linkHover: PALETTE.BOLD.green200,
+  linkHover: 'orange',
 
   heading: PALETTE.BOLD.navy200,
 
-  scrollTrack: PALETTE.BOLD.white200,
-  scrollThumb: PALETTE.BOLD.forest200,
-  scrollThumbHover: PALETTE.BOLD.forest300,
+  scrollTrack: 'rgba(255, 255, 255, 0.1)',
+  scrollThumb: 'rgba(255, 255, 255, 0.6)',
+  scrollThumbHover: 'rgba(249, 198, 250, 0.6)',
 
   ...SVG.DEFAULT,
 
   // -- Components --------------------------------------------------------------------------------
 
-  button: PALETTE.BOLD.forest200,
+  buttonText: 'white',
+  buttonBoxShadow: '0 4px 8px 0 rgba( 31, 38, 135, 0.17 )',
+  buttonHover: 'linear-gradient(70deg, rgba(103,82,170, 0.50), rgba(103,82,170, 0.70))',
+  buttonHoverBorder: '1px solid rgba( 103,82,170, 0.18 )',
   buttonHoverText: PALETTE.BOLD.white300,
+  buttonSecondaryHover: 'linear-gradient(40deg, rgba(255, 170, 11, 0.85), rgba(255, 185, 11, 0.70), rgba(255, 170, 11, 0.85))',
+  buttonSecondaryHoverBorder: '1px solid rgba(255, 185, 11, 0.18 )',
 
-  frame: PALETTE.BOLD.white200,
-  frameText: PALETTE.BOLD.forest400,
-  frameActiveText: PALETTE.BOLD.white300,
-  frameHoverText: PALETTE.BOLD.forest200,
+  frameText: PALETTE.BOLD.white,
+  frameHoverText: 'rgba(103,82,170, 0.8)',
   frameBorder: 'rgba(0, 0, 0, 0.1)',
 
-  footerBg: PALETTE.BOLD.white200,
-  footerText: PALETTE.BOLD.forest400,
+  footerBg: 'rgba(120, 75, 155, 0.65)',
+  footerText: PALETTE.BOLD.white,
+
+  navHeaderBg: 'rgba(171, 75, 162, 0.35)',
+  navTabHoverColor: 'orange',
 
   // -- Sections ----------------------------------------------------------------------------------
 
-  homeBg: PALETTE.BOLD.white300,
-  homeBgImage: 'linear-gradient( rgba(243, 243, 243, 0.4), rgba(243, 243, 243, 0) ), url("images/bg/leaves-2.jpg")'
-  + ' no-repeat fixed 0 30%',
-  homeBgBox: 'rgba(255, 255, 255, 0.9)',
-
-  aboutBg: PALETTE.BOLD.white300,
   aboutHeader: PALETTE.BOLD.navy200,
   aboutText: PALETTE.BOLD.navy500,
   aboutFrame: PALETTE.BOLD.green400,
 
-  workBg: PALETTE.BOLD.white300,
   workBgJobBox: 'rgba(254, 253, 255, 0.3)',
-  workHeader: PALETTE.BOLD.grey300,
+  workHeader: PALETTE.BOLD.navy200,
   workSubHeader: PALETTE.BOLD.grey400,
-  workText: PALETTE.BOLD.grey500,
 
-  techBg: PALETTE.BOLD.forest100,
   techHeader: PALETTE.BOLD.white,
-  carouselItemBg: 'rgba(158, 180, 172,0.9)',
+  carouselItemBg: 'transparent',
 
-  contactBg: 'linear-gradient( rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.2) ), url("images/bg/leaves-4.jpg") no-repeat fixed',
+  contactBg: 'transparent',
   contactBgBox: 'rgba(244,244,244, 0.68)',
   contactHeader: PALETTE.BOLD.navy200,
-  contactSubHeader: PALETTE.BOLD.forest200,
+  contactSubHeader: PALETTE.BOLD.grey400,
   contactText: PALETTE.BOLD.grey400,
-  contactDivider: 'rgba(92, 92, 92, 0.5)',
-  contactPlant: PALETTE.BOLD.grey300,
+  contactDivider: 'rgba(232, 232, 232, 0.5)',
+  contactPlant: 'rgba(230, 230, 230, 0.8)',
 
-  inputBg: 'rgba(219,220,217, 0.7)',
+  inputBg: 'rgba(255, 255, 255, 0.25)',
   inputAutofill: 'rgba(219,220,217, 0.9)',
 
   modes: {
     dark: {
+
+      // -- Defaults -----------------------------------------------------------------------------------
+
       background: PALETTE.BOLD.forest400,
 
       // -- General -------------------------------------------------------------------------------
+
+      backgroundMain: PALETTE.BOLD.forest400,
+      glassBg: 'linear-gradient(70deg, rgba(17, 25, 40, 0.65), rgba(17, 25, 40, 0.75)',
+      glassBorder: 'border: 1px solid rgba( 255, 255, 255, 0.18 )',
 
       scrollTrack: PALETTE.BOLD.white200,
 
@@ -135,7 +156,8 @@ const colors = {
 
       // -- Components ----------------------------------------------------------------------------
 
-      button: PALETTE.BOLD.forest200,
+      // button: PALETTE.BOLD.forest200,
+      buttonHover: 'orange',
       buttonHoverText: PALETTE.BOLD.white,
 
       // to update
@@ -150,18 +172,11 @@ const colors = {
 
       // -- Sections ------------------------------------------------------------------------------
 
-      homeBg: 'black',
-      homeBgImage: 'black',
-      homeBgBox: 'rgba(133, 133, 133, 0.1)',
-
-      aboutBg: PALETTE.BOLD.grey500,
       aboutHeader: PALETTE.BOLD.forest200,
       aboutText: PALETTE.BOLD.grey200,
 
-      workBg: PALETTE.BOLD.grey500,
       workBgJobBox: 'rgba(254, 253, 255, 0.3)',
 
-      techBg: PALETTE.BOLD.black,
       techHeader: PALETTE.BOLD.forest200,
       carouselItemBg: 'rgba(0, 0, 0, 0.9)',
 
@@ -179,7 +194,6 @@ const colors = {
 
     mint: {
       background: '#DFECEB',
-      aboutBg: '#EFF9F0',
 
       inputBg: 'pink',
 

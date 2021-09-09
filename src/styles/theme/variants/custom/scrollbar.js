@@ -3,17 +3,17 @@ const scrollbar = {
   scrollBehavior: 'smooth',
 
   '&::-webkit-scrollbar-track': {
-    borderRadius: '3px',
-    backgroundColor: (t) => t.colors.homeBg,
+    borderRadius: '3rem',
+    backgroundColor: (t) => t.colors.scrollTrack,
   },
 
   '&::-webkit-scrollbar': {
-    width: '6px',
+    width: '6rem',
   },
 
   '::-webkit-scrollbar-thumb': {
     backgroundColor: (t) => t.colors.scrollThumb,
-    borderRadius: '3px',
+    borderRadius: '3rem',
   },
   '::-webkit-scrollbar-thumb:hover': {
     backgroundColor: (t) => t.colors.scrollThumbHover,

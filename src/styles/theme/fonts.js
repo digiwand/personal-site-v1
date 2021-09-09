@@ -1,7 +1,7 @@
 const fonts = {
   fonts: {
-    // body: 'OpenSans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    body: 'Courier, serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    // body: 'Courier, serif',
     // heading: 'Arial, "Avenir Next", sans-serif',
     heading: 'BarlowCondensed, "Avenir Next", sans-serif',
     heading2: 'Arial, "Avenir Next", sans-serif',
@@ -9,10 +9,10 @@ const fonts = {
     monospace: 'Menlo, monospace',
   },
   fontSizes: [
-    '12rem', '14rem', '16rem', '20rem', '22rem', '24rem', '28rem', '32rem', '46rem', '58rem',
+    '12rem', '14rem', '16rem', '18rem', '20rem', '22rem', '24rem', '28rem', '32rem', '46rem', '58rem',
   ],
   fontWeights: {
-    body: 400,
+    body: 200,
     bold: 700,
     heading: 700,
   },
@@ -21,7 +21,7 @@ const fonts = {
     heading: 1.125,
   },
   letterSpacings: {
-    body: '1rem',
+    body: '1.2rem',
     caps: '0.2em',
   },
 
@@ -29,6 +29,7 @@ const fonts = {
     body: {
       fontFamily: 'body',
       fontWeight: 'body',
+      letterSpacing: 'body',
       lineHeight: 'body',
       color: 'text',
     },
@@ -43,7 +44,6 @@ const fonts = {
 
       ':hover': {
         color: (t) => t.colors.linkHover,
-        fontWeight: 700,
       },
     },
     sectionHeading: {

@@ -5,6 +5,8 @@ import fonts from './fonts';
 import buttons from './variants/buttons';
 import forms from './variants/forms';
 import images from './variants/images';
+
+import glass from './variants/custom/glass';
 import scrollbar from './variants/custom/scrollbar';
 
 /**
@@ -39,6 +41,7 @@ const theme = {
 
   // -- Custom Variants ---------------------------------------------------------------------------
 
+  glass,
   scrollbar,
 };
 

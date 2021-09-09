@@ -16,8 +16,6 @@ function HomeSection(props, ref) {
       sx={{
         minHeight: '100vh',
         textAlign: 'center',
-        background: (t) => `${t.colors.homeBgImage}`,
-        backgroundSize: 'cover',
       }}
     >
 
@@ -33,7 +31,7 @@ function HomeSection(props, ref) {
       /> */}
 
       <div sx={{
-        background: (t) => `${t.colors.homeBgBox}`,
+        variant: 'glass',
         display: 'inline-flex',
         flexDirection: 'column',
         px: [3, 4, 5],

@@ -26,7 +26,7 @@ function NavTab({ children, ...props }) {
         left: '0',
         width: '0',
         overflow: 'hidden',
-        color: (t) => t.colors.text,
+        color: (t) => t.colors.navTabHoverColor,
       }}
     >
       {displayName}

@@ -98,14 +98,14 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         className="NavDrawer_profileIcon"
         sx={{
           fontFamily: 'profile',
-          fontSize: 3,
+          fontSize: 4,
           lineHeight: '60rem',
           pl: 4,
           // Adjust for unevent font center
           pt: '7rem',
           color: (t) => t.colors.frameText,
           ...sxFadeInInitialize,
-          transform: 'translateX(50px)',
+          transform: 'translateX(50rem)',
         }}
       >
         Ariella Vu
@@ -129,13 +129,16 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
   return (
     <aside
       sx={(t) => ({
+        // @todo: add constants for z-indices
+        zIndex: 20,
+        variant: 'glass.thick',
         position: 'fixed',
         flexDirection: 'column',
         height: '100vh',
         top: '0',
         right: '0',
         boxShadow: '0 0 0 0 transparent',
-        background: `${t.colors.frame}`,
+        borderRadius: '0',
         overflow: 'hidden',
 
         display: ['flex', 'flex', 'none'],

@@ -55,14 +55,16 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         display: 'flex',
         alignItems: 'flex-end',
         height: '110px',
+        boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0)',
         width: `calc(100% - ${scrollBarWidth})`,
         px: `${paddingFrame + paddingInsideFrame}px`,
         transition: 'transform 0.4s, background 0.25s, box-shadow 0.25s',
-        boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0)',
         transform: ['translateY(-110px)', 'translateY(-110px)', 'translateY(0)'],
 
         '&[has-scrolled="true"]': {
-          background: `${theme.colors.frame}`,
+          background: theme.colors.navHeaderBg,
+          backdropFilter: 'blur(4px)',
+
           transform: ['translateY(-110px)', 'translateY(-110px)', 'translateY(-70px)'],
           boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0.30)',
 
@@ -79,25 +81,6 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           '.NavTab': {
             letterSpacing: '1rem',
             color: `${theme.colors.frameText}`,
-          },
-
-          '.NavHeader_SocialIconButton': {
-            path: {
-              fill: `${theme.colors.frameText}`,
-            },
-            '&:hover path': {
-              fill: `${theme.colors.text}`,
-            },
-          },
-
-          '.NavHeader_ThemeDropdown': {
-            button: {
-              borderColor: `${theme.colors.frameText}`,
-            },
-
-            path: {
-              fill: `${theme.colors.frameText}`,
-            },
           },
         },
       })}

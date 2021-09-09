@@ -14,14 +14,14 @@ function OffsetFrame({ children, ...props }) {
         }}
       >
         <div sx={{
-          background: (t) => t.colors.aboutFrame,
           position: 'absolute',
+          variant: 'glass',
           height: [`calc(100% + ${frameDistance}rem)`, `calc(100% + ${frameDistance}rem)`, '100%'],
           width: [`calc(100% + ${frameDistance}rem)`, `calc(100% + ${frameDistance}rem)`, '100%'],
           bottom: [`-${frameDistance / 2}rem`, `-${frameDistance / 2}rem`, '20rem'],
           left: [`-${frameDistance / 2}rem`, `-${frameDistance / 2}rem`, '20rem'],
           zIndex: '-1',
-          boxShadow: 'rgba(40, 40, 40, 1) 2px 2px 13px 0px',
+          boxShadow: 'rgba(120, 120, 120, 0.8) 2px 2px 13px 0px',
         }}
         />
         {children}

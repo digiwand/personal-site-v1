@@ -4,8 +4,8 @@ function Footer() {
   return (
     <footer
       sx={(theme) => ({
-        backgroundColor: `${theme.colors.footerBg}`,
-        color: `${theme.colors.footerText}`,
+        backgroundColor: theme.colors.footerBg,
+        color: theme.colors.footerText,
         display: 'flex',
         flexDirection: ['column-reverse', 'row', 'row'],
         justifyContent: 'space-between',

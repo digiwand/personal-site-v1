@@ -32,38 +32,40 @@ function JobSection({ children, ...props }) {
       className={className}
       sx={{
         gridColumnStart: 'content-start',
+        maxWidth: '850rem',
+        variant: 'glass',
+        py: 5,
+        px: 4,
       }}
     >
-      <div sx={{ maxWidth: '850rem' }}>
-        <Themed.h2 sx={{
-          fontFamily: 'heading2',
-          color: (t) => t.colors.workHeader,
-          display: 'block',
-          letterSpacing: '2rem',
-          pb: 2,
-        }}
-        >
-          {title}
-          {' '}
-          <small>{subtitle}</small>
-        </Themed.h2>
-        <Themed.h4 sx={{
-          color: (t) => t.colors.workSubHeader,
-        }}
-        >
-          {companyName}
-          {' '}
-        </Themed.h4>
-        <Themed.h5 sx={{ pl: 2, pb: 4, color: (t) => t.colors.workSubHeader }}>
-          /
-          {' '}
-          {date}
-        </Themed.h5>
+      <Themed.h2 sx={{
+        fontFamily: 'heading2',
+        color: (t) => t.colors.workHeader,
+        display: 'block',
+        letterSpacing: '2rem',
+        pb: 2,
+      }}
+      >
+        {title}
+        {' '}
+        <small>{subtitle}</small>
+      </Themed.h2>
+      <Themed.h4 sx={{
+        color: (t) => t.colors.workSubHeader,
+      }}
+      >
+        {companyName}
+        {' '}
+      </Themed.h4>
+      <Themed.h5 sx={{ pl: 2, pb: 4, color: (t) => t.colors.workSubHeader }}>
+        /
+        {' '}
+        {date}
+      </Themed.h5>
 
-        <Themed.p sx={{ pt: 4, color: (t) => t.colors.workText }}>
-          {children}
-        </Themed.p>
-      </div>
+      <Themed.p sx={{ pt: 4 }}>
+        {children}
+      </Themed.p>
 
       {img}
 

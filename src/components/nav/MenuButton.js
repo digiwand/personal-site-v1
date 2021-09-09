@@ -12,7 +12,6 @@ function NavMenuButton({ onClick }) {
     <Button
       sx={{
         position: 'absolute',
-        background: (t) => t.colors.homeBg,
         top: '0',
         right: '0',
         display: 'flex',
@@ -26,10 +25,6 @@ function NavMenuButton({ onClick }) {
         mr: 4,
         opacity: [1, 1, 0],
         pointerEvents: ['initial', 'initial', 'none'],
-
-        '&:hover > div': {
-          background: (t) => t.colors.homeBg,
-        },
       }}
       onClick={onClick}
       aria-label="Open menu drawer"

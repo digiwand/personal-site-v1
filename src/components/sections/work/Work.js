@@ -8,7 +8,14 @@ import JobSectionPriceSpider from 'components/sections/work/job-section/PriceSpi
 
 function EducationSection() {
   return (
-    <div sx={{ gridColumnStart: 'content-start', maxWidth: '850rem' }}>
+    <div sx={{
+      gridColumnStart: 'content-start',
+      maxWidth: '850rem',
+      variant: 'glass',
+      py: 5,
+      px: 4,
+    }}
+    >
       <Themed.h2 sx={{
         fontFamily: 'heading2',
         display: 'block',
@@ -16,7 +23,7 @@ function EducationSection() {
         color: (t) => t.colors.workHeader,
       }}
       >
-        B.A.Sc. Computer Science
+        B.A.S. Computer Science
       </Themed.h2>
       <Themed.h4 sx={{
         color: (t) => t.colors.workSubHeader,
@@ -24,7 +31,7 @@ function EducationSection() {
       >
         University of California Davis
       </Themed.h4>
-      <Themed.h5 sx={{ pl: 2, pb: 4, color: (t) => t.colors.workSubHeader }}>
+      <Themed.h5 sx={{ pl: 2, color: (t) => t.colors.workSubHeader }}>
         /
         {' '}
         September 2010 - September 2014
@@ -37,10 +44,6 @@ const WorkSection = (props, ref) => (
   <Section
     id="work"
     ref={ref}
-    sx={{
-      background: (t) => `${t.colors.workBg}`,
-      backgroundSize: 'cover',
-    }}
   >
     {/* <Fade> */}
 
@@ -48,8 +51,8 @@ const WorkSection = (props, ref) => (
       display: 'grid',
       gridTemplateColumns: ['auto', 'auto', '[label-start] 1fr [content-start] 2fr [end]'],
       gridTemplateRows: 'auto auto',
-      columnGap: ['0', '0', '100rem'],
-      rowGap: '20rem',
+      columnGap: ['0', '0', '20rem'],
+      rowGap: '80rem',
     }}
     >
 
