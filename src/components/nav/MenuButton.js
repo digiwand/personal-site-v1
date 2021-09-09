@@ -29,17 +29,17 @@ function NavMenuButton({ onClick }) {
       onClick={onClick}
       aria-label="Open menu drawer"
     >
-      <div sx={(theme) => ({
+      <span sx={(theme) => ({
         background: `${theme.colors.text}`,
         ...menuLine,
       })}
       />
-      <div sx={(theme) => ({
+      <span sx={(theme) => ({
         background: `${theme.colors.text}`,
         ...menuLine,
       })}
       />
-      <div sx={(theme) => ({
+      <span sx={(theme) => ({
         background: `${theme.colors.text}`,
         ...menuLine,
       })}
