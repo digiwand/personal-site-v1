@@ -6,7 +6,7 @@ import SOCIAL from 'constants/social';
 function ContactRightSide() {
   return (
     <div sx={{
-      flex: '3 0 auto',
+      flex: '3 1 auto',
       transition: 'width 0.3s',
       width: ['100%', '100%', 'auto'],
     }}
