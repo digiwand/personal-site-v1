@@ -73,7 +73,6 @@ const colors = {
   + 'linear-gradient(100deg, rgba(150, 132, 190,1), rgba(150, 132, 190,0) 55%)', // light purple
 
   glassBg: 'linear-gradient(70deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.30))',
-  glassBgThick: 'linear-gradient(70deg, rgba(245, 245, 245, 0.55), rgba(245, 245, 245, 0.73))',
   glassBorder: '1px solid rgba( 255, 255, 255, 0.18 )',
 
   text: 'rgba(255, 255, 255, .75)',
@@ -107,6 +106,9 @@ const colors = {
   footerBg: 'rgba(120, 75, 155, 0.65)',
   footerText: PALETTE.BOLD.white,
 
+  navDrawerBg: 'linear-gradient(70deg, rgba(101, 85, 154, 0.55), rgba(101, 85, 154, 0.73))',
+  navDrawerActiveColor: 'rgba(255, 237, 154, 0.9)',
+  navDrawerSocialIconsHoverColor: 'rgba(255, 200, 144, 0.9)',
   navHeaderBg: 'rgba(171, 75, 162, 0.35)',
   navTabHoverColor: 'orange',
 

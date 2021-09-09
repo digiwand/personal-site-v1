@@ -15,7 +15,7 @@ function NavDrawerSocialIcons() {
           '&:hover ': {
             background: t.colors.frameBorder,
             path: {
-              fill: t.colors.frameHoverText,
+              fill: t.colors.navDrawerSocialIconsHoverColor,
             },
           },
 

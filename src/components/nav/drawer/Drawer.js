@@ -62,7 +62,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         ...sxFadeInInitialize,
 
         ':hover .NavDrawer_closeSVG > path': {
-          fill: (t) => t.colors.frameHoverText,
+          fill: (t) => t.colors.navDrawerSocialIconsHoverColor,
         },
       }}
       onClick={closeMenu}
@@ -131,7 +131,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
       sx={(t) => ({
         // @todo: add constants for z-indices
         zIndex: 20,
-        variant: 'glass.thick',
+        variant: 'glass',
         position: 'fixed',
         flexDirection: 'column',
         height: '100vh',
@@ -144,6 +144,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         display: ['flex', 'flex', 'none'],
         transform: ['translateX(100%)', `translateX(${tabletWidth})`],
         width: ['100%', tabletWidth],
+        background: t.colors.navDrawerBg,
         transition: [
           'box-shadow 0.3s, transform .4s ease-in, width 0.3s',
           'box-shadow 0.3s, transform 0.3s ease-in, width 0.3s',

@@ -37,14 +37,14 @@ function ThemeNavDrawerItem() {
         transition: 'color 0.2s, background 0.2s',
 
         '&:hover': {
-          color: t.colors.frameHoverText,
+          color: t.colors.navDrawerActiveColor,
 
           '> div > svg > path': {
-            fill: t.colors.frameHoverText,
+            fill: t.colors.navDrawerActiveColor,
           },
 
           '.NavDrawer-ThemeDrawerItem_text::before': {
-            transform: 'translateX(-10rem)',
+            transform: 'translateX(-15rem)',
             opacity: '1',
           },
         },
@@ -71,7 +71,7 @@ function ThemeNavDrawerItem() {
           '&::before': {
             content: '""',
             height: '2rem',
-            width: '220rem',
+            width: '260rem',
             position: 'absolute',
             bottom: '-10rem',
             left: '0',

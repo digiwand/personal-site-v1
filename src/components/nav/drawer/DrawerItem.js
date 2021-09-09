@@ -27,7 +27,7 @@ function NavDrawerItem({ children, ...props }) {
           transition: 'color 0.2s, background 0.2s',
 
           '&:hover': {
-            color: t.colors.frameHoverText,
+            color: t.colors.navDrawerActiveColor,
 
             '> span::before': {
               transform: 'translatex(0)',
@@ -36,7 +36,7 @@ function NavDrawerItem({ children, ...props }) {
           },
 
           '&[is-active="true"]': {
-            color: t.colors.frameHoverText,
+            color: t.colors.navDrawerActiveColor,
             fontWeight: 700,
           },
 

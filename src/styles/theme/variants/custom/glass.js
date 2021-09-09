@@ -4,10 +4,6 @@ const glass = {
   borderRadius: '10rem',
   background: (t) => t.colors.glassBg,
   border: (t) => t.colors.glassBorder,
-
-  thick: {
-    background: (t) => t.colors.glassBgThick,
-  },
 };
 
 export default glass;
