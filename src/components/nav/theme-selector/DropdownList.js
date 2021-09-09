@@ -16,7 +16,7 @@ function ThemeDropdownList() {
       sx={{
         mt: 1,
         transition: '250ms cubic-bezier(0.42, 0.83, 0.49, 1.35) transform',
-        // transform: 'scale(0)',
+        transform: 'scale(0)',
         transitionDelay: `${150 * (index + 1)}ms`,
       }}
     >
