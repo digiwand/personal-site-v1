@@ -1,6 +1,7 @@
 import Fade from 'react-reveal';
 
-const frameDistance = 26;
+const frameDistance = 46;
+const frameDistanceMobile = 34;
 
 function OffsetFrame({ children, ...props }) {
   const { className } = props;
@@ -16,15 +17,26 @@ function OffsetFrame({ children, ...props }) {
         <div sx={{
           position: 'absolute',
           variant: 'glass',
-          height: [`calc(100% + ${frameDistance}rem)`, `calc(100% + ${frameDistance}rem)`, '100%'],
-          width: [`calc(100% + ${frameDistance}rem)`, `calc(100% + ${frameDistance}rem)`, '100%'],
-          bottom: [`-${frameDistance / 2}rem`, `-${frameDistance / 2}rem`, '20rem'],
-          left: [`-${frameDistance / 2}rem`, `-${frameDistance / 2}rem`, '20rem'],
+          height: [`calc(100% + ${frameDistanceMobile}rem)`, `calc(100% + ${frameDistance}rem)`],
+          width: [`calc(100% + ${frameDistanceMobile}rem)`, `calc(100% + ${frameDistance}rem)`],
+          bottom: [`-${frameDistanceMobile / 2}rem`, `-${frameDistance / 2}rem`],
+          left: [`-${frameDistanceMobile / 2}rem`, `-${frameDistance / 2}rem`],
           zIndex: '-1',
           boxShadow: 'rgba(120, 120, 120, 0.8) 2px 2px 13px 0px',
+          borderRadius: '50%',
         }}
         />
-        {children}
+        <div sx={{
+          display: 'inline-block',
+          borderRadius: '50%',
+          overflow: 'hidden',
+          aspectRatio: '1/1',
+          // todo: move filter out of component and rename component
+          filter: 'brightness(1.12) contrast(1.03) saturate(1.08)',
+        }}
+        >
+          {children}
+        </div>
       </div>
     </Fade>
   );

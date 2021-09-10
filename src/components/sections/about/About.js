@@ -23,7 +23,7 @@ const AboutSection = (props, ref) => (
       <div sx={{
         flex: '1 1 auto',
         pr: [0, 0, 6],
-        pt: [6, 6, 3],
+        pt: [2, 6, 3],
         pb: [6, 0, 0],
       }}
       >
@@ -63,12 +63,12 @@ const AboutSection = (props, ref) => (
         display: 'flex',
         justifyContent: 'center',
         alignSelf: 'center',
-        pb: [3, 0, 0],
+        pb: [6, 0, 0],
       }}
       >
         <OffsetFrame sx={{
           maxWidth: '390rem',
-          width: ['80%', '100%', '100%'],
+          width: ['90%', '100%', '100%'],
           display: ['flex', 'flex', 'inline-block'],
           mx: ['auto', 'initial', 'initial'],
         }}
