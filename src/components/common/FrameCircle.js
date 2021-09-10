@@ -17,10 +17,26 @@ function FrameCircle({ children, ...props }) {
         <div sx={{
           position: 'absolute',
           variant: 'glass',
-          height: [`calc(100% + ${frameDistanceMobile}rem)`, `calc(100% + ${frameDistance}rem)`],
-          width: [`calc(100% + ${frameDistanceMobile}rem)`, `calc(100% + ${frameDistance}rem)`],
-          bottom: [`-${frameDistanceMobile / 2}rem`, `-${frameDistance / 2}rem`],
-          left: [`-${frameDistanceMobile / 2}rem`, `-${frameDistance / 2}rem`],
+          height: [
+            `calc(100% + ${frameDistanceMobile}rem)`,
+            `calc(100% + ${frameDistanceMobile}rem)`,
+            `calc(100% + ${frameDistance}rem)`,
+          ],
+          width: [
+            `calc(100% + ${frameDistanceMobile}rem)`,
+            `calc(100% + ${frameDistanceMobile}rem)`,
+            `calc(100% + ${frameDistance}rem)`,
+          ],
+          bottom: [
+            `-${frameDistanceMobile / 2}rem`,
+            `-${frameDistanceMobile / 2}rem`,
+            `-${frameDistance / 2}rem`,
+          ],
+          left: [
+            `-${frameDistanceMobile / 2}rem`,
+            `-${frameDistanceMobile / 2}rem`,
+            `-${frameDistance / 2}rem`,
+          ],
           zIndex: '-1',
           boxShadow: 'rgba(120, 120, 120, 0.8) 2px 2px 13px 0px',
           borderRadius: '50%',
