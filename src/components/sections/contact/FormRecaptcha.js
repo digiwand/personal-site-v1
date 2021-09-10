@@ -30,7 +30,7 @@ function FormRecaptcha({ recaptchaRef }) {
         sitekey={reCaptchaV2Key}
         sx={{
           '.grecaptcha-badge': {
-            right: 0,
+            right: '0!important',
             visibility: 'hidden',
           },
         }}
