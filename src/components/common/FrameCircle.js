@@ -3,7 +3,7 @@ import Fade from 'react-reveal';
 const frameDistance = 46;
 const frameDistanceMobile = 34;
 
-function OffsetFrame({ children, ...props }) {
+function FrameCircle({ children, ...props }) {
   const { className } = props;
 
   return (
@@ -42,4 +42,4 @@ function OffsetFrame({ children, ...props }) {
   );
 }
 
-export default OffsetFrame;
+export default FrameCircle;

@@ -2,7 +2,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Flex, Image, Themed } from 'theme-ui';
 
-import OffsetFrame from 'components/common/OffsetFrame';
+import FrameCircle from 'components/common/FrameCircle';
 import Section from 'components/sections/Section';
 
 import { SECTION_ID } from 'constants/section';
@@ -66,7 +66,7 @@ const AboutSection = (props, ref) => (
         pb: [6, 0, 0],
       }}
       >
-        <OffsetFrame sx={{
+        <FrameCircle sx={{
           maxWidth: '390rem',
           width: ['90%', '100%', '100%'],
           display: ['flex', 'flex', 'inline-block'],
@@ -85,7 +85,7 @@ const AboutSection = (props, ref) => (
               boxShadow: 'rgba(120, 120, 120, 0.8) 1px 1px 13px 0px',
             }}
           />
-        </OffsetFrame>
+        </FrameCircle>
       </div>
     </Flex>
   </Section>
