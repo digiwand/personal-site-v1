@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import { keyframes } from '@emotion/react';
 
 import NavTabs from 'components/nav/header/Tabs';
 import NavSocialIcons from 'components/nav/header/SocialIconButtons';
@@ -10,6 +11,12 @@ import PROP_TYPE from 'constants/prop-types';
 const paddingFrame = 45;
 const paddingInsideFrame = 28;
 const scrollBarWidth = '6px';
+
+const bgChangeKeyframe = keyframes`
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
+`;
 
 const propTypes = {
   activeSectionId: PropTypes.string.isRequired,
@@ -69,7 +76,8 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0.30)',
 
           '.NavHeader_profileLogo': {
-            color: `${theme.colors.frameText}`,
+            backgroundImage: 'linear-gradient(45deg, #f49df7, lavender, orange)',
+            animation: `${bgChangeKeyframe} 5s infinite`,
             fontSize: '23px',
             transform: `translateX(-${paddingInsideFrame + (paddingFrame / 2)}px)`,
           },
@@ -90,10 +98,14 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
       <span
         className="NavHeader_profileLogo"
         sx={{
+          variant: 'text.gradient',
+          backgroundImage: (t) => t.colors.text,
+          backgroundSize: '200% 200%',
           fontFamily: 'profile',
           fontSize: '28rem',
           lineHeight: '34rem',
-          transition: 'font-size 0.4s, transform 0.4s',
+          transition: 'font-size 0.4s, transform 0.4s, background 0.4s',
+          pl: 1,
         }}
       >
         Ariella Vu

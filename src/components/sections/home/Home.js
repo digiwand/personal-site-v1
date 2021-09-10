@@ -41,17 +41,28 @@ function HomeSection(props, ref) {
       }}
       >
         <Fade bottom>
-          <Themed.h2 sx={{ fontFamily: 'Arial', letterSpacing: '2.4rem' }}>Hello, I&apos;m</Themed.h2>
+          <Themed.h2 sx={{
+            letterSpacing: '2.4rem',
+            color: (t) => t.colors.homeHello,
+            textShadow: (t) => t.colors.textShadow,
+          }}
+          >
+            Hello, I&apos;m
+
+          </Themed.h2>
         </Fade>
         <Fade bottom delay={600}>
           <span
             className="NavHeader_profileLogo"
             sx={{
+              variant: 'text.gradient',
               fontFamily: 'profile',
               fontSize: [8, 9, 9],
               pt: [4, 3, 4],
               pb: [3, null, null],
               display: 'inline-block',
+              // fix font from chopping off
+              pl: 2,
             }}
           >
             Ariella Vu.

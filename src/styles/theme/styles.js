@@ -13,34 +13,34 @@ const styles = {
 
   h1: {
     variant: 'text.heading',
-    fontSize: [6, 6, 6],
+    fontSize: [6, 7, 7],
   },
   h2: {
     variant: 'text.heading',
-    fontWeight: '700',
-    fontSize: [5, 6, 6],
+    fontSize: [4, 5, 5],
     letterSpacing: '3rem',
   },
   h3: {
     variant: 'text.heading',
-    fontWeight: '700',
-    fontSize: [4, 5, 5],
+    fontWeight: '500',
+    fontSize: [3, 4, 4],
     letterSpacing: '5rem',
   },
   h4: {
     variant: 'text.heading',
-    fontSize: [2, 4, 5],
+    fontSize: [1, 3, 4],
+    textShadow: 'none',
   },
   h5: {
     variant: 'text.heading',
-    fontSize: 2,
+    fontSize: 1,
   },
   h6: {
     variant: 'text.heading',
-    fontSize: 1,
+    fontSize: 0,
   },
   p: {
-    fontSize: 2,
+    fontSize: 1,
   },
 };
 

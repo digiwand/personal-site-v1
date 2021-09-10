@@ -17,7 +17,6 @@ function EducationSection() {
     }}
     >
       <Themed.h2 sx={{
-        fontFamily: 'heading2',
         display: 'block',
         pb: 2,
         color: (t) => t.colors.workHeader,
@@ -31,7 +30,11 @@ function EducationSection() {
       >
         University of California Davis
       </Themed.h4>
-      <Themed.h5 sx={{ pl: 2, color: (t) => t.colors.workSubHeader }}>
+      <Themed.h5 sx={{
+        pl: 2,
+        color: (t) => t.colors.workSubHeader,
+      }}
+      >
         /
         {' '}
         September 2010 - September 2014
@@ -56,26 +59,26 @@ const WorkSection = (props, ref) => (
     }}
     >
 
-      <Text
-        variant="sideHeading"
+      <Themed.h3
         sx={{
+          variant: 'text.sideHeading',
           gridColumnStart: 'label-start',
           pb: 5,
         }}
       >
         WORK EXPERIENCE
-      </Text>
+      </Themed.h3>
       <JobSectionCopper />
       <JobSectionPriceSpider />
 
-      <Text
-        variant="sideHeading"
+      <Themed.h3
         sx={{
+          variant: 'text.sideHeading',
           gridColumnStart: 'label-start',
         }}
       >
         EDUCATION
-      </Text>
+      </Themed.h3>
       <EducationSection />
     </div>
     {/* </Fade> */}

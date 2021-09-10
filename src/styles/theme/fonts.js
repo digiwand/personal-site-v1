@@ -1,27 +1,34 @@
 const fonts = {
   fonts: {
-    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    // body: 'Courier, serif',
-    // heading: 'Arial, "Avenir Next", sans-serif',
-    heading: 'BarlowCondensed, "Avenir Next", sans-serif',
+    body: 'Avenir Next, Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
+    heading: 'Rubik, "Avenir Next", sans-serif',
     heading2: 'Arial, "Avenir Next", sans-serif',
+    barlow: 'BarlowCondensed, sans-serif',
     profile: 'MarckScript, Arial',
-    monospace: 'Menlo, monospace',
   },
   fontSizes: [
-    '12rem', '14rem', '16rem', '18rem', '20rem', '22rem', '24rem', '28rem', '32rem', '46rem', '58rem',
+    '12rem', // 0
+    '16rem', // 1
+    '18rem', // 2
+    '20rem', // 3
+    '22rem', // 4
+    '24rem', // 5
+    '28rem', // 6
+    '34rem', // 7
+    '46rem', // 8
+    '58rem', // 9
   ],
   fontWeights: {
-    body: 200,
+    body: 300,
     bold: 700,
-    heading: 700,
   },
   lineHeights: {
     body: 1.5,
     heading: 1.125,
   },
   letterSpacings: {
-    body: '1.2rem',
+    body: '1.6rem',
+    header: '2.4rem',
     caps: '0.2em',
   },
 
@@ -35,9 +42,19 @@ const fonts = {
     },
     heading: {
       fontFamily: 'heading',
-      fontWeight: 'heading',
+      fontWeight: 'bold',
       lineHeight: 'heading',
+      letterSpacing: 'heading',
       display: 'inline-block',
+      color: (t) => t.colors.homeHello,
+      textShadow: (t) => t.colors.textShadow,
+    },
+
+    gradient: {
+      backgroundColor: 'lavender',
+      backgroundImage: 'linear-gradient(45deg, #f49df7, lavender, orange)',
+      backgroundClip: 'text',
+      textFillColor: 'transparent',
     },
     link: {
       transition: 'font-weight 0.3s, color 0.3s',
@@ -58,11 +75,6 @@ const fonts = {
       pb: 5,
     },
     sideHeading: {
-      variant: 'text.heading',
-      letterSpacing: '3rem',
-      fontWeight: '400',
-      fontSize: [3, 4, 2],
-      color: (t) => t.colors.heading,
       textAlign: ['center', 'center', 'initial'],
 
       '&:before': {
@@ -70,6 +82,9 @@ const fonts = {
         paddingRight: 2,
         display: ['none', 'none', 'inline-block'],
       },
+    },
+    shadow: {
+      textShadow: (t) => t.colors.textShadow,
     },
   },
 };

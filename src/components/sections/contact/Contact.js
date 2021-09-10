@@ -2,7 +2,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 import {
   Flex,
-  Text,
+  Themed,
 } from 'theme-ui';
 
 import Section from 'components/sections/Section';
@@ -52,16 +52,18 @@ const ContactSection = (props, ref) => (
         px: [4, 5, 4],
       }}
     >
-
       <Fade>
-        <Text
-          variant="sectionHeading"
+        <Themed.h3
           sx={{
-            color: (t) => `${t.colors.contactHeader}`,
+            color: (t) => t.colors.homeHello,
+            textShadow: (t) => t.colors.textShadow,
+            display: 'block',
+            textAlign: 'center',
+            pb: 4,
           }}
         >
           CONTACT
-        </Text>
+        </Themed.h3>
       </Fade>
 
       <Flex sx={{

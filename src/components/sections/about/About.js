@@ -28,9 +28,9 @@ const AboutSection = (props, ref) => (
       }}
       >
         <Fade>
-          <Themed.h3 sx={{ pb: 4, color: (t) => `${t.colors.aboutHeader}` }}>
-            ABOUT
-          </Themed.h3>
+          <Themed.h1 sx={{ pb: 4 }}>
+            About
+          </Themed.h1>
         </Fade>
         <Fade delay={420}>
           <Themed.p sx={{

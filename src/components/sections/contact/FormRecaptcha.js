@@ -16,11 +16,12 @@ const propTypes = {
 function FormRecaptcha({ recaptchaRef }) {
   return (
     <div sx={{
-      fontSize: 0,
+      fontSize: '10rem',
+      letterSpacing: '1rem',
       textAlign: 'right',
       height: 'fit-content',
-      alignSelf: 'flex-end',
       pr: [0, 4, 4],
+      pt: 1,
       color: (t) => t.colors.contactDivider,
     }}
     >

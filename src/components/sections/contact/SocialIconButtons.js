@@ -33,7 +33,7 @@ function ContactSocialIconButtons() {
           },
 
           path: {
-            fill: (t) => `${t.colors.contactText}`,
+            fill: (t) => `${t.colors.contactIcon}`,
           },
         }}
         showUsername

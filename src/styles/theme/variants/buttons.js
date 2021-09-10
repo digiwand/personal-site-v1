@@ -7,7 +7,7 @@ const buttons = {
     position: 'relative',
     height: '42rem',
     letterSpacing: '3rem',
-    fontFamily: 'heading',
+    fontFamily: 'barlow',
     fontSize: 2,
     fontWeight: '300',
     borderRadius: '4rem',

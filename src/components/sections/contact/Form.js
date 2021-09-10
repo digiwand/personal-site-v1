@@ -109,6 +109,7 @@ function ContactForm() {
         <div sx={{
           display: 'flex',
           justifyContent: 'flex-end',
+          alignItems: 'center',
         }}
         >
           <Fade delay={800}>

@@ -34,7 +34,7 @@ const PALETTE = {
   },
 
   SUNRISE: {
-
+    headerSlateBlue: 'rgba(71,60,139, 0.9)',
   },
 };
 
@@ -57,25 +57,26 @@ const SVG = {
 };
 
 // tech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
+// + 'linear-gradient(217deg, rgba(117, 197, 202,.8), rgba(117, 197, 202,0) 55%),' // teal
+// + 'linear-gradient(30deg, rgba(249, 198, 250,1), rgba(249, 198, 250,0) 55%),' // pink
+// + 'linear-gradient(15deg, rgba(255, 217, 114,0.8), rgba(255, 217, 114,0) 45%),' // orange
+// + 'linear-gradient(300deg, rgba(101, 85, 154,1), rgba(101, 85, 154,0) 65%),' // purple
 
 const colors = {
 
   // -- Defaults -----------------------------------------------------------------------------------
 
   background: '#764ba2',
+  text: 'floralwhite',
 
   // -- General -----------------------------------------------------------------------------------
 
-  backgroundMain: 'linear-gradient(127deg, rgba(101, 85, 154,1), rgba(101, 85, 154,0) 55%),' // purple
-  + 'linear-gradient(217deg, rgba(117, 197, 202,.8), rgba(117, 197, 202,0) 75%),' // teal
-  // + 'linear-gradient(336deg, rgba(249, 198, 250,.8), rgba(249, 198, 250,0) 55%),' // pink
-  + 'linear-gradient(15deg, rgba(255, 217, 114,0.8), rgba(255, 217, 114,0) 45%),' // orange
-  + 'linear-gradient(100deg, rgba(150, 132, 190,1), rgba(150, 132, 190,0) 55%)', // light purple
+  backgroundMain: 'linear-gradient(127deg, rgba(101, 85, 154,0.9), rgba(101, 85, 154,0.2) 70.71%),' // purple
+    + 'linear-gradient(217deg, rgba(249, 198, 250,0.8), rgba(249, 198, 250,0) 70.71%),' // pink
+    + 'linear-gradient(336deg, rgba(117, 197, 202,0.9), rgba(117, 197, 202,1) 70.71%)', // teal
 
   glassBg: 'linear-gradient(70deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.30))',
   glassBorder: '1px solid rgba( 255, 255, 255, 0.18 )',
-
-  text: 'rgba(255, 255, 255, .75)',
 
   error: '#B00020',
   /** @todo: add link color */
@@ -86,6 +87,8 @@ const colors = {
   scrollTrack: 'rgba(255, 255, 255, 0.1)',
   scrollThumb: 'rgba(255, 255, 255, 0.6)',
   scrollThumbHover: 'rgba(249, 198, 250, 0.6)',
+
+  textShadow: '0.07em 0.08em 0.05em rgba(143,121,183, 0.75)',
 
   ...SVG.DEFAULT,
 
@@ -114,6 +117,8 @@ const colors = {
 
   // -- Sections ----------------------------------------------------------------------------------
 
+  homeHello: 'rgba(250,214,167, 0.9)',
+
   aboutHeader: PALETTE.BOLD.navy200,
   aboutText: PALETTE.BOLD.navy500,
   aboutFrame: PALETTE.BOLD.green400,
@@ -125,11 +130,9 @@ const colors = {
   techHeader: PALETTE.BOLD.white,
   carouselItemBg: 'transparent',
 
-  contactBg: 'transparent',
-  contactBgBox: 'rgba(244,244,244, 0.68)',
-  contactHeader: PALETTE.BOLD.navy200,
   contactSubHeader: PALETTE.BOLD.grey400,
-  contactText: PALETTE.BOLD.grey400,
+  contactText: 'PALETTE.BOLD.grey400',
+  contactIcon: 'rgba(232, 232, 232, 0.8)',
   contactDivider: 'rgba(232, 232, 232, 0.5)',
   contactPlant: 'rgba(230, 230, 230, 0.8)',
 
@@ -182,9 +185,6 @@ const colors = {
       techHeader: PALETTE.BOLD.forest200,
       carouselItemBg: 'rgba(0, 0, 0, 0.9)',
 
-      contactBg: 'linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url("images/bg/leaves-4.jpg") no-repeat fixed',
-      contactBgBox: 'rgba(0,0,0,0.83)',
-      contactHeader: PALETTE.BOLD.forest200,
       contactSubHeader: PALETTE.BOLD.forest300,
       contactText: PALETTE.BOLD.grey400,
       contactDivider: 'rgba(92, 92, 92, 0.5)',
