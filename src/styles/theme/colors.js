@@ -117,21 +117,22 @@ const colors = {
 
   // -- Sections ----------------------------------------------------------------------------------
 
-  homeHello: 'rgba(250,214,167, 0.9)',
+  // homeHello: 'rgba(250,214,167, 0.9)',
+  homeHello: 'rgba(255,255,255, 0.9)',
 
   aboutHeader: PALETTE.BOLD.navy200,
   aboutText: PALETTE.BOLD.navy500,
   aboutFrame: PALETTE.BOLD.green400,
 
   workBgJobBox: 'rgba(254, 253, 255, 0.3)',
-  workHeader: PALETTE.BOLD.navy200,
-  workSubHeader: PALETTE.BOLD.grey400,
+  workHeader: 'floralwhite',
+  workSubHeader: 'floralwhite',
 
   techHeader: PALETTE.BOLD.white,
   carouselItemBg: 'transparent',
 
-  contactSubHeader: PALETTE.BOLD.grey400,
-  contactText: 'PALETTE.BOLD.grey400',
+  contactSubHeader: 'floralwhite',
+  contactText: 'floralwhite',
   contactIcon: 'rgba(232, 232, 232, 0.8)',
   contactDivider: 'rgba(232, 232, 232, 0.5)',
   contactPlant: 'rgba(230, 230, 230, 0.8)',

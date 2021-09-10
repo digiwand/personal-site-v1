@@ -18,7 +18,7 @@ function ContactLeftSide() {
     >
       <Fade>
         <Themed.h3 sx={{ color: (t) => t.colors.contactSubHeader }}>
-          Let&apos;s connect!
+          Let&apos;s Connect!
         </Themed.h3>
       </Fade>
 

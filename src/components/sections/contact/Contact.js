@@ -53,7 +53,7 @@ const ContactSection = (props, ref) => (
       }}
     >
       <Fade>
-        <Themed.h3
+        <Themed.h1
           sx={{
             color: (t) => t.colors.homeHello,
             textShadow: (t) => t.colors.textShadow,
@@ -62,8 +62,8 @@ const ContactSection = (props, ref) => (
             pb: 4,
           }}
         >
-          CONTACT
-        </Themed.h3>
+          Contact
+        </Themed.h1>
       </Fade>
 
       <Flex sx={{

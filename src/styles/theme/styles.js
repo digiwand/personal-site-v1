@@ -22,14 +22,13 @@ const styles = {
   },
   h3: {
     variant: 'text.heading',
-    fontWeight: '500',
+    fontWeight: '400',
     fontSize: [3, 4, 4],
     letterSpacing: '5rem',
   },
   h4: {
     variant: 'text.heading',
     fontSize: [1, 3, 4],
-    textShadow: 'none',
   },
   h5: {
     variant: 'text.heading',

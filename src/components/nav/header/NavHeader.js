@@ -99,7 +99,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         className="NavHeader_profileLogo"
         sx={{
           variant: 'text.gradient',
-          backgroundImage: (t) => t.colors.text,
+          backgroundImage: (t) => `linear-gradient(45deg, ${t.colors.text}, pink)`,
           backgroundSize: '200% 200%',
           fontFamily: 'profile',
           fontSize: '28rem',
