@@ -137,6 +137,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         variant: 'scrollbar',
         height: '100vh',
         width: '100%',
+        minWidth: '320px',
         background: (t) => t.colors.backgroundMain,
         // unfortunately, background flickers if we use 'local' here
         backgroundAttachment: 'fixed',
