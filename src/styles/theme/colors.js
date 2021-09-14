@@ -66,14 +66,14 @@ const colors = {
 
   // -- Defaults -----------------------------------------------------------------------------------
 
-  background: '#764ba2',
+  background: '#6752aa',
   text: 'floralwhite',
 
   // -- General -----------------------------------------------------------------------------------
 
   backgroundMain: 'linear-gradient(127deg, rgba(101, 85, 154,0.9), rgba(101, 85, 154,0.2) 70.71%),' // purple
-    + 'linear-gradient(217deg, rgba(249, 198, 250,0.8), rgba(249, 198, 250,0) 70.71%),' // pink
-    + 'linear-gradient(336deg, rgba(117, 197, 202,0.9), rgba(117, 197, 202,1) 70.71%)', // teal
+    + 'linear-gradient(217deg, rgba(255, 178, 55,0.8), rgba(255, 178, 55,0) 70.71%),' // pink
+    + 'linear-gradient(336deg, rgba(153,243,251,0.9), rgba(153,243,251,1) 70.71%)', // teal
 
   glassBg: 'linear-gradient(70deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.30))',
   glassBorder: '1px solid rgba( 255, 255, 255, 0.18 )',
@@ -88,31 +88,37 @@ const colors = {
   scrollThumb: 'rgba(255, 255, 255, 0.6)',
   scrollThumbHover: 'rgba(249, 198, 250, 0.6)',
 
+  textGradient: 'linear-gradient(45deg, #efefef 30%, #fff)', // purple and teal
+  textGradientBackup: '#65559a',
+  // textGradient: 'linear-gradient(45deg, #8f70d3 30%, #00b9c4)', // purple and teal
+  // textGradient: 'linear-gradient(45deg, #327E85 30%, #65559a)',
   textShadow: '0.07em 0.08em 0.05em rgba(143,121,183, 0.75)',
 
   ...SVG.DEFAULT,
 
   // -- Components --------------------------------------------------------------------------------
 
-  buttonText: 'white',
   buttonBoxShadow: '0 4px 8px 0 rgba( 31, 38, 135, 0.17 )',
   buttonHover: 'linear-gradient(70deg, rgba(103,82,170, 0.50), rgba(103,82,170, 0.70))',
   buttonHoverBorder: '1px solid rgba( 103,82,170, 0.18 )',
   buttonHoverText: PALETTE.BOLD.white300,
   buttonSecondaryHover: 'linear-gradient(40deg, rgba(255, 170, 11, 0.85), rgba(255, 185, 11, 0.70), rgba(255, 170, 11, 0.85))',
   buttonSecondaryHoverBorder: '1px solid rgba(255, 185, 11, 0.18 )',
+  buttonText: 'white',
 
-  frameText: PALETTE.BOLD.white,
-  frameHoverText: 'rgba(103,82,170, 0.8)',
   frameBorder: 'rgba(0, 0, 0, 0.1)',
+  frameHoverText: 'rgba(103,82,170, 0.8)',
+  frameText: PALETTE.BOLD.white,
 
   footerBg: 'rgba(120, 75, 155, 0.65)',
   footerText: PALETTE.BOLD.white,
 
-  navDrawerBg: 'linear-gradient(70deg, rgba(101, 85, 154, 0.55), rgba(101, 85, 154, 0.73))',
   navDrawerActiveColor: 'rgba(255, 237, 154, 0.9)',
+  navDrawerBg: 'linear-gradient(70deg, rgba(101, 85, 154, 0.55), rgba(101, 85, 154, 0.73))',
   navDrawerSocialIconsHoverColor: 'rgba(255, 200, 144, 0.9)',
   navHeaderBg: 'rgba(171, 75, 162, 0.35)',
+  navHeaderLogoBgImage: (t) => `linear-gradient(45deg, ${t.colors.text}, pink)`,
+  navHeaderLogoBgImageScrolled: 'linear-gradient(45deg, #f49df7, lavender, orange)',
   navTabHoverColor: 'orange',
 
   // -- Sections ----------------------------------------------------------------------------------
@@ -136,6 +142,7 @@ const colors = {
   contactIcon: 'rgba(232, 232, 232, 0.8)',
   contactDivider: 'rgba(232, 232, 232, 0.5)',
   contactPlant: 'rgba(230, 230, 230, 0.8)',
+  contactReCaptcha: 'rgba(232, 232, 232, 0.5)',
 
   inputBg: 'rgba(255, 255, 255, 0.25)',
   inputAutofill: 'rgba(219,220,217, 0.9)',
@@ -143,56 +150,94 @@ const colors = {
   modes: {
     dark: {
 
+      // #0cbaba teal
+      // #0d324d dark blue
+      // #7f5a83
+      // #380036
       // -- Defaults -----------------------------------------------------------------------------------
 
-      background: PALETTE.BOLD.forest400,
+      background: '#0F0E18',
 
       // -- General -------------------------------------------------------------------------------
 
-      backgroundMain: PALETTE.BOLD.forest400,
-      glassBg: 'linear-gradient(70deg, rgba(17, 25, 40, 0.65), rgba(17, 25, 40, 0.75)',
-      glassBorder: 'border: 1px solid rgba( 255, 255, 255, 0.18 )',
+      backgroundMain: 'radial-gradient(circle at 4% 0%, rgba(117,197,202, 0.3), transparent 23%),' // teal
+      + 'radial-gradient(circle at 59% -16%, rgba(101, 85, 154, 0.5), transparent 21%),' // purple
+      + 'radial-gradient(circle at top right, rgba(101, 85, 154, 0.5), transparent 18%),' // purple
+      + 'radial-gradient(circle at 0% 40%, rgba(255, 217, 114, 0.08), transparent 10%),' // orange
+      + 'radial-gradient(circle at 100% 87%, rgba(255, 217, 114, 0.08), transparent 8%),' // orange
+      + 'radial-gradient(circle at -5% 85%, rgba(71,60,139, 0.8), transparent 33%),' // dark slate blue
+      + 'radial-gradient(closest-corner at 65% 60%, rgba(71,60,139, 0.8), transparent 85%),' // dark slate blue
+      + 'radial-gradient(closest-corner at 75% 75%, rgba(171,60,139, 0.3), transparent 46%)', // pink
 
-      scrollTrack: PALETTE.BOLD.white200,
+      glassBg: 'linear-gradient(70deg, rgba(88, 88, 98, 0.18), rgba(88, 88, 98, 0.35))',
+      glassBorder: '1px solid rgba( 120, 120, 120, 0.18 )',
 
-      text: PALETTE.BOLD.forest200,
-      heading: PALETTE.BOLD.forest200,
+      error: '#B00020',
+      /** @todo: add link color */
+      linkHover: 'teal',
+
+      heading: PALETTE.BOLD.white,
+
+      scrollTrack: 'rgba(120, 120, 120, 0.1)',
+      scrollThumb: 'rgba(250, 250, 250, 0.6)',
+      scrollThumbHover: 'rgba(153,243,251, 0.6)',
+
+      textGradient: 'linear-gradient(45deg, #efefef 30%, #fff)', // purple and teal
+      textGradientBackup: '#65559a',
+      // textGradient: 'linear-gradient(45deg, #8f70d3 30%, #00b9c4)', // purple and teal
+      // textGradient: 'linear-gradient(45deg, #327E85 30%, #65559a)',
+      textShadow: '0.07em 0.08em 0.05em rgba(143,121,183, 0.75)',
 
       ...SVG.LIGHT,
 
-      // -- Components ----------------------------------------------------------------------------
+      // -- Components -----------------------xf-----------------------------------------------------
 
-      // button: PALETTE.BOLD.forest200,
-      buttonHover: 'orange',
-      buttonHoverText: PALETTE.BOLD.white,
+      buttonBoxShadow: '0 4px 8px 0 rgba( 31, 38, 135, 0.17 )',
+      buttonHover: 'linear-gradient(70deg, rgba(117,197,202, 0.50), rgba(117,197,202, 0.70))',
+      buttonHoverBorder: '1px solid rgba( 117,197,202, 0.18 )',
+      buttonHoverText: PALETTE.BOLD.white300,
+      buttonSecondaryHover: 'linear-gradient(40deg, rgba(0,128,128, 0.85), '
+        + 'rgba(153,243,251, 0.70), rgba(0,128,128, 0.85))',
+      buttonSecondaryHoverBorder: '1px solid rgba(255, 185, 11, 0.18 )',
+      buttonText: 'white',
 
-      // to update
-      frame: PALETTE.BOLD.grey500,
-      frameText: PALETTE.BOLD.white200,
-      frameActiveText: PALETTE.BOLD.white,
-      frameHoverText: PALETTE.BOLD.forest200,
       frameBorder: 'rgba(83, 83, 83, 0.1)',
+      frameHoverText: 'rgba(103,82,170, 0.8)',
+      frameText: PALETTE.BOLD.white,
 
-      footerBg: PALETTE.BOLD.black,
-      footerText: PALETTE.BOLD.grey200,
+      footerBg: 'rgba(117,197,202, 0.38)',
+      footerText: PALETTE.BOLD.white,
+
+      navDrawerActiveColor: 'rgba(255, 237, 154, 0.9)',
+      navDrawerBg: 'linear-gradient(70deg, rgba(101, 85, 154, 0.55), rgba(101, 85, 154, 0.73))',
+      navDrawerSocialIconsHoverColor: 'rgba(255, 200, 144, 0.9)',
+      navHeaderBg: 'rgba(117,197,202, 0.38)',
+      navHeaderLogoBgImage: (t) => t.colors.text,
+      navHeaderLogoBgImageScrolled: 'linear-gradient(45deg, #f49df7, #0cbaba, orange)',
+      navTabHoverColor: 'teal',
 
       // -- Sections ------------------------------------------------------------------------------
 
-      aboutHeader: PALETTE.BOLD.forest200,
-      aboutText: PALETTE.BOLD.grey200,
+      // aboutHeader: PALETTE.BOLD.navy200,
+      // aboutText: PALETTE.BOLD.navy500,
+      // aboutFrame: PALETTE.BOLD.green400,
 
-      workBgJobBox: 'rgba(254, 253, 255, 0.3)',
+      // workBgJobBox: 'rgba(254, 253, 255, 0.3)',
+      // workHeader: 'floralwhite',
+      // workSubHeader: 'floralwhite',
 
-      techHeader: PALETTE.BOLD.forest200,
-      carouselItemBg: 'rgba(0, 0, 0, 0.9)',
+      // techHeader: PALETTE.BOLD.white,
+      // carouselItemBg: 'transparent',
 
-      contactSubHeader: PALETTE.BOLD.forest300,
-      contactText: PALETTE.BOLD.grey400,
+      // contactSubHeader: 'floralwhite',
+      // contactText: 'floralwhite',
+      // contactIcon: 'rgba(232, 232, 232, 0.8)',
       contactDivider: 'rgba(92, 92, 92, 0.5)',
-      contactPlant: PALETTE.BOLD.white300,
+      contactPlant: 'rgba(190, 190, 190, 0.8)',
+      contactReCaptcha: 'rgba(192, 192, 192, 0.5)',
 
-      inputBg: 'rgba(0,0,0, 0.8)',
-      inputAutofill: 'rgba(33,33,33, 0.8)',
+      inputBg: 'rgba(58,54,90, 0.6)',
+      inputAutofill: 'rgba(71,60,139, 0.8)',
     },
 
     mint: {

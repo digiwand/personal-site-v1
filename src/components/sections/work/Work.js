@@ -1,6 +1,6 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
-import { Text, Themed } from 'theme-ui';
+// import Fade from 'react-reveal/Fade';
+import { Themed } from 'theme-ui';
 
 import Section from 'components/sections/Section';
 import JobSectionCopper from 'components/sections/work/job-section/Copper';

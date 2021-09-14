@@ -76,7 +76,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0.30)',
 
           '.NavHeader_profileLogo': {
-            backgroundImage: 'linear-gradient(45deg, #f49df7, lavender, orange)',
+            backgroundImage: theme.colors.navHeaderLogoBgImageScrolled,
             animation: `${bgChangeKeyframe} 5s infinite`,
             fontSize: '23px',
             transform: `translateX(-${paddingInsideFrame + (paddingFrame / 2)}px)`,

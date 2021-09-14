@@ -54,7 +54,7 @@ export function ContactFormInput({
           left: 0,
           fontSize: '20rem',
           fontWeight: '300',
-          fontFamily: 'BarlowCondensed, "Avenir Next", sans-serif',
+          fontFamily: 'barlow',
           transition: `${formTransition}`,
           lineHeight: `${inputHeight - inputBorder}rem`,
           transform: `translate(${inputPadding}, ${paddingForLabel})`,

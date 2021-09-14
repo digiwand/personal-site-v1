@@ -5,7 +5,7 @@ const inputPadding = '10rem';
 
 const forms = {
   input: {
-    fontFamily: 'Poppins',
+    fontFamily: 'body',
     fontSize: '17rem',
     fontWeight: '300',
     border: '0',
@@ -25,7 +25,7 @@ const forms = {
   },
 
   textarea: {
-    fontFamily: 'Poppins',
+    fontFamily: 'body',
     fontSize: '20rem',
     fontWeight: '300',
     border: '0',

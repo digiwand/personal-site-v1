@@ -22,7 +22,7 @@ function FormRecaptcha({ recaptchaRef }) {
       height: 'fit-content',
       pr: [0, 4, 4],
       pt: 1,
-      color: (t) => t.colors.contactDivider,
+      color: (t) => t.colors.contactReCaptcha,
     }}
     >
       <ReCAPTCHA

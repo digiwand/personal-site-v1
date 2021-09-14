@@ -51,10 +51,8 @@ const fonts = {
     },
 
     gradient: {
-      backgroundColor: '#65559a',
-      backgroundImage: 'linear-gradient(45deg, #efefef 30%, #fff)', // purple and teal
-      // backgroundImage: 'linear-gradient(45deg, #8f70d3 30%, #00b9c4)', // purple and teal
-      // backgroundImage: 'linear-gradient(45deg, #327E85 30%, #65559a)',
+      backgroundColor: (t) => t.colors.textGradientBackup,
+      backgroundImage: (t) => t.colors.textGradient,
       backgroundClip: 'text',
       textFillColor: 'transparent',
     },
