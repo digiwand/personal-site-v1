@@ -208,9 +208,9 @@ const colors = {
       footerBg: 'rgba(117,197,202, 0.38)',
       footerText: PALETTE.BOLD.white,
 
-      navDrawerActiveColor: 'rgba(255, 237, 154, 0.9)',
-      navDrawerBg: 'linear-gradient(70deg, rgba(101, 85, 154, 0.55), rgba(101, 85, 154, 0.73))',
-      navDrawerSocialIconsHoverColor: 'rgba(255, 200, 144, 0.9)',
+      navDrawerActiveColor: 'rgba(117,197,202, 0.9)',
+      navDrawerBg: 'linear-gradient(70deg, rgba(51, 35, 80, 0.55), rgba(33, 33, 33, 0.73))',
+      navDrawerSocialIconsHoverColor: 'rgba(117,197,202, 0.9)',
       navHeaderBg: 'rgba(117,197,202, 0.38)',
       navHeaderLogoBgImage: (t) => t.colors.text,
       navHeaderLogoBgImageScrolled: 'linear-gradient(45deg, #f49df7, #0cbaba, orange)',
