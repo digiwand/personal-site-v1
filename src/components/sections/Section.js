@@ -2,6 +2,7 @@ import React from 'react';
 
 const SECTION_ID_TOP_PLACEMENT = {
   default: '10%',
+  home: '10px',
   contact: '80%',
   work: '50%',
   tech: '90%',
