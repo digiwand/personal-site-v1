@@ -12,8 +12,8 @@ const iconButtons = {
 
   secondary: {
     position: 'relative',
-    background: (t) => t.colors.glassBg,
-    border: (t) => t.colors.glassBorder,
+    background: (t) => t.colors.buttonSecondaryBg,
+    border: (t) => t.colors.buttonSecondaryBorder,
 
     '&:active': {
       boxShadow: (t) => `inset 0 3px 5px rgb(18 21 26 / 9%), ${t.colors.buttonBoxShadow}`,
@@ -36,13 +36,13 @@ const iconButtons = {
       opacity: '0',
       top: '0',
       left: '0',
-      width: '100%',
-      height: '100%',
+      width: '28rem',
+      height: '28rem',
       borderRadius: '4rem',
       zIndex: '2',
       transition: 'opacity 0.15s ease-out',
-      backgroundImage: (t) => t.colors.buttonSecondaryHover,
-      border: (t) => t.colors.buttonSecondaryHoverBorder,
+      backgroundImage: (t) => t.colors.buttonSecondaryBg,
+      border: (t) => t.colors.buttonSecondaryBorder,
     },
 
     '> svg': {

@@ -78,7 +78,7 @@ function HomeSection(props, ref) {
             code, delightful user experiences, and efficiency. Currently exploring new opportunities.
           </Themed.p>
         </Fade>
-        <Fade bottom delay={2200}>
+        <Fade bottom delay={2800}>
           <ResumeButton sx={{ mt: 3 }} />
         </Fade>
       </div>

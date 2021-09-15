@@ -30,7 +30,7 @@ const Loader = ({ finishLoading }) => {
         left: '0',
         width: '100%',
         height: '100%',
-        backgroundColor: 'rgb(28,47,53)',
+        backgroundColor: (t) => t.colors.background,
       }}
     />
   );

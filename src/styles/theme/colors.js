@@ -25,6 +25,7 @@ const RGB = {
   // saffron: '249, 198, 32',                  // #F9C620
 
   // Yellow
+  bananaMania: '251, 233, 177',                // #FBE9B1
   // corn: '255, 237, 80',                     // #FFED50
   yellowCrayola: '255, 237, 131',              // #FFED83
   selectiveYellow: '255, 185, 11',             // #FFB90B
@@ -84,14 +85,14 @@ const colors = {
 
   // -- Defaults -----------------------------------------------------------------------------------
 
-  background: `rgb(${RGB.royalPurple})`,
+  background: `rgb(${RGB.bananaMania})`,
   text: 'floralwhite',
 
   // -- General -----------------------------------------------------------------------------------
 
-  backgroundMain: `linear-gradient(127deg, rgba(${RGB.royalPurple}, 0.9), rgba(${RGB.royalPurple},0.2) 70.71%),`
-    + `linear-gradient(217deg, rgba(${RGB.brightYellowCrayola},0.8), rgba(${RGB.brightYellowCrayola}, 0) 70.71%),`
-    + `linear-gradient(336deg, rgba(${RGB.celeste},0.9), rgba(${RGB.celeste}, 1) 70.71%)`,
+  backgroundMain: `linear-gradient(127deg, rgba(${RGB.royalPurple}, 0.9), rgba(${RGB.royalPurple}, 0.2) 70.71%),`
+    + `linear-gradient(217deg, rgba(${RGB.brightYellowCrayola}, 0.8), rgba(${RGB.brightYellowCrayola}, 0) 70.71%),`
+    + `linear-gradient(336deg, rgba(${RGB.celeste}, 0.9), rgba(${RGB.celeste}, 1) 70.71%)`,
 
   glassBg: 'linear-gradient(70deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.30))',
   glassBorder: '1px solid rgba(255, 255, 255, 0.18)',
@@ -116,12 +117,12 @@ const colors = {
   // -- Components --------------------------------------------------------------------------------
 
   buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17)`,
-  buttonHover: `linear-gradient(70deg, rgba(${RGB.royalPurple}, 0.50), rgba(${RGB.royalPurple}, 0.70))`,
-  buttonHoverBorder: `1px solid rgba(${RGB.royalPurple}, 0.18)`,
+  buttonBg: `linear-gradient(70deg, rgba(${RGB.royalPurple}, 0.50), rgba(${RGB.royalPurple}, 0.70))`,
+  buttonBorder: `1rem solid rgba(${RGB.royalPurple}, 0.18)`,
   buttonHoverText: `rgb(${RGB.cultured})`,
-  buttonSecondaryHover: 'linear-gradient(40deg,'
+  buttonSecondaryBg: 'linear-gradient(40deg,'
     + ` rgba(${RGB.chromeYellow}, 0.85), rgba(${RGB.yellowCrayola}, 0.4), rgba(${RGB.chromeYellow}, 0.85))`,
-  buttonSecondaryHoverBorder: `1px solid rgba(${RGB.selectiveYellow}, 0.18)`,
+  buttonSecondaryBorder: `1rem solid rgba(${RGB.selectiveYellow}, 0.18)`,
   buttonText: '#fff',
 
   frameBorder: 'rgba(0, 0, 0, 0.1)',
@@ -178,7 +179,7 @@ const colors = {
       + `radial-gradient(closest-corner at 75% 75%, rgba(${RGB.fandango}, 0.3), transparent 46%)`,
 
       glassBg: `linear-gradient(70deg, rgba(${RGB.davysGrey}, 0.18), rgba(${RGB.davysGrey}, 0.35))`,
-      glassBorder: '1px solid rgba(120, 120, 120, 0.18)',
+      glassBorder: '1rem solid rgba(120, 120, 120, 0.18)',
 
       /** @todo: add link color */
       linkHover: `rgb(${RGB.maximumBlueGreen})`,
@@ -198,12 +199,12 @@ const colors = {
       // -- Components -----------------------xf-----------------------------------------------------
 
       buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17)`,
-      buttonHover: `linear-gradient(70deg, rgba(${RGB.middleBlue}, 0.50), rgba(${RGB.middleBlue}, 0.70))`,
-      buttonHoverBorder: `1px solid rgba(${RGB.middleBlue}, 0.18)`,
+      buttonBg: `linear-gradient(70deg, rgba(${RGB.middleBlue}, 0.50), rgba(${RGB.middleBlue}, 0.70))`,
+      buttonBorder: `1rem solid rgba(${RGB.middleBlue}, 0.18)`,
       buttonHoverText: `rgb(${RGB.cultured})`,
-      buttonSecondaryHover: `linear-gradient(40deg, rgba(${RGB.metallicSeaweed}, 0.85), `
+      buttonSecondaryBg: `linear-gradient(40deg, rgba(${RGB.metallicSeaweed}, 0.85), `
         + `rgba(${RGB.celeste}, 0.70), rgba(${RGB.metallicSeaweed}, 0.85))`,
-      buttonSecondaryHoverBorder: `1px solid rgba(${RGB.selectiveYellow}, 0.18)`,
+      buttonSecondaryBorder: `1rem solid rgba(${RGB.selectiveYellow}, 0.18)`,
       buttonText: 'white',
 
       frameBorder: `rgba(${RGB.davysGrey}, 0.1)`,
