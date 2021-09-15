@@ -1,41 +1,69 @@
-const PALETTE = {
-  BOLD: {
-    black: 'rgb(0, 0, 0)',
-    clay: 'rgb(193,175,159)',
-    darkClay: 'rgb(175,131,109)',
-    grayGradient: 'linear-gradient(rgba(133, 133, 133, 1), rgba(255, 255, 255,1 ))',
-    white: 'rgb(254, 253, 255)',
-    white200: 'rgb(237,237,236)',
-    white300: 'rgb(239, 240, 241)',
+/* eslint-disable no-multi-spaces */
 
-    forest50: 'rgb(235, 245, 238)',
-    forest100: 'rgb(158, 180, 172)',
-    forest200: '#4D846A',
-    forest300: 'rgb(55, 81, 79)',
-    forest400: 'rgb(28,47,53)',
+/** Names are based off of generated names by https://coolors.co */
+const RGB = {
+  // White
+  cultured: '239, 240, 241',                    // #EFF0F1
+  floralWhite: '255,250,240',                   // #FFFAF0
 
-    green100: 'rgb(104, 155, 110)',
-    green200: 'rgb(86, 141, 89)',
-    green300: 'rgb(31, 106, 60)',
-    green400: '#165030',
-    green500: 'rgb(38,58,43)',
+  // Grey
+  davysGrey: '83, 83, 89',                      // #585862
+  gainsboro: '219, 220, 217',                   // #DBDCD9
+  platinum: '232, 232, 232',                    // #E8E8E8
 
-    navy200: 'rgb(84, 100, 140)',
-    navy300: 'rgb(73,85,119)',
-    navy400: 'rgb(40,48,66)',
-    navy500: 'rgb(39,41,61)',
+  // Black
+  xiketic: '15, 14, 34',                        // #0F0E18
 
-    grey50: 'rgb(235,236,238)',
-    grey100: 'rgb(184, 184, 184)',
-    grey200: 'rgb(166, 166, 166)',
-    grey300: 'rgb(128, 128, 128)',
-    grey400: 'rgb(92, 92, 92)',
-    grey500: 'rgb(14, 14, 14)',
-  },
+  // Red
+  upsdellRed: '176, 0, 32',                     // #B00020
 
-  SUNRISE: {
-    headerSlateBlue: 'rgba(71,60,139, 0.9)',
-  },
+  // Orange
+  brightYellowCrayola: '255, 178, 55',
+  chromeYellow: '255, 170, 11',                // #FFAA0B
+  macaroniAndCheese: '252, 184, 131',          // #FCB883
+  orangeYellowCrayola: '255, 217, 114',        // #FFD972
+  // saffron: '249, 198, 32',                  // #F9C620
+
+  // Yellow
+  // corn: '255, 237, 80',                        // #FFED50
+  yellowCrayola: '255, 237, 131',              // #FFED83 lighter = '255, 237, 154', #FFED9A
+  selectiveYellow: '255, 185, 11',             // #FFB90B
+
+  // Green
+  // magicMint: '170, 237, 212',               // #AAEDD4
+  // mountainMeadow: '0, 184, 131',            // #00B883
+
+  // BlueGreen
+  // maximumBlueGreen: '0, 185, 196',         // #00B9C4
+  // metallicSeaweed: '50, 126, 133',         // #327E85
+  teal: '0, 128, 128',                        // #008080 - this is close to metalic seaweed. Condense?
+  // tiffanyBlue: '12, 186, 186',             // #0CBABA
+
+  // Blue
+  celeste: '155, 243, 251',                   // #9BF3FB
+  // cornflowerBlue '120, 157, 247',          // #789DF7
+  // prussianBlue: '13, 50, 77',              // #0D324D
+  middleBlue: '117, 192 , 202',               // #75C0CA
+  picoteeBlue: '31, 38, 135',                 // #1F2687
+
+  // Light Purple
+  purpleMountainMajesty: '143, 121, 183',     // #8F79B7
+
+  // Purple
+  byzantine: '171, 75, 162',                  // #AB4BA2 - dark and almost pink
+  darkSlateBlue: '71, 60, 139',               // #473C8B
+  mediumPurple: '143, 112, 211',              // #8F70D3
+  royalPurple: '103, 82, 170',                // #6752AA - darker one = #65559A
+  royalPurple_pinkish: '120, 75, 155',        // #6752AA - darker one = #65559A - deprecate?
+  russianViolet: '51, 31, 80',                // #331F50 - can we deprecate these near black purple?
+  spaceCadet: '58, 54, 90',                   // #3A365A - dark purple / grey
+
+  // liberty: '83, 83, 162',                     // #5353A2
+
+  // Pink
+  // lightPink: '255, 178, 180',              // #FFB2B4
+  fandango: '171, 60, 139',                   // #AB3C8B - close to byzantine. deprecate byzantine?
+  mauve: '249, 198, 250',                     // #F9C6FA
 };
 
 const SVG = {
@@ -56,96 +84,84 @@ const SVG = {
   },
 };
 
-// tech: 'linear-gradient( rgba(220, 220, 220, 0.6), rgba(255, 255, 255, 0.8) ), url("/images/bg/cement.jpg") repeat',
-// + 'linear-gradient(217deg, rgba(117, 197, 202,.8), rgba(117, 197, 202,0) 55%),' // teal
-// + 'linear-gradient(30deg, rgba(249, 198, 250,1), rgba(249, 198, 250,0) 55%),' // pink
-// + 'linear-gradient(15deg, rgba(255, 217, 114,0.8), rgba(255, 217, 114,0) 45%),' // orange
-// + 'linear-gradient(300deg, rgba(101, 85, 154,1), rgba(101, 85, 154,0) 65%),' // purple
-
 const colors = {
 
   // -- Defaults -----------------------------------------------------------------------------------
 
-  background: '#6752aa',
+  background: `rgb(${RGB.royalPurple})`,
   text: 'floralwhite',
 
   // -- General -----------------------------------------------------------------------------------
 
-  backgroundMain: 'linear-gradient(127deg, rgba(101, 85, 154,0.9), rgba(101, 85, 154,0.2) 70.71%),' // purple
-    + 'linear-gradient(217deg, rgba(255, 178, 55,0.8), rgba(255, 178, 55,0) 70.71%),' // pink
-    + 'linear-gradient(336deg, rgba(153,243,251,0.9), rgba(153,243,251,1) 70.71%)', // teal
+  backgroundMain: `linear-gradient(127deg, rgba(${RGB.royalPurple}, 0.9), rgba(${RGB.royalPurple},0.2) 70.71%),`
+    + `linear-gradient(217deg, rgba(${RGB.brightYellowCrayola},0.8), rgba(${RGB.brightYellowCrayola}, 0) 70.71%),` // pink
+    + `linear-gradient(336deg, rgba(${RGB.celeste},0.9), rgba(${RGB.celeste}, 1) 70.71%)`, // teal
 
   glassBg: 'linear-gradient(70deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.30))',
-  glassBorder: '1px solid rgba( 255, 255, 255, 0.18 )',
+  glassBorder: '1px solid rgba(255, 255, 255, 0.18)',
 
-  error: '#B00020',
+  error: `rgb(${RGB.upsdellRed})`,
   /** @todo: add link color */
   linkHover: 'orange',
 
-  heading: PALETTE.BOLD.navy200,
+  // heading: '#fff',
 
   scrollTrack: 'rgba(255, 255, 255, 0.1)',
   scrollThumb: 'rgba(255, 255, 255, 0.6)',
-  scrollThumbHover: 'rgba(249, 198, 250, 0.6)',
+  scrollThumbHover: `rgba(${RGB.mauve}, 0.6)`,
 
-  textGradient: 'linear-gradient(45deg, #efefef 30%, #fff)', // purple and teal
-  textGradientBackup: '#65559a',
-  // textGradient: 'linear-gradient(45deg, #8f70d3 30%, #00b9c4)', // purple and teal
-  // textGradient: 'linear-gradient(45deg, #327E85 30%, #65559a)',
-  textShadow: '0.07em 0.08em 0.05em rgba(143,121,183, 0.75)',
+  /** @todo: delete or add back in */
+  textGradient: 'linear-gradient(45deg, #efefef 30%, #fff)',
+  textGradientBackup: `rgb(${RGB.royalPurple})`,
+  textShadow: `0.07em 0.08em 0.05em rgba(${RGB.purpleMountainMajesty}, 0.75)`,
 
   ...SVG.DEFAULT,
 
   // -- Components --------------------------------------------------------------------------------
 
-  buttonBoxShadow: '0 4px 8px 0 rgba( 31, 38, 135, 0.17 )',
-  buttonHover: 'linear-gradient(70deg, rgba(103,82,170, 0.50), rgba(103,82,170, 0.70))',
-  buttonHoverBorder: '1px solid rgba( 103,82,170, 0.18 )',
-  buttonHoverText: PALETTE.BOLD.white300,
-  buttonSecondaryHover: 'linear-gradient(40deg, rgba(255, 170, 11, 0.85), rgba(255, 185, 11, 0.70), rgba(255, 170, 11, 0.85))',
-  buttonSecondaryHoverBorder: '1px solid rgba(255, 185, 11, 0.18 )',
-  buttonText: 'white',
+  buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17 )`,
+  buttonHover: `linear-gradient(70deg, rgba(${RGB.royalPurple}, 0.50), rgba(${RGB.royalPurple}, 0.70))`,
+  buttonHoverBorder: `1px solid rgba(${RGB.royalPurple}, 0.18 )`,
+  buttonHoverText: `rgb(${RGB.cultured})`,
+  buttonSecondaryHover: 'linear-gradient(40deg,'
+    + ` rgba(${RGB.chromeYellow}, 0.85), rgba(${RGB.selectiveYellow}, 0.70), rgba(${RGB.chromeYellow}, 0.85))`,
+  buttonSecondaryHoverBorder: `1px solid rgba(${RGB.selectiveYellow}, 0.18 )`,
+  buttonText: '#fff',
 
   frameBorder: 'rgba(0, 0, 0, 0.1)',
-  frameHoverText: 'rgba(103,82,170, 0.8)',
-  frameText: PALETTE.BOLD.white,
+  frameHoverText: `rgba(${RGB.royalPurple}, 0.8)`,
+  frameText: '#fff',
 
-  footerBg: 'rgba(120, 75, 155, 0.65)',
-  footerText: PALETTE.BOLD.white,
+  footerBg: `rgba(${RGB.royalPurple_pinkish}, 0.65)`,
+  footerText: '#fff',
 
-  navDrawerActiveColor: 'rgba(255, 237, 154, 0.9)',
-  navDrawerBg: 'linear-gradient(70deg, rgba(101, 85, 154, 0.55), rgba(101, 85, 154, 0.73))',
-  navDrawerSocialIconsHoverColor: 'rgba(255, 200, 144, 0.9)',
-  navHeaderBg: 'rgba(171, 75, 162, 0.35)',
+  navDrawerActiveColor: `rgba(${RGB.yellowCrayola}, 0.9)`,
+  navDrawerBg: `linear-gradient(70deg, rgba(${RGB.royalPurple}, 0.55), rgba(${RGB.royalPurple}, 0.73))`,
+  navDrawerSocialIconsHoverColor: `rgba(${RGB.macaroniAndCheese}, 0.85)`,
+  navHeaderBg: `rgba(${RGB.byzantine}, 0.35)`,
   navHeaderLogoBgImage: (t) => `linear-gradient(45deg, ${t.colors.text}, pink)`,
-  navHeaderLogoBgImageScrolled: 'linear-gradient(45deg, #f49df7, lavender, orange)',
+  navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), lavender, orange)`,
   navTabHoverColor: 'orange',
 
   // -- Sections ----------------------------------------------------------------------------------
 
-  // homeHello: 'rgba(250,214,167, 0.9)',
   homeHello: 'rgba(255,255,255, 0.9)',
 
-  aboutHeader: PALETTE.BOLD.navy200,
-  aboutText: PALETTE.BOLD.navy500,
-  aboutFrame: PALETTE.BOLD.green400,
-
-  workBgJobBox: 'rgba(254, 253, 255, 0.3)',
   workHeader: 'floralwhite',
   workSubHeader: 'floralwhite',
 
-  techHeader: PALETTE.BOLD.white,
+  techHeader: 'white',
   carouselItemBg: 'transparent',
 
   contactSubHeader: 'floralwhite',
   contactText: 'floralwhite',
-  contactIcon: 'rgba(232, 232, 232, 0.8)',
-  contactDivider: 'rgba(232, 232, 232, 0.5)',
-  contactPlant: 'rgba(230, 230, 230, 0.8)',
-  contactReCaptcha: 'rgba(232, 232, 232, 0.5)',
+  contactIcon: `rgba(${RGB.platinum}, 0.8)`,
+  contactDivider: `rgba(${RGB.platinum}, 0.5)`,
+  contactPlant: `rgba(${RGB.platinum}, 0.8)`,
+  contactReCaptcha: `rgba(${RGB.platinum}, 0.5)`,
 
   inputBg: 'rgba(255, 255, 255, 0.25)',
-  inputAutofill: 'rgba(219,220,217, 0.9)',
+  inputAutofill: `rgba(${RGB.gainsboro}, 0.9)`,
 
   modes: {
     dark: {
@@ -156,100 +172,83 @@ const colors = {
       // #380036
       // -- Defaults -----------------------------------------------------------------------------------
 
-      background: '#0F0E18',
+      background: `rgb(${RGB.xiketic})`,
 
       // -- General -------------------------------------------------------------------------------
 
-      backgroundMain: 'radial-gradient(circle at 4% 0%, rgba(117,197,202, 0.3), transparent 23%),' // teal
-      + 'radial-gradient(circle at 59% -16%, rgba(101, 85, 154, 0.5), transparent 21%),' // purple
-      + 'radial-gradient(circle at top right, rgba(101, 85, 154, 0.5), transparent 18%),' // purple
-      + 'radial-gradient(circle at 0% 40%, rgba(255, 217, 114, 0.08), transparent 10%),' // orange
-      + 'radial-gradient(circle at 100% 87%, rgba(255, 217, 114, 0.08), transparent 8%),' // orange
-      + 'radial-gradient(circle at -5% 85%, rgba(71,60,139, 0.8), transparent 33%),' // dark slate blue
-      + 'radial-gradient(closest-corner at 65% 60%, rgba(71,60,139, 0.8), transparent 85%),' // dark slate blue
-      + 'radial-gradient(closest-corner at 75% 75%, rgba(171,60,139, 0.3), transparent 46%)', // pink
+      backgroundMain: `radial-gradient(circle at 4% 0%, rgba(${RGB.middleBlue}, 0.3), transparent 23%),`
+      + `radial-gradient(circle at 59% -16%, rgba(${RGB.royalPurple}, 0.5), transparent 21%),`
+      + `radial-gradient(circle at top right, rgba(${RGB.royalPurple}, 0.5), transparent 18%),`
+      + `radial-gradient(circle at 0% 40%, rgba(${RGB.orangeYellowCrayola}, 0.08), transparent 10%),`
+      + `radial-gradient(circle at 100% 87%, rgba(${RGB.orangeYellowCrayola}, 0.08), transparent 8%),`
+      + `radial-gradient(circle at -5% 85%, rgba(${RGB.darkSlateBlue}, 0.8), transparent 33%),`
+      + `radial-gradient(closest-corner at 65% 60%, rgba(${RGB.darkSlateBlue}, 0.8), transparent 85%),`
+      + `radial-gradient(closest-corner at 75% 75%, rgba(${RGB.fandango}, 0.3), transparent 46%)`,
 
-      glassBg: 'linear-gradient(70deg, rgba(88, 88, 98, 0.18), rgba(88, 88, 98, 0.35))',
+      glassBg: `linear-gradient(70deg, rgba(${RGB.davysGrey}, 0.18), rgba(${RGB.davysGrey}, 0.35))`,
       glassBorder: '1px solid rgba( 120, 120, 120, 0.18 )',
 
-      error: '#B00020',
       /** @todo: add link color */
       linkHover: 'teal',
 
-      heading: PALETTE.BOLD.white,
+      heading: 'white',
 
       scrollTrack: 'rgba(120, 120, 120, 0.1)',
       scrollThumb: 'rgba(250, 250, 250, 0.6)',
-      scrollThumbHover: 'rgba(153,243,251, 0.6)',
+      scrollThumbHover: `rgba(${RGB.celeste}, 0.6)`,
 
-      textGradient: 'linear-gradient(45deg, #efefef 30%, #fff)', // purple and teal
-      textGradientBackup: '#65559a',
-      // textGradient: 'linear-gradient(45deg, #8f70d3 30%, #00b9c4)', // purple and teal
-      // textGradient: 'linear-gradient(45deg, #327E85 30%, #65559a)',
-      textShadow: '0.07em 0.08em 0.05em rgba(143,121,183, 0.75)',
+      // textGradient: 'linear-gradient(45deg, #efefef 30%, #fff)',
+      // textGradientBackup: `rgb(${RGB.royalPurple})`,
+      // textShadow: `0.07em 0.08em 0.05em rgba(${RGB.purpleMountainMajesty}, 0.75)`,
 
       ...SVG.LIGHT,
 
       // -- Components -----------------------xf-----------------------------------------------------
 
-      buttonBoxShadow: '0 4px 8px 0 rgba( 31, 38, 135, 0.17 )',
-      buttonHover: 'linear-gradient(70deg, rgba(117,197,202, 0.50), rgba(117,197,202, 0.70))',
-      buttonHoverBorder: '1px solid rgba( 117,197,202, 0.18 )',
-      buttonHoverText: PALETTE.BOLD.white300,
-      buttonSecondaryHover: 'linear-gradient(40deg, rgba(0,128,128, 0.85), '
-        + 'rgba(153,243,251, 0.70), rgba(0,128,128, 0.85))',
-      buttonSecondaryHoverBorder: '1px solid rgba(255, 185, 11, 0.18 )',
+      buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17 )`,
+      buttonHover: `linear-gradient(70deg, rgba(${RGB.middleBlue}, 0.50), rgba(${RGB.middleBlue}, 0.70))`,
+      buttonHoverBorder: `1px solid rgba( ${RGB.middleBlue}, 0.18 )`,
+      buttonHoverText: `rgb(${RGB.cultured})`,
+      buttonSecondaryHover: `linear-gradient(40deg, rgba(${RGB.teal}, 0.85), `
+        + `rgba(${RGB.celeste}, 0.70), rgba(${RGB.teal}, 0.85))`,
+      buttonSecondaryHoverBorder: `1px solid rgba(${RGB.selectiveYellow}, 0.18 )`,
       buttonText: 'white',
 
-      frameBorder: 'rgba(83, 83, 83, 0.1)',
-      frameHoverText: 'rgba(103,82,170, 0.8)',
-      frameText: PALETTE.BOLD.white,
+      frameBorder: `rgba(${RGB.davysGrey}, 0.1)`,
+      frameHoverText: `rgba(${RGB.royalPurple}, 0.8)`,
+      frameText: 'white',
 
-      footerBg: 'rgba(117,197,202, 0.38)',
-      footerText: PALETTE.BOLD.white,
+      footerBg: `rgba(${RGB.middleBlue}, 0.38)`,
+      footerText: 'white',
 
-      navDrawerActiveColor: 'rgba(117,197,202, 0.9)',
-      navDrawerBg: 'linear-gradient(70deg, rgba(51, 35, 80, 0.55), rgba(33, 33, 33, 0.73))',
-      navDrawerSocialIconsHoverColor: 'rgba(117,197,202, 0.9)',
-      navHeaderBg: 'rgba(117,197,202, 0.38)',
+      navDrawerActiveColor: `rgba(${RGB.middleBlue}, 0.9)`,
+      navDrawerBg: `linear-gradient(70deg, rgba(${RGB.russianViolet}, 0.55), rgba(33, 33, 33, 0.73))`,
+      navDrawerSocialIconsHoverColor: `rgba(${RGB.middleBlue}, 0.9)`,
+      navHeaderBg: `rgba(${RGB.middleBlue}, 0.38)`,
       navHeaderLogoBgImage: (t) => t.colors.text,
-      navHeaderLogoBgImageScrolled: 'linear-gradient(45deg, #f49df7, #0cbaba, orange)',
+      navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), rgb(${RGB.middleBlue}), orange)`,
       navTabHoverColor: 'teal',
 
       // -- Sections ------------------------------------------------------------------------------
 
-      // aboutHeader: PALETTE.BOLD.navy200,
-      // aboutText: PALETTE.BOLD.navy500,
-      // aboutFrame: PALETTE.BOLD.green400,
-
-      // workBgJobBox: 'rgba(254, 253, 255, 0.3)',
-      // workHeader: 'floralwhite',
-      // workSubHeader: 'floralwhite',
-
-      // techHeader: PALETTE.BOLD.white,
-      // carouselItemBg: 'transparent',
-
-      // contactSubHeader: 'floralwhite',
-      // contactText: 'floralwhite',
-      // contactIcon: 'rgba(232, 232, 232, 0.8)',
-      contactDivider: 'rgba(92, 92, 92, 0.5)',
+      contactDivider: `rgba(${RGB.davysGrey}, 0.5)`,
       contactPlant: 'rgba(190, 190, 190, 0.8)',
-      contactReCaptcha: 'rgba(192, 192, 192, 0.5)',
+      contactReCaptcha: `rgba(${RGB.platinum}, 0.52)`,
 
-      inputBg: 'rgba(58,54,90, 0.6)',
-      inputAutofill: 'rgba(71,60,139, 0.8)',
+      inputBg: `rgba(${RGB.spaceCadet}, 0.6)`,
+      inputAutofill: `rgba(${RGB.darkSlateBlue}, 0.8)`,
     },
 
     mint: {
-      background: '#DFECEB',
+      // background: '#DFECEB',
 
-      inputBg: 'pink',
+      // inputBg: 'pink',
 
-      text: '#002629',
+      // text: '#002629',
 
-      // to update
-      frame: '#fafafb',
-      frameText: '#233143',
+      // // to update
+      // frame: '#fafafb',
+      // frameText: '#233143',
     },
   },
 };
