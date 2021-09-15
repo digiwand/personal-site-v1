@@ -25,8 +25,8 @@ const RGB = {
   // saffron: '249, 198, 32',                  // #F9C620
 
   // Yellow
-  // corn: '255, 237, 80',                        // #FFED50
-  yellowCrayola: '255, 237, 131',              // #FFED83 lighter = '255, 237, 154', #FFED9A
+  // corn: '255, 237, 80',                     // #FFED50
+  yellowCrayola: '255, 237, 131',              // #FFED83
   selectiveYellow: '255, 185, 11',             // #FFB90B
 
   // Green
@@ -34,17 +34,15 @@ const RGB = {
   // mountainMeadow: '0, 184, 131',            // #00B883
 
   // BlueGreen
-  // maximumBlueGreen: '0, 185, 196',         // #00B9C4
-  // metallicSeaweed: '50, 126, 133',         // #327E85
-  teal: '0, 128, 128',                        // #008080 - this is close to metalic seaweed. Condense?
-  // tiffanyBlue: '12, 186, 186',             // #0CBABA
+  maximumBlueGreen: '0, 185, 196',            // #00B9C4
+  metallicSeaweed: '50, 126, 133',            // #327E85
 
   // Blue
   celeste: '155, 243, 251',                   // #9BF3FB
   // cornflowerBlue '120, 157, 247',          // #789DF7
-  // prussianBlue: '13, 50, 77',              // #0D324D
   middleBlue: '117, 192 , 202',               // #75C0CA
   picoteeBlue: '31, 38, 135',                 // #1F2687
+  // prussianBlue: '13, 50, 77',              // #0D324D
 
   // Light Purple
   purpleMountainMajesty: '143, 121, 183',     // #8F79B7
@@ -54,11 +52,9 @@ const RGB = {
   darkSlateBlue: '71, 60, 139',               // #473C8B
   mediumPurple: '143, 112, 211',              // #8F70D3
   royalPurple: '103, 82, 170',                // #6752AA - darker one = #65559A
-  royalPurple_pinkish: '120, 75, 155',        // #6752AA - darker one = #65559A - deprecate?
+  royalPurple_pinkish: '120, 75, 155',        // #784B9B - darker one = #65559A - deprecate?
   russianViolet: '51, 31, 80',                // #331F50 - can we deprecate these near black purple?
   spaceCadet: '58, 54, 90',                   // #3A365A - dark purple / grey
-
-  // liberty: '83, 83, 162',                     // #5353A2
 
   // Pink
   // lightPink: '255, 178, 180',              // #FFB2B4
@@ -94,8 +90,8 @@ const colors = {
   // -- General -----------------------------------------------------------------------------------
 
   backgroundMain: `linear-gradient(127deg, rgba(${RGB.royalPurple}, 0.9), rgba(${RGB.royalPurple},0.2) 70.71%),`
-    + `linear-gradient(217deg, rgba(${RGB.brightYellowCrayola},0.8), rgba(${RGB.brightYellowCrayola}, 0) 70.71%),` // pink
-    + `linear-gradient(336deg, rgba(${RGB.celeste},0.9), rgba(${RGB.celeste}, 1) 70.71%)`, // teal
+    + `linear-gradient(217deg, rgba(${RGB.brightYellowCrayola},0.8), rgba(${RGB.brightYellowCrayola}, 0) 70.71%),`
+    + `linear-gradient(336deg, rgba(${RGB.celeste},0.9), rgba(${RGB.celeste}, 1) 70.71%)`,
 
   glassBg: 'linear-gradient(70deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.30))',
   glassBorder: '1px solid rgba(255, 255, 255, 0.18)',
@@ -150,7 +146,7 @@ const colors = {
   workHeader: 'floralwhite',
   workSubHeader: 'floralwhite',
 
-  techHeader: 'white',
+  // techHeader: 'white',
   carouselItemBg: 'transparent',
 
   contactSubHeader: 'floralwhite',
@@ -166,10 +162,6 @@ const colors = {
   modes: {
     dark: {
 
-      // #0cbaba teal
-      // #0d324d dark blue
-      // #7f5a83
-      // #380036
       // -- Defaults -----------------------------------------------------------------------------------
 
       background: `rgb(${RGB.xiketic})`,
@@ -189,7 +181,7 @@ const colors = {
       glassBorder: '1px solid rgba( 120, 120, 120, 0.18 )',
 
       /** @todo: add link color */
-      linkHover: 'teal',
+      linkHover: `rgb(${RGB.maximumBlueGreen})`,
 
       heading: 'white',
 
@@ -209,8 +201,8 @@ const colors = {
       buttonHover: `linear-gradient(70deg, rgba(${RGB.middleBlue}, 0.50), rgba(${RGB.middleBlue}, 0.70))`,
       buttonHoverBorder: `1px solid rgba( ${RGB.middleBlue}, 0.18 )`,
       buttonHoverText: `rgb(${RGB.cultured})`,
-      buttonSecondaryHover: `linear-gradient(40deg, rgba(${RGB.teal}, 0.85), `
-        + `rgba(${RGB.celeste}, 0.70), rgba(${RGB.teal}, 0.85))`,
+      buttonSecondaryHover: `linear-gradient(40deg, rgba(${RGB.metallicSeaweed}, 0.85), `
+        + `rgba(${RGB.celeste}, 0.70), rgba(${RGB.metallicSeaweed}, 0.85))`,
       buttonSecondaryHoverBorder: `1px solid rgba(${RGB.selectiveYellow}, 0.18 )`,
       buttonText: 'white',
 
@@ -227,7 +219,7 @@ const colors = {
       navHeaderBg: `rgba(${RGB.middleBlue}, 0.38)`,
       navHeaderLogoBgImage: (t) => t.colors.text,
       navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), rgb(${RGB.middleBlue}), orange)`,
-      navTabHoverColor: 'teal',
+      navTabHoverColor: `rgb(${RGB.metallicSeaweed})`,
 
       // -- Sections ------------------------------------------------------------------------------
 
