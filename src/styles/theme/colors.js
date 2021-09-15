@@ -115,13 +115,13 @@ const colors = {
 
   // -- Components --------------------------------------------------------------------------------
 
-  buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17 )`,
+  buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17)`,
   buttonHover: `linear-gradient(70deg, rgba(${RGB.royalPurple}, 0.50), rgba(${RGB.royalPurple}, 0.70))`,
-  buttonHoverBorder: `1px solid rgba(${RGB.royalPurple}, 0.18 )`,
+  buttonHoverBorder: `1px solid rgba(${RGB.royalPurple}, 0.18)`,
   buttonHoverText: `rgb(${RGB.cultured})`,
   buttonSecondaryHover: 'linear-gradient(40deg,'
-    + ` rgba(${RGB.chromeYellow}, 0.85), rgba(${RGB.selectiveYellow}, 0.70), rgba(${RGB.chromeYellow}, 0.85))`,
-  buttonSecondaryHoverBorder: `1px solid rgba(${RGB.selectiveYellow}, 0.18 )`,
+    + ` rgba(${RGB.chromeYellow}, 0.85), rgba(${RGB.yellowCrayola}, 0.4), rgba(${RGB.chromeYellow}, 0.85))`,
+  buttonSecondaryHoverBorder: `1px solid rgba(${RGB.selectiveYellow}, 0.18)`,
   buttonText: '#fff',
 
   frameBorder: 'rgba(0, 0, 0, 0.1)',
@@ -178,7 +178,7 @@ const colors = {
       + `radial-gradient(closest-corner at 75% 75%, rgba(${RGB.fandango}, 0.3), transparent 46%)`,
 
       glassBg: `linear-gradient(70deg, rgba(${RGB.davysGrey}, 0.18), rgba(${RGB.davysGrey}, 0.35))`,
-      glassBorder: '1px solid rgba( 120, 120, 120, 0.18 )',
+      glassBorder: '1px solid rgba(120, 120, 120, 0.18)',
 
       /** @todo: add link color */
       linkHover: `rgb(${RGB.maximumBlueGreen})`,
@@ -197,13 +197,13 @@ const colors = {
 
       // -- Components -----------------------xf-----------------------------------------------------
 
-      buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17 )`,
+      buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17)`,
       buttonHover: `linear-gradient(70deg, rgba(${RGB.middleBlue}, 0.50), rgba(${RGB.middleBlue}, 0.70))`,
-      buttonHoverBorder: `1px solid rgba( ${RGB.middleBlue}, 0.18 )`,
+      buttonHoverBorder: `1px solid rgba(${RGB.middleBlue}, 0.18)`,
       buttonHoverText: `rgb(${RGB.cultured})`,
       buttonSecondaryHover: `linear-gradient(40deg, rgba(${RGB.metallicSeaweed}, 0.85), `
         + `rgba(${RGB.celeste}, 0.70), rgba(${RGB.metallicSeaweed}, 0.85))`,
-      buttonSecondaryHoverBorder: `1px solid rgba(${RGB.selectiveYellow}, 0.18 )`,
+      buttonSecondaryHoverBorder: `1px solid rgba(${RGB.selectiveYellow}, 0.18)`,
       buttonText: 'white',
 
       frameBorder: `rgba(${RGB.davysGrey}, 0.1)`,
