@@ -43,7 +43,7 @@ function FrameCircle({ children, ...props }) {
         }}
         />
         <div sx={{
-          display: 'inline-block',
+          display: 'block',
           borderRadius: '50%',
           overflow: 'hidden',
           aspectRatio: '1/1',

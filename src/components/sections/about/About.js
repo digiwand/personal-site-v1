@@ -76,11 +76,9 @@ const AboutSection = (props, ref) => (
           <Image
             alt="Profile Picture"
             src="/images/profile.jpg"
-            variant="framed"
             width="390"
             height="461.33"
             sx={{
-              variant: 'glass',
               zIndex: 1,
               boxShadow: 'rgba(120, 120, 120, 0.8) 1px 1px 13px 0px',
             }}
