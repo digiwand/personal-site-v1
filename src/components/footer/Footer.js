@@ -5,6 +5,8 @@ function Footer() {
     <footer
       sx={(theme) => ({
         backgroundColor: theme.colors.footerBg,
+        backdropFilter: 'blur(4px) saturate(130%)',
+        boxShadow: '0 8rem 32rem 0 rgba(31, 38, 135, 0.37)',
         display: 'flex',
         flexDirection: ['column-reverse', 'row', 'row'],
         justifyContent: 'space-between',

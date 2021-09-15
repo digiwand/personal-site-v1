@@ -108,7 +108,8 @@ const colors = {
   scrollThumbHover: `rgba(${RGB.mauve}, 0.6)`,
 
   /** @todo: delete or add back in */
-  textGradient: 'linear-gradient(45deg, #efefef 30%, #fff)',
+  textGradient: `linear-gradient(45deg, rgba(${RGB.mauve}, 0.8),`
+    + ` rgba(${RGB.bananaMania}, 0.8), rgba(${RGB.middleBlue}, 0.9))`,
   textGradientBackup: `rgb(${RGB.royalPurple})`,
   textShadow: `0.07em 0.08em 0.05em rgba(${RGB.purpleMountainMajesty}, 0.75)`,
 
@@ -155,7 +156,7 @@ const colors = {
   contactIcon: `rgba(${RGB.platinum}, 0.8)`,
   contactDivider: `rgba(${RGB.platinum}, 0.5)`,
   contactPlant: `rgba(${RGB.platinum}, 0.8)`,
-  contactReCaptcha: `rgba(${RGB.platinum}, 0.5)`,
+  contactReCaptcha: `rgba(${RGB.purpleMountainMajesty}, 0.9)`,
 
   inputBg: 'rgba(255, 255, 255, 0.25)',
   inputAutofill: `rgba(${RGB.gainsboro}, 0.9)`,
@@ -192,7 +193,7 @@ const colors = {
 
       // textGradient: 'linear-gradient(45deg, #efefef 30%, #fff)',
       // textGradientBackup: `rgb(${RGB.royalPurple})`,
-      // textShadow: `0.07em 0.08em 0.05em rgba(${RGB.purpleMountainMajesty}, 0.75)`,
+      textShadow: `0.07em 0.08em 0.05em rgba(${RGB.spaceCadet}, 0.75)`,
 
       ...SVG.LIGHT,
 

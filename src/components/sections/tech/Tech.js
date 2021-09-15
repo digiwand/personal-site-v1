@@ -23,7 +23,6 @@ function TechSection(props, ref) {
         <Themed.h2
           sx={{
             color: (t) => t.colors.homeHello,
-            textShadow: (t) => t.colors.textShadow,
             display: 'block',
             textAlign: 'center',
           }}

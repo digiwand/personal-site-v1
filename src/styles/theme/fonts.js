@@ -47,7 +47,6 @@ const fonts = {
       letterSpacing: 'heading',
       display: 'inline-block',
       color: (t) => t.colors.homeHello,
-      textShadow: (t) => t.colors.textShadow,
     },
 
     gradient: {

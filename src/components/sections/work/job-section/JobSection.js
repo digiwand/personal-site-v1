@@ -40,6 +40,7 @@ function JobSection({ children, ...props }) {
     >
       <Themed.h2 sx={{
         fontFamily: 'heading2',
+        variant: 'text.shadow',
         color: (t) => t.colors.workHeader,
         display: 'block',
         letterSpacing: '2rem',

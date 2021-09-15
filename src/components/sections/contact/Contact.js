@@ -55,8 +55,8 @@ const ContactSection = (props, ref) => (
       <Fade>
         <Themed.h1
           sx={{
+            variant: 'text.shadow',
             color: (t) => t.colors.homeHello,
-            textShadow: (t) => t.colors.textShadow,
             display: 'block',
             textAlign: 'center',
             pb: 4,

@@ -42,9 +42,9 @@ function HomeSection(props, ref) {
       >
         <Fade bottom>
           <Themed.h2 sx={{
+            variant: 'text.shadow',
             letterSpacing: '2.4rem',
             color: (t) => t.colors.homeHello,
-            textShadow: (t) => t.colors.textShadow,
           }}
           >
             Hello, I&apos;m
@@ -55,7 +55,6 @@ function HomeSection(props, ref) {
           <span
             className="NavHeader_profileLogo"
             sx={{
-              variant: 'text.gradient',
               fontFamily: 'profile',
               fontSize: [8, 9, 9],
               pt: [4, 3, 4],
@@ -79,7 +78,7 @@ function HomeSection(props, ref) {
           </Themed.p>
         </Fade>
         <Fade bottom delay={2800}>
-          <ResumeButton sx={{ mt: 3 }} />
+          <ResumeButton sx={{ mt: 4 }} />
         </Fade>
       </div>
     </Section>
