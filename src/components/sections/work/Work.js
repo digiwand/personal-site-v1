@@ -65,7 +65,8 @@ const WorkSection = (props, ref) => (
         sx={{
           variant: 'text.sideHeading',
           gridColumnStart: 'label-start',
-          pb: 5,
+          pt: [5, 0, 5],
+          pb: [4, 4, 5],
         }}
       >
         WORK EXPERIENCE
@@ -77,6 +78,7 @@ const WorkSection = (props, ref) => (
         sx={{
           variant: 'text.sideHeading',
           gridColumnStart: 'label-start',
+          py: [4, 4, 5],
         }}
       >
         EDUCATION
