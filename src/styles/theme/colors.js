@@ -55,6 +55,7 @@ const RGB = {
   royalPurple_pinkish: '120, 75, 155',        // #784B9B - darker one = #65559A - deprecate?
   russianViolet: '51, 31, 80',                // #331F50 - can we deprecate these near black purple?
   spaceCadet: '58, 54, 90',                   // #3A365A - dark purple / grey
+  darkPurple: '19, 18, 42',                   // #13122A
 
   // Pink
   // lightPink: '255, 178, 180',              // #FFB2B4
@@ -223,6 +224,9 @@ const colors = {
       navTabHoverColor: `rgb(${RGB.metallicSeaweed})`,
 
       // -- Sections ------------------------------------------------------------------------------
+
+      techBg: `rgb(${RGB.darkPurple})`,
+      carouselItemBg: `rgba(${RGB.darkPurple}, 0.9)`,
 
       contactDivider: `rgba(${RGB.davysGrey}, 0.5)`,
       contactPlant: 'rgba(190, 190, 190, 0.8)',
