@@ -41,18 +41,17 @@ const RGB = {
   // Blue
   celeste: '155, 243, 251',                   // #9BF3FB
   // cornflowerBlue '120, 157, 247',          // #789DF7
+  paleCerulean: '162, 196, 226',              // #a2c4e2
   middleBlue: '117, 192 , 202',               // #75C0CA
   picoteeBlue: '31, 38, 135',                 // #1F2687
   // prussianBlue: '13, 50, 77',              // #0D324D
-
-  // Light Purple
-  purpleMountainMajesty: '143, 121, 183',     // #8F79B7
 
   // Purple
   byzantine: '171, 75, 162',                  // #AB4BA2 - dark and almost pink
   darkSlateBlue: '71, 60, 139',               // #473C8B
   mediumPurple: '143, 112, 211',              // #8F70D3
   royalPurple: '103, 82, 170',                // #6752AA - darker one = #65559A
+  purpleMountainMajesty: '143, 121, 183',     // #8F79B7
   royalPurple_pinkish: '120, 75, 155',        // #784B9B - darker one = #65559A - deprecate?
   russianViolet: '51, 31, 80',                // #331F50 - can we deprecate these near black purple?
   spaceCadet: '58, 54, 90',                   // #3A365A - dark purple / grey
@@ -145,11 +144,11 @@ const colors = {
 
   homeHello: 'rgba(255,255,255, 0.9)',
 
+  techBg: `rgb(${RGB.paleCerulean})`,
+  carouselItemBg: `rgba(${RGB.paleCerulean}, 0.9)`,
+
   workHeader: 'floralwhite',
   workSubHeader: 'floralwhite',
-
-  // techHeader: 'white',
-  carouselItemBg: 'transparent',
 
   contactSubHeader: 'floralwhite',
   contactText: 'floralwhite',
