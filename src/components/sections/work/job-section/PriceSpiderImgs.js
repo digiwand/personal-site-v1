@@ -6,7 +6,7 @@ const imgStyles = {
   opacity: '0.95',
   objectFit: 'cover',
   objectPosition: 'top',
-  aspectRatio: '5/4',
+  aspectRatio: '7.7/6',
   maxWidth: '650rem',
   width: ['75%', '50%', '43%'],
   transform: 'perspective(750px)',
@@ -28,7 +28,7 @@ function PriceSpiderImgs() {
       minHeight: '350rem',
       width: ['100%', '100%', 'auto'],
       alignSelf: 'center',
-      my: 5,
+      mt: 4,
     }}
     >
       <Image

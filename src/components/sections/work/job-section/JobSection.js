@@ -34,7 +34,8 @@ function JobSection({ children, ...props }) {
         gridColumnStart: 'content-start',
         maxWidth: '850rem',
         variant: 'glass',
-        py: 5,
+        pt: 5,
+        pb: 4,
         px: 4,
       }}
     >

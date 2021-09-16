@@ -17,6 +17,8 @@ function EducationSection() {
     }}
     >
       <Themed.h2 sx={{
+        fontFamily: 'heading2',
+        variant: 'text.shadow',
         display: 'block',
         pb: 2,
         color: (t) => t.colors.workHeader,

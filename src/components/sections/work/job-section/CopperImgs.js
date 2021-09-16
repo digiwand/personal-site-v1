@@ -4,6 +4,9 @@ const imgStyles = {
   position: 'absolute',
   m: 'auto',
   opacity: '0.95',
+  objectFit: 'cover',
+  objectPosition: 'top',
+  aspectRatio: '7.7/6',
   maxWidth: '650rem',
   width: ['75%', '50%', '43%'],
   transform: 'perspective(750px)',
@@ -25,7 +28,7 @@ function CopperImgs() {
       minHeight: '350rem',
       width: ['100%', '100%', 'auto'],
       alignSelf: 'center',
-      my: 5,
+      mt: 4,
     }}
     >
       <Image
