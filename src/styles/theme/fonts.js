@@ -56,7 +56,8 @@ const fonts = {
       textFillColor: 'transparent',
     },
     link: {
-      transition: 'font-weight 0.3s, color 0.3s',
+      color: (t) => t.colors.link,
+      transition: 'color 0.3s',
 
       ':hover': {
         color: (t) => t.colors.linkHover,

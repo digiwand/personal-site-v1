@@ -39,7 +39,14 @@ function Footer() {
           }}
         >
           Made by Ariella Vu &nbsp; -- &nbsp;
-          <a href="https://github.com/ariellanvu/personal-site-v1" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/ariellanvu/personal-site-v1"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              variant: 'text.link',
+            }}
+          >
             Open Source on Github
           </a>
         </span>

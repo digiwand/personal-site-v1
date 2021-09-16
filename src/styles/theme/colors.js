@@ -97,8 +97,8 @@ const colors = {
   glassBorder: '1px solid rgba(255, 255, 255, 0.18)',
 
   error: `rgb(${RGB.upsdellRed})`,
-  /** @todo: add link color */
-  linkHover: 'orange',
+  link: `rgb(${RGB.yellowCrayola})`,
+  linkHover: `rgb(${RGB.chromeYellow})`,
 
   // heading: '#fff',
 
