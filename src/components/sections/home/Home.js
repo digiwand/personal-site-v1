@@ -73,8 +73,8 @@ function HomeSection(props, ref) {
             margin: '23px auto',
           }}
           >
-            I&apos;m a web developer specializing in React and Ember JavaScript Frameworks and I&apos;m passionate about clean
-            code, delightful user experiences, and efficiency. Currently exploring new opportunities.
+            I&apos;m a web developer who&apos;s passionate about clean code, delightful user
+            experiences, and efficiency. Currently exploring new opportunities using React or Ember.js.
           </Themed.p>
         </Fade>
         <Fade bottom delay={2800}>
