@@ -81,6 +81,7 @@ const AboutSection = (props, ref) => (
             sx={{
               zIndex: 1,
               boxShadow: 'rgba(120, 120, 120, 0.8) 1px 1px 13px 0px',
+              filter: (t) => t.colors.aboutImgFilter,
             }}
           />
         </FrameCircle>

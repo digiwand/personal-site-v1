@@ -47,8 +47,6 @@ function FrameCircle({ children, ...props }) {
           borderRadius: '50%',
           overflow: 'hidden',
           aspectRatio: '1/1',
-          // todo: move filter out of component and rename component
-          filter: 'brightness(1.12) contrast(1.03) saturate(1.08)',
         }}
         >
           {children}

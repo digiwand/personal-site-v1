@@ -145,6 +145,8 @@ const colors = {
 
   homeHello: 'rgba(255,255,255, 0.9)',
 
+  aboutImgFilter: 'brightness(1.12) contrast(1.03) saturate(1.08)',
+
   techBg: `rgb(${RGB.paleCerulean})`,
   carouselItemBg: `rgba(${RGB.paleCerulean}, 0.9)`,
 
@@ -224,6 +226,8 @@ const colors = {
       navTabHoverColor: `rgb(${RGB.metallicSeaweed})`,
 
       // -- Sections ------------------------------------------------------------------------------
+
+      aboutImgFilter: 'brightness(.9) contrast(1.03) saturate(1.08)',
 
       techBg: `rgb(${RGB.darkPurple})`,
       carouselItemBg: `rgba(${RGB.darkPurple}, 0.9)`,
