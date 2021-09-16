@@ -16,7 +16,7 @@ function ContactDivider() {
     <div
       sx={{
         flex: '0 0 1rem',
-        mx: 4,
+        mx: 5,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -49,7 +49,7 @@ const ContactSection = (props, ref) => (
         variant: 'glass',
         position: 'relative',
         py: 5,
-        px: [4, 5, 4],
+        px: [4, 5, 5],
       }}
     >
       <Fade>

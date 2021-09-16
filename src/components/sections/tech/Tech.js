@@ -38,7 +38,6 @@ function TechSection(props, ref) {
             alignItems: 'center',
             justifyContent: 'center',
             pt: 5,
-            pb: 5,
           }}
         >
           <TechCarousel />

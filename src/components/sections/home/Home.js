@@ -34,8 +34,8 @@ function HomeSection(props, ref) {
         variant: 'glass',
         display: 'inline-flex',
         flexDirection: 'column',
-        px: [3, 4, 5],
-        py: 5,
+        px: [3, 4, '86rem'],
+        py: [5, 5, '74rem'],
         margin: '0 auto',
         zIndex: '1',
       }}
