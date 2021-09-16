@@ -1,6 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { Text } from 'theme-ui';
+import { Themed } from 'theme-ui';
 
 import Section from 'components/sections/Section';
 
@@ -13,21 +13,22 @@ function TechSection(props, ref) {
       id={SECTION_ID.TECH}
       ref={ref}
       sx={{
-        background: (t) => `${t.colors.techBg}`,
+        background: (t) => t.colors.glassBg,
         minHeight: '0',
         py: [5, 6, 6],
         zIndex: 1,
       }}
     >
       <Fade>
-        <Text
-          variant="sectionHeading"
+        <Themed.h2
           sx={{
-            color: (t) => `${t.colors.techHeader}`,
+            color: (t) => t.colors.homeHello,
+            display: 'block',
+            textAlign: 'center',
           }}
         >
           RECENT TECHNOLOGIES
-        </Text>
+        </Themed.h2>
       </Fade>
 
       <Fade bottom cascade>

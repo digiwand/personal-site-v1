@@ -1,19 +1,16 @@
 import emailjs from 'emailjs-com';
 import { useRef, useState } from 'react';
 import Fade from 'react-reveal/Fade';
-import ReCAPTCHA from 'react-google-recaptcha';
 import { Button } from 'theme-ui';
 
 import { ContactFormInput, ContactFormTextArea } from 'components/sections/contact/FormInputs';
 import FormSentMessage from 'components/sections/contact/FormSentMessage';
 import FormErrorMessage from 'components/sections/contact/FormError';
+import FormRecaptcha from 'components/sections/contact/FormRecaptcha';
 
 const serviceID = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID;
 const templateID = process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID;
 const userID = process.env.NEXT_PUBLIC_EMAIL_JS_USER_ID;
-
-/** EmailJS does not support reCAPTCHA v3. Only reCAPTCHA v2. */
-const reCaptchaV2Key = process.env.NEXT_PUBLIC_G_RECAPTCHA_V2_KEY;
 
 function ContactForm() {
   const [hasError, setHasError] = useState(false);
@@ -59,45 +56,6 @@ function ContactForm() {
   function handleSendError() {
     setHasError(true);
   }
-
-  const reCaptcha = (
-    <div sx={{
-      fontSize: 0,
-      textAlign: 'right',
-      height: 'fit-content',
-      alignSelf: 'flex-end',
-      pr: [0, 4, 4],
-      color: (t) => t.colors.contactDivider,
-    }}
-    >
-      <ReCAPTCHA
-        ref={recaptchaRef}
-        size="invisible"
-        sitekey={reCaptchaV2Key}
-        sx={{
-          '.grecaptcha-badge': {
-            visibility: 'hidden',
-          },
-        }}
-      />
-      This site is protected by reCAPTCHA and the
-      <br />
-      {' '}
-      Google
-      {' '}
-      <a href="https://policies.google.com/privacy" sx={{ variant: 'text.link' }}>
-        Privacy Policy
-      </a>
-      {' '}
-      and
-      {' '}
-      <a href="https://policies.google.com/terms" sx={{ variant: 'text.link' }}>
-        Terms of Service
-      </a>
-      {' '}
-      apply.
-    </div>
-  );
 
   return (
     <div sx={{
@@ -151,11 +109,12 @@ function ContactForm() {
         <div sx={{
           display: 'flex',
           justifyContent: 'flex-end',
+          alignItems: 'center',
         }}
         >
           <Fade delay={800}>
-            {reCaptcha}
-            <Button>Send</Button>
+            <FormRecaptcha recaptchaRef={recaptchaRef} />
+            <Button><span>Send</span></Button>
           </Fade>
         </div>
       </form>

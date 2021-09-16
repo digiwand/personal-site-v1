@@ -6,19 +6,21 @@ const inputPadding = '10rem';
 const forms = {
   input: {
     fontFamily: 'body',
-    fontSize: '20rem',
+    fontSize: '17rem',
     fontWeight: '300',
-    borderRadius: '0',
     border: '0',
-    padding: inputPadding,
+    boxShadow: '0px 8px 8px 0 rgb(31 38 135 / 12%)',
+    backdropFilter: 'blur(4px)',
+    borderRadius: '2px',
+    background: (t) => `${t.colors.inputBg}`,
     height: `${inputHeight}rem`,
-    transition: `border-color ${formTransition}`,
-    background: (t) => `${t.colors.inputBackground}`,
+    padding: inputPadding,
     borderBottom: `${inputBorder}rem solid transparent`,
+    transition: `border-color ${formTransition}`,
 
     '&:focus': {
       outline: 'none',
-      borderColor: (t) => `${t.colors.primary}`,
+      borderColor: (t) => `${t.colors.text}`,
     },
   },
 
@@ -26,16 +28,18 @@ const forms = {
     fontFamily: 'body',
     fontSize: '20rem',
     fontWeight: '300',
-    borderRadius: '0',
     border: '0',
+    boxShadow: '0px 8px 8px 0 rgb(31 38 135 / 12%)',
+    backdropFilter: 'blur(4px)',
+    borderRadius: '2px',
     padding: inputPadding,
     transition: `border-color ${formTransition}`,
-    background: (t) => `${t.colors.inputBackground}`,
+    background: (t) => `${t.colors.inputBg}`,
     borderBottom: `${inputBorder}rem solid transparent`,
 
     '&:focus': {
       outline: 'none',
-      borderColor: (t) => `${t.colors.primary}`,
+      borderColor: (t) => `${t.colors.text}`,
     },
   },
 };

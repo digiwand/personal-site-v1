@@ -18,7 +18,7 @@ function NavSocialIconButtons() {
           variant: 'buttons.icon.small',
 
           '&:hover svg path': {
-            fill: (t) => t.colors.text,
+            fill: (t) => t.colors.navTabHoverColor,
           },
         }}
         socialKeys={socialKeys}

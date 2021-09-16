@@ -18,9 +18,106 @@ const defaultProps = {
   sectionTrackingPixelRefs: null,
 };
 
+function LinkPreloadFonts() {
+  return (
+    <>
+      <link
+        rel="preload"
+        href="/fonts/BarlowCondensed-Regular.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/BarlowCondensed-Thin.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/MarckScript-Regular.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Roboto/Roboto-Black.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Roboto/Roboto-Bold.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Roboto/Roboto-Light.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Roboto/Roboto-Medium.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Roboto/Roboto-Regular.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Roboto/Roboto-Thin.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Rubik/static/Rubik-Black.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Rubik/static/Rubik-Bold.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Rubik/static/Rubik-Light.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Rubik/static/Rubik-Medium.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Rubik/static/Rubik-Regular.ttf"
+        as="font"
+        crossOrigin=""
+      />
+      <link
+        rel="preload"
+        href="/fonts/Rubik/static/Rubik-Thin.ttf"
+        as="font"
+        crossOrigin=""
+      />
+    </>
+  );
+}
+
 function Layout({ children, sectionTrackingPixelRefs }) {
   const pageTopTrackingPixelRef = useRef();
-  const { theme } = useThemeUI();
+  const { theme: { rawColors } } = useThemeUI();
 
   const pageTopTrackingPixel = (
     <div
@@ -39,13 +136,28 @@ function Layout({ children, sectionTrackingPixelRefs }) {
       sx={{
         variant: 'scrollbar',
         height: '100vh',
+        width: '100%',
+        minWidth: '320px',
+        transition: 'background 3s, background-image 3s',
+        background: (t) => t.colors.backgroundMain,
+        // unfortunately, background flickers if we use 'local' here
+        backgroundAttachment: 'fixed',
+
+        /**
+         * Fixes issue where scrollbar was not clickable or draggable. This element has a height of '100vh'
+         * which is believed to fit inside it's parent container without the need of a scrollbar. To fix this,
+         * we use position: 'absolute'.
+         */
+        position: 'absolute',
+        top: '0',
+        left: '0',
       }}
     >
-      {/* Note: We can add Head to any React component */}
       <Head>
         <title>{siteTitle}</title>
 
         <link rel="icon" href="/favicon.ico" />
+        <LinkPreloadFonts />
 
         <meta
           name="description"
@@ -53,7 +165,9 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="theme-color" content={theme.colors.primary} />
+
+        {/* Updates toolbar color for various browsers including Safari and Android Chrome */}
+        <meta name="theme-color" content={rawColors.text} />
       </Head>
 
       {/*
@@ -62,10 +176,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         */}
       <InitializeColorMode />
 
-      <main sx={{
-        position: 'relative',
-      }}
-      >
+      <main sx={{ position: 'relative' }}>
         {pageTopTrackingPixel}
         {children}
       </main>

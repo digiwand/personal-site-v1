@@ -10,14 +10,29 @@ import { SECTION_DISPLAY_NAME } from 'constants/section';
 const headerAndFooterWidth = '60rem';
 const tabletWidth = '320rem';
 
+const sxFadeInInitialize = {
+  opacity: 0,
+  transform: ['translateX(420rem)', 'translateX(280rem)'],
+  transitionTimingFunction: 'ease, cubic-bezier(.1,1.3,.3,1)',
+  transition: 'opacity 1s, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1)',
+  transitionDelay: ['.4s', '.3s'],
+};
+
+const sxFadeInAnimate = {
+  opacity: 1,
+  transform: 'translateX(0)',
+};
+
 function DrawerFooter() {
   return (
-    <div sx={{
-      display: 'flex',
-      height: headerAndFooterWidth,
-      flex: `0 0 ${headerAndFooterWidth}`,
-      borderTop: (t) => `1rem solid ${t.colors.frameBorder}`,
-    }}
+    <div
+      className="NavDrawer_footer"
+      sx={{
+        display: 'flex',
+        height: headerAndFooterWidth,
+        flex: `0 0 ${headerAndFooterWidth}`,
+        borderTop: (t) => `1rem solid ${t.colors.frameBorder}`,
+      }}
     >
       <NavDrawerSocialIconButtons />
     </div>
@@ -39,12 +54,15 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
 
   const closeButton = (
     <IconButton
+      className="NavDrawer_iconButton"
       sx={{
         height: headerAndFooterWidth,
         width: headerAndFooterWidth,
 
+        ...sxFadeInInitialize,
+
         ':hover .NavDrawer_closeSVG > path': {
-          fill: (t) => t.colors.frameHoverText,
+          fill: (t) => t.colors.navDrawerSocialIconsHoverColor,
         },
       }}
       onClick={closeMenu}
@@ -77,14 +95,17 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
     }}
     >
       <span
+        className="NavDrawer_profileIcon"
         sx={{
           fontFamily: 'profile',
-          fontSize: 3,
+          fontSize: 4,
           lineHeight: '60rem',
           pl: 4,
           // Adjust for unevent font center
           pt: '7rem',
           color: (t) => t.colors.frameText,
+          ...sxFadeInInitialize,
+          transform: 'translateX(50rem)',
         }}
       >
         Ariella Vu
@@ -108,23 +129,81 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
   return (
     <aside
       sx={(t) => ({
+        // @todo: add constants for z-indices
+        zIndex: 20,
+        variant: 'glass',
         position: 'fixed',
         flexDirection: 'column',
         height: '100vh',
         top: '0',
         right: '0',
         boxShadow: '0 0 0 0 transparent',
-        background: `${t.colors.frame}`,
+        borderRadius: '0',
         overflow: 'hidden',
 
         display: ['flex', 'flex', 'none'],
         transform: ['translateX(100%)', `translateX(${tabletWidth})`],
         width: ['100%', tabletWidth],
-        transition: 'box-shadow 0.3s, transform 0.4s ease-in, width 0.3s',
+        background: t.colors.navDrawerBg,
+        transition: [
+          'box-shadow 0.3s, transform .4s ease-in, width 0.3s',
+          'box-shadow 0.3s, transform 0.3s ease-in, width 0.3s',
+        ],
 
+        '.NavDrawer_nav a': {
+          ...sxFadeInInitialize,
+          transitionDelay: '0.4s',
+        },
         '&[is-open="true"]': {
           transform: ['translateX(0)', 'translateX(0)', `translateX(${tabletWidth})`],
           boxShadow: `-5px 0px 10px 1px ${t.colors.frameBorder}`,
+
+          '.NavDrawer_profileIcon': {
+            ...sxFadeInAnimate,
+            transitionDelay: ['.8s', '.6s'],
+          },
+          '.NavDrawer_iconButton': {
+            ...sxFadeInAnimate,
+          },
+          '.NavDrawer_nav a': {
+            ...sxFadeInAnimate,
+
+            '&:nth-of-type(1)': {
+              transitionDelay: '0.4s',
+            },
+            '&:nth-of-type(2)': {
+              transitionDelay: '0.6s',
+            },
+            '&:nth-of-type(3)': {
+              transitionDelay: '0.8s',
+            },
+            '&:nth-of-type(4)': {
+              transitionDelay: '1s',
+            },
+            '&:nth-of-type(5)': {
+              transitionDelay: '1.2s',
+            },
+          },
+          '.NavDrawer-ThemeDrawerItem_text': {
+            ...sxFadeInAnimate,
+          },
+          '.NavDrawer_footer button': {
+            '> a > svg': {
+              opacity: 1,
+            },
+            '&:nth-of-type(1) > a > svg': {
+              transitionDelay: ['1.6s', '1.7s'],
+            },
+            '&:nth-of-type(2) > a > svg': {
+              transitionDelay: ['1.3s', '1.3s'],
+            },
+            '&:nth-of-type(3) > a > svg': {
+              transitionDelay: ['1s', '.9s'],
+            },
+            '&:nth-of-type(4) > a > svg': {
+              transitionDelay: ['.7s', '.5s'],
+            },
+          },
         },
       })}
       is-open={String(isOpen)}
@@ -139,6 +218,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         minHeight: 'min-content',
         height: '100%',
         variant: 'scrollbar',
+        overflowX: 'hidden',
       }}
       >
         <div sx={{
@@ -149,16 +229,14 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
           minHeight: 'min-content',
         }}
         >
-          <nav sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            pb: 5,
-            mt: 'auto',
-
-            '[is-active="true"]': {
-              fontWeight: 700,
-            },
-          }}
+          <nav
+            className="NavDrawer_nav"
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              pb: 5,
+              mt: 'auto',
+            }}
           >
             {drawerItems}
           </nav>

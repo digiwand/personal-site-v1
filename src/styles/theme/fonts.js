@@ -1,25 +1,34 @@
 const fonts = {
   fonts: {
-    // body: 'OpenSans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    body: 'BarlowCondensed, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: 'BarlowCondensed, "Avenir Next", sans-serif',
-    profile: 'MarckScript, Ariel',
-    monospace: 'Menlo, monospace',
+    body: 'Avenir Next, Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
+    heading: 'Rubik, "Avenir Next", sans-serif',
+    heading2: 'Arial, "Avenir Next", sans-serif',
+    barlow: 'BarlowCondensed, sans-serif',
+    profile: 'MarckScript, Arial',
   },
   fontSizes: [
-    '12rem', '14rem', '16rem', '20rem', '22rem', '24rem', '28rem', '32rem', '46rem', '58rem',
+    '12rem', // 0
+    '16rem', // 1
+    '18rem', // 2
+    '20rem', // 3
+    '22rem', // 4
+    '24rem', // 5
+    '28rem', // 6
+    '34rem', // 7
+    '46rem', // 8
+    '58rem', // 9
   ],
   fontWeights: {
-    body: 400,
+    body: 300,
     bold: 700,
-    heading: 700,
   },
   lineHeights: {
     body: 1.5,
     heading: 1.125,
   },
   letterSpacings: {
-    body: '2rem',
+    body: '1.6rem',
+    header: '2.4rem',
     caps: '0.2em',
   },
 
@@ -27,31 +36,54 @@ const fonts = {
     body: {
       fontFamily: 'body',
       fontWeight: 'body',
+      letterSpacing: 'body',
       lineHeight: 'body',
       color: 'text',
     },
     heading: {
       fontFamily: 'heading',
-      fontWeight: 'heading',
+      fontWeight: 'bold',
       lineHeight: 'heading',
+      letterSpacing: 'heading',
+      display: 'inline-block',
+      color: (t) => t.colors.homeHello,
+    },
+
+    gradient: {
+      backgroundColor: (t) => t.colors.textGradientBackup,
+      backgroundImage: (t) => t.colors.textGradient,
+      backgroundClip: 'text',
+      textFillColor: 'transparent',
     },
     link: {
       transition: 'font-weight 0.3s, color 0.3s',
 
       ':hover': {
         color: (t) => t.colors.linkHover,
-        fontWeight: 700,
       },
     },
     sectionHeading: {
+      variant: 'text.heading',
+      letterSpacing: '12rem',
+      // heading: '3rem',
       display: 'block',
       textAlign: 'center',
-      variant: 'text.heading',
       fontWeight: '400',
       fontSize: [3, 4, 4],
-      letterSpacing: '12rem',
       color: (t) => t.colors.heading,
       pb: 5,
+    },
+    sideHeading: {
+      textAlign: ['center', 'center', 'initial'],
+
+      '&:before': {
+        content: '"— "',
+        paddingRight: 2,
+        display: ['none', 'none', 'inline-block'],
+      },
+    },
+    shadow: {
+      textShadow: (t) => t.colors.textShadow,
     },
   },
 };

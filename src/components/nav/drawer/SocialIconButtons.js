@@ -15,7 +15,7 @@ function NavDrawerSocialIcons() {
           '&:hover ': {
             background: t.colors.frameBorder,
             path: {
-              fill: t.colors.frameHoverText,
+              fill: t.colors.navDrawerSocialIconsHoverColor,
             },
           },
 
@@ -29,7 +29,20 @@ function NavDrawerSocialIcons() {
             background: t.colors.frameBorder,
           },
 
-          '& path': {
+          a: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100%',
+            width: '100%',
+
+            '> svg': {
+              opacity: 0,
+              transition: 'opacity 1.3s',
+            },
+          },
+
+          path: {
             fill: t.colors.frameText,
           },
         })}

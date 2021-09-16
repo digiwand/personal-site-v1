@@ -16,8 +16,6 @@ function HomeSection(props, ref) {
       sx={{
         minHeight: '100vh',
         textAlign: 'center',
-        background: (t) => `${t.colors.homeBgImage}`,
-        backgroundSize: 'cover',
       }}
     >
 
@@ -33,7 +31,7 @@ function HomeSection(props, ref) {
       /> */}
 
       <div sx={{
-        background: (t) => `${t.colors.homeBgBox}`,
+        variant: 'glass',
         display: 'inline-flex',
         flexDirection: 'column',
         px: [3, 4, 5],
@@ -43,7 +41,15 @@ function HomeSection(props, ref) {
       }}
       >
         <Fade bottom>
-          <Themed.h2>Hello, I&apos;m</Themed.h2>
+          <Themed.h2 sx={{
+            variant: 'text.shadow',
+            letterSpacing: '2.4rem',
+            color: (t) => t.colors.homeHello,
+          }}
+          >
+            Hello, I&apos;m
+
+          </Themed.h2>
         </Fade>
         <Fade bottom delay={600}>
           <span
@@ -54,6 +60,8 @@ function HomeSection(props, ref) {
               pt: [4, 3, 4],
               pb: [3, null, null],
               display: 'inline-block',
+              // fix font from chopping off
+              pl: 2,
             }}
           >
             Ariella Vu.
@@ -69,8 +77,8 @@ function HomeSection(props, ref) {
             code, delightful user experiences, and efficiency. Currently exploring new opportunities.
           </Themed.p>
         </Fade>
-        <Fade bottom delay={2200}>
-          <ResumeButton sx={{ mt: 3 }} />
+        <Fade bottom delay={2800}>
+          <ResumeButton sx={{ mt: 4 }} />
         </Fade>
       </div>
     </Section>

@@ -1,6 +1,6 @@
 import { IconButton } from 'theme-ui';
 import PropTypes from 'prop-types';
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 
 import SOCIAL from 'constants/social';
 
@@ -14,18 +14,18 @@ const defaultProps = {
 };
 
 function SocialIconButtons({ className, socialKeys }) {
-  const socialIconButtons = socialKeys.map((key, index) => {
+  const socialIconButtons = socialKeys.map((key /* index */) => {
     const socialConfig = SOCIAL[key];
     return (
       <IconButton
         className={className}
         key={className + key}
       >
-        <Fade delay={(index + 1) * 255}>
-          <a href={socialConfig.url} target="_blank" rel="noopener noreferrer">
-            {socialConfig.iconSVG}
-          </a>
-        </Fade>
+        {/* <Fade delay={(index + 1) * 255}> */}
+        <a href={socialConfig.url} target="_blank" rel="noopener noreferrer">
+          {socialConfig.iconSVG}
+        </a>
+        {/* </Fade> */}
       </IconButton>
     );
   });

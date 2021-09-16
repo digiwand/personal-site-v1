@@ -26,7 +26,7 @@ function NavTab({ children, ...props }) {
         left: '0',
         width: '0',
         overflow: 'hidden',
-        color: (t) => t.colors.text,
+        color: (t) => t.colors.navTabHoverColor,
       }}
     >
       {displayName}
@@ -43,18 +43,15 @@ function NavTab({ children, ...props }) {
           alignItems: 'center',
           justifyContent: 'center',
           height: '40rem',
-          letterSpacing: '1.6rem',
           fontSize: '14rem',
+          fontFamily: 'body',
+          fontWeight: '300',
           borderBottom: '2rem solid transparent',
           transition: 'font-weight 0.2s, color 0.2s, border-bottom 0.2s',
 
-          '&:hover': {
-            fontWeight: '700',
-
-            '.NavTab_hoverText': {
-              width: '100%',
-              transition: 'all 0.3s ease-in-out',
-            },
+          '&:hover .NavTab_hoverText': {
+            width: '100%',
+            transition: 'all 0.3s ease-in-out',
           },
           '&:is-active': {
             fontWeight: '700',

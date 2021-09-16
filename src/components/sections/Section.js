@@ -1,9 +1,11 @@
 import React from 'react';
 
 const SECTION_ID_TOP_PLACEMENT = {
-  default: '30vh',
-  contact: '80vh',
-  work: '50vh',
+  default: '10%',
+  home: '10px',
+  contact: '80%',
+  work: '50%',
+  tech: '90%',
 };
 
 /**
@@ -37,7 +39,7 @@ const Section = ({ id, children, className }, ref) => (
       justifyContent: 'center',
       flexDirection: 'column',
       px: [4, 6, 6],
-      py: [4, 6, 6],
+      py: [5, 6, 6],
     }}
   >
     <SectionTrackingPixel sectionId={id} forwardedRef={ref} />

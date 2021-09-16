@@ -2,7 +2,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Flex, Image, Themed } from 'theme-ui';
 
-import OffsetFrame from 'components/common/OffsetFrame';
+import FrameCircle from 'components/common/FrameCircle';
 import Section from 'components/sections/Section';
 
 import { SECTION_ID } from 'constants/section';
@@ -13,8 +13,7 @@ const AboutSection = (props, ref) => (
     ref={ref}
     sx={{
       minHeight: '80vh',
-      background: (t) => `${t.colors.aboutBg}`,
-      pt: [6, 6, 0],
+      pt: 6,
     }}
   >
     <Flex sx={{
@@ -24,19 +23,19 @@ const AboutSection = (props, ref) => (
       <div sx={{
         flex: '1 1 auto',
         pr: [0, 0, 6],
-        pt: [6, 6, 0],
+        pt: [2, 6, 3],
         pb: [6, 0, 0],
       }}
       >
-        <Fade bottom>
-          <Themed.h3 sx={{ pb: 1, color: (t) => `${t.colors.aboutHeader}` }}>
-            ABOUT
-          </Themed.h3>
+        <Fade>
+          <Themed.h1 sx={{ pb: 4 }}>
+            About
+          </Themed.h1>
         </Fade>
-        <Fade bottom delay={420}>
+        <Fade delay={420}>
           <Themed.p sx={{
             maxWidth: ['initial', 'initial', '520rem'],
-            color: (t) => `${t.colors.aboutText}`,
+            // color: (t) => `${t.colors.aboutText}`,
           }}
           >
             {/* <br />
@@ -64,12 +63,12 @@ const AboutSection = (props, ref) => (
         display: 'flex',
         justifyContent: 'center',
         alignSelf: 'center',
-        pb: [3, 0, 0],
+        pb: [6, 0, 0],
       }}
       >
-        <OffsetFrame sx={{
+        <FrameCircle sx={{
           maxWidth: '390rem',
-          width: ['80%', '100%', '100%'],
+          width: ['90%', '100%', '100%'],
           display: ['flex', 'flex', 'inline-block'],
           mx: ['auto', 'initial', 'initial'],
         }}
@@ -77,12 +76,14 @@ const AboutSection = (props, ref) => (
           <Image
             alt="Profile Picture"
             src="/images/profile.jpg"
-            variant="framed"
             width="390"
             height="461.33"
-            sx={{ zIndex: 1 }}
+            sx={{
+              zIndex: 1,
+              boxShadow: 'rgba(120, 120, 120, 0.8) 1px 1px 13px 0px',
+            }}
           />
-        </OffsetFrame>
+        </FrameCircle>
       </div>
     </Flex>
   </Section>

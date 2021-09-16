@@ -3,23 +3,23 @@ const scrollbar = {
   scrollBehavior: 'smooth',
 
   '&::-webkit-scrollbar-track': {
-    borderRadius: '3px',
-    backgroundColor: (t) => t.colors.homeBg,
+    borderRadius: '3rem',
+    backgroundColor: (t) => t.colors.scrollTrack,
   },
 
   '&::-webkit-scrollbar': {
-    width: '6px',
+    width: '6rem',
   },
 
   '::-webkit-scrollbar-thumb': {
-    backgroundColor: 'text',
-    borderRadius: '3px',
+    backgroundColor: (t) => t.colors.scrollThumb,
+    borderRadius: '3rem',
   },
   '::-webkit-scrollbar-thumb:hover': {
-    backgroundColor: 'primary',
+    backgroundColor: (t) => t.colors.scrollThumbHover,
   },
   '::-webkit-scrollbar-thumb:active': {
-    backgroundColor: 'primary',
+    backgroundColor: (t) => t.colors.scrollThumbHover,
   },
 };
 

@@ -24,18 +24,16 @@ function ContactSocialIconButtons() {
       <SocialIconButtons
         sx={{
           mr: [0, 0, 4],
+          zIndex: '1',
 
           '&:hover': {
             'a > svg': {
               transform: 'rotate(10deg)',
             },
-            // path: {
-            //   fill: (t) => `${t.colors.contactHeader}`,
-            // },
           },
 
           path: {
-            fill: (t) => `${t.colors.contactText}`,
+            fill: (t) => `${t.colors.contactIcon}`,
           },
         }}
         showUsername
