@@ -212,13 +212,13 @@ const colors = {
       frameHoverText: `rgba(${RGB.royalPurple}, 0.8)`,
       frameText: 'white',
 
-      footerBg: `rgba(${RGB.middleBlue}, 0.38)`,
+      footerBg: `rgba(${RGB.darkPurple}, 0.95)`,
       footerText: 'white',
 
       navDrawerActiveColor: `rgba(${RGB.middleBlue}, 0.9)`,
-      navDrawerBg: `linear-gradient(70deg, rgba(${RGB.russianViolet}, 0.55), rgba(33, 33, 33, 0.73))`,
+      navDrawerBg: `linear-gradient(70deg, rgba(${RGB.darkPurple}, 0.55), rgba(33, 33, 33, 0.73))`,
       navDrawerSocialIconsHoverColor: `rgba(${RGB.middleBlue}, 0.9)`,
-      navHeaderBg: `rgba(${RGB.middleBlue}, 0.38)`,
+      navHeaderBg: `rgba(${RGB.darkPurple}, 0.95)`,
       navHeaderLogoBgImage: (t) => t.colors.text,
       navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), rgb(${RGB.middleBlue}), orange)`,
       navTabHoverColor: `rgb(${RGB.metallicSeaweed})`,
