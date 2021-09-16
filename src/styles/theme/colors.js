@@ -122,7 +122,7 @@ const colors = {
   buttonBorder: `1rem solid rgba(${RGB.royalPurple}, 0.18)`,
   buttonHoverText: `rgb(${RGB.cultured})`,
   buttonSecondaryBg: 'linear-gradient(40deg,'
-    + ` rgba(${RGB.chromeYellow}, 0.85), rgba(${RGB.yellowCrayola}, 0.4), rgba(${RGB.chromeYellow}, 0.85))`,
+    + ` rgba(${RGB.macaroniAndCheese}, 0.95), rgba(${RGB.yellowCrayola}, 0.4), rgba(${RGB.macaroniAndCheese}, 0.95))`,
   buttonSecondaryBorder: `1rem solid rgba(${RGB.selectiveYellow}, 0.18)`,
   buttonText: '#fff',
 
@@ -139,7 +139,7 @@ const colors = {
   navHeaderBg: `rgba(${RGB.byzantine}, 0.35)`,
   navHeaderLogoBgImage: (t) => `linear-gradient(45deg, ${t.colors.text}, pink)`,
   navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), lavender, orange)`,
-  navTabHoverColor: 'orange',
+  navTabHoverColor: `rgb(${RGB.macaroniAndCheese})`,
 
   // -- Sections ----------------------------------------------------------------------------------
 
