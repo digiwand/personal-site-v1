@@ -14,7 +14,7 @@ const defaultProps = {
 };
 
 function SocialIconButtons({ className, socialKeys }) {
-  const socialIconButtons = socialKeys.map((key, index) => {
+  const socialIconButtons = socialKeys.map((key /* index */) => {
     const socialConfig = SOCIAL[key];
     return (
       <IconButton
