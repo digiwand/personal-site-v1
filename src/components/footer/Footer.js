@@ -12,7 +12,7 @@ function Footer() {
         justifyContent: 'space-between',
         py: 2,
         minHeight: '40rem',
-        px: [4, 6, 6],
+        px: [4, 4, 6],
         whiteSpace: 'nowrap',
         textAlign: 'center',
         fontSize: '14rem',
