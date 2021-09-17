@@ -10,7 +10,6 @@ import PROP_TYPE from 'constants/prop-types';
 
 const paddingFrame = 45;
 const paddingInsideFrame = 28;
-const scrollBarWidth = '6px';
 
 const bgChangeKeyframe = keyframes`
   0%{background-position:10% 0%}
@@ -63,7 +62,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         alignItems: 'flex-end',
         height: '110px',
         boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0)',
-        width: `calc(100% - ${scrollBarWidth})`,
+        width: '100%',
         px: `${paddingFrame + paddingInsideFrame}px`,
         transition: 'transform 0.4s, background 0.25s, box-shadow 0.25s',
         transform: ['translateY(-110px)', 'translateY(-110px)', 'translateY(0)'],
