@@ -95,7 +95,7 @@ const colors = {
     + `linear-gradient(336deg, rgba(${RGB.celeste}, 0.9), rgba(${RGB.celeste}, 1) 70.71%)`,
 
   glassBg: 'linear-gradient(70deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.30))',
-  glassBorder: '1px solid rgba(255, 255, 255, 0.18)',
+  glassBorder: '1rem solid rgba(255, 255, 255, 0.18)',
 
   error: `rgb(${RGB.upsdellRed})`,
   link: `rgb(${RGB.yellowCrayola})`,
@@ -117,7 +117,7 @@ const colors = {
 
   // -- Components --------------------------------------------------------------------------------
 
-  buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17)`,
+  buttonBoxShadow: `0 4rem 8rem 0 rgba(${RGB.picoteeBlue}, 0.17)`,
   buttonBg: `linear-gradient(70deg, rgba(${RGB.royalPurple}, 0.50), rgba(${RGB.royalPurple}, 0.70))`,
   buttonBorder: `1rem solid rgba(${RGB.royalPurple}, 0.18)`,
   buttonHoverText: `rgb(${RGB.cultured})`,
@@ -201,7 +201,7 @@ const colors = {
 
       // -- Components -----------------------xf-----------------------------------------------------
 
-      buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17)`,
+      buttonBoxShadow: `0 4rem 8rem 0 rgba(${RGB.picoteeBlue}, 0.17)`,
       buttonBg: `linear-gradient(70deg, rgba(${RGB.middleBlue}, 0.50), rgba(${RGB.middleBlue}, 0.70))`,
       buttonBorder: `1rem solid rgba(${RGB.middleBlue}, 0.18)`,
       buttonHoverText: `rgb(${RGB.cultured})`,

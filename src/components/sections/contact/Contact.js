@@ -40,7 +40,7 @@ const ContactSection = (props, ref) => (
     id={SECTION_ID.CONTACT}
     ref={ref}
     sx={{
-      minHeight: 'calc(100vh - 260px)',
+      minHeight: 'calc(100vh - 260rem)',
     }}
   >
 

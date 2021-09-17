@@ -69,8 +69,8 @@ function HomeSection(props, ref) {
         </Fade>
         <Fade bottom delay={1900}>
           <Themed.p sx={{
-            maxWidth: '540px',
-            margin: '23px auto',
+            maxWidth: '540rem',
+            margin: '23rem auto',
           }}
           >
             I&apos;m a web developer who&apos;s passionate about clean code, delightful user

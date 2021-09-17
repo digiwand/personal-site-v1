@@ -16,7 +16,7 @@ const imgStyles = {
     opacity: '1',
     zIndex: '3',
     transform: 'perspective(750px) translateZ(20px)',
-    boxShadow: 'rgba(0, 0, 0, 0.15) 3px 5px 15px 0px',
+    boxShadow: 'rgba(0, 0, 0, 0.15) 3rem 5rem 15rem 0rem',
   },
 };
 

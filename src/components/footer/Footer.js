@@ -11,7 +11,7 @@ function Footer() {
         flexDirection: ['column-reverse', 'row', 'row'],
         justifyContent: 'space-between',
         py: 2,
-        minHeight: '40px',
+        minHeight: '40rem',
         px: [4, 6, 6],
         whiteSpace: 'nowrap',
         textAlign: 'center',
