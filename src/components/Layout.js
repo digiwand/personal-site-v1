@@ -123,9 +123,9 @@ function Layout({ children, sectionTrackingPixelRefs }) {
     <div
       sx={{
         position: 'absolute',
-        height: '1px',
-        width: '1px',
-        top: '80px',
+        height: '1rem',
+        width: '1rem',
+        top: '80rem',
       }}
       ref={pageTopTrackingPixelRef}
     />

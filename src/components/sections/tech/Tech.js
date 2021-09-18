@@ -13,14 +13,14 @@ function TechSection(props, ref) {
       id={SECTION_ID.TECH}
       ref={ref}
       sx={{
-        background: (t) => t.colors.glassBg,
+        background: (t) => t.colors.techBg,
         minHeight: '0',
         py: [5, 6, 6],
         zIndex: 1,
       }}
     >
       <Fade>
-        <Themed.h2
+        <Themed.h3
           sx={{
             color: (t) => t.colors.homeHello,
             display: 'block',
@@ -28,7 +28,7 @@ function TechSection(props, ref) {
           }}
         >
           RECENT TECHNOLOGIES
-        </Themed.h2>
+        </Themed.h3>
       </Fade>
 
       <Fade bottom cascade>
@@ -38,7 +38,6 @@ function TechSection(props, ref) {
             alignItems: 'center',
             justifyContent: 'center',
             pt: 5,
-            pb: 5,
           }}
         >
           <TechCarousel />

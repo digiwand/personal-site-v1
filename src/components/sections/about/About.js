@@ -28,9 +28,9 @@ const AboutSection = (props, ref) => (
       }}
       >
         <Fade>
-          <Themed.h1 sx={{ pb: 4 }}>
+          <Themed.h2 sx={{ pb: 4 }}>
             About
-          </Themed.h1>
+          </Themed.h2>
         </Fade>
         <Fade delay={420}>
           <Themed.p sx={{
@@ -80,7 +80,8 @@ const AboutSection = (props, ref) => (
             height="461.33"
             sx={{
               zIndex: 1,
-              boxShadow: 'rgba(120, 120, 120, 0.8) 1px 1px 13px 0px',
+              boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
+              filter: (t) => t.colors.aboutImgFilter,
             }}
           />
         </FrameCircle>

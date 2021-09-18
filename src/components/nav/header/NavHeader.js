@@ -10,7 +10,6 @@ import PROP_TYPE from 'constants/prop-types';
 
 const paddingFrame = 45;
 const paddingInsideFrame = 28;
-const scrollBarWidth = '6px';
 
 const bgChangeKeyframe = keyframes`
   0%{background-position:10% 0%}
@@ -61,29 +60,29 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
       sx={(theme) => ({
         display: 'flex',
         alignItems: 'flex-end',
-        height: '110px',
-        boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0)',
-        width: `calc(100% - ${scrollBarWidth})`,
-        px: `${paddingFrame + paddingInsideFrame}px`,
+        height: '110rem',
+        boxShadow: '0 6rem 10rem -6rem rgba(30, 30, 30, 0)',
+        width: '100%',
+        px: `${paddingFrame + paddingInsideFrame}rem`,
         transition: 'transform 0.4s, background 0.25s, box-shadow 0.25s',
-        transform: ['translateY(-110px)', 'translateY(-110px)', 'translateY(0)'],
+        transform: ['translateY(-110rem)', 'translateY(-110rem)', 'translateY(0)'],
 
         '&[has-scrolled="true"]': {
           background: theme.colors.navHeaderBg,
           backdropFilter: 'blur(4px)',
 
-          transform: ['translateY(-110px)', 'translateY(-110px)', 'translateY(-70px)'],
-          boxShadow: '0 6px 10px -6px rgba(30, 30, 30, 0.30)',
+          transform: ['translateY(-110rem)', 'translateY(-110rem)', 'translateY(-70rem)'],
+          boxShadow: '0 6rem 10rem -6rem rgba(30, 30, 30, 0.30)',
 
           '.NavHeader_profileLogo': {
             backgroundImage: theme.colors.navHeaderLogoBgImageScrolled,
             animation: `${bgChangeKeyframe} 5s infinite`,
             fontSize: '23px',
-            transform: `translateX(-${paddingInsideFrame + (paddingFrame / 2)}px)`,
+            transform: `translateX(-${paddingInsideFrame + (paddingFrame / 2)}rem)`,
           },
 
           '.NavHeader_rightSide': {
-            transform: `translateX(${paddingInsideFrame + (paddingFrame / 2)}px)`,
+            transform: `translateX(${paddingInsideFrame + (paddingFrame / 2)}rem)`,
           },
 
           '.NavTab': {

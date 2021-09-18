@@ -18,9 +18,10 @@ function FormRecaptcha({ recaptchaRef }) {
     <div sx={{
       fontSize: '10rem',
       letterSpacing: '1rem',
+      maxWidth: '310rem',
       textAlign: 'right',
       height: 'fit-content',
-      pr: [0, 4, 4],
+      pr: [3, 4, 4],
       pt: 1,
       color: (t) => t.colors.contactReCaptcha,
     }}
@@ -37,7 +38,6 @@ function FormRecaptcha({ recaptchaRef }) {
         }}
       />
       This site is protected by reCAPTCHA and the
-      <br />
       {' '}
       Google
       {' '}

@@ -1,5 +1,5 @@
 const iconButtons = {
-  boxShadow: '0px 0px 10px transparent',
+  boxShadow: '0 0 10rem transparent',
 
   svg: {
     height: '30rem',
@@ -16,10 +16,10 @@ const iconButtons = {
     border: (t) => t.colors.buttonSecondaryBorder,
 
     '&:active': {
-      boxShadow: (t) => `inset 0 3px 5px rgb(18 21 26 / 9%), ${t.colors.buttonBoxShadow}`,
+      boxShadow: (t) => `inset 0 3rem 5rem rgb(18 21 26 / 9%), ${t.colors.buttonBoxShadow}`,
     },
     '&:focus': {
-      boxShadow: (t) => `inset 0 3px 5px rgb(18 21 26 / 9%), ${t.colors.buttonBoxShadow}`,
+      boxShadow: (t) => `inset 0 3rem 5rem rgb(18 21 26 / 9%), ${t.colors.buttonBoxShadow}`,
     },
     '&:hover': {
       '&:before': {
@@ -56,8 +56,8 @@ const iconButtons = {
 
   small: {
     svg: {
-      height: '18px',
-      width: '18px',
+      height: '18rem',
+      width: '18rem',
     },
     path: {
       fill: 'text',

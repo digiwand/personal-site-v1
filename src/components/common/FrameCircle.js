@@ -38,7 +38,7 @@ function FrameCircle({ children, ...props }) {
             `-${frameDistance / 2}rem`,
           ],
           zIndex: '-1',
-          boxShadow: 'rgba(120, 120, 120, 0.8) 2px 2px 13px 0px',
+          boxShadow: 'rgba(120, 120, 120, 0.8) 2rem 2rem 13rem 0rem',
           borderRadius: '50%',
         }}
         />
@@ -47,8 +47,6 @@ function FrameCircle({ children, ...props }) {
           borderRadius: '50%',
           overflow: 'hidden',
           aspectRatio: '1/1',
-          // todo: move filter out of component and rename component
-          filter: 'brightness(1.12) contrast(1.03) saturate(1.08)',
         }}
         >
           {children}

@@ -7,8 +7,10 @@ function FormErrorMessage({ isVisible }) {
       sx={{
         color: (t) => t.colors.error,
         position: 'absolute',
+        fontSize: 0,
         opacity: 0,
         top: '100%',
+        letterSpacing: '1rem',
         right: '0',
         pt: [3, 3, 4],
         left: ['0', '0', 'initial'],

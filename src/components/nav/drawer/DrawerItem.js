@@ -12,7 +12,9 @@ const defaultProps = {
 };
 
 function NavDrawerItem({ children, ...props }) {
-  const { displayName, href, isActive } = props;
+  const {
+    displayName, handleCloseMenu, href, isActive,
+  } = props;
 
   return (
     <Link href={href} scroll={false} passHref>
@@ -43,6 +45,7 @@ function NavDrawerItem({ children, ...props }) {
         })}
         href={href}
         is-active={String(isActive)}
+        onClick={() => { handleCloseMenu(); }}
       >
         <span sx={{
           position: 'relative',

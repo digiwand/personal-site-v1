@@ -11,8 +11,8 @@ function Footer() {
         flexDirection: ['column-reverse', 'row', 'row'],
         justifyContent: 'space-between',
         py: 2,
-        minHeight: '40px',
-        px: [4, 6, 6],
+        minHeight: '40rem',
+        px: [4, 4, 6],
         whiteSpace: 'nowrap',
         textAlign: 'center',
         fontSize: '14rem',
@@ -34,12 +34,27 @@ function Footer() {
       <Fade bottom>
         <span
           sx={{
-            display: ['block', 'block', 'inline-block'],
+            display: ['flex', 'block', 'inline-block'],
+            flexWrap: 'wrap',
+            justifyContent: 'center',
             pt: [3, 2, 0],
           }}
         >
-          Made by Ariella Vu &nbsp; -- &nbsp;
-          <a href="https://github.com/ariellanvu/personal-site-v1" target="_blank" rel="noopener noreferrer">
+          Made by Ariella Vu
+
+          <span sx={{ display: ['none', 'inline', 'inline'] }}>
+            &nbsp; - &nbsp;
+          </span>
+
+          <a
+            href="https://github.com/ariellanvu/personal-site-v1"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              variant: 'text.link',
+              pt: [3, 0, 0],
+            }}
+          >
             Open Source on Github
           </a>
         </span>

@@ -34,8 +34,8 @@ function HomeSection(props, ref) {
         variant: 'glass',
         display: 'inline-flex',
         flexDirection: 'column',
-        px: [3, 4, 5],
-        py: 5,
+        px: [3, 4, '86rem'],
+        py: [5, 5, '74rem'],
         margin: '0 auto',
         zIndex: '1',
       }}
@@ -56,7 +56,7 @@ function HomeSection(props, ref) {
             className="NavHeader_profileLogo"
             sx={{
               fontFamily: 'profile',
-              fontSize: [8, 9, 9],
+              fontSize: ['38rem', 9, 9],
               pt: [4, 3, 4],
               pb: [3, null, null],
               display: 'inline-block',
@@ -69,12 +69,12 @@ function HomeSection(props, ref) {
         </Fade>
         <Fade bottom delay={1900}>
           <Themed.p sx={{
-            maxWidth: '540px',
-            margin: '23px auto',
+            maxWidth: '540rem',
+            margin: '23rem auto',
           }}
           >
-            I&apos;m a web developer specializing in React and Ember JavaScript Frameworks and I&apos;m passionate about clean
-            code, delightful user experiences, and efficiency. Currently exploring new opportunities.
+            I&apos;m a web developer who&apos;s passionate about clean code, delightful user
+            experiences, and efficiency. Currently exploring new opportunities using React or Ember.js.
           </Themed.p>
         </Fade>
         <Fade bottom delay={2800}>

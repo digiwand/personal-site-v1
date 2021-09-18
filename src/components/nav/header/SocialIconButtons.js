@@ -6,7 +6,7 @@ function NavSocialIconButtons() {
   return (
     <div
       sx={{
-        height: '40px',
+        height: '40rem',
         display: 'flex',
         alignItems: 'center',
         pl: 2,

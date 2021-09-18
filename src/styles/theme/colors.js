@@ -41,21 +41,21 @@ const RGB = {
   // Blue
   celeste: '155, 243, 251',                   // #9BF3FB
   // cornflowerBlue '120, 157, 247',          // #789DF7
+  paleCerulean: '162, 196, 226',              // #a2c4e2
   middleBlue: '117, 192 , 202',               // #75C0CA
   picoteeBlue: '31, 38, 135',                 // #1F2687
   // prussianBlue: '13, 50, 77',              // #0D324D
-
-  // Light Purple
-  purpleMountainMajesty: '143, 121, 183',     // #8F79B7
 
   // Purple
   byzantine: '171, 75, 162',                  // #AB4BA2 - dark and almost pink
   darkSlateBlue: '71, 60, 139',               // #473C8B
   mediumPurple: '143, 112, 211',              // #8F70D3
   royalPurple: '103, 82, 170',                // #6752AA - darker one = #65559A
+  purpleMountainMajesty: '143, 121, 183',     // #8F79B7
   royalPurple_pinkish: '120, 75, 155',        // #784B9B - darker one = #65559A - deprecate?
   russianViolet: '51, 31, 80',                // #331F50 - can we deprecate these near black purple?
   spaceCadet: '58, 54, 90',                   // #3A365A - dark purple / grey
+  darkPurple: '19, 18, 42',                   // #13122A
 
   // Pink
   // lightPink: '255, 178, 180',              // #FFB2B4
@@ -95,11 +95,11 @@ const colors = {
     + `linear-gradient(336deg, rgba(${RGB.celeste}, 0.9), rgba(${RGB.celeste}, 1) 70.71%)`,
 
   glassBg: 'linear-gradient(70deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.30))',
-  glassBorder: '1px solid rgba(255, 255, 255, 0.18)',
+  glassBorder: '1rem solid rgba(255, 255, 255, 0.18)',
 
   error: `rgb(${RGB.upsdellRed})`,
-  /** @todo: add link color */
-  linkHover: 'orange',
+  link: `rgb(${RGB.yellowCrayola})`,
+  linkHover: `rgb(${RGB.chromeYellow})`,
 
   // heading: '#fff',
 
@@ -117,12 +117,12 @@ const colors = {
 
   // -- Components --------------------------------------------------------------------------------
 
-  buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17)`,
+  buttonBoxShadow: `0 4rem 8rem 0 rgba(${RGB.picoteeBlue}, 0.17)`,
   buttonBg: `linear-gradient(70deg, rgba(${RGB.royalPurple}, 0.50), rgba(${RGB.royalPurple}, 0.70))`,
   buttonBorder: `1rem solid rgba(${RGB.royalPurple}, 0.18)`,
   buttonHoverText: `rgb(${RGB.cultured})`,
   buttonSecondaryBg: 'linear-gradient(40deg,'
-    + ` rgba(${RGB.chromeYellow}, 0.85), rgba(${RGB.yellowCrayola}, 0.4), rgba(${RGB.chromeYellow}, 0.85))`,
+    + ` rgba(${RGB.macaroniAndCheese}, 0.95), rgba(${RGB.yellowCrayola}, 0.4), rgba(${RGB.macaroniAndCheese}, 0.95))`,
   buttonSecondaryBorder: `1rem solid rgba(${RGB.selectiveYellow}, 0.18)`,
   buttonText: '#fff',
 
@@ -139,17 +139,19 @@ const colors = {
   navHeaderBg: `rgba(${RGB.byzantine}, 0.35)`,
   navHeaderLogoBgImage: (t) => `linear-gradient(45deg, ${t.colors.text}, pink)`,
   navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), lavender, orange)`,
-  navTabHoverColor: 'orange',
+  navTabHoverColor: `rgb(${RGB.macaroniAndCheese})`,
 
   // -- Sections ----------------------------------------------------------------------------------
 
   homeHello: 'rgba(255,255,255, 0.9)',
 
+  aboutImgFilter: 'brightness(1.12) contrast(1.03) saturate(1.08)',
+
+  techBg: `rgb(${RGB.paleCerulean})`,
+  carouselItemBg: `rgba(${RGB.paleCerulean}, 0.9)`,
+
   workHeader: 'floralwhite',
   workSubHeader: 'floralwhite',
-
-  // techHeader: 'white',
-  carouselItemBg: 'transparent',
 
   contactSubHeader: 'floralwhite',
   contactText: 'floralwhite',
@@ -199,7 +201,7 @@ const colors = {
 
       // -- Components -----------------------xf-----------------------------------------------------
 
-      buttonBoxShadow: `0 4px 8px 0 rgba(${RGB.picoteeBlue}, 0.17)`,
+      buttonBoxShadow: `0 4rem 8rem 0 rgba(${RGB.picoteeBlue}, 0.17)`,
       buttonBg: `linear-gradient(70deg, rgba(${RGB.middleBlue}, 0.50), rgba(${RGB.middleBlue}, 0.70))`,
       buttonBorder: `1rem solid rgba(${RGB.middleBlue}, 0.18)`,
       buttonHoverText: `rgb(${RGB.cultured})`,
@@ -212,18 +214,23 @@ const colors = {
       frameHoverText: `rgba(${RGB.royalPurple}, 0.8)`,
       frameText: 'white',
 
-      footerBg: `rgba(${RGB.middleBlue}, 0.38)`,
+      footerBg: `rgba(${RGB.darkPurple}, 0.95)`,
       footerText: 'white',
 
       navDrawerActiveColor: `rgba(${RGB.middleBlue}, 0.9)`,
-      navDrawerBg: `linear-gradient(70deg, rgba(${RGB.russianViolet}, 0.55), rgba(33, 33, 33, 0.73))`,
+      navDrawerBg: `linear-gradient(70deg, rgba(${RGB.darkPurple}, 0.55), rgba(33, 33, 33, 0.73))`,
       navDrawerSocialIconsHoverColor: `rgba(${RGB.middleBlue}, 0.9)`,
-      navHeaderBg: `rgba(${RGB.middleBlue}, 0.38)`,
+      navHeaderBg: `rgba(${RGB.darkPurple}, 0.95)`,
       navHeaderLogoBgImage: (t) => t.colors.text,
       navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), rgb(${RGB.middleBlue}), orange)`,
       navTabHoverColor: `rgb(${RGB.metallicSeaweed})`,
 
       // -- Sections ------------------------------------------------------------------------------
+
+      aboutImgFilter: 'brightness(.9) contrast(1.03) saturate(1.08)',
+
+      techBg: `rgb(${RGB.darkPurple})`,
+      carouselItemBg: `rgba(${RGB.darkPurple}, 0.9)`,
 
       contactDivider: `rgba(${RGB.davysGrey}, 0.5)`,
       contactPlant: 'rgba(190, 190, 190, 0.8)',

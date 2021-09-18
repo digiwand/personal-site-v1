@@ -17,6 +17,8 @@ function EducationSection() {
     }}
     >
       <Themed.h2 sx={{
+        fontFamily: 'heading2',
+        variant: 'text.shadow',
         display: 'block',
         pb: 2,
         color: (t) => t.colors.workHeader,
@@ -63,7 +65,8 @@ const WorkSection = (props, ref) => (
         sx={{
           variant: 'text.sideHeading',
           gridColumnStart: 'label-start',
-          pb: 5,
+          pt: [5, 0, 5],
+          pb: [4, 4, 5],
         }}
       >
         WORK EXPERIENCE
@@ -75,6 +78,7 @@ const WorkSection = (props, ref) => (
         sx={{
           variant: 'text.sideHeading',
           gridColumnStart: 'label-start',
+          py: [4, 4, 5],
         }}
       >
         EDUCATION

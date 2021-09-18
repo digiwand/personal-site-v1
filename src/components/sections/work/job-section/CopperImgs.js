@@ -4,6 +4,9 @@ const imgStyles = {
   position: 'absolute',
   m: 'auto',
   opacity: '0.95',
+  objectFit: 'cover',
+  objectPosition: 'top',
+  aspectRatio: '7.7/6',
   maxWidth: '650rem',
   width: ['75%', '50%', '43%'],
   transform: 'perspective(750px)',
@@ -13,7 +16,7 @@ const imgStyles = {
     opacity: '1',
     zIndex: '3',
     transform: 'perspective(750px) translateZ(20px)',
-    boxShadow: 'rgba(0, 0, 0, 0.15) 3px 5px 15px 0px',
+    boxShadow: 'rgba(0, 0, 0, 0.15) 3rem 5rem 15rem 0rem',
   },
 };
 
@@ -25,7 +28,7 @@ function CopperImgs() {
       minHeight: '350rem',
       width: ['100%', '100%', 'auto'],
       alignSelf: 'center',
-      my: 5,
+      mt: 4,
     }}
     >
       <Image
