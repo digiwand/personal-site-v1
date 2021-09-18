@@ -1,7 +1,7 @@
 const images = {
   tech: {
-    height: 48,
-    transition: 'filter 0.3s, transform 0.3s',
+    height: ['32rem', '42rem', '48rem'],
+    transition: 'height 0.3s, filter 0.3s, transform 0.3s',
 
     '&:hover': {
       cursor: 'pointer',

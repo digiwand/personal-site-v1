@@ -43,7 +43,11 @@ const rotationDeg = (360 / numOfPanels);
  */
 const radius = Math.round((panelWidth / 2) / Math.tan(Math.PI / numOfPanels));
 
-const mobileImgWidth = 160;
+const tabletImgWidth = 120;
+const tabletPanelWidth = tabletImgWidth + 2 * imgPadding;
+const tabletRadius = Math.round((tabletPanelWidth / 2) / Math.tan(Math.PI / numOfPanels));
+
+const mobileImgWidth = 85;
 const mobilePanelWidth = mobileImgWidth + 2 * imgPadding;
 const mobileRadius = Math.round((mobilePanelWidth / 2) / Math.tan(Math.PI / numOfPanels));
 
@@ -53,9 +57,9 @@ function Carousel() {
       sx={{
         perspective: '1000',
         position: 'relative',
-        width: `${panelWidth}rem`,
+        width: [`${mobilePanelWidth}rem`, `${tabletPanelWidth}rem`, `${panelWidth}rem`],
         height: `${panelHeight}rem`,
-        transition: 'transform 1s',
+        transition: 'width 1s, transform 1s',
       }}
     >
       <div sx={{
@@ -77,15 +81,15 @@ function Carousel() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: [`${mobileImgWidth}rem`, `${mobileImgWidth}rem`, `${imgWidth}rem`],
+                width: [`${mobileImgWidth}rem`, `${tabletImgWidth}rem`, `${imgWidth}rem`],
                 height: `${imgHeight}rem`,
                 left: `${imgPadding}rem`,
                 top: `${imgPadding}rem`,
                 background: (t) => t.colors.carouselItemBg,
-                transition: 'transform 1s',
+                transition: 'height 1s, width: 1s, transform 1s',
                 transform: [
                   `rotateY(${rotationDeg * index}deg) translateZ(${mobileRadius}rem)`,
-                  `rotateY(${rotationDeg * index}deg) translateZ(${mobileRadius}rem)`,
+                  `rotateY(${rotationDeg * index}deg) translateZ(${tabletRadius}rem)`,
                   `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
                 ],
               }}
