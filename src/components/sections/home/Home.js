@@ -56,7 +56,7 @@ function HomeSection(props, ref) {
             className="NavHeader_profileLogo"
             sx={{
               fontFamily: 'profile',
-              fontSize: [8, 9, 9],
+              fontSize: ['38rem', 9, 9],
               pt: [4, 3, 4],
               pb: [3, null, null],
               display: 'inline-block',
