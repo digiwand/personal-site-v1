@@ -20,7 +20,7 @@ function TechSection(props, ref) {
       }}
     >
       <Fade>
-        <Themed.h2
+        <Themed.h3
           sx={{
             color: (t) => t.colors.homeHello,
             display: 'block',
@@ -28,7 +28,7 @@ function TechSection(props, ref) {
           }}
         >
           RECENT TECHNOLOGIES
-        </Themed.h2>
+        </Themed.h3>
       </Fade>
 
       <Fade bottom cascade>
