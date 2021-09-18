@@ -37,6 +37,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         href={`/#${key}`}
         displayName={displayName}
         isActive={activeSectionId === key}
+        handleCloseMenu={handleCloseMenu}
       />
     );
   });
