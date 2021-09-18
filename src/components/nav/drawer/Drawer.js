@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { IconButton } from 'theme-ui';
+import { keyframes } from '@emotion/react';
 
 import NavDrawerItem from 'components/nav/drawer/DrawerItem';
 import NavDrawerSocialIconButtons from 'components/nav/drawer/SocialIconButtons';
@@ -9,6 +10,12 @@ import { SECTION_DISPLAY_NAME } from 'constants/section';
 
 const headerAndFooterWidth = '60rem';
 const tabletWidth = '320rem';
+
+const bgChangeKeyframe = keyframes`
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
+`;
 
 const sxFadeInInitialize = {
   opacity: 0,
@@ -95,17 +102,25 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
     }}
     >
       <span
-        className="NavDrawer_profileIcon"
+        className="NavDrawer_profileLogo"
         sx={{
+          variant: 'text.gradient',
+          backgroundSize: '200% 200%',
+          animation: `${bgChangeKeyframe} 5s infinite`,
           fontFamily: 'profile',
           fontSize: 4,
           lineHeight: '60rem',
           pl: 4,
-          // Adjust for unevent font center
-          pt: '7rem',
-          color: (t) => t.colors.frameText,
-          ...sxFadeInInitialize,
           transform: 'translateX(50rem)',
+          color: (t) => t.colors.frameText,
+
+          ...sxFadeInInitialize,
+
+          // Adjust for uneven font center
+          pt: '7rem',
+
+          // override sxFadeInInitialize transition
+          transition: 'background 0.4s, opacity 1s, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1)',
         }}
       >
         Ariella Vu
@@ -158,7 +173,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
           transform: ['translateX(0)', 'translateX(0)', `translateX(${tabletWidth})`],
           boxShadow: `-5px 0px 10px 1px ${t.colors.frameBorder}`,
 
-          '.NavDrawer_profileIcon': {
+          '.NavDrawer_profileLogo': {
             ...sxFadeInAnimate,
             transitionDelay: ['.8s', '.6s'],
           },
