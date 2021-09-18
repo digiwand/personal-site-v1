@@ -106,17 +106,20 @@ function ContactForm() {
           />
         </Fade>
 
-        <div sx={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          alignItems: 'center',
-        }}
-        >
-          <Fade delay={800}>
+        <Fade delay={800}>
+          <div sx={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            pt: [1, 0, 0],
+          }}
+          >
             <FormRecaptcha recaptchaRef={recaptchaRef} />
-            <Button><span>Send</span></Button>
-          </Fade>
-        </div>
+            <Button sx={{ flex: '0 0 auto;' }}>
+              <span>Send</span>
+            </Button>
+          </div>
+        </Fade>
       </form>
 
       <FormSentMessage isVisible={hasSent} email={email} />
