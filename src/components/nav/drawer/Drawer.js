@@ -1,21 +1,13 @@
 import PropTypes from 'prop-types';
-import { IconButton } from 'theme-ui';
-import { keyframes } from '@emotion/react';
 
+import DrawerHeader from 'components/nav/drawer/DrawerHeader';
+import DrawerFooter from 'components/nav/drawer/DrawerFooter';
 import NavDrawerItem from 'components/nav/drawer/DrawerItem';
-import NavDrawerSocialIconButtons from 'components/nav/drawer/SocialIconButtons';
 import ThemeNavDrawerItem from 'components/nav/drawer/ThemeDrawerItem';
 
 import { SECTION_DISPLAY_NAME } from 'constants/section';
 
-const headerAndFooterWidth = '60rem';
 const tabletWidth = '320rem';
-
-const bgChangeKeyframe = keyframes`
-  0%{background-position:10% 0%}
-  50%{background-position:91% 100%}
-  100%{background-position:10% 0%}
-`;
 
 const sxFadeInInitialize = {
   opacity: 0,
@@ -30,22 +22,6 @@ const sxFadeInAnimate = {
   transform: 'translateX(0)',
 };
 
-function DrawerFooter() {
-  return (
-    <div
-      className="NavDrawer_footer"
-      sx={{
-        display: 'flex',
-        height: headerAndFooterWidth,
-        flex: `0 0 ${headerAndFooterWidth}`,
-        borderTop: (t) => `1rem solid ${t.colors.frameBorder}`,
-      }}
-    >
-      <NavDrawerSocialIconButtons />
-    </div>
-  );
-}
-
 const propTypes = {
   activeSectionId: PropTypes.string.isRequired,
   handleCloseMenu: PropTypes.func.isRequired,
@@ -53,82 +29,6 @@ const propTypes = {
 };
 
 function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
-  function closeMenu() {
-    handleCloseMenu();
-  }
-
-  // -- Renders -----------------------------------------------------------------------------------
-
-  const closeButton = (
-    <IconButton
-      className="NavDrawer_iconButton"
-      sx={{
-        height: headerAndFooterWidth,
-        width: headerAndFooterWidth,
-
-        ...sxFadeInInitialize,
-
-        ':hover .NavDrawer_closeSVG > path': {
-          fill: (t) => t.colors.navDrawerSocialIconsHoverColor,
-        },
-      }}
-      onClick={closeMenu}
-    >
-      <svg
-        alt="Close Menu"
-        className="NavDrawer_closeSVG"
-        viewBox="0 0 24 24"
-        sx={{
-          height: '30px',
-
-          '> path': {
-            transition: 'fill 0.15s',
-            fill: (t) => t.colors.frameText,
-          },
-        }}
-      >
-        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-      </svg>
-    </IconButton>
-  );
-
-  const drawerHeader = (
-    <div sx={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      height: headerAndFooterWidth,
-      flex: `0 0 ${headerAndFooterWidth}`,
-    }}
-    >
-      <span
-        className="NavDrawer_profileLogo"
-        sx={{
-          variant: 'text.gradient',
-          backgroundSize: '200% 200%',
-          animation: `${bgChangeKeyframe} 5s infinite`,
-          fontFamily: 'profile',
-          fontSize: 4,
-          lineHeight: '60rem',
-          pl: 4,
-          transform: 'translateX(50rem)',
-          color: (t) => t.colors.frameText,
-
-          ...sxFadeInInitialize,
-
-          // Adjust for uneven font center
-          pt: '7rem',
-
-          // override sxFadeInInitialize transition
-          transition: 'background 0.4s, opacity 1s, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1)',
-        }}
-      >
-        Ariella Vu
-      </span>
-      {closeButton}
-    </div>
-  );
-
   const drawerItems = Object.keys(SECTION_DISPLAY_NAME).map((key) => {
     const displayName = SECTION_DISPLAY_NAME[key];
     return (
@@ -223,7 +123,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
       })}
       is-open={String(isOpen)}
     >
-      {drawerHeader}
+      <DrawerHeader handleCloseMenu={handleCloseMenu} sxFadeInInitialize={sxFadeInInitialize} />
 
       <div sx={{
         flex: '1 1 auto',
