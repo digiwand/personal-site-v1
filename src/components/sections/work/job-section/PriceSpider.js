@@ -25,7 +25,7 @@ function JobSectionPriceSpider() {
       companyName="PriceSpider"
       title="Software Engineer"
       subtitle="(Full-Stack)"
-      date="February 2015 - June 2016"
+      date="Feb 2015 - Jun 2016"
       descriptionSide="left"
       techKeys={TECH_KEYS}
       img={<PriceSpiderImgs />}

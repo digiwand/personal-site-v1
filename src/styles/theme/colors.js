@@ -151,7 +151,7 @@ const colors = {
   carouselItemBg: `rgba(${RGB.paleCerulean}, 0.9)`,
 
   workHeader: 'floralwhite',
-  workSubHeader: 'floralwhite',
+  workSubHeader: `rgba(${RGB.purpleMountainMajesty}, 0.75)`,
 
   contactSubHeader: 'floralwhite',
   contactText: 'floralwhite',

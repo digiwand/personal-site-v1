@@ -18,7 +18,7 @@ const styles = {
   h2: {
     variant: 'text.heading',
     fontSize: [4, 5, 5],
-    letterSpacing: '3rem',
+    letterSpacing: ['1rem', '3rem', '3rem'],
   },
   h3: {
     variant: 'text.heading',
@@ -28,10 +28,14 @@ const styles = {
   },
   h4: {
     variant: 'text.heading',
-    fontSize: [1, 3, 4],
+    fontWeight: '500',
+    fontSize: [2, 3, 3],
+    letterSpacing: ['1rem', '1.6rem', '1.6rem'],
   },
   h5: {
     variant: 'text.heading',
+    fontWeight: [300, 400, 400],
+    letterSpacing: ['1rem', '1.2rem', '1.2rem'],
     fontSize: 1,
   },
   h6: {

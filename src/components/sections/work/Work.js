@@ -20,26 +20,25 @@ function EducationSection() {
         fontFamily: 'heading2',
         variant: 'text.shadow',
         display: 'block',
-        pb: 2,
         color: (t) => t.colors.workHeader,
       }}
       >
         B.A.S. Computer Science
       </Themed.h2>
       <Themed.h4 sx={{
+        display: 'block',
         color: (t) => t.colors.workSubHeader,
+        pt: 4,
+        pb: 2,
       }}
       >
         University of California Davis
       </Themed.h4>
       <Themed.h5 sx={{
-        pl: 2,
-        color: (t) => t.colors.workSubHeader,
+        color: (t) => t.colors.workHeader,
       }}
       >
-        /
-        {' '}
-        September 2010 - September 2014
+        Sept 2010 - Sept 2014
       </Themed.h5>
     </div>
   );

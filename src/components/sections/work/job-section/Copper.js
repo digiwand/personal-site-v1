@@ -26,7 +26,7 @@ function JobSectionCopper() {
       companyName="Copper CRM"
       title="Senior Software Engineer"
       subtitle="(Client-Side)"
-      date="August 2016 - April 2021"
+      date="Aug 2016 - Apr 2021"
       techKeys={TECH_KEYS}
       descriptionSide="right"
       img={<CopperImgs />}

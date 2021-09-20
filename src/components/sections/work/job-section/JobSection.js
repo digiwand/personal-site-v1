@@ -45,26 +45,36 @@ function JobSection({ children, ...props }) {
       <Themed.h2 sx={{
         fontFamily: 'heading2',
         variant: 'text.shadow',
+        display: ['block', 'block', 'inline-block'],
+        pr: [0, 0, 3],
         color: (t) => t.colors.workHeader,
-        display: 'block',
-        letterSpacing: '2rem',
-        pb: 2,
       }}
       >
         {title}
-        {' '}
+      </Themed.h2>
+
+      <Themed.h2 sx={{
+        fontFamily: 'heading2',
+        variant: 'text.shadow',
+        display: ['block', 'block', 'inline-block'],
+        pt: [1, 0, 0],
+        color: (t) => t.colors.workHeader,
+      }}
+      >
         <small>{subtitle}</small>
       </Themed.h2>
+
       <Themed.h4 sx={{
+        display: 'block',
+        pt: 4,
+        pb: [1, 2, 2],
         color: (t) => t.colors.workSubHeader,
       }}
       >
         {companyName}
-        {' '}
       </Themed.h4>
-      <Themed.h5 sx={{ pl: 2, pb: 4, color: (t) => t.colors.workSubHeader }}>
-        /
-        {' '}
+
+      <Themed.h5 sx={{ color: (t) => t.colors.workHeader }}>
         {date}
       </Themed.h5>
 
