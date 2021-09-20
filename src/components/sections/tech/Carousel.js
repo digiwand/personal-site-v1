@@ -1,6 +1,25 @@
 import { keyframes } from '@emotion/react';
 import TECH from 'constants/tech';
 
+const RECENT_TECH = [
+  'NEXTJS',
+  'REACTJS',
+  'EMBERJS',
+  'HTML5',
+  'SASS',
+  'CHAI',
+  'MOCHA',
+  'AMP_EMAIL',
+  'NODEJS',
+  'GIT',
+  'VS_CODE',
+  'ITERM2',
+  'CHROME_DEV_TOOLS',
+  'DASH',
+  'ALFRED',
+  'MAC_OS',
+];
+
 const rotate360 = keyframes`
   from {
     transform: rotateY(0deg);
@@ -17,8 +36,7 @@ const imgPadding = 0;
 const panelWidth = imgWidth + 2 * imgPadding;
 const panelHeight = imgHeight + 2 * imgPadding;
 
-const TECH_KEYS = Object.keys(TECH);
-const numOfPanels = TECH_KEYS.length;
+const numOfPanels = RECENT_TECH.length;
 const rotationDeg = (360 / numOfPanels);
 
 /**
@@ -70,7 +88,7 @@ function Carousel() {
         animation: `${rotate360} 60s infinite forwards linear`,
       }}
       >
-        {TECH_KEYS.map((key, index) => {
+        {RECENT_TECH.map((key, index) => {
           const techConfig = TECH[key];
 
           return (
