@@ -6,6 +6,10 @@ import {
 } from 'components/svg/tech';
 
 const TECH = {
+  AB_TESTING: {
+    displayName: 'A/B Testing',
+    href: 'https://www.wikiwand.com/en/A/B_testing',
+  },
   ALFRED: {
     displayName: 'Alfred for macOS',
     imgElem: <Image alt="Alfred" src="images/tech/alfred@2x.png" variant="tech" />,
@@ -34,6 +38,10 @@ const TECH = {
     imgElem: <Image alt="Chrome DevTools" src="svg/tech/chromedevtools.svg" variant="tech" />,
     href: 'https://developer.chrome.com/docs/devtools/',
   },
+  CHROME_EXT: {
+    displayName: 'Chrome Extensions',
+    href: 'https://developer.chrome.com/docs/extensions/reference/',
+  },
   CSHARP: {
     displayName: 'C#',
     href: 'https://docs.microsoft.com/en-us/dotnet/csharp/',
@@ -46,6 +54,10 @@ const TECH = {
     displayName: 'Dash for macOS',
     imgElem: <Image alt="Dash" src="images/tech/dash@2x.png" variant="tech" />,
     href: 'https://kapeli.com/dash',
+  },
+  DOCUMENTATION: {
+    displayName: 'Documentation',
+    href: 'https://www.atlassian.com/software/confluence',
   },
   EMBERJS: {
     displayName: 'Ember.js',
@@ -65,9 +77,29 @@ const TECH = {
     displayName: 'Google Web Designer',
     href: 'https://webdesigner.withgoogle.com/',
   },
+  GOOGLE_ADD_ON: {
+    displayName: 'Google Workspace Add-ons',
+    href: 'https://developers.google.com/workspace/add-ons/overview',
+  },
   HANDLEBARS: {
     displayName: 'Handlebars',
     href: 'https://handlebarsjs.com/',
+  },
+  HEAP: {
+    displayName: 'Heap Analytics',
+    href: 'https://heap.io/',
+  },
+  JAVASCRIPT: {
+    displayName: 'JavaScript',
+    href: 'https://www.javascript.com/',
+  },
+  JIRA: {
+    displayName: 'JIRA',
+    href: 'https://www.atlassian.com/software/jira',
+  },
+  PENDO: {
+    displayName: 'Pendo',
+    href: 'https://www.pendo.io/',
   },
   HIGHCHARTS: {
     displayName: 'Highcharts',

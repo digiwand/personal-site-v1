@@ -1,7 +1,24 @@
 import CopperImgs from 'components/sections/work/job-section/CopperImgs';
 import JobSection from 'components/sections/work/job-section/JobSection';
 
-const TECH_KEYS = ['EMBERJS', 'AMP_EMAIL', 'HTML5', 'MOCHA', 'GIT', 'MAC_OS'];
+const TECH_KEYS = [
+  'EMBERJS',
+  'AMP_EMAIL',
+  'GOOGLE_ADD_ON',
+  'CHROME_EXT',
+  'JAVASCRIPT',
+  'HTML5',
+  'CSS3',
+  'CHAI',
+  'MOCHA',
+  'AB_TESTING',
+  'HEAP',
+  'PENDO',
+  'JIRA',
+  'GIT',
+  'MAC_OS',
+  'DOCUMENTATION',
+];
 
 function JobSectionCopper() {
   return (
