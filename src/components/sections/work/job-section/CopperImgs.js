@@ -25,10 +25,9 @@ function CopperImgs() {
     <div sx={{
       position: 'relative',
       flex: '1 0 auto',
-      minHeight: '350rem',
+      minHeight: ['280rem', '350rem', '350rem'],
       width: ['100%', '100%', 'auto'],
       alignSelf: 'center',
-      mt: 4,
     }}
     >
       <Image

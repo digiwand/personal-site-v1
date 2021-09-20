@@ -79,6 +79,7 @@ const buttons = {
     px: 3,
     py: 0,
     mr: 2,
+    mb: 2,
     height: '32rem',
     background: 'transparent',
     backgroundImage: 'transparent',

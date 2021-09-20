@@ -68,11 +68,15 @@ function JobSection({ children, ...props }) {
         {date}
       </Themed.h5>
 
-      <Themed.p sx={{ pt: 4 }}>
+      <Themed.p sx={{ py: 4 }}>
         {children}
       </Themed.p>
 
-      <div sx={{ py: 4 }}>
+      <div sx={{
+        pt: [3, 3, 2],
+        pb: [3, 3, 4],
+      }}
+      >
         {techKeys.map((techKey) => (
           <Button
             variant="tag"
