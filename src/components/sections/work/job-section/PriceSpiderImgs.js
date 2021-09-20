@@ -25,10 +25,10 @@ function PriceSpiderImgs() {
     <div sx={{
       position: 'relative',
       flex: '1 0 auto',
-      minHeight: ['280rem', '350rem', '350rem'],
-      width: ['100%', '100%', 'auto'],
       alignSelf: 'center',
-      textAlign: 'center',
+      minHeight: ['150rem', '350rem', '350rem'],
+      width: ['100%', '100%', 'auto'],
+      my: [4, 0, 0],
     }}
     >
       <Image
