@@ -71,6 +71,37 @@ const buttons = {
     background: (t) => t.colors.buttonSecondaryBg,
     border: (t) => t.colors.buttonSecondaryBorder,
   },
+
+  tag: {
+    fontFamily: 'barlow',
+    fontSize: 1,
+    fontWeight: '300',
+    px: 3,
+    py: 0,
+    mr: 2,
+    height: '32rem',
+    background: 'transparent',
+    backgroundImage: 'transparent',
+    backdropFilter: 'blur(4px) saturate(130%)',
+    transition: 'background .08s ease-in-out,'
+      + ' border .08s ease-in-out,'
+      + ' box-shadow .08s ease-in-out,'
+      + ' color .08s ease-in-out,'
+      + ' transform .08s ease-in-out',
+
+    border: (t) => t.colors.buttonBorder,
+
+    '&:hover': {
+      boxShadow: '4rem 5rem 3rem 0 rgba(133, 90, 155, 0.37)',
+      transform: 'translate(-2rem, -1.5rem)',
+    },
+    '&:active': {
+      backgroundImage: (t) => t.colors.glassBg,
+    },
+    '&:focus': {
+      backgroundImage: (t) => t.colors.glassBg,
+    },
+  },
 };
 
 export default buttons;

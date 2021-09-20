@@ -1,6 +1,8 @@
 import CopperImgs from 'components/sections/work/job-section/CopperImgs';
 import JobSection from 'components/sections/work/job-section/JobSection';
 
+const TECH_KEYS = ['EMBERJS', 'AMP_EMAIL', 'HTML5', 'MOCHA', 'GIT', 'MAC_OS'];
+
 function JobSectionCopper() {
   return (
     <JobSection
@@ -8,6 +10,7 @@ function JobSectionCopper() {
       title="Senior Software Engineer"
       subtitle="(Client-Side)"
       date="August 2016 - April 2021"
+      techKeys={TECH_KEYS}
       descriptionSide="right"
       img={<CopperImgs />}
     >

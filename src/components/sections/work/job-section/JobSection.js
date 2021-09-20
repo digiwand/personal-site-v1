@@ -1,11 +1,13 @@
 import React from 'react';
-import { Themed } from 'theme-ui';
+import { Button, Themed } from 'theme-ui';
 import PropTypes from 'prop-types';
+import TECH from 'constants/tech';
 
 const propTypes = {
   className: PropTypes.string,
   descriptionSide: PropTypes.string,
   companyName: PropTypes.string.isRequired,
+  techKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
@@ -25,6 +27,7 @@ function JobSection({ children, ...props }) {
     subtitle,
     date,
     img,
+    techKeys,
   } = props;
 
   return (
@@ -68,6 +71,19 @@ function JobSection({ children, ...props }) {
       <Themed.p sx={{ pt: 4 }}>
         {children}
       </Themed.p>
+
+      <div sx={{ py: 4 }}>
+        {techKeys.map((techKey) => (
+          <Button
+            variant="tag"
+            key={`${companyName}-tech-${techKey}`}
+          >
+            <a href={TECH[techKey].href} target="_blank" rel="noopener noreferrer">
+              {TECH[techKey].displayName}
+            </a>
+          </Button>
+        ))}
+      </div>
 
       {img}
 

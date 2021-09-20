@@ -1,6 +1,8 @@
 import JobSection from 'components/sections/work/job-section/JobSection';
 import PriceSpiderImgs from 'components/sections/work/job-section/PriceSpiderImgs';
 
+const TECH_KEYS = ['NODEJS', 'SASS', 'HTML5'];
+
 function JobSectionPriceSpider() {
   return (
     <JobSection
@@ -9,6 +11,7 @@ function JobSectionPriceSpider() {
       subtitle="(Full-Stack)"
       date="February 2015 - June 2016"
       descriptionSide="left"
+      techKeys={TECH_KEYS}
       img={<PriceSpiderImgs />}
     >
       I started the Angular 1.x reporting platform here from scratch along-side a fellow server developer and
