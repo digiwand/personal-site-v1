@@ -7,9 +7,11 @@ const imgStyles = {
   objectPosition: 'top',
   aspectRatio: '7.7/6',
   maxWidth: '650rem',
-  width: ['75%', '50%', '43%'],
   transform: 'perspective(750px)',
   transition: '0.25s',
+  borderRadius: '4rem',
+  border: (t) => t.colors.workImgBorder,
+  width: ['75%', '50%', '43%'],
 
   '&:hover': {
     opacity: '1',
