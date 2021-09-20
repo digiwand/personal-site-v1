@@ -1,7 +1,6 @@
 import { Image } from 'theme-ui';
 
 const imgStyles = {
-  position: 'absolute',
   m: 'auto',
   opacity: '0.95',
   objectFit: 'cover',
@@ -25,16 +24,16 @@ function PriceSpiderImgs() {
     <div sx={{
       position: 'relative',
       flex: '1 0 auto',
-      alignSelf: 'center',
-      minHeight: ['150rem', '350rem', '350rem'],
+      textAlign: 'center',
       width: ['100%', '100%', 'auto'],
-      my: [4, 0, 0],
+      my: 4,
     }}
     >
       <Image
         alt="PriceSpider Mars Where-to-buy"
         src="images/work/pricespider-wtb-mars.png"
         sx={{
+          position: 'absolute',
           zIndex: '2',
           top: 0,
           bottom: '20%',
@@ -48,6 +47,7 @@ function PriceSpiderImgs() {
         alt="PriceSpider Iams Where-to-buy"
         src="images/work/pricespider-wtb-iams.png"
         sx={{
+          position: 'relative',
           zIndex: '1',
           top: '0',
           bottom: '0',
@@ -61,6 +61,7 @@ function PriceSpiderImgs() {
         alt="PriceSpider Hoover & Dell Ads"
         src="images/work/pricespider-ads.png"
         sx={{
+          position: 'absolute',
           zIndex: '0',
           bottom: '0',
           right: '0',

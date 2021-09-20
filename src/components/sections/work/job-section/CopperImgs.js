@@ -1,7 +1,6 @@
 import { Image } from 'theme-ui';
 
 const imgStyles = {
-  position: 'absolute',
   m: 'auto',
   opacity: '0.95',
   objectFit: 'cover',
@@ -25,16 +24,16 @@ function CopperImgs() {
     <div sx={{
       position: 'relative',
       flex: '1 0 auto',
-      alignSelf: 'center',
-      minHeight: ['150rem', '350rem', '350rem'],
+      textAlign: 'center',
       width: ['100%', '100%', 'auto'],
-      my: [4, 0, 0],
+      my: 4,
     }}
     >
       <Image
         alt="Copper Companies Page"
         src="images/work/copper-companies-list.png"
         sx={{
+          position: 'absolute',
           zIndex: '0',
           bottom: '0',
           right: '0',
@@ -47,6 +46,7 @@ function CopperImgs() {
         alt="Copper Contact Page"
         src="images/work/copper-contact.jpeg"
         sx={{
+          position: 'relative',
           zIndex: '1',
           top: '0',
           bottom: '0',
@@ -60,6 +60,7 @@ function CopperImgs() {
         alt="Copper AMP Email Gif"
         src="images/work/copper-amp-email.png"
         sx={{
+          position: 'absolute',
           zIndex: '2',
           top: 0,
           bottom: '20%',
