@@ -1,7 +1,23 @@
 import JobSection from 'components/sections/work/job-section/JobSection';
 import PriceSpiderImgs from 'components/sections/work/job-section/PriceSpiderImgs';
 
-const TECH_KEYS = ['NODEJS', 'SASS', 'HTML5'];
+const TECH_KEYS = [
+  'ANGULARJS',
+  'EXPRESSJS',
+  'NODEJS',
+  'HIGHCHARTS',
+  'HTML5',
+  'CSS3',
+  'SASS',
+  'HANDLEBARS',
+  'POSTGRESQL',
+  'MONGODB',
+  'ASP_NET',
+  'CSHARP',
+  'REGEX',
+  'GOOGLE_WEB_DESIGNER',
+  'INTELLI_J',
+];
 
 function JobSectionPriceSpider() {
   return (
