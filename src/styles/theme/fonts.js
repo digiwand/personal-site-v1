@@ -27,7 +27,7 @@ const fonts = {
     heading: 1.125,
   },
   letterSpacings: {
-    body: '1.6rem',
+    body: ['0.8rem', '1.6rem', '1.6rem'],
     header: '2.4rem',
     caps: '0.2em',
   },
@@ -39,6 +39,7 @@ const fonts = {
       letterSpacing: 'body',
       lineHeight: 'body',
       color: 'text',
+      fontSize: ['14rem', 1, 2],
     },
     heading: {
       fontFamily: 'heading',

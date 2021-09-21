@@ -39,7 +39,8 @@ function JobSection({ children, ...props }) {
         variant: 'glass',
         pt: 5,
         pb: 4,
-        px: 4,
+        px: [3, 4, 4],
+        textAlign: ['center', 'left', 'left'],
       }}
     >
       <Themed.h2 sx={{
@@ -47,6 +48,7 @@ function JobSection({ children, ...props }) {
         variant: 'text.shadow',
         display: ['block', 'block', 'inline-block'],
         pr: [0, 0, 3],
+        letterSpacing: ['-0.5rem', '3rem', '3rem'],
         color: (t) => t.colors.workHeader,
       }}
       >
@@ -66,8 +68,8 @@ function JobSection({ children, ...props }) {
 
       <Themed.h4 sx={{
         display: 'block',
-        pt: 4,
-        pb: [1, 2, 2],
+        pt: [3, 4, 4],
+        pb: 2,
         color: (t) => t.colors.workSubHeader,
       }}
       >
@@ -78,13 +80,14 @@ function JobSection({ children, ...props }) {
         {date}
       </Themed.h5>
 
-      <Themed.p sx={{ py: 4 }}>
+      <Themed.p sx={{ py: 4, textAlign: 'left' }}>
         {children}
       </Themed.p>
 
       <div sx={{
         pt: [3, 3, 2],
         pb: [3, 3, 4],
+        textAlign: 'left',
       }}
       >
         {techKeys.map((techKey) => (

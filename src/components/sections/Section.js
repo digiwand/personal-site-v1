@@ -38,7 +38,7 @@ const Section = ({ id, children, className }, ref) => (
       display: 'flex',
       justifyContent: 'center',
       flexDirection: 'column',
-      px: [4, 6, 6],
+      px: [2, 5, 6],
       py: [5, 6, 6],
     }}
   >

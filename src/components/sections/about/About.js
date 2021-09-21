@@ -22,9 +22,10 @@ const AboutSection = (props, ref) => (
     >
       <div sx={{
         flex: '1 1 auto',
-        pr: [0, 0, 6],
         pt: [2, 6, 3],
         pb: [6, 0, 0],
+        pr: [3, 0, 6],
+        pl: [3, 0, 0],
       }}
       >
         <Fade>
@@ -35,11 +36,8 @@ const AboutSection = (props, ref) => (
         <Fade delay={420}>
           <Themed.p sx={{
             maxWidth: ['initial', 'initial', '520rem'],
-            // color: (t) => `${t.colors.aboutText}`,
           }}
           >
-            {/* <br />
-            Hello! I&apos;m Ariella Vu. */}
             <br />
             I started my career as a full-stack programmer over 6 years ago. Now I specialize in building websites using
             JavaScript Frameworks (React, Ember, and Angular 1.x).
