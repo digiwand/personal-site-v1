@@ -19,7 +19,7 @@ const fonts = {
     '58rem', // 9
   ],
   fontWeights: {
-    body: 300,
+    body: 400,
     bold: 700,
   },
   lineHeights: {
