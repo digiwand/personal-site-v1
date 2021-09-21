@@ -17,6 +17,7 @@ function TechSection(props, ref) {
         minHeight: '0',
         py: [5, 6, 6],
         zIndex: 1,
+        overflow: 'hidden',
       }}
     >
       <Fade>

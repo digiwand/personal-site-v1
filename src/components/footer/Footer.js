@@ -37,6 +37,7 @@ function Footer() {
             display: ['flex', 'block', 'inline-block'],
             flexWrap: 'wrap',
             justifyContent: 'center',
+            flexDirection: ['column', 'row', 'row'],
             pt: [3, 2, 0],
           }}
         >
