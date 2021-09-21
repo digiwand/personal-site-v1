@@ -1,16 +1,17 @@
 import { Image } from 'theme-ui';
 
 const imgStyles = {
-  position: 'absolute',
   m: 'auto',
   opacity: '0.95',
   objectFit: 'cover',
   objectPosition: 'top',
   aspectRatio: '7.7/6',
   maxWidth: '650rem',
-  width: ['75%', '50%', '43%'],
   transform: 'perspective(750px)',
   transition: '0.25s',
+  borderRadius: '4rem',
+  border: (t) => t.colors.workImgBorder,
+  width: ['75%', '50%', '43%'],
 
   '&:hover': {
     opacity: '1',
@@ -25,16 +26,16 @@ function PriceSpiderImgs() {
     <div sx={{
       position: 'relative',
       flex: '1 0 auto',
-      minHeight: '350rem',
+      textAlign: 'center',
       width: ['100%', '100%', 'auto'],
-      alignSelf: 'center',
-      mt: 4,
+      my: 4,
     }}
     >
       <Image
         alt="PriceSpider Mars Where-to-buy"
         src="images/work/pricespider-wtb-mars.png"
         sx={{
+          position: 'absolute',
           zIndex: '2',
           top: 0,
           bottom: '20%',
@@ -48,6 +49,7 @@ function PriceSpiderImgs() {
         alt="PriceSpider Iams Where-to-buy"
         src="images/work/pricespider-wtb-iams.png"
         sx={{
+          position: 'relative',
           zIndex: '1',
           top: '0',
           bottom: '0',
@@ -61,6 +63,7 @@ function PriceSpiderImgs() {
         alt="PriceSpider Hoover & Dell Ads"
         src="images/work/pricespider-ads.png"
         sx={{
+          position: 'absolute',
           zIndex: '0',
           bottom: '0',
           right: '0',
