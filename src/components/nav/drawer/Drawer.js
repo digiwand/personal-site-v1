@@ -50,7 +50,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         variant: 'glass',
         position: 'fixed',
         flexDirection: 'column',
-        height: '100vh',
+        height: '100%',
         top: '0',
         right: '0',
         boxShadow: '0 0 0 0 transparent',

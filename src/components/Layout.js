@@ -135,7 +135,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
     <div
       sx={{
         variant: 'scrollbar',
-        height: '100vh',
+        height: '100%',
         width: '100%',
         minWidth: '320px',
         transition: 'background 3s, background-image 3s',

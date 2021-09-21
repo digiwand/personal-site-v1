@@ -4,7 +4,7 @@ function BlurredBackground() {
       css={{
         /** @todo update logic as this is not supported in firefox. also, consider animating */
         backdropFilter: 'blur(2rem) opacity(0.95) brightness(0.85)',
-        height: '100vh',
+        height: '100%',
         width: '100vw',
         position: 'fixed',
         left: '0',
