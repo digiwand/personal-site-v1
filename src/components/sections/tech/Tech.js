@@ -26,6 +26,7 @@ function TechSection(props, ref) {
             color: (t) => t.colors.homeHello,
             display: 'block',
             textAlign: 'center',
+            pt: [4, 0, 0],
           }}
         >
           RECENT TECHNOLOGIES
@@ -38,7 +39,7 @@ function TechSection(props, ref) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            pt: 5,
+            pt: [4, 5, 5],
           }}
         >
           <TechCarousel />

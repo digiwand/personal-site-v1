@@ -1,10 +1,12 @@
 import { Button } from 'theme-ui';
 
 const menuLine = {
-  margin: '2rem 0',
-  width: '15rem',
-  height: '1rem',
+  margin: '2.5rem 0',
+  width: '24rem',
+  height: '2rem',
   transition: 'background 0.2s',
+  borderRadius: '2rem',
+  background: (t) => t.colors.glassThickBg,
 };
 
 function NavMenuButton({ onClick }) {
@@ -16,12 +18,12 @@ function NavMenuButton({ onClick }) {
         right: '0',
         display: 'flex',
         height: '54rem',
-        width: '65rem',
+        width: '60rem',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         transform: 'opacity .3s',
-        pl: 1,
+        pl: 3,
         mt: 4,
         borderTopRightRadius: 0,
         borderBottomRightRadius: 0,
@@ -31,20 +33,17 @@ function NavMenuButton({ onClick }) {
       onClick={onClick}
       aria-label="Open menu drawer"
     >
-      <span sx={(theme) => ({
-        background: `${theme.colors.text}`,
+      <span sx={{
         ...menuLine,
-      })}
+      }}
       />
-      <span sx={(theme) => ({
-        background: `${theme.colors.text}`,
+      <span sx={{
         ...menuLine,
-      })}
+      }}
       />
-      <span sx={(theme) => ({
-        background: `${theme.colors.text}`,
+      <span sx={{
         ...menuLine,
-      })}
+      }}
       />
     </Button>
   );

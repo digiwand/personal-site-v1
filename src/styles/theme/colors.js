@@ -95,6 +95,8 @@ const colors = {
     + `linear-gradient(336deg, rgba(${RGB.celeste}, 0.9), rgba(${RGB.celeste}, 1) 70.71%)`,
 
   glassBg: 'linear-gradient(70deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.30))',
+  glassThickBg: `linear-gradient(70deg, rgba(${RGB.floralWhite}, 0.65), `
+    + `rgba(${RGB.floralWhite}, 0.6), rgba(${RGB.floralWhite}, 0.65))`,
   glassBorder: '1rem solid rgba(255, 255, 255, 0.18)',
 
   error: `rgb(${RGB.upsdellRed})`,

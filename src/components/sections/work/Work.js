@@ -56,7 +56,7 @@ const WorkSection = (props, ref) => (
       gridTemplateColumns: ['auto', 'auto', '[label-start] 1fr [content-start] 2fr [end]'],
       gridTemplateRows: 'auto auto',
       columnGap: ['0', '0', '20rem'],
-      rowGap: '80rem',
+      rowGap: [5, 6, 6],
     }}
     >
 
@@ -64,8 +64,8 @@ const WorkSection = (props, ref) => (
         sx={{
           variant: 'text.sideHeading',
           gridColumnStart: 'label-start',
-          pt: [5, 0, 5],
-          pb: [4, 4, 5],
+          pt: [0, 0, 5],
+          pb: [0, 0, 5],
         }}
       >
         WORK EXPERIENCE
@@ -77,7 +77,7 @@ const WorkSection = (props, ref) => (
         sx={{
           variant: 'text.sideHeading',
           gridColumnStart: 'label-start',
-          py: [4, 4, 5],
+          pt: [0, 0, 5],
         }}
       >
         EDUCATION
