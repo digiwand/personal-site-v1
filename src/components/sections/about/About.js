@@ -13,7 +13,7 @@ const AboutSection = (props, ref) => (
     ref={ref}
     sx={{
       minHeight: '80vh',
-      pt: 6,
+      pt: [3, 6, 6],
     }}
   >
     <Flex sx={{
