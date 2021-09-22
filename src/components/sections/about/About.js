@@ -29,12 +29,13 @@ const AboutSection = (props, ref) => (
       }}
       >
         <Fade>
-          <Themed.h2 sx={{ pb: 4 }}>
+          <Themed.h2 sx={{ pt: [6, 0, 0], pb: 4 }}>
             About
           </Themed.h2>
         </Fade>
         <Fade delay={420}>
           <Themed.p sx={{
+            minWidth: ['initial', 'initial', '310rem'],
             maxWidth: ['initial', 'initial', '520rem'],
           }}
           >
@@ -56,34 +57,34 @@ const AboutSection = (props, ref) => (
         </Fade>
       </div>
 
-      <div sx={{
+      <FrameCircle sx={{
         flex: '1 1 auto',
-        display: 'flex',
+        display: 'inline-block',
         justifyContent: 'center',
         alignSelf: 'center',
-        pb: [6, 0, 0],
+        transition: 'width 0.3s',
+        maxWidth: ['330rem', '390rem', '390rem'],
+        width: ['90%', '100%', '100%'],
+        mx: ['auto', 'initial', 'initial'],
       }}
       >
-        <FrameCircle sx={{
-          maxWidth: '390rem',
-          width: ['90%', '100%', '100%'],
-          display: ['flex', 'flex', 'inline-block'],
-          mx: ['auto', 'initial', 'initial'],
-        }}
-        >
-          <Image
-            alt="Profile Picture"
-            src="/images/profile.jpg"
-            width="390"
-            height="461.33"
-            sx={{
-              zIndex: 1,
-              boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
-              filter: (t) => t.colors.aboutImgFilter,
-            }}
-          />
-        </FrameCircle>
-      </div>
+        <Image
+          alt="Profile Picture"
+          src="/images/profile.jpg"
+          width="390"
+          height="461.33"
+          sx={{
+            display: 'block',
+            objectFit: 'cover',
+            objectPosition: 'top',
+            width: '100%',
+            height: 'auto',
+            aspectRatio: '1/1',
+            boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
+            filter: (t) => t.colors.aboutImgFilter,
+          }}
+        />
+      </FrameCircle>
     </Flex>
   </Section>
 );
