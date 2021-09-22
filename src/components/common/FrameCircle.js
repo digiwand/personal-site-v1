@@ -1,10 +1,24 @@
+import React from 'react';
 import Fade from 'react-reveal';
 
 const frameDistance = 46;
 const frameDistanceMobile = 34;
 
+/**
+ * To use FrameCircle, pass an image element as the "children" prop
+ */
 function FrameCircle({ children, ...props }) {
   const { className } = props;
+  const Image = React.cloneElement(children, {
+    style: {
+      position: 'absolute',
+      objectFit: 'cover',
+      objectPosition: 'top',
+      width: '100%',
+      height: '100%',
+      boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
+    },
+  });
 
   return (
     <div
@@ -47,13 +61,16 @@ function FrameCircle({ children, ...props }) {
             position: 'relative',
             display: 'block',
             width: '100%',
-            height: '100%',
+            height: '0',
             borderRadius: '50%',
             overflow: 'hidden',
             aspectRatio: '1/1',
+            padding: 0,
+            '--aspect-ratio': '1/1',
+            paddingBottom: 'calc(100%/(var(--aspect-ratio)))',
           }}
           >
-            {children}
+            {Image}
           </div>
         </div>
       </Fade>

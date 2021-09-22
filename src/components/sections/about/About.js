@@ -74,13 +74,6 @@ const AboutSection = (props, ref) => (
           width="390"
           height="461.33"
           sx={{
-            display: 'block',
-            objectFit: 'cover',
-            objectPosition: 'top',
-            width: '100%',
-            height: 'auto',
-            aspectRatio: '1/1',
-            boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
             filter: (t) => t.colors.aboutImgFilter,
           }}
         />
