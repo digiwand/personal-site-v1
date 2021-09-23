@@ -11,13 +11,14 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  imgAspectRatio: PropTypes.string,
-  imgConfigs: PropTypes.element.isRequired,
+  imgConfigs: PropTypes.arrayOf(PropTypes.shape({
+    alt: PropTypes.string,
+    src: PropTypes.string,
+  })).isRequired,
 };
 
 const defaultProps = {
   className: '',
-  imgAspectRatio: '3/1',
 };
 
 function JobSection({ children, ...props }) {
@@ -27,7 +28,6 @@ function JobSection({ children, ...props }) {
     title,
     subtitle,
     date,
-    imgAspectRatio,
     imgConfigs,
     techKeys,
   } = props;
@@ -104,7 +104,7 @@ function JobSection({ children, ...props }) {
         ))}
       </div>
 
-      <JobSectionImgTrio aspectRatio={imgAspectRatio} imgConfigs={imgConfigs} />
+      <JobSectionImgTrio imgConfigs={imgConfigs} />
 
     </div>
   );
