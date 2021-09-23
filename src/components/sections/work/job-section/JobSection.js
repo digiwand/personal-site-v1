@@ -6,7 +6,6 @@ import JobSectionImgTrio from './JobSectionImgTrio';
 
 const propTypes = {
   className: PropTypes.string,
-  descriptionSide: PropTypes.string,
   companyName: PropTypes.string.isRequired,
   techKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
   title: PropTypes.string.isRequired,
@@ -18,7 +17,6 @@ const propTypes = {
 
 const defaultProps = {
   className: '',
-  descriptionSide: 'left',
   imgAspectRatio: '3/1',
 };
 

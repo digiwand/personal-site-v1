@@ -40,7 +40,6 @@ function JobSectionPriceSpider() {
       title="Software Engineer"
       subtitle="(Full-Stack)"
       date="Feb 2015 - Jun 2016"
-      descriptionSide="left"
       techKeys={TECH_KEYS}
       imgConfigs={IMG_CONFIGS}
     >

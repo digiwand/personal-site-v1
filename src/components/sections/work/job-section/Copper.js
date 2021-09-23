@@ -42,7 +42,6 @@ function JobSectionCopper() {
       subtitle="(Client-Side)"
       date="Aug 2016 - Apr 2021"
       techKeys={TECH_KEYS}
-      descriptionSide="right"
       imgConfigs={IMG_CONFIGS}
     >
       At Copper, I led numerous front-end projects for the CRM platform. These projects include, but are not limited to,
