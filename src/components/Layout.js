@@ -139,7 +139,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         width: '100%',
         minWidth: '320px',
         transition: 'background 3s, background-image 3s',
-        background: (t) => t.colors.backgroundMain,
+        background: (t) => [t.colors.backgroundMainMobile, t.colors.backgroundMainMobile, t.colors.backgroundMain],
         // unfortunately, background flickers if we use 'local' here
         backgroundAttachment: 'fixed',
 
