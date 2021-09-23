@@ -50,7 +50,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         variant: 'glass',
         position: 'fixed',
         flexDirection: 'column',
-        height: '100vh',
+        height: '100%',
         top: '0',
         right: '0',
         boxShadow: '0 0 0 0 transparent',
@@ -61,7 +61,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
         transform: ['translateX(100%)', `translateX(${tabletWidth})`],
         width: ['100%', tabletWidth],
         background: t.colors.navDrawerBg,
-        transition: 'box-shadow 0.3s, transform 0.3s ease-in, width 0.3s',
+        transition: 'box-shadow 0.3s, transform 0.4s ease-in, width 0.3s',
 
         '.NavDrawer_nav a': {
           ...sxFadeInInitialize,

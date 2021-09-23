@@ -135,11 +135,11 @@ function Layout({ children, sectionTrackingPixelRefs }) {
     <div
       sx={{
         variant: 'scrollbar',
-        height: '100vh',
+        height: '100%',
         width: '100%',
         minWidth: '320px',
         transition: 'background 3s, background-image 3s',
-        background: (t) => t.colors.backgroundMain,
+        background: (t) => [t.colors.backgroundMainMobile, t.colors.backgroundMainMobile, t.colors.backgroundMain],
         // unfortunately, background flickers if we use 'local' here
         backgroundAttachment: 'fixed',
 
@@ -159,6 +159,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         <link rel="icon" href="/favicon.ico" />
         <LinkPreloadFonts />
 
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0" />
         <meta
           name="description"

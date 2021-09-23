@@ -1,5 +1,4 @@
 import JobSection from 'components/sections/work/job-section/JobSection';
-import PriceSpiderImgs from 'components/sections/work/job-section/PriceSpiderImgs';
 
 const TECH_KEYS = [
   'ANGULARJS',
@@ -19,6 +18,21 @@ const TECH_KEYS = [
   'INTELLI_J',
 ];
 
+const IMG_CONFIGS = [
+  {
+    alt: 'PriceSpider Mars Where-to-buy',
+    src: 'images/work/pricespider-wtb-mars.png',
+  },
+  {
+    alt: 'PriceSpider Iams Where-to-buy',
+    src: 'images/work/pricespider-wtb-iams.png',
+  },
+  {
+    alt: 'PriceSpider Hoover & Dell Ads',
+    src: 'images/work/pricespider-ads.png',
+  },
+];
+
 function JobSectionPriceSpider() {
   return (
     <JobSection
@@ -26,9 +40,8 @@ function JobSectionPriceSpider() {
       title="Software Engineer"
       subtitle="(Full-Stack)"
       date="Feb 2015 - Jun 2016"
-      descriptionSide="left"
       techKeys={TECH_KEYS}
-      img={<PriceSpiderImgs />}
+      imgConfigs={IMG_CONFIGS}
     >
       I started the Angular 1.x reporting platform here from scratch along-side a fellow server developer and
       engineer manager. Using PostgresSQL, I architected the user, roles, and permissions schemas. Then, I
