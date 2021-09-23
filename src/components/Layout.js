@@ -105,12 +105,6 @@ function LinkPreloadFonts() {
         as="font"
         crossOrigin=""
       />
-      <link
-        rel="preload"
-        href="/fonts/Rubik/static/Rubik-Thin.ttf"
-        as="font"
-        crossOrigin=""
-      />
     </>
   );
 }
