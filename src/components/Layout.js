@@ -39,12 +39,12 @@ function LinkPreloadFonts() {
         as="font"
         crossOrigin=""
       />
-      <link
+      {/* <link
         rel="preload"
         href="/fonts/Roboto/Roboto-Black.ttf"
         as="font"
         crossOrigin=""
-      />
+      /> */}
       <link
         rel="preload"
         href="/fonts/Roboto/Roboto-Bold.ttf"
@@ -75,12 +75,12 @@ function LinkPreloadFonts() {
         as="font"
         crossOrigin=""
       />
-      <link
+      {/* <link
         rel="preload"
         href="/fonts/Rubik/static/Rubik-Black.ttf"
         as="font"
         crossOrigin=""
-      />
+      /> */}
       <link
         rel="preload"
         href="/fonts/Rubik/static/Rubik-Bold.ttf"
