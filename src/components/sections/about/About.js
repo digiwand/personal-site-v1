@@ -72,6 +72,7 @@ const AboutSection = (props, ref) => (
         width="390"
         height="461.33"
         sx={{
+          boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
           filter: (t) => t.colors.aboutImgFilter,
         }}
       />

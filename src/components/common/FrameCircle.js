@@ -1,5 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal';
+import AspectRatio from 'components/common/AspectRatio';
 
 const frameDistance = 46;
 const frameDistanceMobile = 34;
@@ -16,16 +17,14 @@ function FrameCircle({ children, ...props }) {
       objectPosition: 'top',
       width: '100%',
       height: '100%',
-      boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
+
     },
   });
 
   return (
     <div
       className={className}
-      sx={{
-        position: 'relative',
-      }}
+      sx={{ position: 'relative' }}
     >
       <Fade>
         <div>
@@ -57,21 +56,9 @@ function FrameCircle({ children, ...props }) {
             borderRadius: '50%',
           }}
           />
-          <div sx={{
-            position: 'relative',
-            display: 'block',
-            width: '100%',
-            height: '0',
-            borderRadius: '50%',
-            overflow: 'hidden',
-            aspectRatio: '1/1',
-            padding: 0,
-            '--aspect-ratio': '1/1',
-            paddingBottom: 'calc(100%/(var(--aspect-ratio)))',
-          }}
-          >
+          <AspectRatio sx={{ borderRadius: '50%' }}>
             {Image}
-          </div>
+          </AspectRatio>
         </div>
       </Fade>
     </div>

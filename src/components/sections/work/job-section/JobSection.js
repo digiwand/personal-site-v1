@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Themed } from 'theme-ui';
 import PropTypes from 'prop-types';
 import TECH from 'constants/tech';
+import JobSectionImgTrio from './JobSectionImgTrio';
 
 const propTypes = {
   className: PropTypes.string,
@@ -11,12 +12,14 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  img: PropTypes.element.isRequired,
+  imgAspectRatio: PropTypes.string,
+  imgConfigs: PropTypes.element.isRequired,
 };
 
 const defaultProps = {
   className: '',
   descriptionSide: 'left',
+  imgAspectRatio: '3/1',
 };
 
 function JobSection({ children, ...props }) {
@@ -26,7 +29,8 @@ function JobSection({ children, ...props }) {
     title,
     subtitle,
     date,
-    img,
+    imgAspectRatio,
+    imgConfigs,
     techKeys,
   } = props;
 
@@ -102,7 +106,7 @@ function JobSection({ children, ...props }) {
         ))}
       </div>
 
-      {img}
+      <JobSectionImgTrio aspectRatio={imgAspectRatio} imgConfigs={imgConfigs} />
 
     </div>
   );
