@@ -12,7 +12,13 @@ const TECH = {
   },
   ALFRED: {
     displayName: 'Alfred for macOS',
-    imgElem: <Image alt="Alfred" src="images/tech/alfred@2x.png" variant="tech" />,
+    imgElem: (
+      <picture>
+        <source srcSet="/images/tech/alfred@2x.webp 2x" type="image/webp" />
+        <source srcSet="/images/tech/alfred@2x.png 2x" type="image/png" />
+        <Image alt="Alfred" src="images/tech/alfred@2x.png" variant="tech" />
+      </picture>
+    ),
     href: 'https://www.alfredapp.com/',
   },
   ANGULARJS: {
@@ -52,7 +58,13 @@ const TECH = {
   },
   DASH: {
     displayName: 'Dash for macOS',
-    imgElem: <Image alt="Dash" src="images/tech/dash@2x.png" variant="tech" />,
+    imgElem: (
+      <picture>
+        <source srcSet="/images/tech/dash@2x.webp 2x" type="image/webp" />
+        <source srcSet="/images/tech/dash@2x.png 2x" type="image/png" />
+        <Image alt="Dash" src="images/tech/dash@2x.png" variant="tech" />
+      </picture>
+    ),
     href: 'https://kapeli.com/dash',
   },
   DOCUMENTATION: {
