@@ -1,5 +1,8 @@
+import Zoom from 'react-reveal/Zoom';
 import ThemeDropdownList from 'components/nav/theme-selector/DropdownList';
 import ThemeNextIconButton from 'components/nav/theme-selector/NextIconButton';
+
+const totalDurationOfTabsAndIcons = 4060;
 
 function ThemeDropdown() {
   return (
@@ -20,7 +23,9 @@ function ThemeDropdown() {
         },
       }}
     >
-      <ThemeNextIconButton />
+      <Zoom delay={totalDurationOfTabsAndIcons + 400} duration={600}>
+        <ThemeNextIconButton />
+      </Zoom>
       <ThemeDropdownList />
     </div>
   );

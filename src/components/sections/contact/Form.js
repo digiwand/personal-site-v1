@@ -1,6 +1,7 @@
 import emailjs from 'emailjs-com';
 import { useRef, useState } from 'react';
 import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal/Zoom';
 import { Button } from 'theme-ui';
 
 import { ContactFormInput, ContactFormTextArea } from 'components/sections/contact/FormInputs';
@@ -106,20 +107,23 @@ function ContactForm() {
           />
         </Fade>
 
-        <Fade delay={800}>
-          <div sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-            pt: [1, 0, 0],
-          }}
-          >
+        <div sx={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+          pt: [1, 0, 0],
+        }}
+        >
+          <Fade delay={1000}>
             <FormRecaptcha recaptchaRef={recaptchaRef} />
+          </Fade>
+
+          <Zoom duration={800} delay={1000}>
             <Button sx={{ flex: '0 0 auto;' }}>
               <span>Send</span>
             </Button>
-          </div>
-        </Fade>
+          </Zoom>
+        </div>
       </form>
 
       <FormSentMessage isVisible={hasSent} email={email} />

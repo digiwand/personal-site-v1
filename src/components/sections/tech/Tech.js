@@ -33,18 +33,16 @@ function TechSection(props, ref) {
         </Themed.h3>
       </Fade>
 
-      <Fade bottom cascade>
-        <div
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            pt: [4, 5, 5],
-          }}
-        >
-          <TechCarousel />
-        </div>
-      </Fade>
+      <div
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          pt: [4, 5, 5],
+        }}
+      >
+        <TechCarousel />
+      </div>
     </Section>
   );
 }

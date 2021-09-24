@@ -46,10 +46,11 @@ const propTypes = {
 function NavTabs({ children, ...props }) {
   const { activeSectionId } = props;
 
-  const tabs = Object.keys(SECTION_DISPLAY_NAME).map((key) => {
+  const tabs = Object.keys(SECTION_DISPLAY_NAME).map((key, index) => {
     const displayName = SECTION_DISPLAY_NAME[key];
     return (
       <NavTab
+        index={index}
         key={`NavTab-${key}`}
         href={`/#${key}`}
         displayName={displayName}

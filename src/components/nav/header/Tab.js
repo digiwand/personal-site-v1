@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import Flip from 'react-reveal/Flip';
 
 const propTypes = {
   displayName: PropTypes.string.isRequired,
@@ -13,7 +14,7 @@ const defaultProps = {
 
 function NavTab({ children, ...props }) {
   const {
-    className, displayName, href, isActive,
+    className, displayName, href, index, isActive,
   } = props;
 
   const hoverText = (
@@ -66,7 +67,9 @@ function NavTab({ children, ...props }) {
         is-active={String(isActive)}
       >
         <span sx={{ position: 'relative' }}>
-          {displayName}
+          <Flip top cascade delay={700 + (index * 500)}>
+            {displayName}
+          </Flip>
           {hoverText}
         </span>
       </a>

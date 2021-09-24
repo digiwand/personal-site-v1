@@ -1,4 +1,5 @@
 import { keyframes } from '@emotion/react';
+import Flip from 'react-reveal/Flip';
 import TECH from 'constants/tech';
 
 const RECENT_TECH = [
@@ -115,7 +116,9 @@ function Carousel() {
               rel="noopener noreferrer"
               target="_blank"
             >
-              {techConfig.imgElem}
+              <Flip top right delay={600 + (index * 100)}>
+                {techConfig.imgElem}
+              </Flip>
             </a>
           );
         })}

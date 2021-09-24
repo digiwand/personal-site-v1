@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+// import { keyframes } from '@emotion/react';
 import PropTypes from 'prop-types';
-import { keyframes } from '@emotion/react';
+import { useEffect, useRef, useState } from 'react';
+import Fade from 'react-reveal/Fade';
 
 import NavTabs from 'components/nav/header/Tabs';
 import NavSocialIcons from 'components/nav/header/SocialIconButtons';
@@ -11,11 +12,11 @@ import PROP_TYPE from 'constants/prop-types';
 const paddingFrame = 45;
 const paddingInsideFrame = 28;
 
-const bgChangeKeyframe = keyframes`
-  0%{background-position:10% 0%}
-  50%{background-position:91% 100%}
-  100%{background-position:10% 0%}
-`;
+// const bgChangeKeyframe = keyframes`
+//   0%{background-position:10% 0%}
+//   50%{background-position:91% 100%}
+//   100%{background-position:10% 0%}
+// `;
 
 const propTypes = {
   activeSectionId: PropTypes.string.isRequired,
@@ -75,8 +76,8 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           boxShadow: '0 6rem 10rem -6rem rgba(30, 30, 30, 0.30)',
 
           '.NavHeader_profileLogo': {
-            backgroundImage: theme.colors.navHeaderLogoBgImageScrolled,
-            animation: `${bgChangeKeyframe} 5s infinite`,
+            // backgroundImage: theme.colors.navHeaderLogoBgImageScrolled,
+            // animation: `${bgChangeKeyframe} 5s infinite`,
             fontSize: '23px',
             transform: `translateX(-${paddingInsideFrame + (paddingFrame / 2)}rem)`,
           },
@@ -97,9 +98,9 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
       <span
         className="NavHeader_profileLogo"
         sx={{
-          variant: 'text.gradient',
-          backgroundImage: (t) => `linear-gradient(45deg, ${t.colors.text}, pink)`,
-          backgroundSize: '200% 200%',
+          color: (t) => `linear-gradient(45deg, ${t.colors.text}, pink)`,
+          // variant: 'text.gradient',
+          // backgroundSize: '200% 200%',
           fontFamily: 'profile',
           fontSize: '28rem',
           lineHeight: '34rem',
@@ -107,7 +108,9 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           pl: 1,
         }}
       >
-        Ariella Vu
+        <Fade delay={600} duration={2800} cascade>
+          Ariella Vu
+        </Fade>
       </span>
       <div
         className="NavHeader_rightSide"
