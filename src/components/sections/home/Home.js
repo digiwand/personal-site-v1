@@ -70,17 +70,17 @@ function HomeSection(props, ref) {
               Ariella Vu.
             </Fade>
           </span>
-          <Themed.p sx={{
-            maxWidth: '540rem',
-            margin: '23rem auto',
-          }}
-          >
-            <Fade delay={4500}>
+          <Fade delay={4200}>
+            <Themed.p sx={{
+              maxWidth: '540rem',
+              margin: '23rem auto',
+            }}
+            >
               I&apos;m a web developer who&apos;s passionate about clean code, delightful user
               experiences, and efficiency. Currently exploring new opportunities using React or Ember.js.
-            </Fade>
-          </Themed.p>
-          <Zoom delay={6000} duration={800}>
+            </Themed.p>
+          </Fade>
+          <Zoom delay={500} duration={800}>
             <ResumeButton sx={{ mt: 4 }} />
           </Zoom>
         </div>
