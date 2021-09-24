@@ -44,15 +44,15 @@ const ContactSection = (props, ref) => (
     }}
   >
 
-    <div
-      sx={{
-        variant: 'glass',
-        position: 'relative',
-        py: 5,
-        px: [4, 5, 5],
-      }}
-    >
-      <Fade>
+    <Fade>
+      <div
+        sx={{
+          variant: 'glass',
+          position: 'relative',
+          py: 5,
+          px: [4, 5, 5],
+        }}
+      >
         <Themed.h1
           sx={{
             variant: 'text.shadow',
@@ -62,23 +62,25 @@ const ContactSection = (props, ref) => (
             pb: 4,
           }}
         >
-          Contact
+          <Fade top duration={1400} cascade>
+            Contact
+          </Fade>
         </Themed.h1>
-      </Fade>
 
-      <Flex sx={{
-        flexDirection: ['column', 'column', 'row'],
-        alignItems: ['center', 'center', 'initial'],
-      }}
-      >
+        <Flex sx={{
+          flexDirection: ['column', 'column', 'row'],
+          alignItems: ['center', 'center', 'initial'],
+        }}
+        >
 
-        <ContactLeftSide />
-        <ContactDivider />
-        <ContactRightSide />
+          <ContactLeftSide />
+          <ContactDivider />
+          <ContactRightSide />
 
-      </Flex>
+        </Flex>
 
-    </div>
+      </div>
+    </Fade>
   </Section>
 );
 

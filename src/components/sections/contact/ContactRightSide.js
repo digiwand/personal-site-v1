@@ -18,11 +18,11 @@ function ContactRightSide() {
         textAlign: ['center', 'center', 'left'],
       }}
       >
-        <Fade>
-          <Themed.h3 sx={{ color: (t) => t.colors.contactSubHeader }}>
+        <Themed.h3 sx={{ color: (t) => t.colors.contactSubHeader, pb: 3 }}>
+          <Fade delay={200}>
             Send me a message
-          </Themed.h3>
-        </Fade>
+          </Fade>
+        </Themed.h3>
 
         <br />
 

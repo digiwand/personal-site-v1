@@ -1,5 +1,5 @@
 import React from 'react';
-// import Fade from 'react-reveal/Fade';
+import Fade from 'react-reveal/Fade';
 import { Themed } from 'theme-ui';
 
 import Section from 'components/sections/Section';
@@ -8,39 +8,41 @@ import JobSectionPriceSpider from 'components/sections/work/job-section/PriceSpi
 
 function EducationSection() {
   return (
-    <div sx={{
-      gridColumnStart: 'content-start',
-      maxWidth: '850rem',
-      variant: 'glass',
-      py: 5,
-      px: 4,
-    }}
-    >
-      <Themed.h2 sx={{
-        fontFamily: 'heading2',
-        variant: 'text.shadow',
-        display: 'block',
-        color: (t) => t.colors.workHeader,
+    <Fade>
+      <div sx={{
+        gridColumnStart: 'content-start',
+        maxWidth: '850rem',
+        variant: 'glass',
+        py: 5,
+        px: 4,
       }}
       >
-        B.A.S. Computer Science
-      </Themed.h2>
-      <Themed.h4 sx={{
-        display: 'block',
-        color: (t) => t.colors.workSubHeader,
-        pt: 4,
-        pb: 2,
-      }}
-      >
-        University of California Davis
-      </Themed.h4>
-      <Themed.h5 sx={{
-        color: (t) => t.colors.workHeader,
-      }}
-      >
-        Sept 2010 - Sept 2014
-      </Themed.h5>
-    </div>
+        <Themed.h2 sx={{
+          fontFamily: 'heading2',
+          variant: 'text.shadow',
+          display: 'block',
+          color: (t) => t.colors.workHeader,
+        }}
+        >
+          B.A.S. Computer Science
+        </Themed.h2>
+        <Themed.h4 sx={{
+          display: 'block',
+          color: (t) => t.colors.workSubHeader,
+          pt: 4,
+          pb: 2,
+        }}
+        >
+          University of California Davis
+        </Themed.h4>
+        <Themed.h5 sx={{
+          color: (t) => t.colors.workHeader,
+        }}
+        >
+          Sept 2010 - Sept 2014
+        </Themed.h5>
+      </div>
+    </Fade>
   );
 }
 
