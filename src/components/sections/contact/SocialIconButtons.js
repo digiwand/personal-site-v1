@@ -17,7 +17,7 @@ function ContactSocialIconButtons() {
         flex: '1 0 auto',
         pt: 5,
         pb: [3, 3, 4],
-        mx: ['auto', 'initial', 'initial'],
+        mx: ['auto', 'auto', 'initial'],
         justifyContent: ['space-between', 'space-between', 'initial'],
         alignSelf: ['center', 'center', 'initial'],
       }}
