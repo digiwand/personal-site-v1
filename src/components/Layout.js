@@ -137,14 +137,25 @@ function Layout({ children, sectionTrackingPixelRefs }) {
 
         <link rel="icon" href="/favicon.ico" />
         {/* <LinkPreloadFonts /> */}
+
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0" />
+
         <meta
           name="description"
           content={'Ariella is a web developer, React.js engineer, Ember.js programmer, and clean coder'
            + 'with over 6 years of experience. Available for new opportunities!'}
         />
         <meta name="og:title" content={siteTitle} />
+        <meta name="og:type" content="website" />
+        <meta name="og:url" content="https://ariella.dev" />
+
+        <meta name="og:image" content="https://ariella.dev/images/ariella-vu-website-preview.png" />
+        <meta name="og:image:alt" content="Preview of Portfolio" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="627" />
+
         <meta name="twitter:card" content="summary_large_image" />
 
         {/* Updates toolbar color for various browsers including Safari and Android Chrome */}
