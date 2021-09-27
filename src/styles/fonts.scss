@@ -1,13 +1,13 @@
 @font-face {
   font-family: "BarlowCondensed";
   src: url("/fonts/BarlowCondensed-Regular.ttf") format("truetype");
-  font-display: swap;
+  font-display: fallback;
 }
 @font-face {
   font-family: "BarlowCondensed";
   font-weight: 300;
   src: url("/fonts/BarlowCondensed-Thin.ttf") format("truetype");
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
@@ -20,48 +20,48 @@
   font-family: "Roboto";
   font-weight: 300;
   src: url("/fonts/Roboto/Roboto-Light.ttf") format("truetype");
-  font-display: swap;
+  font-display: fallback;
 }
 @font-face {
   font-family: "Roboto";
   font-weight: 400;
   src: url("/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
-  font-display: swap;
+  font-display: fallback;
 }
 @font-face {
   font-family: "Roboto";
   font-weight: 500;
   src: url("/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
-  font-display: swap;
+  font-display: fallback;
 }
 @font-face {
   font-family: "Roboto";
   font-weight: 700;
   src: url("/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
   font-family: "Rubik";
   font-weight: 300;
   src: url("/fonts/Rubik/static/Rubik-Light.ttf") format("truetype");
-  font-display: swap;
+  font-display: fallback;
 }
 @font-face {
   font-family: "Rubik";
   font-weight: 400;
   src: url("/fonts/Rubik/static/Rubik-Regular.ttf") format("truetype");
-  font-display: swap;
+  font-display: fallback;
 }
 @font-face {
   font-family: "Rubik";
   font-weight: 500;
   src: url("/fonts/Rubik/static/Rubik-Medium.ttf") format("truetype");
-  font-display: swap;
+  font-display: fallback;
 }
 @font-face {
   font-family: "Rubik";
   font-weight: 700;
   src: url("/fonts/Rubik/static/Rubik-Bold.ttf") format("truetype");
-  font-display: swap;
+  font-display: fallback;
 }
