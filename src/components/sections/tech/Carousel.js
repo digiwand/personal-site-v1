@@ -1,5 +1,5 @@
 import { keyframes } from '@emotion/react';
-import Flip from 'react-reveal/Flip';
+import Zoom from 'react-reveal/Zoom';
 import TECH from 'constants/tech';
 
 const RECENT_TECH = [
@@ -72,58 +72,59 @@ const mobileRadius = Math.round((mobilePanelWidth / 2) / Math.tan(Math.PI / numO
 
 function Carousel() {
   return (
-    <div
-      sx={{
-        perspective: '1000',
-        position: 'relative',
-        width: [`${mobilePanelWidth}rem`, `${tabletPanelWidth}rem`, `${panelWidth}rem`],
-        height: `${panelHeight}rem`,
-        transition: 'width 1s, transform 1s',
-      }}
-    >
-      <div sx={{
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        transformStyle: 'preserve-3d',
-        animation: `${rotate360} 60s infinite forwards linear`,
-      }}
-      >
-        {RECENT_TECH.map((key, index) => {
-          const techConfig = TECH[key];
 
-          return (
-            <a
-              key={techConfig.displayName}
-              sx={{
-                position: 'absolute',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: [`${mobileImgWidth}rem`, `${tabletImgWidth}rem`, `${imgWidth}rem`],
-                height: `${imgHeight}rem`,
-                left: `${imgPadding}rem`,
-                top: `${imgPadding}rem`,
-                background: (t) => t.colors.carouselItemBg,
-                transition: 'height 1s, width: 1s, transform 1s',
-                transform: [
-                  `rotateY(${rotationDeg * index}deg) translateZ(${mobileRadius}rem)`,
-                  `rotateY(${rotationDeg * index}deg) translateZ(${tabletRadius}rem)`,
-                  `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
-                ],
-              }}
-              href={techConfig.href}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <Flip top right delay={600 + (index * 100)}>
+    <Zoom duration={1800}>
+      <div
+        sx={{
+          perspective: '1000',
+          position: 'relative',
+          width: [`${mobilePanelWidth}rem`, `${tabletPanelWidth}rem`, `${panelWidth}rem`],
+          height: `${panelHeight}rem`,
+          transition: 'width 1s, transform 1s',
+        }}
+      >
+        <div sx={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          transformStyle: 'preserve-3d',
+          animation: `${rotate360} 60s infinite forwards linear`,
+        }}
+        >
+          {RECENT_TECH.map((key, index) => {
+            const techConfig = TECH[key];
+
+            return (
+              <a
+                key={techConfig.displayName}
+                sx={{
+                  position: 'absolute',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: [`${mobileImgWidth}rem`, `${tabletImgWidth}rem`, `${imgWidth}rem`],
+                  height: `${imgHeight}rem`,
+                  left: `${imgPadding}rem`,
+                  top: `${imgPadding}rem`,
+                  background: (t) => t.colors.carouselItemBg,
+                  transition: 'height 1s, width: 1s, transform 1s',
+                  transform: [
+                    `rotateY(${rotationDeg * index}deg) translateZ(${mobileRadius}rem)`,
+                    `rotateY(${rotationDeg * index}deg) translateZ(${tabletRadius}rem)`,
+                    `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
+                  ],
+                }}
+                href={techConfig.href}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 {techConfig.imgElem}
-              </Flip>
-            </a>
-          );
-        })}
+              </a>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </Zoom>
   );
 }
 
