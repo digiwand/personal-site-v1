@@ -24,6 +24,8 @@ function ContactSocialIconButtons() {
     >
       <SocialIconButtons
         sx={{
+          height: '48rem',
+          width: '48rem',
           mr: [0, 0, 4],
           zIndex: '1',
 
