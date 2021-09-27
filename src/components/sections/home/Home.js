@@ -63,7 +63,9 @@ function HomeSection(props, ref) {
               pb: [3, null, null],
               display: 'inline-block',
               // fix font from chopping off
-              pl: 2,
+              '&>.react-reveal > span:first-of-type': {
+                pl: 2,
+              },
             }}
           >
             <Fade delay={2400} duration={1400} cascade>
