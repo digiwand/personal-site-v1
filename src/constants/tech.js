@@ -37,7 +37,7 @@ const TECH = {
   CHAI: {
     displayName: 'Chai',
     href: 'https://www.chaijs.com/',
-    imgElem: <Image alt="Chai" src="svg/tech/chai.svg" variant="tech" height="48rem" width="41.5" />,
+    imgElem: <Image alt="Chai" src="svg/tech/chai.svg" variant="tech" height="48rem" width="41.5rem" />,
   },
   CHROME_DEV_TOOLS: {
     displayName: 'Chrome Dev Tools',
