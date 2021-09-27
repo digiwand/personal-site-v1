@@ -33,27 +33,23 @@ function LinkPreloadFonts() {
         as="font"
         crossOrigin=""
       />
+
       <link
         rel="preload"
         href="/fonts/MarckScript-Regular.ttf"
         as="font"
         crossOrigin=""
       />
-      {/* <link
-        rel="preload"
-        href="/fonts/Roboto/Roboto-Black.ttf"
-        as="font"
-        crossOrigin=""
-      /> */}
+
       <link
         rel="preload"
-        href="/fonts/Roboto/Roboto-Bold.ttf"
+        href="/fonts/Roboto/Roboto-Light.ttf"
         as="font"
         crossOrigin=""
       />
       <link
         rel="preload"
-        href="/fonts/Roboto/Roboto-Light.ttf"
+        href="/fonts/Roboto/Roboto-Bold.ttf"
         as="font"
         crossOrigin=""
       />
@@ -69,18 +65,7 @@ function LinkPreloadFonts() {
         as="font"
         crossOrigin=""
       />
-      <link
-        rel="preload"
-        href="/fonts/Roboto/Roboto-Thin.ttf"
-        as="font"
-        crossOrigin=""
-      />
-      {/* <link
-        rel="preload"
-        href="/fonts/Rubik/static/Rubik-Black.ttf"
-        as="font"
-        crossOrigin=""
-      /> */}
+
       <link
         rel="preload"
         href="/fonts/Rubik/static/Rubik-Bold.ttf"
