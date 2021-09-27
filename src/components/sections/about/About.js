@@ -68,16 +68,20 @@ const AboutSection = (props, ref) => (
       mx: ['auto', 'initial', 'initial'],
     }}
     >
-      <Image
-        alt="Profile Picture"
-        src="/images/profile.jpg"
-        width="390"
-        height="461.33"
-        sx={{
-          boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
-          filter: (t) => t.colors.aboutImgFilter,
-        }}
-      />
+      <picture>
+        <source srcSet="/images/profile.webp, /images/profile@2x.webp 2x" type="image/webp" />
+        <source srcSet="/images/profile.png, /images/profile@2x.png 2x" type="image/png" />
+        <Image
+          alt="Profile Picture"
+          src="/images/profile.png"
+          width="390"
+          height="461.33"
+          sx={{
+            boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
+            filter: (t) => t.colors.aboutImgFilter,
+          }}
+        />
+      </picture>
     </FrameCircle>
   </Section>
 );
