@@ -8,7 +8,7 @@ import Nav from 'components/nav/Nav';
 
 import PROP_TYPE from 'constants/prop-types';
 
-const siteTitle = 'Ariella Vu';
+const siteTitle = 'Ariella Vu | Software Engineer | Personal Website';
 
 const propTypes = {
   sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF),
@@ -136,16 +136,33 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         <title>{siteTitle}</title>
 
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://ariella.dev" />
+
         {/* <LinkPreloadFonts /> */}
 
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0" />
+
         <meta
           name="description"
-          content="Ariella Vu's personal website and resume"
+          content={'Ariella is a web developer, React.js engineer, Ember.js programmer, and clean coder'
+           + 'with over 6 years of experience. Available for new opportunities!'}
         />
         <meta name="og:title" content={siteTitle} />
+        <meta name="og:type" content="website" />
+        <meta name="og:url" content="https://ariella.dev" />
+
+        <meta name="og:image" content="https://ariella.dev/images/ariella-vu-website-preview.png" />
+        <meta name="og:image:alt" content="Preview of Portfolio" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="627" />
+
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@ariellanvu" />
+        <meta name="twitter:site" content="@ariellanvu" />
+        <meta name="twitter:title" content="Ariella Vu | Personal Website" />
+        <meta name="twitter:image" content="https://ariella.dev/images/ariella-vu-website-preview.png" />
 
         {/* Updates toolbar color for various browsers including Safari and Android Chrome */}
         <meta name="theme-color" content={rawColors.text} />

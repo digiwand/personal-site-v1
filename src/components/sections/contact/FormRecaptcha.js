@@ -16,14 +16,16 @@ const propTypes = {
 function FormRecaptcha({ recaptchaRef }) {
   return (
     <div sx={{
-      fontSize: '10rem',
+      fontSize: 0,
       letterSpacing: '1rem',
-      maxWidth: '310rem',
+      maxWidth: '350rem',
       textAlign: 'right',
       height: 'fit-content',
       pr: [3, 4, 4],
       pt: 1,
       color: (t) => t.colors.contactReCaptcha,
+      /** @hack improve SEO well supporting smaller than 12px font */
+      transform: 'scale(0.95)',
     }}
     >
       <ReCAPTCHA
