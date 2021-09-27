@@ -2,6 +2,7 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  poweredByHeader: false,
   webpack: (config, {
     buildId, /* , dev, isServer, defaultLoaders, webpack, */
   }) => {
