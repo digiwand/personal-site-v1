@@ -50,7 +50,7 @@ function HomeSection(props, ref) {
             color: (t) => t.colors.homeHello,
           }}
           >
-            <Fade top delay={1600} duration={1400} cascade>
+            <Fade top delay={1600} duration={600} cascade>
               Hello, I&apos;m
             </Fade>
           </Themed.h2>
@@ -66,11 +66,11 @@ function HomeSection(props, ref) {
               pl: 2,
             }}
           >
-            <Fade delay={3000} duration={2000} cascade>
+            <Fade delay={2400} duration={1400} cascade>
               Ariella Vu.
             </Fade>
           </span>
-          <Fade delay={4200}>
+          <Fade delay={3800} duration={1800}>
             <Themed.p sx={{
               maxWidth: '540rem',
               margin: '23rem auto',
@@ -80,7 +80,7 @@ function HomeSection(props, ref) {
               experiences, and efficiency. Currently exploring new opportunities using React or Ember.js.
             </Themed.p>
           </Fade>
-          <Zoom delay={500} duration={800}>
+          <Zoom delay={5800} duration={800}>
             <ResumeButton sx={{ mt: 4 }} />
           </Zoom>
         </div>
