@@ -8,7 +8,7 @@ import Nav from 'components/nav/Nav';
 
 import PROP_TYPE from 'constants/prop-types';
 
-const siteTitle = 'Ariella Vu';
+const siteTitle = 'Ariella Vu | Software Engineer | Personal Website';
 
 const propTypes = {
   sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF),
@@ -137,12 +137,12 @@ function Layout({ children, sectionTrackingPixelRefs }) {
 
         <link rel="icon" href="/favicon.ico" />
         {/* <LinkPreloadFonts /> */}
-
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0" />
         <meta
           name="description"
-          content="Ariella Vu's personal website and resume"
+          content={'Ariella is a web developer, React.js engineer, Ember.js programmer, and clean coder'
+           + 'with over 6 years of experience. Available for new opportunities!'}
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
