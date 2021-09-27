@@ -59,7 +59,7 @@ function HomeSection(props, ref) {
             sx={{
               fontFamily: 'profile',
               fontSize: ['38rem', 9, 9],
-              pt: [4, 3, 4],
+              pt: 4,
               pb: [3, null, null],
               display: 'inline-block',
               // fix font from chopping off
