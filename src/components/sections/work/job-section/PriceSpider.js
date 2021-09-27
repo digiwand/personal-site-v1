@@ -21,15 +21,15 @@ const TECH_KEYS = [
 const IMG_CONFIGS = [
   {
     alt: 'PriceSpider Mars Where-to-buy',
-    src: 'images/work/pricespider-wtb-mars.png',
+    srcName: 'pricespider-wtb-mars-preview',
   },
   {
     alt: 'PriceSpider Iams Where-to-buy',
-    src: 'images/work/pricespider-wtb-iams.png',
+    srcName: 'pricespider-wtb-iams-preview',
   },
   {
     alt: 'PriceSpider Hoover & Dell Ads',
-    src: 'images/work/pricespider-ads.png',
+    srcName: 'pricespider-ads-preview',
   },
 ];
 

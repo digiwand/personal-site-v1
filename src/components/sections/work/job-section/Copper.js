@@ -22,15 +22,16 @@ const TECH_KEYS = [
 const IMG_CONFIGS = [
   {
     alt: 'Copper Companies Page',
-    src: 'images/work/copper-companies-list.png',
+    srcName: 'copper-companies-list-preview',
   },
   {
     alt: 'Copper Contact Page',
-    src: 'images/work/copper-contact.jpeg',
+    srcName: 'copper-contact-preview',
+    type: 'jpeg',
   },
   {
     alt: 'Copper AMP Email Gif',
-    src: 'images/work/copper-amp-email.png',
+    srcName: 'copper-amp-email-preview',
   },
 ];
 

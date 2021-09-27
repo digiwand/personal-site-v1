@@ -3,6 +3,24 @@ import { Image } from 'theme-ui';
 
 import AspectRatio from 'components/common/AspectRatio';
 
+function generateImage(imgConfig) {
+  const type = imgConfig.type || 'png';
+
+  return (
+    <picture>
+      <source
+        srcSet={`/images/work/${imgConfig.srcName}.webp`}
+        type="image/webp"
+      />
+      <source
+        srcSet={`/images/work/${imgConfig.srcName}.${type}`}
+        type={`image/${type}`}
+      />
+      <Image alt={imgConfig.alt} src={`/images/work/${imgConfig.srcName}.${type}`} />
+    </picture>
+  );
+}
+
 const aspectRatioStyles = {
   borderRadius: '4rem',
   opacity: '0.95',
@@ -50,10 +68,7 @@ function JobSectionImgTrio({ imgConfigs }) {
           ...aspectRatioStyles,
         }}
       >
-        <Image
-          alt={imgConfigs[0].alt}
-          src={imgConfigs[0].src}
-        />
+        {generateImage(imgConfigs[0])}
       </AspectRatio>
 
       <AspectRatio
@@ -67,10 +82,7 @@ function JobSectionImgTrio({ imgConfigs }) {
           ...aspectRatioStyles,
         }}
       >
-        <Image
-          alt={imgConfigs[1].alt}
-          src={imgConfigs[1].src}
-        />
+        {generateImage(imgConfigs[1])}
       </AspectRatio>
 
       <AspectRatio
@@ -83,10 +95,7 @@ function JobSectionImgTrio({ imgConfigs }) {
           ...aspectRatioStyles,
         }}
       >
-        <Image
-          alt={imgConfigs[2].alt}
-          src={imgConfigs[2].src}
-        />
+        {generateImage(imgConfigs[2])}
       </AspectRatio>
     </div>
   );
