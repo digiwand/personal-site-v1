@@ -136,6 +136,8 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         <title>{siteTitle}</title>
 
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://ariella.dev" />
+
         {/* <LinkPreloadFonts /> */}
 
         <meta charSet="utf-8" />
