@@ -1,4 +1,5 @@
 import emailjs from 'emailjs-com';
+import dynamic from 'next/dynamic';
 import { useRef, useState } from 'react';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
@@ -7,7 +8,8 @@ import { Button } from 'theme-ui';
 import { ContactFormInput, ContactFormTextArea } from 'components/sections/contact/FormInputs';
 import FormSentMessage from 'components/sections/contact/FormSentMessage';
 import FormErrorMessage from 'components/sections/contact/FormError';
-import FormRecaptcha from 'components/sections/contact/FormRecaptcha';
+
+const FormRecaptcha = dynamic(() => import('components/sections/contact/FormRecaptcha'));
 
 const serviceID = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID;
 const templateID = process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID;
