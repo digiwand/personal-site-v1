@@ -53,9 +53,10 @@ const ContactSection = (props, ref) => (
           px: [4, 5, 5],
         }}
       >
-        <Themed.h1
+        <Themed.h2
           sx={{
             variant: 'text.shadow',
+            letterSpacing: '2.4rem',
             color: (t) => t.colors.homeHello,
             display: 'block',
             textAlign: 'center',
@@ -65,7 +66,7 @@ const ContactSection = (props, ref) => (
           <Fade top duration={600} cascade>
             Contact
           </Fade>
-        </Themed.h1>
+        </Themed.h2>
 
         <Flex sx={{
           flexDirection: ['column', 'column', 'row'],
