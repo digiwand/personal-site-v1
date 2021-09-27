@@ -17,7 +17,7 @@ const TECH = {
       <picture>
         <source srcSet="/images/tech/alfred@2x.webp 2x" type="image/webp" />
         <source srcSet="/images/tech/alfred@2x.png 2x" type="image/png" />
-        <Image alt="Alfred" src="images/tech/alfred@2x.png" variant="tech" />
+        <Image alt="Alfred" src="/images/tech/alfred@2x.png" variant="tech" />
       </picture>
     ),
   },
@@ -63,7 +63,7 @@ const TECH = {
       <picture>
         <source srcSet="/images/tech/dash@2x.webp 2x" type="image/webp" />
         <source srcSet="/images/tech/dash@2x.png 2x" type="image/png" />
-        <Image alt="Dash" src="images/tech/dash@2x.png" variant="tech" />
+        <Image alt="Dash" src="/images/tech/dash@2x.png" variant="tech" />
       </picture>
     ),
   },
