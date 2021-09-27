@@ -31,7 +31,6 @@ function NavMenuButton({ onClick }) {
         pointerEvents: ['initial', 'initial', 'none'],
       }}
       onClick={onClick}
-      aria-label="Open menu drawer"
     >
       <span sx={{
         ...menuLine,
