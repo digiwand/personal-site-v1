@@ -63,7 +63,7 @@ const ContactSection = (props, ref) => (
             pb: 4,
           }}
         >
-          <Fade top duration={600} cascade>
+          <Fade top duration={300} cascade>
             Contact
           </Fade>
         </Themed.h2>

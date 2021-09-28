@@ -1,5 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
+import Pulse from 'react-reveal/Pulse';
 import Zoom from 'react-reveal/Zoom';
 import { Themed } from 'theme-ui';
 
@@ -50,7 +51,7 @@ function HomeSection(props, ref) {
             color: (t) => t.colors.homeHello,
           }}
           >
-            <Fade top delay={1600} duration={600} cascade>
+            <Fade top delay={1100} duration={300} cascade>
               Hello, I&apos;m
             </Fade>
           </Themed.h2>
@@ -68,11 +69,11 @@ function HomeSection(props, ref) {
               },
             }}
           >
-            <Fade delay={2700} duration={1300} cascade>
+            <Fade delay={2150} duration={2000} cascade>
               Ariella Vu.
             </Fade>
           </h1>
-          <Fade delay={4200} duration={1000}>
+          <Fade delay={1100} duration={1000}>
             <Themed.p sx={{
               maxWidth: '540rem',
               margin: '23rem auto',
@@ -82,9 +83,9 @@ function HomeSection(props, ref) {
               experiences, and efficiency. Currently exploring new opportunities using React or Ember.js.
             </Themed.p>
           </Fade>
-          <Zoom delay={6200} duration={800}>
+          <Pulse delay={6400} duration={420}>
             <ResumeButton sx={{ mt: 4 }} />
-          </Zoom>
+          </Pulse>
         </div>
       </Zoom>
     </Section>

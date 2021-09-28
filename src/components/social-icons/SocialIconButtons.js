@@ -25,7 +25,7 @@ function SocialIconButtons({ className, socialKeys, revealDelay }) {
             className={className}
             key={className + key}
           >
-            <Flip top delay={revealDelay + (index + 1) * 340}>
+            <Flip top delay={revealDelay + (index + 1) * 125}>
               <a href={socialConfig.url} target="_blank" rel="noopener noreferrer">
                 {socialConfig.iconSVG}
               </a>

@@ -28,7 +28,7 @@ const AboutSection = (props, ref) => (
     >
       <Fade>
         <Themed.h2 sx={{ pt: [6, 0, 0], pb: 4 }}>
-          <Fade top duration={600} cascade>
+          <Fade top duration={300} cascade>
             About
           </Fade>
         </Themed.h2>
