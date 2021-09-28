@@ -67,7 +67,7 @@ function NavTab({ children, ...props }) {
         is-active={String(isActive)}
       >
         <span sx={{ position: 'relative' }}>
-          <Flip top cascade delay={700 + (index * 500)}>
+          <Flip top delay={700 + (index * 500)}>
             {displayName}
           </Flip>
           {hoverText}
