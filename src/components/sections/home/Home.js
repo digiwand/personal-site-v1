@@ -54,12 +54,12 @@ function HomeSection(props, ref) {
               Hello, I&apos;m
             </Fade>
           </Themed.h2>
-          <span
+          <h1
             className="NavHeader_profileLogo"
             sx={{
               fontFamily: 'profile',
               fontSize: ['38rem', 9, 9],
-              pt: [4, 3, 4],
+              pt: 4,
               pb: [3, null, null],
               display: 'inline-block',
               // fix font from chopping off
@@ -71,7 +71,7 @@ function HomeSection(props, ref) {
             <Fade delay={2700} duration={1300} cascade>
               Ariella Vu.
             </Fade>
-          </span>
+          </h1>
           <Fade delay={4200} duration={1000}>
             <Themed.p sx={{
               maxWidth: '540rem',

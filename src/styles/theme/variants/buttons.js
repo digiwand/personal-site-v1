@@ -5,7 +5,7 @@ const buttons = {
 
   primary: {
     position: 'relative',
-    height: '42rem',
+    height: '48rem',
     letterSpacing: '3rem',
     fontFamily: 'barlow',
     fontSize: 2,
@@ -80,7 +80,7 @@ const buttons = {
     py: 0,
     mr: 2,
     mb: 2,
-    height: '32rem',
+    height: '38rem',
     background: 'transparent',
     backgroundImage: 'transparent',
     backdropFilter: 'blur(4px) saturate(130%)',
