@@ -4,7 +4,6 @@ const fonts = {
     heading: 'Rubik, "Avenir Next", sans-serif',
     heading2: 'Arial, "Avenir Next", sans-serif',
     barlow: 'BarlowCondensed, sans-serif',
-    profile: 'MarckScript, Arial',
   },
   fontSizes: [
     '12rem', // 0
