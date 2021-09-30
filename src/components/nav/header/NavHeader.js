@@ -78,7 +78,6 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           boxShadow: '0 6rem 10rem -6rem rgba(30, 30, 30, 0.30)',
 
           '#NavHeader-SVGAriellaVu': {
-            // backgroundImage: theme.colors.navHeaderLogoBgImageScrolled,
             // animation: `${bgChangeKeyframe} 5s infinite`,
             height: '22rem',
             transform: `translate(-${paddingInsideFrame + (paddingFrame / 2)}rem, -2rem)`,
@@ -101,8 +100,6 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
         className="NavHeader_profileLogo"
         sx={{
           color: (t) => `linear-gradient(45deg, ${t.colors.text}, pink)`,
-          // variant: 'text.gradient',
-          // backgroundSize: '200% 200%',
           transition: 'font-size 0.4s, transform 0.4s, background 0.4s',
           pl: 1,
         }}
@@ -111,7 +108,6 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           <SVGAriellaVu
             id="NavHeader-SVGAriellaVu"
             sx={{
-              position: 'relative',
               height: '28rem',
               transition: 'height 0.4s, transform 0.4s',
               path: {

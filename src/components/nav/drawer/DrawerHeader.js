@@ -58,8 +58,6 @@ function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }) {
       <span
         className="NavDrawer_profileLogo"
         sx={{
-          // variant: 'text.gradient',
-          // backgroundSize: '200% 200%',
           pl: '22rem',
           transform: 'translateX(50rem)',
           // animation: `${bgChangeKeyframe} 5s infinite`,

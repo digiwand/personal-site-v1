@@ -83,7 +83,13 @@ function HomeSection(props, ref) {
             },
           }}
           >
-            <SVGAriellaVu id="Home-SVGAriellaVu" />
+            <SVGAriellaVu
+              id="Home-SVGAriellaVu"
+              sx={{
+                height: ['42rem', '52rem', '58rem'],
+                transition: 'height 0.4s',
+              }}
+            />
           </h1>
           <Fade delay={1100} duration={1000}>
             <Themed.p sx={{
