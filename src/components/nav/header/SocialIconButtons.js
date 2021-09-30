@@ -2,6 +2,8 @@ import SocialIconButtons from 'components/social-icons/SocialIconButtons';
 
 const socialKeys = ['stackoverflow', 'github', 'jsfiddle', 'linkedin'];
 
+const totalDurationOfTabs = 1400;
+
 function NavSocialIconButtons() {
   return (
     <div
@@ -20,7 +22,7 @@ function NavSocialIconButtons() {
             fill: (t) => t.colors.navTabHoverColor,
           },
         }}
-        revealDelay={2700}
+        revealDelay={totalDurationOfTabs}
         socialKeys={socialKeys}
       />
     </div>

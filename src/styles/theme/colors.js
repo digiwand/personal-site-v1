@@ -4,7 +4,7 @@
 const RGB = {
   // White
   cultured: '239, 240, 241',                    // #EFF0F1
-  floralWhite: '255,250,240',                   // #FFFAF0
+  floralWhite: '255, 250, 240',                   // #FFFAF0
 
   // Grey
   davysGrey: '83, 83, 89',                      // #585862
@@ -146,6 +146,9 @@ const colors = {
   navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), lavender, orange)`,
   navTabHoverColor: `rgb(${RGB.macaroniAndCheese})`,
 
+  svgAriellaVu: `rgb(${RGB.purpleMountainMajesty})`,
+  svgAriellaVuActive: `rgb(${RGB.floralWhite})`,
+
   // -- Sections ----------------------------------------------------------------------------------
 
   homeHello: 'rgba(255,255,255, 0.9)',
@@ -233,6 +236,9 @@ const colors = {
       navHeaderLogoBgImage: (t) => t.colors.text,
       navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), rgb(${RGB.middleBlue}), orange)`,
       navTabHoverColor: `rgb(${RGB.metallicSeaweed})`,
+
+      svgAriellaVu: `rgb(${RGB.floralWhite})`,
+      svgAriellaVuActive: `rgb(${RGB.middleBlue})`,
 
       // -- Sections ------------------------------------------------------------------------------
 
