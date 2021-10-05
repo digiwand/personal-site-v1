@@ -154,7 +154,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
             {drawerItems}
           </nav>
 
-          <ThemeNavDrawerItem />
+          <ThemeNavDrawerItem handleCloseMenu={handleCloseMenu} />
         </div>
       </div>
 

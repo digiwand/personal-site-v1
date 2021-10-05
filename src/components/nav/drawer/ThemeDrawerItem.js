@@ -1,5 +1,6 @@
 import { useColorMode } from 'theme-ui';
 import THEMEUI_COLOR_MODE_CONFIG from 'constants/theme-ui';
+import PropTypes from 'prop-types';
 
 const sxFadeInInitialize = {
   opacity: 0,
@@ -9,7 +10,11 @@ const sxFadeInInitialize = {
   transitionDelay: ['.4s', '.3s'],
 };
 
-function ThemeNavDrawerItem() {
+const propTypes = {
+  handleCloseMenu: PropTypes.func.isRequired,
+};
+
+function ThemeNavDrawerItem({ handleCloseMenu }) {
   const [colorMode, setColorMode] = useColorMode();
   const colorModeKeys = Object.keys(THEMEUI_COLOR_MODE_CONFIG);
 
@@ -28,7 +33,10 @@ function ThemeNavDrawerItem() {
   return (
     <button
       type="button"
-      onClick={() => selectNextColor()}
+      onClick={() => {
+        selectNextColor();
+        handleCloseMenu();
+      }}
       sx={(t) => ({
         display: 'flex',
         alignItems: 'center',
@@ -95,5 +103,7 @@ function ThemeNavDrawerItem() {
     </button>
   );
 }
+
+ThemeNavDrawerItem.propTypes = propTypes;
 
 export default ThemeNavDrawerItem;

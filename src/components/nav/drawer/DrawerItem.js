@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   displayName: PropTypes.string.isRequired,
+  handleCloseMenu: PropTypes.func.isRequired,
   href: PropTypes.string.isRequired,
   isActive: PropTypes.bool,
 };
