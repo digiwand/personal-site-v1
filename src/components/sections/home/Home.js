@@ -74,8 +74,7 @@ function HomeSection(props, ref) {
             </Fade>
           </Themed.h2>
           <h1 sx={{
-            pt: 4,
-            pb: [3, null, null],
+            py: ['42rem', '46rem', '48rem'],
             rect: {
               width: '20rem',
               height: '100%',
@@ -95,7 +94,7 @@ function HomeSection(props, ref) {
             <Themed.p sx={{
               maxWidth: '540rem',
               mx: 'auto',
-              mb: ['50rem', '50rem', 5],
+              pb: ['52rem', '52rem', '54rem'],
             }}
             >
               I&apos;m a web developer who&apos;s passionate about clean code, delightful user
@@ -103,7 +102,7 @@ function HomeSection(props, ref) {
             </Themed.p>
           </Fade>
           <Pulse delay={5200} duration={620}>
-            <ResumeButton sx={{ mt: 4 }} />
+            <ResumeButton />
           </Pulse>
         </div>
       </Zoom>
