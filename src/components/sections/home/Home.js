@@ -8,7 +8,6 @@ import { Themed, useThemeUI } from 'theme-ui';
 import ResumeButton from 'components/resume-button/ResumeButton';
 import Section from 'components/sections/Section';
 import SVGAriellaVu from 'components/svg/ariellavu';
-// import ProfileSVG from 'components/svg/profile';
 
 import { SECTION_ID } from 'constants/section';
 
@@ -42,16 +41,6 @@ function HomeSection(props, ref) {
         textAlign: 'center',
       }}
     >
-      {/* <ProfileSVG sx={(theme) => ({
-        position: 'absolute',
-        right: '8vh',
-        bottom: '45rem',
-
-        g: {
-          fill: '#ababab',
-        },
-      })}
-      /> */}
       <Zoom delay={600}>
         <div sx={{
           variant: 'glass',
