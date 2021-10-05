@@ -20,6 +20,10 @@ import scrollbar from './variants/custom/scrollbar';
  */
 const theme = {
   initialColorModeName: 'light',
+  // do not auto-detect light or dark mode
+  config: {
+    useColorSchemeMediaQuery: false,
+  },
 
   breakpoints: [
     '40em', '@media (min-width: 56em) and (orientation: landscape)', '64em',
