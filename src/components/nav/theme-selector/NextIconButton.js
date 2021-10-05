@@ -8,6 +8,11 @@ function ThemeNextIconButton() {
   const [colorMode, setColorMode] = useColorMode();
   const colorModeKeys = Object.keys(THEMEUI_COLOR_MODE_CONFIG);
 
+  if (!colorMode) {
+    // assume default light mode
+    setColorMode('light');
+  }
+
   function selectNextColor() {
     const currentColorModeIndex = colorModeKeys.findIndex((value) => value === colorMode);
     const nextColorModeIndex = currentColorModeIndex < colorModeKeys.length - 1 ? currentColorModeIndex + 1 : 0;
@@ -22,7 +27,7 @@ function ThemeNextIconButton() {
         variant: 'buttons.icon.secondary',
       }}
     >
-      {THEMEUI_COLOR_MODE_CONFIG[colorMode].icon}
+      {THEMEUI_COLOR_MODE_CONFIG[colorMode || 'light'].icon}
     </IconButton>
   );
 }
