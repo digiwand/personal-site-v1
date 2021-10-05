@@ -13,6 +13,11 @@ function ThemeNavDrawerItem() {
   const [colorMode, setColorMode] = useColorMode();
   const colorModeKeys = Object.keys(THEMEUI_COLOR_MODE_CONFIG);
 
+  if (!colorMode) {
+    // assume default light mode
+    setColorMode('light');
+  }
+
   function selectNextColor() {
     const currentColorModeIndex = colorModeKeys.findIndex((value) => value === colorMode);
     const nextColorModeIndex = currentColorModeIndex < colorModeKeys.length - 1 ? currentColorModeIndex + 1 : 0;
@@ -82,7 +87,7 @@ function ThemeNavDrawerItem() {
           },
         }}
       >
-        {THEMEUI_COLOR_MODE_CONFIG[colorMode].icon}
+        {THEMEUI_COLOR_MODE_CONFIG[colorMode || 'light'].icon}
         <span sx={{ pl: 4 }}>
           Change Theme
         </span>
