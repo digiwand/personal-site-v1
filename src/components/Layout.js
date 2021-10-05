@@ -36,13 +36,6 @@ const defaultProps = {
 
 //       <link
 //         rel="preload"
-//         href="/fonts/MarckScript-Regular.ttf"
-//         as="font"
-//         crossOrigin="anonymous"
-//       />
-
-//       <link
-//         rel="preload"
 //         href="/fonts/Roboto/Roboto-Light.ttf"
 //         as="font"
 //         crossOrigin="anonymous"

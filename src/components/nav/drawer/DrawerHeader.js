@@ -1,13 +1,16 @@
 import { IconButton } from 'theme-ui';
-import { keyframes } from '@emotion/react';
+// import { keyframes } from '@emotion/react';
+
+import SVGAriellaVu from 'components/svg/ariellavu';
 
 const headerAndFooterHeight = '60rem';
 
-const bgChangeKeyframe = keyframes`
-  0%{background-position:10% 0%}
-  50%{background-position:91% 100%}
-  100%{background-position:10% 0%}
-`;
+// @todo add back keyframes
+// const bgChangeKeyframe = keyframes`
+//   0%{background-position:10% 0%}
+//   50%{background-position:91% 100%}
+//   100%{background-position:10% 0%}
+// `;
 
 function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }) {
   const closeButton = (
@@ -55,14 +58,9 @@ function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }) {
       <span
         className="NavDrawer_profileLogo"
         sx={{
-          variant: 'text.gradient',
-          backgroundSize: '200% 200%',
-          fontFamily: 'profile',
-          fontSize: 4,
-          lineHeight: '60rem',
-          pl: 4,
+          pl: '22rem',
           transform: 'translateX(50rem)',
-          animation: `${bgChangeKeyframe} 5s infinite`,
+          // animation: `${bgChangeKeyframe} 5s infinite`,
           color: (t) => t.colors.frameText,
 
           ...sxFadeInInitialize,
@@ -74,7 +72,17 @@ function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }) {
           transition: 'background 0.4s, opacity 1s, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1)',
         }}
       >
-        Ariella Vu
+        <SVGAriellaVu
+          id="NavDrawer-SVGAriellaVu"
+          sx={{
+            position: 'relative',
+            height: '24rem',
+            transition: 'height 0.4s, transform 0.4s',
+            path: {
+              fill: (t) => t.colors.svgAriellaVuActive,
+            },
+          }}
+        />
       </span>
       {closeButton}
     </div>

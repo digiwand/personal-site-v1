@@ -1,10 +1,13 @@
-import React from 'react';
+import anime from 'animejs';
+import React, { useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
+import Pulse from 'react-reveal/Pulse';
 import Zoom from 'react-reveal/Zoom';
-import { Themed } from 'theme-ui';
+import { Themed, useThemeUI } from 'theme-ui';
 
 import ResumeButton from 'components/resume-button/ResumeButton';
 import Section from 'components/sections/Section';
+import SVGAriellaVu from 'components/svg/ariellavu';
 // import ProfileSVG from 'components/svg/profile';
 
 import { SECTION_ID } from 'constants/section';
@@ -14,6 +17,22 @@ import { SECTION_ID } from 'constants/section';
  * started down on the page
  */
 function HomeSection(props, ref) {
+  const { theme: { rawColors } } = useThemeUI();
+
+  useEffect(() => {
+    const svgPaths = document.querySelectorAll('#Home-SVGAriellaVu path');
+    anime({
+      targets: svgPaths,
+      direction: 'linear',
+      duration: 800,
+      easing: 'easeInOutSine',
+      fill: rawColors.svgAriellaVuActive,
+      loop: false,
+      strokeDashoffset: [anime.setDashoffset, 0],
+      delay: (el, i) => 980 + (i * 52),
+    });
+  }, [rawColors.svgAriellaVuActive]);
+
   return (
     <Section
       id={SECTION_ID.HOME}
@@ -50,30 +69,29 @@ function HomeSection(props, ref) {
             color: (t) => t.colors.homeHello,
           }}
           >
-            <Fade top delay={1600} duration={600} cascade>
+            <Fade top delay={1350} duration={300} cascade>
               Hello, I&apos;m
             </Fade>
           </Themed.h2>
-          <h1
-            className="NavHeader_profileLogo"
-            sx={{
-              fontFamily: 'profile',
-              fontSize: ['38rem', 9, 9],
-              // add buffer on top to adjust for misaligned middle alignment
-              pt: '37rem',
-              pb: [4, null, null],
+          <h1 sx={{
+            pt: 4,
+            pb: [3, null, null],
+            rect: {
+              width: '20rem',
+              height: '100%',
               display: 'inline-block',
-              // fix font from chopping off
-              '&>.react-reveal > span:first-of-type': {
-                pl: 2,
-              },
-            }}
+            },
+          }}
           >
-            <Fade delay={2700} duration={1300} cascade>
-              Ariella Vu.
-            </Fade>
+            <SVGAriellaVu
+              id="Home-SVGAriellaVu"
+              sx={{
+                height: ['42rem', '52rem', '58rem'],
+                transition: 'height 0.4s',
+              }}
+            />
           </h1>
-          <Fade delay={4200} duration={1000}>
+          <Fade delay={1100} duration={1000}>
             <Themed.p sx={{
               maxWidth: '540rem',
               mx: 'auto',
@@ -84,9 +102,9 @@ function HomeSection(props, ref) {
               experiences, and efficiency. Currently exploring new opportunities using React or Ember.js.
             </Themed.p>
           </Fade>
-          <Zoom delay={6200} duration={800}>
-            <ResumeButton />
-          </Zoom>
+          <Pulse delay={5200} duration={620}>
+            <ResumeButton sx={{ mt: 4 }} />
+          </Pulse>
         </div>
       </Zoom>
     </Section>

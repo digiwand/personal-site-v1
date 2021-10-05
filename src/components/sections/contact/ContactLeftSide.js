@@ -36,7 +36,7 @@ function ContactLeftSide() {
         <ContactSocialIconButtons />
       </div>
 
-      <Flip top left delay={2400} duration={1700}>
+      <Flip top left delay={2150} duration={1700}>
         <SVGPlantInPot
           sx={{
             width: '50%',
