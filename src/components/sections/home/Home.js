@@ -59,8 +59,9 @@ function HomeSection(props, ref) {
             sx={{
               fontFamily: 'profile',
               fontSize: ['38rem', 9, 9],
-              pt: 4,
-              pb: [3, null, null],
+              // add buffer on top to adjust for misaligned middle alignment
+              pt: '37rem',
+              pb: [4, null, null],
               display: 'inline-block',
               // fix font from chopping off
               '&>.react-reveal > span:first-of-type': {
@@ -75,7 +76,8 @@ function HomeSection(props, ref) {
           <Fade delay={4200} duration={1000}>
             <Themed.p sx={{
               maxWidth: '540rem',
-              margin: '23rem auto',
+              mx: 'auto',
+              mb: ['50rem', '50rem', 5],
             }}
             >
               I&apos;m a web developer who&apos;s passionate about clean code, delightful user
@@ -83,7 +85,7 @@ function HomeSection(props, ref) {
             </Themed.p>
           </Fade>
           <Zoom delay={6200} duration={800}>
-            <ResumeButton sx={{ mt: 4 }} />
+            <ResumeButton />
           </Zoom>
         </div>
       </Zoom>
