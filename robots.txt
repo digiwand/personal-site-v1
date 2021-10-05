@@ -1,8 +1,11 @@
 User-agent: *
+
 Disallow: /*.pdf$
 Disallow: /images/work/
 Disallow: /images/tech/
 Disallow: /gifs/
 Disallow: /svg/
+
 Allow: /
+
 Sitemap: https://ariella.dev/sitemap.xml
