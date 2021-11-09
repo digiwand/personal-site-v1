@@ -1,19 +1,18 @@
 import PropTypes from 'prop-types';
 import { Input, Textarea } from 'theme-ui';
 
-const formTransition = 'transform 0.3s, font-size 0.3s';
 const inputHeight = '42';
 const inputBorder = '2';
 const inputPadding = '10rem';
 const paddingForLabel = '18rem';
+
+const sxLabelFocus = { transform: 'translate(0, -19rem) scale(0.7)' };
 
 const propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 };
-
-const sxLabelFocus = { transform: 'translate(0, -19rem) scale(0.7)' };
 
 /**
  * React has an outstanding bug which prevents controlled inputs from filling with autofill, so we need to disable it.
@@ -51,7 +50,7 @@ export function ContactFormInput({
           fontSize: '20rem',
           fontWeight: '300',
           fontFamily: 'barlow',
-          transition: `${formTransition}`,
+          transition: 'transform 0.2s',
           lineHeight: `${inputHeight - inputBorder}rem`,
           transform: `translate(${inputPadding}, ${paddingForLabel})`,
         }}
@@ -90,7 +89,7 @@ export function ContactFormTextArea({
           fontSize: '20rem',
           fontWeight: '300',
           fontFamily: 'barlow',
-          transition: `${formTransition}`,
+          transition: 'transform 0.2s',
           lineHeight: `${inputHeight - inputBorder}rem`,
           transform: `translate(${inputPadding}, ${paddingForLabel})`,
         }}
