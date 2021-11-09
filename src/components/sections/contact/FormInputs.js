@@ -13,11 +13,7 @@ const propTypes = {
   type: PropTypes.string.isRequired,
 };
 
-const labelFocusSx = {
-  transform: 'translate(0, -19rem)',
-  fontSize: '14rem',
-  fontWeight: '500',
-};
+const sxLabelFocus = { transform: 'translate(0, -19rem) scale(0.7)' };
 
 /**
  * React has an outstanding bug which prevents controlled inputs from filling with autofill, so we need to disable it.
@@ -41,8 +37,8 @@ export function ContactFormInput({
         placeholder=" "
         required
         sx={{
-          '&:focus ~ label': labelFocusSx,
-          '&:not(:placeholder-shown) ~ label': labelFocusSx,
+          '&:focus ~ label': sxLabelFocus,
+          '&:not(:placeholder-shown) ~ label': sxLabelFocus,
         }}
       />
 
@@ -80,8 +76,8 @@ export function ContactFormTextArea({
         rows={5}
         required
         sx={{
-          '&:focus ~ label': labelFocusSx,
-          '&:valid ~ label': labelFocusSx,
+          '&:focus ~ label': sxLabelFocus,
+          '&:valid ~ label': sxLabelFocus,
         }}
       />
 
@@ -93,7 +89,7 @@ export function ContactFormTextArea({
           left: 0,
           fontSize: '20rem',
           fontWeight: '300',
-          fontFamily: 'BarlowCondensed, "Avenir Next", sans-serif',
+          fontFamily: 'barlow',
           transition: `${formTransition}`,
           lineHeight: `${inputHeight - inputBorder}rem`,
           transform: `translate(${inputPadding}, ${paddingForLabel})`,
