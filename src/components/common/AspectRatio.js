@@ -14,6 +14,11 @@ const defaultProps = {
  *
  * "aspect-ratio" css is currently not supported by mobile and other browsers, so we will use a known padding hack to
  * to support aspect ratios for responsive images. The keys to this hack are the height and padding-bottom props.
+ *
+ * @example
+    <AspectRatio>
+      <img src="/example.png" alt="example" />
+    </AspectRatio>
  */
 function AspectRatio({ children, className, ratio }) {
   return (
