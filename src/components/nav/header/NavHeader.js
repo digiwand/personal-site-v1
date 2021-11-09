@@ -26,7 +26,10 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
   const pageTopObserverRef = useRef();
 
   const handlePageTopObserver = ([entry]) => {
-    setHasScrolled(!(entry.intersectionRatio > 0));
+    /** @hack temp hack to smooth out animation */
+    setTimeout(() => {
+      setHasScrolled(!(entry.intersectionRatio > 0));
+    }, 50);
   };
 
   useEffect(() => {
