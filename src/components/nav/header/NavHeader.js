@@ -1,4 +1,3 @@
-// import { keyframes } from '@emotion/react';
 import PropTypes from 'prop-types';
 import { useEffect, useRef, useState } from 'react';
 import Fade from 'react-reveal/Fade';
@@ -12,13 +11,6 @@ import PROP_TYPE from 'constants/prop-types';
 
 const paddingFrame = 45;
 const paddingInsideFrame = 28;
-
-// @todo add back keyframes
-// const bgChangeKeyframe = keyframes`
-//   0%{background-position:10% 0%}
-//   50%{background-position:91% 100%}
-//   100%{background-position:10% 0%}
-// `;
 
 const propTypes = {
   activeSectionId: PropTypes.string.isRequired,
@@ -61,13 +53,15 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
   return (
     <header
       sx={(theme) => ({
+        background: 'rgba(255, 255, 255, 0)',
+        backdropFilter: 'blur(0)',
         display: 'flex',
         alignItems: 'flex-end',
         height: '110rem',
-        boxShadow: '0 6rem 10rem -6rem rgba(30, 30, 30, 0)',
         width: '100%',
-        px: `${paddingFrame + paddingInsideFrame}rem`,
         transition: 'transform 0.4s, background 0.25s, box-shadow 0.25s',
+        boxShadow: '0 6rem 10rem -6rem rgba(30, 30, 30, 0)',
+        px: `${paddingFrame + paddingInsideFrame}rem`,
         transform: ['translateY(-110rem)', 'translateY(-110rem)', 'translateY(0)'],
 
         '&[has-scrolled="true"]': {
@@ -95,15 +89,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
       })}
       has-scrolled={hasScrolled.toString()}
     >
-      {/** @todo replace w/ SVG */}
-      <span
-        className="NavHeader_profileLogo"
-        sx={{
-          color: (t) => `linear-gradient(45deg, ${t.colors.text}, pink)`,
-          transition: 'font-size 0.4s, transform 0.4s, background 0.4s',
-          pl: 1,
-        }}
-      >
+      <span>
         <Fade delay={600} duration={2800} cascade>
           <SVGAriellaVu
             id="NavHeader-SVGAriellaVu"
