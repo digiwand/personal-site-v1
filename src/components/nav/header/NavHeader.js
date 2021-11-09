@@ -52,20 +52,20 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
 
   return (
     <header
-      sx={(theme) => ({
+      sx={{
         background: 'rgba(255, 255, 255, 0)',
         backdropFilter: 'blur(0)',
         display: 'flex',
         alignItems: 'flex-end',
         height: '110rem',
         width: '100%',
-        transition: 'transform 0.4s, background 0.25s, box-shadow 0.25s',
+        transition: 'transform 0.4s, background 1.4s, box-shadow 1.4s, blur 1.4s, box-shadow 1.4s',
         boxShadow: '0 6rem 10rem -6rem rgba(30, 30, 30, 0)',
         px: `${paddingFrame + paddingInsideFrame}rem`,
         transform: ['translateY(-110rem)', 'translateY(-110rem)', 'translateY(0)'],
 
         '&[has-scrolled="true"]': {
-          background: theme.colors.navHeaderBg,
+          background: (t) => t.colors.navHeaderBg,
           backdropFilter: 'blur(4px)',
 
           transform: ['translateY(-110rem)', 'translateY(-110rem)', 'translateY(-70rem)'],
@@ -83,10 +83,10 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
 
           '.NavTab': {
             letterSpacing: '1rem',
-            color: `${theme.colors.frameText}`,
+            color: (t) => t.colors.frameText,
           },
         },
-      })}
+      }}
       has-scrolled={hasScrolled.toString()}
     >
       <span>
