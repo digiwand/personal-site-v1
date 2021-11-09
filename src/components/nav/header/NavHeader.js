@@ -75,9 +75,8 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
           boxShadow: '0 6rem 10rem -6rem rgba(30, 30, 30, 0.30)',
 
           '#NavHeader-SVGAriellaVu': {
-            // animation: `${bgChangeKeyframe} 5s infinite`,
-            height: '22rem',
-            transform: `translate(-${paddingInsideFrame + (paddingFrame / 2)}rem, -2rem)`,
+            // animation: `${bgChangeKeyframe} 5s infinite`,]
+            transform: `translateX(-${paddingInsideFrame + (paddingFrame / 2) + 15}rem) scale(0.78)`,
           },
 
           '.NavHeader_rightSide': {
@@ -98,7 +97,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
             id="NavHeader-SVGAriellaVu"
             sx={{
               height: '28rem',
-              transition: 'height 0.4s, transform 0.4s',
+              transition: 'transform 0.4s',
               path: {
                 fill: (t) => t.colors.svgAriellaVuActive,
               },
