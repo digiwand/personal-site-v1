@@ -1,9 +1,20 @@
-function SVGAriellaVu({ className, id }) {
+type Props = {
+  className?: string,
+  id?: string,
+}
+
+const defaultProps = {
+  className: '',
+  id: '',
+};
+
+function SVGAriellaVu({ className, id }: Props) {
   return (
     <svg
       id={id}
       className={className}
-      alt="Ariella Vu"
+      role="img"
+      aria-label="Ariella Vu"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMinYMin meet"
       viewBox="0 0 240.932 49.184"
@@ -28,5 +39,7 @@ function SVGAriellaVu({ className, id }) {
     </svg>
   );
 }
+
+SVGAriellaVu.defaultProps = defaultProps;
 
 export default SVGAriellaVu;

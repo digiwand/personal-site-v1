@@ -1,7 +1,16 @@
-export default function ProfileSVG({ className }) {
+type Props = {
+  className?: string
+}
+const defaultProps = {
+  className: '',
+};
+
+function SVGProfile({ className }: Props) {
   return (
     <svg
       className={className}
+      role="img"
+      aria-label="Ariella Vu's Profile Image"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 450.000000 515.000000"
       preserveAspectRatio="xMidYMid meet"
@@ -644,3 +653,7 @@ export default function ProfileSVG({ className }) {
     </svg>
   );
 }
+
+SVGProfile.defaultProps = defaultProps;
+
+export default SVGProfile;

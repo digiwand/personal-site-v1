@@ -1,8 +1,16 @@
-export default function SVGPlantInPot({ className }) {
+type Props = {
+  className?: string
+}
+const defaultProps = {
+  className: '',
+};
+
+function SVGPlantInPot({ className }: Props) {
   return (
     <svg
       className={className}
-      alt="Plant In Pot"
+      role="img"
+      aria-label="Plant In Pot"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1280.000000 1167.000000"
       preserveAspectRatio="xMidYMid meet"
@@ -2378,3 +2386,7 @@ c-10 -30 -23 -63 -29 -75 -12 -22 -41 -29 -41 -10 0 17 71 139 80 139 5 0 1
 
   );
 }
+
+SVGPlantInPot.defaultProps = defaultProps;
+
+export default SVGPlantInPot;
