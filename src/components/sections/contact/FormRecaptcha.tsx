@@ -1,11 +1,7 @@
 import ReCAPTCHA from 'react-google-recaptcha';
-import PROP_TYPE from 'constants/prop-types';
+import { RefObject } from 'react';
 
 const reCaptchaV2Key = process.env.NEXT_PUBLIC_G_RECAPTCHA_V2_KEY;
-
-const propTypes = {
-  recaptchaRef: PROP_TYPE.REF.isRequired,
-};
 
 /**
  * Notes:
@@ -13,7 +9,7 @@ const propTypes = {
  * - We can make recaptcha invisibile, but we still need to provide the Privacy Policy and TOS messages
  *   @see {@link https://developers.google.com/recaptcha/docs/faq}
  */
-function FormRecaptcha({ recaptchaRef }) {
+function FormRecaptcha({ recaptchaRef } : { recaptchaRef: RefObject<ReCAPTCHA> }) {
   return (
     <div sx={{
       fontSize: 0,
@@ -55,7 +51,5 @@ function FormRecaptcha({ recaptchaRef }) {
     </div>
   );
 }
-
-FormRecaptcha.propTypes = propTypes;
 
 export default FormRecaptcha;

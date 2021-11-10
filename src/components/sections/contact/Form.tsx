@@ -1,3 +1,5 @@
+import type ReCAPTCHA from 'react-google-recaptcha';
+
 import emailjs from 'emailjs-com';
 import { useRef, useState } from 'react';
 import Fade from 'react-reveal/Fade';
@@ -22,7 +24,7 @@ function ContactForm() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const recaptchaRef = useRef();
+  const recaptchaRef = useRef<ReCAPTCHA>();
 
   const handleSend = async (e) => {
     e.preventDefault();
@@ -45,7 +47,7 @@ function ContactForm() {
 
       handleSendSuccess();
     } catch (err) {
-      handleSendError(err);
+      handleSendError();
     }
   };
 
