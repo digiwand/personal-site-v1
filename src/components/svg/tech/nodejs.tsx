@@ -1,6 +1,21 @@
-export default function SVGNodeJS({ className }) {
+type Props = {
+  className? : string;
+};
+
+const defaultProps = {
+  className: '',
+};
+
+function SVGNodeJS({ className } : Props) {
   return (
-    <svg className={className} alt="Node.js" xmlns="http://www.w3.org/2000/svg" version="1.2" viewBox="0 0 442.37 270.929">
+    <svg
+      className={className}
+      role="img"
+      aria-label="Node.js"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.2"
+      viewBox="0 0 442.37 270.929"
+    >
       <defs>
         <clipPath id="svg-nodejs-a">
           <path d="M239.03 226.605l-42.13 24.317c-1.578.91-2.546 2.59-2.546 4.406v48.668c0 1.817.968 3.496 2.546 4.406l42.133 24.336c1.575.907 3.517.907 5.09 0l42.126-24.336c1.57-.91 2.54-2.59 2.54-4.406v-48.668c0-1.816-.97-3.496-2.55-4.406l-42.12-24.317c-.79-.453-1.67-.68-2.55-.68-.88 0-1.76.227-2.55.68" />
@@ -49,3 +64,7 @@ export default function SVGNodeJS({ className }) {
     </svg>
   );
 }
+
+SVGNodeJS.defaultProps = defaultProps;
+
+export default SVGNodeJS;

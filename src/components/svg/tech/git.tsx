@@ -1,8 +1,17 @@
-export default function SVGGit({ className }) {
+type Props = {
+  className? : string;
+};
+
+const defaultProps = {
+  className: '',
+};
+
+function SVGNodeJS({ className } : Props) {
   return (
     <svg
       className={className}
-      alt="Git"
+      role="img"
+      aria-label="Git"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMinYMin meet"
       viewBox="0 0 256 108"
@@ -12,3 +21,7 @@ export default function SVGGit({ className }) {
     </svg>
   );
 }
+
+SVGNodeJS.defaultProps = defaultProps;
+
+export default SVGNodeJS;
