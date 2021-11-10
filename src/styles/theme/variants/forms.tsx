@@ -1,9 +1,11 @@
+import type { Theme } from 'theme-ui';
+
 const formTransition = '0.3s';
 const inputHeight = '42';
 const inputBorder = '2';
 const inputPadding = '10rem';
 
-const forms = {
+const forms: Theme['forms'] = {
   input: {
     fontFamily: 'body',
     fontSize: '17rem',

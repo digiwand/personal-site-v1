@@ -1,4 +1,6 @@
-const styles = {
+import type { Theme } from 'theme-ui';
+
+const styles: Theme['styles'] = {
   root: {
     fontSize: '1px', /* for using REM units */
     transition: 'background 500ms',
