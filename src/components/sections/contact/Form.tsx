@@ -67,7 +67,6 @@ function ContactForm() {
     }}
     >
       <form
-        as="form"
         /** @see {@https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion} */
         autoComplete="new-password"
         onSubmit={(e) => handleSend(e)}
