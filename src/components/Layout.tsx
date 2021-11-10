@@ -1,100 +1,23 @@
-import React, { MutableRefObject, useRef } from 'react';
-import PropTypes from 'prop-types';
 import Head from 'next/head';
+import { ReactNode, MutableRefObject, useRef } from 'react';
 import { InitializeColorMode, get, useThemeUI } from 'theme-ui';
 
 import Footer from 'components/footer/Footer';
 import Nav from 'components/nav/Nav';
 
-import PROP_TYPE from 'constants/prop-types';
-
 const siteTitle = 'Ariella Vu | Software Engineer | Personal Website';
 
-const propTypes = {
-  sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF),
+type Props = {
+  children: ReactNode,
+  sectionTrackingPixelRefs?: MutableRefObject<HTMLDivElement>[],
 };
 
 const defaultProps = {
   sectionTrackingPixelRefs: null,
 };
 
-// function LinkPreloadFonts() {
-//   return (
-//     <>
-//       <link
-//         rel="preload"
-//         href="/fonts/BarlowCondensed-Regular.ttf"
-//         as="font"
-//         crossOrigin="anonymous"
-//       />
-//       <link
-//         rel="preload"
-//         href="/fonts/BarlowCondensed-Thin.ttf"
-//         as="font"
-//         crossOrigin="anonymous"
-//       />
-
-//       <link
-//         rel="preload"
-//         href="/fonts/Roboto/Roboto-Light.ttf"
-//         as="font"
-//         crossOrigin="anonymous"
-//       />
-//       <link
-//         rel="preload"
-//         href="/fonts/Roboto/Roboto-Bold.ttf"
-//         as="font"
-//         crossOrigin="anonymous"
-//       />
-//       <link
-//         rel="preload"
-//         href="/fonts/Roboto/Roboto-Medium.ttf"
-//         as="font"
-//         crossOrigin="anonymous"
-//       />
-//       <link
-//         rel="preload"
-//         href="/fonts/Roboto/Roboto-Regular.ttf"
-//         as="font"
-//         crossOrigin="anonymous"
-//       />
-
-//       <link
-//         rel="preload"
-//         href="/fonts/Rubik/static/Rubik-Bold.ttf"
-//         as="font"
-//         crossOrigin="anonymous"
-//       />
-//       <link
-//         rel="preload"
-//         href="/fonts/Rubik/static/Rubik-Light.ttf"
-//         as="font"
-//         crossOrigin="anonymous"
-//       />
-//       <link
-//         rel="preload"
-//         href="/fonts/Rubik/static/Rubik-Medium.ttf"
-//         as="font"
-//         crossOrigin="anonymous"
-//       />
-//       <link
-//         rel="preload"
-//         href="/fonts/Rubik/static/Rubik-Regular.ttf"
-//         as="font"
-//         crossOrigin="anonymous"
-//       />
-//     </>
-//   );
-// }
-
-function Layout({
-  children,
-  sectionTrackingPixelRefs,
-} : {
-  children: React.ReactNode,
-  sectionTrackingPixelRefs?: MutableRefObject<HTMLElement>[],
-}) {
-  const pageTopTrackingPixelRef = useRef();
+function Layout({ children, sectionTrackingPixelRefs} : Props) {
+  const pageTopTrackingPixelRef = useRef<HTMLDivElement>();
   const { theme: { rawColors } } = useThemeUI();
 
   const pageTopTrackingPixel = (
@@ -187,7 +110,6 @@ function Layout({
   );
 }
 
-Layout.propTypes = propTypes;
 Layout.defaultProps = defaultProps;
 
 export default Layout;

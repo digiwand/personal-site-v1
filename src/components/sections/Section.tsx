@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 
 const SECTION_ID_TOP_PLACEMENT = {
   default: '10%',
@@ -8,12 +8,17 @@ const SECTION_ID_TOP_PLACEMENT = {
   tech: '90%',
 };
 
+type Props = {
+  sectionId: string,
+  forwardedRef: MutableRefObject<IntersectionObserver>,
+}
+
 /**
  * Used to be observed by IntersectionObserver. These forwardRefs are a bit excessive.
  * Consider using React.Context to control the Nav states and move the IntersectionObserver
  * closer
  */
-function SectionTrackingPixel({ sectionId, forwardedRef }) {
+function SectionTrackingPixel({ sectionId, forwardedRef }: Props) {
   return (
     <div
       className="trackingPixel"

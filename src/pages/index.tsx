@@ -12,7 +12,13 @@ import ContactSection from 'components/sections/contact/Contact';
  * {@link src/constants/section.js}
  */
 function Home() {
-  const sectionTrackingPixelRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
+  const sectionTrackingPixelRefs = [
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+  ];
 
   return (
     <Layout sectionTrackingPixelRefs={sectionTrackingPixelRefs}>

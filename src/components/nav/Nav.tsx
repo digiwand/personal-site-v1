@@ -1,16 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
+import { 
+  MutableRefObject,
+  useEffect, 
+  useRef, 
+  useState 
+} from 'react';
 
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
 import MenuButton from 'components/nav/MenuButton';
 import NavDrawer from 'components/nav/drawer/Drawer';
 import BlurredBackground from 'components/nav/BlurredBackground';
 import NavHeader from 'components/nav/header/NavHeader';
-import PROP_TYPE from 'constants/prop-types';
 
-const propTypes = {
-  sectionTrackingPixelRefs: PropTypes.arrayOf(PROP_TYPE.REF),
-  pageTopTrackingPixelRef: PROP_TYPE.REF,
+type Props = {
+  sectionTrackingPixelRefs?: MutableRefObject<HTMLDivElement>[],
+  pageTopTrackingPixelRef: MutableRefObject<HTMLDivElement>,
 };
 
 const defaultProps = {
@@ -18,10 +21,11 @@ const defaultProps = {
   pageTopTrackingPixelRef: null,
 };
 
-function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
+function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }: Props) {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [activeSectionId, setActiveSectionId] = useState('home');
-  const sectionIntersectionObserverRef = useRef();
+  
+  const sectionIntersectionObserverRef = useRef<IntersectionObserver>();
 
   const handleSectionIntersection = (entries) => {
     entries.forEach((entry) => {
@@ -41,7 +45,7 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
    * section element.
    */
   useEffect(() => {
-    if (sectionIntersectionObserverRef.current) { sectionIntersectionObserverRef.current.disconnect(); }
+    if (sectionIntersectionObserverRef.current) { sectionIntersectionObserverRef.current?.disconnect(); }
 
     let currentObserver;
 
@@ -114,7 +118,6 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }) {
   );
 }
 
-Nav.propTypes = propTypes;
 Nav.defaultProps = defaultProps;
 
 export default Nav;

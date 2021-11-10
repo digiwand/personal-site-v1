@@ -1,8 +1,8 @@
-import { createRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { ReactNode, useEffect, useRef } from 'react';
 
-const propTypes = {
-  onOutsideClick: PropTypes.func.isRequired,
+type Props = {
+  children: ReactNode,
+  onOutsideClick(): void,
 };
 
 /**
@@ -14,8 +14,8 @@ const propTypes = {
       <Modal />
     </OutsideClickHandler>
  */
-function OutsideClickHandler({ children, onOutsideClick }) {
-  const wrapperRef = createRef();
+function OutsideClickHandler({ children, onOutsideClick }: Props) {
+  const wrapperRef = useRef<HTMLDivElement>();
 
   const handleClickOutside = (event) => {
     if (
@@ -38,7 +38,5 @@ function OutsideClickHandler({ children, onOutsideClick }) {
     <div ref={wrapperRef}>{children}</div>
   );
 }
-
-OutsideClickHandler.propTypes = propTypes;
 
 export default OutsideClickHandler;
