@@ -1,22 +1,25 @@
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 import Flip from 'react-reveal/Flip';
 
-const propTypes = {
-  displayName: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  isActive: PropTypes.bool,
+type Props = {
+  className: string,
+  displayName: string,
+  href: string,
+  index: number,
+  isActive?: boolean,
 };
 
 const defaultProps = {
   isActive: false,
 };
 
-function NavTab({ children, ...props }) {
-  const {
-    className, displayName, href, index, isActive,
-  } = props;
-
+function NavTab({
+  className,
+  displayName,
+  href,
+  index,
+  isActive,
+}: Props) {
   const hoverText = (
     <span
       className="NavTab_hoverText"
@@ -77,7 +80,6 @@ function NavTab({ children, ...props }) {
   );
 }
 
-NavTab.propTypes = propTypes;
 NavTab.defaultProps = defaultProps;
 
 export default NavTab;

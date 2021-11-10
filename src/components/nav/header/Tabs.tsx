@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import NavTab from 'components/nav/header/Tab';
 import { SECTION_DISPLAY_NAME } from 'constants/section';
 
@@ -39,13 +37,7 @@ function Underline() {
   );
 }
 
-const propTypes = {
-  activeSectionId: PropTypes.string.isRequired,
-};
-
-function NavTabs({ children, ...props }) {
-  const { activeSectionId } = props;
-
+function NavTabs({ activeSectionId } : { activeSectionId: string }) {
   const tabs = Object.keys(SECTION_DISPLAY_NAME).map((key, index) => {
     const displayName = SECTION_DISPLAY_NAME[key];
     return (
@@ -77,7 +69,5 @@ function NavTabs({ children, ...props }) {
     </nav>
   );
 }
-
-NavTabs.propTypes = propTypes;
 
 export default NavTabs;

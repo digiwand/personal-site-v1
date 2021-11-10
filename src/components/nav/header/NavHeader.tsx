@@ -1,5 +1,9 @@
-import PropTypes from 'prop-types';
-import { useEffect, useRef, useState } from 'react';
+import { 
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import Fade from 'react-reveal/Fade';
 
 import NavTabs from 'components/nav/header/Tabs';
@@ -7,23 +11,21 @@ import NavSocialIcons from 'components/nav/header/SocialIconButtons';
 import ThemeSelector from 'components/nav/theme-selector/Dropdown';
 import SVGAriellaVu from 'components/svg/ariellavu';
 
-import PROP_TYPE from 'constants/prop-types';
-
 const paddingFrame = 45;
 const paddingInsideFrame = 28;
 
-const propTypes = {
-  activeSectionId: PropTypes.string.isRequired,
-  pageTopTrackingPixelRef: PROP_TYPE.REF,
+type Props = {
+  activeSectionId: string,
+  pageTopTrackingPixelRef: MutableRefObject<HTMLDivElement>,
 };
 
 const defaultProps = {
   pageTopTrackingPixelRef: null,
 };
 
-function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
+function NavHeader({ activeSectionId, pageTopTrackingPixelRef }: Props) {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const pageTopObserverRef = useRef();
+  const pageTopObserverRef = useRef<IntersectionObserver>();
 
   const handlePageTopObserver = ([entry]) => {
     /** @hack temp hack to smooth out animation */
@@ -123,7 +125,6 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
   );
 }
 
-NavHeader.propTypes = propTypes;
 NavHeader.defaultProps = defaultProps;
 
 export default NavHeader;
