@@ -7,6 +7,11 @@ const frameDistanceMobile = 34;
 
 /**
  * To use FrameCircle, pass an image element as the "children" prop
+ *
+ * @example
+    <FrameCircle className="ParentComponent_FrameCircle">
+      <img src="/example.png" alt="example" />
+    </FrameCircle>
  */
 function FrameCircle({ children, ...props }) {
   const { className } = props;

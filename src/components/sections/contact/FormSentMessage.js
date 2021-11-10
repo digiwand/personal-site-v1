@@ -1,4 +1,14 @@
+import PropTypes from 'prop-types';
 import { Themed } from 'theme-ui';
+
+const propTypes = {
+  email: PropTypes.string.isRequired,
+  isVisible: PropTypes.bool,
+};
+
+const defaultProps = {
+  isVisible: false,
+};
 
 function FormSentMessage({ isVisible, email }) {
   return (
@@ -36,15 +46,18 @@ function FormSentMessage({ isVisible, email }) {
         <br />
         <br />
         <br />
-        <Themed.h4 sx={{ textAlign: 'center' }}>
+        <Themed.h3 sx={{ textAlign: 'center' }}>
           Best wishes,
-        </Themed.h4>
-        <Themed.h4 sx={{ textAlign: 'center', pt: 2 }}>
+        </Themed.h3>
+        <Themed.h3 sx={{ textAlign: ['center', 'center', 'left'], pt: 2, display: 'block' }}>
           Ariella
-        </Themed.h4>
+        </Themed.h3>
       </div>
     </div>
   );
 }
+
+FormSentMessage.propTypes = propTypes;
+FormSentMessage.defaultProps = defaultProps;
 
 export default FormSentMessage;
