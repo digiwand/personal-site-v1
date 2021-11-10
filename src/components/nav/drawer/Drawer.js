@@ -44,10 +44,10 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
 
   return (
     <aside
+      className="u-glass"
       sx={(t) => ({
         // @todo: add constants for z-indices
         zIndex: 20,
-        variant: 'glass',
         position: 'fixed',
         flexDirection: 'column',
         height: '100%',
@@ -123,16 +123,17 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
     >
       <DrawerHeader handleCloseMenu={handleCloseMenu} sxFadeInInitialize={sxFadeInInitialize} />
 
-      <div sx={{
-        flex: '1 1 auto',
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        minHeight: 'min-content',
-        height: '100%',
-        variant: 'scrollbar',
-        overflowX: 'hidden',
-      }}
+      <div
+        className="u-scrollbar"
+        sx={{
+          flex: '1 1 auto',
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          minHeight: 'min-content',
+          height: '100%',
+          overflowX: 'hidden',
+        }}
       >
         <div sx={{
           display: 'flex',

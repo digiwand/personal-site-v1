@@ -1,6 +1,7 @@
+import type { Theme } from 'theme-ui';
 import iconButtons from './iconButtons';
 
-const buttons = {
+const buttons: Theme['buttons'] = {
   icon: iconButtons,
 
   primary: {

@@ -5,6 +5,7 @@ const fonts = {
     heading2: 'Arial, "Avenir Next", sans-serif',
     barlow: 'BarlowCondensed, sans-serif',
   },
+
   fontSizes: [
     '12rem', // 0
     '16rem', // 1
@@ -61,26 +62,6 @@ const fonts = {
 
       ':hover': {
         color: (t) => t.colors.linkHover,
-      },
-    },
-    sectionHeading: {
-      variant: 'text.heading',
-      letterSpacing: '12rem',
-      // heading: '3rem',
-      display: 'block',
-      textAlign: 'center',
-      fontWeight: '400',
-      fontSize: [3, 4, 4],
-      color: (t) => t.colors.heading,
-      pb: 5,
-    },
-    sideHeading: {
-      textAlign: ['center', 'center', 'initial'],
-
-      '&:before': {
-        content: '"— "',
-        paddingRight: 2,
-        display: ['none', 'none', 'inline-block'],
       },
     },
     shadow: {

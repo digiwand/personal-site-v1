@@ -81,7 +81,7 @@ const SVG = {
   },
 };
 
-const colors = {
+const light = {
 
   // -- Defaults -----------------------------------------------------------------------------------
 
@@ -142,7 +142,7 @@ const colors = {
   navDrawerBg: `linear-gradient(70deg, rgba(${RGB.royalPurple}, 0.55), rgba(${RGB.royalPurple}, 0.73))`,
   navDrawerSocialIconsHoverColor: `rgba(${RGB.macaroniAndCheese}, 0.85)`,
   navHeaderBg: `rgba(${RGB.byzantine}, 0.35)`,
-  navHeaderLogoBgImage: (t) => `linear-gradient(45deg, ${t.colors.text}, pink)`,
+  navHeaderLogoBgImage: 'linear-gradient(45deg, floralwhite, pink)',
   navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), lavender, orange)`,
   navTabHoverColor: `rgb(${RGB.macaroniAndCheese})`,
 
@@ -171,101 +171,102 @@ const colors = {
 
   inputBg: 'rgba(255, 255, 255, 0.25)',
   inputAutofill: `rgba(${RGB.gainsboro}, 0.9)`,
+};
 
+const dark = {
+
+  // -- Defaults -----------------------------------------------------------------------------------
+
+  background: `rgb(${RGB.xiketic})`,
+
+  // -- General -------------------------------------------------------------------------------
+
+  backgroundMain:
+    `radial-gradient(circle at 4% 0%, rgba(${RGB.middleBlue}, 0.3), transparent 23%),`
+  + `radial-gradient(circle at 59% -16%, rgba(${RGB.royalPurple}, 0.5), transparent 21%),`
+  + `radial-gradient(circle at top right, rgba(${RGB.royalPurple}, 0.5), transparent 18%),`
+  + `radial-gradient(circle at 0% 40%, rgba(${RGB.orangeYellowCrayola}, 0.08), transparent 10%),`
+  + `radial-gradient(circle at 100% 87%, rgba(${RGB.orangeYellowCrayola}, 0.08), transparent 8%),`
+  + `radial-gradient(circle at -5% 85%, rgba(${RGB.darkSlateBlue}, 0.8), transparent 33%),`
+  + `radial-gradient(closest-corner at 65% 60%, rgba(${RGB.darkSlateBlue}, 0.8), transparent 85%),`
+  + `radial-gradient(closest-corner at 75% 75%, rgba(${RGB.fandango}, 0.3), transparent 46%)`,
+
+  backgroundMainMobile: `linear-gradient(217deg, rgba(${RGB.xiketic}, 2), rgba(${RGB.xiketic}, 0) 70.71%)`,
+
+  glassBg: `linear-gradient(70deg, rgba(${RGB.davysGrey}, 0.18), rgba(${RGB.davysGrey}, 0.35))`,
+  glassBorder: '1rem solid rgba(120, 120, 120, 0.18)',
+
+  /** @todo: add link color */
+  linkHover: `rgb(${RGB.maximumBlueGreen})`,
+
+  heading: 'white',
+
+  scrollTrack: 'rgba(120, 120, 120, 0.1)',
+  scrollThumb: 'rgba(250, 250, 250, 0.6)',
+  scrollThumbHover: `rgba(${RGB.celeste}, 0.6)`,
+
+  // textGradient: 'linear-gradient(45deg, #efefef 30%, #fff)',
+  // textGradientBackup: `rgb(${RGB.royalPurple})`,
+  textShadow: `0.07em 0.08em 0.05em rgba(${RGB.spaceCadet}, 0.75)`,
+
+  ...SVG.LIGHT,
+
+  // -- Components -----------------------xf-----------------------------------------------------
+
+  buttonBoxShadow: `0 4rem 8rem 0 rgba(${RGB.picoteeBlue}, 0.17)`,
+  buttonBg: `linear-gradient(70deg, rgba(${RGB.middleBlue}, 0.50), rgba(${RGB.middleBlue}, 0.70))`,
+  buttonBorder: `1rem solid rgba(${RGB.middleBlue}, 0.18)`,
+  buttonHoverText: `rgb(${RGB.cultured})`,
+  buttonSecondaryBg: `linear-gradient(40deg, rgba(${RGB.metallicSeaweed}, 0.85), `
+    + `rgba(${RGB.celeste}, 0.70), rgba(${RGB.metallicSeaweed}, 0.85))`,
+  buttonSecondaryBorder: `1rem solid rgba(${RGB.selectiveYellow}, 0.18)`,
+  buttonText: 'white',
+
+  frameBorder: `rgba(${RGB.davysGrey}, 0.1)`,
+  frameHoverText: `rgba(${RGB.royalPurple}, 0.8)`,
+  frameText: 'white',
+
+  footerBg: `rgba(${RGB.darkPurple}, 0.95)`,
+  footerText: 'white',
+
+  navDrawerActiveColor: `rgba(${RGB.middleBlue}, 0.9)`,
+  navDrawerBg: `linear-gradient(70deg, rgba(${RGB.darkPurple}, 0.55), rgba(33, 33, 33, 0.73))`,
+  navDrawerSocialIconsHoverColor: `rgba(${RGB.middleBlue}, 0.9)`,
+  navHeaderBg: `rgba(${RGB.darkPurple}, 0.95)`,
+  navHeaderLogoBgImage: 'floralwhite',
+  navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), rgb(${RGB.middleBlue}), orange)`,
+  navTabHoverColor: `rgb(${RGB.metallicSeaweed})`,
+
+  svgAriellaVu: `rgb(${RGB.floralWhite})`,
+  svgAriellaVuActive: `rgb(${RGB.middleBlue})`,
+
+  // -- Sections ------------------------------------------------------------------------------
+
+  aboutImgFilter: 'brightness(.9) contrast(1.03) saturate(1.08)',
+
+  techBg: `rgb(${RGB.darkPurple})`,
+  carouselItemBg: `rgba(${RGB.darkPurple}, 0.9)`,
+
+  contactDivider: `rgba(${RGB.davysGrey}, 0.5)`,
+  contactPlant: 'rgba(190, 190, 190, 0.8)',
+  contactReCaptcha: `rgba(${RGB.platinum}, 0.52)`,
+
+  inputBg: `rgba(${RGB.spaceCadet}, 0.6)`,
+  inputAutofill: `rgba(${RGB.darkSlateBlue}, 0.8)`,
+};
+
+const colorModes = { light, dark };
+
+export type ColorMode = typeof light;
+
+export type ColorModes = keyof typeof colorModes;
+
+const initialColorModeName: ColorModes = 'light';
+
+const colors = {
+  ...colorModes[initialColorModeName],
   modes: {
-    dark: {
-
-      // -- Defaults -----------------------------------------------------------------------------------
-
-      background: `rgb(${RGB.xiketic})`,
-
-      // -- General -------------------------------------------------------------------------------
-
-      backgroundMain:
-        `radial-gradient(circle at 4% 0%, rgba(${RGB.middleBlue}, 0.3), transparent 23%),`
-      + `radial-gradient(circle at 59% -16%, rgba(${RGB.royalPurple}, 0.5), transparent 21%),`
-      + `radial-gradient(circle at top right, rgba(${RGB.royalPurple}, 0.5), transparent 18%),`
-      + `radial-gradient(circle at 0% 40%, rgba(${RGB.orangeYellowCrayola}, 0.08), transparent 10%),`
-      + `radial-gradient(circle at 100% 87%, rgba(${RGB.orangeYellowCrayola}, 0.08), transparent 8%),`
-      + `radial-gradient(circle at -5% 85%, rgba(${RGB.darkSlateBlue}, 0.8), transparent 33%),`
-      + `radial-gradient(closest-corner at 65% 60%, rgba(${RGB.darkSlateBlue}, 0.8), transparent 85%),`
-      + `radial-gradient(closest-corner at 75% 75%, rgba(${RGB.fandango}, 0.3), transparent 46%)`,
-
-      backgroundMainMobile: `linear-gradient(217deg, rgba(${RGB.xiketic}, 2), rgba(${RGB.xiketic}, 0) 70.71%)`,
-
-      glassBg: `linear-gradient(70deg, rgba(${RGB.davysGrey}, 0.18), rgba(${RGB.davysGrey}, 0.35))`,
-      glassBorder: '1rem solid rgba(120, 120, 120, 0.18)',
-
-      /** @todo: add link color */
-      linkHover: `rgb(${RGB.maximumBlueGreen})`,
-
-      heading: 'white',
-
-      scrollTrack: 'rgba(120, 120, 120, 0.1)',
-      scrollThumb: 'rgba(250, 250, 250, 0.6)',
-      scrollThumbHover: `rgba(${RGB.celeste}, 0.6)`,
-
-      // textGradient: 'linear-gradient(45deg, #efefef 30%, #fff)',
-      // textGradientBackup: `rgb(${RGB.royalPurple})`,
-      textShadow: `0.07em 0.08em 0.05em rgba(${RGB.spaceCadet}, 0.75)`,
-
-      ...SVG.LIGHT,
-
-      // -- Components -----------------------xf-----------------------------------------------------
-
-      buttonBoxShadow: `0 4rem 8rem 0 rgba(${RGB.picoteeBlue}, 0.17)`,
-      buttonBg: `linear-gradient(70deg, rgba(${RGB.middleBlue}, 0.50), rgba(${RGB.middleBlue}, 0.70))`,
-      buttonBorder: `1rem solid rgba(${RGB.middleBlue}, 0.18)`,
-      buttonHoverText: `rgb(${RGB.cultured})`,
-      buttonSecondaryBg: `linear-gradient(40deg, rgba(${RGB.metallicSeaweed}, 0.85), `
-        + `rgba(${RGB.celeste}, 0.70), rgba(${RGB.metallicSeaweed}, 0.85))`,
-      buttonSecondaryBorder: `1rem solid rgba(${RGB.selectiveYellow}, 0.18)`,
-      buttonText: 'white',
-
-      frameBorder: `rgba(${RGB.davysGrey}, 0.1)`,
-      frameHoverText: `rgba(${RGB.royalPurple}, 0.8)`,
-      frameText: 'white',
-
-      footerBg: `rgba(${RGB.darkPurple}, 0.95)`,
-      footerText: 'white',
-
-      navDrawerActiveColor: `rgba(${RGB.middleBlue}, 0.9)`,
-      navDrawerBg: `linear-gradient(70deg, rgba(${RGB.darkPurple}, 0.55), rgba(33, 33, 33, 0.73))`,
-      navDrawerSocialIconsHoverColor: `rgba(${RGB.middleBlue}, 0.9)`,
-      navHeaderBg: `rgba(${RGB.darkPurple}, 0.95)`,
-      navHeaderLogoBgImage: (t) => t.colors.text,
-      navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), rgb(${RGB.middleBlue}), orange)`,
-      navTabHoverColor: `rgb(${RGB.metallicSeaweed})`,
-
-      svgAriellaVu: `rgb(${RGB.floralWhite})`,
-      svgAriellaVuActive: `rgb(${RGB.middleBlue})`,
-
-      // -- Sections ------------------------------------------------------------------------------
-
-      aboutImgFilter: 'brightness(.9) contrast(1.03) saturate(1.08)',
-
-      techBg: `rgb(${RGB.darkPurple})`,
-      carouselItemBg: `rgba(${RGB.darkPurple}, 0.9)`,
-
-      contactDivider: `rgba(${RGB.davysGrey}, 0.5)`,
-      contactPlant: 'rgba(190, 190, 190, 0.8)',
-      contactReCaptcha: `rgba(${RGB.platinum}, 0.52)`,
-
-      inputBg: `rgba(${RGB.spaceCadet}, 0.6)`,
-      inputAutofill: `rgba(${RGB.darkSlateBlue}, 0.8)`,
-    },
-
-    mint: {
-      // background: '#DFECEB',
-
-      // inputBg: 'pink',
-
-      // text: '#002629',
-
-      // // to update
-      // frame: '#fafafb',
-      // frameText: '#233143',
-    },
+    dark: colorModes.dark,
   },
 };
 

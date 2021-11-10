@@ -1,4 +1,6 @@
-const iconButtons = {
+import { ThemeUICSSObject } from 'theme-ui';
+
+const iconButtons: ThemeUICSSObject = {
   boxShadow: '0 0 10rem transparent',
 
   svg: {

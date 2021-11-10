@@ -33,9 +33,10 @@ function FrameCircle({ children, ...props }) {
     >
       <Fade>
         <div>
-          <div sx={{
+          <div 
+            className="u-glass"
+            sx={{
             position: 'absolute',
-            variant: 'glass',
             height: [
               `calc(100% + ${frameDistanceMobile}rem)`,
               `calc(100% + ${frameDistanceMobile}rem)`,

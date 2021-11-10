@@ -105,8 +105,8 @@ function Layout({ children, sectionTrackingPixelRefs }) {
 
   return (
     <div
+      className="u-scrollbar"
       sx={{
-        variant: 'scrollbar',
         height: '100%',
         width: '100%',
         minWidth: '320px',

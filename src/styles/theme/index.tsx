@@ -1,3 +1,5 @@
+import type { Theme } from 'theme-ui';
+
 import colors from './colors';
 import styles from './styles';
 import fonts from './fonts';
@@ -6,8 +8,7 @@ import buttons from './variants/buttons';
 import forms from './variants/forms';
 import images from './variants/images';
 
-import glass from './variants/custom/glass';
-import scrollbar from './variants/custom/scrollbar';
+const makeTheme = <T extends Theme>(t: T) => t;
 
 /**
  * Theme object to be passed to the ThemeProvider component of the theme-ui npm package.
@@ -18,7 +19,7 @@ import scrollbar from './variants/custom/scrollbar';
  *
  * @see {@link https://www.theme-ui.com/theme-spec}
  */
-const theme = {
+const theme = makeTheme({
   initialColorModeName: 'light',
   // do not auto-detect light or dark mode
   config: {
@@ -42,11 +43,8 @@ const theme = {
   buttons,
   forms,
   images,
-
-  // -- Custom Variants ---------------------------------------------------------------------------
-
-  glass,
-  scrollbar,
-};
+});
 
 export default theme;
+
+export type ExactTheme = typeof theme;
