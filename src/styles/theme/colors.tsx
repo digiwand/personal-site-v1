@@ -106,8 +106,6 @@ const light = {
   link: `rgb(${RGB.yellowCrayola})`,
   linkHover: `rgb(${RGB.chromeYellow})`,
 
-  // heading: '#fff',
-
   scrollTrack: 'rgba(255, 255, 255, 0.1)',
   scrollThumb: 'rgba(255, 255, 255, 0.6)',
   scrollThumbHover: `rgba(${RGB.mauve}, 0.6)`,
@@ -173,7 +171,9 @@ const light = {
   inputAutofill: `rgba(${RGB.gainsboro}, 0.9)`,
 };
 
-const dark = {
+export type ColorMode = typeof light;
+
+const dark: Partial<ColorMode> = {
 
   // -- Defaults -----------------------------------------------------------------------------------
 
@@ -198,8 +198,6 @@ const dark = {
 
   /** @todo: add link color */
   linkHover: `rgb(${RGB.maximumBlueGreen})`,
-
-  heading: 'white',
 
   scrollTrack: 'rgba(120, 120, 120, 0.1)',
   scrollThumb: 'rgba(250, 250, 250, 0.6)',
@@ -256,8 +254,6 @@ const dark = {
 };
 
 const colorModes = { light, dark };
-
-export type ColorMode = typeof light;
 
 export type ColorModes = keyof typeof colorModes;
 
