@@ -9,7 +9,7 @@
     "baseUrl": "./src",
     "allowJs": true,
     "skipLibCheck": true,
-    /** @todo turn strict on after getting comfortable with typescript */
+    /** @todo turn strict on after getting comfortable with typescript */    
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
