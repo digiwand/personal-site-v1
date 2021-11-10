@@ -1,7 +1,7 @@
-import { useRef } from 'react';
+import React, { MutableRefObject, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { InitializeColorMode, useThemeUI } from 'theme-ui';
+import { InitializeColorMode, get, useThemeUI } from 'theme-ui';
 
 import Footer from 'components/footer/Footer';
 import Nav from 'components/nav/Nav';
@@ -87,7 +87,13 @@ const defaultProps = {
 //   );
 // }
 
-function Layout({ children, sectionTrackingPixelRefs }) {
+function Layout({
+  children,
+  sectionTrackingPixelRefs,
+} : {
+  children: React.ReactNode,
+  sectionTrackingPixelRefs?: MutableRefObject<HTMLElement>[],
+}) {
   const pageTopTrackingPixelRef = useRef();
   const { theme: { rawColors } } = useThemeUI();
 
@@ -158,7 +164,7 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         <meta name="twitter:image" content="https://ariella.dev/images/ariella-vu-website-preview.png" />
 
         {/* Updates toolbar color for various browsers including Safari and Android Chrome */}
-        <meta name="theme-color" content={rawColors.text} />
+        <meta name="theme-color" content={get(rawColors, 'text')} />
       </Head>
 
       {/*
