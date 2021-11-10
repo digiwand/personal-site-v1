@@ -104,6 +104,7 @@ function ContactForm() {
             name="contact-form-message"
             label="Message"
             type="message"
+            value={message}
             onChange={(e) => { setMessage(e.target.value); }}
           />
         </Fade>

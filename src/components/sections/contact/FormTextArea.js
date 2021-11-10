@@ -10,6 +10,7 @@ const propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
@@ -19,7 +20,7 @@ const propTypes = {
  * @see {@link @see {@https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion}}
  */
 function ContactFormTextArea({
-  name, label, type, onChange,
+  name, label, type, value, onChange,
 }) {
   return (
     <div
@@ -33,6 +34,7 @@ function ContactFormTextArea({
         type={type}
         name={name}
         id={name}
+        value={value}
         onChange={onChange}
         mb={3}
         rows={5}
