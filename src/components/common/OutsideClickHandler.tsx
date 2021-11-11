@@ -34,9 +34,7 @@ function OutsideClickHandler({ children, onOutsideClick }: Props) {
     };
   });
 
-  return (
-    <div ref={wrapperRef}>{children}</div>
-  );
+  return <div ref={wrapperRef}>{children}</div>;
 }
 
 export default OutsideClickHandler;

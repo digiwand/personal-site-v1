@@ -10,7 +10,7 @@ const SECTION_ID_TOP_PLACEMENT = {
 
 type Props = {
   sectionId: string,
-  forwardedRef: MutableRefObject<IntersectionObserver>,
+  forwardedRef: MutableRefObject<HTMLDivElement>,
 }
 
 /**

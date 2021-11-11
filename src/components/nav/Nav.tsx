@@ -1,8 +1,8 @@
-import { 
+import {
   MutableRefObject,
-  useEffect, 
-  useRef, 
-  useState 
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
@@ -13,7 +13,7 @@ import NavHeader from 'components/nav/header/NavHeader';
 
 type Props = {
   sectionTrackingPixelRefs?: MutableRefObject<HTMLDivElement>[],
-  pageTopTrackingPixelRef: MutableRefObject<HTMLDivElement>,
+  pageTopTrackingPixelRef?: MutableRefObject<HTMLDivElement>,
 };
 
 const defaultProps = {
@@ -24,7 +24,7 @@ const defaultProps = {
 function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }: Props) {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [activeSectionId, setActiveSectionId] = useState('home');
-  
+
   const sectionIntersectionObserverRef = useRef<IntersectionObserver>();
 
   const handleSectionIntersection = (entries) => {

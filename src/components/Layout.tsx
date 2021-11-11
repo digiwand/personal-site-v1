@@ -16,7 +16,7 @@ const defaultProps = {
   sectionTrackingPixelRefs: null,
 };
 
-function Layout({ children, sectionTrackingPixelRefs} : Props) {
+function Layout({ children, sectionTrackingPixelRefs } : Props) {
   const pageTopTrackingPixelRef = useRef<HTMLDivElement>();
   const { theme: { rawColors } } = useThemeUI();
 

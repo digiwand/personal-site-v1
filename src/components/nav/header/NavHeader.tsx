@@ -1,4 +1,4 @@
-import { 
+import {
   MutableRefObject,
   useEffect,
   useRef,
@@ -16,7 +16,7 @@ const paddingInsideFrame = 28;
 
 type Props = {
   activeSectionId: string,
-  pageTopTrackingPixelRef: MutableRefObject<HTMLDivElement>,
+  pageTopTrackingPixelRef?: MutableRefObject<HTMLDivElement>,
 };
 
 const defaultProps = {
