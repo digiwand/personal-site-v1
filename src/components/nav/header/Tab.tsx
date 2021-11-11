@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Flip from 'react-reveal/Flip';
 
 type Props = {
-  className: string,
+  className?: string,
   displayName: string,
   href: string,
   index: number,
@@ -10,6 +10,7 @@ type Props = {
 };
 
 const defaultProps = {
+  className: '',
   isActive: false,
 };
 

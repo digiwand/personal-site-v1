@@ -1,4 +1,4 @@
-import { IconButton } from 'theme-ui';
+import { IconButton, ThemeUICSSProperties } from 'theme-ui';
 // import { keyframes } from '@emotion/react';
 
 import SVGAriellaVu from 'components/svg/ariellavu';
@@ -12,7 +12,12 @@ const headerAndFooterHeight = '60rem';
 //   100%{background-position:10% 0%}
 // `;
 
-function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }) {
+type Props = {
+  handleCloseMenu(): void,
+  sxFadeInInitialize: ThemeUICSSProperties,
+}
+
+function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }: Props) {
   const closeButton = (
     <IconButton
       className="NavDrawer_iconButton"
@@ -29,7 +34,7 @@ function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }) {
       onClick={() => { handleCloseMenu(); }}
     >
       <svg
-        alt="Close Menu"
+        aria-label="Close Menu"
         className="NavDrawer_closeSVG"
         viewBox="0 0 24 24"
         sx={{

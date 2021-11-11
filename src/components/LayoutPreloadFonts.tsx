@@ -1,4 +1,8 @@
-// function LinkPreloadFonts() {
+function LinkPreloadFonts() {
+  return (<></>);
+}
+
+export default LinkPreloadFonts;
 //   return (
 //     <>
 //       <link
@@ -66,5 +70,3 @@
 //     </>
 //   );
 // }
-
-// export default LinkPreloadFonts;

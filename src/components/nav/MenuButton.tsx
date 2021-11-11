@@ -9,7 +9,7 @@ const menuLine = {
   background: (t) => t.colors.glassThickBg,
 };
 
-function NavMenuButton({ onClick }) {
+function NavMenuButton({ onClick }: { onClick(): void}) {
   return (
     <Button
       sx={{

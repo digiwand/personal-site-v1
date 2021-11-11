@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import DrawerHeader from 'components/nav/drawer/DrawerHeader';
 import DrawerFooter from 'components/nav/drawer/DrawerFooter';
 import NavDrawerItem from 'components/nav/drawer/DrawerItem';
@@ -22,13 +20,13 @@ const sxFadeInAnimate = {
   transform: 'translateX(0)',
 };
 
-const propTypes = {
-  activeSectionId: PropTypes.string.isRequired,
-  handleCloseMenu: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool.isRequired,
+type Props = {
+  activeSectionId: string,
+  handleCloseMenu(): void,
+  isOpen: boolean,
 };
 
-function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
+function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }: Props) {
   const drawerItems = Object.keys(SECTION_DISPLAY_NAME).map((key) => {
     const displayName = SECTION_DISPLAY_NAME[key];
     return (
@@ -163,7 +161,5 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }) {
     </aside>
   );
 }
-
-NavDrawer.propTypes = propTypes;
 
 export default NavDrawer;

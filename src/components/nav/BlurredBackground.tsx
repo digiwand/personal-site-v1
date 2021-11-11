@@ -1,7 +1,8 @@
 function BlurredBackground() {
   return (
     <div
-      css={{
+      sx={{
+        display: ['block', 'block', 'none'],
         /** @todo update logic as this is not supported in firefox. also, consider animating */
         backdropFilter: 'blur(2rem) opacity(0.95) brightness(0.85)',
         height: '100%',
@@ -13,7 +14,6 @@ function BlurredBackground() {
         pointerEvents: 'none',
         userSelect: 'none',
       }}
-      sx={{ display: ['block', 'block', 'none'] }}
     />
   );
 }

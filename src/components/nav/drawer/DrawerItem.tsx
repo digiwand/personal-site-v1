@@ -1,22 +1,22 @@
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 
-const propTypes = {
-  displayName: PropTypes.string.isRequired,
-  handleCloseMenu: PropTypes.func.isRequired,
-  href: PropTypes.string.isRequired,
-  isActive: PropTypes.bool,
+type Props = {
+  displayName: string,
+  handleCloseMenu(): void,
+  href: string,
+  isActive?: boolean,
 };
 
 const defaultProps = {
   isActive: false,
 };
 
-function NavDrawerItem({ children, ...props }) {
-  const {
-    displayName, handleCloseMenu, href, isActive,
-  } = props;
-
+function NavDrawerItem({
+  displayName,
+  handleCloseMenu,
+  href,
+  isActive,
+}: Props) {
   return (
     <Link href={href} scroll={false} passHref>
       <a
@@ -76,7 +76,6 @@ function NavDrawerItem({ children, ...props }) {
   );
 }
 
-NavDrawerItem.propTypes = propTypes;
 NavDrawerItem.defaultProps = defaultProps;
 
 export default NavDrawerItem;

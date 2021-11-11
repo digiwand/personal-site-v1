@@ -1,13 +1,12 @@
 import { IconButton } from 'theme-ui';
-import PropTypes from 'prop-types';
 import Flip from 'react-reveal/Flip';
 
 import SOCIAL from 'constants/social';
 
-const propTypes = {
-  className: PropTypes.string,
-  revealDelay: PropTypes.number,
-  socialKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
+type Props = {
+  className?: string,
+  revealDelay?: number,
+  socialKeys: string[],
 };
 
 const defaultProps = {
@@ -15,7 +14,11 @@ const defaultProps = {
   revealDelay: 0,
 };
 
-function SocialIconButtons({ className, socialKeys, revealDelay }) {
+function SocialIconButtons({
+  className,
+  socialKeys,
+  revealDelay,
+}: Props) {
   return (
     <>
       {socialKeys.map((key, index) => {
@@ -37,7 +40,6 @@ function SocialIconButtons({ className, socialKeys, revealDelay }) {
   );
 }
 
-SocialIconButtons.propTypes = propTypes;
 SocialIconButtons.defaultProps = defaultProps;
 
 export default SocialIconButtons;
