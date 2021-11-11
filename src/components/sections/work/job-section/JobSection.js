@@ -42,13 +42,14 @@ function JobSection({ children, ...props }) {
       }}
     >
       <Fade>
-        <div sx={{
-          variant: 'glass',
-          pt: 5,
-          pb: 4,
-          px: [3, 4, 4],
-          textAlign: ['center', 'left', 'left'],
-        }}
+        <div
+          className="u-glass"
+          sx={{
+            pt: 5,
+            pb: 4,
+            px: [3, 4, 4],
+            textAlign: ['center', 'left', 'left'],
+          }}
         >
           <Themed.h2 sx={{
             fontFamily: 'heading2',

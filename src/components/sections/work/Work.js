@@ -5,6 +5,7 @@ import { Themed } from 'theme-ui';
 import Section from 'components/sections/Section';
 import JobSectionCopper from 'components/sections/work/job-section/Copper';
 import JobSectionPriceSpider from 'components/sections/work/job-section/PriceSpider';
+import WorkSideHeading from 'components/sections/work/WorkSideHeading';
 
 function EducationSection() {
   return (
@@ -14,11 +15,12 @@ function EducationSection() {
     }}
     >
       <Fade>
-        <div sx={{
-          variant: 'glass',
-          py: 5,
-          px: 4,
-        }}
+        <div
+          className="u-glass"
+          sx={{
+            py: 5,
+            px: 4,
+          }}
         >
           <Themed.h2 sx={{
             fontFamily: 'heading2',
@@ -64,28 +66,11 @@ const WorkSection = (props, ref) => (
       rowGap: [5, 6, 6],
     }}
     >
-      <Themed.h3
-        sx={{
-          variant: 'text.sideHeading',
-          gridColumnStart: 'label-start',
-          pt: [0, 0, 5],
-          pb: [0, 0, 5],
-        }}
-      >
-        WORK EXPERIENCE
-      </Themed.h3>
+      <WorkSideHeading text="WORK EXPERIENCE" sx={{ pb: [0, 0, 5] }} />
       <JobSectionCopper />
       <JobSectionPriceSpider />
 
-      <Themed.h3
-        sx={{
-          variant: 'text.sideHeading',
-          gridColumnStart: 'label-start',
-          pt: [0, 0, 5],
-        }}
-      >
-        EDUCATION
-      </Themed.h3>
+      <WorkSideHeading text="EDUCATION" />
       <EducationSection />
     </div>
   </Section>

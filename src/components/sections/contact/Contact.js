@@ -46,8 +46,8 @@ const ContactSection = (props, ref) => (
 
     <Fade>
       <div
+        className="u-glass"
         sx={{
-          variant: 'glass',
           position: 'relative',
           py: 5,
           px: [4, 5, 5],
