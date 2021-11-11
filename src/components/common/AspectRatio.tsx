@@ -1,11 +1,13 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import { ReactNode } from 'react';
 
-const propTypes = {
-  ratio: PropTypes.string,
+type Props = {
+  children: ReactNode,
+  className?: string,
+  ratio?: string,
 };
 
 const defaultProps = {
+  className: '',
   ratio: '1/1',
 };
 
@@ -20,7 +22,7 @@ const defaultProps = {
       <img src="/example.png" alt="example" />
     </AspectRatio>
  */
-function AspectRatio({ children, className, ratio }) {
+function AspectRatio({ children, className, ratio }: Props) {
   return (
     <div
       className={className}
@@ -50,7 +52,6 @@ function AspectRatio({ children, className, ratio }) {
   );
 }
 
-AspectRatio.propTypes = propTypes;
 AspectRatio.defaultProps = defaultProps;
 
 export default AspectRatio;
