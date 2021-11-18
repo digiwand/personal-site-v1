@@ -25,30 +25,22 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const pageTopObserverRef = useRef();
 
-  const handlePageTopObserver = ([entry]) => {
-    /** @hack temp hack to smooth out animation */
-    setTimeout(() => {
+  useEffect(() => {
+    pageTopObserverRef.current = new IntersectionObserver(([entry]) => {
       setHasScrolled(!(entry.intersectionRatio > 0));
-    }, 50);
-  };
+    });
+  }, []);
 
   useEffect(() => {
-    if (pageTopObserverRef.current) { pageTopObserverRef.current.disconnect(); }
+    if (!pageTopTrackingPixelRef) { return; }
 
-    let currentObserver;
+    pageTopObserverRef.current.observe(pageTopTrackingPixelRef.current);
 
-    if (pageTopTrackingPixelRef) {
-      pageTopObserverRef.current = new IntersectionObserver(handlePageTopObserver);
-      currentObserver = pageTopObserverRef.current;
-
-      const currentRef = pageTopTrackingPixelRef.current;
-
-      if (currentRef) {
-        currentObserver.observe(currentRef);
+    return () => {
+      if (pageTopObserverRef.current) {
+        pageTopObserverRef.current.disconnect();
       }
-    }
-
-    return () => { if (currentObserver) { currentObserver.disconnect(); } };
+    };
   }, [pageTopTrackingPixelRef]);
 
   // -- Renders -----------------------------------------------------------------------------------
