@@ -29,18 +29,18 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }) {
     pageTopObserverRef.current = new IntersectionObserver(([entry]) => {
       setHasScrolled(!(entry.intersectionRatio > 0));
     });
-  }, []);
-
-  useEffect(() => {
-    if (!pageTopTrackingPixelRef) { return; }
-
-    pageTopObserverRef.current.observe(pageTopTrackingPixelRef.current);
 
     return () => {
       if (pageTopObserverRef.current) {
         pageTopObserverRef.current.disconnect();
       }
     };
+  }, []);
+
+  useEffect(() => {
+    if (!pageTopTrackingPixelRef) { return; }
+
+    pageTopObserverRef.current.observe(pageTopTrackingPixelRef.current);
   }, [pageTopTrackingPixelRef]);
 
   // -- Renders -----------------------------------------------------------------------------------
