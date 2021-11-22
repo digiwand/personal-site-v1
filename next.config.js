@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
   i18n: {
     locales: ['en-US'],
@@ -7,16 +9,12 @@ const nextConfig = {
 
   poweredByHeader: false,
 
-  /** replaces Tercer with SWC for minification which nextjs.org mentions is up to 7x faster */
-  swcMinify: true,
-
   webpack: (config, {
-    /* , dev, isServer, defaultLoaders, webpack, */
-    buildId,
+    buildId, /* , dev, isServer, defaultLoaders, webpack, */
   }) => {
     console.log('Building: ', buildId);
 
-    /** Important: return the modified config */
+    // Important: return the modified config
     return config;
   },
 };
