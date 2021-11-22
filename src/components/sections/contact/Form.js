@@ -4,8 +4,7 @@ import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import { Button } from 'theme-ui';
 
-import FormInput from 'components/sections/contact/FormInput';
-import FormTextArea from 'components/sections/contact/FormTextArea';
+import { ContactFormInput, ContactFormTextArea } from 'components/sections/contact/FormInputs';
 import FormSentMessage from 'components/sections/contact/FormSentMessage';
 import FormErrorMessage from 'components/sections/contact/FormError';
 import FormRecaptcha from 'components/sections/contact/FormRecaptcha';
@@ -80,7 +79,7 @@ function ContactForm() {
         }}
       >
         <Fade bottom>
-          <FormInput
+          <ContactFormInput
             name="contact-form-name"
             label="Name"
             type="name"
@@ -90,7 +89,7 @@ function ContactForm() {
         </Fade>
 
         <Fade bottom delay={200}>
-          <FormInput
+          <ContactFormInput
             name="contact-form-email"
             label="Email"
             type="email"
@@ -100,11 +99,10 @@ function ContactForm() {
         </Fade>
 
         <Fade bottom delay={400}>
-          <FormTextArea
+          <ContactFormTextArea
             name="contact-form-message"
             label="Message"
             type="message"
-            value={message}
             onChange={(e) => { setMessage(e.target.value); }}
           />
         </Fade>

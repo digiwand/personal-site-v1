@@ -8,11 +8,6 @@ const propTypes = {
 /**
  * Used to detect clicks outside the "children" element(s) in its DOM tree. This will not work for
  * children rendered in a React Portal because they will lie outside of the DOM heirachy.
- *
- * @example
-    <OutsideClickHandler onOutsideClick={handleOutsideDrawerClick}>
-      <Modal />
-    </OutsideClickHandler>
  */
 function OutsideClickHandler({ children, onOutsideClick }) {
   const wrapperRef = createRef();
