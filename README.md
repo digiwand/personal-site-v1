@@ -15,12 +15,13 @@ https://ariella.dev
 
 ## To do
 - [ ] use AirBnb React Style Guide to clean code
+- [ ] add TypeScript
 - [ ] add meta tags
 - [ ] add tooltips
 - [ ] update header tags (h1, h2, h3) to improve SEO
 - [ ] add fullscreen view of screenshots on click
 - [ ] update dark mode
 - [ ] add additional theme(s)
-- [ ] support a11y 
+- [ ] support accessibility (a11y)
 - [ ] fix autocomplete bug on input form
 - [ ] optimize core vitals
