@@ -152,8 +152,8 @@ function Layout({ children, sectionTrackingPixelRefs }) {
         <meta property="og:image:height" content="627" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content="@ariellanvu" />
-        <meta name="twitter:site" content="@ariellanvu" />
+        <meta name="twitter:creator" content="@ariella_io" />
+        <meta name="twitter:site" content="@ariella_io" />
         <meta name="twitter:title" content="Ariella Vu | Personal Website" />
         <meta name="twitter:image" content="https://ariella.dev/images/ariella-vu-website-preview.png" />
 

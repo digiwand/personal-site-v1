@@ -32,11 +32,11 @@ const SOCIAL = {
   },
   github: {
     iconSVG: <IconGitHub />,
-    url: 'https://github.com/ariellanvu',
+    url: 'https://github.com/cosmiccloud',
   },
   instagram: {
     iconSVG: <IconInstagram />,
-    url: 'https://www.instagram.com/digital.wanderess',
+    url: 'https://www.instagram.com/digi.wand',
   },
   jsfiddle: {
     iconSVG: <IconJSFiddle />,
@@ -44,7 +44,7 @@ const SOCIAL = {
   },
   linkedin: {
     iconSVG: <IconLinkedIn />,
-    url: 'https://www.linkedin.com/in/ariellanvu/',
+    url: 'https://www.linkedin.com/in/ariellavu/',
   },
   nomadlist: {
     iconSVG: <IconNomadlist />,
@@ -52,7 +52,7 @@ const SOCIAL = {
   },
   replit: {
     iconSVG: <IconReplit />,
-    url: 'https://replit.com/@ariellanvu',
+    url: 'https://replit.com/@cosmiccloud',
   },
   stackoverflow: {
     iconSVG: <IconStackOverflow />,
@@ -60,7 +60,7 @@ const SOCIAL = {
   },
   twitter: {
     iconSVG: <IconTwitter />,
-    url: 'https://twitter.com/ariellanvu',
+    url: 'https://twitter.com/ariella_io',
   },
 };
 
