@@ -48,7 +48,7 @@ function Footer() {
           </span>
 
           <a
-            href="https://github.com/cosmiccloud/personal-site-v1"
+            href="https://github.com/digiwand/personal-site-v1"
             target="_blank"
             rel="noopener noreferrer"
             sx={{

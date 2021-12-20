@@ -32,7 +32,7 @@ const SOCIAL = {
   },
   github: {
     iconSVG: <IconGitHub />,
-    url: 'https://github.com/cosmiccloud',
+    url: 'https://github.com/digiwand',
   },
   instagram: {
     iconSVG: <IconInstagram />,
