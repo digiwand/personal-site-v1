@@ -44,7 +44,7 @@ const AboutSection = (props, ref) => (
           JavaScript Frameworks (React, Ember, and Angular 1.x).
           <br />
           <br />
-          I&apos;m a native of California. Over the last 3 years, I&apos;ve worked as a digital nomad. I&apos;ve considered
+          I&apos;m a native of California. Over the last 3 years, I&apos;ve worked remotely. I&apos;ve considered
           myself a nomad since I left my &quot;home&quot; at 14 years old. Fortunately, I&apos;ve now explored over 30
           countries. Overcoming changes and challenges is wired in me.
           <br />
