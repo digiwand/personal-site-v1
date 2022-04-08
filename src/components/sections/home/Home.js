@@ -98,7 +98,7 @@ function HomeSection(props, ref) {
             }}
             >
               I&apos;m a web developer who&apos;s passionate about clean code, delightful user
-              experiences, and efficiency. Currently exploring new opportunities using React or Ember.js.
+              experiences, and fostering freedom and inclusivity through decentralized, web 3.0 technologies.
             </Themed.p>
           </Fade>
           <Pulse delay={5200} duration={620}>
