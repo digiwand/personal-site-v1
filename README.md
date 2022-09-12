@@ -15,6 +15,7 @@ https://ariella.dev
 ## To do
 - [ ] use AirBnb React Style Guide to clean code
 - [ ] migrate remaining code to TypeScript
+- [ ] improve performance - linear gradient background is slowing performance
 - [ ] use custom hooks
 - [ ] add meta tags
 - [ ] add tooltips
