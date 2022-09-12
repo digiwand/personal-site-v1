@@ -42,15 +42,16 @@ function HomeSection(props, ref) {
       }}
     >
       <Zoom delay={600}>
-        <div sx={{
-          variant: 'glass',
-          display: 'inline-flex',
-          flexDirection: 'column',
-          px: [3, 4, '86rem'],
-          py: [5, 5, '74rem'],
-          margin: '0 auto',
-          zIndex: '1',
-        }}
+        <div
+          className="u-glass"
+          sx={{
+            display: 'inline-flex',
+            flexDirection: 'column',
+            px: [3, 4, '86rem'],
+            py: [5, 5, '74rem'],
+            margin: '0 auto',
+            zIndex: '1',
+          }}
         >
           <Themed.h2 sx={{
             variant: 'text.shadow',
