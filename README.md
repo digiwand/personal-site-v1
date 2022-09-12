@@ -16,6 +16,7 @@ https://ariella.dev
 ## To do
 - [ ] use AirBnb React Style Guide to clean code
 - [ ] add TypeScript
+- [ ] use custom hooks
 - [ ] add meta tags
 - [ ] add tooltips
 - [ ] update header tags (h1, h2, h3) to improve SEO

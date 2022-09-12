@@ -68,7 +68,13 @@ const AboutSection = (props, ref) => (
       mx: ['auto', 'initial', 'initial'],
     }}
     >
-      <picture>
+      <picture sx={{
+        width: '105%!important',
+        height: '105%!important',
+        top: '-12px',
+        left: '-1px',
+      }}
+      >
         <source srcSet="/images/profile.webp, /images/profile@2x.webp 2x" type="image/webp" />
         <source srcSet="/images/profile.png, /images/profile@2x.png 2x" type="image/png" />
         <Image

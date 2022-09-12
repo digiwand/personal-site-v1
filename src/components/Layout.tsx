@@ -67,8 +67,8 @@ function Layout({ children, sectionTrackingPixelRefs } : Props) {
 
         <meta
           name="description"
-          content={'Ariella is a web developer, React.js engineer, Ember.js programmer, and clean coder'
-           + 'with over 6 years of experience. Available for new opportunities!'}
+          content={'Ariella is a programmer creating diversity, inclusivity, and opportunities in Web 3.0. She is a senior '
+          + 'software engineer at ConsenSys, MetaMask.'}
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="og:type" content="website" />
@@ -81,8 +81,8 @@ function Layout({ children, sectionTrackingPixelRefs } : Props) {
         <meta property="og:image:height" content="627" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content="@ariella_io" />
-        <meta name="twitter:site" content="@ariella_io" />
+        <meta name="twitter:creator" content="@digiwand_" />
+        <meta name="twitter:site" content="@digiwand_" />
         <meta name="twitter:title" content="Ariella Vu | Personal Website" />
         <meta name="twitter:image" content="https://ariella.dev/images/ariella-vu-website-preview.png" />
 
