@@ -3,7 +3,7 @@
 
 This Next.js project is a work in progress. 
 
-The code is not the cleanest yet because I'm experimenting and throwing code quickly together... 
+The code is not the cleanest yet because I'm experimenting and throwing code quickly together.
 
 
 </br>
