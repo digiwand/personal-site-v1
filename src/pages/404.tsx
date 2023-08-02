@@ -1,5 +1,5 @@
-import Layout from 'components/Layout';
 import { Themed, ThemeUICSSObject } from 'theme-ui';
+import Layout from 'components/Layout';
 
 const pageStyle: ThemeUICSSObject = {
   minHeight: '100vh',
