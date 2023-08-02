@@ -70,19 +70,19 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }: Props) {
 
   // -- Handlers ----------------------------------------------------------------------------------
 
-  function handleCloseDrawer() {
+  const handleCloseDrawer = () => {
     setIsOpenDrawer(false);
-  }
+  };
 
-  function handleOpenDrawer() {
+  const handleOpenDrawer = () => {
     setIsOpenDrawer(true);
-  }
+  };
 
-  function handleOutsideDrawerClick() {
+  const handleOutsideDrawerClick = () => {
     if (isOpenDrawer) {
       handleCloseDrawer();
     }
-  }
+  };
 
   // -- Renders -----------------------------------------------------------------------------------
 
