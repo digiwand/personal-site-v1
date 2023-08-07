@@ -1,6 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { Button, Themed } from 'theme-ui';
+import { Button, Heading, Text } from 'theme-ui';
 import PropTypes from 'prop-types';
 import TECH from 'constants/tech';
 import JobSectionImgTrio from './JobSectionImgTrio';
@@ -51,7 +51,9 @@ function JobSection({ children, ...props }) {
             textAlign: ['center', 'left', 'left'],
           }}
         >
-          <Themed.h2 sx={{
+          <Heading
+            as="h2"
+            sx={{
             fontFamily: 'heading2',
             variant: 'text.shadow',
             display: ['block', 'block', 'inline-block'],
@@ -61,9 +63,11 @@ function JobSection({ children, ...props }) {
           }}
           >
             {title}
-          </Themed.h2>
+          </Heading>
 
-          <Themed.h2 sx={{
+          <Heading
+            as="h2"
+            sx={{
             fontFamily: 'heading2',
             variant: 'text.shadow',
             display: ['block', 'block', 'inline-block'],
@@ -72,9 +76,11 @@ function JobSection({ children, ...props }) {
           }}
           >
             <small>{subtitle}</small>
-          </Themed.h2>
+          </Heading>
 
-          <Themed.h4 sx={{
+          <Heading
+            as="h4"
+            sx={{
             display: 'block',
             pt: [3, 4, 4],
             pb: 2,
@@ -82,15 +88,15 @@ function JobSection({ children, ...props }) {
           }}
           >
             {companyName}
-          </Themed.h4>
+          </Heading>
 
-          <Themed.h5 sx={{ color: (t) => t.colors.workHeader }}>
+          <Heading as="h5" sx={{ color: (t) => t.colors.workHeader }}>
             {date}
-          </Themed.h5>
+          </Heading>
 
-          <Themed.p sx={{ py: 4, textAlign: 'left' }}>
+          <Text as="p" sx={{ py: 4, textAlign: 'left' }}>
             {children}
-          </Themed.p>
+          </Text>
 
           <div sx={{
             pt: [3, 3, 2],

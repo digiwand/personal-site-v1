@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Themed } from 'theme-ui';
+import { Heading } from 'theme-ui';
 
 const propTypes = {
   email: PropTypes.string.isRequired,
@@ -36,7 +36,7 @@ function FormSentMessage({ isVisible, email }) {
         },
       }}
     >
-      <Themed.h3>Email sent!</Themed.h3>
+      <Heading as="h3">Email sent!</Heading>
       <div>
         <br />
         <br />
@@ -46,12 +46,12 @@ function FormSentMessage({ isVisible, email }) {
         <br />
         <br />
         <br />
-        <Themed.h3 sx={{ textAlign: 'center' }}>
+        <Heading as="h3" sx={{ textAlign: 'center' }}>
           Best wishes,
-        </Themed.h3>
-        <Themed.h3 sx={{ textAlign: ['center', 'center', 'left'], pt: 2, display: 'block' }}>
+        </Heading>
+        <Heading as="h3" sx={{ textAlign: ['center', 'center', 'left'], pt: 2, display: 'block' }}>
           Ariella
-        </Themed.h3>
+        </Heading>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Themed } from 'theme-ui';
+import { Heading } from 'theme-ui';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -6,7 +6,8 @@ const propTypes = {
 };
 function WorkSideHeading({ text, className }) {
   return (
-    <Themed.h3
+    <Heading
+      as="h3"
       className={className}
       sx={{
         textAlign: ['center', 'center', 'initial'],
@@ -22,7 +23,7 @@ function WorkSideHeading({ text, className }) {
       }}
     >
       {text}
-    </Themed.h3>
+    </Heading>
   );
 }
 

@@ -18,7 +18,12 @@ function NavDrawerItem({
   isActive,
 }: Props) {
   return (
-    <Link href={href} scroll={false} passHref>
+    /**
+     * @todo move <a> tag props to Link
+     * @see {@link https://nextjs.org/docs/app/building-your-application/upgrading/codemods#new-link}
+     *
+    */
+    <Link href={href} scroll={false} passHref legacyBehavior>
       <a
         sx={(t) => ({
           py: 3,

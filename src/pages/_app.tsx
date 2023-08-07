@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { AppProps } from 'next/app';
 import { useState } from 'react';
-import { ThemeProvider } from 'theme-ui';
+import { ThemeUIProvider } from 'theme-ui';
 
 import 'styles/global.scss';
 import theme from 'styles/theme/index';
@@ -14,12 +14,12 @@ export default function App({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeUIProvider theme={theme}>
       <GlobalUtilStyles />
       <Loader finishLoading={() => setIsLoading(false)} />
       <FadeInLayout isLoading={isLoading}>
         <Component {...pageProps} />
       </FadeInLayout>
-    </ThemeProvider>
+    </ThemeUIProvider>
   );
 }

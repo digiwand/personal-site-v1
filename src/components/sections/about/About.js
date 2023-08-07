@@ -1,6 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { Image, Themed } from 'theme-ui';
+import { Heading, Image, Text } from 'theme-ui';
 
 import FrameCircle from 'components/common/FrameCircle';
 import Section from 'components/sections/Section';
@@ -27,14 +27,16 @@ const AboutSection = (props, ref) => (
     }}
     >
       <Fade>
-        <Themed.h2 sx={{ pt: [6, 0, 0], pb: 4 }}>
+        <Heading as="h2" sx={{ pt: [6, 0, 0], pb: 4 }}>
           <Fade top duration={300} cascade>
             About
           </Fade>
-        </Themed.h2>
+        </Heading>
       </Fade>
       <Fade delay={680} duration={1100}>
-        <Themed.p sx={{
+        <Text
+          as="p"
+          sx={{
           minWidth: ['initial', 'initial', '310rem'],
           maxWidth: ['initial', 'initial', '520rem'],
         }}
@@ -53,7 +55,7 @@ const AboutSection = (props, ref) => (
             teamwork. */}
           Besides programming and traveling, my passions include yoga, hiking, indoor rock climbing, building new homebases
           around the world, and personal development.
-        </Themed.p>
+        </Text>
       </Fade>
     </div>
 

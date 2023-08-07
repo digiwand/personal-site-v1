@@ -39,7 +39,12 @@ function NavTab({
   );
 
   return (
-    <Link href={href} scroll={false} passHref>
+    /**
+     * @todo move <a> tag props to Link
+     * https://nextjs.org/docs/app/building-your-application/upgrading/codemods#new-link
+     *
+    */
+    <Link href={href} scroll={false} passHref legacyBehavior>
       <a
         className={`${className} + NavTab`}
         sx={{

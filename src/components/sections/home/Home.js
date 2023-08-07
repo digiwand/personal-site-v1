@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import Pulse from 'react-reveal/Pulse';
 import Zoom from 'react-reveal/Zoom';
-import { Themed, useThemeUI } from 'theme-ui';
+import { Heading, Text, useThemeUI } from 'theme-ui';
 
 import ResumeButton from 'components/resume-button/ResumeButton';
 import Section from 'components/sections/Section';
@@ -53,7 +53,9 @@ function HomeSection(props, ref) {
             zIndex: '1',
           }}
         >
-          <Themed.h2 sx={{
+          <Heading
+            as="h2"
+            sx={{
             variant: 'text.shadow',
             letterSpacing: '2.4rem',
             color: (t) => t.colors.homeHello,
@@ -62,7 +64,7 @@ function HomeSection(props, ref) {
             <Fade top delay={1350} duration={300} cascade>
               Hello, I&apos;m
             </Fade>
-          </Themed.h2>
+          </Heading>
           <h1 sx={{
             py: ['42rem', '46rem', '48rem'],
             rect: {
@@ -81,7 +83,9 @@ function HomeSection(props, ref) {
             />
           </h1>
           <Fade delay={1100} duration={1000}>
-            <Themed.p sx={{
+            <Text
+              as="p"
+              sx={{
               maxWidth: '540rem',
               mx: 'auto',
               pb: ['52rem', '52rem', '54rem'],
@@ -89,7 +93,7 @@ function HomeSection(props, ref) {
             >
               I&apos;m a web developer who&apos;s passionate about clean code, delightful user
               experiences, and fostering freedom and inclusivity through decentralized, web 3.0 technologies.
-            </Themed.p>
+            </Text>
           </Fade>
           <Pulse delay={5200} duration={620}>
             <ResumeButton />

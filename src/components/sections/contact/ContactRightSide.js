@@ -1,5 +1,5 @@
 import Fade from 'react-reveal/Fade';
-import { Themed } from 'theme-ui';
+import { Heading } from 'theme-ui';
 import ContactForm from 'components/sections/contact/Form';
 import SOCIAL from 'constants/social';
 
@@ -18,16 +18,18 @@ function ContactRightSide() {
         textAlign: ['center', 'center', 'left'],
       }}
       >
-        <Themed.h3 sx={{ color: (t) => t.colors.contactSubHeader, pb: 3 }}>
+        <Heading as="h3" sx={{ color: (t) => t.colors.contactSubHeader, pb: 3 }}>
           <Fade delay={200}>
             Send me a message
           </Fade>
-        </Themed.h3>
+        </Heading>
 
         <br />
 
         <Fade>
-          <Themed.h6 sx={{
+          <Heading
+            as="h6"
+            sx={{
             pb: 4,
             color: (t) => `${t.colors.contactText}`,
           }}
@@ -42,7 +44,7 @@ function ContactRightSide() {
             >
               ariellavu@gmail.com
             </a>
-          </Themed.h6>
+          </Heading>
         </Fade>
 
         <ContactForm />
