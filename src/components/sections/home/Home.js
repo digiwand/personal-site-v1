@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import Pulse from 'react-reveal/Pulse';
 import Zoom from 'react-reveal/Zoom';
-import { Heading, Text, useThemeUI } from 'theme-ui';
+import { Heading, useThemeUI } from 'theme-ui';
 
 import ResumeButton from 'components/resume-button/ResumeButton';
 import Section from 'components/sections/Section';
@@ -84,17 +84,17 @@ function HomeSection(props, ref) {
             />
           </h1>
           <Fade delay={1100} duration={1000}>
-            <Text
-              as="p"
+            <p
               sx={{
-              maxWidth: '540rem',
-              mx: 'auto',
-              pb: ['52rem', '52rem', '54rem'],
-            }}
+                variant: 'text.body',
+                maxWidth: '540rem',
+                mx: 'auto',
+                pb: ['52rem', '52rem', '54rem'],
+              }}
             >
               I&apos;m a web developer who&apos;s passionate about clean code, delightful user
               experiences, and fostering freedom and inclusivity through decentralized, web 3.0 technologies.
-            </Text>
+            </p>
           </Fade>
           <Pulse delay={5200} duration={620}>
             <ResumeButton />

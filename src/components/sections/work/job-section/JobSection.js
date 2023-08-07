@@ -1,7 +1,6 @@
 import { getColor } from '@theme-ui/color'
-import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { Button, Heading, Text } from 'theme-ui';
+import { Button, Heading } from 'theme-ui';
 import PropTypes from 'prop-types';
 import TECH from 'constants/tech';
 import JobSectionImgTrio from './JobSectionImgTrio';
@@ -95,9 +94,9 @@ function JobSection({ children, ...props }) {
             {date}
           </Heading>
 
-          <Text as="p" sx={{ py: 4, textAlign: 'left' }}>
+          <p sx={{ variant: 'text.body', py: 4, textAlign: 'left' }}>
             {children}
-          </Text>
+          </p>
 
           <div sx={{
             pt: [3, 3, 2],

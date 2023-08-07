@@ -1,7 +1,7 @@
 import { getColor } from '@theme-ui/color';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { Heading, Image, Text } from 'theme-ui';
+import { Heading, Image } from 'theme-ui';
 
 import FrameCircle from 'components/common/FrameCircle';
 import Section from 'components/sections/Section';
@@ -35,12 +35,12 @@ const AboutSection = (props, ref) => (
         </Heading>
       </Fade>
       <Fade delay={680} duration={1100}>
-        <Text
-          as="p"
+        <p
           sx={{
-          minWidth: ['initial', 'initial', '310rem'],
-          maxWidth: ['initial', 'initial', '520rem'],
-        }}
+            variant: 'text.body',
+            minWidth: ['initial', 'initial', '310rem'],
+            maxWidth: ['initial', 'initial', '520rem'],
+          }}
         >
           <br />
           I started my career as a full-stack programmer over 6 years ago. Now I specialize in building websites using
@@ -56,7 +56,7 @@ const AboutSection = (props, ref) => (
             teamwork. */}
           Besides programming and traveling, my passions include yoga, hiking, indoor rock climbing, building new homebases
           around the world, and personal development.
-        </Text>
+        </p>
       </Fade>
     </div>
 
