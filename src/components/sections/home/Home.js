@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color';
 import anime from 'animejs';
 import React, { useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
@@ -58,7 +59,7 @@ function HomeSection(props, ref) {
             sx={{
             variant: 'text.shadow',
             letterSpacing: '2.4rem',
-            color: (t) => t.colors.homeHello,
+            color: (t) => getColor(t, 'homeHello'),
           }}
           >
             <Fade top delay={1350} duration={300} cascade>

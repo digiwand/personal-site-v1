@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import { IconButton, ThemeUICSSProperties } from 'theme-ui';
 // import { keyframes } from '@emotion/react';
 
@@ -28,7 +29,7 @@ function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }: Props) {
         ...sxFadeInInitialize,
 
         ':hover .NavDrawer_closeSVG > path': {
-          fill: (t) => t.colors.navDrawerSocialIconsHoverColor,
+          fill: (t) => getColor(t, 'navDrawerSocialIconsHoverColor'),
         },
       }}
       onClick={() => { handleCloseMenu(); }}
@@ -42,7 +43,7 @@ function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }: Props) {
 
           '> path': {
             transition: 'fill 0.15s',
-            fill: (t) => t.colors.frameText,
+            fill: (t) => getColor(t, 'frameText'),
           },
         }}
       >
@@ -66,7 +67,7 @@ function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }: Props) {
           pl: '22rem',
           transform: 'translateX(50rem)',
           // animation: `${bgChangeKeyframe} 5s infinite`,
-          color: (t) => t.colors.frameText,
+          color: (t) => getColor(t, 'frameText'),
 
           ...sxFadeInInitialize,
 
@@ -84,7 +85,7 @@ function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }: Props) {
             height: '24rem',
             transition: 'height 0.4s, transform 0.4s',
             path: {
-              fill: (t) => t.colors.svgAriellaVuActive,
+              fill: (t) => getColor(t, 'svgAriellaVuActive'),
             },
           }}
         />

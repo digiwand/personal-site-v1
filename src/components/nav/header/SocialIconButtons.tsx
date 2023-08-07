@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import SocialIconButtons from 'components/social-icons/SocialIconButtons';
 
 const socialKeys = ['stackoverflow', 'github', 'jsfiddle', 'linkedin'];
@@ -19,7 +20,7 @@ function NavSocialIconButtons() {
         sx={{
           variant: 'buttons.icon.small',
           '&:hover svg path': {
-            fill: (t) => t.colors.navTabHoverColor,
+            fill: (t) => getColor(t, 'navTabHoverColor'),
           },
         }}
         revealDelay={totalDurationOfTabs}

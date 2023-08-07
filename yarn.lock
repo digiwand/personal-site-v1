@@ -58,7 +58,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3":
+"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.3":
   version: 7.22.6
   resolution: "@babel/runtime@npm:7.22.6"
   dependencies:
@@ -569,6 +569,16 @@ __metadata:
     "@emotion/react": ^11.11.1
     react: ">=18"
   checksum: cdd91f71bb87ea96db77ac6a2a08576e70837ff45bf79928b1ae122da40cbe9a2435fa8d94dbceac2ef719886c94a0a6a21541e83fe0de69c7ccfa0317362aeb
+  languageName: node
+  linkType: hard
+
+"@theme-ui/color@npm:^0.16.0":
+  version: 0.16.0
+  resolution: "@theme-ui/color@npm:0.16.0"
+  dependencies:
+    "@theme-ui/css": ^0.16.0
+    polished: ^4.0.5
+  checksum: e12fb9bbe714c324e7bb4ff9ee5c05e63c967c682760ab1f77e928d6a3d66887a98b690c36b190c4c5574676352ef28beb68cd84beb3eedbb2801c528f1dd051
   languageName: node
   linkType: hard
 
@@ -1269,13 +1279,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"confusing-browser-globals@npm:^1.0.10":
-  version: 1.0.10
-  resolution: "confusing-browser-globals@npm:1.0.10"
-  checksum: 7ccdc44c2ca419cf6576c3e4336106e18d1c5337f547e461342f51aec4a10f96fdfe45414b522be3c7d24ea0b62bf4372cd37768022e4d6161707ffb2c0987e6
-  languageName: node
-  linkType: hard
-
 "console-control-strings@npm:^1.1.0":
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
@@ -1571,37 +1574,6 @@ __metadata:
   version: 4.0.0
   resolution: "escape-string-regexp@npm:4.0.0"
   checksum: 98b48897d93060f2322108bf29db0feba7dd774be96cd069458d1453347b25ce8682ecc39859d4bca2203cc0ab19c237bcc71755eff49a0f8d90beadeeba5cc5
-  languageName: node
-  linkType: hard
-
-"eslint-config-airbnb-base@npm:^14.2.1":
-  version: 14.2.1
-  resolution: "eslint-config-airbnb-base@npm:14.2.1"
-  dependencies:
-    confusing-browser-globals: ^1.0.10
-    object.assign: ^4.1.2
-    object.entries: ^1.1.2
-  peerDependencies:
-    eslint: ^5.16.0 || ^6.8.0 || ^7.2.0
-    eslint-plugin-import: ^2.22.1
-  checksum: 858bea748a3c8685b52fcf2488e6a0b964022f8387f4ee1e69cb707d4fda2a409f09eb8eea658bcd83fae3519967d10208ba7576dd3d3202b8cf0b9d1a6e21eb
-  languageName: node
-  linkType: hard
-
-"eslint-config-airbnb@npm:^18.2.1":
-  version: 18.2.1
-  resolution: "eslint-config-airbnb@npm:18.2.1"
-  dependencies:
-    eslint-config-airbnb-base: ^14.2.1
-    object.assign: ^4.1.2
-    object.entries: ^1.1.2
-  peerDependencies:
-    eslint: ^5.16.0 || ^6.8.0 || ^7.2.0
-    eslint-plugin-import: ^2.22.1
-    eslint-plugin-jsx-a11y: ^6.4.1
-    eslint-plugin-react: ^7.21.5
-    eslint-plugin-react-hooks: ^4 || ^3 || ^2.3.0 || ^1.7.0
-  checksum: ea11cd0006912f7086fb278e03180da4bc2378cf4e93b1dd970775d8e9b50fd11a64209bdc0ed17654d29abe4ccfa19baa4d1e1e5bd3eb660fcf4798ba2810d2
   languageName: node
   linkType: hard
 
@@ -3305,7 +3277,7 @@ next@latest:
   languageName: node
   linkType: hard
 
-"object.entries@npm:^1.1.2, object.entries@npm:^1.1.4":
+"object.entries@npm:^1.1.4":
   version: 1.1.4
   resolution: "object.entries@npm:1.1.4"
   dependencies:
@@ -3500,13 +3472,13 @@ next@latest:
   resolution: "personal-site-v1@workspace:."
   dependencies:
     "@emotion/react": ^11.11.1
+    "@theme-ui/color": ^0.16.0
     "@types/node": ^20.4.5
     "@types/react": ^18.2.18
     animejs: ^3.2.1
     date-fns: ^2.21.3
     emailjs-com: ^3.2.0
     eslint: ^7.32.0
-    eslint-config-airbnb: ^18.2.1
     eslint-config-next: latest
     eslint-plugin-import: ^2.24.0
     eslint-plugin-jsx-a11y: ^6.4.1
@@ -3563,6 +3535,15 @@ next@latest:
   dependencies:
     find-up: ^2.1.0
   checksum: de4b418175281a082e366ce1a919f032520ee53cf421578b35173f03816f6ec4c19e1552066840bb0988c3e1215859653948efd6ca3507a23f4f44229269500d
+  languageName: node
+  linkType: hard
+
+"polished@npm:^4.0.5":
+  version: 4.2.2
+  resolution: "polished@npm:4.2.2"
+  dependencies:
+    "@babel/runtime": ^7.17.8
+  checksum: 97fb927dc55cd34aeb11b31ae2a3332463f114351c86e8aa6580d7755864a0120164fdc3770e6160c8b1775052f0eda14db9a6e34402cd4b08ab2d658a593725
   languageName: node
   linkType: hard
 

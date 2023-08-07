@@ -6,6 +6,8 @@ import {
 } from 'react';
 import Fade from 'react-reveal/Fade';
 
+import { getColor } from '@theme-ui/color'
+
 import NavTabs from 'components/nav/header/Tabs';
 import NavSocialIcons from 'components/nav/header/SocialIconButtons';
 import ThemeSelector from 'components/nav/theme-selector/Dropdown';
@@ -70,7 +72,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }: Props) {
         transform: ['translateY(-110rem)', 'translateY(-110rem)', 'translateY(0)'],
 
         '&[has-scrolled="true"]': {
-          background: (t) => t.colors.navHeaderBg,
+          background: (t) => getColor(t, 'navHeaderBg'),
           backdropFilter: 'blur(4px)',
 
           transform: ['translateY(-110rem)', 'translateY(-110rem)', 'translateY(-70rem)'],
@@ -87,7 +89,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }: Props) {
 
           '.NavTab': {
             letterSpacing: '1rem',
-            color: (t) => t.colors.frameText,
+            color: (t) => getColor(t, 'frameText'),
           },
         },
       }}
@@ -101,7 +103,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }: Props) {
               height: '28rem',
               transition: 'transform 0.4s',
               path: {
-                fill: (t) => t.colors.svgAriellaVuActive,
+                fill: (t) => getColor(t, 'svgAriellaVuActive'),
               },
             }}
           />

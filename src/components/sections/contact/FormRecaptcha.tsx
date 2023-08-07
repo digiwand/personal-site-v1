@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { RefObject } from 'react';
 
@@ -19,7 +20,7 @@ function FormRecaptcha({ recaptchaRef } : { recaptchaRef: RefObject<ReCAPTCHA> }
       height: 'fit-content',
       pr: [3, 4, 4],
       pt: 1,
-      color: (t) => t.colors.contactReCaptcha,
+      color: (t) => getColor(t, 'contactReCaptcha'),
     }}
     >
       <ReCAPTCHA

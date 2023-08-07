@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import { useColorMode, Button } from 'theme-ui';
 import THEMEUI_COLOR_MODE_CONFIG from 'constants/theme-ui';
 
@@ -34,10 +35,10 @@ function ThemeDropdownList() {
             mr: 2,
 
             '> path': {
-              fill: t.colors.buttonText,
+              fill: getColor(t, 'buttonText'),
             },
             '&:hover > path': {
-              fill: t.colors.buttonHoverText,
+              fill: getColor(t, 'buttonHoverText'),
             },
           },
         })}

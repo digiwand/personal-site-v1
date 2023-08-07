@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color';
 import { keyframes } from '@emotion/react';
 import Zoom from 'react-reveal/Zoom';
 import TECH from 'constants/tech';
@@ -106,7 +107,7 @@ function Carousel() {
                   height: `${imgHeight}rem`,
                   left: `${imgPadding}rem`,
                   top: `${imgPadding}rem`,
-                  background: (t) => t.colors.carouselItemBg,
+                  background: (t) => getColor(t, 'carouselItemBg'),
                   transition: 'height 1s, width: 1s, transform 1s',
                   transform: [
                     `rotateY(${rotationDeg * index}deg) translateZ(${mobileRadius}rem)`,

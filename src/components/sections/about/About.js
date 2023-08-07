@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Heading, Image, Text } from 'theme-ui';
@@ -86,7 +87,7 @@ const AboutSection = (props, ref) => (
           height="461.33"
           sx={{
             boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
-            filter: (t) => t.colors.aboutImgFilter,
+            filter: (t) => getColor(t, 'aboutImgFilter'),
           }}
         />
       </picture>

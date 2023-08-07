@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Heading } from 'theme-ui';
@@ -29,7 +30,7 @@ function EducationSection() {
             variant: 'text.shadow',
             display: 'block',
             letterSpacing: ['-0.5rem', '3rem', '3rem'],
-            color: (t) => t.colors.workHeader,
+            color: (t) => getColor(t, 'workHeader'),
           }}
           >
             B.A.S. Computer Science
@@ -38,7 +39,7 @@ function EducationSection() {
             as="h4"
             sx={{
             display: 'block',
-            color: (t) => t.colors.workSubHeader,
+            color: (t) => getColor(t, 'workSubHeader'),
             pt: 4,
             pb: 2,
           }}
@@ -48,7 +49,7 @@ function EducationSection() {
           <Heading
             as="h5"
             sx={{
-            color: (t) => t.colors.workHeader,
+            color: (t) => getColor(t, 'workHeader'),
           }}
           >
             Sept 2010 - Sept 2014

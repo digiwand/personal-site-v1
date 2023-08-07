@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import { useColorMode } from 'theme-ui';
 import THEMEUI_COLOR_MODE_CONFIG from 'constants/theme-ui';
 
@@ -41,14 +42,14 @@ function ThemeNavDrawerItem({ handleCloseMenu }: { handleCloseMenu(): void}) {
         fontSize: 4,
         letterSpacing: '2rem',
         fontFamily: 'body',
-        color: t.colors.frameText,
+        color: getColor(t, 'frameText'),
         transition: 'color 0.2s, background 0.2s',
 
         '&:hover': {
-          color: t.colors.navDrawerActiveColor,
+          color: getColor(t, 'navDrawerActiveColor'),
 
           '> div > svg > path': {
-            fill: t.colors.navDrawerActiveColor,
+            fill: getColor(t, 'navDrawerActiveColor'),
           },
 
           '.NavDrawer-ThemeDrawerItem_text::before': {
@@ -63,7 +64,7 @@ function ThemeNavDrawerItem({ handleCloseMenu }: { handleCloseMenu(): void}) {
 
           '> path': {
             transition: 'fill 0.3s',
-            fill: t.colors.frameText,
+            fill: getColor(t, 'frameText'),
           },
         },
       })}
@@ -84,7 +85,7 @@ function ThemeNavDrawerItem({ handleCloseMenu }: { handleCloseMenu(): void}) {
             bottom: '-10rem',
             left: '0',
             opacity: '0',
-            background: (t) => t.colors.text,
+            background: (t) => getColor(t, 'text'),
             transform: 'translatex(80rem)',
             transition: 'transform 0.3s ease-in-out, opacity 0.4s linear',
           },

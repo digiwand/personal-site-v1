@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import Head from 'next/head';
 import { ReactNode, MutableRefObject, useRef } from 'react';
 import { InitializeColorMode, get, useThemeUI } from 'theme-ui';
@@ -40,7 +41,11 @@ function Layout({ children, sectionTrackingPixelRefs } : Props) {
         width: '100%',
         minWidth: '320px',
         transition: 'background 3s, background-image 3s',
-        background: (t) => [t.colors.backgroundMainMobile, t.colors.backgroundMainMobile, t.colors.backgroundMain],
+        background: (t) => [
+          getColor(t, 'backgroundMainMobile'), 
+          getColor(t, 'backgroundMainMobile'), 
+          getColor(t, 'backgroundMain')
+        ],
         // unfortunately, background flickers if we use 'local' here
         backgroundAttachment: 'fixed',
 

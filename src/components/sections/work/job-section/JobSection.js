@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Button, Heading, Text } from 'theme-ui';
@@ -59,7 +60,7 @@ function JobSection({ children, ...props }) {
             display: ['block', 'block', 'inline-block'],
             pr: [0, 0, 3],
             letterSpacing: ['-0.5rem', '3rem', '3rem'],
-            color: (t) => t.colors.workHeader,
+            color: (t) => getColor(t, 'workHeader'),
           }}
           >
             {title}
@@ -72,7 +73,7 @@ function JobSection({ children, ...props }) {
             variant: 'text.shadow',
             display: ['block', 'block', 'inline-block'],
             pt: [1, 0, 0],
-            color: (t) => t.colors.workHeader,
+            color: (t) => getColor(t, 'workHeader'),
           }}
           >
             <small>{subtitle}</small>
@@ -84,13 +85,13 @@ function JobSection({ children, ...props }) {
             display: 'block',
             pt: [3, 4, 4],
             pb: 2,
-            color: (t) => t.colors.workSubHeader,
+            color: (t) => getColor(t, 'workSubHeader'),
           }}
           >
             {companyName}
           </Heading>
 
-          <Heading as="h5" sx={{ color: (t) => t.colors.workHeader }}>
+          <Heading as="h5" sx={{ color: (t) => getColor(t, 'workHeader') }}>
             {date}
           </Heading>
 

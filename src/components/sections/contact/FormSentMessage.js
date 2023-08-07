@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color';
 import PropTypes from 'prop-types';
 import { Heading } from 'theme-ui';
 
@@ -28,7 +29,7 @@ function FormSentMessage({ isVisible, email }) {
         opacity: 0,
         pointerEvents: 'none',
         transition: 'opacity 0.3s',
-        background: (t) => t.colors.inputBg,
+        background: (t) => getColor(t, 'inputBg'),
 
         '&[is-visible="true"]': {
           opacity: 1,

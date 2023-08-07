@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color';
 import SOCIAL from 'constants/social';
 
 function FormErrorMessage({ isVisible }) {
@@ -5,7 +6,7 @@ function FormErrorMessage({ isVisible }) {
     <div
       is-visible={String(isVisible)}
       sx={{
-        color: (t) => t.colors.error,
+        color: (t) => getColor(t, 'error'),
         position: 'absolute',
         fontSize: 0,
         opacity: 0,

@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import SocialIconButtons from 'components/social-icons/SocialIconButtons';
 
 const socialKeys = ['stackoverflow', 'github', 'jsfiddle', 'linkedin'];
@@ -13,9 +14,9 @@ function NavDrawerSocialIcons() {
           flex: '1 0 auto',
 
           '&:hover ': {
-            background: t.colors.frameBorder,
+            background: getColor(t, 'frameBorder'),
             path: {
-              fill: t.colors.navDrawerSocialIconsHoverColor,
+              fill: getColor(t, 'navDrawerSocialIconsHoverColor'),
             },
           },
 
@@ -26,7 +27,7 @@ function NavDrawerSocialIcons() {
             width: '1rem',
             right: '0',
             top: '0',
-            background: t.colors.frameBorder,
+            background: getColor(t, 'frameBorder'),
           },
 
           a: {
@@ -43,7 +44,7 @@ function NavDrawerSocialIcons() {
           },
 
           path: {
-            fill: t.colors.frameText,
+            fill: getColor(t, 'frameText'),
           },
         })}
         socialKeys={socialKeys}

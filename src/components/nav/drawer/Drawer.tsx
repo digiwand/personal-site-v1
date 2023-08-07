@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import DrawerHeader from 'components/nav/drawer/DrawerHeader';
 import DrawerFooter from 'components/nav/drawer/DrawerFooter';
 import NavDrawerItem from 'components/nav/drawer/DrawerItem';
@@ -58,7 +59,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }: Props) {
         display: ['flex', 'flex', 'none'],
         transform: ['translateX(100%)', `translateX(${tabletWidth})`],
         width: ['100%', tabletWidth],
-        background: t.colors.navDrawerBg,
+        background: getColor(t, 'navDrawerBg'),
         transition: 'box-shadow 0.3s, transform 0.4s ease-in, width 0.3s',
 
         '.NavDrawer_nav a': {
@@ -67,7 +68,7 @@ function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }: Props) {
         },
         '&[is-open="true"]': {
           transform: ['translateX(0)', 'translateX(0)', `translateX(${tabletWidth})`],
-          boxShadow: `-5px 0px 10px 1px ${t.colors.frameBorder}`,
+          boxShadow: `-5px 0px 10px 1px ${getColor(t, 'frameBorder')}`,
 
           '.NavDrawer_profileLogo': {
             ...sxFadeInAnimate,

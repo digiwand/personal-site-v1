@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color';
 import Fade from 'react-reveal/Fade';
 import Flip from 'react-reveal/Flip';
 import { Heading } from 'theme-ui';
@@ -19,7 +20,7 @@ function ContactLeftSide() {
     }}
     >
       <div>
-        <Heading as="h3" sx={{ color: (t) => t.colors.contactSubHeader, pb: 3 }}>
+        <Heading as="h3" sx={{ color: (t) => getColor(t, 'contactSubHeader'), pb: 3 }}>
           <Fade delay={200}>
             Let&apos;s Connect!
           </Fade>
@@ -28,7 +29,7 @@ function ContactLeftSide() {
         <br />
 
         <Fade>
-          <Heading as="h6" sx={{ color: (t) => t.colors.contactText }}>
+          <Heading as="h6" sx={{ color: (t) => getColor(t, 'contactText') }}>
             Working remotely since 2018
           </Heading>
         </Fade>
@@ -43,7 +44,7 @@ function ContactLeftSide() {
             maxWidth: '336rem',
             minWidth: '160rem',
             alignSelf: 'center',
-            path: { fill: (t) => t.colors.contactPlant },
+            path: { fill: (t) => getColor(t, 'contactPlant') },
           }}
         />
       </Flip>

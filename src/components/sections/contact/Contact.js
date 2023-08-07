@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import {
@@ -26,7 +27,7 @@ function ContactDivider() {
         '&:after': {
           content: '""',
           zIndex: 1,
-          background: (t) => t.colors.contactDivider,
+          background: (t) => getColor(t, 'contactDivider'),
           width: ['100%', '100%', '1rem'],
           height: ['1rem', '1rem', '100%'],
         },
@@ -58,7 +59,7 @@ const ContactSection = (props, ref) => (
           sx={{
             variant: 'text.shadow',
             letterSpacing: '2.4rem',
-            color: (t) => t.colors.homeHello,
+            color: (t) => getColor(t, 'homeHello'),
             display: 'block',
             textAlign: 'center',
             pb: 4,

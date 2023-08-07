@@ -1,3 +1,5 @@
+import { getColor } from '@theme-ui/color';
+
 const fonts = {
   fonts: {
     body: 'Avenir Next, Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
@@ -47,25 +49,25 @@ const fonts = {
       lineHeight: 'heading',
       letterSpacing: 'heading',
       display: 'inline-block',
-      color: (t) => t.colors.homeHello,
+      color: (t) => getColor(t, 'homeHello'),
     },
 
     gradient: {
-      backgroundColor: (t) => t.colors.textGradientBackup,
-      backgroundImage: (t) => t.colors.textGradient,
+      backgroundColor: (t) => getColor(t, 'textGradientBackup'),
+      backgroundImage: (t) => getColor(t, 'textGradient'),
       backgroundClip: 'text',
       textFillColor: 'transparent',
     },
     link: {
-      color: (t) => t.colors.link,
+      color: (t) => getColor(t, 'link'),
       transition: 'color 0.3s',
 
       ':hover': {
-        color: (t) => t.colors.linkHover,
+        color: (t) => getColor(t, 'linkHover'),
       },
     },
     shadow: {
-      textShadow: (t) => t.colors.textShadow,
+      textShadow: (t) => getColor(t, 'textShadow'),
     },
   },
 };

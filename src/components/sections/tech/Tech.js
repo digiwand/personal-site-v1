@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Heading } from 'theme-ui';
@@ -13,7 +14,7 @@ function TechSection(props, ref) {
       id={SECTION_ID.TECH}
       ref={ref}
       sx={{
-        background: (t) => t.colors.techBg,
+        background: (t) => getColor(t, 'techBg'),
         minHeight: '0',
         py: [5, 6, 6],
         zIndex: 1,
@@ -24,7 +25,7 @@ function TechSection(props, ref) {
         <Heading
           as="h3"
           sx={{
-            color: (t) => t.colors.homeHello,
+            color: (t) => getColor(t, 'homeHello'),
             display: 'block',
             textAlign: 'center',
             pt: [4, 0, 0],

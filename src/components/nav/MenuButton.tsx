@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import { Button } from 'theme-ui';
 
 const menuLine = {
@@ -6,7 +7,7 @@ const menuLine = {
   height: '2rem',
   transition: 'background 0.2s',
   borderRadius: '2rem',
-  background: (t) => t.colors.glassThickBg,
+  background: (t) => getColor(t, 'glassThickBg'),
 };
 
 function NavMenuButton({ onClick }: { onClick(): void}) {

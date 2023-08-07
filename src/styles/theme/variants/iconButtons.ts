@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import { ThemeUICSSObject } from 'theme-ui';
 
 const iconButtons: ThemeUICSSObject = {
@@ -14,21 +15,21 @@ const iconButtons: ThemeUICSSObject = {
 
   secondary: {
     position: 'relative',
-    background: (t) => t.colors.buttonSecondaryBg,
-    border: (t) => t.colors.buttonSecondaryBorder,
+    background: (t) => getColor(t, 'buttonSecondaryBg'),
+    border: (t) => getColor(t, 'buttonSecondaryBorder'),
 
     '&:active': {
-      boxShadow: (t) => `inset 0 3rem 5rem rgb(18 21 26 / 9%), ${t.colors.buttonBoxShadow}`,
+      boxShadow: (t) => `inset 0 3rem 5rem rgb(18 21 26 / 9%), ${getColor(t, 'buttonBoxShadow')}`,
     },
     '&:focus': {
-      boxShadow: (t) => `inset 0 3rem 5rem rgb(18 21 26 / 9%), ${t.colors.buttonBoxShadow}`,
+      boxShadow: (t) => `inset 0 3rem 5rem rgb(18 21 26 / 9%), ${getColor(t, 'buttonBoxShadow')}`,
     },
     '&:hover': {
       '&:before': {
         opacity: 1,
       },
       path: {
-        fill: (t) => t.colors.buttonHoverText,
+        fill: (t) => getColor(t, 'buttonHoverText'),
       },
     },
 
@@ -43,8 +44,8 @@ const iconButtons: ThemeUICSSObject = {
       borderRadius: '4rem',
       zIndex: '2',
       transition: 'opacity 0.15s ease-out',
-      backgroundImage: (t) => t.colors.buttonSecondaryBg,
-      border: (t) => t.colors.buttonSecondaryBorder,
+      backgroundImage: (t) => getColor(t, 'buttonSecondaryBg'),
+      border: (t) => getColor(t, 'buttonSecondaryBorder'),
     },
 
     '> svg': {
@@ -52,7 +53,7 @@ const iconButtons: ThemeUICSSObject = {
     },
 
     path: {
-      fill: (t) => t.colors.buttonText,
+      fill: (t) => getColor(t, 'buttonText'),
     },
   },
 

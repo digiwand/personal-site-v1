@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import Link from 'next/link';
 
 type Props = {
@@ -30,12 +31,12 @@ function NavDrawerItem({
           fontSize: 4,
           letterSpacing: '2rem',
           textAlign: 'center',
-          color: t.colors.frameText,
+          color: getColor(t, 'frameText'),
           height: '68rem',
           transition: 'color 0.2s, background 0.2s',
 
           '&:hover': {
-            color: t.colors.navDrawerActiveColor,
+            color: getColor(t, 'navDrawerActiveColor'),
 
             '> span::before': {
               transform: 'translatex(0)',
@@ -44,7 +45,7 @@ function NavDrawerItem({
           },
 
           '&[is-active="true"]': {
-            color: t.colors.navDrawerActiveColor,
+            color: getColor(t, 'navDrawerActiveColor'),
             fontWeight: 700,
           },
 
@@ -68,7 +69,7 @@ function NavDrawerItem({
             bottom: '-2rem',
             left: '0',
             opacity: '0',
-            background: (t) => t.colors.text,
+            background: (t) => getColor(t, 'text'),
             transform: 'translatex(80rem)',
             transition: 'transform 0.4s ease-in-out, opacity 0.4s linear',
           },
