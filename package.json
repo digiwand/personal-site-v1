@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
+    "@theme-ui/color": "^0.16.0",
     "animejs": "^3.2.1",
     "emailjs-com": "^3.2.0",
     "next": "latest",
@@ -25,7 +26,6 @@
     "@types/react": "^18.2.18",
     "date-fns": "^2.21.3",
     "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "latest",
     "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
