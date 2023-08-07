@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
   IconButton,
   useColorMode,
@@ -8,10 +9,12 @@ function ThemeNextIconButton() {
   const [colorMode, setColorMode] = useColorMode();
   const colorModeKeys = Object.keys(THEMEUI_COLOR_MODE_CONFIG);
 
-  if (!colorMode) {
-    // assume default light mode
-    setColorMode('light');
-  }
+  useEffect(() => {
+    if (!colorMode) {
+      // assume default light mode
+      setColorMode('light');
+    }
+  });
 
   function selectNextColor() {
     const currentColorModeIndex = colorModeKeys.findIndex((value) => value === colorMode);
