@@ -58,7 +58,6 @@ function HomeSection(props, ref) {
             as="h2"
             sx={{
             variant: 'text.shadow',
-            letterSpacing: '2.4rem',
             color: (t) => getColor(t, 'homeHello'),
           }}
           >
