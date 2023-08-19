@@ -1,6 +1,6 @@
-import React from 'react';
+import { getColor } from '@theme-ui/color'
 import Fade from 'react-reveal/Fade';
-import { Button, Themed } from 'theme-ui';
+import { Button } from 'theme-ui';
 import PropTypes from 'prop-types';
 import TECH from 'constants/tech';
 import JobSectionImgTrio from './JobSectionImgTrio';
@@ -51,46 +51,49 @@ function JobSection({ children, ...props }) {
             textAlign: ['center', 'left', 'left'],
           }}
         >
-          <Themed.h2 sx={{
+          <h2
+            sx={{
             fontFamily: 'heading2',
             variant: 'text.shadow',
             display: ['block', 'block', 'inline-block'],
             pr: [0, 0, 3],
             letterSpacing: ['-0.5rem', '3rem', '3rem'],
-            color: (t) => t.colors.workHeader,
+            color: (t) => getColor(t, 'workHeader'),
           }}
           >
             {title}
-          </Themed.h2>
+          </h2>
 
-          <Themed.h2 sx={{
+          <h2
+            sx={{
             fontFamily: 'heading2',
             variant: 'text.shadow',
             display: ['block', 'block', 'inline-block'],
             pt: [1, 0, 0],
-            color: (t) => t.colors.workHeader,
+            color: (t) => getColor(t, 'workHeader'),
           }}
           >
             <small>{subtitle}</small>
-          </Themed.h2>
+          </h2>
 
-          <Themed.h4 sx={{
+          <h4
+            sx={{
             display: 'block',
             pt: [3, 4, 4],
-            pb: 2,
-            color: (t) => t.colors.workSubHeader,
+            pb: 1,
+            color: (t) => getColor(t, 'workSubHeader'),
           }}
           >
             {companyName}
-          </Themed.h4>
+          </h4>
 
-          <Themed.h5 sx={{ color: (t) => t.colors.workHeader }}>
+          <h5 sx={{ color: (t) => getColor(t, 'workHeader') }}>
             {date}
-          </Themed.h5>
+          </h5>
 
-          <Themed.p sx={{ py: 4, textAlign: 'left' }}>
+          <p sx={{ variant: 'text.body', py: 4, textAlign: 'left' }}>
             {children}
-          </Themed.p>
+          </p>
 
           <div sx={{
             pt: [3, 3, 2],

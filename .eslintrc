@@ -1,10 +1,10 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
   "extends": [
-    "airbnb",
     "eslint:recommended", 
     "next",
     "next/core-web-vitals"
@@ -43,6 +43,8 @@
       }
     ],
     "no-use-before-define": "off",
+    /** @todo: remove this ignore rule */
+    "react/no-unknown-property": "off",
     // allow jsx and tsx syntax in js files (for next.js project)
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/jsx-pascal-case": "off"

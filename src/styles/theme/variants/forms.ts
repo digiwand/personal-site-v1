@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import type { Theme } from 'theme-ui';
 
 const formTransition = '0.3s';
@@ -14,7 +15,7 @@ const forms: Theme['forms'] = {
     boxShadow: '0rem 8rem 8rem 0 rgb(31 38 135 / 12%)',
     backdropFilter: 'blur(4rem)',
     borderRadius: '2rem',
-    background: (t) => `${t.colors.inputBg}`,
+    background: (t) => `${getColor(t, 'inputBg')}`,
     height: `${inputHeight}rem`,
     padding: inputPadding,
     borderBottom: `${inputBorder}rem solid transparent`,
@@ -22,7 +23,7 @@ const forms: Theme['forms'] = {
 
     '&:focus': {
       outline: 'none',
-      borderColor: (t) => `${t.colors.text}`,
+      borderColor: (t) => `${getColor(t, 'text')}`,
     },
   },
 
@@ -36,12 +37,12 @@ const forms: Theme['forms'] = {
     borderRadius: '2rem',
     padding: inputPadding,
     transition: `border-color ${formTransition}`,
-    background: (t) => `${t.colors.inputBg}`,
+    background: (t) => `${getColor(t, 'inputBg')}`,
     borderBottom: `${inputBorder}rem solid transparent`,
 
     '&:focus': {
       outline: 'none',
-      borderColor: (t) => `${t.colors.text}`,
+      borderColor: (t) => `${getColor(t, 'text')}`,
     },
   },
 };

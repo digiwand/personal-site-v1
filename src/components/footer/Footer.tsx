@@ -1,10 +1,11 @@
+import { getColor } from '@theme-ui/color'
 import Fade from 'react-reveal/Fade';
 
 function Footer() {
   return (
     <footer
-      sx={(theme) => ({
-        backgroundColor: theme.colors.footerBg,
+      sx={{
+        backgroundColor: (t) => getColor(t, 'footerBg'),
         backdropFilter: 'blur(4px) saturate(130%)',
         boxShadow: '0 8rem 32rem 0 rgba(31, 38, 135, 0.37)',
         display: 'flex',
@@ -19,7 +20,7 @@ function Footer() {
         fontFamily: 'body',
         fontWeight: '300',
         letterSpacing: '1rem',
-      })}
+      }}
     >
       <Fade bottom>
         <span

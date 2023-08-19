@@ -1,5 +1,5 @@
+import { getColor } from '@theme-ui/color';
 import PropTypes from 'prop-types';
-import { Themed } from 'theme-ui';
 
 const propTypes = {
   email: PropTypes.string.isRequired,
@@ -28,7 +28,7 @@ function FormSentMessage({ isVisible, email }) {
         opacity: 0,
         pointerEvents: 'none',
         transition: 'opacity 0.3s',
-        background: (t) => t.colors.inputBg,
+        background: (t) => getColor(t, 'inputBg'),
 
         '&[is-visible="true"]': {
           opacity: 1,
@@ -36,7 +36,7 @@ function FormSentMessage({ isVisible, email }) {
         },
       }}
     >
-      <Themed.h3>Email sent!</Themed.h3>
+      <h3>Email sent!</h3>
       <div>
         <br />
         <br />
@@ -46,12 +46,12 @@ function FormSentMessage({ isVisible, email }) {
         <br />
         <br />
         <br />
-        <Themed.h3 sx={{ textAlign: 'center' }}>
+        <h3 sx={{ textAlign: 'center' }}>
           Best wishes,
-        </Themed.h3>
-        <Themed.h3 sx={{ textAlign: ['center', 'center', 'left'], pt: 2, display: 'block' }}>
+        </h3>
+        <h3 sx={{ textAlign: ['center', 'center', 'left'], pt: 2, display: 'block' }}>
           Ariella
-        </Themed.h3>
+        </h3>
       </div>
     </div>
   );

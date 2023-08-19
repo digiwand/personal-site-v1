@@ -1,10 +1,11 @@
+import { getColor } from '@theme-ui/color'
 import type { Theme } from 'theme-ui';
 import iconButtons from './iconButtons';
 
 const buttons: Theme['buttons'] = {
   icon: iconButtons,
 
-  primary: {
+  base: {
     position: 'relative',
     height: '48rem',
     letterSpacing: '3rem',
@@ -18,20 +19,9 @@ const buttons: Theme['buttons'] = {
       + ' color .18s ease-in-out,'
       + ' transform .18s ease-in-out',
 
-    background: (t) => t.colors.buttonBg,
-    border: (t) => t.colors.buttonBorder,
-    color: (t) => t.colors.buttonText,
-
-    '&:hover': {
-      border: (t) => t.colors.glassBorder,
-      color: (t) => t.colors.buttonHoverText,
-    },
-    '&:active': {
-      boxShadow: (t) => `inset 0 3px 5px rgb(18 21 26 / 9%), ${t.colors.buttonBoxShadow}`,
-    },
-    '&:focus': {
-      boxShadow: (t) => `inset 0 3px 5px rgb(18 21 26 / 9%), ${t.colors.buttonBoxShadow}`,
-    },
+    background: (t) => getColor(t, 'buttonBg'),
+    border: (t) => getColor(t, 'buttonBorder'),
+    color: (t) => getColor(t, 'buttonText'),
 
     '&:before': {
       position: 'absolute',
@@ -45,13 +35,22 @@ const buttons: Theme['buttons'] = {
       zIndex: '2',
       transition: 'opacity 0.15s ease-out',
 
-      background: (t) => t.colors.glassBg,
-      backgroundImage: (t) => t.colors.glassBg,
-      border: (t) => t.colors.buttonBorder,
+      background: (t) => getColor(t, 'glassBg'),
+      backgroundImage: (t) => getColor(t, 'glassBg'),
+      border: (t) => getColor(t, 'buttonBorder'),
     },
 
-    '&:hover:before': {
-      opacity: 1,
+    '&:hover': {
+      border: (t) => getColor(t, 'glassBorder'),
+      color: (t) => getColor(t, 'buttonHoverText'),
+      
+      '&:before': {
+        opacity: 1,
+      },
+    },
+
+    '&:active, &:focus': {
+      boxShadow: (t) => getColor(t, 'buttonBoxShadowActive'),
     },
 
     '&> a': {
@@ -67,10 +66,40 @@ const buttons: Theme['buttons'] = {
       zIndex: 3,
     },
   },
+  
+  primary: {
+    variant: 'buttons.base',
+    background: (t) => getColor(t, 'buttonBg'),
+    border: (t) => getColor(t, 'buttonBorder'),
+  },
+
 
   secondary: {
-    background: (t) => t.colors.buttonSecondaryBg,
-    border: (t) => t.colors.buttonSecondaryBorder,
+    variant: 'buttons.base',
+    background: (t) => getColor(t, 'buttonSecondaryBg'),
+    border: (t) => getColor(t, 'buttonSecondaryBorder'),
+  },
+
+  dropdownItemTheme: {
+    display: 'flex',
+    alignItems: 'center',
+    whiteSpace: 'nowrap',
+    minWidth: '108rem',
+
+    variant: 'buttons.secondary',
+    
+    '> svg': {
+      width: '24rem',
+      height: '24rem',
+      mr: 2,
+
+      '> path': {
+        fill: (t) => getColor(t, 'buttonText'),
+      },
+      '&:hover > path': {
+        fill: (t) => getColor(t, 'buttonHoverText'),
+      },
+    },
   },
 
   tag: {
@@ -91,17 +120,17 @@ const buttons: Theme['buttons'] = {
       + ' color .08s ease-in-out,'
       + ' transform .08s ease-in-out',
 
-    border: (t) => t.colors.buttonBorder,
+    border: (t) => getColor(t, 'buttonBorder'),
 
     '&:hover': {
       boxShadow: '4rem 5rem 3rem 0 rgba(133, 90, 155, 0.37)',
       transform: 'translate(-2rem, -1.5rem)',
     },
     '&:active': {
-      backgroundImage: (t) => t.colors.glassBg,
+      backgroundImage: (t) => getColor(t, 'glassBg'),
     },
     '&:focus': {
-      backgroundImage: (t) => t.colors.glassBg,
+      backgroundImage: (t) => getColor(t, 'glassBg'),
     },
   },
 };

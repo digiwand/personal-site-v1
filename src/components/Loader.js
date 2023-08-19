@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
+import { getColor } from '@theme-ui/color'
 
 const propTypes = {
   finishLoading: PropTypes.func.isRequired,
@@ -30,7 +31,7 @@ const Loader = ({ finishLoading }) => {
         left: '0',
         width: '100%',
         height: '100%',
-        backgroundColor: (t) => t.colors.background,
+        backgroundColor: (t) => getColor(t, 'background'),
       }}
     />
   );

@@ -1,6 +1,7 @@
+import { getColor } from '@theme-ui/color';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { Image, Themed } from 'theme-ui';
+import { Image } from 'theme-ui';
 
 import FrameCircle from 'components/common/FrameCircle';
 import Section from 'components/sections/Section';
@@ -27,17 +28,19 @@ const AboutSection = (props, ref) => (
     }}
     >
       <Fade>
-        <Themed.h2 sx={{ pt: [6, 0, 0], pb: 4 }}>
+        <h2 sx={{ pt: [6, 0, 0], pb: 4 }}>
           <Fade top duration={300} cascade>
             About
           </Fade>
-        </Themed.h2>
+        </h2>
       </Fade>
       <Fade delay={680} duration={1100}>
-        <Themed.p sx={{
-          minWidth: ['initial', 'initial', '310rem'],
-          maxWidth: ['initial', 'initial', '520rem'],
-        }}
+        <p
+          sx={{
+            variant: 'text.body',
+            minWidth: ['initial', 'initial', '310rem'],
+            maxWidth: ['initial', 'initial', '520rem'],
+          }}
         >
           <br />
           I started my career as a full-stack programmer over 6 years ago. Now I specialize in building websites using
@@ -53,7 +56,7 @@ const AboutSection = (props, ref) => (
             teamwork. */}
           Besides programming and traveling, my passions include yoga, hiking, indoor rock climbing, building new homebases
           around the world, and personal development.
-        </Themed.p>
+        </p>
       </Fade>
     </div>
 
@@ -84,7 +87,7 @@ const AboutSection = (props, ref) => (
           height="461.33"
           sx={{
             boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
-            filter: (t) => t.colors.aboutImgFilter,
+            filter: (t) => getColor(t, 'aboutImgFilter'),
           }}
         />
       </picture>

@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color';
 import SocialIconButtons from 'components/social-icons/SocialIconButtons';
 
 const SOCIAL_KEYS = [
@@ -36,7 +37,7 @@ function ContactSocialIconButtons() {
           },
 
           path: {
-            fill: (t) => `${t.colors.contactIcon}`,
+            fill: (t) => `${getColor(t, 'contactIcon')}`,
           },
         }}
         showUsername

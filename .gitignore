@@ -4,8 +4,10 @@
 # dependencies
 /node_modules
 /.pnp
+.pnp.**
 .pnp.js
 tsconfig.tsbuildinfo
+.yarn
 
 # testing
 /coverage

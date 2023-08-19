@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import NavTab from 'components/nav/header/Tab';
 import { SECTION_DISPLAY_NAME } from 'constants/section';
 
@@ -29,7 +30,7 @@ function Underline() {
         height: '2rem',
         width: '80rem',
         transition: '0.3s ease-in-out',
-        background: (t) => t.colors.text,
+        background: (t) => getColor(t, 'text'),
         bottom: '0',
         left: '0',
       }}

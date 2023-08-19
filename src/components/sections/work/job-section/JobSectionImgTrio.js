@@ -1,3 +1,4 @@
+import { getColor } from '@theme-ui/color'
 import PropTypes from 'prop-types';
 import { Image } from 'theme-ui';
 
@@ -30,7 +31,7 @@ const aspectRatioStyles = {
   maxWidth: '650rem',
   '--aspect-ratio': ['2/1', '7/2', '7/2'],
   paddingBottom: 'calc(100%/(var(--aspect-ratio)))',
-  border: (t) => t.colors.workImgBorder,
+  border: (t) => getColor(t, 'workImgBorder'),
 
   '&:hover': {
     transition: '0.35s ease-in-out',
