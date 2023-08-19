@@ -1,7 +1,7 @@
 import { getColor } from '@theme-ui/color'
 import SocialIconButtons from 'components/social-icons/SocialIconButtons';
 
-const socialKeys = ['stackoverflow', 'github', 'jsfiddle', 'linkedin'];
+const socialKeys = ['stackoverflow', 'github', 'twitter', 'linkedin'];
 
 function NavDrawerSocialIcons() {
   return (

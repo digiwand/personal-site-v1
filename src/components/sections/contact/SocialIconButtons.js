@@ -2,9 +2,9 @@ import { getColor } from '@theme-ui/color';
 import SocialIconButtons from 'components/social-icons/SocialIconButtons';
 
 const SOCIAL_KEYS = [
-  'github',
   'stackoverflow',
-  'jsfiddle',
+  'github',
+  'twitter',
   'linkedin',
 ];
 
