@@ -121,6 +121,7 @@ const light = {
   // -- Components --------------------------------------------------------------------------------
 
   buttonBoxShadow: `0 4rem 8rem 0 rgba(${RGB.picoteeBlue}, 0.17)`,
+  buttonBoxShadowActive: `inset 0 3px 5px rgb(18 21 26 / 9%), 0 4rem 8rem 0 rgba(${RGB.picoteeBlue}, 0.17)`,
   buttonBg: `linear-gradient(70deg, rgba(${RGB.royalPurple}, 0.50), rgba(${RGB.royalPurple}, 0.70))`,
   buttonBorder: `1rem solid rgba(${RGB.royalPurple}, 0.18)`,
   buttonHoverText: `rgb(${RGB.cultured})`,

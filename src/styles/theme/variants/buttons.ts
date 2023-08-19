@@ -5,7 +5,7 @@ import iconButtons from './iconButtons';
 const buttons: Theme['buttons'] = {
   icon: iconButtons,
 
-  primary: {
+  base: {
     position: 'relative',
     height: '48rem',
     letterSpacing: '3rem',
@@ -22,17 +22,6 @@ const buttons: Theme['buttons'] = {
     background: (t) => getColor(t, 'buttonBg'),
     border: (t) => getColor(t, 'buttonBorder'),
     color: (t) => getColor(t, 'buttonText'),
-
-    '&:hover': {
-      border: (t) => getColor(t, 'glassBorder'),
-      color: (t) => getColor(t, 'buttonHoverText'),
-    },
-    '&:active': {
-      boxShadow: (t) => `inset 0 3px 5px rgb(18 21 26 / 9%), ${getColor(t, 'buttonBoxShadow}')}`,
-    },
-    '&:focus': {
-      boxShadow: (t) => `inset 0 3px 5px rgb(18 21 26 / 9%), ${getColor(t, 'buttonBoxShadow}')}`,
-    },
 
     '&:before': {
       position: 'absolute',
@@ -51,8 +40,17 @@ const buttons: Theme['buttons'] = {
       border: (t) => getColor(t, 'buttonBorder'),
     },
 
-    '&:hover:before': {
-      opacity: 1,
+    '&:hover': {
+      border: (t) => getColor(t, 'glassBorder'),
+      color: (t) => getColor(t, 'buttonHoverText'),
+      
+      '&:before': {
+        opacity: 1,
+      },
+    },
+
+    '&:active, &:focus': {
+      boxShadow: (t) => getColor(t, 'buttonBoxShadowActive'),
     },
 
     '&> a': {
@@ -68,10 +66,40 @@ const buttons: Theme['buttons'] = {
       zIndex: 3,
     },
   },
+  
+  primary: {
+    variant: 'buttons.base',
+    background: (t) => getColor(t, 'buttonBg'),
+    border: (t) => getColor(t, 'buttonBorder'),
+  },
+
 
   secondary: {
+    variant: 'buttons.base',
     background: (t) => getColor(t, 'buttonSecondaryBg'),
     border: (t) => getColor(t, 'buttonSecondaryBorder'),
+  },
+
+  dropdownItemTheme: {
+    display: 'flex',
+    alignItems: 'center',
+    whiteSpace: 'nowrap',
+    minWidth: '108rem',
+
+    variant: 'buttons.secondary',
+    
+    '> svg': {
+      width: '24rem',
+      height: '24rem',
+      mr: 2,
+
+      '> path': {
+        fill: (t) => getColor(t, 'buttonText'),
+      },
+      '&:hover > path': {
+        fill: (t) => getColor(t, 'buttonHoverText'),
+      },
+    },
   },
 
   tag: {

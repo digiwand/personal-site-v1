@@ -1,7 +1,5 @@
-import { getColor } from '@theme-ui/color'
 import { useColorMode, Button } from 'theme-ui';
 import THEMEUI_COLOR_MODE_CONFIG from 'constants/theme-ui';
-
 function ThemeDropdownList() {
   const [colorMode, setColorMode] = useColorMode();
   const colorModeKeys = Object.keys(THEMEUI_COLOR_MODE_CONFIG);
@@ -22,26 +20,7 @@ function ThemeDropdownList() {
       }}
     >
       <Button
-        sx={(t) => ({
-          variant: 'buttons.secondary',
-          display: 'flex',
-          alignItems: 'center',
-          whiteSpace: 'nowrap',
-          minWidth: '108rem',
-
-          '> svg': {
-            width: '24rem',
-            height: '24rem',
-            mr: 2,
-
-            '> path': {
-              fill: getColor(t, 'buttonText'),
-            },
-            '&:hover > path': {
-              fill: getColor(t, 'buttonHoverText'),
-            },
-          },
-        })}
+        variant="dropdownItemTheme"
         is-selected={String(colorMode === colorModeKey)}
         onClick={() => selectColor(colorModeKey)}
       >
