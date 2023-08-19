@@ -1,7 +1,7 @@
 import { getColor } from '@theme-ui/color';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { Heading, Image } from 'theme-ui';
+import { Image } from 'theme-ui';
 
 import FrameCircle from 'components/common/FrameCircle';
 import Section from 'components/sections/Section';
@@ -28,11 +28,11 @@ const AboutSection = (props, ref) => (
     }}
     >
       <Fade>
-        <Heading as="h2" sx={{ pt: [6, 0, 0], pb: 4 }}>
+        <h2 sx={{ pt: [6, 0, 0], pb: 4 }}>
           <Fade top duration={300} cascade>
             About
           </Fade>
-        </Heading>
+        </h2>
       </Fade>
       <Fade delay={680} duration={1100}>
         <p

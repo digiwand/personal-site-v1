@@ -1,7 +1,6 @@
 import { getColor } from '@theme-ui/color';
 import Fade from 'react-reveal/Fade';
 import Flip from 'react-reveal/Flip';
-import { Heading } from 'theme-ui';
 import ContactSocialIconButtons from 'components/sections/contact/SocialIconButtons';
 import SVGPlantInPot from 'components/svg/plant-in-pot';
 
@@ -20,18 +19,18 @@ function ContactLeftSide() {
     }}
     >
       <div>
-        <Heading as="h3" sx={{ color: (t) => getColor(t, 'contactSubHeader'), pb: 3 }}>
+        <h3 sx={{ color: (t) => getColor(t, 'contactSubHeader'), pb: 3 }}>
           <Fade delay={200}>
             Let&apos;s Connect!
           </Fade>
-        </Heading>
+        </h3>
 
         <br />
 
         <Fade>
-          <Heading as="h6" sx={{ color: (t) => getColor(t, 'contactText') }}>
+          <h6 sx={{ color: (t) => getColor(t, 'contactText') }}>
             Working remotely since 2018
-          </Heading>
+          </h6>
         </Fade>
 
         <ContactSocialIconButtons />

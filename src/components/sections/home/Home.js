@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import Pulse from 'react-reveal/Pulse';
 import Zoom from 'react-reveal/Zoom';
-import { Heading, useThemeUI } from 'theme-ui';
+import { useThemeUI } from 'theme-ui';
 
 import ResumeButton from 'components/resume-button/ResumeButton';
 import Section from 'components/sections/Section';
@@ -21,6 +21,7 @@ function HomeSection(props, ref) {
 
   useEffect(() => {
     const svgPaths = document.querySelectorAll('#Home-SVGAriellaVu path');
+    
     anime({
       targets: svgPaths,
       direction: 'linear',
@@ -54,8 +55,7 @@ function HomeSection(props, ref) {
             zIndex: '1',
           }}
         >
-          <Heading
-            as="h2"
+          <h2
             sx={{
             variant: 'text.shadow',
             color: (t) => getColor(t, 'homeHello'),
@@ -64,7 +64,7 @@ function HomeSection(props, ref) {
             <Fade top delay={1350} duration={300} cascade>
               Hello, I&apos;m
             </Fade>
-          </Heading>
+          </h2>
           <h1 sx={{
             py: ['42rem', '46rem', '48rem'],
             rect: {

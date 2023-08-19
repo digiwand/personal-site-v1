@@ -14,16 +14,18 @@ const styles: Theme['styles'] = {
     h1: {
       variant: 'text.heading',
       fontSize: [6, 7, 7],
+      fontWeight: 'bold',
     },
     h2: {
       variant: 'text.heading',
       fontSize: [4, 5, 5],
+      fontWeight: 'bold',
       letterSpacing: ['1rem', '3rem', '3rem'],
     },
     h3: {
       variant: 'text.heading',
-      fontWeight: '400',
       fontSize: [3, 4, 4],
+      fontWeight: 'body',
       letterSpacing: '5rem',
     },
     h4: {

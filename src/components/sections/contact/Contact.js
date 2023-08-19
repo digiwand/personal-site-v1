@@ -1,10 +1,7 @@
 import { getColor } from '@theme-ui/color';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import {
-  Flex,
-  Heading,
-} from 'theme-ui';
+import { Flex } from 'theme-ui';
 
 import Section from 'components/sections/Section';
 import ContactLeftSide from 'components/sections/contact/ContactLeftSide';
@@ -54,8 +51,7 @@ const ContactSection = (props, ref) => (
           px: [4, 5, 5],
         }}
       >
-        <Heading
-          as="h2"
+        <h2
           sx={{
             variant: 'text.shadow',
             letterSpacing: '2.4rem',
@@ -68,7 +64,7 @@ const ContactSection = (props, ref) => (
           <Fade top duration={300} cascade>
             Contact
           </Fade>
-        </Heading>
+        </h2>
 
         <Flex sx={{
           flexDirection: ['column', 'column', 'row'],

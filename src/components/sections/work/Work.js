@@ -1,7 +1,6 @@
 import { getColor } from '@theme-ui/color';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { Heading } from 'theme-ui';
 
 import Section from 'components/sections/Section';
 import JobSectionCopper from 'components/sections/work/job-section/Copper';
@@ -23,8 +22,7 @@ function EducationSection() {
             px: 4,
           }}
         >
-          <Heading
-            as="h2"
+          <h2
             sx={{
             fontFamily: 'heading2',
             variant: 'text.shadow',
@@ -34,9 +32,8 @@ function EducationSection() {
           }}
           >
             B.A.S. Computer Science
-          </Heading>
-          <Heading
-            as="h4"
+          </h2>
+          <h4
             sx={{
             display: 'block',
             color: (t) => getColor(t, 'workSubHeader'),
@@ -45,15 +42,14 @@ function EducationSection() {
           }}
           >
             University of California Davis
-          </Heading>
-          <Heading
-            as="h5"
+          </h4>
+          <h5
             sx={{
             color: (t) => getColor(t, 'workHeader'),
           }}
           >
             Sept 2010 - Sept 2014
-          </Heading>
+          </h5>
         </div>
       </Fade>
     </div>

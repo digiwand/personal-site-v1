@@ -1,6 +1,5 @@
 import { getColor } from '@theme-ui/color';
 import PropTypes from 'prop-types';
-import { Heading } from 'theme-ui';
 
 const propTypes = {
   email: PropTypes.string.isRequired,
@@ -37,7 +36,7 @@ function FormSentMessage({ isVisible, email }) {
         },
       }}
     >
-      <Heading as="h3">Email sent!</Heading>
+      <h3>Email sent!</h3>
       <div>
         <br />
         <br />
@@ -47,12 +46,12 @@ function FormSentMessage({ isVisible, email }) {
         <br />
         <br />
         <br />
-        <Heading as="h3" sx={{ textAlign: 'center' }}>
+        <h3 sx={{ textAlign: 'center' }}>
           Best wishes,
-        </Heading>
-        <Heading as="h3" sx={{ textAlign: ['center', 'center', 'left'], pt: 2, display: 'block' }}>
+        </h3>
+        <h3 sx={{ textAlign: ['center', 'center', 'left'], pt: 2, display: 'block' }}>
           Ariella
-        </Heading>
+        </h3>
       </div>
     </div>
   );

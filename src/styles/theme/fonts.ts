@@ -43,9 +43,9 @@ const fonts = {
       color: 'text',
       fontSize: ['14rem', 1, 2],
     },
+
     heading: {
       fontFamily: 'heading',
-      fontWeight: 'bold',
       lineHeight: 'heading',
       letterSpacing: 'heading',
       display: 'inline-block',
@@ -58,6 +58,7 @@ const fonts = {
       backgroundClip: 'text',
       textFillColor: 'transparent',
     },
+
     link: {
       color: (t) => getColor(t, 'link'),
       transition: 'color 0.3s',
@@ -66,6 +67,7 @@ const fonts = {
         color: (t) => getColor(t, 'linkHover'),
       },
     },
+    
     shadow: {
       textShadow: (t) => getColor(t, 'textShadow'),
     },

@@ -1,6 +1,6 @@
 import { getColor } from '@theme-ui/color'
 import Fade from 'react-reveal/Fade';
-import { Button, Heading } from 'theme-ui';
+import { Button } from 'theme-ui';
 import PropTypes from 'prop-types';
 import TECH from 'constants/tech';
 import JobSectionImgTrio from './JobSectionImgTrio';
@@ -51,8 +51,7 @@ function JobSection({ children, ...props }) {
             textAlign: ['center', 'left', 'left'],
           }}
         >
-          <Heading
-            as="h2"
+          <h2
             sx={{
             fontFamily: 'heading2',
             variant: 'text.shadow',
@@ -63,10 +62,9 @@ function JobSection({ children, ...props }) {
           }}
           >
             {title}
-          </Heading>
+          </h2>
 
-          <Heading
-            as="h2"
+          <h2
             sx={{
             fontFamily: 'heading2',
             variant: 'text.shadow',
@@ -76,10 +74,9 @@ function JobSection({ children, ...props }) {
           }}
           >
             <small>{subtitle}</small>
-          </Heading>
+          </h2>
 
-          <Heading
-            as="h4"
+          <h4
             sx={{
             display: 'block',
             pt: [3, 4, 4],
@@ -88,11 +85,11 @@ function JobSection({ children, ...props }) {
           }}
           >
             {companyName}
-          </Heading>
+          </h4>
 
-          <Heading as="h5" sx={{ color: (t) => getColor(t, 'workHeader') }}>
+          <h5 sx={{ color: (t) => getColor(t, 'workHeader') }}>
             {date}
-          </Heading>
+          </h5>
 
           <p sx={{ variant: 'text.body', py: 4, textAlign: 'left' }}>
             {children}

@@ -22,8 +22,7 @@ function TechSection(props, ref) {
       }}
     >
       <Fade>
-        <Heading
-          as="h3"
+        <h3
           sx={{
             color: (t) => getColor(t, 'homeHello'),
             display: 'block',
@@ -32,7 +31,7 @@ function TechSection(props, ref) {
           }}
         >
           RECENT TECHNOLOGIES
-        </Heading>
+        </h3>
       </Fade>
 
       <div
