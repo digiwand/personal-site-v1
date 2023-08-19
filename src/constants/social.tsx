@@ -52,7 +52,7 @@ const SOCIAL = {
   },
   replit: {
     iconSVG: <IconReplit />,
-    url: 'https://replit.com/@cosmiccloud',
+    url: 'https://replit.com/@digiwand',
   },
   stackoverflow: {
     iconSVG: <IconStackOverflow />,
@@ -60,7 +60,7 @@ const SOCIAL = {
   },
   twitter: {
     iconSVG: <IconTwitter />,
-    url: 'https://twitter.com/ariella_io',
+    url: 'https://twitter.com/digiwand_',
   },
 };
 
