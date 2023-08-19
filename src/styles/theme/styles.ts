@@ -27,6 +27,7 @@ const styles: Theme['styles'] = {
       fontSize: [3, 4, 4],
       fontWeight: 'body',
       letterSpacing: '5rem',
+      lineHeight: 1.225,
     },
     h4: {
       variant: 'text.heading',
@@ -42,6 +43,7 @@ const styles: Theme['styles'] = {
     },
     h6: {
       variant: 'text.heading',
+      lineHeight: 1.5,
       fontSize: 0,
     },
     

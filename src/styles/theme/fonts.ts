@@ -30,7 +30,7 @@ const fonts = {
   },
   letterSpacings: {
     body: ['0.8rem', '1.6rem', '1.6rem'],
-    header: '2.4rem',
+    heading: '2.4rem',
     caps: '0.2em',
   },
 
@@ -67,7 +67,7 @@ const fonts = {
         color: (t) => getColor(t, 'linkHover'),
       },
     },
-    
+
     shadow: {
       textShadow: (t) => getColor(t, 'textShadow'),
     },

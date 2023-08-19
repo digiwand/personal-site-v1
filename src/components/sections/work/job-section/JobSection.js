@@ -80,7 +80,7 @@ function JobSection({ children, ...props }) {
             sx={{
             display: 'block',
             pt: [3, 4, 4],
-            pb: 2,
+            pb: 1,
             color: (t) => getColor(t, 'workSubHeader'),
           }}
           >
