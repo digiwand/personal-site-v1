@@ -44,8 +44,8 @@ function AboutSection(props, ref) {
             }}
           >
             <br />
-            I started my career as a full-stack programmer over 6 years ago. Now I specialize in building websites using
-            JavaScript Frameworks (React, Ember, and Angular 1.x).
+            I started my career as a full-stack programmer over 9 years ago. Now I specialize in building websites using
+            web technologies and JavaScript (React, Ember, and Angular 1.x).
             <br />
             <br />
             I&apos;m a native of California. Over the last 5 years, I&apos;ve worked remotely. I&apos;ve considered
@@ -55,8 +55,8 @@ function AboutSection(props, ref) {
             <br />
             {/* Some of my strengths include problem-solving, adapting, writing clean-code, being detail-oriented, and
               teamwork. */}
-            Besides programming and traveling, my passions include yoga, hiking, indoor rock climbing, building new homebases
-            around the world, and personal development.
+            Besides programming and traveling, my passions include yoga, hiking, scuba diving (newly certified), 
+            building new homebases around the world, and personal development.
           </p>
         </Fade>
       </div>
