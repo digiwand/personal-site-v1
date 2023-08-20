@@ -1,4 +1,5 @@
 import { getColor } from '@theme-ui/color'
+import { RGB } from 'styles/theme/colors';
 import type { Theme } from 'theme-ui';
 import iconButtons from './iconButtons';
 
@@ -125,6 +126,10 @@ const buttons: Theme['buttons'] = {
     '&:hover': {
       boxShadow: '4rem 5rem 3rem 0 rgba(133, 90, 155, 0.37)',
       transform: 'translate(-2rem, -1.5rem)',
+
+      '> a': {
+        color: (t) => getColor(t, 'buttonTagTextHover'),
+      },
     },
     '&:active': {
       backgroundImage: (t) => getColor(t, 'glassBg'),
@@ -132,6 +137,10 @@ const buttons: Theme['buttons'] = {
     '&:focus': {
       backgroundImage: (t) => getColor(t, 'glassBg'),
     },
+
+    '> a': {
+      transition: 'color .08s ease-in-out',
+    }
   },
 };
 
