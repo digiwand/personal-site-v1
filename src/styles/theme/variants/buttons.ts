@@ -1,5 +1,4 @@
 import { getColor } from '@theme-ui/color'
-import { RGB } from 'styles/theme/colors';
 import type { Theme } from 'theme-ui';
 import iconButtons from './iconButtons';
 
