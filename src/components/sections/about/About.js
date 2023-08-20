@@ -9,6 +9,13 @@ import Section from 'components/sections/Section';
 import { SECTION_ID } from 'constants/section';
 
 function AboutSection(props, ref) {
+  const dateStartNomad = new Date('2018-04-01');
+  const dateStartCareer = new Date('2014-09-01');
+  const dateNow = new Date();
+
+  const yearsNomad = dateNow.getFullYear() - dateStartNomad.getFullYear();
+  const yearsCareer = dateNow.getFullYear() - dateStartCareer.getFullYear();
+
   return (
     <Section
       id={SECTION_ID.ABOUT}
@@ -44,11 +51,11 @@ function AboutSection(props, ref) {
             }}
           >
             <br />
-            I started my career as a full-stack programmer over 9 years ago. Now I specialize in building websites using
-            web technologies and JavaScript (React, Ember, and Angular 1.x).
+            I started my career as a full-stack programmer over {yearsCareer} years ago. Now I specialize 
+            in building websites using web technologies and JavaScript (React, Ember, and Angular 1.x).
             <br />
             <br />
-            I&apos;m a native of California. Over the last 5 years, I&apos;ve worked remotely. I&apos;ve considered
+            I&apos;m a native of California. Over the last {yearsNomad} years, I&apos;ve worked remotely. I&apos;ve considered
             myself a nomad since I left my &quot;home&quot; at 14 years old. Fortunately, I&apos;ve now explored over 30
             countries. Overcoming changes and challenges is wired in me.
             <br />
