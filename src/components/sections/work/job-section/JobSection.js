@@ -15,7 +15,7 @@ const propTypes = {
   imgConfigs: PropTypes.arrayOf(PropTypes.shape({
     alt: PropTypes.string,
     src: PropTypes.string,
-  })).isRequired,
+  })),
 };
 
 const defaultProps = {
@@ -113,7 +113,7 @@ function JobSection({ children, ...props }) {
             ))}
           </div>
 
-          <JobSectionImgTrio imgConfigs={imgConfigs} />
+          {imgConfigs && <JobSectionImgTrio imgConfigs={imgConfigs} />}
 
         </div>
       </Fade>

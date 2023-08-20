@@ -38,7 +38,7 @@ function JobSectionPriceSpider() {
     <JobSection
       companyName="PriceSpider"
       title="Software Engineer"
-      subtitle="(Full-Stack)"
+      subtitle="(Full Stack)"
       date="Feb 2015 - Jun 2016"
       techKeys={TECH_KEYS}
       imgConfigs={IMG_CONFIGS}

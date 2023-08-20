@@ -3,6 +3,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 
 import Section from 'components/sections/Section';
+import JobSectionMetaMask from 'components/sections/work/job-section/MetaMask';
 import JobSectionCopper from 'components/sections/work/job-section/Copper';
 import JobSectionPriceSpider from 'components/sections/work/job-section/PriceSpider';
 import WorkSideHeading from 'components/sections/work/WorkSideHeading';
@@ -70,6 +71,7 @@ const WorkSection = (props, ref) => (
     }}
     >
       <WorkSideHeading text="WORK EXPERIENCE" sx={{ pb: [0, 0, 5] }} />
+      <JobSectionMetaMask />
       <JobSectionCopper />
       <JobSectionPriceSpider />
 
