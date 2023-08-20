@@ -128,6 +128,7 @@ const light = {
   buttonSecondaryBg: 'linear-gradient(40deg,'
     + ` rgba(${RGB.macaroniAndCheese}, 0.95), rgba(${RGB.yellowCrayola}, 0.4), rgba(${RGB.macaroniAndCheese}, 0.95))`,
   buttonSecondaryBorder: `1rem solid rgba(${RGB.selectiveYellow}, 0.18)`,
+  buttonTagTextHover: 'rgb(133, 90, 155)',
   buttonText: '#fff',
 
   frameBorder: 'rgba(0, 0, 0, 0.1)',
@@ -219,6 +220,7 @@ const dark: Partial<ColorMode> = {
   buttonSecondaryBg: `linear-gradient(40deg, rgba(${RGB.metallicSeaweed}, 0.85), `
     + `rgba(${RGB.celeste}, 0.70), rgba(${RGB.metallicSeaweed}, 0.85))`,
   buttonSecondaryBorder: `1rem solid rgba(${RGB.selectiveYellow}, 0.18)`,
+  buttonTagTextHover: `rgba(${RGB.floralWhite}, 0.65)`,
   buttonText: 'white',
 
   frameBorder: `rgba(${RGB.davysGrey}, 0.1)`,

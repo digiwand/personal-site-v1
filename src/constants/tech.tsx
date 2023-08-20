@@ -71,10 +71,18 @@ const TECH = {
     displayName: 'Documentation',
     href: 'https://www.atlassian.com/software/confluence',
   },
+  EIP: {
+    displayName: 'EIP',
+    href: 'https://eips.ethereum.org/',
+  },
   EMBERJS: {
     displayName: 'Ember.js',
     href: 'https://emberjs.com/',
     imgElem: <Image alt="EmberJS" src="svg/tech/emberjs.svg" variant="tech" height="48rem" width="99.59rem" />,
+  },
+  ETHEREUM: {
+    displayName: 'Ethereum',
+    href: 'https://ethereum.org/en/',
   },
   EXPRESSJS: {
     displayName: 'Express.js',
@@ -131,6 +139,10 @@ const TECH = {
     href: 'https://iterm2.com/',
     imgElem: <Image alt="iTerm 2" src="svg/tech/iterm2.svg" variant="tech" height="48rem" width="48rem" />,
   },
+  JEST: {
+    displayName: 'Jest',
+    href: 'https://jestjs.io/',
+  },
   MAC_OS: {
     displayName: 'macOS',
     href: 'https://support.apple.com/en-us/HT201236',
@@ -172,6 +184,18 @@ const TECH = {
     displayName: 'Sass',
     href: 'https://sass-lang.com/',
     imgElem: <Image alt="SASS" src="svg/tech/sass.svg" variant="tech" height="48rem" width="64rem" />,
+  },
+  SELENIUM: {
+    displayName: 'Selenium',
+    href: 'https://www.selenium.dev/',
+  },
+  SENTRY: {
+    displayName: 'Sentry',
+    href: 'https://sentry.io/',
+  },
+  STORYBOOK: {
+    displayName: 'Storybook',
+    href: 'https://storybook.js.org/',
   },
   VS_CODE: {
     displayName: 'VS Code',
