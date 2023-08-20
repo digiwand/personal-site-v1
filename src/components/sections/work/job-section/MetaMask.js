@@ -25,7 +25,7 @@ function JobSectionMetaMask() {
       techKeys={TECH_KEYS}
     >
       Currently, I&apos;m working on transaction security and UI/UX in the MetaMask extension. I&apos;ve been a core developer 
-      for our Chromium Manifest V3 support, Sign-in With Ethereum (EIP-4361) integration and refactor work.
+      for our Chromium Manifest V3 support, Sign-in with Ethereum (EIP-4361) integration and refactor work.
       <br />
       <br />
       My journey here in the Ethereum ecosystem has involved listening and responding to user feedback, 
