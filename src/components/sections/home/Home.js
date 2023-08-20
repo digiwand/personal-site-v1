@@ -49,7 +49,7 @@ function HomeSection(props, ref) {
           sx={{
             display: 'inline-flex',
             flexDirection: 'column',
-            px: [3, 4, '86rem'],
+            px: [3, 4, '74rem'],
             py: [5, 5, '74rem'],
             margin: '0 auto',
             zIndex: '1',
@@ -86,13 +86,13 @@ function HomeSection(props, ref) {
             <p
               sx={{
                 variant: 'text.body',
-                maxWidth: '540rem',
+                maxWidth: '554rem',
                 mx: 'auto',
                 pb: ['52rem', '52rem', '54rem'],
               }}
             >
               I&apos;m a web developer who&apos;s passionate about clean code, delightful user
-              experiences, and fostering freedom and inclusivity through decentralized, web 3.0 technologies.
+              experiences, and fostering freedom and inclusivity through decentralized, web3 technologies.
             </p>
           </Fade>
           <Pulse delay={5200} duration={620}>

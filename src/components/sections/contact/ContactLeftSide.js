@@ -1,6 +1,5 @@
 import { getColor } from '@theme-ui/color';
 import Fade from 'react-reveal/Fade';
-import Flip from 'react-reveal/Flip';
 import ContactSocialIconButtons from 'components/sections/contact/SocialIconButtons';
 import SVGPlantInPot from 'components/svg/plant-in-pot';
 
@@ -36,7 +35,7 @@ function ContactLeftSide() {
         <ContactSocialIconButtons />
       </div>
 
-      <Flip top left delay={2150} duration={1700}>
+      <Fade delay={2222} duration={1700}>
         <SVGPlantInPot
           sx={{
             width: '50%',
@@ -46,7 +45,7 @@ function ContactLeftSide() {
             path: { fill: (t) => getColor(t, 'contactPlant') },
           }}
         />
-      </Flip>
+      </Fade>
     </div>
   );
 }
