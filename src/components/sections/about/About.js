@@ -51,13 +51,13 @@ function AboutSection(props, ref) {
             }}
           >
             <br />
-            I started my career as a full-stack programmer over {yearsCareer} years ago. Now I specialize 
-            in building websites using web technologies and JavaScript (React, Ember, and Angular 1.x).
+            Beginning my career as a full-stack programmer over {yearsCareer} years ago, I&apos;ve specialized 
+            in crafting web applications (React, Ember, and Angular 1.x).
             <br />
             <br />
-            I&apos;m a native of California. Over the last {yearsNomad} years, I&apos;ve worked remotely. I&apos;ve considered
-            myself a nomad since I left my &quot;home&quot; at 14 years old. Fortunately, I&apos;ve now explored over 30
-            countries. Overcoming changes and challenges is wired in me.
+            I&apos;m a California native without a homebase. Since I left home at 14, I&apos;ve considered myself
+            a nomad. Over the last {yearsNomad} years, I&apos;ve worked remotely. Thankfully, my journey has led me 
+            to uncover the wonders of more than 30 countries. Overcoming changes and challenges is wired in me.
             <br />
             <br />
             {/* Some of my strengths include problem-solving, adapting, writing clean-code, being detail-oriented, and
