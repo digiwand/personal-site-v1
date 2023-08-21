@@ -13,13 +13,11 @@ import Loader from 'components/Loader';
 export default function App({ Component, pageProps }: AppProps) {
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log('rendering app page');
   return (
     <ThemeUIProvider theme={theme}>
       <GlobalUtilStyles />
       <Loader finishLoading={() => setIsLoading(false)} />
       <FadeInLayout isLoading={isLoading}>
-        <div>This is the APP! everythibg in this is in ThemeUIProvider</div>
         <Component {...pageProps} />
       </FadeInLayout>
     </ThemeUIProvider>
