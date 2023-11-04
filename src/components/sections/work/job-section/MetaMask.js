@@ -21,7 +21,7 @@ function JobSectionMetaMask() {
       companyName="MetaMask"
       title="Senior Software Engineer"
       subtitle="(Full Stack)"
-      date="Jan 2021 - Current"
+      date="Jan 2022 - Current"
       techKeys={TECH_KEYS}
     >
       Currently, I&apos;m working on transaction security and UI/UX in the MetaMask extension. I&apos;ve been a core developer 
