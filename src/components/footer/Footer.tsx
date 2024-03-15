@@ -42,10 +42,10 @@ function Footer() {
             pt: [3, 2, 0],
           }}
         >
-          Made by Ariella Vu
+          Made with ❤ &nbsp; • &nbsp;Ariella Vu
 
           <span sx={{ display: ['none', 'inline', 'inline'] }}>
-            &nbsp; - &nbsp;
+            &nbsp; • &nbsp;
           </span>
 
           <a
