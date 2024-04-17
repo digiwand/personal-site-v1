@@ -9,7 +9,7 @@
     "start": "next start"
   },
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
