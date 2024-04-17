@@ -29,7 +29,7 @@ function Footer() {
             py: [3, 2, 0],
           }}
         >
-          © 2021 Ariella Vu
+          © 2021-2024
         </span>
       </Fade>
       <Fade bottom>
@@ -42,7 +42,7 @@ function Footer() {
             pt: [3, 2, 0],
           }}
         >
-          Made with ❤ &nbsp; • &nbsp;Ariella Vu
+          Made with ❤&nbsp; • &nbsp;Ariella Vu
 
           <span sx={{ display: ['none', 'inline', 'inline'] }}>
             &nbsp; • &nbsp;

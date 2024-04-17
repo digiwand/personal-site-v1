@@ -72,8 +72,8 @@ function Layout({ children, sectionTrackingPixelRefs } : Props) {
 
         <meta
           name="description"
-          content={'Ariella is a programmer creating diversity, inclusivity, and opportunities in Web 3.0. She is a senior '
-          + 'software engineer at ConsenSys, MetaMask.'}
+          content={'Ariella is a programmer developing secure, privacy-preserving experiences in Web 3.0. '
+          + 'She is currently a Senior Software Engineer II at Consensys, MetaMask.'}
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="og:type" content="website" />
