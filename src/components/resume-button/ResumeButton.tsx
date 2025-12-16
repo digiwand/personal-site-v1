@@ -11,7 +11,7 @@ const defaultProps = {
 function ResumeButton({ className }: Props) {
   return (
     <Button className={className}>
-      <a href="/Ariella-Vu-Resume-2021.pdf" download>
+      <a href="/Resume-Ariella-Vu.pdf" download>
         RÉSUMÉ
       </a>
     </Button>
