@@ -86,4 +86,6 @@ const ContactSection = React.forwardRef((props, ref) => (
   </Section>
 ));
 
+ContactSection.displayName = 'ContactSection';
+
 export default ContactSection;
