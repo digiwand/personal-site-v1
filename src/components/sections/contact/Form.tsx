@@ -2,8 +2,8 @@ import type ReCAPTCHA from 'react-google-recaptcha';
 
 import emailjs from 'emailjs-com';
 import { useRef, useState } from 'react';
-import Fade from 'components/animations/Fade';
-import Zoom from 'components/animations/Zoom';
+import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal/Zoom';
 import { Button } from 'theme-ui';
 
 import FormInput from 'components/sections/contact/FormInput';

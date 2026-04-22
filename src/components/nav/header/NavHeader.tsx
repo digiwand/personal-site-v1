@@ -4,7 +4,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import Fade from 'components/animations/Fade';
+import Fade from 'react-reveal/Fade';
 
 import { getColor } from '@theme-ui/color'
 

@@ -1,6 +1,6 @@
 import { getColor } from '@theme-ui/color';
 import React from 'react';
-import Fade from 'components/animations/Fade';
+import Fade from 'react-reveal/Fade';
 import { Flex } from 'theme-ui';
 
 import Section from 'components/sections/Section';
@@ -8,8 +8,6 @@ import ContactLeftSide from 'components/sections/contact/ContactLeftSide';
 import ContactRightSide from 'components/sections/contact/ContactRightSide';
 
 import { SECTION_ID } from 'constants/section';
-
-const reCaptchaV2Key = process.env.NEXT_PUBLIC_G_RECAPTCHA_V2_KEY;
 
 function ContactDivider() {
   return (
@@ -35,7 +33,7 @@ function ContactDivider() {
   );
 }
 
-const ContactSection = React.forwardRef((props, ref) => (
+const ContactSection = (props, ref) => (
   <Section
     id={SECTION_ID.CONTACT}
     ref={ref}
@@ -43,6 +41,7 @@ const ContactSection = React.forwardRef((props, ref) => (
       minHeight: 'calc(100vh - 260rem)',
     }}
   >
+
     <Fade>
       <div
         className="u-glass"
@@ -67,25 +66,21 @@ const ContactSection = React.forwardRef((props, ref) => (
           </Fade>
         </h2>
 
-        <Flex
-          sx={{
-            flexDirection: ['column', 'column', 'row'],
-            alignItems: ['center', 'center', 'initial'],
-          }}
+        <Flex sx={{
+          flexDirection: ['column', 'column', 'row'],
+          alignItems: ['center', 'center', 'initial'],
+        }}
         >
+
           <ContactLeftSide />
-          {reCaptchaV2Key && (
-            <>
-              <ContactDivider />
-              <ContactRightSide />
-            </>
-          )}
+          <ContactDivider />
+          <ContactRightSide />
+
         </Flex>
+
       </div>
     </Fade>
   </Section>
-));
+);
 
-ContactSection.displayName = 'ContactSection';
-
-export default ContactSection;
+export default React.forwardRef(ContactSection);

@@ -1,5 +1,5 @@
 import { IconButton } from 'theme-ui';
-import Flip from 'components/animations/Flip';
+import Flip from 'react-reveal/Flip';
 
 import SOCIAL from 'constants/social';
 

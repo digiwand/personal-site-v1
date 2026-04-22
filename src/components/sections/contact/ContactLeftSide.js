@@ -1,5 +1,5 @@
 import { getColor } from '@theme-ui/color';
-import Fade from 'components/animations/Fade';
+import Fade from 'react-reveal/Fade';
 import ContactSocialIconButtons from 'components/sections/contact/SocialIconButtons';
 import SVGPlantInPot from 'components/svg/plant-in-pot';
 

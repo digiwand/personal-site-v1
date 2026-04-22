@@ -1,6 +1,6 @@
 import { getColor } from '@theme-ui/color'
 import Link from 'next/link';
-import Flip from 'components/animations/Flip';
+import Flip from 'react-reveal/Flip';
 
 type Props = {
   className?: string,
