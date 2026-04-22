@@ -1,6 +1,6 @@
 import { getColor } from '@theme-ui/color';
 import React from 'react';
-import Fade from 'react-reveal/Fade';
+import Fade from 'components/animations/Fade';
 import { Flex } from 'theme-ui';
 
 import Section from 'components/sections/Section';

@@ -1,5 +1,5 @@
 import { getColor } from '@theme-ui/color'
-import Fade from 'react-reveal/Fade';
+import Fade from 'components/animations/Fade';
 import { Button } from 'theme-ui';
 import PropTypes from 'prop-types';
 import TECH from 'constants/tech';

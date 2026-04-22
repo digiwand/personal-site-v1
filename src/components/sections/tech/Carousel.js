@@ -1,6 +1,6 @@
 import { getColor } from '@theme-ui/color';
 import { keyframes } from '@emotion/react';
-import Zoom from 'react-reveal/Zoom';
+import Zoom from 'components/animations/Zoom';
 import TECH from 'constants/tech';
 
 const RECENT_TECH = [

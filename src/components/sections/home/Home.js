@@ -1,9 +1,9 @@
 import { getColor } from '@theme-ui/color';
 import anime from 'animejs';
 import React, { useEffect } from 'react';
-import Fade from 'react-reveal/Fade';
-import Pulse from 'react-reveal/Pulse';
-import Zoom from 'react-reveal/Zoom';
+import Fade from 'components/animations/Fade';
+import Pulse from 'components/animations/Pulse';
+import Zoom from 'components/animations/Zoom';
 import { useThemeUI } from 'theme-ui';
 
 import ResumeButton from 'components/resume-button/ResumeButton';
