@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import Fade from 'react-reveal';
+import Fade from 'components/animations/Fade';
 import AspectRatio from 'components/common/AspectRatio';
 
 const frameDistance = 46;

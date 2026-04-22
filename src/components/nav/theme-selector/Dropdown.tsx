@@ -1,4 +1,4 @@
-import Zoom from 'react-reveal/Zoom';
+import Zoom from 'components/animations/Zoom';
 import ThemeDropdownList from 'components/nav/theme-selector/DropdownList';
 import ThemeNextIconButton from 'components/nav/theme-selector/NextIconButton';
 

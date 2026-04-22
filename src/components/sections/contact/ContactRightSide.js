@@ -1,5 +1,5 @@
 import { getColor } from '@theme-ui/color';
-import Fade from 'react-reveal/Fade';
+import Fade from 'components/animations/Fade';
 import ContactForm from 'components/sections/contact/Form';
 import SOCIAL from 'constants/social';
 

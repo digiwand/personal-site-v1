@@ -11,6 +11,8 @@ const reCaptchaV2Key = process.env.NEXT_PUBLIC_G_RECAPTCHA_V2_KEY;
  *   @see {@link https://developers.google.com/recaptcha/docs/faq}
  */
 function FormRecaptcha({ recaptchaRef } : { recaptchaRef: RefObject<ReCAPTCHA> }) {
+  if (!reCaptchaV2Key) { return null; }
+
   return (
     <div sx={{
       fontSize: 0,
