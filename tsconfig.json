@@ -9,7 +9,7 @@
     "baseUrl": "./src",
     "allowJs": true,
     "skipLibCheck": true,
-    /** @todo turn strict on after getting comfortable with typescript */    
+    /** @todo turn strict on after getting comfortable with typescript */
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
@@ -19,8 +19,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "jsxImportSource": "theme-ui",
+    "jsx": "react-jsx",
+    "jsxImportSource": "theme-ui"
   },
   "include": [
     "next-env.d.ts",

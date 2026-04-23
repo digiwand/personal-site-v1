@@ -12,21 +12,27 @@ import ContactSection from 'components/sections/contact/Contact';
  * {@link src/constants/section.js}
  */
 function Home() {
+  const homeSectionRef = useRef<HTMLDivElement>(null);
+  const aboutSectionRef = useRef<HTMLDivElement>(null);
+  const techSectionRef = useRef<HTMLDivElement>(null);
+  const workSectionRef = useRef<HTMLDivElement>(null);
+  const contactSectionRef = useRef<HTMLDivElement>(null);
+
   const sectionTrackingPixelRefs = [
-    useRef<HTMLDivElement>(null),
-    useRef<HTMLDivElement>(null),
-    useRef<HTMLDivElement>(null),
-    useRef<HTMLDivElement>(null),
-    useRef<HTMLDivElement>(null),
+    homeSectionRef,
+    aboutSectionRef,
+    techSectionRef,
+    workSectionRef,
+    contactSectionRef,
   ];
 
   return (
     <Layout sectionTrackingPixelRefs={sectionTrackingPixelRefs}>
-      <HomeSection ref={sectionTrackingPixelRefs[0]} />
-      <AboutSection ref={sectionTrackingPixelRefs[1]} />
-      <TechSection ref={sectionTrackingPixelRefs[3]} />
-      <WorkSection ref={sectionTrackingPixelRefs[2]} />
-      <ContactSection ref={sectionTrackingPixelRefs[4]} />
+      <HomeSection ref={homeSectionRef} />
+      <AboutSection ref={aboutSectionRef} />
+      <TechSection ref={techSectionRef} />
+      <WorkSection ref={workSectionRef} />
+      <ContactSection ref={contactSectionRef} />
     </Layout>
   );
 }
