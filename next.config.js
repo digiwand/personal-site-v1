@@ -1,3 +1,5 @@
+const path = require('path');
+
 /**
  * @type {import('next').NextConfig}
  */
@@ -8,6 +10,11 @@ const nextConfig = {
   },
 
   poweredByHeader: false,
+
+
+  turbopack: {
+    root: path.join(__dirname, '..'),
+  },
 
   webpack: (config, {
     buildId, /* , dev, isServer, defaultLoaders, webpack, */
