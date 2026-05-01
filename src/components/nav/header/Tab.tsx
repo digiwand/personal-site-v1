@@ -35,49 +35,44 @@ function NavTab({
   );
 
   return (
-    /**
-     * @todo move <a> tag props to Link
-     * https://nextjs.org/docs/app/building-your-application/upgrading/codemods#new-link
-     *
-    */
-    <Link href={href} scroll={false} passHref legacyBehavior>
-      <a
-        className={`${className} + NavTab`}
-        sx={{
-          position: 'relative',
-          display: 'inline-flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: '40rem',
-          fontSize: '14rem',
-          fontFamily: 'body',
-          fontWeight: '300',
-          borderBottom: '2rem solid transparent',
-          transition: 'font-weight 0.2s, color 0.2s, border-bottom 0.2s',
+    <Link
+      href={href}
+      scroll={false}
+      className={`${className} + NavTab`}
+      sx={{
+        position: 'relative',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '40rem',
+        fontSize: '14rem',
+        fontFamily: 'body',
+        fontWeight: '300',
+        borderBottom: '2rem solid transparent',
+        transition: 'font-weight 0.2s, color 0.2s, border-bottom 0.2s',
 
-          '&:hover .NavTab_hoverText': {
-            width: '100%',
-            transition: 'all 0.3s ease-in-out',
-          },
-          '&:is-active': {
-            fontWeight: '700',
-          },
+        '&:hover .NavTab_hoverText': {
+          width: '100%',
+          transition: 'all 0.3s ease-in-out',
+        },
+        '&:is-active': {
+          fontWeight: '700',
+        },
 
-          '&:first-of-type': {
-            ml: 0,
-          },
+        '&:first-of-type': {
+          ml: 0,
+        },
 
-        }}
-        href={href}
-        is-active={String(isActive)}
-      >
-        <span sx={{ position: 'relative' }}>
-          <Flip top delay={700 + (index * 140)}>
-            {displayName}
-          </Flip>
-          {hoverText}
-        </span>
-      </a>
+      }}
+      is-active={String(isActive)}>
+
+      <span sx={{ position: 'relative' }}>
+        <Flip top delay={700 + (index * 140)}>
+          {displayName}
+        </Flip>
+        {hoverText}
+      </span>
+
     </Link>
   );
 }
