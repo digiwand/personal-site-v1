@@ -1,12 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2025",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "baseUrl": "./src",
+    "paths": {
+      "components/*": ["./src/components/*"],
+      "styles/*": ["./src/styles/*"],
+      "constants/*": ["./src/constants/*"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     /** @todo turn strict on */
@@ -16,7 +20,7 @@
     "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
