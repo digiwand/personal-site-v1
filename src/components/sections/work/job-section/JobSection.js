@@ -18,10 +18,6 @@ const propTypes = {
   })),
 };
 
-const defaultProps = {
-  className: '',
-};
-
 function JobSection({ children, ...props }) {
   const {
     className,
@@ -122,6 +118,5 @@ function JobSection({ children, ...props }) {
 }
 
 JobSection.propTypes = propTypes;
-JobSection.defaultProps = defaultProps;
 
 export default JobSection;

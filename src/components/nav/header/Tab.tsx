@@ -10,17 +10,12 @@ type Props = {
   isActive?: boolean,
 };
 
-const defaultProps = {
-  className: '',
-  isActive: false,
-};
-
 function NavTab({
-  className,
+  className = '',
   displayName,
   href,
   index,
-  isActive,
+  isActive = false,
 }: Props) {
   const hoverText = (
     <span
@@ -86,7 +81,5 @@ function NavTab({
     </Link>
   );
 }
-
-NavTab.defaultProps = defaultProps;
 
 export default NavTab;

@@ -6,11 +6,7 @@ const propTypes = {
   isVisible: PropTypes.bool,
 };
 
-const defaultProps = {
-  isVisible: false,
-};
-
-function FormSentMessage({ isVisible, email }) {
+function FormSentMessage({ isVisible = false, email }) {  
   return (
     <div
       is-visible={String(isVisible)}
@@ -58,6 +54,5 @@ function FormSentMessage({ isVisible, email }) {
 }
 
 FormSentMessage.propTypes = propTypes;
-FormSentMessage.defaultProps = defaultProps;
 
 export default FormSentMessage;

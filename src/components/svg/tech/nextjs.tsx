@@ -4,11 +4,7 @@ type Props = {
   className? : string;
 };
 
-const defaultProps = {
-  className: '',
-};
-
-function SVGNextJS({ className } : Props) {
+function SVGNextJS({ className = '' } : Props) {
   return (
     <svg
       className={className}
@@ -22,7 +18,5 @@ function SVGNextJS({ className } : Props) {
     </svg>
   );
 }
-
-SVGNextJS.defaultProps = defaultProps;
 
 export default SVGNextJS;
