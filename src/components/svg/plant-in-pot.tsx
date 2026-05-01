@@ -1,11 +1,8 @@
 type Props = {
   className?: string
 }
-const defaultProps = {
-  className: '',
-};
 
-function SVGPlantInPot({ className }: Props) {
+function SVGPlantInPot({ className = '' }: Props) {
   return (
     <svg
       className={className}
@@ -2386,7 +2383,5 @@ c-10 -30 -23 -63 -29 -75 -12 -22 -41 -29 -41 -10 0 17 71 139 80 139 5 0 1
 
   );
 }
-
-SVGPlantInPot.defaultProps = defaultProps;
 
 export default SVGPlantInPot;

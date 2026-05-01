@@ -10,10 +10,6 @@ type Props = {
   className?: string,
 };
 
-const defaultProps = {
-  className: '',
-};
-
 /**
  * To use FrameCircle, pass an image element as the "children" prop
  *
@@ -22,7 +18,7 @@ const defaultProps = {
       <img src="/example.png" alt="example" />
     </FrameCircle>
  */
-function FrameCircle({ children, className }: Props) {
+function FrameCircle({ children, className = '' }: Props) {
   const Image = React.cloneElement(children, {
     style: {
       position: 'absolute',
@@ -78,7 +74,5 @@ function FrameCircle({ children, className }: Props) {
     </div>
   );
 }
-
-FrameCircle.defaultProps = defaultProps;
 
 export default FrameCircle;

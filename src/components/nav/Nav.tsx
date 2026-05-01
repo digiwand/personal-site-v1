@@ -16,12 +16,7 @@ type Props = {
   pageTopTrackingPixelRef?: MutableRefObject<HTMLDivElement>,
 };
 
-const defaultProps = {
-  sectionTrackingPixelRefs: [],
-  pageTopTrackingPixelRef: null,
-};
-
-function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }: Props) {
+function Nav({ sectionTrackingPixelRefs = [], pageTopTrackingPixelRef = null }: Props) {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [activeSectionId, setActiveSectionId] = useState('home');
 
@@ -117,7 +112,5 @@ function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }: Props) {
     </div>
   );
 }
-
-Nav.defaultProps = defaultProps;
 
 export default Nav;

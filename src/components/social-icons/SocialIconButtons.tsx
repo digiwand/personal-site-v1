@@ -9,15 +9,10 @@ type Props = {
   socialKeys: string[],
 };
 
-const defaultProps = {
-  className: '',
-  revealDelay: 0,
-};
-
 function SocialIconButtons({
-  className,
+  className = '',
   socialKeys,
-  revealDelay,
+  revealDelay = 0,
 }: Props) {
   return (
     <>
@@ -39,7 +34,5 @@ function SocialIconButtons({
     </>
   );
 }
-
-SocialIconButtons.defaultProps = defaultProps;
 
 export default SocialIconButtons;

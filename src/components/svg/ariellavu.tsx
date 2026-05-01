@@ -4,12 +4,7 @@ type Props = {
   id?: string,
 }
 
-const defaultProps = {
-  className: '',
-  id: '',
-};
-
-function SVGAriellaVu({ className, id }: Props) {
+function SVGAriellaVu({ className = '', id = '' }: Props) {
   return (
     <svg
       id={id}
@@ -40,7 +35,5 @@ function SVGAriellaVu({ className, id }: Props) {
     </svg>
   );
 }
-
-SVGAriellaVu.defaultProps = defaultProps;
 
 export default SVGAriellaVu;

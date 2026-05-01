@@ -6,11 +6,6 @@ type Props = {
   ratio?: string,
 };
 
-const defaultProps = {
-  className: '',
-  ratio: '1/1',
-};
-
 /**
  * To use AspectRatio, pass an image element as the "children" prop.
  *
@@ -22,7 +17,7 @@ const defaultProps = {
       <img src="/example.png" alt="example" />
     </AspectRatio>
  */
-function AspectRatio({ children, className, ratio }: Props) {
+function AspectRatio({ children, className = '', ratio = '1/1' }: Props) {
   return (
     <div
       className={className}
@@ -51,7 +46,5 @@ function AspectRatio({ children, className, ratio }: Props) {
     </div>
   );
 }
-
-AspectRatio.defaultProps = defaultProps;
 
 export default AspectRatio;

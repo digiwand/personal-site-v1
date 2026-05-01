@@ -13,11 +13,7 @@ type Props = {
   sectionTrackingPixelRefs?: MutableRefObject<HTMLDivElement>[],
 };
 
-const defaultProps = {
-  sectionTrackingPixelRefs: null,
-};
-
-function Layout({ children, sectionTrackingPixelRefs } : Props) {
+function Layout({ children, sectionTrackingPixelRefs = null } : Props) {
   const pageTopTrackingPixelRef = useRef<HTMLDivElement>();
   const { theme: { rawColors } } = useThemeUI();
 
@@ -114,7 +110,5 @@ function Layout({ children, sectionTrackingPixelRefs } : Props) {
     </div>
   );
 }
-
-Layout.defaultProps = defaultProps;
 
 export default Layout;

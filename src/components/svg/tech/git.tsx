@@ -2,11 +2,7 @@ type Props = {
   className? : string;
 };
 
-const defaultProps = {
-  className: '',
-};
-
-function SVGNodeJS({ className } : Props) {
+function SVGGit({ className = '' } : Props) {
   return (
     <svg
       className={className}
@@ -22,6 +18,4 @@ function SVGNodeJS({ className } : Props) {
   );
 }
 
-SVGNodeJS.defaultProps = defaultProps;
-
-export default SVGNodeJS;
+export default SVGGit;

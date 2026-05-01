@@ -1,11 +1,8 @@
 type Props = {
   className?: string
 }
-const defaultProps = {
-  className: '',
-};
 
-function SVGProfile({ className }: Props) {
+function SVGProfile({ className = '' }: Props) {
   return (
     <svg
       className={className}
@@ -653,7 +650,5 @@ function SVGProfile({ className }: Props) {
     </svg>
   );
 }
-
-SVGProfile.defaultProps = defaultProps;
 
 export default SVGProfile;

@@ -8,15 +8,11 @@ type Props = {
   isActive?: boolean,
 };
 
-const defaultProps = {
-  isActive: false,
-};
-
 function NavDrawerItem({
   displayName,
   handleCloseMenu,
   href,
-  isActive,
+  isActive = false,
 }: Props) {
   return (
     /**
@@ -81,7 +77,5 @@ function NavDrawerItem({
     </Link>
   );
 }
-
-NavDrawerItem.defaultProps = defaultProps;
 
 export default NavDrawerItem;
