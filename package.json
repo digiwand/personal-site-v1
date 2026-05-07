@@ -29,7 +29,6 @@
     "@eslint/js": "^9.39.4",
     "@types/node": "^20.19.39",
     "@types/react": "^18.3.28",
-    "@typescript/native-preview": "^7.0.0-dev.20260421.2",
     "date-fns": "^2.21.3",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.4",
@@ -41,7 +40,7 @@
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "sass": "^1.32.13",
-    "typescript": "npm:@typescript/typescript6@^6.0.0"
+    "typescript": "^6.0.3"
   },
   "overrides": {
     "postcss": "^8.5.13"
