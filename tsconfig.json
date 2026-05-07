@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es2025",
+    "target": "es2024",
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
     ],
     "paths": {
       "components/*": ["./src/components/*"],
