@@ -12,18 +12,6 @@ const nextConfig = {
   poweredByHeader: false,
 
   outputFileTracingRoot: path.join(__dirname, '..'),
-  turbopack: {
-    root: path.join(__dirname, '..'),
-  },
-
-  webpack: (config, {
-    buildId, /* , dev, isServer, defaultLoaders, webpack, */
-  }) => {
-    console.log('Building: ', buildId);
-
-    // Important: return the modified config
-    return config;
-  },
 };
 
 module.exports = nextConfig;
