@@ -9,10 +9,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.2.0",
     "@emotion/react": "^11.11.1",
     "@theme-ui/color": "^0.16.0",
     "animejs": "^3.2.1",
-    "emailjs-com": "^3.2.0",
     "framer-motion": "^6.5.1",
     "next": "^16.2.4",
     "prop-types": "^15.7.2",
