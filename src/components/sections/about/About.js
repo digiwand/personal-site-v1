@@ -57,7 +57,7 @@ function AboutSection(props, ref) {
             <br />
             I&apos;m a California native without a homebase. Since I left home at 14, I&apos;ve considered myself
             a nomad. Over the last {yearsNomad}&nbsp;years, I&apos;ve worked remotely. Thankfully, my journey has led me 
-            to uncover the wonders of more than 30 countries. Overcoming changes and challenges is wired in me.
+            to uncover the wonders of more than 40 countries. Overcoming changes and challenges is wired in me.
             <br />
             <br />
             {/* Some of my strengths include problem-solving, adapting, writing clean-code, being detail-oriented, and
