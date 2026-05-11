@@ -1,7 +1,12 @@
 ## ✨ Welcome ✨
 </br>
 
-This Next.js project is a work in progress. 
+This Next.js project is indefinitely work in progress.
+
+Today, most of the components have been created and designed from scratch and before AI IDE integrations.
+I hope this repo finds you well. 
+
+All the best,
 
 </br>
 
