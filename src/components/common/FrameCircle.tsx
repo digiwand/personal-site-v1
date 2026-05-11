@@ -61,7 +61,6 @@ function FrameCircle({ children, className = '' }: Props) {
                 `-${frameDistanceMobile / 2}rem`,
                 `-${frameDistance / 2}rem`,
               ],
-              zIndex: '-1',
               boxShadow: 'rgba(120, 120, 120, 0.8) 2rem 2rem 13rem 0rem',
               borderRadius: '50%',
             }}
