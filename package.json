@@ -8,9 +8,6 @@
     "lint": "eslint .",
     "start": "next start"
   },
-  "engines": {
-    "node": "24.x"
-  },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@theme-ui/color": "^0.16.0",
