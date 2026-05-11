@@ -26,10 +26,10 @@ function Footer() {
         <span
           sx={{
             display: ['block', 'block', 'inline-block'],
-            py: [3, 2, 0],
+            py: [3, 2, 1],
           }}
         >
-          © 2021-2024
+          © 2021-2026
         </span>
       </Fade>
       <Fade bottom>
@@ -39,7 +39,7 @@ function Footer() {
             flexWrap: 'wrap',
             justifyContent: 'center',
             flexDirection: ['column', 'row', 'row'],
-            pt: [3, 2, 0],
+            pt: [3, 2, '5px'],
           }}
         >
           Made with ❤&nbsp; • &nbsp;Ariella Vu
@@ -54,7 +54,7 @@ function Footer() {
             rel="noopener noreferrer"
             sx={{
               variant: 'text.link',
-              pt: [3, 0, 0],
+              pt: [3, 0, '5px'],
             }}
           >
             Open Source on Github
