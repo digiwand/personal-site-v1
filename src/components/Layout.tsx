@@ -81,11 +81,11 @@ function Layout({ children, sectionTrackingPixelRefs = null } : Props) {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="627" />
 
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@digiwand_" />
         <meta name="twitter:site" content="@digiwand_" />
         <meta name="twitter:title" content="Ariella Vu | Personal Website" />
-        <meta name="twitter:image" content="https://ariella.dev/images/ariella-vu-website-preview.png" />
+        <meta name="twitter:image" content="https://ariella.dev/images/ariella-vu-website-preview.png" /> */}
 
         {/* Updates toolbar color for various browsers including Safari and Android Chrome */}
         <meta name="theme-color" content={get(rawColors, 'text')} />

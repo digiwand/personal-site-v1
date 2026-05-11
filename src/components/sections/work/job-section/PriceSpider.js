@@ -43,17 +43,17 @@ function JobSectionPriceSpider() {
       techKeys={TECH_KEYS}
       imgConfigs={IMG_CONFIGS}
     >
-      I started the Angular 1.x reporting platform here from scratch along-side a fellow server developer and
-      engineer manager. Using PostgresSQL, I architected the user, roles, and permissions schemas. Then, I
-      implemented dynamic roles and permissions and enforced them through middleware on our Express.js routes.
-      We used highscharts and highmaps to display the impressions and clicks made on our Where-To-Buy (WTB) solutions.
+      I built the Angular 1.x reporting platform from scratch alongside a fellow server developer and our 
+      engineering manager. Using PostgreSQL, I architected the user, roles, and permissions schemas, then 
+      implemented dynamic role-based access control enforced through middleware on our Express.js routes. 
+      We used Highcharts and Highmaps to visualize impressions and clicks across our Where-to-Buy (WTB) solutions.
       <br />
       <br />
-      Another third of my time spent at PriceSpider was used to create web crawlers using C#, ASP.NET and Regexes to
-      to extract store and product information on seller sites.
+      Another third of my time at PriceSpider was spent building web crawlers in C#, ASP.NET, and regex to
+      extract store and product information from retailer sites.
       <br />
       <br />
-      In addition, I developed over 25+ HTML-embedded, WTB widgets on 25+ different e-commerce webpages.
+      I also developed 25+ HTML-embedded WTB widgets deployed across different e-commerce pages.
     </JobSection>
   );
 }

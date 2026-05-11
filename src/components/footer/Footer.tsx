@@ -29,7 +29,7 @@ function Footer() {
             py: [3, 2, 1],
           }}
         >
-          © 2021-2026
+          © 2021-{new Date().getFullYear()}
         </span>
       </Fade>
       <Fade bottom>
