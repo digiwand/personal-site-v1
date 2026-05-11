@@ -12,12 +12,6 @@ function WorkSideHeading({ text, className }) {
         gridColumnStart: 'label-start',
         pt: [0, 0, 5],
         pb: [0, 0, 5],
-
-        '&:before': {
-          content: '"— "',
-          paddingRight: 2,
-          display: ['none', 'none', 'inline-block'],
-        },
       }}
     >
       {text}
