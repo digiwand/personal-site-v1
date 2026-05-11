@@ -45,9 +45,14 @@ function JobSectionCopper() {
       techKeys={TECH_KEYS}
       imgConfigs={IMG_CONFIGS}
     >
-      At Copper, I led numerous front-end projects for the CRM platform. These projects include, but are not limited to,
-      building an in-house A/B testing tool, AMP emails, G-Suite add-on, Pricing & Plan restructure, along with various
-      performance improvements.
+      At Copper, I led numerous front-end projects for the CRM platform, including an in-house A/B testing tool, 
+      AMP emails, a Google Workspace add-on, a dynamic pricing and plan restructure, advanced list filtering, 
+      VoIP support, extensive refactoring, and various performance improvements.
+      <br />
+      <br />
+      Beyond feature work, I contributed to hiring by creating interview questions and conducting 15+ interviews. 
+      I also advocated for best practices, crafted and presented 8+ large architecture proposals, 
+      and frequently collaborated with third parties to lend my expertise.
     </JobSection>
   );
 }

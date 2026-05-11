@@ -21,16 +21,19 @@ function JobSectionMetaMask() {
       companyName="MetaMask"
       title="Senior Software Engineer ||"
       subtitle="(Full Stack)"
-      date="Jan 2022 - Current"
+      date="Jan 2022 - Sept 2025"
       techKeys={TECH_KEYS}
     >
-      Currently, I&apos;m working on transaction security and UI/UX in the MetaMask extension. I&apos;ve been a core developer 
-      for our Chromium Manifest V3 support, Sign-in with Ethereum (EIP-4361) integration and refactor work.
+      As a core developer on MetaMask's extension and mobile applications, I tackled a wide range of complex projects, 
+      from restructuring Node.js multiplex streams for the Chromium Manifest V3 migration, to leading the 
+      Sign-in with Ethereum (EIP-4361) integration and dissecting the nuances of EIP signatures and transactions. 
+      I also deployed safeguards that protected 30+ million user accounts from phishing attacks and pioneered fixes 
+      for recurring issues, including defects that had been patched over for 7+ years.
       <br />
       <br />
-      My journey here in the Ethereum ecosystem has involved listening and responding to user feedback, 
-      troubleshooting dapp developer issues, extensive code reviews, hosting workshops, assisting at hackathons,
-      collaborating with other teams in the space, and more.
+      Beyond code, my journey in the Ethereum ecosystem has involved listening and responding to user feedback, 
+      troubleshooting issues for dApp developers, hosting workshops, mentoring at hackathons, connecting the company with
+      25+ partner opportunities (10+ resulting in active partnerships), and collaborating with other organizations in the space.
     </JobSection>
   );
 }

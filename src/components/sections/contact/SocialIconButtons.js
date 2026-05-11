@@ -4,7 +4,7 @@ import SocialIconButtons from 'components/social-icons/SocialIconButtons';
 const SOCIAL_KEYS = [
   'stackoverflow',
   'github',
-  'twitter',
+  /* 'twitter', */
   'linkedin',
 ];
 

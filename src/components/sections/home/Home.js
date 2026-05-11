@@ -86,13 +86,12 @@ function HomeSection(props, ref) {
             <p
               sx={{
                 variant: 'text.body',
-                maxWidth: '554rem',
+                maxWidth: '555rem',
                 mx: 'auto',
                 pb: ['52rem', '52rem', '54rem'],
               }}
             >
-              I&apos;m a web developer who&apos;s passionate about clean code, delightful user
-              experiences, and fostering freedom and inclusivity through decentralized, web3 technologies.
+              I&apos;m a software engineer building secure, maintainable systems and elegant solutions to complex problems.
             </p>
           </Fade>
           <Pulse delay={5200} duration={620}>
