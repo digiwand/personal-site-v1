@@ -3,9 +3,6 @@
 
 This Next.js project is a work in progress. 
 
-The code is not the cleanest yet because I'm experimenting and throwing code quickly together.
-
-
 </br>
 
 ## Published URL(s)
@@ -13,7 +10,6 @@ The code is not the cleanest yet because I'm experimenting and throwing code qui
 https://ariella.dev
 
 ## To do
-- [ ] use AirBnb React Style Guide to clean code
 - [ ] migrate remaining code to TypeScript
 - [ ] improve performance - linear gradient background is slowing performance
 - [ ] use custom hooks
@@ -23,6 +19,6 @@ https://ariella.dev
 - [ ] add fullscreen view of screenshots on click
 - [ ] update dark mode
 - [ ] add additional theme(s)
-- [ ] support accessibility (a11y)
+- [ ] support additional accessibility (a11y)
 - [ ] fix autocomplete bug on input form
 - [ ] optimize core vitals
