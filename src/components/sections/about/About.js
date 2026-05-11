@@ -60,10 +60,7 @@ function AboutSection(props, ref) {
             to uncover the wonders of more than 40 countries. Overcoming changes and challenges is wired in me.
             <br />
             <br />
-            {/* Some of my strengths include problem-solving, adapting, writing clean-code, being detail-oriented, and
-              teamwork. */}
-            Besides programming and traveling, my passions include yoga, hiking, scuba diving (newly certified), 
-            building new homebases around the world, and personal development.
+            Outside of programming, I enjoy yoga, hiking, scuba diving, 3D printing, and philosophical discussions.
           </p>
         </Fade>
       </div>
