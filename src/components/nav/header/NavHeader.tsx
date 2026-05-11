@@ -4,7 +4,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import Fade from 'react-reveal/Fade';
+import Fade from 'components/animations/Fade';
 
 import { getColor } from '@theme-ui/color'
 
@@ -21,11 +21,7 @@ type Props = {
   pageTopTrackingPixelRef?: MutableRefObject<HTMLDivElement>,
 };
 
-const defaultProps = {
-  pageTopTrackingPixelRef: null,
-};
-
-function NavHeader({ activeSectionId, pageTopTrackingPixelRef }: Props) {
+function NavHeader({ activeSectionId, pageTopTrackingPixelRef = null }: Props) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const pageTopObserverRef = useRef<IntersectionObserver>();
 
@@ -126,7 +122,5 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef }: Props) {
     </header>
   );
 }
-
-NavHeader.defaultProps = defaultProps;
 
 export default NavHeader;

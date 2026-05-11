@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import Fade from 'react-reveal';
+import Fade from 'components/animations/Fade';
 import AspectRatio from 'components/common/AspectRatio';
 
 const frameDistance = 46;
@@ -10,10 +10,6 @@ type Props = {
   className?: string,
 };
 
-const defaultProps = {
-  className: '',
-};
-
 /**
  * To use FrameCircle, pass an image element as the "children" prop
  *
@@ -22,7 +18,7 @@ const defaultProps = {
       <img src="/example.png" alt="example" />
     </FrameCircle>
  */
-function FrameCircle({ children, className }: Props) {
+function FrameCircle({ children, className = '' }: Props) {
   const Image = React.cloneElement(children, {
     style: {
       position: 'absolute',
@@ -65,7 +61,6 @@ function FrameCircle({ children, className }: Props) {
                 `-${frameDistanceMobile / 2}rem`,
                 `-${frameDistance / 2}rem`,
               ],
-              zIndex: '-1',
               boxShadow: 'rgba(120, 120, 120, 0.8) 2rem 2rem 13rem 0rem',
               borderRadius: '50%',
             }}
@@ -78,7 +73,5 @@ function FrameCircle({ children, className }: Props) {
     </div>
   );
 }
-
-FrameCircle.defaultProps = defaultProps;
 
 export default FrameCircle;

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { AppProps } from 'next/app';
 import { useState } from 'react';
 import { ThemeUIProvider } from 'theme-ui';

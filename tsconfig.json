@@ -1,12 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2024",
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
     ],
-    "baseUrl": "./src",
+    "paths": {
+      "components/*": ["./src/components/*"],
+      "styles/*": ["./src/styles/*"],
+      "constants/*": ["./src/constants/*"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     /** @todo turn strict on */    
@@ -16,11 +20,11 @@
     "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "jsxImportSource": "theme-ui",
+    "jsx": "react-jsx",
+    "jsxImportSource": "theme-ui"
   },
   "include": [
     "next-env.d.ts",

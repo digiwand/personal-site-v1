@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-/* eslint-disable react/jsx-closing-bracket-location */
 
 export default function IconFacebook() {
   return (

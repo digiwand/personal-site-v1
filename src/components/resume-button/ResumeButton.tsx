@@ -4,11 +4,7 @@ type Props = {
   className?: string;
 }
 
-const defaultProps = {
-  className: '',
-};
-
-function ResumeButton({ className }: Props) {
+function ResumeButton({ className = '' }: Props) {
   return (
     <Button className={className}>
       <a href="/Resume-Ariella-Vu.pdf" download>
@@ -17,7 +13,5 @@ function ResumeButton({ className }: Props) {
     </Button>
   );
 }
-
-ResumeButton.defaultProps = defaultProps;
 
 export default ResumeButton;

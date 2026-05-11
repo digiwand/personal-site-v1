@@ -1,5 +1,3 @@
-/* eslint-disable no-multi-spaces */
-
 /** Names are based off of generated names by https://coolors.co */
 const RGB = {
   // White
