@@ -1,6 +1,6 @@
 import type ReCAPTCHA from 'react-google-recaptcha';
 
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 import Fade from 'components/animations/Fade';
 import Zoom from 'components/animations/Zoom';
