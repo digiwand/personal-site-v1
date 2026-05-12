@@ -9,7 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.2.0",
+    "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.11.1",
     "@theme-ui/color": "^0.16.0",
     "animejs": "^3.2.1",
