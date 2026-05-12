@@ -49,8 +49,8 @@ function HomeSection(props, ref) {
           sx={{
             display: 'inline-flex',
             flexDirection: 'column',
-            px: [3, 4, '74rem'],
-            py: [5, 5, '74rem'],
+            px: [3, 4, '80rem'],
+            py: [5, 5, '80rem'],
             margin: '0 auto',
             zIndex: '1',
           }}
@@ -86,12 +86,12 @@ function HomeSection(props, ref) {
             <p
               sx={{
                 variant: 'text.body',
-                maxWidth: '555rem',
+                maxWidth: '535rem',
                 mx: 'auto',
                 pb: ['52rem', '52rem', '54rem'],
               }}
             >
-              I&apos;m a software engineer building secure, maintainable systems and elegant solutions to complex problems.
+              I&apos;m a software engineer passionate about solving complex problems through clean, secure, scalable code and crafting delightful experiences.
             </p>
           </Fade>
           <Pulse delay={5200} duration={620}>
