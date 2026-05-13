@@ -24,9 +24,10 @@ const styles: Theme['styles'] = {
     },
     h3: {
       variant: 'text.heading',
-      fontSize: [3, 4, 4],
+      fontSize: [3, '24.5rem', '24.5rem'],
+      fontFamily: 'barlow',
       fontWeight: 'body',
-      letterSpacing: '5rem',
+      letterSpacing: '2rem',
       lineHeight: 1.225,
     },
     h4: {
