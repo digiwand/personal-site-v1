@@ -1,25 +1,61 @@
-import { getColor } from '@theme-ui/color'
+import { getColor } from '@theme-ui/color';
 import PropTypes from 'prop-types';
-import { Image } from 'theme-ui';
+import { useCallback, useMemo, useState } from 'react';
 
 import AspectRatio from 'components/common/AspectRatio';
 
-function generateImage(imgConfig) {
-  const type = imgConfig.type || 'png';
+import JobSectionImageCarouselModal from './JobSectionImageCarouselModal';
+import { createWorkImageFactories } from './workImage';
 
-  return (
-    <picture>
-      <source
-        srcSet={`/images/work/${imgConfig.srcName}.webp`}
-        type="image/webp"
-      />
-      <source
-        srcSet={`/images/work/${imgConfig.srcName}.${type}`}
-        type={`image/${type}`}
-      />
-      <Image alt={imgConfig.alt} src={`/images/work/${imgConfig.srcName}.${type}`} />
-    </picture>
-  );
+/** Overlapping trio: slot 0 back-left, 1 center, 2 back-right. */
+const TRIO_SLOT_LAYOUT = [
+  {
+    position: 'absolute',
+    zIndex: '2',
+    top: '-20%',
+    bottom: '0',
+    left: '0',
+    right: ['auto', 'auto', 'initial'],
+  },
+  {
+    zIndex: '1',
+    top: '0',
+    bottom: '0',
+    left: '0',
+    right: '0',
+    m: 'auto',
+  },
+  {
+    position: 'absolute',
+    zIndex: '0',
+    bottom: '0',
+    right: '0',
+    top: '20%',
+  },
+];
+
+/**
+ * First up to three images use the stacked layout; any further `imgConfigs` entries appear only in the carousel.
+ * @returns {{ imgIndex: number, slotIndex: number }[]}
+ */
+function getTrioDisplayPlan(imgCount) {
+  if (imgCount >= 3) {
+    return [
+      { imgIndex: 0, slotIndex: 0 },
+      { imgIndex: 1, slotIndex: 1 },
+      { imgIndex: 2, slotIndex: 2 },
+    ];
+  }
+  if (imgCount === 2) {
+    return [
+      { imgIndex: 0, slotIndex: 0 },
+      { imgIndex: 1, slotIndex: 1 },
+    ];
+  }
+  if (imgCount === 1) {
+    return [{ imgIndex: 0, slotIndex: 1 }];
+  }
+  return [];
 }
 
 const aspectRatioStyles = {
@@ -43,13 +79,62 @@ const aspectRatioStyles = {
 };
 
 const propTypes = {
+  companyName: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
   imgConfigs: PropTypes.arrayOf(PropTypes.shape({
     alt: PropTypes.string,
-    src: PropTypes.string,
+    srcName: PropTypes.string,
+    type: PropTypes.string,
   })).isRequired,
 };
 
-function JobSectionImgTrio({ imgConfigs }) {
+function openCarouselKeyboard(e, openAt) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    openAt();
+  }
+}
+
+const interactiveSx = {
+  cursor: 'pointer',
+  '&:focus-visible': {
+    outline: (t) => `3rem solid ${getColor(t, 'link')}`,
+    outlineOffset: '4rem',
+  },
+};
+
+function JobSectionImgTrio({
+  companyName,
+  title,
+  subtitle,
+  imgConfigs,
+}) {
+  const [carouselOpen, setCarouselOpen] = useState(false);
+  const [initialSlideIndex, setInitialSlideIndex] = useState(0);
+  const [carouselMountKey, setCarouselMountKey] = useState(0);
+
+  const pictureFactories = useMemo(
+    () => createWorkImageFactories(imgConfigs),
+    [imgConfigs],
+  );
+
+  const openCarousel = useCallback((index) => {
+    setInitialSlideIndex(index);
+    setCarouselMountKey((k) => k + 1);
+    setCarouselOpen(true);
+  }, []);
+
+  const closeCarousel = useCallback(() => {
+    setCarouselOpen(false);
+  }, []);
+
+  if (!imgConfigs.length) {
+    return null;
+  }
+
+  const trioPlan = getTrioDisplayPlan(imgConfigs.length);
+
   return (
     <div sx={{
       position: 'relative',
@@ -58,46 +143,35 @@ function JobSectionImgTrio({ imgConfigs }) {
       my: 5,
     }}
     >
-      <AspectRatio
-        sx={{
-          position: 'absolute',
-          zIndex: '2',
-          top: '-20%',
-          bottom: '0',
-          left: '0',
-          right: ['auto', 'auto', 'initial'],
-          ...aspectRatioStyles,
-        }}
-      >
-        {generateImage(imgConfigs[0])}
-      </AspectRatio>
+      {trioPlan.map(({ imgIndex, slotIndex }) => (
+        <AspectRatio
+          key={imgConfigs[imgIndex].srcName}
+          role="button"
+          tabIndex={0}
+          aria-haspopup="dialog"
+          aria-label={`Open image gallery: ${imgConfigs[imgIndex]?.alt ?? 'work sample'}`}
+          onClick={() => openCarousel(imgIndex)}
+          onKeyDown={(e) => openCarouselKeyboard(e, () => openCarousel(imgIndex))}
+          sx={{
+            ...TRIO_SLOT_LAYOUT[slotIndex],
+            ...interactiveSx,
+            ...aspectRatioStyles,
+          }}
+        >
+          {pictureFactories[imgIndex]({ loading: 'lazy' })}
+        </AspectRatio>
+      ))}
 
-      <AspectRatio
-        sx={{
-          zIndex: '1',
-          top: '0',
-          bottom: '0',
-          left: '0',
-          right: '0',
-          m: 'auto',
-          ...aspectRatioStyles,
-        }}
-      >
-        {generateImage(imgConfigs[1])}
-      </AspectRatio>
-
-      <AspectRatio
-        sx={{
-          position: 'absolute',
-          zIndex: '0',
-          bottom: '0',
-          right: '0',
-          top: '20%',
-          ...aspectRatioStyles,
-        }}
-      >
-        {generateImage(imgConfigs[2])}
-      </AspectRatio>
+      <JobSectionImageCarouselModal
+        key={carouselMountKey}
+        companyName={companyName}
+        title={title}
+        subtitle={subtitle}
+        imgConfigs={imgConfigs}
+        initialSlideIndex={initialSlideIndex}
+        isOpen={carouselOpen}
+        onClose={closeCarousel}
+      />
     </div>
   );
 }

@@ -109,7 +109,14 @@ function JobSection({ children, ...props }) {
             ))}
           </div>
 
-          {imgConfigs && <JobSectionImgTrio imgConfigs={imgConfigs} />}
+          {imgConfigs && (
+            <JobSectionImgTrio
+              companyName={companyName}
+              title={title}
+              subtitle={subtitle}
+              imgConfigs={imgConfigs}
+            />
+          )}
 
         </div>
       </Fade>
