@@ -91,7 +91,9 @@ function HomeSection(props, ref) {
                 pb: ['52rem', '52rem', '54rem'],
               }}
             >
-              I&apos;m a software engineer passionate about solving complex problems through clean, secure, scalable code and crafting delightful experiences.
+              I&apos;m a software engineer passionate about solving complex problems through clean, secure, scalable code
+              {' '}
+              and crafting delightful experiences.
             </p>
           </Fade>
           <Pulse delay={5200} duration={620}>

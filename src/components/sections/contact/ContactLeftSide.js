@@ -28,7 +28,11 @@ function ContactLeftSide() {
 
         <Fade>
           <h6 sx={{ color: (t) => getColor(t, 'contactText') }}>
-            Working remotely since 2018
+            After working remotely since 2018,
+            <br />
+            I&apos;m now open to opportunities, location-based
+            <br />
+            (SF, bay area, NY, other) or remote
           </h6>
         </Fade>
 
