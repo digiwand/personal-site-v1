@@ -18,11 +18,20 @@ function ContactLeftSide() {
     }}
     >
       <div>
-        <h3 sx={{ color: (t) => getColor(t, 'contactSubHeader'), pb: 3 }}>
+        <div sx={{ 
+          variant: 'text.heading',
+          color: (t) => getColor(t, 'contactSubHeader'), 
+          pb: 3,
+          fontSize: [3, 4, 4],
+          letterSpacing: '5rem',
+
+          /** @hack: fix uneven alignment */
+          marginBottom: '6px',
+        }}>
           <Fade delay={200}>
             Let&apos;s Connect!
           </Fade>
-        </h3>
+        </div>
 
         <br />
 

@@ -18,11 +18,17 @@ function ContactRightSide() {
         textAlign: ['center', 'center', 'left'],
       }}
       >
-        <h3 sx={{ color: (t) => getColor(t, 'contactSubHeader'), pb: 3 }}>
+        <div sx={{ 
+          variant: 'text.heading',
+          color: (t) => getColor(t, 'contactSubHeader'), 
+          pb: 3,
+          fontSize: [3, 4, 4],
+          letterSpacing: '5rem',
+        }}>
           <Fade delay={200}>
             Send me a message
           </Fade>
-        </h3>
+        </div>
 
         <br />
 
