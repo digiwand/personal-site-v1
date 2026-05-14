@@ -24,7 +24,7 @@ const styles: Theme['styles'] = {
     },
     h3: {
       variant: 'text.heading',
-      fontSize: [3, '24.5rem', '24.5rem'],
+      fontSize: [3, '25rem', '25rem'],
       fontFamily: 'barlow',
       fontWeight: 'body',
       letterSpacing: '2rem',
