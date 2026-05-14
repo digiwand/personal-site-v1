@@ -24,7 +24,7 @@ function JobSectionMetaMask() {
       date="Jan 2022 - Sept 2025"
       techKeys={TECH_KEYS}
     >
-      As a core developer on MetaMask's extension and mobile applications, I tackled a wide range of complex projects, 
+      As a core developer on MetaMask&apos;s extension and mobile applications, I tackled a wide range of complex projects, 
       from restructuring Node.js multiplex streams for the Chromium Manifest V3 migration, to leading the 
       Sign-in with Ethereum (EIP-4361) integration and dissecting the nuances of EIP signatures and transactions. 
       I also deployed safeguards that protected 30+ million user accounts from phishing attacks and pioneered fixes 
