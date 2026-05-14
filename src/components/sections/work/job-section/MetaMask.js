@@ -33,7 +33,7 @@ function JobSectionMetaMask() {
       <br />
       Beyond code, my journey in the Ethereum ecosystem has involved listening and responding to user feedback, 
       troubleshooting issues for dApp developers, hosting workshops, mentoring at hackathons, connecting the company with
-      25+ partner opportunities (10+ resulting in active partnerships), and collaborating with other organizations in the space.
+      25+ partner opportunities, and collaborating with other organizations in the space.
     </JobSection>
   );
 }
