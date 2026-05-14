@@ -26,7 +26,7 @@ function ContactLeftSide() {
           letterSpacing: '5rem',
 
           /** @hack: fix uneven alignment */
-          marginBottom: '6px',
+          marginBottom: '4px',
         }}>
           <Fade delay={200}>
             Let&apos;s Connect!
@@ -39,9 +39,7 @@ function ContactLeftSide() {
           <h6 sx={{ color: (t) => getColor(t, 'contactText') }}>
             After working remotely since 2018,
             <br />
-            I&apos;m open to opportunities, location-based
-            <br />
-            (SF, bay area, NY, other) or remote
+            I&apos;m open for either location-based (SF, bay area, NY, other) or remote opportunities
           </h6>
         </Fade>
 

@@ -45,7 +45,7 @@ const styles: Theme['styles'] = {
     h6: {
       variant: 'text.heading',
       lineHeight: 1.5,
-      fontSize: 0,
+      fontSize: 1,
     },
     
     p: {
