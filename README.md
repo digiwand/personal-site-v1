@@ -20,8 +20,9 @@ https://ariella.dev
 
 - [ ] add carousel modal to view work screenshots
 - [ ] add additional theme(s)
+- [ ] add Resume view without download. modal with download icon?
 - [ ] add tooltips
-- [ ] support additional accessibility (a11y)
+- [ ] add additional accessibility (a11y) support
 
 ### Fix 
 
