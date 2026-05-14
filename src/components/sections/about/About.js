@@ -36,7 +36,11 @@ function AboutSection(props, ref) {
       }}
       >
         <Fade>
-          <h2 sx={{ pt: [6, 0, 0], pb: 4 }}>
+          <h2 sx={{ 
+              variant: 'text.shadow', 
+              pt: [6, 0, 0],
+              pb: 4,
+            }}>
             <Fade top duration={300} cascade>
               About
             </Fade>

@@ -21,16 +21,17 @@ function TechSection(props, ref) {
       }}
     >
       <Fade>
-        <h3
+        <h2
           sx={{
+            variant: 'text.shadow',
             color: (t) => getColor(t, 'homeHello'),
             display: 'block',
             textAlign: 'center',
             pt: [4, 0, 0],
           }}
         >
-          RECENT TECHNOLOGIES
-        </h3>
+          Tech
+        </h2>
       </Fade>
 
       <div
