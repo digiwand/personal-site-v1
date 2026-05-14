@@ -8,6 +8,7 @@ const fonts = {
     barlow: 'BarlowCondensed, sans-serif',
   },
 
+  /** @todo support 14rem. possibly deprecate or alter fontSize logic */
   fontSizes: [
     '12rem', // 0
     '16rem', // 1
