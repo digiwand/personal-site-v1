@@ -1,4 +1,10 @@
 import JobSection from 'components/sections/work/job-section/JobSection';
+import PropTypes from 'prop-types';
+import {
+  IMG_CONFIGS_COPPER,
+  JOB_META_COPPER,
+  WORK_CAROUSEL_COPPER_OFFSET,
+} from 'components/sections/work/jobSectionImageConfigs';
 
 const TECH_KEYS = [
   'EMBERJS',
@@ -19,31 +25,15 @@ const TECH_KEYS = [
   'DOCUMENTATION',
 ];
 
-const IMG_CONFIGS = [
-  {
-    alt: 'Copper Companies Page',
-    srcName: 'copper-companies-list-preview',
-  },
-  {
-    alt: 'Copper Contact Page',
-    srcName: 'copper-contact-preview',
-    type: 'jpeg',
-  },
-  {
-    alt: 'Copper AMP Email Gif',
-    srcName: 'copper-amp-email-preview',
-  },
-];
-
-function JobSectionCopper() {
+function JobSectionCopper({ onOpenWorkCarousel }) {
   return (
     <JobSection
-      companyName="Copper CRM"
-      title="Senior Software Engineer"
-      subtitle="(Client-Side)"
+      {...JOB_META_COPPER}
       date="Aug 2016 - Apr 2021"
       techKeys={TECH_KEYS}
-      imgConfigs={IMG_CONFIGS}
+      imgConfigs={IMG_CONFIGS_COPPER}
+      onOpenWorkCarousel={onOpenWorkCarousel}
+      workCarouselSlideOffset={WORK_CAROUSEL_COPPER_OFFSET}
     >
       At Copper, I led numerous front-end projects for the CRM platform, including an in-house A/B testing tool, 
       AMP emails, a Google Workspace add-on, a dynamic pricing and plan restructure, advanced list filtering, 
@@ -56,5 +46,9 @@ function JobSectionCopper() {
     </JobSection>
   );
 }
+
+JobSectionCopper.propTypes = {
+  onOpenWorkCarousel: PropTypes.func.isRequired,
+};
 
 export default JobSectionCopper;

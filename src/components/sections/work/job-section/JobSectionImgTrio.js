@@ -1,10 +1,9 @@
 import { getColor } from '@theme-ui/color';
 import PropTypes from 'prop-types';
-import { useCallback, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 import AspectRatio from 'components/common/AspectRatio';
 
-import JobSectionImageCarouselModal from './JobSectionImageCarouselModal';
 import { createWorkImageFactories } from './workImage';
 
 /** Overlapping trio: slot 0 back-left, 1 center, 2 back-right. */
@@ -79,14 +78,12 @@ const aspectRatioStyles = {
 };
 
 const propTypes = {
-  companyName: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
   imgConfigs: PropTypes.arrayOf(PropTypes.shape({
     alt: PropTypes.string,
     srcName: PropTypes.string,
     type: PropTypes.string,
   })).isRequired,
+  onOpenCarousel: PropTypes.func.isRequired,
 };
 
 function openCarouselKeyboard(e, openAt) {
@@ -105,29 +102,13 @@ const interactiveSx = {
 };
 
 function JobSectionImgTrio({
-  companyName,
-  title,
-  subtitle,
   imgConfigs,
+  onOpenCarousel,
 }) {
-  const [carouselOpen, setCarouselOpen] = useState(false);
-  const [initialSlideIndex, setInitialSlideIndex] = useState(0);
-  const [carouselMountKey, setCarouselMountKey] = useState(0);
-
   const pictureFactories = useMemo(
     () => createWorkImageFactories(imgConfigs),
     [imgConfigs],
   );
-
-  const openCarousel = useCallback((index) => {
-    setInitialSlideIndex(index);
-    setCarouselMountKey((k) => k + 1);
-    setCarouselOpen(true);
-  }, []);
-
-  const closeCarousel = useCallback(() => {
-    setCarouselOpen(false);
-  }, []);
 
   if (!imgConfigs.length) {
     return null;
@@ -150,8 +131,8 @@ function JobSectionImgTrio({
           tabIndex={0}
           aria-haspopup="dialog"
           aria-label={`Open image gallery: ${imgConfigs[imgIndex]?.alt ?? 'work sample'}`}
-          onClick={() => openCarousel(imgIndex)}
-          onKeyDown={(e) => openCarouselKeyboard(e, () => openCarousel(imgIndex))}
+          onClick={() => onOpenCarousel(imgIndex)}
+          onKeyDown={(e) => openCarouselKeyboard(e, () => onOpenCarousel(imgIndex))}
           sx={{
             ...TRIO_SLOT_LAYOUT[slotIndex],
             ...interactiveSx,
@@ -162,16 +143,6 @@ function JobSectionImgTrio({
         </AspectRatio>
       ))}
 
-      <JobSectionImageCarouselModal
-        key={carouselMountKey}
-        companyName={companyName}
-        title={title}
-        subtitle={subtitle}
-        imgConfigs={imgConfigs}
-        initialSlideIndex={initialSlideIndex}
-        isOpen={carouselOpen}
-        onClose={closeCarousel}
-      />
     </div>
   );
 }
