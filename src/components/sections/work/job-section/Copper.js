@@ -21,16 +21,16 @@ const TECH_KEYS = [
 
 const IMG_CONFIGS = [
   {
-    alt: 'Copper Companies Page',
+    alt: 'Copper CRM - Companies Page',
     srcName: 'copper-companies-list-preview',
   },
   {
-    alt: 'Copper Contact Page',
+    alt: 'Copper CRM - Contact Page',
     srcName: 'copper-contact-preview',
     type: 'jpeg',
   },
   {
-    alt: 'Copper AMP Email Gif',
+    alt: 'Copper CRM - AMP Email Gif',
     srcName: 'copper-amp-email-preview',
   },
 ];
@@ -45,9 +45,11 @@ function JobSectionCopper() {
       techKeys={TECH_KEYS}
       imgConfigs={IMG_CONFIGS}
     >
-      At Copper, I led numerous front-end projects for the CRM platform, including an in-house A/B testing tool, 
-      AMP emails, a Google Workspace add-on, a dynamic pricing and plan restructure, advanced list filtering, 
-      VoIP support, extensive refactoring, and various performance improvements.
+      At Copper CRM, I was a tech lead for numerous projects, including an in-house A/B testing tool, 
+      AMP emails, a Google Workspace add-on, dynamic pricing and plan pages, default list filtering, 
+      pinned activity items, chrome extension features, VoIP support, extensive refactoring, and calendar UI input. 
+      Additionally, I worked on the dev tools, contributed to a wide array of features, fixed countless
+      complicated bugs, and enhanced the application performance.
       <br />
       <br />
       Beyond feature work, I contributed to hiring by creating interview questions and conducting 15+ interviews. 
