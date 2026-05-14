@@ -39,7 +39,7 @@ function ContactLeftSide() {
           <h6 sx={{ color: (t) => getColor(t, 'contactText') }}>
             After working remotely since 2018,
             <br />
-            I&apos;m now open to opportunities, location-based
+            I&apos;m open to opportunities, location-based
             <br />
             (SF, bay area, NY, other) or remote
           </h6>
