@@ -42,7 +42,7 @@ function EducationSection() {
             pb: 2,
           }}
           >
-            University of California Davis
+            University of California, Davis
           </h4>
           <h5
             sx={{
