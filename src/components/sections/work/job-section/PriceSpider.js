@@ -36,7 +36,7 @@ const IMG_CONFIGS = [
 function JobSectionPriceSpider() {
   return (
     <JobSection
-      companyName="PriceSpider"
+      companyName="Wayvia (formerly PriceSpider)"
       title="Software Engineer"
       subtitle="(Full Stack)"
       date="Feb 2015 - Jun 2016"
