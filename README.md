@@ -15,15 +15,24 @@ All the best,
 https://ariella.dev
 
 ## To do
+
+### Features
+
+- [ ] add carousel modal to view work screenshots
+- [ ] add additional theme(s)
+- [ ] add tooltips
+- [ ] support additional accessibility (a11y)
+
+### Fix 
+
+- [ ] fix autocomplete bug on input form
+
+### Under the hood 
+
 - [ ] migrate remaining code to TypeScript
-- [ ] improve performance - linear gradient background is slowing performance
+- [ ] improve performance - linear gradient background can slow performance
 - [ ] use custom hooks
 - [ ] add meta tags
-- [ ] add tooltips
 - [ ] update header tags (h1, h2, h3) to improve SEO
-- [ ] add fullscreen view of screenshots on click
-- [ ] update dark mode
-- [ ] add additional theme(s)
-- [ ] support additional accessibility (a11y)
-- [ ] fix autocomplete bug on input form
 - [ ] optimize core vitals
+- [ ] cleanup
