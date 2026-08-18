@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 
 import AspectRatio from 'components/common/AspectRatio';
 
-import { createWorkImageFactories } from '../workImage';
+import { createWorkImageFactories } from './factory';
 
 /** Overlapping trio: slot 0 back-left, 1 center, 2 back-right. */
 const TRIO_SLOT_LAYOUT = [

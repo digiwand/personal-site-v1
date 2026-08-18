@@ -5,10 +5,10 @@ import Fade from 'components/animations/Fade';
 import Section from 'components/sections/Section';
 import JobSectionMetaMask from 'components/sections/work/job-section/MetaMask';
 import JobSectionCopper from 'components/sections/work/job-section/Copper';
-import JobSectionPriceSpider from 'components/sections/work/job-section/PriceSpider';
-import { WorkImageCarouselModal } from 'components/sections/work/job-section/JobSection';
-import { WORK_IMG_CONFIGS } from 'components/sections/work/jobSectionImageConfigs';
 import WorkSideHeading from 'components/sections/work/WorkSideHeading';
+import ImgModalCarousel from 'components/sections/work/job-section/img-modal-carousel/ImgModalCarousel';
+import JobSectionPriceSpider from 'components/sections/work/job-section/PriceSpider';
+import { WORK_IMG_CONFIGS } from 'components/sections/work/shared/constants';
 
 function EducationSection() {
   return (
@@ -96,7 +96,7 @@ const WorkSection = (_props, ref) => {
         <EducationSection />
       </div>
 
-      <WorkImageCarouselModal
+      <ImgModalCarousel
         key={carouselMountKey}
         slideConfigs={WORK_IMG_CONFIGS}
         initialSlideIndex={initialSlideIndex}

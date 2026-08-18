@@ -4,7 +4,7 @@ import {
   IMG_CONFIGS_COPPER,
   JOB_META_COPPER,
   WORK_CAROUSEL_COPPER_OFFSET,
-} from 'components/sections/work/jobSectionImageConfigs';
+} from 'components/sections/work/shared/constants';
 
 const TECH_KEYS = [
   'EMBERJS',

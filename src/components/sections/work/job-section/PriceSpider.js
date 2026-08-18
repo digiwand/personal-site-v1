@@ -4,7 +4,7 @@ import {
   IMG_CONFIGS_PRICESPIDER,
   JOB_META_PRICESPIDER,
   WORK_CAROUSEL_PRICESPIDER_OFFSET,
-} from 'components/sections/work/jobSectionImageConfigs';
+} from 'components/sections/work/shared/constants';
 
 const TECH_KEYS = [
   'ANGULARJS',
