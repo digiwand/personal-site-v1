@@ -1,78 +1,15 @@
 import { getColor } from '@theme-ui/color';
 import Fade from 'components/animations/Fade';
+import Modal from 'components/modal/Modal';
 import PropTypes from 'prop-types';
 import {
   useCallback, useEffect, useId, useRef, useState,
 } from 'react';
-import { createPortal } from 'react-dom';
 import { Box, Button } from 'theme-ui';
 import TECH from 'constants/tech';
 import JobSectionImgTrio from './JobSectionImgTrio';
 import { generateWorkImage } from './workImage';
 
-const modalPropTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  ariaLabelledBy: PropTypes.string,
-  ariaDescribedBy: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
-
-/**
- * Portal overlay + backdrop dismiss. Body scroll lock while open.
- */
-function Modal({
-  isOpen,
-  onClose,
-  ariaLabelledBy,
-  ariaDescribedBy,
-  children,
-}) {
-  useEffect(() => {
-    if (!isOpen) return undefined;
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [isOpen]);
-
-  if (!isOpen || typeof document === 'undefined') {
-    return null;
-  }
-
-  const modal = (
-    <Box
-      role="presentation"
-      onClick={onClose}
-      sx={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 100,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        p: [3, 4, 5],
-        bg: 'rgba(0, 0, 0, 0.72)',
-        backdropFilter: 'blur(6px)',
-      }}
-    >
-      <Box
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={ariaLabelledBy}
-        aria-describedby={ariaDescribedBy}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {children}
-      </Box>
-    </Box>
-  );
-
-  return createPortal(modal, document.body);
-}
-
-Modal.propTypes = modalPropTypes;
 
 const imageCarouselPropTypes = {
   imgConfigs: PropTypes.arrayOf(PropTypes.shape({
