@@ -7,7 +7,7 @@ import {
 } from 'react';
 import { Box, Button } from 'theme-ui';
 import TECH from 'constants/tech';
-import JobSectionImgTrio from './JobSectionImgTrio';
+import JobSectionImgTrio from './img-trio/ImgTrio';
 import { generateWorkImage } from './workImage';
 
 
