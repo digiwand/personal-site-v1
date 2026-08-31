@@ -15,18 +15,18 @@ export const JOB_META_PRICESPIDER = {
 export const IMG_CONFIGS_COPPER = [
   {
     ...JOB_META_COPPER,
-    alt: 'Copper Companies Page',
+    alt: 'Companies Page',
     srcName: 'copper-companies-list-preview',
   },
   {
     ...JOB_META_COPPER,
-    alt: 'Copper Contact Page',
+    alt: 'Contact Page',
     srcName: 'copper-contact-preview',
     type: 'jpeg',
   },
   {
     ...JOB_META_COPPER,
-    alt: 'Copper AMP Email Gif',
+    alt: 'AMP Email Gif',
     srcName: 'copper-amp-email-preview',
   },
 ];
@@ -34,17 +34,17 @@ export const IMG_CONFIGS_COPPER = [
 export const IMG_CONFIGS_PRICESPIDER = [
   {
     ...JOB_META_PRICESPIDER,
-    alt: 'PriceSpider Mars Where-to-buy',
+    alt: 'Mars Snacking Where to Buy Embedded HTML Widget',
     srcName: 'pricespider-wtb-mars-preview',
   },
   {
     ...JOB_META_PRICESPIDER,
-    alt: 'PriceSpider Iams Where-to-buy',
+    alt: 'Iams Where to Buy Embedded HTML Modal Widget',
     srcName: 'pricespider-wtb-iams-preview',
   },
   {
     ...JOB_META_PRICESPIDER,
-    alt: 'PriceSpider Hoover & Dell Ads',
+    alt: 'Dell, Hoover - Where to Buy Animated Ads',
     srcName: 'pricespider-ads-preview',
   },
 ];
