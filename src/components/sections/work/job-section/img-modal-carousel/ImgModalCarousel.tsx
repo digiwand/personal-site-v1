@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import {
   useCallback, useEffect, useId, useRef, useState,
 } from 'react';
-import { Box, Button } from 'theme-ui';
+import { Box, Image } from 'theme-ui';
 
 import Modal from 'components/modal/Modal';
 import ButtonRound from 'components/button/ButtonRound'; 
-import { generateWorkImage } from 'components/sections/work/shared/generateWorkImage';
 
 const imageCarouselPropTypes = {
   imgConfigs: PropTypes.arrayOf(PropTypes.shape({
@@ -37,7 +36,9 @@ function ImageCarouselModal({
   const count = imgConfigs.length;
   if (count === 0) return null;
 
-  const caption = imgConfigs[activeIndex]?.alt ?? '';
+  const imgConfig = imgConfigs[activeIndex];
+  const imgType = imgConfig.type || 'png';
+  const caption = imgConfig.alt ?? '';
 
   return (
     <>
@@ -83,7 +84,22 @@ function ImageCarouselModal({
         </ButtonRound>
 
         <div sx={{ overflowY: 'auto'}}>
-          {generateWorkImage(imgConfigs[activeIndex], { loading: 'eager' })}
+          <picture>
+            <source
+              srcSet={`/images/work/${imgConfig.srcName}.webp`}
+              type="image/webp"
+            />
+            <source
+              srcSet={`/images/work/${imgConfig.srcName}.${imgType}`}
+              type={`image/${imgType}`}
+            />
+            <Image
+              alt={caption}
+              src={`/images/work/${imgConfig.srcName}.${imgType}`}
+              decoding="async"
+              loading="lazy"
+            />
+          </picture>
         </div>
 
         <ButtonRound
