@@ -1,18 +1,32 @@
 /** Image trio / carousel configs for work job sections (`srcName` → `/images/work/{srcName}.webp`). */
 
-export const JOB_META_COPPER = {
+type JobMeta = {
+  companyName: string;
+  title: string;
+  subtitle: string;
+};
+
+type ImageType = 'webp' | 'jpeg' | 'png' | 'gif';
+
+type WorkImageConfig = JobMeta & {
+  alt: string;
+  srcName: string;
+  type?: ImageType;
+};
+
+export const JOB_META_COPPER: JobMeta = {
   companyName: 'Copper CRM',
   title: 'Senior Software Engineer',
   subtitle: '(Client-Side)',
 };
 
-export const JOB_META_PRICESPIDER = {
+export const JOB_META_PRICESPIDER: JobMeta = {
   companyName: 'PriceSpider',
   title: 'Software Engineer',
   subtitle: '(Full Stack)',
 };
 
-export const IMG_CONFIGS_COPPER = [
+export const IMG_CONFIGS_COPPER: WorkImageConfig[] = [
   {
     ...JOB_META_COPPER,
     alt: 'Companies Page',
@@ -31,7 +45,7 @@ export const IMG_CONFIGS_COPPER = [
   },
 ];
 
-export const IMG_CONFIGS_PRICESPIDER = [
+export const IMG_CONFIGS_PRICESPIDER: WorkImageConfig[] = [
   {
     ...JOB_META_PRICESPIDER,
     alt: 'Mars Snacking Where to Buy Embedded HTML Widget',
@@ -50,7 +64,10 @@ export const IMG_CONFIGS_PRICESPIDER = [
 ];
 
 /** All work screenshots in gallery order (single carousel instance on the work section). */
-export const WORK_IMG_CONFIGS = [...IMG_CONFIGS_COPPER, ...IMG_CONFIGS_PRICESPIDER];
+export const WORK_IMG_CONFIGS: WorkImageConfig[] = [
+  ...IMG_CONFIGS_COPPER,
+  ...IMG_CONFIGS_PRICESPIDER,
+];
 
 /** Global slide index of the first image in {@link IMG_CONFIGS_COPPER}. */
 export const WORK_CAROUSEL_COPPER_OFFSET = 0;

@@ -35,7 +35,7 @@ const TRIO_SLOT_LAYOUT = [
  * First up to three images use the stacked layout; any further `imgConfigs` entries appear only in the carousel.
  * @returns {{ imgIndex: number, slotIndex: number }[]}
  */
-function getTrioDisplayPlan(imgCount) {
+function getTrioDisplayPlan(imgCount: number): Array<{ imgIndex: number; slotIndex: number }> {
   if (imgCount >= 3) {
     return [
       { imgIndex: 0, slotIndex: 0 },
