@@ -1,11 +1,10 @@
 import { getColor } from '@theme-ui/color';
 import PropTypes from 'prop-types';
+import type { KeyboardEvent } from 'react';
+import type { ThemeUIStyleObject } from 'theme-ui';
 
-import AspectRatio from 'components/common/AspectRatio';
-import { generateWorkImage } from 'components/sections/work/shared/generateWorkImage';
-
-/** Overlapping trio: slot 0 back-left, 1 center, 2 back-right. */
-const TRIO_SLOT_LAYOUT = [
+/** Overlapping trio: slot 0 back-left, 1 center (in-flow), 2 back-right. */
+const TRIO_SLOT_LAYOUT: ThemeUIStyleObject[] = [
   {
     position: 'absolute',
     zIndex: '2',
@@ -33,7 +32,6 @@ const TRIO_SLOT_LAYOUT = [
 
 /**
  * First up to three images use the stacked layout; any further `imgConfigs` entries appear only in the carousel.
- * @returns {{ imgIndex: number, slotIndex: number }[]}
  */
 function getTrioDisplayPlan(imgCount: number): Array<{ imgIndex: number; slotIndex: number }> {
   if (imgCount >= 3) {
@@ -55,7 +53,14 @@ function getTrioDisplayPlan(imgCount: number): Array<{ imgIndex: number; slotInd
   return [];
 }
 
-const aspectRatioStyles = {
+const tileSx: ThemeUIStyleObject = {
+  position: 'relative',
+  display: 'block',
+  height: '0',
+  overflow: 'hidden',
+
+  cursor: 'pointer',
+  
   borderRadius: '4rem',
   opacity: '0.95',
   transform: 'perspective(420px)',
@@ -73,6 +78,30 @@ const aspectRatioStyles = {
     transform: 'perspective(420px) translateZ(24px)',
     boxShadow: 'rgba(0, 0, 0, 0.15) 3px 5px 15px 0px',
   },
+  '&:focus-visible': {
+    outline: (t) => `3rem solid ${getColor(t, 'link')}`,
+    outlineOffset: '4rem',
+  },
+
+  // Fill box when child is `<picture>` (or other wrapper) before the `<img>`
+  '> *': {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    display: 'block',
+  },
+  img: {
+    position: 'absolute',
+    objectFit: 'cover',
+    objectPosition: 'top',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    boxShadow: 'rgba(120, 120, 120, 0.8) 1rem 1rem 13rem 0rem',
+  },
 };
 
 const propTypes = {
@@ -84,22 +113,14 @@ const propTypes = {
   onOpenCarousel: PropTypes.func.isRequired,
 };
 
-function openCarouselKeyboard(e, openAt) {
+function openCarouselKeyboard(e: KeyboardEvent, openAt: () => void) {
   if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault();
     openAt();
   }
 }
 
-const interactiveSx = {
-  cursor: 'pointer',
-  '&:focus-visible': {
-    outline: (t) => `3rem solid ${getColor(t, 'link')}`,
-    outlineOffset: '4rem',
-  },
-};
-
-function JobSectionImgTrio({
+function ImgTrio({
   imgConfigs,
   onOpenCarousel,
 }) {
@@ -117,29 +138,48 @@ function JobSectionImgTrio({
       my: 5,
     }}
     >
-      {trioPlan.map(({ imgIndex, slotIndex }) => (
-        <AspectRatio
-          key={imgConfigs[imgIndex].srcName}
-          role="button"
-          tabIndex={0}
-          aria-haspopup="dialog"
-          aria-label={`Open image gallery: ${imgConfigs[imgIndex]?.alt ?? 'work sample'}`}
-          onClick={() => onOpenCarousel(imgIndex)}
-          onKeyDown={(e) => openCarouselKeyboard(e, () => onOpenCarousel(imgIndex))}
-          sx={{
-            ...TRIO_SLOT_LAYOUT[slotIndex],
-            ...interactiveSx,
-            ...aspectRatioStyles,
-          }}
-        >
-          {generateWorkImage(imgConfigs[imgIndex], { loading: 'lazy' })}
-        </AspectRatio>
-      ))}
+      {trioPlan.map(({ imgIndex, slotIndex }) => {
+        const config = imgConfigs[imgIndex];
+        const type = config.type || 'png';
 
+        return (
+          <div
+            key={config.srcName}
+            role="button"
+            tabIndex={0}
+            aria-haspopup="dialog"
+            aria-label={`Open image gallery: ${config.alt ?? 'work sample'}`}
+            onClick={() => onOpenCarousel(imgIndex)}
+            onKeyDown={(e) => openCarouselKeyboard(e, () => onOpenCarousel(imgIndex))}
+            sx={{
+              ...tileSx,
+              ...TRIO_SLOT_LAYOUT[slotIndex],
+            }}
+          >
+            <picture>
+              <source
+                srcSet={`/images/work/${config.srcName}.webp`}
+                type="image/webp"
+              />
+              <source
+                srcSet={`/images/work/${config.srcName}.${type}`}
+                type={`image/${type}`}
+              />
+              <img
+                alt={config.alt}
+                src={`/images/work/${config.srcName}.${type}`}
+                decoding="async"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        );
+      })}
     </div>
   );
 }
 
-JobSectionImgTrio.propTypes = propTypes;
+ImgTrio.propTypes = propTypes;
 
-export default JobSectionImgTrio;
+export { ImgTrio };
+export default ImgTrio;

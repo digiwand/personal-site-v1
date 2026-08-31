@@ -6,7 +6,7 @@ import { Button } from 'theme-ui';
 import Fade from 'components/animations/Fade';
 import TECH from 'constants/tech';
 
-import ImgTrio from './img-trio/ImgTrio';
+import { ImgTrio } from './img-trio/ImgTrio';
 
 const propTypes = {
   className: PropTypes.string,
