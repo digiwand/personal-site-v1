@@ -51,19 +51,13 @@ function ImageCarouselModal({
           justifyContent: 'center',
           minHeight: ['200rem', '280rem', '320rem'],
           width: '100%',
-          px: ['48rem', '56rem', '64rem'],
+          px: ['48rem', '56rem', '128rem'],
           py: 3,
 
-          '& picture': {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            maxWidth: '100%',
-          },
           '& img': {
-            maxWidth: '100%',
-            maxHeight: ['52vh', '58vh', '62vh'],
-            width: 'auto',
+            flex: '1 0 auto',
+            width: '100%',
+            maxWidth: ['100%', '100%', '820rem'],
             height: 'auto',
             objectFit: 'contain',
             boxShadow: 'none',
@@ -83,8 +77,30 @@ function ImageCarouselModal({
           ‹
         </ButtonRound>
 
-        <div sx={{ overflowY: 'auto'}}>
-          <picture>
+        <div
+          sx={{
+            overflowY: 'auto',
+            width: '100%',
+            maxHeight: ['52vh', '58vh', '62vh'],
+
+            '&::-webkit-scrollbar': {
+              width: '7px',
+              backgroundColor: 'transparent',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              // todo: hide for now
+              // backgroundColor: 'rgba(255,255,255,0.5)',
+              borderRadius: '7px',
+            },
+          }}
+        >
+          <picture sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            maxWidth: '100%',
+            margin: '0 auto',
+          }}>
             <source
               srcSet={`/images/work/${imgConfig.srcName}.webp`}
               type="image/webp"
@@ -98,6 +114,7 @@ function ImageCarouselModal({
               src={`/images/work/${imgConfig.srcName}.${imgType}`}
               decoding="async"
               loading="lazy"
+              sx={{ width: '100%' }}
             />
           </picture>
         </div>

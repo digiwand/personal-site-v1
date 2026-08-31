@@ -56,6 +56,7 @@ function Modal({
         aria-labelledby={ariaLabelledBy}
         aria-describedby={ariaDescribedBy}
         onClick={(e) => e.stopPropagation()}
+        sx={ {width: '100%' }}
       >
         {children}
       </Box>
