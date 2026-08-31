@@ -6,7 +6,7 @@ import {
 import { Box, Image } from 'theme-ui';
 
 import Modal from 'components/modal/Modal';
-import ButtonRound from 'components/button/ButtonRound'; 
+import ButtonBase from 'components/button/Base'; 
 
 const imageCarouselPropTypes = {
   imgConfigs: PropTypes.arrayOf(PropTypes.shape({
@@ -64,7 +64,7 @@ function ImageCarouselModal({
           },
         }}
       >
-        <ButtonRound
+        <ButtonBase
           onClick={goPrev}
           aria-label="Previous image"
           sx={{
@@ -72,10 +72,15 @@ function ImageCarouselModal({
             left: [1, 2, 3],
             top: '50%',
             transform: 'translateY(-50%)',
+            
+            fontFamily: 'barlow',
+            fontSize: '28rem',
+            fontWeight: '300',
+            padding: '0 1rem 5rem 0',
           }}
         >
           ‹
-        </ButtonRound>
+        </ButtonBase>
 
         <div
           sx={{
@@ -119,7 +124,7 @@ function ImageCarouselModal({
           </picture>
         </div>
 
-        <ButtonRound
+        <ButtonBase
           onClick={goNext}
           aria-label="Next image"
           sx={{
@@ -127,10 +132,15 @@ function ImageCarouselModal({
             right: [1, 2, 3],
             top: '50%',
             transform: 'translateY(-50%)',
+
+            fontFamily: 'barlow',
+            fontSize: '28rem',
+            fontWeight: '300',
+            padding: '0 0 5rem 0',
           }}
         >
           ›
-        </ButtonRound>
+        </ButtonBase>
       </Box>
 
       <Box
@@ -144,11 +154,11 @@ function ImageCarouselModal({
       >
         {caption}
         <Box as="span" sx={{ display: 'block', mt: 2, opacity: 0.75, fontSize: '13rem' }}>
-          {activeIndex + 1}
+          0{activeIndex + 1}
           {' '}
           /
           {' '}
-          {count}
+          0{count}
         </Box>
       </Box>
     </>
@@ -236,7 +246,7 @@ function WorkImageCarouselModal({
       ariaLabelledBy={headingId}
       ariaDescribedBy={captionId}
     >
-        <ButtonRound
+        <ButtonBase
           ref={closeButtonRef}
           onClick={onClose}
           aria-label="Close image gallery"
@@ -244,10 +254,13 @@ function WorkImageCarouselModal({
             position: 'absolute',
             top: [2, 3],
             right: [2, 3],
+            '&:hover': {
+              transform: 'rotate(90deg)',
+            },
           }}
         >
-          ×
-        </ButtonRound>
+          <svg width="16" height="16" viewBox="0 0 16 16"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6"></path></svg>
+        </ButtonBase>
 
         <Box sx={{ pt: [5, 5, 4], px: [4, 5, 6], pb: 2, textAlign: 'center' }}>
           <Box
