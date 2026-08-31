@@ -72,7 +72,7 @@ function ImageCarouselModal({
             left: [1, 2, 3],
             top: '50%',
             transform: 'translateY(-50%)',
-            
+
             fontFamily: 'barlow',
             fontSize: '28rem',
             fontWeight: '300',
@@ -278,9 +278,9 @@ function WorkImageCarouselModal({
           <Box as="p">
             {slide.title}
             {' '}
-            <Box as="small">
-              {slide.subtitle}
-            </Box>
+            •
+            {' '}
+            {slide.subtitle}
           </Box>
         </Box>
 

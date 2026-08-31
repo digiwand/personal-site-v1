@@ -17,30 +17,30 @@ type WorkImageConfig = JobMeta & {
 export const JOB_META_COPPER: JobMeta = {
   companyName: 'Copper CRM',
   title: 'Senior Software Engineer',
-  subtitle: '(Client-Side)',
+  subtitle: 'Front-end',
 };
 
 export const JOB_META_PRICESPIDER: JobMeta = {
   companyName: 'PriceSpider',
   title: 'Software Engineer',
-  subtitle: '(Full Stack)',
+  subtitle: 'Full Stack',
 };
 
 export const IMG_CONFIGS_COPPER: WorkImageConfig[] = [
   {
     ...JOB_META_COPPER,
-    alt: 'Companies Page',
+    alt: 'Companies page',
     srcName: 'copper-companies-list-preview',
   },
   {
     ...JOB_META_COPPER,
-    alt: 'Contact Page',
+    alt: 'Contact page',
     srcName: 'copper-contact-preview',
     type: 'jpeg',
   },
   {
     ...JOB_META_COPPER,
-    alt: 'AMP Email Gif',
+    alt: 'AMP Email which Includes RESTful data',
     srcName: 'copper-amp-email-preview',
   },
 ];
@@ -48,12 +48,12 @@ export const IMG_CONFIGS_COPPER: WorkImageConfig[] = [
 export const IMG_CONFIGS_PRICESPIDER: WorkImageConfig[] = [
   {
     ...JOB_META_PRICESPIDER,
-    alt: 'Mars Snacking Where to Buy Embedded HTML Widget',
+    alt: 'Mars Snacking - Where to Buy Embedded HTML Widget',
     srcName: 'pricespider-wtb-mars-preview',
   },
   {
     ...JOB_META_PRICESPIDER,
-    alt: 'Iams Where to Buy Embedded HTML Modal Widget',
+    alt: 'Iams - Where to Buy Embedded HTML Modal Widget',
     srcName: 'pricespider-wtb-iams-preview',
   },
   {
