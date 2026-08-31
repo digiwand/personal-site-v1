@@ -51,7 +51,6 @@ function ImageCarouselModal({
           minHeight: ['200rem', '280rem', '320rem'],
           px: ['48rem', '56rem', '64rem'],
           py: 3,
-          bg: (t) => getColor(t, 'background'),
 
           '& picture': {
             display: 'flex',
@@ -82,7 +81,9 @@ function ImageCarouselModal({
           ‹
         </ButtonRound>
 
+        <div sx={{ overflowY: 'auto'}}>
         {generateWorkImage(imgConfigs[activeIndex], { loading: 'eager' })}
+        </div>
 
         <ButtonRound
           onClick={goNext}
