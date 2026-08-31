@@ -6,7 +6,7 @@ import {
 import { Box, Button } from 'theme-ui';
 
 import Modal from 'components/modal/Modal';
-
+import ButtonRound from 'components/button/ButtonRound'; 
 import { generateWorkImage } from 'components/sections/work/job-section/img-trio/factory';
 
 const imageCarouselPropTypes = {
@@ -69,8 +69,7 @@ function ImageCarouselModal({
           },
         }}
       >
-        <Button
-          type="button"
+        <ButtonRound
           onClick={goPrev}
           aria-label="Previous image"
           sx={{
@@ -78,27 +77,14 @@ function ImageCarouselModal({
             left: [1, 2, 3],
             top: '50%',
             transform: 'translateY(-50%)',
-            width: '44rem',
-            height: '44rem',
-            p: 0,
-            minHeight: 0,
-            borderRadius: '50%',
-            fontSize: '22rem',
-            lineHeight: 1,
-            bg: (t) => getColor(t, 'carouselItemBg'),
-            color: (t) => getColor(t, 'text'),
-            cursor: 'pointer',
-            border: (t) => `1rem solid ${getColor(t, 'workImgBorder')}`,
-            '&:hover': { opacity: 0.9 },
           }}
         >
           ‹
-        </Button>
+        </ButtonRound>
 
         {generateWorkImage(imgConfigs[activeIndex], { loading: 'eager' })}
 
-        <Button
-          type="button"
+        <ButtonRound
           onClick={goNext}
           aria-label="Next image"
           sx={{
@@ -106,22 +92,10 @@ function ImageCarouselModal({
             right: [1, 2, 3],
             top: '50%',
             transform: 'translateY(-50%)',
-            width: '44rem',
-            height: '44rem',
-            p: 0,
-            minHeight: 0,
-            borderRadius: '50%',
-            fontSize: '22rem',
-            lineHeight: 1,
-            bg: (t) => getColor(t, 'carouselItemBg'),
-            color: (t) => getColor(t, 'text'),
-            cursor: 'pointer',
-            border: (t) => `1rem solid ${getColor(t, 'workImgBorder')}`,
-            '&:hover': { opacity: 0.9 },
           }}
         >
           ›
-        </Button>
+        </ButtonRound>
       </Box>
 
       <Box
@@ -245,31 +219,19 @@ function WorkImageCarouselModal({
           border: (t) => `1rem solid ${getColor(t, 'workImgBorder')}`,
         }}
       >
-        <Button
+
+        <ButtonRound
           ref={closeButtonRef}
-          type="button"
           onClick={onClose}
           aria-label="Close image gallery"
           sx={{
             position: 'absolute',
             top: [2, 3],
             right: [2, 3],
-            zIndex: 2,
-            width: '44rem',
-            height: '44rem',
-            p: 0,
-            minHeight: 0,
-            lineHeight: 1,
-            fontSize: '24rem',
-            borderRadius: '50%',
-            bg: 'rgba(0,0,0,0.45)',
-            color: 'background',
-            cursor: 'pointer',
-            '&:hover': { bg: 'rgba(0,0,0,0.6)' },
           }}
         >
           ×
-        </Button>
+        </ButtonRound>
 
         <Box sx={{ pt: [5, 5, 4], px: [4, 5, 6], pb: 2, textAlign: 'center' }}>
           <Box
