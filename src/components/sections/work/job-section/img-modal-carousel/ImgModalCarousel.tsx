@@ -7,7 +7,7 @@ import { Box, Button } from 'theme-ui';
 
 import Modal from 'components/modal/Modal';
 import ButtonRound from 'components/button/ButtonRound'; 
-import { generateWorkImage } from 'components/sections/work/job-section/img-trio/factory';
+import { generateWorkImage } from 'components/sections/work/shared/generateWorkImage';
 
 const imageCarouselPropTypes = {
   imgConfigs: PropTypes.arrayOf(PropTypes.shape({

@@ -1,10 +1,8 @@
 import { getColor } from '@theme-ui/color';
 import PropTypes from 'prop-types';
-import { useMemo } from 'react';
 
 import AspectRatio from 'components/common/AspectRatio';
-
-import { createWorkImageFactories } from './factory';
+import { generateWorkImage } from 'components/sections/work/shared/generateWorkImage';
 
 /** Overlapping trio: slot 0 back-left, 1 center, 2 back-right. */
 const TRIO_SLOT_LAYOUT = [
@@ -105,11 +103,6 @@ function JobSectionImgTrio({
   imgConfigs,
   onOpenCarousel,
 }) {
-  const pictureFactories = useMemo(
-    () => createWorkImageFactories(imgConfigs),
-    [imgConfigs],
-  );
-
   if (!imgConfigs.length) {
     return null;
   }
@@ -139,7 +132,7 @@ function JobSectionImgTrio({
             ...aspectRatioStyles,
           }}
         >
-          {pictureFactories[imgIndex]({ loading: 'lazy' })}
+          {generateWorkImage(imgConfigs[imgIndex], { loading: 'lazy' })}
         </AspectRatio>
       ))}
 

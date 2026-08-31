@@ -39,14 +39,3 @@ export function generateWorkImage(
     </picture>
   );
 }
-
-/**
- * One factory per slide so each `factories[i]()` returns a new element tree (trio + modal cannot share one node).
- */
-export function createWorkImageFactories(
-  imgConfigs: ImgConfig[]
-): Array<(extraImageProps?: ImageProps) => React.ReactElement> {
-  return imgConfigs.map(
-    (config) => (extraImageProps = {}) => generateWorkImage(config, extraImageProps)
-  );
-}
