@@ -1,7 +1,7 @@
-import { getColor } from '@theme-ui/color';
+import React, { forwardRef } from 'react';
 import { Button } from 'theme-ui';
 
-interface ButtonProps extends React.ComponentProps<typeof Button> {
+interface ButtonProps extends React.ComponentPropsWithoutRef<typeof Button> {
   onClick: () => void;
   children: React.ReactNode;
 }
@@ -17,18 +17,19 @@ const defaultSx = {
   fontSize: '32rem',
 };
 
-const ButtonRound = ({ children, onClick, ...buttonProps }: ButtonProps) => {
-  const { sx: userSx, ...restProps } = buttonProps as any;
-
-  return (
+const ButtonRound = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, onClick, sx: userSx, ...restProps }, ref) => (
     <Button
-      {...(restProps as any)}
+      ref={ref}
+      {...restProps}
       onClick={onClick}
-      sx={{ ...defaultSx, ...(userSx || {}) } as any}
+      sx={{ ...defaultSx, ...(userSx || {}) }}
     >
       {children}
     </Button>
-  );
-};
+  ),
+);
+
+ButtonRound.displayName = 'ButtonRound';
 
 export default ButtonRound;
