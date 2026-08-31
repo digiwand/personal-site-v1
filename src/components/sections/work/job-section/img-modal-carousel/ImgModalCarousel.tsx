@@ -204,22 +204,6 @@ function WorkImageCarouselModal({
       ariaLabelledBy={headingId}
       ariaDescribedBy={captionId}
     >
-      <Box
-        sx={{
-          position: 'relative',
-          width: '100%',
-          maxWidth: '1100rem',
-          maxHeight: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          bg: (t) => getColor(t, 'glassThickBg'),
-          borderRadius: '12rem',
-          boxShadow: '0 8rem 48rem rgba(0,0,0,0.35)',
-          overflow: 'hidden',
-          border: (t) => `1rem solid ${getColor(t, 'workImgBorder')}`,
-        }}
-      >
-
         <ButtonRound
           ref={closeButtonRef}
           onClick={onClose}
@@ -271,7 +255,6 @@ function WorkImageCarouselModal({
           goNext={goNext}
           captionId={captionId}
         />
-      </Box>
     </Modal>
   );
 }
