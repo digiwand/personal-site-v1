@@ -37,14 +37,17 @@ function JobSectionPriceSpider({ onOpenWorkCarousel }) {
       I built the Angular 1.x reporting platform from scratch alongside a fellow server developer and our 
       engineering manager. Using PostgreSQL, I architected the user, roles, and permissions schemas, then 
       implemented dynamic role-based access control enforced through middleware on our Express.js routes. 
-      We used Highcharts and Highmaps to visualize impressions and clicks across our Where-to-Buy (WTB) solutions.
+      For dynamic data like product catalogs, I used MongoDB. We used Highcharts and Highmaps to visualize impressions 
+      and clicks across our Where-to-Buy (WTB) solutions.
       <br />
       <br />
       Another third of my time at PriceSpider was spent building web crawlers in C#, ASP.NET, and regex to
       extract store and product information from retailer sites.
       <br />
       <br />
-      I also developed 25+ HTML-embedded WTB widgets deployed across different e-commerce pages.
+      Among other contributions, I developed 25+ HTML-embedded WTB widgets deployed across different e-commerce pages, 
+      led Angular Best Practices Workshops, co-pioneered and launched WTB animated ads, 
+      and actively optimized developer processes.
     </JobSection>
   );
 }
