@@ -1,15 +1,23 @@
 import { Image } from 'theme-ui';
+import React from 'react';
+
+interface ImgConfig {
+  srcName: string;
+  alt: string;
+  type?: string;
+}
+
+interface ImageProps {
+  [key: string]: any;
+}
 
 /**
  * Renders a responsive picture element for a work screenshot config.
- *
- * @param {object} imgConfig
- * @param {string} imgConfig.srcName
- * @param {string} imgConfig.alt
- * @param {string} [imgConfig.type] — file extension when not webp (default `'png'`)
- * @param {object} [imageProps] — forwarded to theme-ui Image (e.g. loading, decoding, sizes)
  */
-export function generateWorkImage(imgConfig, imageProps = {}) {
+export function generateWorkImage(
+  imgConfig: ImgConfig,
+  imageProps: ImageProps = {}
+): React.ReactElement {
   const type = imgConfig.type || 'png';
 
   return (
@@ -34,10 +42,11 @@ export function generateWorkImage(imgConfig, imageProps = {}) {
 
 /**
  * One factory per slide so each `factories[i]()` returns a new element tree (trio + modal cannot share one node).
- *
- * @param {Array<object>} imgConfigs
- * @returns {Array<(extraImageProps?: object) => JSX.Element>}
  */
-export function createWorkImageFactories(imgConfigs) {
-  return imgConfigs.map((config) => (extraImageProps = {}) => generateWorkImage(config, extraImageProps));
+export function createWorkImageFactories(
+  imgConfigs: ImgConfig[]
+): Array<(extraImageProps?: ImageProps) => React.ReactElement> {
+  return imgConfigs.map(
+    (config) => (extraImageProps = {}) => generateWorkImage(config, extraImageProps)
+  );
 }
