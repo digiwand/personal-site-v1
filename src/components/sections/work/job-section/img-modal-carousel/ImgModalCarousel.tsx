@@ -49,6 +49,7 @@ function ImageCarouselModal({
           alignItems: 'center',
           justifyContent: 'center',
           minHeight: ['200rem', '280rem', '320rem'],
+          width: '100%',
           px: ['48rem', '56rem', '64rem'],
           py: 3,
 
@@ -82,7 +83,7 @@ function ImageCarouselModal({
         </ButtonRound>
 
         <div sx={{ overflowY: 'auto'}}>
-        {generateWorkImage(imgConfigs[activeIndex], { loading: 'eager' })}
+          {generateWorkImage(imgConfigs[activeIndex], { loading: 'eager' })}
         </div>
 
         <ButtonRound
@@ -105,9 +106,6 @@ function ImageCarouselModal({
           px: [4, 5, 6],
           py: [3, 4],
           textAlign: 'center',
-          variant: 'text.body',
-          color: (t) => getColor(t, 'workSubHeader'),
-          fontSize: ['14rem', '15rem', '16rem'],
           borderTop: (t) => `1rem solid ${getColor(t, 'workImgBorder')}`,
         }}
       >
@@ -226,24 +224,15 @@ function WorkImageCarouselModal({
               fontFamily: 'heading2',
               color: (t) => getColor(t, 'workHeader'),
               fontSize: ['18rem', '20rem', '22rem'],
-              m: 0,
+              mb: 2,
             }}
           >
             {slide.companyName}
           </Box>
-          <Box
-            as="p"
-            sx={{
-              m: 0,
-              mt: 2,
-              color: (t) => getColor(t, 'workSubHeader'),
-              variant: 'text.body',
-              fontSize: ['14rem', '15rem', '16rem'],
-            }}
-          >
+          <Box as="p">
             {slide.title}
             {' '}
-            <Box as="small" sx={{ color: (t) => getColor(t, 'workHeader') }}>
+            <Box as="small">
               {slide.subtitle}
             </Box>
           </Box>
