@@ -6,7 +6,7 @@ import Section from 'components/sections/Section';
 import WorkMetaMask from 'components/sections/work/summary/MetaMask';
 import WorkCopper from 'components/sections/work/summary/Copper';
 import WorkSideHeading from 'components/sections/work/WorkSideHeading';
-import ImgModalCarousel from 'components/sections/work/summary/img-modal-carousel/ImgModalCarousel';
+import ImgModalCarousel from 'components/sections/work/img-modal-carousel/ImgModalCarousel';
 import WorkPriceSpider from 'components/sections/work/summary/PriceSpider';
 import { WORK_IMG_CONFIGS } from 'components/sections/work/shared/constants';
 
