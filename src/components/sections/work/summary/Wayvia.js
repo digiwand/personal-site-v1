@@ -1,9 +1,9 @@
 import SummaryBase from 'components/sections/work/summary/Base';
 import PropTypes from 'prop-types';
 import {
-  IMG_CONFIGS_PRICESPIDER,
-  JOB_META_PRICESPIDER,
-  WORK_CAROUSEL_PRICESPIDER_OFFSET,
+  IMG_CONFIGS_WAYVIA,
+  JOB_META_WAYVIA,
+  WORK_CAROUSEL_WAYVIA_OFFSET,
 } from 'components/sections/work/shared/constants';
 
 const TECH_KEYS = [
@@ -24,15 +24,15 @@ const TECH_KEYS = [
   'INTELLI_J',
 ];
 
-function SummaryPriceSpider({ onOpenWorkCarousel }) {
+function SummaryWayvia({ onOpenWorkCarousel }) {
   return (
     <SummaryBase
-      {...JOB_META_PRICESPIDER}
+      {...JOB_META_WAYVIA}
       date="Feb 2015 - Jun 2016"
       techKeys={TECH_KEYS}
-      imgConfigs={IMG_CONFIGS_PRICESPIDER}
+      imgConfigs={IMG_CONFIGS_WAYVIA}
       onOpenWorkCarousel={onOpenWorkCarousel}
-      workCarouselSlideOffset={WORK_CAROUSEL_PRICESPIDER_OFFSET}
+      workCarouselSlideOffset={WORK_CAROUSEL_WAYVIA_OFFSET}
     >
       I built the Angular 1.x reporting platform from scratch alongside a fellow server developer and our 
       engineering manager. Using PostgreSQL, I architected the user, roles, and permissions schemas, then 
@@ -41,7 +41,7 @@ function SummaryPriceSpider({ onOpenWorkCarousel }) {
       and clicks across our Where-to-Buy (WTB) solutions.
       <br />
       <br />
-      Another third of my time at PriceSpider was spent building web crawlers in C#, ASP.NET, and regex to
+      Another third of my time at Wayvia was spent building web crawlers in C#, ASP.NET, and regex to
       extract store and product information from retailer sites.
       <br />
       <br />
@@ -52,8 +52,8 @@ function SummaryPriceSpider({ onOpenWorkCarousel }) {
   );
 }
 
-SummaryPriceSpider.propTypes = {
+SummaryWayvia.propTypes = {
   onOpenWorkCarousel: PropTypes.func.isRequired,
 };
 
-export default SummaryPriceSpider;
+export default SummaryWayvia;
