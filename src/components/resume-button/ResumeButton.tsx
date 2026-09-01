@@ -21,6 +21,7 @@ function ResumeButton({ className = "" }: Props) {
           transition: 'width 0.1s',
           width: '0',
           overflow: 'hidden',
+          pt: '1rem',
 
           '> span': {
             display: 'flex',
