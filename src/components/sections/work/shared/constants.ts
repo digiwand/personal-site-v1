@@ -49,17 +49,17 @@ export const IMG_CONFIGS_WAYVIA: WorkImageConfig[] = [
   {
     ...JOB_META_WAYVIA,
     alt: 'Mars Snacking - Where to Buy Embedded HTML Widget',
-    srcName: 'pricespider-wtb-mars-preview',
+    srcName: 'wayvia-wtb-mars-preview',
   },
   {
     ...JOB_META_WAYVIA,
     alt: 'Iams - Where to Buy Embedded HTML Modal Widget',
-    srcName: 'pricespider-wtb-iams-preview',
+    srcName: 'wayvia-wtb-iams-preview',
   },
   {
     ...JOB_META_WAYVIA,
     alt: 'Dell, Hoover - Where to Buy Animated Ads',
-    srcName: 'pricespider-ads-preview',
+    srcName: 'wayvia-ads-preview',
   },
 ];
 
