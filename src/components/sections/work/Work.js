@@ -3,11 +3,11 @@ import React, { useCallback, useState } from 'react';
 import Fade from 'components/animations/Fade';
 
 import Section from 'components/sections/Section';
+import ImgModalCarousel from 'components/sections/work/img-modal-carousel/ImgModalCarousel';
 import SummaryMetaMask from 'components/sections/work/summary/MetaMask';
 import SummaryCopper from 'components/sections/work/summary/Copper';
-import WorkSideHeading from 'components/sections/work/WorkSideHeading';
-import ImgModalCarousel from 'components/sections/work/img-modal-carousel/ImgModalCarousel';
 import SummaryWayvia from 'components/sections/work/summary/Wayvia';
+import WorkSideHeading from 'components/sections/work/WorkSideHeading';
 import { WORK_IMG_CONFIGS } from 'components/sections/work/shared/constants';
 
 function EducationSection() {
