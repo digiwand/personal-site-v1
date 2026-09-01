@@ -34,20 +34,12 @@ function SummaryWayvia({ onOpenWorkCarousel }) {
       onOpenWorkCarousel={onOpenWorkCarousel}
       workCarouselSlideOffset={WORK_CAROUSEL_WAYVIA_OFFSET}
     >
-      I built the Angular 1.x reporting platform from scratch alongside a fellow server developer and our 
-      engineering manager. Using PostgreSQL, I architected the user, roles, and permissions schemas, then 
-      implemented dynamic role-based access control enforced through middleware on our Express.js routes. 
-      For dynamic data like product catalogs, I used MongoDB. We used Highcharts and Highmaps to visualize impressions 
-      and clicks across our Where-to-Buy (WTB) solutions.
-      <br />
-      <br />
-      Another third of my time at Wayvia was spent building web crawlers in C#, ASP.NET, and regex to
-      extract store and product information from retailer sites.
-      <br />
-      <br />
-      Among other contributions, I developed 25+ HTML-embedded WTB widgets deployed across different e-commerce pages, 
-      led Angular Best Practices Workshops, co-pioneered and launched WTB animated ads, 
-      and actively optimized developer processes.
+      Another engineer and I pioneered and launched a MEAN-stack analytics application with RESTful APIs 
+      and interactive graphs in 4.5 months. I architected the authentication system and login flow with brute-force prevention, 
+      and built role-based access control supporting custom roles with granular read/write permissions. 
+      I shipped 25+ responsive, cross-browser Where-to-Buy widgets used by global brands including Samsung, Canon, and Mars, 
+      and authored the web crawlers behind our data, which parsed store and product info across multiple languages while 
+      working around captchas and user-agent limits.
     </SummaryBase>
   );
 }

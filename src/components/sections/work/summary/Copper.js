@@ -35,14 +35,14 @@ function SummaryCopper({ onOpenWorkCarousel }) {
       onOpenWorkCarousel={onOpenWorkCarousel}
       workCarouselSlideOffset={WORK_CAROUSEL_COPPER_OFFSET}
     >
-      At Copper, I led numerous front-end projects for the CRM platform, including an in-house A/B testing tool, 
-      AMP emails, a Google Workspace add-on, a dynamic pricing and plan restructure, advanced list filtering, 
-      VoIP support, extensive refactoring, and various performance improvements.
+      At Copper CRM, I was the client-side technical lead for an in-house A/B testing tool, 
+      AMP emails, the Google Workspace beta add-on launch, an in-app RingCentral VoIP service, 
+      extensive refactoring, performance improvements including for infinite-scroll lists, and 
+      accessible, responsive UI. 
       <br />
-      <br />
-      Beyond feature work, I contributed to hiring by creating interview questions and conducting 15+ interviews. 
-      I also advocated for best practices, crafted and presented 8+ large architecture proposals, 
-      and frequently collaborated with third parties to lend my expertise.
+      Beyond features I helped grow the team: I wrote interview questions 
+      and ran 15+ interviews, championed best practices, authored and presented 8+ architecture proposals, 
+      and partnered with third parties to lend front-end expertise.
     </SummaryBase>
   );
 }

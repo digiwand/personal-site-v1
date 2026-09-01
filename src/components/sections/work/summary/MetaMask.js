@@ -24,16 +24,13 @@ function SummaryMetaMask() {
       date="Jan 2022 - Sept 2025"
       techKeys={TECH_KEYS}
     >
-      As a core developer on MetaMask&apos;s extension and mobile applications, I tackled a wide range of complex projects, 
-      from restructuring Node.js multiplex streams for the Chromium Manifest V3 migration, to leading the 
-      Sign-in with Ethereum (EIP-4361) integration and dissecting the nuances of EIP signatures and transactions. 
-      I also deployed safeguards that protected 30+ million user accounts from phishing attacks and pioneered fixes 
-      for recurring issues, including defects that had been patched over for 7+ years.
-      <br />
-      <br />
-      Beyond code, my journey in the Ethereum ecosystem has involved listening and responding to user feedback, 
-      troubleshooting issues for dApp developers, hosting workshops, mentoring at hackathons, connecting the company with
-      25+ partner opportunities, and collaborating with other organizations in the space.
+      As a core developer on the open-source wallet serving 30M+ monthly active users, I 
+      owned high-stakes security and architecture work on the extension and mobile application. 
+      As a security liaison I led investigations into high-impact issues: XSS, cross-domain phishing, 
+      Unicode-based data obfuscation, and JavaScript supply-chain vulnerabilities. I shipped safeguards to protect users 
+      from unauthorized transfers, fixed long-standing defects including a 7-year precision 
+      bug impacting financial accuracy, contributed to Ethereum Improvement Proposals, 
+      hosted workshops, and mentored at hackathons. 
     </SummaryBase>
   );
 }
