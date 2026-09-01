@@ -1,4 +1,4 @@
-import JobSection from 'components/sections/work/job-section/JobSection';
+import SummaryBase from 'components/sections/work/summary/Base';
 import PropTypes from 'prop-types';
 import {
   IMG_CONFIGS_COPPER,
@@ -25,9 +25,9 @@ const TECH_KEYS = [
   'DOCUMENTATION',
 ];
 
-function JobSectionCopper({ onOpenWorkCarousel }) {
+function SummaryCopper({ onOpenWorkCarousel }) {
   return (
-    <JobSection
+    <SummaryBase
       {...JOB_META_COPPER}
       date="Aug 2016 - Apr 2021"
       techKeys={TECH_KEYS}
@@ -43,12 +43,12 @@ function JobSectionCopper({ onOpenWorkCarousel }) {
       Beyond feature work, I contributed to hiring by creating interview questions and conducting 15+ interviews. 
       I also advocated for best practices, crafted and presented 8+ large architecture proposals, 
       and frequently collaborated with third parties to lend my expertise.
-    </JobSection>
+    </SummaryBase>
   );
 }
 
-JobSectionCopper.propTypes = {
+SummaryCopper.propTypes = {
   onOpenWorkCarousel: PropTypes.func.isRequired,
 };
 
-export default JobSectionCopper;
+export default SummaryCopper;

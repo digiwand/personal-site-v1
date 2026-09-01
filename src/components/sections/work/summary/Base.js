@@ -6,7 +6,7 @@ import { Button } from 'theme-ui';
 import Fade from 'components/animations/Fade';
 import TECH from 'constants/tech';
 
-import { ImgTrio } from './img-trio/ImgTrio';
+import { ImgTrio } from '../img-trio/ImgTrio';
 
 const propTypes = {
   className: PropTypes.string,
@@ -27,7 +27,7 @@ const propTypes = {
   workCarouselSlideOffset: PropTypes.number,
 };
 
-function JobSection({ children, ...props }) {
+function Work({ children, ...props }) {
   const {
     className,
     companyName,
@@ -127,6 +127,6 @@ function JobSection({ children, ...props }) {
   );
 }
 
-JobSection.propTypes = propTypes;
+Work.propTypes = propTypes;
 
-export default JobSection;
+export default Work;

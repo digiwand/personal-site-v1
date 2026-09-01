@@ -3,11 +3,11 @@ import React, { useCallback, useState } from 'react';
 import Fade from 'components/animations/Fade';
 
 import Section from 'components/sections/Section';
-import JobSectionMetaMask from 'components/sections/work/job-section/MetaMask';
-import JobSectionCopper from 'components/sections/work/job-section/Copper';
+import SummaryMetaMask from 'components/sections/work/summary/MetaMask';
+import SummaryCopper from 'components/sections/work/summary/Copper';
 import WorkSideHeading from 'components/sections/work/WorkSideHeading';
-import ImgModalCarousel from 'components/sections/work/job-section/img-modal-carousel/ImgModalCarousel';
-import JobSectionPriceSpider from 'components/sections/work/job-section/PriceSpider';
+import ImgModalCarousel from 'components/sections/work/img-modal-carousel/ImgModalCarousel';
+import SummaryPriceSpider from 'components/sections/work/summary/PriceSpider';
 import { WORK_IMG_CONFIGS } from 'components/sections/work/shared/constants';
 
 function EducationSection() {
@@ -88,9 +88,9 @@ const WorkSection = (_props, ref) => {
       }}
       >
         <WorkSideHeading text="WORK EXPERIENCE" sx={{ pb: [0, 0, 5] }} />
-        <JobSectionMetaMask />
-        <JobSectionCopper onOpenWorkCarousel={openWorkCarousel} />
-        <JobSectionPriceSpider onOpenWorkCarousel={openWorkCarousel} />
+        <SummaryMetaMask />
+        <SummaryCopper onOpenWorkCarousel={openWorkCarousel} />
+        <SummaryPriceSpider onOpenWorkCarousel={openWorkCarousel} />
 
         <WorkSideHeading text="EDUCATION" />
         <EducationSection />

@@ -1,4 +1,4 @@
-import JobSection from 'components/sections/work/job-section/JobSection';
+import SummaryBase from 'components/sections/work/summary/Base';
 import PropTypes from 'prop-types';
 import {
   IMG_CONFIGS_PRICESPIDER,
@@ -24,9 +24,9 @@ const TECH_KEYS = [
   'INTELLI_J',
 ];
 
-function JobSectionPriceSpider({ onOpenWorkCarousel }) {
+function SummaryPriceSpider({ onOpenWorkCarousel }) {
   return (
-    <JobSection
+    <SummaryBase
       {...JOB_META_PRICESPIDER}
       date="Feb 2015 - Jun 2016"
       techKeys={TECH_KEYS}
@@ -48,12 +48,12 @@ function JobSectionPriceSpider({ onOpenWorkCarousel }) {
       Among other contributions, I developed 25+ HTML-embedded WTB widgets deployed across different e-commerce pages, 
       led Angular Best Practices Workshops, co-pioneered and launched WTB animated ads, 
       and actively optimized developer processes.
-    </JobSection>
+    </SummaryBase>
   );
 }
 
-JobSectionPriceSpider.propTypes = {
+SummaryPriceSpider.propTypes = {
   onOpenWorkCarousel: PropTypes.func.isRequired,
 };
 
-export default JobSectionPriceSpider;
+export default SummaryPriceSpider;
