@@ -11,21 +11,18 @@ function ResumeButton({ className = "" }: Props) {
     <Button
       className={className}
       sx={{
+        position: 'relative',
         display: 'flex',
         alignItems: 'center',
         margin: '0 auto',
 
         '.resume-icon-container': {
+          position: 'absolute',
+          left: '100%',
+          paddingLeft: '16rem',
           display: 'flex',
-          justifyContent: 'end',
-          transition: 'width 0.1s',
-          width: '0',
-          overflow: 'hidden',
-
-          '> span': {
-            display: 'flex',
-            alignItems: 'center',
-          },
+          transition: 'opacity 0.18s ease-out',
+          opacity: '0',
 
           svg: {
             position: 'relative',
@@ -39,7 +36,7 @@ function ResumeButton({ className = "" }: Props) {
         },
 
         '&:hover .resume-icon-container': {
-          width: '32rem',
+          opacity: '1',
         },
       }}
     >
@@ -47,9 +44,7 @@ function ResumeButton({ className = "" }: Props) {
         RÉSUMÉ
       </a>
       <div className="resume-icon-container">
-        <span>
-          <IconDownload />
-        </span>
+        <IconDownload />
       </div>
     </Button>
   );
