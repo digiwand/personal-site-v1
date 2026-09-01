@@ -38,7 +38,7 @@ function NavDrawerSocialIcons() {
             width: '100%',
 
             '> svg': {
-              opacity: 0,
+              opacity: 1,
               transition: 'opacity 1.3s',
             },
           },
