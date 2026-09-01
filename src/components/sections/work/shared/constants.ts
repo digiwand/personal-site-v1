@@ -21,7 +21,7 @@ export const JOB_META_COPPER: JobMeta = {
 };
 
 export const JOB_META_PRICESPIDER: JobMeta = {
-  companyName: 'PriceSpider',
+  companyName: 'Wayvia',
   title: 'Software Engineer',
   subtitle: 'Full Stack',
 };

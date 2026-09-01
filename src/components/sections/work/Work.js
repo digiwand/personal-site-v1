@@ -7,7 +7,7 @@ import SummaryMetaMask from 'components/sections/work/summary/MetaMask';
 import SummaryCopper from 'components/sections/work/summary/Copper';
 import WorkSideHeading from 'components/sections/work/WorkSideHeading';
 import ImgModalCarousel from 'components/sections/work/img-modal-carousel/ImgModalCarousel';
-import SummaryPriceSpider from 'components/sections/work/summary/PriceSpider';
+import SummaryWayvia from 'components/sections/work/summary/Wayvia';
 import { WORK_IMG_CONFIGS } from 'components/sections/work/shared/constants';
 
 function EducationSection() {
@@ -90,7 +90,7 @@ const WorkSection = (_props, ref) => {
         <WorkSideHeading text="WORK EXPERIENCE" sx={{ pb: [0, 0, 5] }} />
         <SummaryMetaMask />
         <SummaryCopper onOpenWorkCarousel={openWorkCarousel} />
-        <SummaryPriceSpider onOpenWorkCarousel={openWorkCarousel} />
+        <SummaryWayvia onOpenWorkCarousel={openWorkCarousel} />
 
         <WorkSideHeading text="EDUCATION" />
         <EducationSection />

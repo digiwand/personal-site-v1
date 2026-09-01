@@ -24,7 +24,7 @@ const TECH_KEYS = [
   'INTELLI_J',
 ];
 
-function SummaryPriceSpider({ onOpenWorkCarousel }) {
+function SummaryWayvia({ onOpenWorkCarousel }) {
   return (
     <SummaryBase
       {...JOB_META_PRICESPIDER}
@@ -41,7 +41,7 @@ function SummaryPriceSpider({ onOpenWorkCarousel }) {
       and clicks across our Where-to-Buy (WTB) solutions.
       <br />
       <br />
-      Another third of my time at PriceSpider was spent building web crawlers in C#, ASP.NET, and regex to
+      Another third of my time at Wayvia was spent building web crawlers in C#, ASP.NET, and regex to
       extract store and product information from retailer sites.
       <br />
       <br />
@@ -52,8 +52,8 @@ function SummaryPriceSpider({ onOpenWorkCarousel }) {
   );
 }
 
-SummaryPriceSpider.propTypes = {
+SummaryWayvia.propTypes = {
   onOpenWorkCarousel: PropTypes.func.isRequired,
 };
 
-export default SummaryPriceSpider;
+export default SummaryWayvia;
