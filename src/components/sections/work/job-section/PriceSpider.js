@@ -1,4 +1,10 @@
 import JobSection from 'components/sections/work/job-section/JobSection';
+import PropTypes from 'prop-types';
+import {
+  IMG_CONFIGS_PRICESPIDER,
+  JOB_META_PRICESPIDER,
+  WORK_CAROUSEL_PRICESPIDER_OFFSET,
+} from 'components/sections/work/shared/constants';
 
 const TECH_KEYS = [
   'ANGULARJS',
@@ -18,30 +24,15 @@ const TECH_KEYS = [
   'INTELLI_J',
 ];
 
-const IMG_CONFIGS = [
-  {
-    alt: 'Wayvia - Mars Where-to-buy',
-    srcName: 'pricespider-wtb-mars-preview',
-  },
-  {
-    alt: 'Wayvia - Iams Where-to-buy',
-    srcName: 'pricespider-wtb-iams-preview',
-  },
-  {
-    alt: 'Wayvia - Hoover & Dell Where-to-buy Ads',
-    srcName: 'pricespider-ads-preview',
-  },
-];
-
-function JobSectionPriceSpider() {
+function JobSectionPriceSpider({ onOpenWorkCarousel }) {
   return (
     <JobSection
-      companyName="Wayvia • formerly PriceSpider"
-      title="Software Engineer"
-      subtitle="(Full Stack)"
+      {...JOB_META_PRICESPIDER}
       date="Feb 2015 - Jun 2016"
       techKeys={TECH_KEYS}
-      imgConfigs={IMG_CONFIGS}
+      imgConfigs={IMG_CONFIGS_PRICESPIDER}
+      onOpenWorkCarousel={onOpenWorkCarousel}
+      workCarouselSlideOffset={WORK_CAROUSEL_PRICESPIDER_OFFSET}
     >
       I built the Angular 1.x reporting platform from scratch alongside a fellow server developer and our 
       engineering manager. Using PostgreSQL, I architected the user, roles, and permissions schemas, then 
@@ -60,5 +51,9 @@ function JobSectionPriceSpider() {
     </JobSection>
   );
 }
+
+JobSectionPriceSpider.propTypes = {
+  onOpenWorkCarousel: PropTypes.func.isRequired,
+};
 
 export default JobSectionPriceSpider;

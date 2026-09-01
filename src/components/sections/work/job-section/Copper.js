@@ -1,4 +1,10 @@
 import JobSection from 'components/sections/work/job-section/JobSection';
+import PropTypes from 'prop-types';
+import {
+  IMG_CONFIGS_COPPER,
+  JOB_META_COPPER,
+  WORK_CAROUSEL_COPPER_OFFSET,
+} from 'components/sections/work/shared/constants';
 
 const TECH_KEYS = [
   'EMBERJS',
@@ -19,37 +25,19 @@ const TECH_KEYS = [
   'DOCUMENTATION',
 ];
 
-const IMG_CONFIGS = [
-  {
-    alt: 'Copper CRM - Companies Page',
-    srcName: 'copper-companies-list-preview',
-  },
-  {
-    alt: 'Copper CRM - Contact Page',
-    srcName: 'copper-contact-preview',
-    type: 'jpeg',
-  },
-  {
-    alt: 'Copper CRM - AMP Email Gif',
-    srcName: 'copper-amp-email-preview',
-  },
-];
-
-function JobSectionCopper() {
+function JobSectionCopper({ onOpenWorkCarousel }) {
   return (
     <JobSection
-      companyName="Copper CRM"
-      title="Senior Software Engineer"
-      subtitle="(Client-Side)"
+      {...JOB_META_COPPER}
       date="Aug 2016 - Apr 2021"
       techKeys={TECH_KEYS}
-      imgConfigs={IMG_CONFIGS}
+      imgConfigs={IMG_CONFIGS_COPPER}
+      onOpenWorkCarousel={onOpenWorkCarousel}
+      workCarouselSlideOffset={WORK_CAROUSEL_COPPER_OFFSET}
     >
-      At Copper CRM, I was a tech lead for numerous projects, including an in-house A/B testing tool, 
-      AMP emails, a Google Workspace add-on, dynamic pricing and plan pages, default list filtering, 
-      pinned activity items, chrome extension features, VoIP support, extensive refactoring, and calendar UI input. 
-      Additionally, I worked on the dev tools, contributed to a wide array of features, fixed countless
-      complicated bugs, and enhanced the application performance.
+      At Copper, I led numerous front-end projects for the CRM platform, including an in-house A/B testing tool, 
+      AMP emails, a Google Workspace add-on, a dynamic pricing and plan restructure, advanced list filtering, 
+      VoIP support, extensive refactoring, and various performance improvements.
       <br />
       <br />
       Beyond feature work, I contributed to hiring by creating interview questions and conducting 15+ interviews. 
@@ -58,5 +46,9 @@ function JobSectionCopper() {
     </JobSection>
   );
 }
+
+JobSectionCopper.propTypes = {
+  onOpenWorkCarousel: PropTypes.func.isRequired,
+};
 
 export default JobSectionCopper;

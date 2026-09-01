@@ -1,9 +1,12 @@
-import { getColor } from '@theme-ui/color'
-import Fade from 'components/animations/Fade';
-import { Button } from 'theme-ui';
+import { getColor } from '@theme-ui/color';
 import PropTypes from 'prop-types';
+import { useCallback } from 'react';
+import { Button } from 'theme-ui';
+
+import Fade from 'components/animations/Fade';
 import TECH from 'constants/tech';
-import JobSectionImgTrio from './JobSectionImgTrio';
+
+import { ImgTrio } from './img-trio/ImgTrio';
 
 const propTypes = {
   className: PropTypes.string,
@@ -14,8 +17,14 @@ const propTypes = {
   date: PropTypes.string.isRequired,
   imgConfigs: PropTypes.arrayOf(PropTypes.shape({
     alt: PropTypes.string,
-    src: PropTypes.string,
+    srcName: PropTypes.string,
+    type: PropTypes.string,
+    companyName: PropTypes.string,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
   })),
+  onOpenWorkCarousel: PropTypes.func,
+  workCarouselSlideOffset: PropTypes.number,
 };
 
 function JobSection({ children, ...props }) {
@@ -27,7 +36,15 @@ function JobSection({ children, ...props }) {
     date,
     imgConfigs,
     techKeys,
+    onOpenWorkCarousel,
+    workCarouselSlideOffset = 0,
   } = props;
+
+  const openCarouselFromTrio = useCallback((localIndex) => {
+    if (onOpenWorkCarousel) {
+      onOpenWorkCarousel(workCarouselSlideOffset + localIndex);
+    }
+  }, [onOpenWorkCarousel, workCarouselSlideOffset]);
 
   return (
     <div
@@ -57,19 +74,7 @@ function JobSection({ children, ...props }) {
             color: (t) => getColor(t, 'workHeader'),
           }}
           >
-            {title}
-          </h2>
-
-          <h2
-            sx={{
-            fontFamily: 'heading2',
-            variant: 'text.shadow',
-            display: ['block', 'block', 'inline-block'],
-            pt: [1, 0, 0],
-            color: (t) => getColor(t, 'workHeader'),
-          }}
-          >
-            <small>{subtitle}</small>
+            {title} • {subtitle}
           </h2>
 
           <h4
@@ -109,7 +114,12 @@ function JobSection({ children, ...props }) {
             ))}
           </div>
 
-          {imgConfigs && <JobSectionImgTrio imgConfigs={imgConfigs} />}
+          {imgConfigs && onOpenWorkCarousel && (
+            <ImgTrio
+              imgConfigs={imgConfigs}
+              onOpenCarousel={openCarouselFromTrio}
+            />
+          )}
 
         </div>
       </Fade>

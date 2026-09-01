@@ -19,8 +19,8 @@ function JobSectionMetaMask() {
   return (
     <JobSection
       companyName="MetaMask"
-      title="Senior Software Engineer ||"
-      subtitle="(Full Stack)"
+      title="Senior Software Engineer II"
+      subtitle="Full Stack"
       date="Jan 2022 - Sept 2025"
       techKeys={TECH_KEYS}
     >
