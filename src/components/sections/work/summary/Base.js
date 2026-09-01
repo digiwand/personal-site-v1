@@ -27,7 +27,7 @@ const propTypes = {
   workCarouselSlideOffset: PropTypes.number,
 };
 
-function JobSection({ children, ...props }) {
+function Work({ children, ...props }) {
   const {
     className,
     companyName,
@@ -127,6 +127,6 @@ function JobSection({ children, ...props }) {
   );
 }
 
-JobSection.propTypes = propTypes;
+Work.propTypes = propTypes;
 
-export default JobSection;
+export default Work;
