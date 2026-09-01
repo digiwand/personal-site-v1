@@ -15,7 +15,7 @@ const TECH_KEYS = [
   'GIT',
 ];
 
-function WorkMetaMask() {
+function SummaryMetaMask() {
   return (
     <SummaryBase
       companyName="MetaMask"
@@ -38,4 +38,4 @@ function WorkMetaMask() {
   );
 }
 
-export default WorkMetaMask;
+export default SummaryMetaMask;

@@ -24,7 +24,7 @@ const TECH_KEYS = [
   'INTELLI_J',
 ];
 
-function WorkPriceSpider({ onOpenWorkCarousel }) {
+function SummaryPriceSpider({ onOpenWorkCarousel }) {
   return (
     <SummaryBase
       {...JOB_META_PRICESPIDER}
@@ -52,8 +52,8 @@ function WorkPriceSpider({ onOpenWorkCarousel }) {
   );
 }
 
-WorkPriceSpider.propTypes = {
+SummaryPriceSpider.propTypes = {
   onOpenWorkCarousel: PropTypes.func.isRequired,
 };
 
-export default WorkPriceSpider;
+export default SummaryPriceSpider;

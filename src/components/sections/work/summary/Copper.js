@@ -25,7 +25,7 @@ const TECH_KEYS = [
   'DOCUMENTATION',
 ];
 
-function WorkCopper({ onOpenWorkCarousel }) {
+function SummaryCopper({ onOpenWorkCarousel }) {
   return (
     <SummaryBase
       {...JOB_META_COPPER}
@@ -47,8 +47,8 @@ function WorkCopper({ onOpenWorkCarousel }) {
   );
 }
 
-WorkCopper.propTypes = {
+SummaryCopper.propTypes = {
   onOpenWorkCarousel: PropTypes.func.isRequired,
 };
 
-export default WorkCopper;
+export default SummaryCopper;
