@@ -74,19 +74,7 @@ function JobSection({ children, ...props }) {
             color: (t) => getColor(t, 'workHeader'),
           }}
           >
-            {title}
-          </h2>
-
-          <h2
-            sx={{
-            fontFamily: 'heading2',
-            variant: 'text.shadow',
-            display: ['block', 'block', 'inline-block'],
-            pt: [1, 0, 0],
-            color: (t) => getColor(t, 'workHeader'),
-          }}
-          >
-            <small>{subtitle}</small>
+            {title} • {subtitle}
           </h2>
 
           <h4
