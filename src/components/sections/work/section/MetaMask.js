@@ -1,4 +1,4 @@
-import JobSection from 'components/sections/work/job-section/JobSection';
+import JobSection from 'components/sections/work/section/JobSection';
 
 const TECH_KEYS = [
   'ETHEREUM',

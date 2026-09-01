@@ -1,4 +1,4 @@
-import JobSection from 'components/sections/work/job-section/JobSection';
+import JobSection from 'components/sections/work/section/JobSection';
 import PropTypes from 'prop-types';
 import {
   IMG_CONFIGS_COPPER,

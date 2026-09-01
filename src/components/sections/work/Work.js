@@ -3,11 +3,11 @@ import React, { useCallback, useState } from 'react';
 import Fade from 'components/animations/Fade';
 
 import Section from 'components/sections/Section';
-import JobSectionMetaMask from 'components/sections/work/job-section/MetaMask';
-import JobSectionCopper from 'components/sections/work/job-section/Copper';
+import JobSectionMetaMask from 'components/sections/work/section/MetaMask';
+import JobSectionCopper from 'components/sections/work/section/Copper';
 import WorkSideHeading from 'components/sections/work/WorkSideHeading';
-import ImgModalCarousel from 'components/sections/work/job-section/img-modal-carousel/ImgModalCarousel';
-import JobSectionPriceSpider from 'components/sections/work/job-section/PriceSpider';
+import ImgModalCarousel from 'components/sections/work/section/img-modal-carousel/ImgModalCarousel';
+import JobSectionPriceSpider from 'components/sections/work/section/PriceSpider';
 import { WORK_IMG_CONFIGS } from 'components/sections/work/shared/constants';
 
 function EducationSection() {
