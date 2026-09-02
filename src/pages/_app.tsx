@@ -1,7 +1,5 @@
 import { AppProps } from 'next/app';
 import { useState } from 'react';
-
-import 'styles/global.scss';
 import 'styles/globals.css';
 
 import FadeInLayout from 'components/FadeInLayout';
