@@ -12,11 +12,10 @@ const reCaptchaV2Key = process.env.NEXT_PUBLIC_G_RECAPTCHA_V2_KEY;
 function ContactDivider() {
   return (
     <div
-      className="flex-[0_0_1rem] mx-64 flex items-center justify-center py-64 land:py-0
+      className="hidden land:flex flex-[0_0_1rem] mx-64 items-center justify-center py-64 land:py-0
         w-[82%] land:w-auto after:content-[''] after:z-1
         after:bg-[var(--theme-contact-divider)] after:w-full land:after:w-[1rem]
-        after:h-[1rem] land:after:h-full
-        hidden land:visible"
+        after:h-[1rem] land:after:h-full"
     />
   );
 }

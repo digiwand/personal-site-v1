@@ -6,7 +6,7 @@ function ContactLeftSide() {
   return (
     <div
       className="flex flex-col justify-between flex-[1_0_25%] max-w-[680rem] min-w-[160rem]
-        w-full land:w-1/4 pb-0 land:pb-[88rem] text-center land:text-left"
+        w-full land:w-1/4 pb-0 land:pb-[88rem] text-center"
     >
       <div>
         <div className="text-heading [color:var(--theme-contact-sub-header)] pb-16 text-[20rem] sm:text-[22rem]
@@ -20,7 +20,7 @@ function ContactLeftSide() {
 
       <Fade delay={1000} duration={2400} className="flex justify-center">
         <SVGPlantInPot
-          className="w-1/2 pt-24 land:pt-8 mx-auto max-w-[225rem] min-w-[160rem] [&_path]:fill-[var(--theme-contact-plant)] hidden land:visible"
+          className="hidden land:flex w-1/2 pt-24 land:pt-8 mx-auto max-w-[225rem] min-w-[160rem] [&_path]:fill-[var(--theme-contact-plant)]"
         />
       </Fade>
     </div>
