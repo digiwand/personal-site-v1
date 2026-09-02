@@ -706,6 +706,16 @@
     }
   }
 
+  /* 
+    inputHeight - inputBorder = 42 - 2 = 40
+    input padding = 10
+    label padding = 18
+  */
+  .form-field label {
+    line-height: 40rem; 
+    transform: translate(10rem, 18rem);
+  }
+
   .form-field:focus-within label,
   .form-input:not(:placeholder-shown) ~ label,
   .form-textarea:valid ~ label {
