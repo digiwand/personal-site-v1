@@ -62,6 +62,7 @@
     font-family: var(--font-barlow);
     font-size: 16rem;
     font-weight: 300;
+    letter-spacing: 0.3rem;
     margin-right: 8rem;
     margin-bottom: 8rem;
     height: 38rem;
