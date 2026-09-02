@@ -1,35 +1,15 @@
-import { getColor } from '@theme-ui/color';
-
 interface Props {
   email: string;
   isVisible?: boolean;
-};
+}
 
-function FormSentMessage({ isVisible = false, email }: Props) {  
+function FormSentMessage({ isVisible = false, email }: Props) {
   return (
     <div
-      is-visible={String(isVisible)}
-      sx={{
-        position: 'absolute',
-        height: '100%',
-        width: '100%',
-        left: 0,
-        top: 0,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        p: 4,
-        opacity: 0,
-        pointerEvents: 'none',
-        transition: 'opacity 0.3s',
-        background: (t) => getColor(t, 'inputBg'),
-
-        '&[is-visible="true"]': {
-          opacity: 1,
-          pointerEvents: 'initial',
-        },
-      }}
+      data-visible={String(isVisible)}
+      className="absolute h-full w-full left-0 top-0 flex flex-col items-center justify-center p-32
+        opacity-0 pointer-events-none transition-opacity duration-300 bg-[var(--theme-input-bg)]
+        data-[visible=true]:opacity-100 data-[visible=true]:pointer-events-auto"
     >
       <h3>Email sent!</h3>
       <div>
@@ -41,10 +21,10 @@ function FormSentMessage({ isVisible = false, email }: Props) {
         <br />
         <br />
         <br />
-        <h3 sx={{ textAlign: 'center' }}>
+        <h3 className="text-center">
           Best wishes,
         </h3>
-        <h3 sx={{ textAlign: ['center', 'center', 'left'], pt: 2, display: 'block' }}>
+        <h3 className="text-center land:text-left pt-8 block">
           Ariella
         </h3>
       </div>

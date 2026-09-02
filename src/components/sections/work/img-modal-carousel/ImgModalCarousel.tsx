@@ -1,8 +1,6 @@
-import { getColor } from '@theme-ui/color';
 import {
   useCallback, useEffect, useId, useRef, useState,
 } from 'react';
-import { Box, Image } from 'theme-ui';
 
 import Modal from 'components/modal/Modal';
 import ButtonBase from 'components/button/Base';
@@ -16,9 +14,6 @@ interface ImageCarouselModalContentProps {
   captionId: string;
 }
 
-/**
- * Carousel stage (prev / image / next) and caption + slide counter.
- */
 function ImageCarouselModalContent({
   imgConfigs,
   activeIndex,
@@ -37,72 +32,28 @@ function ImageCarouselModalContent({
 
   return (
     <>
-      <Box
-        sx={{
-          position: 'relative',
-          flex: '1 1 auto',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minHeight: ['200rem', '280rem', '320rem'],
-          width: '100%',
-          px: ['48rem', '56rem', '128rem'],
-          py: 3,
-
-          '& img': {
-            flex: '1 0 auto',
-            width: '100%',
-            maxWidth: ['100%', '100%', '820rem'],
-            height: 'auto',
-            objectFit: 'contain',
-            boxShadow: 'none',
-          },
-        }}
+      <div
+        className="relative flex-[1_1_auto] flex items-center justify-center
+          min-h-[200rem] sm:min-h-[280rem] land:min-h-[320rem] w-full
+          px-[48rem] sm:px-[56rem] land:px-[128rem] py-16
+          [&_img]:flex-[1_0_auto] [&_img]:w-full [&_img]:max-w-full land:[&_img]:max-w-[820rem]
+          [&_img]:h-auto [&_img]:object-contain [&_img]:shadow-none"
       >
         <ButtonBase
           onClick={goPrev}
           aria-label="Previous image"
-          sx={{
-            position: 'absolute',
-            left: [1, 2, 3],
-            top: '50%',
-            transform: 'translateY(-50%)',
-
-            fontFamily: 'barlow',
-            fontSize: '28rem',
-            fontWeight: '300',
-            padding: '0 1rem 5rem 0',
-          }}
+          className="absolute left-4 sm:left-8 land:left-16 top-1/2 -translate-y-1/2
+            font-barlow text-[28rem] font-light pt-0 pr-[1rem] pb-[5rem] pl-0"
         >
           ‹
         </ButtonBase>
 
         <div
-          sx={{
-            overflowY: 'auto',
-            width: '100%',
-            maxHeight: ['52vh', '58vh', '62vh'],
-
-            '&::-webkit-scrollbar': {
-              width: '7px',
-              backgroundColor: 'transparent',
-            },
-            '&::-webkit-scrollbar-thumb': {
-              // todo: hide for now
-              // backgroundColor: 'rgba(255,255,255,0.5)',
-              borderRadius: '7px',
-            },
-          }}
+          className="overflow-y-auto w-full max-h-[52vh] sm:max-h-[58vh] land:max-h-[62vh]
+            [&::-webkit-scrollbar]:w-[7px] [&::-webkit-scrollbar]:bg-transparent
+            [&::-webkit-scrollbar-thumb]:rounded-[7px]"
         >
-          <picture
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              maxWidth: '100%',
-              margin: '0 auto',
-            }}
-          >
+          <picture className="flex items-center justify-center max-w-full mx-auto">
             <source
               srcSet={`/images/work/${imgConfig.srcName}.webp`}
               type="image/webp"
@@ -111,12 +62,12 @@ function ImageCarouselModalContent({
               srcSet={`/images/work/${imgConfig.srcName}.${imgType}`}
               type={`image/${imgType}`}
             />
-            <Image
+            <img
               alt={caption}
               src={`/images/work/${imgConfig.srcName}.${imgType}`}
               decoding="async"
               loading="lazy"
-              sx={{ width: '100%' }}
+              className="w-full"
             />
           </picture>
         </div>
@@ -124,40 +75,27 @@ function ImageCarouselModalContent({
         <ButtonBase
           onClick={goNext}
           aria-label="Next image"
-          sx={{
-            position: 'absolute',
-            right: [1, 2, 3],
-            top: '50%',
-            transform: 'translateY(-50%)',
-
-            fontFamily: 'barlow',
-            fontSize: '28rem',
-            fontWeight: '300',
-            padding: '0 0 5rem 0',
-          }}
+          className="absolute right-4 sm:right-8 land:right-16 top-1/2 -translate-y-1/2
+            font-barlow text-[28rem] font-light pt-0 pr-0 pb-[5rem] pl-0"
         >
           ›
         </ButtonBase>
-      </Box>
+      </div>
 
-      <Box
+      <div
         id={captionId}
-        sx={{
-          px: [4, 5, 6],
-          py: [3, 4],
-          textAlign: 'center',
-          borderTop: (t) => `1rem solid ${getColor(t, 'workImgBorder')}`,
-        }}
+        className="px-32 sm:px-64 land:px-128 py-16 sm:py-32 text-center
+          [border-top:var(--theme-work-img-border)]"
       >
         {caption}
-        <Box as="span" sx={{ display: 'block', mt: 2, opacity: 0.75, fontSize: '13rem' }}>
+        <span className="block mt-8 opacity-75 text-[13rem]">
           {slideLabel}
           {' '}
           /
           {' '}
           {countLabel}
-        </Box>
-      </Box>
+        </span>
+      </div>
     </>
   );
 }
@@ -169,9 +107,6 @@ interface Props {
   onClose: () => void;
 }
 
-/**
- * Work-wide image gallery: header follows the active slide’s job; carousel uses {@link ImageCarouselModalContent} inside {@link Modal}.
- */
 function ImageCarouselModal({
   imgConfigs,
   initialSlideIndex,
@@ -240,41 +175,29 @@ function ImageCarouselModal({
         ref={closeButtonRef}
         onClick={onClose}
         aria-label="Close image gallery"
-        sx={{
-          position: 'absolute',
-          top: [2, 3],
-          right: [2, 3],
-          '&:hover': {
-            transform: 'rotate(90deg)',
-          },
-        }}
+        className="absolute top-8 sm:top-16 right-8 sm:right-16 hover:rotate-90"
       >
         <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
           <path d="M1 1l14 14M15 1L1 15" stroke="currentColor" strokeWidth="1.6" />
         </svg>
       </ButtonBase>
 
-      <Box sx={{ pt: [5, 5, 4], px: [4, 5, 6], pb: 2, textAlign: 'center' }}>
-        <Box
+      <div className="pt-64 land:pt-32 px-32 sm:px-64 land:px-128 pb-8 text-center">
+        <h3
           id={headingId}
-          as="h3"
-          sx={{
-            fontFamily: 'heading2',
-            color: (t) => getColor(t, 'workHeader'),
-            fontSize: ['18rem', '20rem', '22rem'],
-            mb: 2,
-          }}
+          className="font-heading2 text-[var(--theme-work-header)] text-[18rem] sm:text-[20rem]
+            land:text-[22rem] mb-8"
         >
           {slide.companyName}
-        </Box>
-        <Box as="p">
+        </h3>
+        <p>
           {slide.title}
           {' '}
           •
           {' '}
           {slide.subtitle}
-        </Box>
-      </Box>
+        </p>
+      </div>
 
       <ImageCarouselModalContent
         imgConfigs={imgConfigs}

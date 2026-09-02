@@ -1,35 +1,18 @@
-import { getColor } from '@theme-ui/color';
 import SOCIAL from 'constants/social';
 
 function FormErrorMessage({ isVisible }) {
   return (
     <div
-      is-visible={String(isVisible)}
-      sx={{
-        color: (t) => getColor(t, 'error'),
-        position: 'absolute',
-        fontSize: 0,
-        opacity: 0,
-        top: '100%',
-        letterSpacing: '1rem',
-        right: '0',
-        pt: [3, 3, 4],
-        left: ['0', '0', 'initial'],
-        whiteSpace: ['initial', 'initial', 'nowrap'],
-        transition: 'opacity 0.3s',
-
-        '&[is-visible="true"]': {
-          opacity: 1,
-        },
-      }}
+      data-visible={String(isVisible)}
+      className="absolute text-[var(--theme-error)] text-[12rem] opacity-0 top-full tracking-[1rem]
+        right-0 pt-16 land:pt-32 left-0 land:left-auto whitespace-normal land:whitespace-nowrap
+        transition-opacity duration-300 data-[visible=true]:opacity-100"
     >
       Sorry. An error has occured. Please retry or email me directly at
       {' '}
       <a
         href={SOCIAL.email.url}
-        sx={{
-          variant: 'text.link',
-        }}
+        className="text-link"
       >
         ariellavu@gmail.com
       </a>

@@ -1,21 +1,11 @@
-import { ThemeUICSSObject } from 'theme-ui';
 import Layout from 'components/Layout';
-
-const pageStyle: ThemeUICSSObject = {
-  minHeight: '100vh',
-  minWidth: '100%',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-};
 
 function Custom404() {
   return (
     <Layout>
-      <div sx={pageStyle}>
+      <div className="min-h-screen min-w-full flex justify-center items-center flex-col">
         <h1>Whoops. Page Not Found.</h1>
-        <h3 sx={{ pt: 4 }}>
+        <h3 className="pt-32">
           Try using the navigation to go to a new page.
         </h3>
       </div>

@@ -4,7 +4,6 @@ import emailjs from '@emailjs/browser';
 import { FormEvent, useRef, useState } from 'react';
 import Fade from 'components/animations/Fade';
 import Zoom from 'components/animations/Zoom';
-import { Button } from 'theme-ui';
 
 import FormInput from 'components/sections/contact/FormInput';
 import FormTextArea from 'components/sections/contact/FormTextArea';
@@ -62,23 +61,12 @@ function ContactForm() {
   }
 
   return (
-    <div sx={{
-      position: 'relative',
-    }}
-    >
+    <div className="relative">
       <form
-        /** @see {@https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion} */
         autoComplete="new-password"
         onSubmit={(e) => handleSend(e)}
-        has-sent={String(hasSent)}
-        sx={{
-          transition: 'opacity 0.3s',
-
-          '&[has-sent="true"]': {
-            opacity: 0,
-            pointerEvents: 'none',
-          },
-        }}
+        data-sent={String(hasSent)}
+        className="transition-opacity duration-300 data-[sent=true]:opacity-0 data-[sent=true]:pointer-events-none"
       >
         <Fade bottom>
           <FormInput
@@ -109,21 +97,15 @@ function ContactForm() {
           />
         </Fade>
 
-        <div sx={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-          alignItems: 'center',
-          pt: [1, 0, 0],
-        }}
-        >
+        <div className="flex justify-end items-center pt-4 sm:pt-0">
           <Fade delay={1000}>
             <FormRecaptcha recaptchaRef={recaptchaRef} />
           </Fade>
 
           <Zoom duration={800} delay={1000}>
-            <Button sx={{ flex: '0 0 auto;' }}>
+            <button type="submit" className="btn px-16 py-8">
               <span>Send</span>
-            </Button>
+            </button>
           </Zoom>
         </div>
       </form>

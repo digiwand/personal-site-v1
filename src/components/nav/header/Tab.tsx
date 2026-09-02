@@ -1,6 +1,6 @@
-import { getColor } from '@theme-ui/color'
 import Link from 'next/link';
 import Flip from 'components/animations/Flip';
+import { cn } from 'lib/cn';
 
 type Props = {
   className?: string,
@@ -17,62 +17,24 @@ function NavTab({
   index,
   isActive = false,
 }: Props) {
-  const hoverText = (
-    <span
-      className="NavTab_hoverText"
-      sx={{
-        position: 'absolute',
-        transition: 'width 0.3s',
-        top: '0',
-        left: '0',
-        width: '0',
-        overflow: 'hidden',
-        color: (t) => getColor(t, 'navTabHoverColor'),
-      }}
-    >
-      {displayName}
-    </span>
-  );
-
   return (
     <Link
       href={href}
       scroll={false}
-      className={`${className} + NavTab`}
-      sx={{
-        position: 'relative',
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '40rem',
-        fontSize: '14rem',
-        fontFamily: 'body',
-        fontWeight: '300',
-        borderBottom: '2rem solid transparent',
-        transition: 'font-weight 0.2s, color 0.2s, border-bottom 0.2s',
-
-        '&:hover .NavTab_hoverText': {
-          width: '100%',
-          transition: 'all 0.3s ease-in-out',
-        },
-        '&:is-active': {
-          fontWeight: '700',
-        },
-
-        '&:first-of-type': {
-          ml: 0,
-        },
-
-      }}
-      is-active={String(isActive)}>
-
-      <span sx={{ position: 'relative' }}>
+      className={cn(className, 'NavTab nav-tab')}
+      data-active={String(isActive)}
+    >
+      <span className="relative">
         <Flip top delay={700 + (index * 140)}>
           {displayName}
         </Flip>
-        {hoverText}
+        <span
+          className="NavTab_hoverText absolute top-0 left-0 overflow-hidden
+            text-[var(--theme-nav-tab-hover-color)] transition-[width] duration-300"
+        >
+          {displayName}
+        </span>
       </span>
-
     </Link>
   );
 }

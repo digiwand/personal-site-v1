@@ -35,10 +35,10 @@ function Nav({ sectionTrackingPixelRefs = [], pageTopTrackingPixelRef = null }: 
   };
 
   /**
-   * Using the IntersectionObserver "threshold" option of 0.8 or 0.6 causes 4 callbacks
-   * instead of 1. Instead of using "threshold" we will observe a tracking pixel on the
-   * section element.
-   */
+     * Using the IntersectionObserver "threshold" option of 0.8 or 0.6 causes 4 callbacks
+     * instead of 1. Instead of using "threshold" we will observe a tracking pixel on the
+     * section element.
+  */
   useEffect(() => {
     if (sectionIntersectionObserverRef.current) { sectionIntersectionObserverRef.current?.disconnect(); }
 
@@ -63,8 +63,6 @@ function Nav({ sectionTrackingPixelRefs = [], pageTopTrackingPixelRef = null }: 
     };
   });
 
-  // -- Handlers ----------------------------------------------------------------------------------
-
   const handleCloseDrawer = () => {
     setIsOpenDrawer(false);
   };
@@ -79,20 +77,11 @@ function Nav({ sectionTrackingPixelRefs = [], pageTopTrackingPixelRef = null }: 
     }
   };
 
-  // -- Renders -----------------------------------------------------------------------------------
-
   return (
     <div
-      sx={{
-        position: 'fixed',
-        top: '0',
-        right: '0',
-        width: '100%',
-        zIndex: 10,
-      }}
-      is-open={String(isOpenDrawer)}
+      className="fixed top-0 right-0 w-full z-10"
+      data-open={String(isOpenDrawer)}
     >
-
       <NavHeader
         activeSectionId={activeSectionId}
         pageTopTrackingPixelRef={pageTopTrackingPixelRef}

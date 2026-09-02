@@ -1,9 +1,7 @@
 import React, { ReactElement } from 'react';
 import Fade from 'components/animations/Fade';
 import AspectRatio from 'components/common/AspectRatio';
-
-const frameDistance = 46;
-const frameDistanceMobile = 34;
+import { cn } from 'lib/cn';
 
 type Props = {
   children: ReactElement,
@@ -26,46 +24,20 @@ function FrameCircle({ children, className = '' }: Props) {
       objectPosition: 'top',
       width: '100%',
       height: '100%',
-
     },
   });
 
   return (
-    <div
-      className={className}
-      sx={{ position: 'relative' }}
-    >
+    <div className={cn('relative', className)}>
       <Fade>
         <div>
           <div
-            className="u-glass"
-            sx={{
-              position: 'absolute',
-              height: [
-                `calc(100% + ${frameDistanceMobile}rem)`,
-                `calc(100% + ${frameDistanceMobile}rem)`,
-                `calc(100% + ${frameDistance}rem)`,
-              ],
-              width: [
-                `calc(100% + ${frameDistanceMobile}rem)`,
-                `calc(100% + ${frameDistanceMobile}rem)`,
-                `calc(100% + ${frameDistance}rem)`,
-              ],
-              bottom: [
-                `-${frameDistanceMobile / 2}rem`,
-                `-${frameDistanceMobile / 2}rem`,
-                `-${frameDistance / 2}rem`,
-              ],
-              left: [
-                `-${frameDistanceMobile / 2}rem`,
-                `-${frameDistanceMobile / 2}rem`,
-                `-${frameDistance / 2}rem`,
-              ],
-              boxShadow: 'rgba(120, 120, 120, 0.8) 2rem 2rem 13rem 0rem',
-              borderRadius: '50%',
-            }}
+            className="u-glass absolute rounded-full
+              h-[calc(100%+34rem)] w-[calc(100%+34rem)] -bottom-[17rem] -left-[17rem]
+              land:h-[calc(100%+46rem)] land:w-[calc(100%+46rem)] land:-bottom-[23rem] land:-left-[23rem]
+              [box-shadow:rgba(120,120,120,0.8)_2rem_2rem_13rem_0rem]"
           />
-          <AspectRatio sx={{ borderRadius: '50%' }}>
+          <AspectRatio className="rounded-full">
             {Image}
           </AspectRatio>
         </div>

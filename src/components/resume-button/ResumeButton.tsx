@@ -1,6 +1,5 @@
-import { getColor } from "@theme-ui/color";
-import { Button } from "theme-ui";
 import IconDownload from "components/svg/material-icons/download";
+import { cn } from "lib/cn";
 
 type Props = {
   className?: string;
@@ -8,51 +7,21 @@ type Props = {
 
 function ResumeButton({ className = "" }: Props) {
   return (
-    <Button
-      className={className}
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        margin: '0 auto',
-
-        '.resume-icon-container': {
-          display: 'flex',
-          justifyContent: 'end',
-          transition: 'width 0.1s',
-          width: '0',
-          overflow: 'hidden',
-          pt: '1rem',
-
-          '> span': {
-            display: 'flex',
-            alignItems: 'center',
-          },
-
-          svg: {
-            position: 'relative',
-            height: '24rem',
-            width: '24rem',
-          },
-          path: {
-            fill: (t) => getColor(t, 'buttonText'),
-            opacity: '0.7',
-          },
-        },
-
-        '&:hover .resume-icon-container': {
-          width: '32rem',
-        },
-      }}
+    <a
+      type="button"
+      href="/Resume-Ariella-Vu.pdf" 
+      download
+      className={cn("btn resume-button px-16 py-8 tracking-[3rem]", className)}
     >
-      <a href="/Resume-Ariella-Vu.pdf" download>
-        RÉSUMÉ
-      </a>
+      RÉSUMÉ
+
+      {/* add extra div wrapper to preserve icon size on animate */}
       <div className="resume-icon-container">
         <span>
           <IconDownload />
         </span>
       </div>
-    </Button>
+    </a>
   );
 }
 

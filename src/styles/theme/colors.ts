@@ -254,17 +254,15 @@ const dark: Partial<ColorMode> = {
   inputAutofill: `rgba(${RGB.darkSlateBlue}, 0.8)`,
 };
 
-const colorModes = { light, dark };
+export type ThemeTokens = typeof light;
 
-export type ColorModes = keyof typeof colorModes;
+export const DEFAULT_THEME = 'light' as const;
 
-const initialColorModeName: ColorModes = 'light';
+export const themes = {
+  light,
+  dark: { ...light, ...dark },
+} satisfies Record<string, ThemeTokens>;
 
-const colors = {
-  ...colorModes[initialColorModeName],
-  modes: {
-    dark: colorModes.dark,
-  },
-};
+export type ThemeName = keyof typeof themes;
 
-export default colors;
+export const THEME_NAMES = Object.keys(themes) as ThemeName[];

@@ -1,5 +1,3 @@
-import { getColor } from '@theme-ui/color';
-import { keyframes } from '@emotion/react';
 import Zoom from 'components/animations/Zoom';
 import TECH from 'constants/tech';
 
@@ -22,15 +20,6 @@ const RECENT_TECH = [
   'MAC_OS',
 ];
 
-const rotate360 = keyframes`
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(-360deg);
-  }
-`;
-
 const imgWidth = 220;
 const imgHeight = 120;
 const imgPadding = 0;
@@ -41,26 +30,6 @@ const panelHeight = imgHeight + 2 * imgPadding;
 const numOfPanels = RECENT_TECH.length;
 const rotationDeg = (360 / numOfPanels);
 
-/**
- * Tangent equation:
- * tangent(half of rotation deg) = opposite (panelWidth) / adjacent (radius)
- *
- *               ^
- *              /|\
- *             / |*\       <--  * = half of rotation deg
- *            /  |  \
- *           /   |   \
- *          /    |r   \
- *         /     |     \
- *        /      |      \
- *       /_______|_______\
- *                 [panelWidth/2]
- *      [                 ]
- *               ^
- *               |
- *    panel that shows tech icon
- *
- */
 const radius = Math.round((panelWidth / 2) / Math.tan(Math.PI / numOfPanels));
 
 const tabletImgWidth = 120;
@@ -73,47 +42,30 @@ const mobileRadius = Math.round((mobilePanelWidth / 2) / Math.tan(Math.PI / numO
 
 function Carousel() {
   return (
-
     <Zoom duration={1800}>
       <div
-        sx={{
-          perspective: '1000',
-          position: 'relative',
-          width: [`${mobilePanelWidth}rem`, `${tabletPanelWidth}rem`, `${panelWidth}rem`],
-          height: `${panelHeight}rem`,
-          transition: 'width 1s, transform 1s',
-        }}
+        className="relative transition-[width,transform] duration-1000
+          w-[85rem] sm:w-[120rem] land:w-[220rem] h-[120rem]"
+        style={{ perspective: '1000' }}
       >
-        <div sx={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          transformStyle: 'preserve-3d',
-          animation: `${rotate360} 60s infinite forwards linear`,
-        }}
-        >
+        <div className="carousel-stage absolute w-full h-full [transform-style:preserve-3d]">
           {RECENT_TECH.map((key, index) => {
             const techConfig = TECH[key];
 
             return (
               <a
                 key={techConfig.displayName}
-                sx={{
-                  position: 'absolute',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: [`${mobileImgWidth}rem`, `${tabletImgWidth}rem`, `${imgWidth}rem`],
-                  height: `${imgHeight}rem`,
+                className="carousel-panel absolute flex items-center justify-center
+                  w-[85rem] sm:w-[120rem] land:w-[220rem] h-[120rem]
+                  bg-[var(--theme-carousel-item-bg)]
+                  transition-[height,width,transform] duration-1000"
+                style={{
                   left: `${imgPadding}rem`,
                   top: `${imgPadding}rem`,
-                  background: (t) => getColor(t, 'carouselItemBg'),
-                  transition: 'height 1s, width: 1s, transform 1s',
-                  transform: [
-                    `rotateY(${rotationDeg * index}deg) translateZ(${mobileRadius}rem)`,
-                    `rotateY(${rotationDeg * index}deg) translateZ(${tabletRadius}rem)`,
-                    `rotateY(${rotationDeg * index}deg) translateZ(${radius}rem)`,
-                  ],
+                  '--panel-rotate': `${rotationDeg * index}deg`,
+                  '--z-mobile': `${mobileRadius}rem`,
+                  '--z-tablet': `${tabletRadius}rem`,
+                  '--z-desktop': `${radius}rem`,
                 }}
                 href={techConfig.href}
                 rel="noopener noreferrer"

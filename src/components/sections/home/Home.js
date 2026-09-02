@@ -1,96 +1,57 @@
-import { getColor } from '@theme-ui/color';
 import anime from 'animejs';
 import React, { useEffect } from 'react';
 import Fade from 'components/animations/Fade';
 import Pulse from 'components/animations/Pulse';
 import Zoom from 'components/animations/Zoom';
-import { useThemeUI } from 'theme-ui';
 
 import ResumeButton from 'components/resume-button/ResumeButton';
 import Section from 'components/sections/Section';
 import SVGAriellaVu from 'components/svg/ariellavu';
 
 import { SECTION_ID } from 'constants/section';
+import { useTheme } from 'theme/ThemeProvider';
 
-/**
- * @todo add when prop to Zoom and set to true when loader is finished to enable to scroll if the user
- * started down on the page
- */
 function HomeSection(props, ref) {
-  const { theme: { rawColors } } = useThemeUI();
+  const { colors } = useTheme();
 
   useEffect(() => {
     const svgPaths = document.querySelectorAll('#Home-SVGAriellaVu path');
-    
+
     anime({
       targets: svgPaths,
       direction: 'linear',
       duration: 800,
       easing: 'easeInOutSine',
-      fill: rawColors.svgAriellaVuActive,
+      fill: colors.svgAriellaVuActive,
       loop: false,
       strokeDashoffset: [anime.setDashoffset, 0],
       delay: (el, i) => 980 + (i * 52),
     });
-  }, [rawColors.svgAriellaVuActive]);
+  }, [colors.svgAriellaVuActive]);
 
   return (
     <Section
       id={SECTION_ID.HOME}
       ref={ref}
-      sx={{
-        minHeight: '100vh',
-        textAlign: 'center',
-      }}
+      className="min-h-screen text-center"
     >
       <Zoom delay={600}>
         <div
-          className="u-glass"
-          sx={{
-            display: 'inline-flex',
-            flexDirection: 'column',
-            px: [3, 4, '80rem'],
-            py: [5, 5, '80rem'],
-            margin: '0 auto',
-            zIndex: '1',
-          }}
+          className="u-glass rounded-[10rem] inline-flex flex-col px-16 sm:px-32 land:px-[80rem] py-64 land:py-[80rem] mx-auto z-1"
         >
-          <h2
-            sx={{
-            variant: 'text.shadow',
-            color: (t) => getColor(t, 'homeHello'),
-          }}
-          >
+          <h2 className="text-shadow-theme text-[var(--theme-home-hello)]">
             <Fade top delay={1350} duration={300} cascade>
               Hello, I&apos;m
             </Fade>
           </h2>
-          <h1 sx={{
-            py: ['42rem', '46rem', '48rem'],
-            rect: {
-              width: '20rem',
-              height: '100%',
-              display: 'inline-block',
-            },
-          }}
-          >
+          <h1 className="mx-auto py-[42rem] sm:py-[46rem] land:py-[48rem] [&_rect]:w-[20rem] [&_rect]:h-full [&_rect]:inline-block">
             <SVGAriellaVu
               id="Home-SVGAriellaVu"
-              sx={{
-                height: ['42rem', '52rem', '58rem'],
-                transition: 'height 0.4s',
-              }}
+              className="h-[42rem] sm:h-[52rem] land:h-[58rem] transition-[height] duration-[400ms]"
             />
           </h1>
           <Fade delay={1100} duration={1000}>
-            <p
-              sx={{
-                variant: 'text.body',
-                maxWidth: '535rem',
-                mx: 'auto',
-                pb: ['52rem', '52rem', '54rem'],
-              }}
-            >
+            <p className="text-body max-w-[535rem] mx-auto pb-[52rem] land:pb-[54rem]">
                I&apos;m a software engineer building secure, maintainable systems and elegant solutions to complex problems.
             </p>
           </Fade>

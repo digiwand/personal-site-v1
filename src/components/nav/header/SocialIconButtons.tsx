@@ -1,4 +1,3 @@
-import { getColor } from '@theme-ui/color'
 import SocialIconButtons from 'components/social-icons/SocialIconButtons';
 
 const socialKeys = ['stackoverflow', 'github', /* 'twitter', */ 'linkedin'];
@@ -7,23 +6,9 @@ const totalDurationOfTabs = 1400;
 
 function NavSocialIconButtons() {
   return (
-    <div
-      sx={{
-        height: '40rem',
-        display: 'flex',
-        alignItems: 'center',
-        pl: 3,
-        pr: '4px',
-      }}
-    >
+    <div className="nav-header-social h-[40rem] flex items-center pl-16 pr-[4px]">
       <SocialIconButtons
-        className="NavHeader_SocialIconButton"
-        sx={{
-          variant: 'buttons.icon.small',
-          '&:hover svg path': {
-            fill: (t) => getColor(t, 'navTabHoverColor'),
-          },
-        }}
+        className="NavHeader_SocialIconButton btn-icon-small"
         revealDelay={totalDurationOfTabs}
         socialKeys={socialKeys}
       />

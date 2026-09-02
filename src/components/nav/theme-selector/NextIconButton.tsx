@@ -1,37 +1,24 @@
 import { useEffect } from 'react';
-import {
-  IconButton,
-  useColorMode,
-} from 'theme-ui';
-import THEMEUI_COLOR_MODE_CONFIG from 'constants/theme-ui';
+import THEME_META from 'constants/theme';
+import { useTheme } from 'theme/ThemeProvider';
 
 function ThemeNextIconButton() {
-  const [colorMode, setColorMode] = useColorMode();
-  const colorModeKeys = Object.keys(THEMEUI_COLOR_MODE_CONFIG);
+  const { theme, setTheme, setNextTheme } = useTheme();
 
   useEffect(() => {
-    if (!colorMode) {
-      // assume default light mode
-      setColorMode('light');
+    if (!theme) {
+      setTheme('light');
     }
   });
 
-  function selectNextColor() {
-    const currentColorModeIndex = colorModeKeys.findIndex((value) => value === colorMode);
-    const nextColorModeIndex = currentColorModeIndex < colorModeKeys.length - 1 ? currentColorModeIndex + 1 : 0;
-
-    setColorMode(colorModeKeys[nextColorModeIndex]);
-  }
-
   return (
-    <IconButton
-      onClick={() => selectNextColor()}
-      sx={{
-        variant: 'buttons.icon.secondary',
-      }}
+    <button
+      type="button"
+      onClick={setNextTheme}
+      className="btn-icon btn-icon-secondary"
     >
-      {THEMEUI_COLOR_MODE_CONFIG[colorMode || 'light'].icon}
-    </IconButton>
+      {THEME_META[theme || 'light'].icon}
+    </button>
   );
 }
 

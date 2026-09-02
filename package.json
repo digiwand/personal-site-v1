@@ -10,22 +10,21 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@emotion/react": "^11.11.1",
-    "@theme-ui/color": "^0.16.0",
     "animejs": "^3.2.1",
     "framer-motion": "^6.5.1",
     "next": "^16.3.4",
     "prop-types": "^15.7.2",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "react-google-recaptcha": "^2.1.0",
-    "theme-ui": "^0.16.0"
+    "react-google-recaptcha": "^2.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9.39.4",
+    "@tailwindcss/postcss": "^4.1.12",
     "@types/node": "^20.19.39",
     "@types/react": "^18.3.28",
+    "tailwindcss": "^4.1.12",
     "date-fns": "^2.21.3",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.4",

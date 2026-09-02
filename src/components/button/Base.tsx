@@ -1,45 +1,19 @@
 import React, { forwardRef } from 'react';
-import { Button } from 'theme-ui';
+import { cn } from 'lib/cn';
 
-interface ButtonProps extends React.ComponentPropsWithoutRef<typeof Button> {
+interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   onClick: () => void;
   children: React.ReactNode;
 }
 
-const defaultSx = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-
-  width: '44rem',
-  height: '44rem',
-
-  border: '1px solid var(--panel-brd)',
-  background: 'rgba(20, 14, 34, .35)',
-  backdropFilter: 'blur(6px)',
-  borderRadius: '11px',
-
-  transition: 'transform .16s, background .2s',
-
-  '&:focus-visible': {
-    outline: '2px solid var(--gold)',
-    outlineOffset: '2px',
-    borderRadius: '6px',
-  },
-  '&:hover': {
-    background: 'linear-gradient(70deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.30))',
-    border: '1rem solid rgba(255, 255, 255, 0.18)',
-    color: 'rgb(239, 240, 241)',
-  },
-};
-
 const ButtonBase = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, onClick, sx: userSx, ...restProps }, ref) => (
+  ({ children, onClick, className, ...restProps }, ref) => (
     <button
       ref={ref}
+      type="button"
       {...restProps}
       onClick={onClick}
-      sx={{ ...defaultSx, ...(userSx || {}) }}
+      className={cn('btn-base', className)}
     >
       {children}
     </button>

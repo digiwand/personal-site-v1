@@ -1,10 +1,10 @@
 import SummaryBase from 'components/sections/work/summary/Base';
 
 const TECH_KEYS = [
-  'ETHEREUM',
-  'EIP',
   'REACTJS',
   'NODEJS',
+  'ETHEREUM',
+  'EIP',
   'JEST',
   'STORYBOOK',
   'CHROME_EXT',

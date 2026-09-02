@@ -1,5 +1,5 @@
-import { IconButton } from 'theme-ui';
 import Flip from 'components/animations/Flip';
+import { cn } from 'lib/cn';
 
 import SOCIAL from 'constants/social';
 
@@ -19,8 +19,9 @@ function SocialIconButtons({
       {socialKeys.map((key, index) => {
         const socialConfig = SOCIAL[key];
         return (
-          <IconButton
-            className={className}
+          <button
+            type="button"
+            className={cn('btn-icon', className)}
             key={className + key}
           >
             <Flip top delay={revealDelay + (index + 1) * 125}>
@@ -28,7 +29,7 @@ function SocialIconButtons({
                 {socialConfig.iconSVG}
               </a>
             </Flip>
-          </IconButton>
+          </button>
         );
       })}
     </>
