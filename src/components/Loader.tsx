@@ -9,7 +9,7 @@ const Loader = ({ finishLoading }: Props) => {
   const animate = () => {
     anime({
       targets: ['.Loader'],
-      opacity: 0,
+      opacity: 100,
       duration: 600,
       easing: 'linear',
       complete: () => finishLoading(),

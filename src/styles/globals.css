@@ -37,6 +37,7 @@
     font-size: 1px;
     transition: background 500ms;
     min-width: 320px;
+    background-color: var(--theme-ui-colors-background);
   }
 
   body {
