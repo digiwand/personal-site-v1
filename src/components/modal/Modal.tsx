@@ -37,7 +37,7 @@ function Modal({
       role="presentation"
       onClick={onClose}
       className="fixed inset-0 z-[100] flex items-center justify-center p-16 sm:p-32 land:p-64
-        bg-[rgba(0,0,0,0.72)] [backdrop-filter:blur(6px)]"
+        bg-[rgba(55,55,55,0.72)] [backdrop-filter:blur(6px)]"
     >
       <div
         role="dialog"
