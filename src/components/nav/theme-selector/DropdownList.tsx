@@ -7,8 +7,7 @@ function ThemeDropdownList() {
 
   const listItems = THEME_NAMES.map((themeName, index) => (
     <li
-      className="nav-theme-dropdown-list-item mt-4 scale-0
-        transition-[transform] duration-[250ms] [transition-timing-function:cubic-bezier(0.42,0.83,0.49,1.35)]"
+      className="nav-theme-dropdown-list-item mt-4"
       style={{ transitionDelay: `${150 * (index + 1)}ms` }}
       key={themeName}
     >
