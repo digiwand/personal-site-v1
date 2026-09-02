@@ -113,6 +113,7 @@
   }
 
   .btn-icon {
+    cursor: pointer;
     box-shadow: 0 0 10rem transparent;
     width: 32rem;
     height: 32rem;
@@ -396,11 +397,11 @@
     visibility: visible;
   }
 
-  .nav-theme-dropdown:hover .NavHeader-ThemeDropdownList_listItem {
+  .nav-theme-dropdown:hover .nav-theme-dropdown-list-item {
     transform: scale(1);
   }
 
-  .nav-theme-dropdown:not(:hover) ol .NavHeader-ThemeDropdownList_listItem {
+  .nav-theme-dropdown:not(:hover) ol .nav-theme-dropdown-list-item {
     transition-delay: 150ms;
   }
 
