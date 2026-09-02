@@ -4,15 +4,8 @@
 function FadeInLayout({ children, isLoading }) {
   return (
     <div
-      is-loading={String(isLoading)}
-      sx={{
-        opacity: 0,
-        transition: 'opacity 1s',
-
-        '&[is-loading="false"]': {
-          opacity: '1',
-        },
-      }}
+      data-loading={String(isLoading)}
+      className="opacity-0 transition-opacity duration-1000 data-[loading=false]:opacity-100"
     >
       {children}
     </div>

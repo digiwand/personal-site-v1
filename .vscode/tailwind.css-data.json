@@ -1,0 +1,41 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@theme",
+      "description": "Tailwind CSS v4: define theme tokens (colors, spacing, fonts, breakpoints)."
+    },
+    {
+      "name": "@source",
+      "description": "Tailwind CSS v4: extra files/globs to scan for class names."
+    },
+    {
+      "name": "@custom-variant",
+      "description": "Tailwind CSS v4: register a custom variant (e.g. `land:`)."
+    },
+    {
+      "name": "@utility",
+      "description": "Tailwind CSS v4: define a custom utility class."
+    },
+    {
+      "name": "@plugin",
+      "description": "Tailwind CSS v4: load a JS plugin."
+    },
+    {
+      "name": "@config",
+      "description": "Tailwind CSS v4: load a legacy JS config file."
+    },
+    {
+      "name": "@reference",
+      "description": "Tailwind CSS v4: import theme/utilities without emitting CSS."
+    },
+    {
+      "name": "@variant",
+      "description": "Tailwind CSS v4: apply a variant inside custom CSS."
+    },
+    {
+      "name": "@apply",
+      "description": "Inlines Tailwind utilities into a CSS rule."
+    }
+  ]
+}

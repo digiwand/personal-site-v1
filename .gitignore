@@ -28,5 +28,7 @@ npm-debug.log*
 .env.production.local
 
 # VSCode
-/.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tailwind.css-data.json
 .vercel

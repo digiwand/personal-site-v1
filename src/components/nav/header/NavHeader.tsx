@@ -6,15 +6,10 @@ import {
 } from 'react';
 import Fade from 'components/animations/Fade';
 
-import { getColor } from '@theme-ui/color'
-
 import NavTabs from 'components/nav/header/Tabs';
 import NavSocialIcons from 'components/nav/header/SocialIconButtons';
 import ThemeSelector from 'components/nav/theme-selector/Dropdown';
 import SVGAriellaVu from 'components/svg/ariellavu';
-
-const paddingFrame = 45;
-const paddingInsideFrame = 28;
 
 type Props = {
   activeSectionId: string,
@@ -26,9 +21,9 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef = null }: Props) {
   const pageTopObserverRef = useRef<IntersectionObserver>();
 
   const handlePageTopObserver = ([entry]) => {
-    /** @hack temp hack to smooth out animation */
+    /** @todo @hack temp hack to smooth out animation */
     setTimeout(() => {
-      setHasScrolled(!(entry.intersectionRatio > 0));
+      setHasScrolled(entry.intersectionRatio > 0);
     }, 50);
   };
 
@@ -51,69 +46,19 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef = null }: Props) {
     return () => { if (currentObserver) { currentObserver.disconnect(); } };
   }, [pageTopTrackingPixelRef]);
 
-  // -- Renders -----------------------------------------------------------------------------------
-
   return (
     <header
-      sx={{
-        background: 'rgba(255, 255, 255, 0)',
-        backdropFilter: 'blur(0)',
-        display: 'flex',
-        alignItems: 'flex-end',
-        height: '110rem',
-        width: '100%',
-        transition: 'transform 0.4s, background 1.4s, box-shadow 1.4s, blur 1.4s, box-shadow 1.4s',
-        boxShadow: '0 6rem 10rem -6rem rgba(30, 30, 30, 0)',
-        px: `${paddingFrame + paddingInsideFrame}rem`,
-        transform: ['translateY(-110rem)', 'translateY(-110rem)', 'translateY(0)'],
-
-        '&[has-scrolled="true"]': {
-          background: (t) => getColor(t, 'navHeaderBg'),
-          backdropFilter: 'blur(4px)',
-
-          transform: ['translateY(-110rem)', 'translateY(-110rem)', 'translateY(-70rem)'],
-          boxShadow: '0 6rem 10rem -6rem rgba(30, 30, 30, 0.30)',
-
-          '#NavHeader-SVGAriellaVu': {
-            // animation: `${bgChangeKeyframe} 5s infinite`,]
-            transform: `translateX(-${paddingInsideFrame + (paddingFrame / 2) + 15}rem) scale(0.78)`,
-          },
-
-          '.NavHeader_rightSide': {
-            transform: `translateX(${paddingInsideFrame + (paddingFrame / 2)}rem)`,
-          },
-
-          '.NavTab': {
-            letterSpacing: '1rem',
-            color: (t) => getColor(t, 'frameText'),
-          },
-        },
-      }}
-      has-scrolled={hasScrolled.toString()}
+      className="nav-header"
+      data-scrolled={hasScrolled.toString()}
     >
-      <span>
-        <Fade delay={600} duration={2800} cascade>
-          <SVGAriellaVu
-            id="NavHeader-SVGAriellaVu"
-            sx={{
-              height: '28rem',
-              transition: 'transform 0.4s',
-              path: {
-                fill: (t) => getColor(t, 'svgAriellaVuActive'),
-              },
-            }}
-          />
-        </Fade>
-      </span>
+      <Fade delay={600} duration={2800} cascade>
+        <SVGAriellaVu
+          id="NavHeader-SVGAriellaVu"
+          className="h-[28rem] transition-transform duration-[400ms] [&_path]:fill-[var(--theme-svg-ariella-vu-active)]"
+        />
+      </Fade>
       <div
-        className="NavHeader_rightSide"
-        sx={{
-          display: 'flex',
-          alignItems: 'flex-end',
-          justifyContent: 'flex-end',
-          flex: '1 0 auto',
-          transition: 'transform 0.4s',
-        }}
+        className="NavHeader_rightSide flex items-end justify-end flex-[1_0_auto] transition-transform duration-[400ms]"
       >
         <NavTabs activeSectionId={activeSectionId} />
         <NavSocialIcons />

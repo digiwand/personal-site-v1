@@ -1,16 +1,15 @@
 import { useEffect } from 'react';
-import { getColor } from '@theme-ui/color'
 import anime from 'animejs';
 
 interface Props {
   finishLoading: () => void;
-};
+}
 
 const Loader = ({ finishLoading }: Props) => {
   const animate = () => {
     anime({
       targets: ['.Loader'],
-      opacity: 0,
+      opacity: 100,
       duration: 600,
       easing: 'linear',
       complete: () => finishLoading(),
@@ -23,15 +22,7 @@ const Loader = ({ finishLoading }: Props) => {
 
   return (
     <div
-      className="Loader"
-      sx={{
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        width: '100%',
-        height: '100%',
-        backgroundColor: (t) => getColor(t, 'background'),
-      }}
+      className="Loader fixed top-0 left-0 w-full h-full bg-[var(--theme-background)]"
     />
   );
 };

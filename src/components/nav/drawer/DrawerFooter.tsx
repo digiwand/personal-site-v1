@@ -1,4 +1,3 @@
-import { getColor } from '@theme-ui/color'
 import NavDrawerSocialIconButtons from 'components/nav/drawer/SocialIconButtons';
 
 const headerAndFooterHeight = '60rem';
@@ -6,13 +5,8 @@ const headerAndFooterHeight = '60rem';
 function DrawerFooter() {
   return (
     <div
-      className="NavDrawer_footer"
-      sx={{
-        display: 'flex',
-        height: headerAndFooterHeight,
-        flex: `0 0 ${headerAndFooterHeight}`,
-        borderTop: (t) => `1rem solid ${getColor(t, 'frameBorder')}`,
-      }}
+      className="NavDrawer_footer flex h-[60rem] border-t-[1rem] border-solid border-[var(--theme-frame-border)]"
+      style={{ flex: `0 0 ${headerAndFooterHeight}` }}
     >
       <NavDrawerSocialIconButtons />
     </div>

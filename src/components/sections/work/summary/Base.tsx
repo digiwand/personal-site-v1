@@ -1,9 +1,8 @@
-import { getColor } from '@theme-ui/color';
 import { ReactNode, useCallback } from 'react';
-import { Button } from 'theme-ui';
 
 import Fade from 'components/animations/Fade';
 import TECH from 'constants/tech';
+import { cn } from 'lib/cn';
 
 import { ImgTrio } from '../img-trio/ImgTrio';
 import { WorkImageConfig } from 'components/sections/work/shared/constants';
@@ -14,7 +13,7 @@ interface Props {
   title: string;
   subtitle: string;
   date: string;
-  
+
   children?: ReactNode;
   className?: string;
   imgConfigs?: WorkImageConfig[];
@@ -40,70 +39,39 @@ function Work({ children, ...props }: Props) {
   }, [onOpenWorkCarousel, workCarouselSlideOffset]);
 
   return (
-    <div
-      className={className}
-      sx={{
-        gridColumnStart: 'content-start',
-        maxWidth: '850rem',
-      }}
-    >
+    <div className={cn('work-col-content max-w-[850rem]', className)}>
       <Fade>
-        <div
-          className="u-glass"
-          sx={{
-            pt: 5,
-            pb: 4,
-            px: [3, 4, 4],
-            textAlign: ['center', 'left', 'left'],
-          }}
-        >
+        <div className="u-glass rounded-[10rem] pt-64 pb-16 px-16 sm:px-32 text-center sm:text-left">
           <h2
-            sx={{
-            fontFamily: 'heading2',
-            variant: 'text.shadow',
-            display: ['block', 'block', 'inline-block'],
-            pr: [0, 0, 3],
-            letterSpacing: ['-0.5rem', '3rem', '3rem'],
-            color: (t) => getColor(t, 'workHeader'),
-          }}
+            className="font-heading2 text-shadow-theme block land:inline-block pr-0 land:pr-16
+              tracking-[-0.5rem] sm:tracking-[3rem] text-[var(--theme-work-header)]"
           >
             {title} • {subtitle}
           </h2>
 
-          <h4
-            sx={{
-            display: 'block',
-            pt: [3, 4, 4],
-            pb: 1,
-            color: (t) => getColor(t, 'workSubHeader'),
-          }}
-          >
+          <h4 className="block pt-16 sm:pt-32 pb-4 text-[var(--theme-work-sub-header)]">
             {companyName}
           </h4>
 
-          <h5 sx={{ color: (t) => getColor(t, 'workHeader') }}>
+          <h5 className="text-[var(--theme-work-header)]">
             {date}
           </h5>
 
-          <p sx={{ variant: 'text.body', py: 4, textAlign: 'left' }}>
+          <p className="text-body py-32 text-left">
             {children}
           </p>
 
-          <div sx={{
-            pt: [3, 3, 2],
-            pb: [3, 3, 4],
-            textAlign: 'left',
-          }}
-          >
+          <div className="pt-16 land:pt-8 pb-16 land:pb-32 text-left">
             {techKeys.map((techKey) => (
-              <Button
-                variant="tag"
+              <button
+                type="button"
+                className="btn-tag"
                 key={`${companyName}-tech-${techKey}`}
               >
                 <a href={TECH[techKey].href} target="_blank" rel="noopener noreferrer">
                   {TECH[techKey].displayName}
                 </a>
-              </Button>
+              </button>
             ))}
           </div>
 
@@ -113,13 +81,10 @@ function Work({ children, ...props }: Props) {
               onOpenCarousel={openCarouselFromTrio}
             />
           )}
-
         </div>
       </Fade>
     </div>
   );
 }
-
-
 
 export default Work;

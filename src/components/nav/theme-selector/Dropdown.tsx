@@ -6,23 +6,7 @@ const totalDurationOfTabsAndIcons = 1900;
 
 function ThemeDropdown() {
   return (
-    <div
-      className="NavHeader_ThemeDropdown"
-      sx={{
-        position: 'relative',
-        ml: 3,
-
-        '&:hover ol': {
-          visibility: 'visible',
-          '.NavHeader-ThemeDropdownList_listItem': {
-            transform: 'scale(1)',
-          },
-        },
-        '&:not(:hover) ol .NavHeader-ThemeDropdownList_listItem': {
-          transitionDelay: '150ms',
-        },
-      }}
-    >
+    <div className="nav-theme-dropdown relative ml-16">
       <Zoom delay={totalDurationOfTabsAndIcons + 100} duration={500}>
         <ThemeNextIconButton />
       </Zoom>

@@ -1,50 +1,26 @@
-import { getColor } from '@theme-ui/color'
 import Fade from 'components/animations/Fade';
 
 function Footer() {
   return (
     <footer
-      sx={{
-        backgroundColor: (t) => getColor(t, 'footerBg'),
-        backdropFilter: 'blur(4px) saturate(130%)',
-        boxShadow: '0 8rem 32rem 0 rgba(31, 38, 135, 0.37)',
-        display: 'flex',
-        flexDirection: ['column-reverse', 'row', 'row'],
-        justifyContent: 'space-between',
-        py: 2,
-        minHeight: '40rem',
-        px: [4, 4, 6],
-        whiteSpace: 'nowrap',
-        textAlign: 'center',
-        fontSize: '14rem',
-        fontFamily: 'body',
-        fontWeight: '300',
-        letterSpacing: '1rem',
-      }}
+      className="flex flex-col-reverse sm:flex-row justify-between py-8 min-h-[40rem]
+        px-32 land:px-128 whitespace-nowrap text-center text-[14rem] font-body font-light tracking-[1rem]
+        [background-color:var(--theme-footer-bg)] [backdrop-filter:blur(4px)_saturate(130%)]
+        [box-shadow:0_8rem_32rem_0_rgba(31,38,135,0.37)]"
     >
       <Fade bottom>
-        <span
-          sx={{
-            display: ['block', 'block', 'inline-block'],
-            py: [3, 2, 1],
-          }}
-        >
+        <span className="block land:inline-block py-16 sm:py-8 land:py-4">
           © 2021-{new Date().getFullYear()}
         </span>
       </Fade>
       <Fade bottom>
         <span
-          sx={{
-            display: ['flex', 'block', 'inline-block'],
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            flexDirection: ['column', 'row', 'row'],
-            pt: [3, 2, '5px'],
-          }}
+          className="flex sm:block land:inline-block flex-wrap justify-center flex-col sm:flex-row
+            pt-16 sm:pt-8 land:pt-[5px]"
         >
           Made with ❤&nbsp; • &nbsp;Ariella Vu
 
-          <span sx={{ display: ['none', 'inline', 'inline'] }}>
+          <span className="hidden sm:inline">
             &nbsp; • &nbsp;
           </span>
 
@@ -52,10 +28,7 @@ function Footer() {
             href="https://github.com/digiwand/personal-site-v1"
             target="_blank"
             rel="noopener noreferrer"
-            sx={{
-              variant: 'text.link',
-              pt: [3, 0, '5px'],
-            }}
+            className="text-link pt-16 sm:pt-0 land:pt-[5px]"
           >
             Open Source on Github
           </a>

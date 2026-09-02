@@ -1,93 +1,46 @@
-import { getColor } from '@theme-ui/color'
-import { IconButton, ThemeUICSSProperties } from 'theme-ui';
-// import { keyframes } from '@emotion/react';
-
 import SVGAriellaVu from 'components/svg/ariellavu';
 
 const headerAndFooterHeight = '60rem';
 
-// @todo add back keyframes
-// const bgChangeKeyframe = keyframes`
-//   0%{background-position:10% 0%}
-//   50%{background-position:91% 100%}
-//   100%{background-position:10% 0%}
-// `;
-
 type Props = {
   handleCloseMenu(): void,
-  sxFadeInInitialize: ThemeUICSSProperties,
-}
+};
 
-function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }: Props) {
+function DrawerHeader({ handleCloseMenu }: Props) {
   const closeButton = (
-    <IconButton
-      className="NavDrawer_iconButton"
-      sx={{
-        height: headerAndFooterHeight,
-        width: headerAndFooterHeight,
-
-        ...sxFadeInInitialize,
-
-        ':hover .NavDrawer_closeSVG > path': {
-          fill: (t) => getColor(t, 'navDrawerSocialIconsHoverColor'),
-        },
-      }}
+    <button
+      type="button"
+      className="NavDrawer_iconButton btn-icon drawer-fade-init h-[60rem] w-[60rem]
+        hover:[&_.NavDrawer_closeSVG>path]:fill-[var(--theme-nav-drawer-social-icons-hover-color)]"
       onClick={() => { handleCloseMenu(); }}
     >
       <svg
         aria-label="Close Menu"
-        className="NavDrawer_closeSVG"
+        className="NavDrawer_closeSVG h-[30rem]"
         viewBox="0 0 24 24"
-        sx={{
-          height: '30rem',
-
-          '> path': {
-            transition: 'fill 0.15s',
-            fill: (t) => getColor(t, 'frameText'),
-          },
-        }}
       >
-        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+        <path
+          className="transition-[fill] duration-150 fill-[var(--theme-frame-text)]"
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        />
       </svg>
-    </IconButton>
+    </button>
   );
 
   return (
-    <div sx={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      height: headerAndFooterHeight,
-      flex: `0 0 ${headerAndFooterHeight}`,
-    }}
+    <div
+      className="flex items-center justify-between h-[60rem]"
+      style={{ flex: `0 0 ${headerAndFooterHeight}` }}
     >
       <span
-        className="NavDrawer_profileLogo"
-        sx={{
-          pl: '22rem',
-          transform: 'translateX(50rem)',
-          // animation: `${bgChangeKeyframe} 5s infinite`,
-          color: (t) => getColor(t, 'frameText'),
-
-          ...sxFadeInInitialize,
-
-          // Adjust for uneven font center
-          pt: '7rem',
-
-          // override sxFadeInInitialize transition
-          transition: 'background 0.4s, opacity 1s, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1)',
-        }}
+        className="NavDrawer_profileLogo drawer-fade-init translate-x-[26rem] pt-[4rem]
+          text-[var(--theme-frame-text)]
+          [transition:background_0.4s,opacity_1s,transform_1s_cubic-bezier(0.215,0.61,0.355,1)]"
       >
         <SVGAriellaVu
           id="NavDrawer-SVGAriellaVu"
-          sx={{
-            position: 'relative',
-            height: '24rem',
-            transition: 'height 0.4s, transform 0.4s',
-            path: {
-              fill: (t) => getColor(t, 'svgAriellaVuActive'),
-            },
-          }}
+          className="relative h-[24rem] transition-[height,transform] duration-[400ms]
+            [&_path]:fill-[var(--theme-svg-ariella-vu-active)]"
         />
       </span>
       {closeButton}
@@ -95,4 +48,4 @@ function DrawerFooter({ handleCloseMenu, sxFadeInInitialize }: Props) {
   );
 }
 
-export default DrawerFooter;
+export default DrawerHeader;

@@ -1,4 +1,5 @@
 import React, { MutableRefObject } from 'react';
+import { cn } from 'lib/cn';
 
 const SECTION_ID_TOP_PLACEMENT = {
   default: '10%',
@@ -13,21 +14,11 @@ type Props = {
   forwardedRef: MutableRefObject<HTMLDivElement>,
 }
 
-/**
- * Used to be observed by IntersectionObserver. These forwardRefs are a bit excessive.
- * Consider using React.Context to control the Nav states and move the IntersectionObserver
- * closer
- */
 function SectionTrackingPixel({ sectionId, forwardedRef }: Props) {
   return (
     <div
-      className="trackingPixel"
-      sx={{
-        position: 'absolute',
-        height: '1px',
-        width: '1px',
-        top: SECTION_ID_TOP_PLACEMENT[sectionId] || SECTION_ID_TOP_PLACEMENT.default,
-      }}
+      className="trackingPixel absolute h-px w-px"
+      style={{ top: SECTION_ID_TOP_PLACEMENT[sectionId] || SECTION_ID_TOP_PLACEMENT.default }}
       section-id={sectionId}
       ref={forwardedRef}
     />
@@ -37,15 +28,10 @@ function SectionTrackingPixel({ sectionId, forwardedRef }: Props) {
 const Section = ({ id, children, className }, ref) => (
   <section
     id={id}
-    className={className}
-    sx={{
-      position: 'relative',
-      display: 'flex',
-      justifyContent: 'center',
-      flexDirection: 'column',
-      px: [2, 5, 6],
-      py: [5, 6, 6],
-    }}
+    className={cn(
+      'relative flex justify-center flex-col px-8 sm:px-64 land:px-128 py-64 sm:py-128',
+      className,
+    )}
   >
     <SectionTrackingPixel sectionId={id} forwardedRef={ref} />
 

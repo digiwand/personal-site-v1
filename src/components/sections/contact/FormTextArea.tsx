@@ -1,10 +1,4 @@
 import { ChangeEventHandler } from 'react';
-import { Textarea } from 'theme-ui';
-
-const inputHeight = 42;
-const inputBorder = 2;
-const inputPadding = 10;
-const labelPadding = 18;
 
 interface Props {
   name: string;
@@ -13,48 +7,23 @@ interface Props {
   onChange: ChangeEventHandler<HTMLTextAreaElement>;
 }
 
-/**
- * React has an outstanding bug which prevents controlled inputs from filling with autofill, so we need to disable it.
- * @see {@link https://github.com/facebook/react/issues/15739}
- * @see {@link @see {@https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion}}
- */
 function ContactFormTextArea({
   name, label, value, onChange,
 }: Props) {
   return (
-    <div
-      sx={{
-        position: 'relative',
-        paddingTop: labelPadding,
-        pb: 2,
-      }}
-    >
-      <Textarea
+    <div className="form-field relative pb-8 pt-18">
+      <textarea
         name={name}
         id={name}
         value={value}
         onChange={onChange}
-        mb={3}
+        className="form-control form-textarea mb-16"
         rows={5}
         required
-        sx={{
-          '&:focus ~ label': { transform: 'translate(0, -19rem) scale(0.7)' },
-          '&:valid ~ label': { transform: 'translate(0, -19rem) scale(0.7)' },
-        }}
       />
       <label
-        htmlFor="contact-form-name"
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          fontSize: '20rem',
-          fontWeight: '300',
-          fontFamily: 'barlow',
-          transition: 'transform 0.12s',
-          lineHeight: `${inputHeight - inputBorder}rem`,
-          transform: `translate(${inputPadding}rem, ${labelPadding}rem)`,
-        }}
+        htmlFor={name}
+        className="absolute top-0 left-0 text-[20rem] font-light font-barlow transition-transform duration-[120ms]"
       >
         {label}
       </label>

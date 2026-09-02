@@ -1,4 +1,3 @@
-import { getColor } from '@theme-ui/color'
 import NavTab from 'components/nav/header/Tab';
 import { SECTION_DISPLAY_NAME } from 'constants/section';
 
@@ -6,34 +5,30 @@ const NAVTAB_WIDTH = 80;
 const NAVTAB_MARGIN_LEFT = 16;
 const NUM_OF_TABS = Object.keys(SECTION_DISPLAY_NAME).length;
 
-function generateNavTabsUnderlineStyles() {
-  const sxObj = {};
+/** Hover needs higher specificity than active: `~` only matches later siblings, so equal-specificity source order lets a later active tab block hover on earlier tabs. */
+function generateNavTabUnderlineCss() {
+  const rules: string[] = [];
+
   for (let i = 0; i < NUM_OF_TABS; i += 1) {
-    sxObj[`a:nth-of-type(${i + 1})`] = {
-      '&[is-active="true"] ~ .NavTab_activeUnderline': {
-        transform: `translateX(${i * (NAVTAB_WIDTH + NAVTAB_MARGIN_LEFT)}rem)`,
-      },
-      '&.NavTab:hover ~ .NavTab_activeUnderline': {
-        transform: `translateX(${i * (NAVTAB_WIDTH + NAVTAB_MARGIN_LEFT)}rem)`,
-      },
-    };
+    const translateX = `${i * (NAVTAB_WIDTH + NAVTAB_MARGIN_LEFT)}rem`;
+    const nth = `a:nth-of-type(${i + 1})`;
+
+    rules.push(
+      `.nav-tabs ${nth}[data-active="true"] ~ .nav-tab-underline { transform: translateX(${translateX}); }`,
+      `.nav-tabs ${nth}.nav-tab:hover ~ .nav-tab-underline { transform: translateX(${translateX}); }`,
+    );
   }
-  return sxObj;
+
+  return rules.join('\n');
 }
+
+const navTabsUnderlineCss = generateNavTabUnderlineCss();
 
 function Underline() {
   return (
     <div
-      className="NavTab_activeUnderline"
-      sx={{
-        position: 'absolute',
-        height: '2rem',
-        width: '80rem',
-        transition: '0.3s ease-in-out',
-        background: (t) => getColor(t, 'text'),
-        bottom: '0',
-        left: '0',
-      }}
+      className="nav-tab-underline absolute h-[2rem] w-[80rem] transition duration-300 ease-in-out
+        bg-[var(--theme-text)] bottom-0 left-0"
     />
   );
 }
@@ -48,24 +43,14 @@ function NavTabs({ activeSectionId } : { activeSectionId: string }) {
         href={`/#${key}`}
         displayName={displayName}
         isActive={activeSectionId === key}
-        sx={{
-          width: `${NAVTAB_WIDTH}rem`,
-          ml: `${NAVTAB_MARGIN_LEFT}rem`,
-        }}
       />
     );
   });
 
   return (
-    <nav
-      className="NavTabs"
-      sx={{
-        position: 'relative',
-        ...generateNavTabsUnderlineStyles(),
-      }}
-    >
+    <nav className="NavTabs nav-tabs relative">
+      <style dangerouslySetInnerHTML={{ __html: navTabsUnderlineCss }} />
       {tabs}
-
       <Underline />
     </nav>
   );

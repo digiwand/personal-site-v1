@@ -1,51 +1,18 @@
-import { getColor } from '@theme-ui/color'
-import { Button } from 'theme-ui';
-
-const menuLine = {
-  margin: '2.5rem 0',
-  width: '24rem',
-  height: '2rem',
-  transition: 'background 0.2s',
-  borderRadius: '2rem',
-  background: (t) => getColor(t, 'glassThickBg'),
-};
-
 function NavMenuButton({ onClick }: { onClick(): void}) {
+  const lineClass = 'my-[2.5rem] w-[24rem] h-[2rem] transition-[background] duration-200 rounded-[2rem] bg-[image:var(--theme-glass-thick-bg)]';
+
   return (
-    <Button
-      sx={{
-        position: 'absolute',
-        top: '0',
-        right: '0',
-        display: 'flex',
-        height: '54rem',
-        width: '60rem',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        transform: 'opacity .3s',
-        pl: 3,
-        mt: 4,
-        borderTopRightRadius: 0,
-        borderBottomRightRadius: 0,
-        opacity: [1, 1, 0],
-        pointerEvents: ['initial', 'initial', 'none'],
-      }}
+    <button
+      type="button"
+      className="btn cursor-pointer absolute top-0 right-0 flex h-[54rem] w-[60rem] flex-col justify-center items-center
+        mt-32 rounded-tr-none rounded-br-none opacity-100 pointer-events-auto
+        land:opacity-0 land:pointer-events-none"
       onClick={onClick}
     >
-      <span sx={{
-        ...menuLine,
-      }}
-      />
-      <span sx={{
-        ...menuLine,
-      }}
-      />
-      <span sx={{
-        ...menuLine,
-      }}
-      />
-    </Button>
+      <span className={lineClass} />
+      <span className={lineClass} />
+      <span className={lineClass} />
+    </button>
   );
 }
 

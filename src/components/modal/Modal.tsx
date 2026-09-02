@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Box } from 'theme-ui';
 
 interface Props {
   isOpen: boolean;
@@ -34,32 +33,23 @@ function Modal({
   }
 
   const modal = (
-    <Box
+    <div
       role="presentation"
       onClick={onClose}
-      sx={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 100,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        p: [3, 4, 5],
-        bg: 'rgba(0, 0, 0, 0.72)',
-        backdropFilter: 'blur(6px)',
-      }}
+      className="fixed inset-0 z-[100] flex items-center justify-center p-16 sm:p-32 land:p-64
+        bg-[rgba(55,55,55,0.72)] [backdrop-filter:blur(6px)]"
     >
-      <Box
+      <div
         role="dialog"
         aria-modal="true"
         aria-labelledby={ariaLabelledBy}
         aria-describedby={ariaDescribedBy}
         onClick={(e) => e.stopPropagation()}
-        sx={ {width: '100%' }}
+        className="w-full"
       >
         {children}
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 
   return createPortal(modal, document.body);

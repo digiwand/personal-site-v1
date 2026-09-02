@@ -1,4 +1,3 @@
-import { getColor } from '@theme-ui/color';
 import SocialIconButtons from 'components/social-icons/SocialIconButtons';
 
 const SOCIAL_KEYS = [
@@ -11,36 +10,11 @@ const SOCIAL_KEYS = [
 function ContactSocialIconButtons() {
   return (
     <div
-      sx={{
-        display: 'flex',
-        maxWidth: '350rem',
-        width: '80%',
-        flex: '1 0 auto',
-        pt: 5,
-        pb: [3, 3, 4],
-        mx: ['auto', 'auto', 'initial'],
-        justifyContent: ['space-between', 'space-between', 'initial'],
-        alignSelf: ['center', 'center', 'initial'],
-      }}
+        className="flex max-w-[350rem] flex-[1_0_auto] pt-40 pb-72 land:pt-64 land:pb-48
+        m-auto justify-between self-center land:self-auto"
     >
       <SocialIconButtons
-        sx={{
-          height: '48rem',
-          width: '48rem',
-          mr: [0, 0, 4],
-          zIndex: '1',
-
-          '&:hover': {
-            'a > svg': {
-              transform: 'rotate(10deg)',
-            },
-          },
-
-          path: {
-            fill: (t) => `${getColor(t, 'contactIcon')}`,
-          },
-        }}
-        showUsername
+        className="contact-social h-[48rem] w-[48rem] z-1"
         socialKeys={SOCIAL_KEYS}
       />
     </div>

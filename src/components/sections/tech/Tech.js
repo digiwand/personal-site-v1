@@ -1,4 +1,3 @@
-import { getColor } from '@theme-ui/color';
 import React from 'react';
 import Fade from 'components/animations/Fade';
 
@@ -12,36 +11,15 @@ function TechSection(props, ref) {
     <Section
       id={SECTION_ID.TECH}
       ref={ref}
-      sx={{
-        background: (t) => getColor(t, 'techBg'),
-        minHeight: '0',
-        py: [5, 6, 6],
-        zIndex: 1,
-        overflow: 'hidden',
-      }}
+      className="min-h-0 py-64 sm:py-128 z-1 overflow-hidden bg-[var(--theme-tech-bg)]"
     >
       <Fade>
-        <h2
-          sx={{
-            variant: 'text.shadow',
-            color: (t) => getColor(t, 'homeHello'),
-            display: 'block',
-            textAlign: 'center',
-            pt: [4, 0, 0],
-          }}
-        >
+        <h2 className="text-shadow-theme text-[var(--theme-home-hello)] block text-center pt-32 sm:pt-0">
           Tech
         </h2>
       </Fade>
 
-      <div
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          pt: [4, 5, 5],
-        }}
-      >
+      <div className="flex items-center justify-center pt-32 sm:pt-64">
         <TechCarousel />
       </div>
     </Section>

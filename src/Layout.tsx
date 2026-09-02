@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
-
-import { ThemeUIProvider } from 'theme-ui';
-
-import 'styles/global.scss';
-import theme from 'styles/theme/index';
+import { useState } from 'react';
+import 'styles/globals.css';
 
 import FadeInLayout from 'components/FadeInLayout';
-import GlobalUtilStyles from 'components/GlobalUtilStyles';
 import Loader from 'components/Loader';
+import { ThemeProvider } from 'theme/ThemeProvider';
 
 export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
   children,
 }: {
   children: React.ReactNode
@@ -21,13 +15,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeUIProvider theme={theme}>
-          <GlobalUtilStyles />
+        <ThemeProvider>
           <Loader finishLoading={() => setIsLoading(false)} />
           <FadeInLayout isLoading={isLoading}>
             {children}
           </FadeInLayout>
-        </ThemeUIProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

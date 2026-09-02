@@ -1,7 +1,5 @@
-import { getColor } from '@theme-ui/color';
 import React from 'react';
 import Fade from 'components/animations/Fade';
-import { Flex } from 'theme-ui';
 
 import Section from 'components/sections/Section';
 import ContactLeftSide from 'components/sections/contact/ContactLeftSide';
@@ -14,23 +12,10 @@ const reCaptchaV2Key = process.env.NEXT_PUBLIC_G_RECAPTCHA_V2_KEY;
 function ContactDivider() {
   return (
     <div
-      sx={{
-        flex: '0 0 1rem',
-        mx: 5,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        py: [5, 5, 0],
-        width: ['82%', '82%', 'auto'],
-
-        '&:after': {
-          content: '""',
-          zIndex: 1,
-          background: (t) => getColor(t, 'contactDivider'),
-          width: ['100%', '100%', '1rem'],
-          height: ['1rem', '1rem', '100%'],
-        },
-      }}
+      className="hidden land:flex flex-[0_0_1rem] mx-64 items-center justify-center py-64 land:py-0
+        w-[82%] land:w-auto after:content-[''] after:z-1
+        after:bg-[var(--theme-contact-divider)] after:w-full land:after:w-[1rem]
+        after:h-[1rem] land:after:h-full"
     />
   );
 }
@@ -39,40 +24,17 @@ const ContactSection = React.forwardRef((props, ref) => (
   <Section
     id={SECTION_ID.CONTACT}
     ref={ref}
-    sx={{
-      minHeight: 'calc(100vh - 260rem)',
-    }}
+    className="min-h-[calc(100vh-260rem)]"
   >
     <Fade>
-      <div
-        className="u-glass"
-        sx={{
-          position: 'relative',
-          py: 5,
-          px: [4, 5, 5],
-        }}
-      >
-        <h2
-          sx={{
-            variant: 'text.shadow',
-            letterSpacing: '2.4rem',
-            color: (t) => getColor(t, 'homeHello'),
-            display: 'block',
-            textAlign: 'center',
-            pb: 4,
-          }}
-        >
+      <div className="u-glass rounded-[10rem] relative py-64 px-32 sm:px-64">
+        <h2 className="text-shadow-theme tracking-[2.4rem] text-[var(--theme-home-hello)] block text-center pb-32">
           <Fade top duration={300} cascade>
             Contact
           </Fade>
         </h2>
 
-        <Flex
-          sx={{
-            flexDirection: ['column', 'column', 'row'],
-            alignItems: ['center', 'center', 'initial'],
-          }}
-        >
+        <div className="flex flex-col land:flex-row items-center land:items-stretch">
           <ContactLeftSide />
           {reCaptchaV2Key && (
             <>
@@ -80,7 +42,7 @@ const ContactSection = React.forwardRef((props, ref) => (
               <ContactRightSide />
             </>
           )}
-        </Flex>
+        </div>
       </div>
     </Fade>
   </Section>

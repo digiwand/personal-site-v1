@@ -1,0 +1,221 @@
+@import "tailwindcss";
+@import "./components.css";
+@import "./fonts.css";
+
+@source "../**/*.{js,ts,jsx,tsx}";
+
+/*
+  html font-size is 1px so rem === px. Theme-ui space/font/layout values used rem this way.
+  Spacing scale: p-4 === 4rem === 4px.
+*/
+@theme {
+  --spacing: 1rem;
+
+  --breakpoint-sm: 40em;
+  --breakpoint-lg: 64em;
+  --breakpoint-md: initial;
+  --breakpoint-xl: initial;
+  --breakpoint-2xl: initial;
+
+  --font-body: "Avenir Next", Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: Rubik, "Avenir Next", sans-serif;
+  --font-heading2: Arial, "Avenir Next", sans-serif;
+  --font-barlow: BarlowCondensed, sans-serif;
+}
+
+/* Matches theme-ui breakpoint index 2: 56em + landscape */
+@custom-variant land (@media (min-width: 56em) and (orientation: landscape));
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 1px;
+    transition: background 500ms;
+    min-width: 320px;
+    background-color: var(--theme-ui-colors-background);
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    letter-spacing: 1.6rem;
+    line-height: 1.5;
+    color: var(--theme-text);
+    font-size: 16rem;
+  }
+
+  @media (min-width: 56em) and (orientation: landscape) {
+    body {
+      font-size: 18rem;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.125;
+    letter-spacing: 2.4rem;
+    display: inline-block;
+    color: var(--theme-home-hello);
+  }
+
+  h1 {
+    font-size: 28rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 22rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+  }
+
+  h3 {
+    font-size: 20rem;
+    font-family: var(--font-barlow);
+    font-weight: 400;
+    letter-spacing: 2rem;
+    line-height: 1.225;
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 18rem;
+    letter-spacing: 1rem;
+  }
+
+  h5 {
+    font-weight: 300;
+    letter-spacing: 1rem;
+    font-size: 16rem;
+  }
+
+  h6 {
+    line-height: 1.5;
+    font-size: 16rem;
+  }
+
+  p {
+    font-size: 16rem;
+  }
+
+  @media (min-width: 40em) {
+    h1 { font-size: 34rem; }
+    h2 { font-size: 24rem; letter-spacing: 3rem; }
+    h3 { font-size: 25rem; }
+    h4 { font-size: 20rem; letter-spacing: 1.6rem; }
+    h5 { font-weight: 400; letter-spacing: 1.2rem; }
+  }
+
+  @media (min-width: 56em) and (orientation: landscape) {
+    h2 { font-size: 24rem; letter-spacing: 3rem; }
+    h3 { font-size: 25rem; }
+    h4 { font-size: 20rem; letter-spacing: 1.6rem; }
+    h5 { font-weight: 400; letter-spacing: 1.2rem; }
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px var(--theme-input-autofill) inset;
+    box-shadow: 0 0 0 1000px var(--theme-input-autofill) inset;
+  }
+}
+
+@utility bg-page {
+  background: var(--theme-background-main-mobile);
+  background-attachment: fixed;
+  transition: background 3s, background-image 3s;
+}
+
+@media (min-width: 56em) and (orientation: landscape) {
+  .bg-page {
+    background: var(--theme-background-main);
+    background-attachment: fixed;
+  }
+}
+
+@utility text-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.8rem;
+  line-height: 1.5;
+  color: var(--theme-text);
+  font-size: 14rem;
+}
+
+@media (min-width: 40em) {
+  .text-body {
+    letter-spacing: 1.6rem;
+    font-size: 16rem;
+  }
+}
+
+@media (min-width: 56em) and (orientation: landscape) {
+  .text-body {
+    font-size: 18rem;
+  }
+}
+
+@utility text-heading {
+  font-family: var(--font-heading);
+  line-height: 1.125;
+  letter-spacing: 2.4rem;
+  display: inline-block;
+  color: var(--theme-home-hello);
+}
+
+@utility text-shadow-theme {
+  text-shadow: var(--theme-text-shadow);
+}
+
+@utility text-link {
+  color: var(--theme-link);
+  transition: color 0.3s;
+}
+
+.text-link:hover {
+  color: var(--theme-link-hover);
+}
+
+@utility u-glass {
+  box-shadow: 0 8rem 32rem 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px) saturate(130%);
+  background: var(--theme-glass-bg);
+  border: var(--theme-glass-border);
+}
+
+@utility u-scrollbar {
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.u-scrollbar::-webkit-scrollbar-track {
+  border-radius: 3rem;
+  background-color: var(--theme-scroll-track);
+}
+
+.u-scrollbar::-webkit-scrollbar {
+  width: 6rem;
+}
+
+.u-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--theme-scroll-thumb);
+  border-radius: 3rem;
+}
+
+.u-scrollbar::-webkit-scrollbar-thumb:hover,
+.u-scrollbar::-webkit-scrollbar-thumb:active {
+  background-color: var(--theme-scroll-thumb-hover);
+}
