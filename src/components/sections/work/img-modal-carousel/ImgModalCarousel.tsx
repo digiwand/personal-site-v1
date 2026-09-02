@@ -35,7 +35,7 @@ function ImageCarouselModalContent({
       <div
         className="relative flex-[1_1_auto] flex items-center justify-center
           min-h-[200rem] sm:min-h-[280rem] land:min-h-[320rem] w-full
-          px-[48rem] sm:px-[56rem] land:px-[128rem] py-16
+          px-[48rem] sm:px-[56rem] land:px-[128rem] py-24
           [&_img]:flex-[1_0_auto] [&_img]:w-full [&_img]:max-w-full land:[&_img]:max-w-[820rem]
           [&_img]:h-auto [&_img]:object-contain [&_img]:shadow-none"
       >
@@ -85,7 +85,7 @@ function ImageCarouselModalContent({
       <div
         id={captionId}
         className="px-32 sm:px-64 land:px-128 py-16 sm:py-32 text-center
-          [border-top:var(--theme-work-img-border)]"
+          [border-top:var(--theme-work-img-border)] land:[border-top:none]"
       >
         {caption}
         <span className="block mt-8 opacity-75 text-[13rem]">
@@ -175,14 +175,14 @@ function ImageCarouselModal({
         ref={closeButtonRef}
         onClick={onClose}
         aria-label="Close image gallery"
-        className="absolute top-8 sm:top-16 right-8 sm:right-16 hover:rotate-90"
+        className="absolute top-8 sm:top-16 right-8 sm:right-16 hover:rotate-z-90"
       >
         <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
           <path d="M1 1l14 14M15 1L1 15" stroke="currentColor" strokeWidth="1.6" />
         </svg>
       </ButtonBase>
 
-      <div className="pt-64 land:pt-32 px-32 sm:px-64 land:px-128 pb-8 text-center">
+      <div className="pt-64 land:pt-16 px-16 sm:px-64 land:px-128 pb-8 text-center">
         <h3
           id={headingId}
           className="font-heading2 text-[var(--theme-work-header)] text-[18rem] sm:text-[20rem]
