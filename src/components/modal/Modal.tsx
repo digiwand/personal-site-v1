@@ -1,15 +1,14 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
 import { Box } from 'theme-ui';
 
-const modalPropTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  ariaLabelledBy: PropTypes.string,
-  ariaDescribedBy: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
+interface Props {
+  isOpen: boolean;
+  onClose: () => void;
+  ariaLabelledBy: string;
+  ariaDescribedBy: string;
+  children: React.ReactNode;
+}
 
 /**
  * Portal overlay + backdrop dismissal. When the modal is open, it prevents scrolling of the body content.
@@ -20,7 +19,7 @@ function Modal({
   ariaLabelledBy,
   ariaDescribedBy,
   children,
-}) {
+}: Props) {
   useEffect(() => {
     if (!isOpen) return undefined;
     const prevOverflow = document.body.style.overflow;
@@ -66,5 +65,4 @@ function Modal({
   return createPortal(modal, document.body);
 }
 
-Modal.propTypes = modalPropTypes;
 export default Modal;

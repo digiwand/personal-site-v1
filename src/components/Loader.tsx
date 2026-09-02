@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import anime from 'animejs';
+import { useEffect } from 'react';
 import { getColor } from '@theme-ui/color'
+import anime from 'animejs';
 
-const propTypes = {
-  finishLoading: PropTypes.func.isRequired,
+interface Props {
+  finishLoading: () => void;
 };
 
-const Loader = ({ finishLoading }) => {
+const Loader = ({ finishLoading }: Props) => {
   const animate = () => {
     anime({
       targets: ['.Loader'],
@@ -36,7 +35,5 @@ const Loader = ({ finishLoading }) => {
     />
   );
 };
-
-Loader.propTypes = propTypes;
 
 export default Loader;

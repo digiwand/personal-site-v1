@@ -1,5 +1,4 @@
 import SummaryBase from 'components/sections/work/summary/Base';
-import PropTypes from 'prop-types';
 import {
   IMG_CONFIGS_COPPER,
   JOB_META_COPPER,
@@ -25,7 +24,11 @@ const TECH_KEYS = [
   'DOCUMENTATION',
 ];
 
-function SummaryCopper({ onOpenWorkCarousel }) {
+interface Props {
+  onOpenWorkCarousel?: (globalIndex: number) => void;
+}
+
+function SummaryCopper({ onOpenWorkCarousel }: Props) {
   return (
     <SummaryBase
       {...JOB_META_COPPER}
@@ -46,9 +49,5 @@ function SummaryCopper({ onOpenWorkCarousel }) {
     </SummaryBase>
   );
 }
-
-SummaryCopper.propTypes = {
-  onOpenWorkCarousel: PropTypes.func.isRequired,
-};
 
 export default SummaryCopper;

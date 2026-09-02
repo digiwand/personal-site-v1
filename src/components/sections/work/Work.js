@@ -98,7 +98,7 @@ const WorkSection = (_props, ref) => {
 
       <ImgModalCarousel
         key={carouselMountKey}
-        slideConfigs={WORK_IMG_CONFIGS}
+        imgConfigs={WORK_IMG_CONFIGS}
         initialSlideIndex={initialSlideIndex}
         isOpen={carouselOpen}
         onClose={closeWorkCarousel}

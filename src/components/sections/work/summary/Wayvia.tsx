@@ -1,5 +1,4 @@
 import SummaryBase from 'components/sections/work/summary/Base';
-import PropTypes from 'prop-types';
 import {
   IMG_CONFIGS_WAYVIA,
   JOB_META_WAYVIA,
@@ -24,7 +23,11 @@ const TECH_KEYS = [
   'INTELLI_J',
 ];
 
-function SummaryWayvia({ onOpenWorkCarousel }) {
+interface Props {
+  onOpenWorkCarousel?: (globalIndex: number) => void;
+}
+
+function SummaryWayvia({ onOpenWorkCarousel }: Props) {
   return (
     <SummaryBase
       {...JOB_META_WAYVIA}
@@ -43,9 +46,5 @@ function SummaryWayvia({ onOpenWorkCarousel }) {
     </SummaryBase>
   );
 }
-
-SummaryWayvia.propTypes = {
-  onOpenWorkCarousel: PropTypes.func.isRequired,
-};
 
 export default SummaryWayvia;

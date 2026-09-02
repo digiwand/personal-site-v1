@@ -1,7 +1,7 @@
 import type ReCAPTCHA from 'react-google-recaptcha';
 
 import emailjs from '@emailjs/browser';
-import { useRef, useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import Fade from 'components/animations/Fade';
 import Zoom from 'components/animations/Zoom';
 import { Button } from 'theme-ui';
@@ -26,7 +26,7 @@ function ContactForm() {
 
   const recaptchaRef = useRef<ReCAPTCHA>();
 
-  const handleSend = async (e) => {
+  const handleSend = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setHasError(false);
 
@@ -104,7 +104,6 @@ function ContactForm() {
           <FormTextArea
             name="contact-form-message"
             label="Message"
-            type="message"
             value={message}
             onChange={(e) => { setMessage(e.target.value); }}
           />
