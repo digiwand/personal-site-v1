@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { ChangeEventHandler } from 'react';
 import { Input } from 'theme-ui';
 
 const inputHeight = 42;
@@ -6,12 +6,13 @@ const inputBorder = 2;
 const inputPadding = 10;
 const labelPadding = 18;
 
-const propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-};
+interface Props {
+  name: string;
+  label: string;
+  type: string;
+  value: string;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+}
 
 /**
  * React has an outstanding bug which prevents controlled inputs from filling with autofill, so we need to disable it.
@@ -20,7 +21,7 @@ const propTypes = {
  */
 function ContactFormInput({
   name, label, type, value, onChange,
-}) {
+}: Props) {
   return (
     <div
       sx={{
@@ -65,7 +66,5 @@ function ContactFormInput({
     </div>
   );
 }
-
-ContactFormInput.propTypes = propTypes;
 
 export default ContactFormInput;

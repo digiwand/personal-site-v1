@@ -1,12 +1,11 @@
 import { getColor } from '@theme-ui/color';
-import PropTypes from 'prop-types';
 
-const propTypes = {
-  email: PropTypes.string.isRequired,
-  isVisible: PropTypes.bool,
+interface Props {
+  email: string;
+  isVisible?: boolean;
 };
 
-function FormSentMessage({ isVisible = false, email }) {  
+function FormSentMessage({ isVisible = false, email }: Props) {  
   return (
     <div
       is-visible={String(isVisible)}
@@ -52,7 +51,5 @@ function FormSentMessage({ isVisible = false, email }) {
     </div>
   );
 }
-
-FormSentMessage.propTypes = propTypes;
 
 export default FormSentMessage;

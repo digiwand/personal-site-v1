@@ -1,44 +1,39 @@
 import { getColor } from '@theme-ui/color';
-import PropTypes from 'prop-types';
 import {
   useCallback, useEffect, useId, useRef, useState,
 } from 'react';
 import { Box, Image } from 'theme-ui';
 
 import Modal from 'components/modal/Modal';
-import ButtonBase from 'components/button/Base'; 
+import ButtonBase from 'components/button/Base';
+import { WorkImageConfig } from 'components/sections/work/shared/constants';
 
-const imageCarouselPropTypes = {
-  imgConfigs: PropTypes.arrayOf(PropTypes.shape({
-    alt: PropTypes.string.isRequired,
-    srcName: PropTypes.string.isRequired,
-    type: PropTypes.string,
-    companyName: PropTypes.string,
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-  })).isRequired,
-  activeIndex: PropTypes.number.isRequired,
-  goPrev: PropTypes.func.isRequired,
-  goNext: PropTypes.func.isRequired,
-  captionId: PropTypes.string.isRequired,
-};
+interface ImageCarouselModalContentProps {
+  imgConfigs: WorkImageConfig[];
+  activeIndex: number;
+  goPrev: () => void;
+  goNext: () => void;
+  captionId: string;
+}
 
 /**
  * Carousel stage (prev / image / next) and caption + slide counter.
  */
-function ImageCarouselModal({
+function ImageCarouselModalContent({
   imgConfigs,
   activeIndex,
   goPrev,
   goNext,
   captionId,
-}) {
+}: ImageCarouselModalContentProps) {
   const count = imgConfigs.length;
   if (count === 0) return null;
 
   const imgConfig = imgConfigs[activeIndex];
   const imgType = imgConfig.type || 'png';
   const caption = imgConfig.alt ?? '';
+  const slideLabel = String(activeIndex + 1).padStart(2, '0');
+  const countLabel = String(count).padStart(2, '0');
 
   return (
     <>
@@ -99,13 +94,15 @@ function ImageCarouselModal({
             },
           }}
         >
-          <picture sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            maxWidth: '100%',
-            margin: '0 auto',
-          }}>
+          <picture
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              maxWidth: '100%',
+              margin: '0 auto',
+            }}
+          >
             <source
               srcSet={`/images/work/${imgConfig.srcName}.webp`}
               type="image/webp"
@@ -154,47 +151,38 @@ function ImageCarouselModal({
       >
         {caption}
         <Box as="span" sx={{ display: 'block', mt: 2, opacity: 0.75, fontSize: '13rem' }}>
-          0{activeIndex + 1}
+          {slideLabel}
           {' '}
           /
           {' '}
-          0{count}
+          {countLabel}
         </Box>
       </Box>
     </>
   );
 }
 
-ImageCarouselModal.propTypes = imageCarouselPropTypes;
-
-const workImageCarouselModalPropTypes = {
-  slideConfigs: PropTypes.arrayOf(PropTypes.shape({
-    alt: PropTypes.string.isRequired,
-    srcName: PropTypes.string.isRequired,
-    type: PropTypes.string,
-    companyName: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
-  })).isRequired,
-  initialSlideIndex: PropTypes.number.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-};
+interface Props {
+  imgConfigs: WorkImageConfig[];
+  initialSlideIndex: number;
+  isOpen: boolean;
+  onClose: () => void;
+}
 
 /**
- * Work-wide image gallery: header follows the active slide’s job; carousel uses {@link ImageCarouselModal} inside {@link Modal}.
+ * Work-wide image gallery: header follows the active slide’s job; carousel uses {@link ImageCarouselModalContent} inside {@link Modal}.
  */
-function WorkImageCarouselModal({
-  slideConfigs,
+function ImageCarouselModal({
+  imgConfigs,
   initialSlideIndex,
   isOpen,
   onClose,
-}) {
+}: Props) {
   const headingId = useId();
   const captionId = useId();
-  const count = slideConfigs.length;
+  const count = imgConfigs.length;
   const [activeIndex, setActiveIndex] = useState(initialSlideIndex);
-  const closeButtonRef = useRef(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -205,16 +193,18 @@ function WorkImageCarouselModal({
   }, [isOpen]);
 
   const goNext = useCallback(() => {
+    if (count === 0) return;
     setActiveIndex((i) => (i + 1) % count);
   }, [count]);
 
   const goPrev = useCallback(() => {
+    if (count === 0) return;
     setActiveIndex((i) => (i - 1 + count) % count);
   }, [count]);
 
   useEffect(() => {
     if (!isOpen) return undefined;
-    const onKeyDown = (e) => {
+    const onKeyDown = (e: globalThis.KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
         return;
@@ -237,7 +227,7 @@ function WorkImageCarouselModal({
     return null;
   }
 
-  const slide = slideConfigs[activeIndex];
+  const slide = imgConfigs[activeIndex];
 
   return (
     <Modal
@@ -246,55 +236,55 @@ function WorkImageCarouselModal({
       ariaLabelledBy={headingId}
       ariaDescribedBy={captionId}
     >
-        <ButtonBase
-          ref={closeButtonRef}
-          onClick={onClose}
-          aria-label="Close image gallery"
+      <ButtonBase
+        ref={closeButtonRef}
+        onClick={onClose}
+        aria-label="Close image gallery"
+        sx={{
+          position: 'absolute',
+          top: [2, 3],
+          right: [2, 3],
+          '&:hover': {
+            transform: 'rotate(90deg)',
+          },
+        }}
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M1 1l14 14M15 1L1 15" stroke="currentColor" strokeWidth="1.6" />
+        </svg>
+      </ButtonBase>
+
+      <Box sx={{ pt: [5, 5, 4], px: [4, 5, 6], pb: 2, textAlign: 'center' }}>
+        <Box
+          id={headingId}
+          as="h3"
           sx={{
-            position: 'absolute',
-            top: [2, 3],
-            right: [2, 3],
-            '&:hover': {
-              transform: 'rotate(90deg)',
-            },
+            fontFamily: 'heading2',
+            color: (t) => getColor(t, 'workHeader'),
+            fontSize: ['18rem', '20rem', '22rem'],
+            mb: 2,
           }}
         >
-          <svg width="16" height="16" viewBox="0 0 16 16"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="1.6"></path></svg>
-        </ButtonBase>
-
-        <Box sx={{ pt: [5, 5, 4], px: [4, 5, 6], pb: 2, textAlign: 'center' }}>
-          <Box
-            id={headingId}
-            as="h3"
-            sx={{
-              fontFamily: 'heading2',
-              color: (t) => getColor(t, 'workHeader'),
-              fontSize: ['18rem', '20rem', '22rem'],
-              mb: 2,
-            }}
-          >
-            {slide.companyName}
-          </Box>
-          <Box as="p">
-            {slide.title}
-            {' '}
-            •
-            {' '}
-            {slide.subtitle}
-          </Box>
+          {slide.companyName}
         </Box>
+        <Box as="p">
+          {slide.title}
+          {' '}
+          •
+          {' '}
+          {slide.subtitle}
+        </Box>
+      </Box>
 
-        <ImageCarouselModal
-          imgConfigs={slideConfigs}
-          activeIndex={activeIndex}
-          goPrev={goPrev}
-          goNext={goNext}
-          captionId={captionId}
-        />
+      <ImageCarouselModalContent
+        imgConfigs={imgConfigs}
+        activeIndex={activeIndex}
+        goPrev={goPrev}
+        goNext={goNext}
+        captionId={captionId}
+      />
     </Modal>
   );
 }
 
-WorkImageCarouselModal.propTypes = workImageCarouselModalPropTypes;
-
-export default WorkImageCarouselModal;
+export default ImageCarouselModal;

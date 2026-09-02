@@ -1,7 +1,7 @@
 import { getColor } from '@theme-ui/color';
-import PropTypes from 'prop-types';
 import type { KeyboardEvent } from 'react';
 import type { ThemeUIStyleObject } from 'theme-ui';
+import type { ImageConfig } from 'components/sections/work/shared/constants';
 
 /** Overlapping trio: slot 0 back-left, 1 center (in-flow), 2 back-right. */
 const TRIO_SLOT_LAYOUT: ThemeUIStyleObject[] = [
@@ -104,15 +104,6 @@ const tileSx: ThemeUIStyleObject = {
   },
 };
 
-const propTypes = {
-  imgConfigs: PropTypes.arrayOf(PropTypes.shape({
-    alt: PropTypes.string,
-    srcName: PropTypes.string,
-    type: PropTypes.string,
-  })).isRequired,
-  onOpenCarousel: PropTypes.func.isRequired,
-};
-
 function openCarouselKeyboard(e: KeyboardEvent, openAt: () => void) {
   if (e.key === 'Enter' || e.key === ' ') {
     e.preventDefault();
@@ -120,10 +111,15 @@ function openCarouselKeyboard(e: KeyboardEvent, openAt: () => void) {
   }
 }
 
+interface Props {
+  imgConfigs: ImageConfig[];
+  onOpenCarousel: (index: number) => void;
+};
+
 function ImgTrio({
   imgConfigs,
   onOpenCarousel,
-}) {
+}: Props) {
   if (!imgConfigs.length) {
     return null;
   }
@@ -178,8 +174,6 @@ function ImgTrio({
     </div>
   );
 }
-
-ImgTrio.propTypes = propTypes;
 
 export { ImgTrio };
 export default ImgTrio;

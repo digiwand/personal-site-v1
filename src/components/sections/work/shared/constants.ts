@@ -8,11 +8,13 @@ type JobMeta = {
 
 type ImageType = 'webp' | 'jpeg' | 'png' | 'gif';
 
-type WorkImageConfig = JobMeta & {
+export type ImageConfig = {
   alt: string;
   srcName: string;
   type?: ImageType;
 };
+
+export type WorkImageConfig = JobMeta & ImageConfig;
 
 export const JOB_META_COPPER: JobMeta = {
   companyName: 'Copper CRM',

@@ -1,33 +1,28 @@
 import { getColor } from '@theme-ui/color';
-import PropTypes from 'prop-types';
-import { useCallback } from 'react';
+import { ReactNode, useCallback } from 'react';
 import { Button } from 'theme-ui';
 
 import Fade from 'components/animations/Fade';
 import TECH from 'constants/tech';
 
 import { ImgTrio } from '../img-trio/ImgTrio';
+import { WorkImageConfig } from 'components/sections/work/shared/constants';
 
-const propTypes = {
-  className: PropTypes.string,
-  companyName: PropTypes.string.isRequired,
-  techKeys: PropTypes.arrayOf(PropTypes.string).isRequired,
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  imgConfigs: PropTypes.arrayOf(PropTypes.shape({
-    alt: PropTypes.string,
-    srcName: PropTypes.string,
-    type: PropTypes.string,
-    companyName: PropTypes.string,
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-  })),
-  onOpenWorkCarousel: PropTypes.func,
-  workCarouselSlideOffset: PropTypes.number,
-};
+interface Props {
+  companyName: string;
+  techKeys: string[];
+  title: string;
+  subtitle: string;
+  date: string;
+  
+  children?: ReactNode;
+  className?: string;
+  imgConfigs?: WorkImageConfig[];
+  workCarouselSlideOffset?: number;
+  onOpenWorkCarousel?: (globalIndex: number) => void;
+}
 
-function Work({ children, ...props }) {
+function Work({ children, ...props }: Props) {
   const {
     className,
     companyName,
@@ -40,10 +35,8 @@ function Work({ children, ...props }) {
     workCarouselSlideOffset = 0,
   } = props;
 
-  const openCarouselFromTrio = useCallback((localIndex) => {
-    if (onOpenWorkCarousel) {
-      onOpenWorkCarousel(workCarouselSlideOffset + localIndex);
-    }
+  const openCarouselFromTrio = useCallback((localIndex: number) => {
+    onOpenWorkCarousel?.(workCarouselSlideOffset + localIndex);
   }, [onOpenWorkCarousel, workCarouselSlideOffset]);
 
   return (
@@ -127,6 +120,6 @@ function Work({ children, ...props }) {
   );
 }
 
-Work.propTypes = propTypes;
+
 
 export default Work;

@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 
-const propTypes = {
-  text: PropTypes.string.isRequired,
-};
-function WorkSideHeading({ text, className }) {
+interface Props {
+  text: 'string';
+  className?: 'string';
+}
+
+function WorkSideHeading({ text, className }: Props) {
   return (
     <h3
       className={className}
@@ -18,7 +20,5 @@ function WorkSideHeading({ text, className }) {
     </h3>
   );
 }
-
-WorkSideHeading.propTypes = propTypes;
 
 export default WorkSideHeading;

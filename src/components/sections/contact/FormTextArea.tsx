@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { ChangeEventHandler } from 'react';
 import { Textarea } from 'theme-ui';
 
 const inputHeight = 42;
@@ -6,13 +6,12 @@ const inputBorder = 2;
 const inputPadding = 10;
 const labelPadding = 18;
 
-const propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-};
+interface Props {
+  name: string;
+  label: string;
+  value: string;
+  onChange: ChangeEventHandler<HTMLTextAreaElement>;
+}
 
 /**
  * React has an outstanding bug which prevents controlled inputs from filling with autofill, so we need to disable it.
@@ -20,8 +19,8 @@ const propTypes = {
  * @see {@link @see {@https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion}}
  */
 function ContactFormTextArea({
-  name, label, type, value, onChange,
-}) {
+  name, label, value, onChange,
+}: Props) {
   return (
     <div
       sx={{
@@ -31,7 +30,6 @@ function ContactFormTextArea({
       }}
     >
       <Textarea
-        type={type}
         name={name}
         id={name}
         value={value}
@@ -63,7 +61,5 @@ function ContactFormTextArea({
     </div>
   );
 }
-
-ContactFormTextArea.propTypes = propTypes;
 
 export default ContactFormTextArea;
