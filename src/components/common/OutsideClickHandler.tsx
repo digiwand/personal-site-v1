@@ -15,7 +15,7 @@ type Props = {
     </OutsideClickHandler>
  */
 function OutsideClickHandler({ children, onOutsideClick }: Props) {
-  const wrapperRef = useRef<HTMLDivElement>();
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (event) => {
     if (

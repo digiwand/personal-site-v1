@@ -1,10 +1,14 @@
-import React, { ReactElement } from 'react';
+import React, { CSSProperties, ReactElement } from 'react';
 import Fade from 'components/animations/Fade';
 import AspectRatio from 'components/common/AspectRatio';
 import { cn } from 'lib/cn';
 
+type ImgProps = {
+  style?: CSSProperties,
+};
+
 type Props = {
-  children: ReactElement,
+  children: ReactElement<ImgProps>,
   className?: string,
 };
 

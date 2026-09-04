@@ -18,7 +18,7 @@ type Props = {
 
 function NavHeader({ activeSectionId, pageTopTrackingPixelRef = null }: Props) {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const pageTopObserverRef = useRef<IntersectionObserver>();
+  const pageTopObserverRef = useRef<IntersectionObserver | null>(null);
 
   const handlePageTopObserver = ([entry]) => {
     /** @todo @hack temp hack to smooth out animation */

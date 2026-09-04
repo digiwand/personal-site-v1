@@ -20,7 +20,7 @@ function Nav({ sectionTrackingPixelRefs = [], pageTopTrackingPixelRef = null }: 
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [activeSectionId, setActiveSectionId] = useState('home');
 
-  const sectionIntersectionObserverRef = useRef<IntersectionObserver>();
+  const sectionIntersectionObserverRef = useRef<IntersectionObserver | null>(null);
 
   const handleSectionIntersection = (entries) => {
     entries.forEach((entry) => {

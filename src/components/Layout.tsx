@@ -13,7 +13,7 @@ type Props = {
 };
 
 function Layout({ children, sectionTrackingPixelRefs = null } : Props) {
-  const pageTopTrackingPixelRef = useRef<HTMLDivElement>();
+  const pageTopTrackingPixelRef = useRef<HTMLDivElement>(null);
   const { colors } = useTheme();
 
   const pageTopTrackingPixel = (
