@@ -1,5 +1,4 @@
-import anime from 'animejs';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Fade from 'components/animations/Fade';
 import Pulse from 'components/animations/Pulse';
 import Zoom from 'components/animations/Zoom';
@@ -9,23 +8,16 @@ import Section from 'components/sections/Section';
 import SVGAriellaVu from 'components/svg/ariellavu';
 
 import { SECTION_ID } from 'constants/section';
+import { drawSvgPaths } from 'lib/drawSvgPaths';
 import { useTheme } from 'theme/ThemeProvider';
 
 function HomeSection(props, ref) {
   const { colors } = useTheme();
+  const signatureRef = useRef(null);
 
   useEffect(() => {
-    const svgPaths = document.querySelectorAll('#Home-SVGAriellaVu path');
-
-    anime({
-      targets: svgPaths,
-      direction: 'linear',
-      duration: 800,
-      easing: 'easeInOutSine',
-      fill: colors.svgAriellaVuActive,
-      loop: false,
-      strokeDashoffset: [anime.setDashoffset, 0],
-      delay: (el, i) => 980 + (i * 52),
+    return drawSvgPaths(signatureRef.current, {
+      color: colors.svgAriellaVuActive,
     });
   }, [colors.svgAriellaVuActive]);
 
@@ -46,6 +38,7 @@ function HomeSection(props, ref) {
           </h2>
           <h1 className="mx-auto py-[42rem] sm:py-[46rem] land:py-[48rem] [&_rect]:w-[20rem] [&_rect]:h-full [&_rect]:inline-block">
             <SVGAriellaVu
+              ref={signatureRef}
               id="Home-SVGAriellaVu"
               className="h-[42rem] sm:h-[52rem] land:h-[58rem] transition-[height] duration-[400ms]"
             />

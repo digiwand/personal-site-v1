@@ -8,8 +8,16 @@
   html font-size is 1px so rem === px. Theme-ui space/font/layout values used rem this way.
   Spacing scale: p-4 === 4rem === 4px.
 */
+@keyframes loader-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
 @theme {
   --spacing: 1rem;
+
+  --animate-loader-fade-out: loader-fade-out 600ms linear forwards;
 
   --breakpoint-sm: 40em;
   --breakpoint-lg: 64em;
