@@ -24,7 +24,6 @@
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^20.19.39",
     "@types/react": "^18.3.28",
-    "date-fns": "^2.21.3",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.4",
     "eslint-plugin-import": "^2.32.0",
