@@ -23,7 +23,7 @@ function ContactForm() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const recaptchaRef = useRef<ReCAPTCHA>();
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleSend = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ function ContactForm() {
     if (hasSent) { return; }
 
     try {
-      const token = await recaptchaRef.current.executeAsync();
+      const token = await recaptchaRef.current?.executeAsync();
 
       const body = {
         sender_name: name,

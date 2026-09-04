@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import MotionDiv from 'components/animations/MotionDiv';
 
 type Props = {
   children: ReactNode,
@@ -30,14 +30,14 @@ function Fade({
   if (right) { x = 18; }
 
   return (
-    <motion.div
+    <MotionDiv
       initial={{ opacity: 0, x, y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ delay: delay / 1000, duration: duration / 1000, ease: 'easeOut' }}
     >
       {children}
-    </motion.div>
+    </MotionDiv>
   );
 }
 
