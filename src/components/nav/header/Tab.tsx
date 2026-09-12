@@ -28,12 +28,15 @@ function NavTab({
         <Flip top delay={700 + (index * 140)}>
           {displayName}
         </Flip>
+        
+        {/* 
+          @todo Remove hover color. Consider re-adding after updating fonts
         <span
           className="NavTab_hoverText absolute top-0 left-0 overflow-hidden
             text-[var(--theme-nav-tab-hover-color)] transition-[width] duration-300"
         >
           {displayName}
-        </span>
+        </span> */}
       </span>
     </Link>
   );

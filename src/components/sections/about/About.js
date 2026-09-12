@@ -32,7 +32,7 @@ function AboutSection(props, ref) {
           <p className="text-body min-w-auto land:min-w-[310rem] max-w-none land:max-w-[520rem]">
             <br />
             Beginning my career as a full-stack programmer over {yearsCareer}&nbsp;years ago, I&apos;ve specialized
-            in crafting web applications (React, Ember, and Angular 1.x).
+            in crafting web applications (React, Ember, and AngularJS).
             <br />
             <br />
             I&apos;m a California native without a homebase. Since I left home at 14, I&apos;ve considered myself

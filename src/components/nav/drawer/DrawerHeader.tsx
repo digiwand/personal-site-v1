@@ -10,8 +10,9 @@ function DrawerHeader({ handleCloseMenu }: Props) {
   const closeButton = (
     <button
       type="button"
-      className="NavDrawer_iconButton btn-icon drawer-fade-init h-[60rem] w-[60rem]
-        hover:[&_.NavDrawer_closeSVG>path]:fill-[var(--theme-nav-drawer-social-icons-hover-color)]"
+      className="NavDrawer_iconButton btn-icon drawer-fade-init h-[60rem] w-[60rem]"
+        /** @todo Remove hover color. Consider re-adding after updating fonts */
+        // hover:[&_.NavDrawer_closeSVG>path]:fill-[var(--theme-nav-drawer-social-icons-hover-color)]"
       onClick={() => { handleCloseMenu(); }}
     >
       <svg
