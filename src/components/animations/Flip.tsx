@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import MotionDiv from 'components/animations/MotionDiv';
+import { motion } from 'motion/react';
 
 type Props = {
   children: ReactNode,
@@ -15,7 +15,7 @@ function Flip({
   top = false,
 }: Props) {
   return (
-    <MotionDiv
+    <motion.div
       initial={top ? { opacity: 0, rotateX: 70 } : { opacity: 0, rotateY: 70 }}
       whileInView={{ opacity: 1, rotateX: 0, rotateY: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -23,7 +23,7 @@ function Flip({
       style={{ transformStyle: 'preserve-3d' }}
     >
       {children}
-    </MotionDiv>
+    </motion.div>
   );
 }
 

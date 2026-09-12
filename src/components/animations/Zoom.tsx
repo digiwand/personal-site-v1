@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import MotionDiv from 'components/animations/MotionDiv';
+import { motion } from 'motion/react';
 
 type Props = {
   children: ReactNode,
@@ -9,14 +9,14 @@ type Props = {
 
 function Zoom({ children, delay = 0, duration = 600 }: Props) {
   return (
-    <MotionDiv
+    <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ delay: delay / 1000, duration: duration / 1000, ease: 'easeOut' }}
     >
       {children}
-    </MotionDiv>
+    </motion.div>
   );
 }
 
