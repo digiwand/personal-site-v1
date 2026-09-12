@@ -15,7 +15,7 @@ function ThemeNextIconButton() {
     <button
       type="button"
       onClick={setNextTheme}
-      className="btn-icon btn-icon-secondary"
+      className="btn-icon btn-icon-secondary flex justify-self-center"
     >
       {THEME_META[theme || 'light'].icon}
     </button>

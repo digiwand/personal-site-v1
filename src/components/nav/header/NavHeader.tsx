@@ -58,7 +58,7 @@ function NavHeader({ activeSectionId, pageTopTrackingPixelRef = null }: Props) {
         />
       </Fade>
       <div
-        className="NavHeader_rightSide flex items-end justify-end flex-[1_0_auto] transition-transform duration-[400ms]"
+        className="NavHeader_rightSide flex items-center justify-end flex-[1_0_auto] transition-transform duration-[400ms]"
       >
         <NavTabs activeSectionId={activeSectionId} />
         <NavSocialIcons />
