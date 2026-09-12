@@ -18,7 +18,7 @@ const RGB = {
   // Orange
   brightYellowCrayola: '255, 178, 55',
   chromeYellow: '255, 170, 11',                // #FFAA0B
-  macaroniAndCheese: '252, 184, 131',          // #FCB883
+  orangeSunset: '252, 184, 131',               // #FCB883
   orangeYellowCrayola: '255, 217, 114',        // #FFD972
   // saffron: '249, 198, 32',                  // #F9C620
 
@@ -124,7 +124,7 @@ const light = {
   buttonBorder: `1rem solid rgba(${RGB.royalPurple}, 0.18)`,
   buttonHoverText: `rgb(${RGB.cultured})`,
   buttonSecondaryBg: 'linear-gradient(40deg,'
-    + ` rgba(${RGB.macaroniAndCheese}, 0.95), rgba(${RGB.yellowCrayola}, 0.4), rgba(${RGB.macaroniAndCheese}, 0.95))`,
+    + ` rgba(${RGB.orangeSunset}, 0.95), rgba(${RGB.yellowCrayola}, 0.4), rgba(${RGB.orangeSunset}, 0.95))`,
   buttonSecondaryBorder: `1rem solid rgba(${RGB.selectiveYellow}, 0.18)`,
   buttonTagTextHover: 'rgb(133, 90, 155)',
   buttonText: '#fff',
@@ -138,11 +138,11 @@ const light = {
 
   navDrawerActiveColor: `rgba(${RGB.yellowCrayola}, 0.9)`,
   navDrawerBg: `linear-gradient(70deg, rgba(${RGB.royalPurple}, 0.55), rgba(${RGB.royalPurple}, 0.73))`,
-  navDrawerSocialIconsHoverColor: `rgba(${RGB.macaroniAndCheese}, 0.85)`,
+  navDrawerSocialIconsHoverColor: `rgba(${RGB.orangeSunset}, 0.85)`,
   navHeaderBg: `rgba(${RGB.byzantine}, 0.35)`,
   navHeaderLogoBgImage: 'linear-gradient(45deg, floralwhite, pink)',
   navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), lavender, orange)`,
-  navTabHoverColor: `rgb(${RGB.macaroniAndCheese})`,
+  navTabHoverColor: `rgb(${RGB.orangeSunset})`,
 
   svgAriellaVu: `rgb(${RGB.purpleMountainMajesty})`,
   svgAriellaVuActive: `rgb(${RGB.floralWhite})`,
