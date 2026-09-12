@@ -21,7 +21,7 @@ const TECH = {
     ),
   },
   ANGULARJS: {
-    displayName: 'AngularJS 1.x',
+    displayName: 'AngularJS',
     href: 'https://angularjs.org/',
   },
   AMP_EMAIL: {
