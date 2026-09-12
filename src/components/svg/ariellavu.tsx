@@ -1,17 +1,11 @@
-import { forwardRef } from 'react';
-
 type Props = {
   className?: string,
   id?: string,
 }
 
-const SVGAriellaVu = forwardRef<SVGSVGElement, Props>(function SVGAriellaVu({
-  className = '',
-  id = '',
-}, ref) {
+function SVGAriellaVu({ className = '', id = '' }: Props) {
   return (
     <svg
-      ref={ref}
       id={id}
       className={className}
       role="img"
@@ -37,6 +31,6 @@ const SVGAriellaVu = forwardRef<SVGSVGElement, Props>(function SVGAriellaVu({
       </g>
     </svg>
   );
-});
+}
 
 export default SVGAriellaVu;
