@@ -136,11 +136,11 @@ const light = {
 
   navDrawerActiveColor: `rgba(${RGB.yellowCrayola}, 0.9)`,
   navDrawerBg: `linear-gradient(70deg, rgba(${RGB.royalPurple}, 0.55), rgba(${RGB.royalPurple}, 0.73))`,
-  navDrawerSocialIconsHoverColor: `rgba(${RGB.orangeSunset}, 0.85)`,
+  // navDrawerSocialIconsHoverColor: `rgba(${RGB.royalPurple}, 0.85)`,
   navHeaderBg: `rgba(${RGB.byzantine}, 0.35)`,
   navHeaderLogoBgImage: 'linear-gradient(45deg, floralwhite, pink)',
   navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), lavender, orange)`,
-  navTabHoverColor: `rgb(${RGB.orangeSunset})`,
+  // navTabHoverColor: `rgb(${RGB.royalPurple})`,
 
   svgAriellaVu: `rgb(${RGB.purpleMountainMajesty})`,
   svgAriellaVuActive: `rgb(${RGB.floralWhite})`,
@@ -228,11 +228,11 @@ const dark: Partial<ColorMode> = {
 
   navDrawerActiveColor: `rgba(${RGB.middleBlue}, 0.9)`,
   navDrawerBg: `linear-gradient(70deg, rgba(${RGB.darkPurple}, 0.55), rgba(33, 33, 33, 0.73))`,
-  navDrawerSocialIconsHoverColor: `rgba(${RGB.middleBlue}, 0.9)`,
+  // navDrawerSocialIconsHoverColor: `rgba(${RGB.middleBlue}, 0.9)`,
   navHeaderBg: `rgba(${RGB.darkPurple}, 0.95)`,
   navHeaderLogoBgImage: 'floralwhite',
   navHeaderLogoBgImageScrolled: `linear-gradient(45deg, rgb(${RGB.mauve}), rgb(${RGB.middleBlue}), orange)`,
-  navTabHoverColor: `rgb(${RGB.metallicSeaweed})`,
+  // navTabHoverColor: `rgb(${RGB.metallicSeaweed})`,
 
   svgAriellaVu: `rgb(${RGB.floralWhite})`,
   svgAriellaVuActive: `rgb(${RGB.middleBlue})`,

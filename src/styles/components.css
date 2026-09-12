@@ -391,9 +391,12 @@
     transition: all 0.3s ease-in-out;
   }
 
-  .nav-header-social .btn-icon:hover svg path {
+
+    /** @todo Remove hover color. Consider re-adding after updating fonts */
+
+  /* .nav-header-social .btn-icon:hover svg path {
     fill: var(--theme-nav-tab-hover-color);
-  }
+  } */
 
   .nav-theme-dropdown ol {
     visibility: hidden;
@@ -550,9 +553,10 @@
     background: var(--theme-frame-border);
   }
 
-  .nav-drawer-social:hover path {
+  /** @todo Remove hover color. Consider re-adding after updating fonts */
+  /* .nav-drawer-social:hover path {
     fill: var(--theme-nav-drawer-social-icons-hover-color);
-  }
+  } */
 
   .nav-drawer-social:not(:last-of-type)::after {
     content: "";
