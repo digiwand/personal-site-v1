@@ -1,5 +1,5 @@
-type Props = {
-  className?: string
+interface Props {
+  className?: string;
 }
 
 function SVGPlantInPot({ className = '' }: Props) {

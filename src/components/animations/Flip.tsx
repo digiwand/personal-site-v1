@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 import { motion } from 'motion/react';
 
-type Props = {
-  children: ReactNode,
-  delay?: number,
-  duration?: number,
-  top?: boolean,
-};
+interface Props {
+  children: ReactNode;
+  delay?: number;
+  duration?: number;
+  top?: boolean;
+}
 
 function Flip({
   children,

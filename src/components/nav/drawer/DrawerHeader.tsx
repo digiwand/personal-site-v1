@@ -2,9 +2,9 @@ import SVGAriellaVu from 'components/svg/ariellavu';
 
 const headerAndFooterHeight = '60rem';
 
-type Props = {
-  handleCloseMenu(): void,
-};
+interface Props {
+  handleCloseMenu(): void;
+}
 
 function DrawerHeader({ handleCloseMenu }: Props) {
   const closeButton = (

@@ -1,16 +1,16 @@
 import { ReactNode } from 'react';
 import { motion } from 'motion/react';
 
-type Props = {
-  children: ReactNode,
-  delay?: number,
-  duration?: number,
-  top?: boolean,
-  bottom?: boolean,
-  left?: boolean,
-  right?: boolean,
-  cascade?: boolean,
-};
+interface Props {
+  children: ReactNode;
+  delay?: number;
+  duration?: number;
+  top?: boolean;
+  bottom?: boolean;
+  left?: boolean;
+  right?: boolean;
+  cascade?: boolean;
+}
 
 function Fade({
   children,

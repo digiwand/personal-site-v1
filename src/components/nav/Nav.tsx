@@ -11,10 +11,11 @@ import NavDrawer from 'components/nav/drawer/Drawer';
 import BlurredBackground from 'components/nav/BlurredBackground';
 import NavHeader from 'components/nav/header/NavHeader';
 
-type Props = {
-  sectionTrackingPixelRefs?: MutableRefObject<HTMLDivElement>[],
-  pageTopTrackingPixelRef?: MutableRefObject<HTMLDivElement>,
-};
+/** @todo deprecate MutableRefObject */
+interface Props {
+  sectionTrackingPixelRefs?: MutableRefObject<HTMLDivElement>[];
+  pageTopTrackingPixelRef?: MutableRefObject<HTMLDivElement>;
+}
 
 function Nav({ sectionTrackingPixelRefs = [], pageTopTrackingPixelRef = null }: Props) {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);

@@ -7,10 +7,10 @@ import { useTheme } from 'theme/ThemeProvider';
 
 const siteTitle = 'Ariella Vu | Software Engineer | Personal Website';
 
-type Props = {
-  children: ReactNode,
-  sectionTrackingPixelRefs?: MutableRefObject<HTMLDivElement>[],
-};
+interface Props {
+  children: ReactNode;
+  sectionTrackingPixelRefs?: MutableRefObject<HTMLDivElement>[];
+}
 
 function Layout({ children, sectionTrackingPixelRefs = null } : Props) {
   const pageTopTrackingPixelRef = useRef<HTMLDivElement>(null);

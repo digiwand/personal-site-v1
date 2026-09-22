@@ -9,9 +9,9 @@ const SECTION_ID_TOP_PLACEMENT = {
   tech: '90%',
 };
 
-type Props = {
-  sectionId: string,
-  forwardedRef: MutableRefObject<HTMLDivElement>,
+interface Props {
+  sectionId: string;
+  forwardedRef: MutableRefObject<HTMLDivElement>;
 }
 
 function SectionTrackingPixel({ sectionId, forwardedRef }: Props) {

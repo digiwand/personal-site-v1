@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
-type Props = {
-  displayName: string,
-  handleCloseMenu(): void,
-  href: string,
-  isActive?: boolean,
-};
+interface Props {
+  displayName: string;
+  handleCloseMenu(): void;
+  href: string;
+  isActive?: boolean;
+}
 
 function NavDrawerItem({
   displayName,

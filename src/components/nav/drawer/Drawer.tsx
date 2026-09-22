@@ -5,11 +5,11 @@ import ThemeNavDrawerItem from 'components/nav/drawer/ThemeDrawerItem';
 
 import { SECTION_DISPLAY_NAME } from 'constants/section';
 
-type Props = {
-  activeSectionId: string,
-  handleCloseMenu(): void,
-  isOpen: boolean,
-};
+interface Props {
+  activeSectionId: string;
+  handleCloseMenu(): void;
+  isOpen: boolean;
+}
 
 function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }: Props) {
   const drawerItems = Object.keys(SECTION_DISPLAY_NAME).map((key) => {

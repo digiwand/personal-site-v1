@@ -1,6 +1,6 @@
-type Props = {
+interface Props {
   className? : string;
-};
+}
 
 function SVGGit({ className = '' } : Props) {
   return (

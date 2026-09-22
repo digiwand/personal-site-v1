@@ -1,9 +1,9 @@
 import { ReactNode, useEffect, useRef } from 'react';
 
-type Props = {
-  children: ReactNode,
-  onOutsideClick(): void,
-};
+interface Props {
+  children: ReactNode;
+  onOutsideClick(): void;
+}
 
 /**
  * Used to detect clicks outside the "children" element(s) in its DOM tree. This will not work for

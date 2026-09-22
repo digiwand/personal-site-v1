@@ -3,10 +3,11 @@ import { cn } from 'lib/cn';
 
 import SOCIAL from 'constants/social';
 
-type Props = {
-  className?: string,
-  revealDelay?: number,
-  socialKeys: string[],
+interface Props {
+  socialKeys: string[];
+  
+  className?: string;
+  revealDelay?: number;
 };
 
 function SocialIconButtons({

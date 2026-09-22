@@ -11,10 +11,11 @@ import NavSocialIcons from 'components/nav/header/SocialIconButtons';
 import ThemeSelector from 'components/nav/theme-selector/Dropdown';
 import SVGAriellaVu from 'components/svg/ariellavu';
 
-type Props = {
-  activeSectionId: string,
-  pageTopTrackingPixelRef?: MutableRefObject<HTMLDivElement>,
-};
+/** @todo deprecate MutableRefObject */
+interface Props {
+  activeSectionId: string;
+  pageTopTrackingPixelRef?: MutableRefObject<HTMLDivElement>;
+}
 
 function NavHeader({ activeSectionId, pageTopTrackingPixelRef = null }: Props) {
   const [hasScrolled, setHasScrolled] = useState(false);
