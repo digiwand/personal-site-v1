@@ -59,8 +59,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = readStoredTheme();
-    setThemeState(stored);
     applyTheme(stored);
+    // localStorage is read after mount so the server render can stay on the default theme.
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- hydration-safe theme restore
+    setThemeState(stored);
   }, []);
 
   const setTheme = useCallback((name: ThemeName) => {
