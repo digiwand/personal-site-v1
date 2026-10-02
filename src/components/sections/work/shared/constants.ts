@@ -11,6 +11,7 @@ type ImageType = 'webp' | 'jpeg' | 'png' | 'gif';
 export type ImageConfig = {
   alt: string;
   srcName: string;
+  srcPreviewName: string;
   type?: ImageType;
 };
 
@@ -32,18 +33,21 @@ export const IMG_CONFIGS_COPPER: WorkImageConfig[] = [
   {
     ...JOB_META_COPPER,
     alt: 'Companies page',
-    srcName: 'copper-companies-list-preview',
+    srcName: 'copper-companies-list',
+    srcPreviewName: 'copper-companies-list-preview',
   },
   {
     ...JOB_META_COPPER,
     alt: 'Contact page',
-    srcName: 'copper-contact-preview',
+    srcName: 'copper-contact',
+    srcPreviewName: 'copper-contact-preview',
     type: 'jpeg',
   },
   {
     ...JOB_META_COPPER,
     alt: 'AMP Email which Includes RESTful data',
-    srcName: 'copper-amp-email-preview',
+    srcName: 'copper-amp-email',
+    srcPreviewName: 'copper-amp-email-preview',
   },
 ];
 
@@ -51,17 +55,20 @@ export const IMG_CONFIGS_WAYVIA: WorkImageConfig[] = [
   {
     ...JOB_META_WAYVIA,
     alt: 'Mars Snacking - Where to Buy Embedded HTML Widget',
-    srcName: 'wayvia-wtb-mars-preview',
+    srcName: 'wayvia-wtb-mars',
+    srcPreviewName: 'wayvia-wtb-mars-preview',
   },
   {
     ...JOB_META_WAYVIA,
     alt: 'Iams - Where to Buy Embedded HTML Modal Widget',
-    srcName: 'wayvia-wtb-iams-preview',
+    srcName: 'wayvia-wtb-iams',
+    srcPreviewName: 'wayvia-wtb-iams-preview',
   },
   {
     ...JOB_META_WAYVIA,
     alt: 'Dell, Hoover - Where to Buy Animated Ads',
-    srcName: 'wayvia-ads-preview',
+    srcName: 'wayvia-ads',
+    srcPreviewName: 'wayvia-ads-preview',
   },
 ];
 
