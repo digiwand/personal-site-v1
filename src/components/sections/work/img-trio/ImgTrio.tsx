@@ -58,7 +58,7 @@ function ImgTrio({
 
         return (
           <div
-            key={config.srcName}
+            key={config.srcPreviewName}
             role="button"
             tabIndex={0}
             aria-haspopup="dialog"
@@ -69,16 +69,16 @@ function ImgTrio({
           >
             <picture>
               <source
-                srcSet={`/images/work/${config.srcName}.webp`}
+                srcSet={`/images/work/${config.srcPreviewName}.webp`}
                 type="image/webp"
               />
               <source
-                srcSet={`/images/work/${config.srcName}.${type}`}
+                srcSet={`/images/work/${config.srcPreviewName}.${type}`}
                 type={`image/${type}`}
               />
               <img
                 alt={config.alt}
-                src={`/images/work/${config.srcName}.${type}`}
+                src={`/images/work/${config.srcPreviewName}.${type}`}
                 decoding="async"
                 loading="lazy"
               />

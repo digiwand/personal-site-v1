@@ -1,0 +1,447 @@
+/*
+  Project lightbox. Scoped to this gallery so theme type styles do not leak in.
+  Page blur is global because the scrim is portaled onto document.body.
+*/
+
+:global(.bg-page) {
+  transition:
+    background 3s,
+    background-image 3s,
+    filter 0.5s ease,
+    transform 0.5s ease;
+}
+
+:global(body.work-lightbox-open) :global(.bg-page) {
+  filter: blur(6px) saturate(0.9);
+  transform: scale(0.995);
+  overflow: hidden;
+}
+
+.lightbox {
+  --display: var(--font-lb-display), ui-sans-serif, system-ui, sans-serif;
+  --body: var(--font-lb-body), ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --scrim: rgba(12, 12, 16, 0.86);
+  --ink: #f4f4f7;
+  --muted: #8e8e9a;
+  --faint: #5f5f6b;
+  --hair: rgba(255, 255, 255, 0.1);
+  --aura: 181, 168, 255;
+  --aura2: 120, 224, 255;
+  --frame-max-h: 62vh;
+
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--scrim);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lightbox {
+    animation: scrimIn 0.32s ease both;
+  }
+
+  .lbTitle,
+  .lbRole,
+  .frame img,
+  .caption,
+  .count {
+    transition: opacity 0.24s ease, transform 0.24s ease;
+  }
+}
+
+@keyframes scrimIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* :where() keeps this reset from beating .dot, .close, and .tapBtn */
+.lightbox :where(button) {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 2.4vh, 28px);
+  padding: clamp(56px, 8vh, 96px) clamp(76px, 15vw, 210px);
+  text-align: center;
+}
+
+.lbTitle {
+  display: block;
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(22px, 3.2vw, 32px);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.lbRole {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: clamp(13px, 1.6vw, 15px);
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+.frameWrap {
+  position: relative;
+  flex: 0 1 auto;
+  min-height: 0;
+  width: min(1040px, 100%);
+  max-height: var(--frame-max-h);
+}
+
+.frame {
+  width: 100%;
+  max-height: var(--frame-max-h);
+  margin: 0;
+  border-radius: 14px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  box-shadow:
+    0 40px 90px -40px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(20, 20, 30, 0.35) transparent;
+}
+
+.scrollFade {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 48px;
+  border-radius: 0 0 14px 14px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(45, 45, 60, 0.22) 35%,
+    rgba(64, 64, 85, 0.44) 60%,
+    #232323 90%
+  );
+  pointer-events: none;
+}
+
+.frame::-webkit-scrollbar {
+  width: 8px;
+}
+
+.frame::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: rgba(20, 20, 30, 0.35);
+}
+
+.frame picture {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.caption {
+  margin: 0;
+  max-width: 46ch;
+  font-size: clamp(14px, 1.8vw, 17px);
+  color: var(--ink);
+  user-select: text;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.dots {
+  display: flex;
+  gap: 9px;
+}
+
+.dot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dot::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.dot:focus-visible {
+  outline: 2px solid rgb(var(--aura));
+  outline-offset: 4px;
+}
+
+.dot.isActive {
+  background: rgb(var(--aura));
+  transform: scale(1.25);
+  box-shadow: 0 0 12px rgba(var(--aura), 0.8);
+}
+
+.count {
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--faint);
+}
+
+.count b {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.swap {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: clamp(80px, 15vw, 210px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.nav:focus-visible {
+  outline: none;
+}
+
+.nav:focus-visible .chev {
+  outline: 2px solid rgb(var(--aura));
+  outline-offset: 8px;
+  border-radius: 4px;
+}
+
+.prev {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: clamp(16px, 3vw, 44px);
+}
+
+.next {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: clamp(16px, 3vw, 44px);
+}
+
+.aura {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.prev .aura {
+  background:
+    radial-gradient(130% 75% at 0% 50%, rgba(var(--aura), 0.42), transparent 55%),
+    radial-gradient(85% 95% at 0% 50%, rgba(var(--aura2), 0.2), transparent 60%);
+}
+
+.next .aura {
+  background:
+    radial-gradient(130% 75% at 100% 50%, rgba(var(--aura), 0.42), transparent 55%),
+    radial-gradient(85% 95% at 100% 50%, rgba(var(--aura2), 0.2), transparent 60%);
+}
+
+.nav:hover .aura,
+.nav:focus-visible .aura {
+  opacity: 1;
+}
+
+.chev {
+  position: relative;
+  z-index: 1;
+  color: var(--muted);
+  transition: color 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+.chev svg {
+  display: block;
+  width: clamp(28px, 3.4vw, 44px);
+  height: auto;
+}
+
+.prev:hover .chev {
+  color: var(--ink);
+  transform: translateX(-4px);
+  filter: drop-shadow(0 0 10px rgba(var(--aura), 0.7));
+}
+
+.next:hover .chev {
+  color: var(--ink);
+  transform: translateX(4px);
+  filter: drop-shadow(0 0 10px rgba(var(--aura), 0.7));
+}
+
+.close {
+  position: absolute;
+  top: clamp(16px, 3vh, 28px);
+  right: clamp(16px, 3vw, 30px);
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--hair);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink);
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.close:focus-visible {
+  outline: 2px solid rgb(var(--aura));
+  outline-offset: 3px;
+}
+
+.close svg {
+  width: 17px;
+  height: 17px;
+}
+
+.tapnav {
+  display: none;
+  gap: 22px;
+  align-items: center;
+}
+
+.tapBtn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--hair);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ink);
+}
+
+.tapBtn:active {
+  background: rgba(var(--aura), 0.25);
+}
+
+.tapBtn:focus-visible {
+  outline: 2px solid rgb(var(--aura));
+  outline-offset: 3px;
+}
+
+.tapBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (hover: none), (max-width: 720px) {
+  .nav {
+    display: none;
+  }
+
+  .tapnav {
+    display: flex;
+  }
+
+  .stage {
+    padding: clamp(64px, 9vh, 92px) clamp(16px, 5vw, 32px);
+  }
+
+  .lightbox {
+    --frame-max-h: 54vh;
+  }
+
+  .pager {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 720px) and (min-height: 620px) {
+  .lightbox {
+    --frame-max-h: 50vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox,
+  .lightbox * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .swap {
+    transform: none;
+  }
+
+  .close:hover {
+    transform: none;
+  }
+
+  :global(body.work-lightbox-open) :global(.bg-page) {
+    transition: none;
+    transform: none;
+  }
+}

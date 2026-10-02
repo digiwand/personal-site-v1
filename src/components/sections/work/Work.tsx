@@ -2,7 +2,7 @@ import { useCallback, useState, type Ref } from 'react';
 import Fade from 'components/animations/Fade';
 
 import Section from 'components/sections/Section';
-import ImgModalCarousel from 'components/sections/work/img-modal-carousel/ImgModalCarousel';
+import Lightbox from 'components/sections/work/lightbox/Lightbox';
 import SummaryMetaMask from 'components/sections/work/summary/MetaMask';
 import SummaryCopper from 'components/sections/work/summary/Copper';
 import SummaryWayvia from 'components/sections/work/summary/Wayvia';
@@ -38,18 +38,18 @@ interface Props {
 }
 
 function WorkSection({ ref }: Props) {
-  const [carouselOpen, setCarouselOpen] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [initialSlideIndex, setInitialSlideIndex] = useState(0);
-  const [carouselMountKey, setCarouselMountKey] = useState(0);
+  const [lightboxMountKey, setLightboxMountKey] = useState(0);
 
-  const openWorkCarousel = useCallback((globalIndex: number) => {
+  const openLightbox = useCallback((globalIndex: number) => {
     setInitialSlideIndex(globalIndex);
-    setCarouselMountKey((key) => key + 1);
-    setCarouselOpen(true);
+    setLightboxMountKey((key) => key + 1);
+    setIsLightboxOpen(true);
   }, []);
 
-  const closeWorkCarousel = useCallback(() => {
-    setCarouselOpen(false);
+  const closeLightbox = useCallback(() => {
+    setIsLightboxOpen(false);
   }, []);
 
   return (
@@ -57,19 +57,19 @@ function WorkSection({ ref }: Props) {
       <div className="work-grid">
         <WorkSideHeading text="WORK EXPERIENCE" className="pb-0 land:pb-64" />
         <SummaryMetaMask />
-        <SummaryCopper onOpenWorkCarousel={openWorkCarousel} />
-        <SummaryWayvia onOpenWorkCarousel={openWorkCarousel} />
+        <SummaryCopper onOpenLightbox={openLightbox} />
+        <SummaryWayvia onOpenLightbox={openLightbox} />
 
         <WorkSideHeading text="EDUCATION" />
         <EducationSection />
       </div>
 
-      <ImgModalCarousel
-        key={carouselMountKey}
+      <Lightbox
+        key={lightboxMountKey}
         imgConfigs={WORK_IMG_CONFIGS}
         initialSlideIndex={initialSlideIndex}
-        isOpen={carouselOpen}
-        onClose={closeWorkCarousel}
+        isOpen={isLightboxOpen}
+        onClose={closeLightbox}
       />
     </Section>
   );

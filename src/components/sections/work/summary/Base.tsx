@@ -18,7 +18,7 @@ interface Props {
   className?: string;
   imgConfigs?: WorkImageConfig[];
   workCarouselSlideOffset?: number;
-  onOpenWorkCarousel?: (globalIndex: number) => void;
+  onOpenLightbox?: (globalIndex: number) => void;
 }
 
 function Work({ children, ...props }: Props) {
@@ -30,13 +30,13 @@ function Work({ children, ...props }: Props) {
     date,
     imgConfigs,
     techKeys,
-    onOpenWorkCarousel,
+    onOpenLightbox,
     workCarouselSlideOffset = 0,
   } = props;
 
   const openCarouselFromTrio = useCallback((localIndex: number) => {
-    onOpenWorkCarousel?.(workCarouselSlideOffset + localIndex);
-  }, [onOpenWorkCarousel, workCarouselSlideOffset]);
+    onOpenLightbox?.(workCarouselSlideOffset + localIndex);
+  }, [onOpenLightbox, workCarouselSlideOffset]);
 
   return (
     <div className={cn('work-col-content max-w-[850rem]', className)}>
@@ -75,7 +75,7 @@ function Work({ children, ...props }: Props) {
             ))}
           </div>
 
-          {imgConfigs && onOpenWorkCarousel && (
+          {imgConfigs && onOpenLightbox && (
             <ImgTrio
               imgConfigs={imgConfigs}
               onOpenCarousel={openCarouselFromTrio}

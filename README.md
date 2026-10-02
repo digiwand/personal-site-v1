@@ -18,7 +18,6 @@ https://ariella.dev
 
 ### Features
 
-- [ ] update carousel modal styles
 - [ ] add additional theme(s)
 - [ ] add tooltips
 
