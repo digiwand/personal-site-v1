@@ -11,7 +11,7 @@ interface Props {
  *
  * @example
  * <OutsideClickHandler onOutsideClick={handleOutsideDrawerClick}>
- *   <Modal />
+ *   <Lightbox />
  * </OutsideClickHandler>
  */
 function OutsideClickHandler({ children, onOutsideClick }: Props) {
