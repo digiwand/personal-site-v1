@@ -32,6 +32,10 @@ function ContactForm() {
     if (hasSent) { return; }
 
     try {
+      if (!serviceID || !templateID || !userID) {
+        throw new Error('Email service is not configured.');
+      }
+
       const token = await recaptchaRef.current?.executeAsync();
 
       const body = {
@@ -45,7 +49,7 @@ function ContactForm() {
       if (emailJRes.status !== 200) { throw new Error('EmailJS is failing to send the email.'); }
 
       handleSendSuccess();
-    } catch (err) {
+    } catch {
       handleSendError();
     }
   };
@@ -72,7 +76,7 @@ function ContactForm() {
           <FormInput
             name="contact-form-name"
             label="Name"
-            type="name"
+            type="text"
             value={name}
             onChange={(e) => { setName(e.target.value); }}
           />

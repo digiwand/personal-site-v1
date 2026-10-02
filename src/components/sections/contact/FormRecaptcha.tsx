@@ -1,9 +1,9 @@
 import ReCAPTCHA from 'react-google-recaptcha';
-import { RefObject } from 'react';
+import type { RefObject } from 'react';
 
 const reCaptchaV2Key = process.env.NEXT_PUBLIC_G_RECAPTCHA_V2_KEY;
 
-function FormRecaptcha({ recaptchaRef } : { recaptchaRef: RefObject<ReCAPTCHA> }) {
+function FormRecaptcha({ recaptchaRef }: { recaptchaRef: RefObject<ReCAPTCHA | null> }) {
   if (!reCaptchaV2Key) { return null; }
 
   return (

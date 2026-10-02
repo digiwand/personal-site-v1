@@ -1,11 +1,14 @@
 import NavTab from 'components/nav/header/Tab';
-import { SECTION_DISPLAY_NAME } from 'constants/section';
+import { SECTION_DISPLAY_NAME, SECTION_IDS } from 'constants/section';
 
 const NAVTAB_WIDTH = 80;
 const NAVTAB_MARGIN_LEFT = 16;
-const NUM_OF_TABS = Object.keys(SECTION_DISPLAY_NAME).length;
+const NUM_OF_TABS = SECTION_IDS.length;
 
-/** Hover needs higher specificity than active: `~` only matches later siblings, so equal-specificity source order lets a later active tab block hover on earlier tabs. */
+/**
+ * Hover needs higher specificity than active: `~` only matches later siblings,
+ * so equal-specificity source order lets a later active tab block hover on earlier tabs.
+ */
 function generateNavTabUnderlineCss() {
   const rules: string[] = [];
 
@@ -33,19 +36,16 @@ function Underline() {
   );
 }
 
-function NavTabs({ activeSectionId } : { activeSectionId: string }) {
-  const tabs = Object.keys(SECTION_DISPLAY_NAME).map((key, index) => {
-    const displayName = SECTION_DISPLAY_NAME[key];
-    return (
-      <NavTab
-        index={index}
-        key={`NavTab-${key}`}
-        href={`/#${key}`}
-        displayName={displayName}
-        isActive={activeSectionId === key}
-      />
-    );
-  });
+function NavTabs({ activeSectionId }: { activeSectionId: string }) {
+  const tabs = SECTION_IDS.map((sectionId, index) => (
+    <NavTab
+      index={index}
+      key={sectionId}
+      href={`/#${sectionId}`}
+      displayName={SECTION_DISPLAY_NAME[sectionId]}
+      isActive={activeSectionId === sectionId}
+    />
+  ));
 
   return (
     <nav className="NavTabs nav-tabs relative">

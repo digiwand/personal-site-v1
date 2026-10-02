@@ -3,7 +3,7 @@ import DrawerFooter from 'components/nav/drawer/DrawerFooter';
 import NavDrawerItem from 'components/nav/drawer/DrawerItem';
 import ThemeNavDrawerItem from 'components/nav/drawer/ThemeDrawerItem';
 
-import { SECTION_DISPLAY_NAME } from 'constants/section';
+import { SECTION_DISPLAY_NAME, SECTION_IDS } from 'constants/section';
 
 interface Props {
   activeSectionId: string;
@@ -12,18 +12,15 @@ interface Props {
 }
 
 function NavDrawer({ activeSectionId, handleCloseMenu, isOpen }: Props) {
-  const drawerItems = Object.keys(SECTION_DISPLAY_NAME).map((key) => {
-    const displayName = SECTION_DISPLAY_NAME[key];
-    return (
-      <NavDrawerItem
-        key={`NavDrawerItem-${key}`}
-        href={`/#${key}`}
-        displayName={displayName}
-        isActive={activeSectionId === key}
-        handleCloseMenu={handleCloseMenu}
-      />
-    );
-  });
+  const drawerItems = SECTION_IDS.map((sectionId) => (
+    <NavDrawerItem
+      key={sectionId}
+      href={`/#${sectionId}`}
+      displayName={SECTION_DISPLAY_NAME[sectionId]}
+      isActive={activeSectionId === sectionId}
+      handleCloseMenu={handleCloseMenu}
+    />
+  ));
 
   return (
     <aside

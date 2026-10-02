@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import {
   IconCodePen,
   IconDiscord,
@@ -13,6 +14,13 @@ import {
   IconTwitter,
 } from 'components/svg/social/index';
 
+export const CONTACT_EMAIL = 'ariellavu@gmail.com';
+
+type SocialConfig = {
+  iconSVG: ReactNode;
+  url: string;
+};
+
 const SOCIAL = {
   codepen: {
     iconSVG: <IconCodePen />,
@@ -24,7 +32,7 @@ const SOCIAL = {
   },
   email: {
     iconSVG: <IconMailOutline />,
-    url: 'mailto:ariellavu@gmail.com?subject=Greetings%21+Let%27s+connect+-',
+    url: `mailto:${CONTACT_EMAIL}?subject=Greetings%21+Let%27s+connect+-`,
   },
   facebook: {
     iconSVG: <IconFacebook />,
@@ -62,6 +70,14 @@ const SOCIAL = {
     iconSVG: <IconTwitter />,
     url: 'https://twitter.com/digiwand_',
   },
-};
+} satisfies Record<string, SocialConfig>;
+
+export type SocialKey = keyof typeof SOCIAL;
+
+export const PRIMARY_SOCIAL_KEYS = [
+  'stackoverflow',
+  'github',
+  'linkedin',
+] as const satisfies readonly SocialKey[];
 
 export default SOCIAL;

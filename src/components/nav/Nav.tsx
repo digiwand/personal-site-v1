@@ -1,68 +1,37 @@
-import {
-  MutableRefObject,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { useState, type RefObject } from 'react';
 
 import OutsideClickHandler from 'components/common/OutsideClickHandler';
 import MenuButton from 'components/nav/MenuButton';
 import NavDrawer from 'components/nav/drawer/Drawer';
 import BlurredBackground from 'components/nav/BlurredBackground';
 import NavHeader from 'components/nav/header/NavHeader';
+import { SECTION_ID } from 'constants/section';
+import { useIntersectionObserver } from 'hooks/useIntersectionObserver';
 
-/** @todo deprecate MutableRefObject */
 interface Props {
-  sectionTrackingPixelRefs?: MutableRefObject<HTMLDivElement>[];
-  pageTopTrackingPixelRef?: MutableRefObject<HTMLDivElement>;
+  sectionTrackingPixelRefs: ReadonlyArray<RefObject<HTMLDivElement | null>>;
+  pageTopTrackingPixelRef: RefObject<HTMLDivElement | null>;
 }
 
-function Nav({ sectionTrackingPixelRefs = [], pageTopTrackingPixelRef = null }: Props) {
+function Nav({ sectionTrackingPixelRefs, pageTopTrackingPixelRef }: Props) {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-  const [activeSectionId, setActiveSectionId] = useState('home');
-
-  const sectionIntersectionObserverRef = useRef<IntersectionObserver | null>(null);
-
-  const handleSectionIntersection = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.intersectionRatio <= 0) { return; }
-
-      const sectionId = entry.target.getAttribute('section-id');
-      if (sectionId !== activeSectionId) {
-        window.history.pushState(null, null, `#${sectionId}`);
-        setActiveSectionId(sectionId);
-      }
-    });
-  };
+  const [activeSectionId, setActiveSectionId] = useState<string>(SECTION_ID.HOME);
 
   /**
-     * Using the IntersectionObserver "threshold" option of 0.8 or 0.6 causes 4 callbacks
-     * instead of 1. Instead of using "threshold" we will observe a tracking pixel on the
-     * section element.
-  */
-  useEffect(() => {
-    if (sectionIntersectionObserverRef.current) { sectionIntersectionObserverRef.current?.disconnect(); }
+   * A threshold of 0.8 or 0.6 fires several callbacks per section. A 1px tracking
+   * pixel on each section keeps the callback to a single intersection.
+   */
+  const handleSectionIntersection = (entry: IntersectionObserverEntry) => {
+    if (entry.intersectionRatio <= 0) return;
 
-    let currentObserver;
+    const sectionId = entry.target.getAttribute('data-section-id');
+    if (!sectionId || sectionId === activeSectionId) return;
 
-    if (sectionTrackingPixelRefs && sectionTrackingPixelRefs.length > 0) {
-      sectionIntersectionObserverRef.current = new IntersectionObserver(handleSectionIntersection);
+    window.history.pushState(null, '', `#${sectionId}`);
+    setActiveSectionId(sectionId);
+  };
 
-      currentObserver = sectionIntersectionObserverRef.current;
-
-      sectionTrackingPixelRefs.forEach((sectionRef) => {
-        if (sectionRef.current) {
-          currentObserver.observe(sectionRef.current);
-        }
-      });
-    }
-
-    return () => {
-      if (currentObserver) {
-        currentObserver.disconnect();
-      }
-    };
-  });
+  useIntersectionObserver(sectionTrackingPixelRefs, handleSectionIntersection);
 
   const handleCloseDrawer = () => {
     setIsOpenDrawer(false);
