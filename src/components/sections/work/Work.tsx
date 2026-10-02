@@ -38,18 +38,18 @@ interface Props {
 }
 
 function WorkSection({ ref }: Props) {
-  const [carouselOpen, setCarouselOpen] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [initialSlideIndex, setInitialSlideIndex] = useState(0);
   const [lightboxMountKey, setLightboxMountKey] = useState(0);
 
   const openLightbox = useCallback((globalIndex: number) => {
     setInitialSlideIndex(globalIndex);
     setLightboxMountKey((key) => key + 1);
-    setCarouselOpen(true);
+    setIsLightboxOpen(true);
   }, []);
 
   const closeLightbox = useCallback(() => {
-    setCarouselOpen(false);
+    setIsLightboxOpen(false);
   }, []);
 
   return (
@@ -68,7 +68,7 @@ function WorkSection({ ref }: Props) {
         key={lightboxMountKey}
         imgConfigs={WORK_IMG_CONFIGS}
         initialSlideIndex={initialSlideIndex}
-        isOpen={carouselOpen}
+        isOpen={isLightboxOpen}
         onClose={closeLightbox}
       />
     </Section>
