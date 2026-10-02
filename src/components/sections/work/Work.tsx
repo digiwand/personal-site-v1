@@ -48,7 +48,7 @@ function WorkSection({ ref }: Props) {
     setCarouselOpen(true);
   }, []);
 
-  const closeWorkCarousel = useCallback(() => {
+  const closeLightbox = useCallback(() => {
     setCarouselOpen(false);
   }, []);
 
@@ -69,7 +69,7 @@ function WorkSection({ ref }: Props) {
         imgConfigs={WORK_IMG_CONFIGS}
         initialSlideIndex={initialSlideIndex}
         isOpen={carouselOpen}
-        onClose={closeWorkCarousel}
+        onClose={closeLightbox}
       />
     </Section>
   );
