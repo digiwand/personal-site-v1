@@ -1,102 +1,75 @@
+import { Inter, Space_Grotesk } from 'next/font/google';
 import {
   useCallback, useEffect, useId, useRef, useState,
+  type PointerEvent,
 } from 'react';
+import { createPortal } from 'react-dom';
 
-import Modal from 'components/modal/Modal';
-import ButtonBase from 'components/button/Base';
 import { WorkImageConfig } from 'components/sections/work/shared/constants';
+import { cn } from 'lib/cn';
 
-interface ImageCarouselModalContentProps {
-  activeIndex: number;
-  captionId: string;
-  imgConfigs: WorkImageConfig[];
-  goPrev: () => void;
-  goNext: () => void;
+import styles from './lightbox.module.css';
+
+const displayFont = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-lb-display',
+  display: 'swap',
+});
+
+const bodyFont = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-lb-body',
+  display: 'swap',
+});
+
+const pad = (n: number) => String(n).padStart(2, '0');
+
+function Chevron({ direction }: { direction: 'prev' | 'next' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d={direction === 'prev' ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7'} />
+    </svg>
+  );
 }
 
-function ImageCarouselModalContent({
-  activeIndex,
-  captionId,
-  imgConfigs,
-  goPrev,
-  goNext,
-}: ImageCarouselModalContentProps) {
-  const count = imgConfigs.length;
-  if (count === 0) return null;
-
-  const imgConfig = imgConfigs[activeIndex];
-  const imgType = imgConfig.type || 'png';
-  const caption = imgConfig.alt ?? '';
-  const slideLabel = String(activeIndex + 1).padStart(2, '0');
-  const countLabel = String(count).padStart(2, '0');
+function SlideMedia({
+  config,
+  isHiding,
+}: {
+  config: WorkImageConfig;
+  // isHiding enables us to produce a fade-out effect
+  isHiding: boolean;
+}) {
+  const imgType = config.type || 'png';
 
   return (
-    <>
-      <div
-        className="relative flex-[1_1_auto] flex items-center justify-center
-          min-h-[200rem] sm:min-h-[280rem] land:min-h-[320rem] w-full
-          px-[48rem] sm:px-[56rem] land:px-[128rem] py-24
-          [&_img]:flex-[1_0_auto] [&_img]:w-full [&_img]:max-w-full land:[&_img]:max-w-[820rem]
-          [&_img]:h-auto [&_img]:object-contain [&_img]:shadow-none"
-      >
-        <ButtonBase
-          onClick={goPrev}
-          aria-label="Previous image"
-          className="absolute left-4 sm:left-8 land:left-16 top-1/2 -translate-y-1/2
-            font-barlow text-[28rem] font-light pt-0 pr-[1rem] pb-[5rem] pl-0"
-        >
-          ‹
-        </ButtonBase>
-
-        <div
-          className="overflow-y-auto w-full max-h-[52vh] sm:max-h-[58vh] land:max-h-[62vh]
-            [&::-webkit-scrollbar]:w-[7px] [&::-webkit-scrollbar]:bg-transparent
-            [&::-webkit-scrollbar-thumb]:rounded-[7px]"
-        >
-          <picture className="flex items-center justify-center max-w-full mx-auto">
-            <source
-              srcSet={`/images/work/${imgConfig.srcName}.webp`}
-              type="image/webp"
-            />
-            <source
-              srcSet={`/images/work/${imgConfig.srcName}.${imgType}`}
-              type={`image/${imgType}`}
-            />
-            <img
-              alt={caption}
-              src={`/images/work/${imgConfig.srcName}.${imgType}`}
-              decoding="async"
-              loading="lazy"
-              className="w-full"
-            />
-          </picture>
-        </div>
-
-        <ButtonBase
-          onClick={goNext}
-          aria-label="Next image"
-          className="absolute right-4 sm:right-8 land:right-16 top-1/2 -translate-y-1/2
-            font-barlow text-[28rem] font-light pt-0 pr-0 pb-[5rem] pl-0"
-        >
-          ›
-        </ButtonBase>
-      </div>
-
-      <div
-        id={captionId}
-        className="px-32 sm:px-64 land:px-128 py-16 sm:py-32 text-center
-          [border-top:var(--theme-work-img-border)] land:[border-top:none]"
-      >
-        {caption}
-        <span className="block mt-8 opacity-75 text-[13rem]">
-          {slideLabel}
-          {' '}
-          /
-          {' '}
-          {countLabel}
-        </span>
-      </div>
-    </>
+    <picture>
+      <source
+        srcSet={`/images/work/${config.srcName}.webp`}
+        type="image/webp"
+      />
+      <source
+        srcSet={`/images/work/${config.srcName}.${imgType}`}
+        type={`image/${imgType}`}
+      />
+      <img
+        alt={config.alt}
+        src={`/images/work/${config.srcName}.${imgType}`}
+        decoding="async"
+        draggable={false}
+        className={cn(isHiding && styles.swap)}
+      />
+    </picture>
   );
 }
 
@@ -107,7 +80,7 @@ interface Props {
   onClose: () => void;
 }
 
-function ImageCarouselModal({
+function ImgCarouselModal({
   imgConfigs,
   initialSlideIndex,
   isOpen,
@@ -116,98 +89,281 @@ function ImageCarouselModal({
   const headingId = useId();
   const captionId = useId();
   const count = imgConfigs.length;
-  const [activeIndex, setActiveIndex] = useState(initialSlideIndex);
+  const safeInitial = Math.min(
+    Math.max(initialSlideIndex, 0),
+    Math.max(count - 1, 0),
+  );
+  const [activeIndex, setActiveIndex] = useState(safeInitial);
+  const [isHiding, setIsHiding] = useState(false);
+  const [frameOverflows, setFrameOverflows] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const frameRef = useRef<HTMLElement>(null);
+  const indexRef = useRef(safeInitial);
+  const timerRef = useRef<number | null>(null);
+  const reduceMotionRef = useRef(false);
+  const gestureRef = useRef<{ x: number; y: number } | null>(null);
+
+  const goTo = useCallback((compute: (current: number) => number) => {
+    if (count === 0) return;
+    const next = compute(indexRef.current);
+    if (next === indexRef.current) return;
+    indexRef.current = next;
+
+    if (timerRef.current !== null) {
+      window.clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+
+    if (reduceMotionRef.current) {
+      setActiveIndex(next);
+      return;
+    }
+
+    setIsHiding(true);
+    timerRef.current = window.setTimeout(() => {
+      timerRef.current = null;
+      setActiveIndex(next);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setIsHiding(false));
+      });
+    }, 180);
+  }, [count]);
+
+  const go = useCallback((delta: number) => {
+    goTo((current) => (current + delta + count) % count);
+  }, [count, goTo]);
+
+  const jump = useCallback((next: number) => {
+    goTo((current) => (next === current ? current : next));
+  }, [goTo]);
+
+  useEffect(() => () => {
+    if (timerRef.current !== null) window.clearTimeout(timerRef.current);
+  }, []);
+
+  useEffect(() => {
+    reduceMotionRef.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }, []);
+
+  useEffect(() => {
+    const frame = frameRef.current;
+    if (!frame || !isOpen) return undefined;
+
+    frame.scrollTop = 0;
+
+    const update = () => {
+      const overflows = frame.scrollHeight > frame.clientHeight + 2;
+      const atEnd = frame.scrollTop + frame.clientHeight >= frame.scrollHeight - 12;
+      const next = overflows && !atEnd;
+      setFrameOverflows((prev) => (prev === next ? prev : next));
+    };
+
+    update();
+    frame.addEventListener('scroll', update, { passive: true });
+    const img = frame.querySelector('img');
+    img?.addEventListener('load', update);
+
+    return () => {
+      frame.removeEventListener('scroll', update);
+      img?.removeEventListener('load', update);
+    };
+  }, [activeIndex, isOpen]);
 
   useEffect(() => {
     if (!isOpen) return undefined;
-    const t = window.setTimeout(() => {
+
+    imgConfigs.forEach((config) => {
+      const img = new Image();
+      img.src = `/images/work/${config.srcName}.webp`;
+    });
+
+    return undefined;
+  }, [isOpen, imgConfigs]);
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const previousFocus = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null;
+    const pageRoot = document.getElementById('__next');
+    const previousOverflow = document.body.style.overflow;
+
+    document.body.style.overflow = 'hidden';
+    document.body.classList.add('work-lightbox-open');
+    pageRoot?.setAttribute('inert', '');
+
+    const focusTimer = window.setTimeout(() => {
       closeButtonRef.current?.focus();
     }, 0);
-    return () => window.clearTimeout(t);
+
+    return () => {
+      window.clearTimeout(focusTimer);
+      document.body.style.overflow = previousOverflow;
+      document.body.classList.remove('work-lightbox-open');
+      pageRoot?.removeAttribute('inert');
+      previousFocus?.focus();
+    };
   }, [isOpen]);
-
-  const goNext = useCallback(() => {
-    if (count === 0) return;
-    setActiveIndex((i) => (i + 1) % count);
-  }, [count]);
-
-  const goPrev = useCallback(() => {
-    if (count === 0) return;
-    setActiveIndex((i) => (i - 1 + count) % count);
-  }, [count]);
 
   useEffect(() => {
     if (!isOpen) return undefined;
-    const onKeyDown = (e: globalThis.KeyboardEvent) => {
+
+    const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
         return;
       }
       if (e.key === 'ArrowRight') {
         e.preventDefault();
-        goNext();
+        go(1);
         return;
       }
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
-        goPrev();
+        go(-1);
       }
     };
+
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [isOpen, onClose, goNext, goPrev]);
+  }, [isOpen, onClose, go]);
 
-  if (!isOpen || count === 0) {
+  const onPointerDown = (e: PointerEvent) => {
+    if ((e.target as HTMLElement).closest('button, a')) {
+      gestureRef.current = null;
+      return;
+    }
+    gestureRef.current = { x: e.clientX, y: e.clientY };
+  };
+
+  const onPointerUp = (e: PointerEvent) => {
+    const start = gestureRef.current;
+    gestureRef.current = null;
+    if (!start) return;
+    const dx = e.clientX - start.x;
+    const dy = e.clientY - start.y;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+      go(dx < 0 ? 1 : -1);
+    }
+  };
+
+  if (!isOpen || count === 0 || typeof document === 'undefined') {
     return null;
   }
 
   const slide = imgConfigs[activeIndex];
 
-  return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
-      ariaLabelledBy={headingId}
-      ariaDescribedBy={captionId}
+  return createPortal(
+    <div
+      className={cn(styles.lightbox, displayFont.variable, bodyFont.variable)}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={headingId}
+      aria-describedby={captionId}
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
     >
-      <ButtonBase
+      <button
         ref={closeButtonRef}
+        type="button"
+        className={styles.close}
+        aria-label="Close gallery"
         onClick={onClose}
-        aria-label="Close image gallery"
-        className="absolute top-8 sm:top-16 right-8 sm:right-16 hover:rotate-z-90"
       >
-        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-          <path d="M1 1l14 14M15 1L1 15" stroke="currentColor" strokeWidth="1.6" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" />
         </svg>
-      </ButtonBase>
+      </button>
 
-      <div className="pt-64 land:pt-16 px-16 sm:px-64 land:px-128 pb-8 text-center">
-        <h3
-          id={headingId}
-          className="font-heading2 text-[var(--theme-work-header)] text-[18rem] sm:text-[20rem]
-            land:text-[22rem] mb-8"
-        >
-          {slide.companyName}
-        </h3>
-        <p>
-          {slide.title}
-          {' '}
-          •
-          {' '}
-          {slide.subtitle}
-        </p>
+      <button
+        type="button"
+        className={cn(styles.nav, styles.prev)}
+        aria-label="Previous image"
+        onClick={() => go(-1)}
+      >
+        <span className={styles.aura} />
+        <span className={styles.chev}>
+          <Chevron direction="prev" />
+        </span>
+      </button>
+      <button
+        type="button"
+        className={cn(styles.nav, styles.next)}
+        aria-label="Next image"
+        onClick={() => go(1)}
+      >
+        <span className={styles.aura} />
+        <span className={styles.chev}>
+          <Chevron direction="next" />
+        </span>
+      </button>
+
+      <div className={styles.stage}>
+        <header>
+          <h2 id={headingId} className={cn(styles.lbTitle, isHiding && styles.swap)}>
+            {slide.companyName}
+          </h2>
+          <p className={cn(styles.lbRole, isHiding && styles.swap)}>
+            {slide.title}
+            {' · '}
+            {slide.subtitle}
+          </p>
+        </header>
+
+        <div className={styles.frameWrap}>
+          <figure className={styles.frame} ref={frameRef}>
+            <SlideMedia config={slide} isHiding={isHiding} />
+          </figure>
+          {frameOverflows && <div className={styles.scrollFade} aria-hidden="true" />}
+        </div>
+
+        <div className={styles.meta}>
+          <p id={captionId} className={cn(styles.caption, isHiding && styles.swap)}>
+            {slide.alt}
+          </p>
+          <div className={styles.pager}>
+            <div className={styles.tapnav}>
+              <button
+                type="button"
+                className={styles.tapBtn}
+                aria-label="Previous image"
+                onClick={() => go(-1)}
+              >
+                <Chevron direction="prev" />
+              </button>
+              <button
+                type="button"
+                className={styles.tapBtn}
+                aria-label="Next image"
+                onClick={() => go(1)}
+              >
+                <Chevron direction="next" />
+              </button>
+            </div>
+            <div className={styles.dots} role="tablist" aria-label="Choose image">
+              {imgConfigs.map((config, i) => (
+                <button
+                  key={config.srcName}
+                  type="button"
+                  role="tab"
+                  className={cn(styles.dot, i === activeIndex && styles.isActive)}
+                  aria-label={`Image ${i + 1}`}
+                  aria-selected={i === activeIndex}
+                  onClick={() => jump(i)}
+                />
+              ))}
+            </div>
+            <div className={cn(styles.count, isHiding && styles.swap)}>
+              <b>{pad(activeIndex + 1)}</b>
+              {` / ${pad(count)}`}
+            </div>
+          </div>
+        </div>
       </div>
-
-      <ImageCarouselModalContent
-        imgConfigs={imgConfigs}
-        activeIndex={activeIndex}
-        goPrev={goPrev}
-        goNext={goNext}
-        captionId={captionId}
-      />
-    </Modal>
+    </div>,
+    document.body,
   );
 }
 
-export default ImageCarouselModal;
+export default ImgCarouselModal;

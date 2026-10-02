@@ -2,7 +2,7 @@ import { useCallback, useState, type Ref } from 'react';
 import Fade from 'components/animations/Fade';
 
 import Section from 'components/sections/Section';
-import ImgModalCarousel from 'components/sections/work/img-modal-carousel/ImgModalCarousel';
+import Lightbox from 'components/sections/work/lightbox/Lightbox';
 import SummaryMetaMask from 'components/sections/work/summary/MetaMask';
 import SummaryCopper from 'components/sections/work/summary/Copper';
 import SummaryWayvia from 'components/sections/work/summary/Wayvia';
@@ -64,7 +64,7 @@ function WorkSection({ ref }: Props) {
         <EducationSection />
       </div>
 
-      <ImgModalCarousel
+      <Lightbox
         key={carouselMountKey}
         imgConfigs={WORK_IMG_CONFIGS}
         initialSlideIndex={initialSlideIndex}
