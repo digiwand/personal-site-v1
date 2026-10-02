@@ -26,17 +26,17 @@ const TECH_KEYS: readonly TechKey[] = [
 ];
 
 interface Props {
-  onOpenWorkCarousel?: (globalIndex: number) => void;
+  onOpenLightbox?: (globalIndex: number) => void;
 }
 
-function SummaryCopper({ onOpenWorkCarousel }: Props) {
+function SummaryCopper({ onOpenLightbox }: Props) {
   return (
     <SummaryBase
       {...JOB_META_COPPER}
       date="Aug 2016 - Apr 2021"
       techKeys={TECH_KEYS}
       imgConfigs={IMG_CONFIGS_COPPER}
-      onOpenWorkCarousel={onOpenWorkCarousel}
+      onOpenLightbox={onOpenLightbox}
       workCarouselSlideOffset={WORK_CAROUSEL_COPPER_OFFSET}
     >
       At Copper CRM, I was the client-side technical lead for an in-house A/B testing tool, 

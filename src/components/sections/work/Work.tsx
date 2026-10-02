@@ -42,7 +42,7 @@ function WorkSection({ ref }: Props) {
   const [initialSlideIndex, setInitialSlideIndex] = useState(0);
   const [carouselMountKey, setCarouselMountKey] = useState(0);
 
-  const openWorkCarousel = useCallback((globalIndex: number) => {
+  const openLightbox = useCallback((globalIndex: number) => {
     setInitialSlideIndex(globalIndex);
     setCarouselMountKey((key) => key + 1);
     setCarouselOpen(true);
@@ -57,8 +57,8 @@ function WorkSection({ ref }: Props) {
       <div className="work-grid">
         <WorkSideHeading text="WORK EXPERIENCE" className="pb-0 land:pb-64" />
         <SummaryMetaMask />
-        <SummaryCopper onOpenWorkCarousel={openWorkCarousel} />
-        <SummaryWayvia onOpenWorkCarousel={openWorkCarousel} />
+        <SummaryCopper onOpenLightbox={openLightbox} />
+        <SummaryWayvia onOpenLightbox={openLightbox} />
 
         <WorkSideHeading text="EDUCATION" />
         <EducationSection />

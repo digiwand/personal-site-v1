@@ -25,17 +25,17 @@ const TECH_KEYS: readonly TechKey[] = [
 ];
 
 interface Props {
-  onOpenWorkCarousel?: (globalIndex: number) => void;
+  onOpenLightbox?: (globalIndex: number) => void;
 }
 
-function SummaryWayvia({ onOpenWorkCarousel }: Props) {
+function SummaryWayvia({ onOpenLightbox }: Props) {
   return (
     <SummaryBase
       {...JOB_META_WAYVIA}
       date="Feb 2015 - Jun 2016"
       techKeys={TECH_KEYS}
       imgConfigs={IMG_CONFIGS_WAYVIA}
-      onOpenWorkCarousel={onOpenWorkCarousel}
+      onOpenLightbox={onOpenLightbox}
       workCarouselSlideOffset={WORK_CAROUSEL_WAYVIA_OFFSET}
     >
       Another engineer and I pioneered and launched a MEAN-stack analytics application with RESTful APIs 
