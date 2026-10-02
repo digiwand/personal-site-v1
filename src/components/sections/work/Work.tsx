@@ -40,11 +40,11 @@ interface Props {
 function WorkSection({ ref }: Props) {
   const [carouselOpen, setCarouselOpen] = useState(false);
   const [initialSlideIndex, setInitialSlideIndex] = useState(0);
-  const [carouselMountKey, setCarouselMountKey] = useState(0);
+  const [lightboxMountKey, setLightboxMountKey] = useState(0);
 
   const openLightbox = useCallback((globalIndex: number) => {
     setInitialSlideIndex(globalIndex);
-    setCarouselMountKey((key) => key + 1);
+    setLightboxMountKey((key) => key + 1);
     setCarouselOpen(true);
   }, []);
 
@@ -65,7 +65,7 @@ function WorkSection({ ref }: Props) {
       </div>
 
       <Lightbox
-        key={carouselMountKey}
+        key={lightboxMountKey}
         imgConfigs={WORK_IMG_CONFIGS}
         initialSlideIndex={initialSlideIndex}
         isOpen={carouselOpen}
