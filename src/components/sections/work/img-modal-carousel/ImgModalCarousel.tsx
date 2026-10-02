@@ -7,19 +7,19 @@ import ButtonBase from 'components/button/Base';
 import { WorkImageConfig } from 'components/sections/work/shared/constants';
 
 interface ImageCarouselModalContentProps {
-  imgConfigs: WorkImageConfig[];
   activeIndex: number;
+  captionId: string;
+  imgConfigs: WorkImageConfig[];
   goPrev: () => void;
   goNext: () => void;
-  captionId: string;
 }
 
 function ImageCarouselModalContent({
-  imgConfigs,
   activeIndex,
+  captionId,
+  imgConfigs,
   goPrev,
   goNext,
-  captionId,
 }: ImageCarouselModalContentProps) {
   const count = imgConfigs.length;
   if (count === 0) return null;
