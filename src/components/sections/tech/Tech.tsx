@@ -1,4 +1,4 @@
-import React from 'react';
+import type { Ref } from 'react';
 import Fade from 'components/animations/Fade';
 
 import Section from 'components/sections/Section';
@@ -6,7 +6,11 @@ import Section from 'components/sections/Section';
 import { SECTION_ID } from 'constants/section';
 import TechCarousel from 'components/sections/tech/Carousel';
 
-function TechSection(props, ref) {
+interface Props {
+  ref?: Ref<HTMLDivElement>;
+}
+
+function TechSection({ ref }: Props) {
   return (
     <Section
       id={SECTION_ID.TECH}
@@ -26,4 +30,4 @@ function TechSection(props, ref) {
   );
 }
 
-export default React.forwardRef(TechSection);
+export default TechSection;

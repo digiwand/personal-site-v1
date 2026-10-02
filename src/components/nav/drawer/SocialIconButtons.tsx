@@ -1,12 +1,11 @@
 import SocialIconButtons from 'components/social-icons/SocialIconButtons';
-
-const socialKeys = ['stackoverflow', 'github', /* 'twitter', */ 'linkedin'];
+import { PRIMARY_SOCIAL_KEYS } from 'constants/social';
 
 function NavDrawerSocialIcons() {
   return (
     <SocialIconButtons
       className="nav-drawer-social"
-      socialKeys={socialKeys}
+      socialKeys={PRIMARY_SOCIAL_KEYS}
     />
   );
 }

@@ -1,5 +1,6 @@
 function NavMenuButton({ onClick }: { onClick(): void}) {
-  const lineClass = 'my-[2.5rem] w-[24rem] h-[2rem] transition-[background] duration-200 rounded-[2rem] bg-[image:var(--theme-glass-thick-bg)]';
+  const lineClass = 'my-[2.5rem] w-[24rem] h-[2rem] transition-[background] duration-200 rounded-[2rem] '
+    + 'bg-[image:var(--theme-glass-thick-bg)]';
 
   return (
     <button

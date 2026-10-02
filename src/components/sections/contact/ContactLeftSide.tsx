@@ -20,7 +20,8 @@ function ContactLeftSide() {
 
       <Fade delay={1000} duration={2400} className="flex justify-center">
         <SVGPlantInPot
-          className="hidden land:flex w-1/2 pt-24 land:pt-8 mx-auto max-w-[225rem] min-w-[160rem] [&_path]:fill-[var(--theme-contact-plant)]"
+          className="hidden land:flex w-1/2 pt-24 land:pt-8 mx-auto max-w-[225rem] min-w-[160rem]
+            [&_path]:fill-[var(--theme-contact-plant)]"
         />
       </Fade>
     </div>

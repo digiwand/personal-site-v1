@@ -1,4 +1,4 @@
-import React from 'react';
+import type { Ref } from 'react';
 import Fade from 'components/animations/Fade';
 
 import FrameCircle from 'components/common/FrameCircle';
@@ -6,13 +6,24 @@ import Section from 'components/sections/Section';
 
 import { SECTION_ID } from 'constants/section';
 
-function AboutSection(props, ref) {
-  const dateStartNomad = new Date('2018-04-01');
-  const dateStartCareer = new Date('2014-09-01');
-  const dateNow = new Date();
+function yearsSince(isoDate: string) {
+  const start = new Date(isoDate);
+  const now = new Date();
+  let years = now.getFullYear() - start.getFullYear();
+  const anniversaryThisYear = new Date(now.getFullYear(), start.getMonth(), start.getDate());
+  if (now < anniversaryThisYear) {
+    years -= 1;
+  }
+  return years;
+}
 
-  const yearsNomad = dateNow.getFullYear() - dateStartNomad.getFullYear();
-  const yearsCareer = dateNow.getFullYear() - dateStartCareer.getFullYear();
+interface Props {
+  ref?: Ref<HTMLDivElement>;
+}
+
+function AboutSection({ ref }: Props) {
+  const yearsNomad = yearsSince('2018-04-01');
+  const yearsCareer = yearsSince('2014-09-01');
 
   return (
     <Section
@@ -23,7 +34,7 @@ function AboutSection(props, ref) {
       <div className="flex-[1_1_auto] pt-8 sm:pt-128 land:pt-16 pb-128 sm:pb-0 pr-16 sm:pr-0 land:pr-128 pl-16 sm:pl-0">
         <Fade>
           <h2 className="text-shadow-theme pt-128 sm:pt-0 pb-32">
-            <Fade top duration={300} cascade>
+            <Fade top duration={300}>
               About
             </Fade>
           </h2>
@@ -66,4 +77,4 @@ function AboutSection(props, ref) {
   );
 }
 
-export default React.forwardRef(AboutSection);
+export default AboutSection;
