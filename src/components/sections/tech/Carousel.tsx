@@ -1,7 +1,8 @@
+import type { CSSProperties } from 'react';
 import Zoom from 'components/animations/Zoom';
-import TECH from 'constants/tech';
+import TECH, { type TechConfig, type TechKey } from 'constants/tech';
 
-const RECENT_TECH = [
+const RECENT_TECH: readonly TechKey[] = [
   'NEXTJS',
   'REACTJS',
   'EMBERJS',
@@ -21,14 +22,12 @@ const RECENT_TECH = [
 ];
 
 const imgWidth = 220;
-const imgHeight = 120;
 const imgPadding = 0;
 
 const panelWidth = imgWidth + 2 * imgPadding;
-const panelHeight = imgHeight + 2 * imgPadding;
 
 const numOfPanels = RECENT_TECH.length;
-const rotationDeg = (360 / numOfPanels);
+const rotationDeg = 360 / numOfPanels;
 
 const radius = Math.round((panelWidth / 2) / Math.tan(Math.PI / numOfPanels));
 
@@ -50,11 +49,11 @@ function Carousel() {
       >
         <div className="carousel-stage absolute w-full h-full [transform-style:preserve-3d]">
           {RECENT_TECH.map((key, index) => {
-            const techConfig = TECH[key];
+            const techConfig: TechConfig = TECH[key];
 
             return (
               <a
-                key={techConfig.displayName}
+                key={key}
                 className="carousel-panel absolute flex items-center justify-center
                   w-[85rem] sm:w-[120rem] land:w-[220rem] h-[120rem]
                   bg-[var(--theme-carousel-item-bg)]
@@ -66,7 +65,7 @@ function Carousel() {
                   '--z-mobile': `${mobileRadius}rem`,
                   '--z-tablet': `${tabletRadius}rem`,
                   '--z-desktop': `${radius}rem`,
-                }}
+                } as CSSProperties}
                 href={techConfig.href}
                 rel="noopener noreferrer"
                 target="_blank"

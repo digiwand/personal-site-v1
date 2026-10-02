@@ -11,12 +11,12 @@
       "styles/*": ["./src/styles/*"],
       "constants/*": ["./src/constants/*"],
       "theme/*": ["./src/theme/*"],
+      "hooks/*": ["./src/hooks/*"],
       "lib/*": ["./src/lib/*"]
     },
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
-    /** @todo turn strict on */    
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,

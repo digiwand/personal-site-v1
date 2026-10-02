@@ -1,11 +1,12 @@
 import SummaryBase from 'components/sections/work/summary/Base';
+import type { TechKey } from 'constants/tech';
 import {
   IMG_CONFIGS_COPPER,
   JOB_META_COPPER,
   WORK_CAROUSEL_COPPER_OFFSET,
 } from 'components/sections/work/shared/constants';
 
-const TECH_KEYS = [
+const TECH_KEYS: readonly TechKey[] = [
   'EMBERJS',
   'AMP_EMAIL',
   'GOOGLE_ADD_ON',

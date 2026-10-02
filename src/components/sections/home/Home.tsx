@@ -1,5 +1,5 @@
 import anime from 'animejs';
-import React, { useEffect } from 'react';
+import { useEffect, type Ref } from 'react';
 import Fade from 'components/animations/Fade';
 import Pulse from 'components/animations/Pulse';
 import Zoom from 'components/animations/Zoom';
@@ -11,22 +11,29 @@ import SVGAriellaVu from 'components/svg/ariellavu';
 import { SECTION_ID } from 'constants/section';
 import { useTheme } from 'theme/ThemeProvider';
 
-function HomeSection(props, ref) {
+interface Props {
+  ref?: Ref<HTMLDivElement>;
+}
+
+function HomeSection({ ref }: Props) {
   const { colors } = useTheme();
 
   useEffect(() => {
     const svgPaths = document.querySelectorAll('#Home-SVGAriellaVu path');
 
-    anime({
+    const animation = anime({
       targets: svgPaths,
-      direction: 'linear',
       duration: 800,
       easing: 'easeInOutSine',
       fill: colors.svgAriellaVuActive,
       loop: false,
       strokeDashoffset: [anime.setDashoffset, 0],
-      delay: (el, i) => 980 + (i * 52),
+      delay: (_element, index) => 980 + (index * 52),
     });
+
+    return () => {
+      animation.pause();
+    };
   }, [colors.svgAriellaVuActive]);
 
   return (
@@ -37,14 +44,17 @@ function HomeSection(props, ref) {
     >
       <Zoom delay={600}>
         <div
-          className="u-glass rounded-[10rem] inline-flex flex-col px-16 sm:px-32 land:px-[80rem] py-64 land:py-[80rem] mx-auto z-1"
+          className="u-glass rounded-[10rem] inline-flex flex-col px-16 sm:px-32 land:px-[80rem]
+            py-64 land:py-[80rem] mx-auto z-1"
         >
           <h2 className="text-shadow-theme text-[var(--theme-home-hello)]">
-            <Fade top delay={1350} duration={300} cascade>
+            <Fade top delay={1350} duration={300}>
               Hello, I&apos;m
             </Fade>
           </h2>
-          <h1 className="mx-auto py-[42rem] sm:py-[46rem] land:py-[48rem] [&_rect]:w-[20rem] [&_rect]:h-full [&_rect]:inline-block">
+          <h1 className="mx-auto py-[42rem] sm:py-[46rem] land:py-[48rem]
+            [&_rect]:w-[20rem] [&_rect]:h-full [&_rect]:inline-block"
+          >
             <SVGAriellaVu
               id="Home-SVGAriellaVu"
               className="h-[42rem] sm:h-[52rem] land:h-[58rem] transition-[height] duration-[400ms]"
@@ -64,4 +74,4 @@ function HomeSection(props, ref) {
   );
 }
 
-export default React.forwardRef(HomeSection);
+export default HomeSection;

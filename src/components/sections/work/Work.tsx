@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState, type Ref } from 'react';
 import Fade from 'components/animations/Fade';
 
 import Section from 'components/sections/Section';
@@ -8,6 +8,7 @@ import SummaryCopper from 'components/sections/work/summary/Copper';
 import SummaryWayvia from 'components/sections/work/summary/Wayvia';
 import WorkSideHeading from 'components/sections/work/WorkSideHeading';
 import { WORK_IMG_CONFIGS } from 'components/sections/work/shared/constants';
+import { SECTION_ID } from 'constants/section';
 
 function EducationSection() {
   return (
@@ -32,14 +33,18 @@ function EducationSection() {
   );
 }
 
-const WorkSection = (_props, ref) => {
+interface Props {
+  ref?: Ref<HTMLDivElement>;
+}
+
+function WorkSection({ ref }: Props) {
   const [carouselOpen, setCarouselOpen] = useState(false);
   const [initialSlideIndex, setInitialSlideIndex] = useState(0);
   const [carouselMountKey, setCarouselMountKey] = useState(0);
 
-  const openWorkCarousel = useCallback((globalIndex) => {
+  const openWorkCarousel = useCallback((globalIndex: number) => {
     setInitialSlideIndex(globalIndex);
-    setCarouselMountKey((k) => k + 1);
+    setCarouselMountKey((key) => key + 1);
     setCarouselOpen(true);
   }, []);
 
@@ -48,7 +53,7 @@ const WorkSection = (_props, ref) => {
   }, []);
 
   return (
-    <Section id="work" ref={ref}>
+    <Section id={SECTION_ID.WORK} ref={ref}>
       <div className="work-grid">
         <WorkSideHeading text="WORK EXPERIENCE" className="pb-0 land:pb-64" />
         <SummaryMetaMask />
@@ -68,6 +73,6 @@ const WorkSection = (_props, ref) => {
       />
     </Section>
   );
-};
+}
 
-export default React.forwardRef(WorkSection);
+export default WorkSection;

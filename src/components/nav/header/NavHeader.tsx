@@ -1,8 +1,9 @@
 import {
-  MutableRefObject,
   useEffect,
+  useMemo,
   useRef,
   useState,
+  type RefObject,
 } from 'react';
 import Fade from 'components/animations/Fade';
 
@@ -10,48 +11,47 @@ import NavTabs from 'components/nav/header/Tabs';
 import NavSocialIcons from 'components/nav/header/SocialIconButtons';
 import ThemeSelector from 'components/nav/theme-selector/Dropdown';
 import SVGAriellaVu from 'components/svg/ariellavu';
+import { useIntersectionObserver } from 'hooks/useIntersectionObserver';
 
-type Props = {
-  activeSectionId: string,
-  pageTopTrackingPixelRef?: MutableRefObject<HTMLDivElement>,
-};
+interface Props {
+  activeSectionId: string;
+  pageTopTrackingPixelRef: RefObject<HTMLDivElement | null>;
+}
 
-function NavHeader({ activeSectionId, pageTopTrackingPixelRef = null }: Props) {
+function NavHeader({ activeSectionId, pageTopTrackingPixelRef }: Props) {
   const [hasScrolled, setHasScrolled] = useState(false);
-  const pageTopObserverRef = useRef<IntersectionObserver | null>(null);
+  const scrollTimeoutRef = useRef<number | null>(null);
 
-  const handlePageTopObserver = ([entry]) => {
-    /** @todo @hack temp hack to smooth out animation */
-    setTimeout(() => {
+  const handlePageTop = (entry: IntersectionObserverEntry) => {
+    if (scrollTimeoutRef.current !== null) {
+      window.clearTimeout(scrollTimeoutRef.current);
+    }
+
+    /** Short delay keeps the header style from flickering at the boundary. */
+    scrollTimeoutRef.current = window.setTimeout(() => {
       setHasScrolled(entry.intersectionRatio > 0);
     }, 50);
   };
 
-  useEffect(() => {
-    if (pageTopObserverRef.current) { pageTopObserverRef.current.disconnect(); }
+  const targets = useMemo(
+    () => [pageTopTrackingPixelRef],
+    [pageTopTrackingPixelRef],
+  );
 
-    let currentObserver;
+  useIntersectionObserver(targets, handlePageTop);
 
-    if (pageTopTrackingPixelRef) {
-      pageTopObserverRef.current = new IntersectionObserver(handlePageTopObserver);
-      currentObserver = pageTopObserverRef.current;
-
-      const currentRef = pageTopTrackingPixelRef.current;
-
-      if (currentRef) {
-        currentObserver.observe(currentRef);
-      }
+  useEffect(() => () => {
+    if (scrollTimeoutRef.current !== null) {
+      window.clearTimeout(scrollTimeoutRef.current);
     }
-
-    return () => { if (currentObserver) { currentObserver.disconnect(); } };
-  }, [pageTopTrackingPixelRef]);
+  }, []);
 
   return (
     <header
       className="nav-header"
       data-scrolled={hasScrolled.toString()}
     >
-      <Fade delay={600} duration={2800} cascade>
+      <Fade delay={600} duration={2800}>
         <SVGAriellaVu
           id="NavHeader-SVGAriellaVu"
           className="h-[28rem] transition-transform duration-[400ms] [&_path]:fill-[var(--theme-svg-ariella-vu-active)]"

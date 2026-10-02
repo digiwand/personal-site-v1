@@ -1,13 +1,13 @@
 import Flip from 'components/animations/Flip';
 import { cn } from 'lib/cn';
 
-import SOCIAL from 'constants/social';
+import SOCIAL, { type SocialKey } from 'constants/social';
 
-type Props = {
-  className?: string,
-  revealDelay?: number,
-  socialKeys: string[],
-};
+interface Props {
+  socialKeys: readonly SocialKey[];
+  className?: string;
+  revealDelay?: number;
+}
 
 function SocialIconButtons({
   className = '',
@@ -19,17 +19,17 @@ function SocialIconButtons({
       {socialKeys.map((key, index) => {
         const socialConfig = SOCIAL[key];
         return (
-          <button
-            type="button"
+          <a
             className={cn('btn-icon', className)}
-            key={className + key}
+            href={socialConfig.url}
+            key={key}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <Flip top delay={revealDelay + (index + 1) * 125}>
-              <a href={socialConfig.url} target="_blank" rel="noopener noreferrer">
-                {socialConfig.iconSVG}
-              </a>
+              {socialConfig.iconSVG}
             </Flip>
-          </button>
+          </a>
         );
       })}
     </>

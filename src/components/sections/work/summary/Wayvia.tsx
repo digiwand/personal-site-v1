@@ -1,11 +1,12 @@
 import SummaryBase from 'components/sections/work/summary/Base';
+import type { TechKey } from 'constants/tech';
 import {
   IMG_CONFIGS_WAYVIA,
   JOB_META_WAYVIA,
   WORK_CAROUSEL_WAYVIA_OFFSET,
 } from 'components/sections/work/shared/constants';
 
-const TECH_KEYS = [
+const TECH_KEYS: readonly TechKey[] = [
   'ANGULARJS',
   'EXPRESSJS',
   'NODEJS',

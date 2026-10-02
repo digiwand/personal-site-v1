@@ -1,19 +1,20 @@
 import { ReactNode } from 'react';
 import { motion } from 'motion/react';
 
-type Props = {
-  children: ReactNode,
-  delay?: number,
-  duration?: number,
-  top?: boolean,
-  bottom?: boolean,
-  left?: boolean,
-  right?: boolean,
-  cascade?: boolean,
-};
+interface Props {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+  duration?: number;
+  top?: boolean;
+  bottom?: boolean;
+  left?: boolean;
+  right?: boolean;
+}
 
 function Fade({
   children,
+  className,
   delay = 0,
   duration = 600,
   top = false,
@@ -31,6 +32,7 @@ function Fade({
 
   return (
     <motion.div
+      className={className}
       initial={{ opacity: 0, x, y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

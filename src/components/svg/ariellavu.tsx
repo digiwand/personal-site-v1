@@ -1,6 +1,6 @@
-type Props = {
-  className?: string,
-  id?: string,
+interface Props {
+  className?: string;
+  id?: string;
 }
 
 function SVGAriellaVu({ className = '', id = '' }: Props) {

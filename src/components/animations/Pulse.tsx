@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
 import { motion } from 'motion/react';
 
-type Props = {
-  children: ReactNode,
-  delay?: number,
-  duration?: number,
-};
+interface Props {
+  children: ReactNode;
+  delay?: number;
+  duration?: number;
+}
 
 function Pulse({ children, delay = 0, duration = 620 }: Props) {
   return (

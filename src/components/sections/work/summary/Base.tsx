@@ -1,7 +1,7 @@
 import { ReactNode, useCallback } from 'react';
 
 import Fade from 'components/animations/Fade';
-import TECH from 'constants/tech';
+import TECH, { type TechKey } from 'constants/tech';
 import { cn } from 'lib/cn';
 
 import { ImgTrio } from '../img-trio/ImgTrio';
@@ -9,7 +9,7 @@ import { WorkImageConfig } from 'components/sections/work/shared/constants';
 
 interface Props {
   companyName: string;
-  techKeys: string[];
+  techKeys: readonly TechKey[];
   title: string;
   subtitle: string;
   date: string;
@@ -63,15 +63,15 @@ function Work({ children, ...props }: Props) {
 
           <div className="pt-16 land:pt-8 pb-16 land:pb-32 text-left">
             {techKeys.map((techKey) => (
-              <button
-                type="button"
+              <a
                 className="btn-tag"
+                href={TECH[techKey].href}
                 key={`${companyName}-tech-${techKey}`}
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <a href={TECH[techKey].href} target="_blank" rel="noopener noreferrer">
-                  {TECH[techKey].displayName}
-                </a>
-              </button>
+                {TECH[techKey].displayName}
+              </a>
             ))}
           </div>
 

@@ -1,6 +1,5 @@
 import SocialIconButtons from 'components/social-icons/SocialIconButtons';
-
-const socialKeys = ['stackoverflow', 'github', /* 'twitter', */ 'linkedin'];
+import { PRIMARY_SOCIAL_KEYS } from 'constants/social';
 
 const totalDurationOfTabs = 1400;
 
@@ -10,7 +9,7 @@ function NavSocialIconButtons() {
       <SocialIconButtons
         className="NavHeader_SocialIconButton btn-icon-small"
         revealDelay={totalDurationOfTabs}
-        socialKeys={socialKeys}
+        socialKeys={PRIMARY_SOCIAL_KEYS}
       />
     </div>
   );

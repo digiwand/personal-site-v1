@@ -3,14 +3,14 @@ import Fade from 'components/animations/Fade';
 import AspectRatio from 'components/common/AspectRatio';
 import { cn } from 'lib/cn';
 
-type ImgProps = {
-  style?: CSSProperties,
-};
+interface ImgProps {
+  style?: CSSProperties;
+}
 
-type Props = {
-  children: ReactElement<ImgProps>,
-  className?: string,
-};
+interface Props {
+  children: ReactElement<ImgProps>;
+  className?: string;
+}
 
 /**
  * To use FrameCircle, pass an image element as the "children" prop

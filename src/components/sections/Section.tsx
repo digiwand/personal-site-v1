@@ -1,42 +1,58 @@
-import React, { MutableRefObject } from 'react';
+import type { ReactNode, Ref } from 'react';
+import type { SectionId } from 'constants/section';
 import { cn } from 'lib/cn';
 
-const SECTION_ID_TOP_PLACEMENT = {
-  default: '10%',
+const SECTION_TRACKING_TOP: Record<SectionId, string> = {
   home: '10px',
+  about: '10%',
   contact: '80%',
   work: '50%',
   tech: '90%',
 };
 
-type Props = {
-  sectionId: string,
-  forwardedRef: MutableRefObject<HTMLDivElement>,
+function trackingTop(sectionId: string) {
+  if (sectionId in SECTION_TRACKING_TOP) {
+    return SECTION_TRACKING_TOP[sectionId as SectionId];
+  }
+  return '10%';
 }
 
-function SectionTrackingPixel({ sectionId, forwardedRef }: Props) {
+interface TrackingProps {
+  sectionId: string;
+  ref?: Ref<HTMLDivElement>;
+}
+
+function SectionTrackingPixel({ sectionId, ref }: TrackingProps) {
   return (
     <div
       className="trackingPixel absolute h-px w-px"
-      style={{ top: SECTION_ID_TOP_PLACEMENT[sectionId] || SECTION_ID_TOP_PLACEMENT.default }}
-      section-id={sectionId}
-      ref={forwardedRef}
+      data-section-id={sectionId}
+      ref={ref}
+      style={{ top: trackingTop(sectionId) }}
     />
   );
 }
 
-const Section = ({ id, children, className }, ref) => (
-  <section
-    id={id}
-    className={cn(
-      'relative flex justify-center flex-col px-8 sm:px-64 land:px-128 py-64 sm:py-128',
-      className,
-    )}
-  >
-    <SectionTrackingPixel sectionId={id} forwardedRef={ref} />
+interface Props {
+  id: string;
+  children: ReactNode;
+  className?: string;
+  ref?: Ref<HTMLDivElement>;
+}
 
-    {children}
-  </section>
-);
+function Section({ id, children, className, ref }: Props) {
+  return (
+    <section
+      id={id}
+      className={cn(
+        'relative flex justify-center flex-col px-8 sm:px-64 land:px-128 py-64 sm:py-128',
+        className,
+      )}
+    >
+      <SectionTrackingPixel ref={ref} sectionId={id} />
+      {children}
+    </section>
+  );
+}
 
-export default React.forwardRef(Section);
+export default Section;

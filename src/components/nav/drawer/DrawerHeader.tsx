@@ -2,21 +2,20 @@ import SVGAriellaVu from 'components/svg/ariellavu';
 
 const headerAndFooterHeight = '60rem';
 
-type Props = {
-  handleCloseMenu(): void,
-};
+interface Props {
+  handleCloseMenu(): void;
+}
 
 function DrawerHeader({ handleCloseMenu }: Props) {
   const closeButton = (
     <button
       type="button"
+      aria-label="Close menu"
       className="NavDrawer_iconButton btn-icon drawer-fade-init h-[60rem] w-[60rem]"
-        /** @todo Remove hover color. Consider re-adding after updating fonts */
-        // hover:[&_.NavDrawer_closeSVG>path]:fill-[var(--theme-nav-drawer-social-icons-hover-color)]"
-      onClick={() => { handleCloseMenu(); }}
+      onClick={handleCloseMenu}
     >
       <svg
-        aria-label="Close Menu"
+        aria-hidden="true"
         className="NavDrawer_closeSVG h-[30rem]"
         viewBox="0 0 24 24"
       >

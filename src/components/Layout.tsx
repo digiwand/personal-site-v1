@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { ReactNode, MutableRefObject, useRef } from 'react';
+import { useRef, type ReactNode, type RefObject } from 'react';
 
 import Footer from 'components/footer/Footer';
 import Nav from 'components/nav/Nav';
@@ -7,26 +7,22 @@ import { useTheme } from 'theme/ThemeProvider';
 
 const siteTitle = 'Ariella Vu | Software Engineer | Personal Website';
 
-type Props = {
-  children: ReactNode,
-  sectionTrackingPixelRefs?: MutableRefObject<HTMLDivElement>[],
-};
+const siteDescription = 'Ariella is a programmer developing secure, privacy-preserving experiences in Web 3.0. '
+  + 'She is currently a Senior Software Engineer II at Consensys, MetaMask.';
 
-function Layout({ children, sectionTrackingPixelRefs = null } : Props) {
+interface Props {
+  children: ReactNode;
+  sectionTrackingPixelRefs?: ReadonlyArray<RefObject<HTMLDivElement | null>>;
+}
+
+const NO_SECTION_REFS: ReadonlyArray<RefObject<HTMLDivElement | null>> = [];
+
+function Layout({ children, sectionTrackingPixelRefs = NO_SECTION_REFS }: Props) {
   const pageTopTrackingPixelRef = useRef<HTMLDivElement>(null);
   const { colors } = useTheme();
 
-  const pageTopTrackingPixel = (
-    <div
-      className="absolute h-1 w-1 top-[80rem]"
-      ref={pageTopTrackingPixelRef}
-    />
-  );
-
   return (
-    <div
-      className="u-scrollbar bg-page absolute top-0 left-0 h-full w-full min-w-[320px]"
-    >
+    <div className="u-scrollbar bg-page absolute top-0 left-0 h-full w-full min-w-[320px]">
       <Head>
         <title>{siteTitle}</title>
 
@@ -36,11 +32,7 @@ function Layout({ children, sectionTrackingPixelRefs = null } : Props) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0" />
 
-        <meta
-          name="description"
-          content={'Ariella is a programmer developing secure, privacy-preserving experiences in Web 3.0. '
-          + 'She is currently a Senior Software Engineer II at Consensys, MetaMask.'}
-        />
+        <meta name="description" content={siteDescription} />
         <meta name="og:title" content={siteTitle} />
         <meta name="og:type" content="website" />
         <meta name="og:url" content="https://ariella.dev" />
@@ -55,7 +47,10 @@ function Layout({ children, sectionTrackingPixelRefs = null } : Props) {
       </Head>
 
       <main className="relative">
-        {pageTopTrackingPixel}
+        <div
+          className="absolute h-1 w-1 top-[80rem]"
+          ref={pageTopTrackingPixelRef}
+        />
         {children}
       </main>
 

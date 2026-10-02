@@ -5,26 +5,24 @@ interface Props {
   finishLoading: () => void;
 }
 
-const Loader = ({ finishLoading }: Props) => {
-  const animate = () => {
-    anime({
-      targets: ['.Loader'],
+function Loader({ finishLoading }: Props) {
+  useEffect(() => {
+    const animation = anime({
+      targets: '.Loader',
       opacity: 100,
       duration: 600,
       easing: 'linear',
       complete: () => finishLoading(),
     });
-  };
 
-  useEffect(() => {
-    animate();
-  });
+    return () => {
+      animation.pause();
+    };
+  }, [finishLoading]);
 
   return (
-    <div
-      className="Loader fixed top-0 left-0 w-full h-full bg-[var(--theme-background)]"
-    />
+    <div className="Loader fixed top-0 left-0 w-full h-full bg-[var(--theme-background)]" />
   );
-};
+}
 
 export default Loader;

@@ -1,9 +1,9 @@
 import IconDownload from "components/svg/material-icons/download";
 import { cn } from "lib/cn";
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 function ResumeButton({ className = "" }: Props) {
   return (

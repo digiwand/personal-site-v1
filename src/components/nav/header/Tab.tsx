@@ -2,12 +2,12 @@ import Link from 'next/link';
 import Flip from 'components/animations/Flip';
 import { cn } from 'lib/cn';
 
-type Props = {
-  className?: string,
-  displayName: string,
-  href: string,
-  index: number,
-  isActive?: boolean,
+interface Props {
+  displayName: string;
+  href: string;
+  index: number;
+  className?: string;
+  isActive?: boolean;
 };
 
 function NavTab({

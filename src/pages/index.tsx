@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 
 import Layout from 'components/Layout';
 import HomeSection from 'components/sections/home/Home';
@@ -9,7 +9,7 @@ import ContactSection from 'components/sections/contact/Contact';
 
 /**
  * If the order of the sections change, be sure to update the order in
- * {@link src/constants/section.js}
+ * {@link src/constants/section.ts}
  */
 function Home() {
   const homeSectionRef = useRef<HTMLDivElement>(null);
@@ -18,13 +18,13 @@ function Home() {
   const workSectionRef = useRef<HTMLDivElement>(null);
   const contactSectionRef = useRef<HTMLDivElement>(null);
 
-  const sectionTrackingPixelRefs = [
+  const sectionTrackingPixelRefs = useMemo(() => [
     homeSectionRef,
     aboutSectionRef,
     techSectionRef,
     workSectionRef,
     contactSectionRef,
-  ];
+  ], []);
 
   return (
     <Layout sectionTrackingPixelRefs={sectionTrackingPixelRefs}>

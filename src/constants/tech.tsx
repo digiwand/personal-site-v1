@@ -1,8 +1,15 @@
+import type { ReactNode } from 'react';
 import {
   SVGGit,
   SVGNextJS,
   SVGNodeJS,
 } from 'components/svg/tech';
+
+export type TechConfig = {
+  displayName: string;
+  href: string;
+  imgElem?: ReactNode;
+};
 
 const TECH = {
   AB_TESTING: {
@@ -201,6 +208,8 @@ const TECH = {
     href: 'https://code.visualstudio.com/',
     imgElem: <img className="img-tech" alt="VS Code" src="svg/tech/vscode.svg" height="48rem" width="48rem" />,
   },
-};
+} satisfies Record<string, TechConfig>;
+
+export type TechKey = keyof typeof TECH;
 
 export default TECH;

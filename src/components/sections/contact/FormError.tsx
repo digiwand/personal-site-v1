@@ -1,6 +1,10 @@
-import SOCIAL from 'constants/social';
+import SOCIAL, { CONTACT_EMAIL } from 'constants/social';
 
-function FormErrorMessage({ isVisible }) {
+interface Props {
+  isVisible: boolean;
+}
+
+function FormErrorMessage({ isVisible }: Props) {
   return (
     <div
       data-visible={String(isVisible)}
@@ -14,7 +18,7 @@ function FormErrorMessage({ isVisible }) {
         href={SOCIAL.email.url}
         className="text-link"
       >
-        ariellavu@gmail.com
+        {CONTACT_EMAIL}
       </a>
     </div>
   );

@@ -32,7 +32,13 @@ const escapeUnsafeScriptChars = (value: string): string => value.replace(
 const safeThemeStorageKey = escapeUnsafeScriptChars(JSON.stringify(THEME_STORAGE_KEY));
 const safeLegacyThemeStorageKey = escapeUnsafeScriptChars(JSON.stringify(LEGACY_THEME_STORAGE_KEY));
 
-const themeInitScript = `(function(){try{var t=localStorage.getItem(${safeThemeStorageKey})||localStorage.getItem(${safeLegacyThemeStorageKey});if(t){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();`;
+const themeInitScript = [
+  '(function(){try{',
+  `var t=localStorage.getItem(${safeThemeStorageKey})`,
+  `||localStorage.getItem(${safeLegacyThemeStorageKey});`,
+  'if(t){document.documentElement.setAttribute("data-theme",t);}',
+  '}catch(e){}})();',
+].join('');
 
 export default function Document() {
   return (

@@ -1,6 +1,6 @@
 import Fade from 'components/animations/Fade';
 import ContactForm from 'components/sections/contact/Form';
-import SOCIAL from 'constants/social';
+import SOCIAL, { CONTACT_EMAIL } from 'constants/social';
 
 function ContactRightSide() {
   return (
@@ -23,7 +23,7 @@ function ContactRightSide() {
               href={SOCIAL.email.url}
               className="text-link"
             >
-              ariellavu@gmail.com
+              {CONTACT_EMAIL}
             </a>
           </h6>
         </Fade>
